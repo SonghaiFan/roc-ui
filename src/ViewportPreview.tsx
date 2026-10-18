@@ -1,4 +1,9 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
+import { Badge } from "../registry/roc/badge";
+import { Button } from "../registry/roc/button";
+import { Label } from "../registry/roc/label";
+import { Slider } from "../registry/roc/slider";
+import { Toggle } from "../registry/roc/toggle";
 
 type Device = "fit" | "desktop" | "tablet" | "phone" | "custom";
 const presets = [
@@ -97,9 +102,9 @@ export function ViewportPreview({
     >
       {detail && (
         <header className="detail-heading">
-          <button type="button" onClick={onBack}>
+          <Button variant="ghost" size="sm" onClick={onBack}>
             ← All components
-          </button>
+          </Button>
           <h1>{detail}</h1>
         </header>
       )}
@@ -111,11 +116,11 @@ export function ViewportPreview({
             aria-label="Preview viewport"
           >
             {presets.map((preset) => (
-              <button
-                type="button"
+              <Toggle
                 key={preset.id}
-                aria-pressed={device === preset.id}
-                onClick={() => {
+                size="sm"
+                pressed={device === preset.id}
+                onPressedChange={() => {
                   setDevice(preset.id);
                   if (preset.width) setWidth(preset.width);
                   setHeight(preset.height);
@@ -123,26 +128,28 @@ export function ViewportPreview({
               >
                 <DeviceIcon kind={preset.id} />
                 <span>{preset.label}</span>
-              </button>
+              </Toggle>
             ))}
           </div>
           <output className="viewport-size" aria-label="Viewport dimensions">
             {measured} × {height}{" "}
-            <span className="active-breakpoint">{activeBreakpoint}</span>
+            <Badge variant="outline" className="active-breakpoint">
+              {activeBreakpoint}
+            </Badge>
           </output>
           <div className="viewport-range">
-            <label htmlFor="preview-width">Viewport width</label>
+            <Label>Viewport width</Label>
             <div className="breakpoint-slider">
-              <input
-                id="preview-width"
+              <Slider
                 aria-label="Preview width"
-                aria-valuetext={`${Math.round(target)} pixels, ${activeBreakpoint}`}
-                type="range"
-                min="320"
-                max="1600"
-                step="1"
-                value={Math.max(320, Math.min(1600, target))}
-                onChange={(e) => custom(Number(e.target.value))}
+                getValueText={() =>
+                  `${Math.round(target)} pixels, ${activeBreakpoint}`
+                }
+                min={320}
+                max={1600}
+                step={1}
+                value={[Math.max(320, Math.min(1600, target))]}
+                onValueChange={([next]) => custom(next)}
               />
               <div
                 className="breakpoint-markers"

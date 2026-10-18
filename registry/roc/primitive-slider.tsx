@@ -30,6 +30,7 @@ const asArray = (value: number | readonly number[]) =>
 type ThumbProps = Omit<React.ComponentProps<"div">, "ref"> & {
   index?: number;
   "aria-label"?: string;
+  "aria-valuetext"?: string;
   ref?: React.Ref<any>;
 };
 
@@ -67,11 +68,16 @@ function Root({
   );
 }
 
-function Thumb({ "aria-label": label, ...props }: ThumbProps) {
+function Thumb({
+  "aria-label": label,
+  "aria-valuetext": valueText,
+  ...props
+}: ThumbProps) {
   return (
     <Base.Thumb
       {...(props as object)}
       getAriaLabel={label ? () => label : undefined}
+      getAriaValueText={valueText ? () => valueText : undefined}
     />
   );
 }

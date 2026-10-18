@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Button } from "../registry/roc/button";
+import { Toggle } from "../registry/roc/toggle";
 
 /** Settings float above the canvas; hiding them never resizes or remounts it. */
 export function AutoHidePanel({ children }: { children: ReactNode }) {
@@ -55,9 +57,10 @@ export function AutoHidePanel({ children }: { children: ReactNode }) {
   }, []);
   return (
     <div className="style-menu">
-      <button
+      <Button
         ref={trigger}
-        type="button"
+        variant="ghost"
+        size="sm"
         className="style-trigger"
         aria-label="Design settings"
         aria-controls="design-settings"
@@ -87,7 +90,7 @@ export function AutoHidePanel({ children }: { children: ReactNode }) {
           <path d="M7 3v4M13 8v4M8 13v4" strokeWidth="3" />
         </svg>
         <span>Style</span>
-      </button>
+      </Button>
       <aside
         ref={panel}
         id="design-settings"
@@ -114,21 +117,22 @@ export function AutoHidePanel({ children }: { children: ReactNode }) {
         <div className="rail-heading">
           <span>Appearance</span>
           <div>
-            <button
-              type="button"
+            <Toggle
+              size="sm"
               aria-label="Keep settings open"
-              aria-pressed={pinned}
-              onClick={() => setPinned((v) => !v)}
+              pressed={pinned}
+              onPressedChange={setPinned}
             >
               {pinned ? "Pinned" : "Pin"}
-            </button>
-            <button
-              type="button"
+            </Toggle>
+            <Button
+              variant="ghost"
+              size="icon-sm"
               aria-label="Close settings"
               onClick={() => close(true)}
             >
               ×
-            </button>
+            </Button>
           </div>
         </div>
         {children}
