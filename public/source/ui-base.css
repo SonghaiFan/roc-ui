@@ -1,0 +1,65 @@
+/* Shared ROC foundations. No global reset or host stylesheet required. */
+.roc-ui {
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 13px;
+  color: var(--roc-ink, #252525);
+}
+.roc-ui *,
+.roc-ui *::before,
+.roc-ui *::after {
+  box-sizing: border-box;
+}
+.roc-ui:focus-visible {
+  outline: 2px solid var(--roc-focus, #737373);
+  outline-offset: 3px;
+}
+.roc-ui:disabled,
+.roc-ui[data-disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.roc-ui-icon,
+.roc-ui > svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+.roc-ui-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@keyframes roc-ui-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes roc-ui-dismiss {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-ui,
+  .roc-ui::before,
+  .roc-ui::after {
+    transition-duration: 0s !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,98 @@
+@import "./ui-base.css";
+.roc-ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 8px;
+  min-height: 36px;
+  padding: 8px 15px;
+  border: 1px solid transparent;
+  border-radius: var(--roc-radius, 8px);
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background-color 140ms,
+    box-shadow 140ms;
+}
+.roc-ui-button.roc-ui-button-variant-default {
+  background: var(--roc-ink, #252525);
+  color: var(--roc-paper, #fff);
+}
+.roc-ui-button.roc-ui-button-variant-secondary {
+  background: var(--roc-marker, #efefef);
+}
+.roc-ui-button.roc-ui-button-variant-destructive {
+  background: #b73838;
+  color: white;
+}
+.roc-ui-button.roc-ui-button-variant-outline {
+  border-color: var(--roc-line, #dedede);
+  background: var(--roc-paper, #fff);
+}
+.roc-ui-button.roc-ui-button-variant-ghost,
+.roc-ui-button.roc-ui-button-variant-link {
+  background: transparent;
+}
+.roc-ui-button.roc-ui-button-variant-link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.roc-ui-button:hover:not(:disabled) {
+  box-shadow: inset 0 0 0 100px #80808018;
+}
+.roc-ui-button.roc-ui-button-size-xs {
+  min-height: 26px;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+.roc-ui-button.roc-ui-button-size-sm {
+  min-height: 32px;
+  padding: 6px 12px;
+}
+.roc-ui-button.roc-ui-button-size-lg {
+  min-height: 42px;
+  padding: 11px 22px;
+}
+.roc-ui-button:is(
+  .roc-ui-button-size-icon,
+  .roc-ui-button-size-icon-xs,
+  .roc-ui-button-size-icon-sm,
+  .roc-ui-button-size-icon-lg
+) {
+  padding: 0;
+  width: 36px;
+  height: 36px;
+}
+.roc-ui-button.roc-ui-button-size-icon-xs {
+  width: 26px;
+  height: 26px;
+  min-height: 26px;
+}
+.roc-ui-button.roc-ui-button-size-icon-sm {
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+}
+.roc-ui-button.roc-ui-button-size-icon-lg {
+  width: 42px;
+  height: 42px;
+}
+.roc-ui-button[aria-busy="true"] {
+  cursor: progress;
+}
+
+.roc-ui-button-label {
+  display: inline-grid;
+  align-items: center;
+}
+.roc-ui-button-label > span {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}

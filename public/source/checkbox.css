@@ -1,0 +1,40 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="checkbox"] {
+  display: inline-grid;
+  place-items: center;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  flex-shrink: 0;
+  border: 1px solid var(--roc-line, #c7c7c7);
+  border-radius: 5px;
+  background: var(--roc-paper, #fff);
+  cursor: pointer;
+}
+.roc-ui[data-slot="checkbox"]::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+}
+.roc-ui[data-slot="checkbox"][data-state="checked"],
+.roc-ui[data-slot="checkbox"][data-state="indeterminate"] {
+  background: var(--roc-ink, #252525);
+  border-color: transparent;
+  color: white;
+}
+.roc-ui[data-slot="checkbox-indicator"] {
+  display: grid;
+  place-items: center;
+  color: inherit;
+}
+.roc-ui[data-slot="checkbox"][data-state="indeterminate"] svg {
+  visibility: hidden;
+}
+.roc-ui[data-slot="checkbox"][data-state="indeterminate"]::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}

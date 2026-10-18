@@ -1,0 +1,82 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="dropdown-menu-content"],
+.roc-ui[data-slot="dropdown-menu-sub-content"] {
+  z-index: 50;
+  min-width: 180px;
+  max-width: calc(100vw - 24px);
+  max-height: var(--radix-dropdown-menu-content-available-height);
+  overflow: auto;
+  padding: 5px;
+  border: 1px solid var(--roc-line, #dedede);
+  border-radius: var(--roc-radius, 8px);
+  background: var(--roc-paper, #fff);
+  box-shadow: 0 8px 28px #00000012;
+  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+  animation: roc-ui-reveal 160ms ease-out;
+}
+.roc-ui[data-slot="dropdown-menu-content"][data-state="closed"],
+.roc-ui[data-slot="dropdown-menu-sub-content"][data-state="closed"] {
+  animation: roc-ui-dismiss 120ms;
+}
+.roc-ui:is(
+  [data-slot="dropdown-menu-item"],
+  [data-slot="dropdown-menu-checkbox-item"],
+  [data-slot="dropdown-menu-radio-item"],
+  [data-slot="dropdown-menu-sub-trigger"]
+) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  border-radius: 4px;
+  cursor: default;
+  user-select: none;
+  outline: none;
+}
+.roc-ui:is(
+    [data-slot="dropdown-menu-item"],
+    [data-slot="dropdown-menu-checkbox-item"],
+    [data-slot="dropdown-menu-radio-item"],
+    [data-slot="dropdown-menu-sub-trigger"]
+  )[data-highlighted] {
+  background: var(--roc-marker, #f1f1f1);
+}
+.roc-ui[data-slot="dropdown-menu-item"][data-variant="destructive"] {
+  color: #b33434;
+}
+.roc-ui[data-inset="true"],
+.roc-ui[data-slot="dropdown-menu-checkbox-item"],
+.roc-ui[data-slot="dropdown-menu-radio-item"] {
+  padding-left: 32px;
+}
+.roc-ui[data-slot="dropdown-menu-checkbox-item"] > span:first-child,
+.roc-ui[data-slot="dropdown-menu-radio-item"] > span:first-child {
+  position: absolute;
+  left: 9px;
+  display: grid;
+  place-items: center;
+}
+.roc-ui[data-slot="dropdown-menu-radio-item"] svg {
+  width: 8px;
+  height: 8px;
+  fill: currentColor;
+}
+.roc-ui[data-slot="dropdown-menu-label"] {
+  padding: 8px 10px;
+  color: var(--roc-muted, #777);
+  font-size: 11px;
+}
+.roc-ui[data-slot="dropdown-menu-separator"] {
+  height: 1px;
+  margin: 5px 0;
+  background: var(--roc-line, #e5e5e5);
+}
+.roc-ui[data-slot="dropdown-menu-shortcut"] {
+  margin-left: auto;
+  color: var(--roc-muted, #999);
+  font: 10px ui-monospace;
+}
+.roc-ui[data-slot="dropdown-menu-sub-trigger"] > svg {
+  margin-left: auto;
+}

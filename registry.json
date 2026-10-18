@@ -5,6 +5,681 @@
   "items": [
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "button",
+      "type": "registry:component",
+      "title": "Button",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "class-variance-authority",
+        "radix-ui",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Badge",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "class-variance-authority",
+        "radix-ui",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/badge.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/badge.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/badge.css",
+          "type": "registry:file",
+          "target": "~/components/roc/badge.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "card",
+      "type": "registry:component",
+      "title": "Card",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/card.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/card.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/card.css",
+          "type": "registry:file",
+          "target": "~/components/roc/card.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "input",
+      "type": "registry:component",
+      "title": "Input",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/input.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/input.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/input.css",
+          "type": "registry:file",
+          "target": "~/components/roc/input.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "textarea",
+      "type": "registry:component",
+      "title": "Textarea",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/textarea.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/textarea.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/textarea.css",
+          "type": "registry:file",
+          "target": "~/components/roc/textarea.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "checkbox",
+      "type": "registry:component",
+      "title": "Checkbox",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "radix-ui",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/checkbox.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/checkbox.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/checkbox.css",
+          "type": "registry:file",
+          "target": "~/components/roc/checkbox.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "switch",
+      "type": "registry:component",
+      "title": "Switch",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "radix-ui",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/switch.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/switch.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/switch.css",
+          "type": "registry:file",
+          "target": "~/components/roc/switch.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "slider",
+      "type": "registry:component",
+      "title": "Slider",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "radix-ui",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/slider.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/slider.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/slider.css",
+          "type": "registry:file",
+          "target": "~/components/roc/slider.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "separator",
+      "type": "registry:component",
+      "title": "Separator",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "radix-ui",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/separator.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/separator.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/separator.css",
+          "type": "registry:file",
+          "target": "~/components/roc/separator.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "tabs",
+      "type": "registry:component",
+      "title": "Tabs",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "radix-ui",
+        "class-variance-authority",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/tabs.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/tabs.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/tabs.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tabs.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "accordion",
+      "type": "registry:component",
+      "title": "Accordion",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "radix-ui",
+        "lucide-react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/accordion.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/accordion.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/accordion.css",
+          "type": "registry:file",
+          "target": "~/components/roc/accordion.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "dialog",
+      "type": "registry:component",
+      "title": "Dialog",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "radix-ui",
+        "clsx",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/dialog.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/dialog.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/dialog.css",
+          "type": "registry:file",
+          "target": "~/components/roc/dialog.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "popover",
+      "type": "registry:component",
+      "title": "Popover",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "radix-ui",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/popover.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/popover.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/popover.css",
+          "type": "registry:file",
+          "target": "~/components/roc/popover.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "dropdown-menu",
+      "type": "registry:component",
+      "title": "Dropdown Menu",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "radix-ui",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/dropdown-menu.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/dropdown-menu.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/dropdown-menu.css",
+          "type": "registry:file",
+          "target": "~/components/roc/dropdown-menu.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "tooltip",
+      "type": "registry:component",
+      "title": "Tooltip",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react",
+        "radix-ui",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/tooltip.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/tooltip.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/tooltip.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tooltip.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "expandable-card",
       "type": "registry:component",
       "title": "Expandable Card",

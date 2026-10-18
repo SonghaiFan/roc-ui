@@ -1,0 +1,59 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="accordion-item"] {
+  border-bottom: 1px solid var(--roc-line, #e4e4e4);
+}
+.roc-ui[data-slot="accordion-item"]:last-child {
+  border-bottom: 0;
+}
+.roc-ui-accordion-heading {
+  margin: 0;
+  font: inherit;
+}
+.roc-ui[data-slot="accordion-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 0;
+  background: transparent;
+  width: 100%;
+  padding: 16px 0;
+  text-align: left;
+  font-weight: 500;
+  cursor: pointer;
+}
+.roc-ui[data-slot="accordion-trigger"] svg {
+  transition: transform 300ms cubic-bezier(0.22, 0.8, 0.25, 1);
+  color: var(--roc-muted, #888);
+}
+.roc-ui[data-slot="accordion-trigger"][data-state="open"] svg {
+  transform: rotate(180deg);
+}
+.roc-ui-accordion-layout {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 320ms cubic-bezier(0.22, 0.8, 0.25, 1);
+}
+.roc-ui-accordion-layout[data-open="false"] {
+  grid-template-rows: 0fr;
+}
+.roc-ui-accordion-clip {
+  min-height: 0;
+  overflow: hidden;
+}
+.roc-ui-accordion-body {
+  padding: 0 0 18px;
+  line-height: 1.65;
+  color: var(--roc-muted, #737373);
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-ui[data-slot="accordion-trigger"] svg {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roc-ui-accordion-layout {
+    transition: none;
+  }
+}

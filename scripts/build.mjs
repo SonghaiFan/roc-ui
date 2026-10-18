@@ -1,6 +1,11 @@
 import { build } from "esbuild";
 import { mkdir, readFile, writeFile, cp, rm } from "node:fs/promises";
+const foundationNames =
+  "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip".split(
+    " ",
+  );
 const names = [
+  ...foundationNames,
   "expandable-card",
   "folder-fan",
   "source-stack",
@@ -24,12 +29,21 @@ await mkdir("public/r", { recursive: true });
 await mkdir("public/source", { recursive: true });
 for (const name of names) {
   const files = [],
-    seen = new Set();
+    seen = new Set(),
+    dependencies = new Set(["react"]);
   async function collect(file) {
     if (seen.has(file)) return;
     seen.add(file);
     files.push(file);
     const content = await readFile(`registry/roc/${file}`, "utf8");
+    for (const match of content.matchAll(/from\s*["']([^./][^"']+)["']/g)) {
+      const spec = match[1];
+      dependencies.add(
+        spec.startsWith("@")
+          ? spec.split("/").slice(0, 2).join("/")
+          : spec.split("/")[0],
+      );
+    }
     if (file.endsWith(".js")) {
       try {
         await readFile(`registry/roc/${file.replace(/\.js$/, ".d.ts")}`);
@@ -54,6 +68,7 @@ for (const name of names) {
   }
   await collect(`${name}.tsx`);
   await collect("SOURCE-LICENSE.txt");
+  if (foundationNames.includes(name)) await collect("SHADCN-LICENSE.txt");
   const item = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
     name,
@@ -63,7 +78,7 @@ for (const name of names) {
       .map((x) => x[0].toUpperCase() + x.slice(1))
       .join(" "),
     description: "ROC: retained identity and coherent layout changes.",
-    dependencies: ["react"],
+    dependencies: [...dependencies],
     files: [],
   };
   for (const file of files) {
@@ -94,11 +109,16 @@ await build({
   entryPoints: ["src/main.tsx"],
   bundle: true,
   minify: true,
+  legalComments: "linked",
   format: "esm",
   outdir: "dist/assets",
   target: "es2022",
+  supported: { "template-literal": false },
   define: { "process.env.NODE_ENV": '"production"' },
 });
+// Keep bundled dependency notices alongside the script, without whitespace-only lines.
+const notices = "dist/assets/main.js.LEGAL.txt";
+await writeFile(notices, (await readFile(notices, "utf8")).replace(/[ \t]+$/gm, ""));
 await writeFile(
   "dist/index.html",
   `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ROC — a design space for reusable interfaces that preserve object identity. Interactive React components, source code, and continuity contracts."><meta name="theme-color" content="#fafbf8"><title>ROC — Objects, in continuity</title><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./assets/main.css"></head><body><div id="root"></div><script type="module" src="./assets/main.js"></script></body></html>`,

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider",
+  "type": "registry:component",
+  "title": "Slider",
+  "description": "ROC: retained identity and coherent layout changes.",
+  "dependencies": [
+    "react",
+    "radix-ui",
+    "clsx"
+  ],
+  "files": [
+    {
+      "path": "registry/roc/slider.tsx",
+      "type": "registry:file",
+      "target": "~/components/roc/slider.tsx",
+      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt and upstream provenance.\n\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"./utils\";\nimport { Slider as SliderPrimitive } from \"radix-ui\";\n\nfunction Slider({\n  className,\n  defaultValue,\n  value,\n  min = 0,\n  max = 100,\n  thumbLabels,\n  ...props\n}: React.ComponentProps<typeof SliderPrimitive.Root> & {\n  thumbLabels?: string[];\n}) {\n  const _values = React.useMemo(\n    () =>\n      Array.isArray(value)\n        ? value\n        : Array.isArray(defaultValue)\n          ? defaultValue\n          : [min, max],\n    [value, defaultValue, min, max],\n  );\n\n  return (\n    <SliderPrimitive.Root\n      data-slot=\"slider\"\n      defaultValue={defaultValue}\n      value={value}\n      min={min}\n      max={max}\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    >\n      <SliderPrimitive.Track data-slot=\"slider-track\" className={cn(\"roc-ui\")}>\n        <SliderPrimitive.Range\n          data-slot=\"slider-range\"\n          className={cn(\"roc-ui\")}\n        />\n      </SliderPrimitive.Track>\n      {Array.from({ length: _values.length }, (_, index) => (\n        <SliderPrimitive.Thumb\n          aria-label={\n            thumbLabels?.[index] ??\n            (_values.length === 1 ? props[\"aria-label\"] : undefined)\n          }\n          data-slot=\"slider-thumb\"\n          key={index}\n          className=\"roc-ui\"\n        />\n      ))}\n    </SliderPrimitive.Root>\n  );\n}\n\nexport { Slider };\n\nimport \"./slider.css\";\n"
+    },
+    {
+      "path": "registry/roc/utils.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/slider.css",
+      "type": "registry:file",
+      "target": "~/components/roc/slider.css",
+      "content": "@import \"./ui-base.css\";\n.roc-ui[data-slot=\"slider\"] {\n  display: flex;\n  align-items: center;\n  position: relative;\n  width: 100%;\n  height: 36px;\n  touch-action: none;\n  user-select: none;\n}\n.roc-ui[data-slot=\"slider-track\"] {\n  position: relative;\n  flex-grow: 1;\n  height: 4px;\n  border-radius: 99px;\n  background: var(--roc-line, #e2e2e2);\n  overflow: hidden;\n}\n.roc-ui[data-slot=\"slider-range\"] {\n  position: absolute;\n  height: 100%;\n  background: var(--roc-ink, #252525);\n}\n.roc-ui[data-slot=\"slider-thumb\"] {\n  display: block;\n  position: relative;\n  width: 18px;\n  height: 18px;\n  border: 1px solid var(--roc-line, #bcbcbc);\n  border-radius: 50%;\n  background: var(--roc-paper, #fff);\n  box-shadow: 0 1px 3px #0001;\n}\n.roc-ui[data-slot=\"slider-thumb\"]::before {\n  content: \"\";\n  position: absolute;\n  inset: -9px;\n}\n.roc-ui[data-slot=\"slider\"][data-orientation=\"vertical\"] {\n  flex-direction: column;\n  width: 36px;\n  height: 180px;\n}\n.roc-ui[data-slot=\"slider-track\"][data-orientation=\"vertical\"] {\n  width: 4px;\n  height: 100%;\n}\n.roc-ui[data-slot=\"slider-range\"][data-orientation=\"vertical\"] {\n  width: 100%;\n}\n"
+    },
+    {
+      "path": "registry/roc/ui-base.css",
+      "type": "registry:file",
+      "target": "~/components/roc/ui-base.css",
+      "content": "/* Shared ROC foundations. No global reset or host stylesheet required. */\n.roc-ui {\n  box-sizing: border-box;\n  font: inherit;\n  font-size: 13px;\n  color: var(--roc-ink, #252525);\n}\n.roc-ui *,\n.roc-ui *::before,\n.roc-ui *::after {\n  box-sizing: border-box;\n}\n.roc-ui:focus-visible {\n  outline: 2px solid var(--roc-focus, #737373);\n  outline-offset: 3px;\n}\n.roc-ui:disabled,\n.roc-ui[data-disabled] {\n  opacity: 0.45;\n  cursor: not-allowed;\n}\n.roc-ui-icon,\n.roc-ui > svg {\n  width: 16px;\n  height: 16px;\n  flex-shrink: 0;\n  pointer-events: none;\n}\n.roc-ui-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n@keyframes roc-ui-reveal {\n  from {\n    opacity: 0;\n    transform: translateY(4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes roc-ui-dismiss {\n  from {\n    opacity: 1;\n  }\n  to {\n    opacity: 0;\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  .roc-ui,\n  .roc-ui::before,\n  .roc-ui::after {\n    transition-duration: 0s !important;\n    animation-duration: 0.01ms !important;\n  }\n}\n"
+    },
+    {
+      "path": "registry/roc/SOURCE-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SOURCE-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2026 Songhai\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "path": "registry/roc/SHADCN-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SHADCN-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2023 shadcn\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    }
+  ]
+}

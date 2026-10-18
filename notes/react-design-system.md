@@ -13,7 +13,7 @@ component.css + surface.css component styles and small shared surface rules
 pure TypeScript helpers    geometry and analytic springs
 ```
 
-Registry files do not import `src/`, application stores, routers, databases, generated assets or Syuze/Franklin runtime modules. React 19 is the runtime dependency. CSS imports require a bundler that handles CSS. DOM selection, media, animation and native dialog/popover work run after mount; the components also server-render without accessing `window` during render.
+Registry files do not import `src/`, application stores, routers, databases, generated assets or Syuze/Franklin runtime modules. The original ten components depend on React 19. The fifteen shadcn-derived foundations also declare Radix, icon and utility packages where imported; see [foundation contracts](shadcn-foundations.md). CSS imports require a bundler that handles CSS. DOM selection, media, animation and native dialog/popover work run after mount; the components also server-render without accessing `window` during render.
 
 The original MIT notice remains in each install. Source provenance identifies where a behaviour came from, not a requirement to install that application.
 
@@ -90,7 +90,7 @@ The layout is informed by the [shadcn create preview](https://ui.shadcn.com/crea
 
 - `npm run check`: strict TypeScript.
 - `npm run build && npm test`: every registry payload matches source and includes all local JS/CSS imports; no legacy factory, gallery dependency or sample asset is installed.
-- `npm run test:consumer`: materializes only downloaded registry payloads, compiles and server-renders all ten, and builds a standalone browser fixture under `dist/consumer-check/`. Run after building. A subsequent build removes that fixture before deployment.
+- `npm run test:consumer`: materializes only downloaded registry payloads, compiles and server-renders all twenty-five, and builds a standalone browser fixture under `dist/consumer-check/`. Run after building. A subsequent build removes that fixture before deployment.
 - `tests/consumer.scenario.js`: independent StrictMode consumer, no gallery CSS; controlled siblings, custom audio composition and custom editor action.
 - `tests/design-space.scenario.js`: masonry dimensions, theme/filter/node preservation, real media, editing, reading return, mobile and reduced motion.
 - `tests/neutral-shell.scenario.js`: automatic/pinned panel visibility, keyboard focus return, neutral chrome, full canvas width, retained edits and narrow-host access.

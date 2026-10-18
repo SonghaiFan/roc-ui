@@ -1,0 +1,51 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion",
+  "type": "registry:component",
+  "title": "Accordion",
+  "description": "ROC: retained identity and coherent layout changes.",
+  "dependencies": [
+    "react",
+    "radix-ui",
+    "lucide-react",
+    "clsx"
+  ],
+  "files": [
+    {
+      "path": "registry/roc/accordion.tsx",
+      "type": "registry:file",
+      "target": "~/components/roc/accordion.tsx",
+      "content": "\"use client\";\n// Adapted from shadcn/ui (MIT). Retain panels and make reversal interruptible.\nimport * as React from \"react\";\nimport { Accordion as Primitive } from \"radix-ui\";\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { cn } from \"./utils\";\nimport \"./accordion.css\";\nconst Values = React.createContext<string[]>([]),\n  ItemOpen = React.createContext(false);\nfunction Accordion(props: React.ComponentProps<typeof Primitive.Root>) {\n  const [internal, setInternal] = React.useState<string | string[]>(\n    props.defaultValue ?? (props.type === \"multiple\" ? [] : \"\"),\n  );\n  const value = props.value === undefined ? internal : props.value;\n  const change = (next: string | string[]) => {\n    if (props.value === undefined) setInternal(next);\n    if (props.type === \"multiple\") props.onValueChange?.(next as string[]);\n    else props.onValueChange?.(next as string);\n  };\n  const root =\n    props.type === \"multiple\" ? (\n      <Primitive.Root\n        {...props}\n        value={value as string[]}\n        onValueChange={change}\n      />\n    ) : (\n      <Primitive.Root\n        {...props}\n        value={value as string}\n        onValueChange={change}\n      />\n    );\n  return (\n    <Values.Provider value={Array.isArray(value) ? value : [value]}>\n      {root}\n    </Values.Provider>\n  );\n}\nfunction AccordionItem({\n  className,\n  value,\n  ...props\n}: React.ComponentProps<typeof Primitive.Item>) {\n  const open = React.useContext(Values).includes(value);\n  return (\n    <ItemOpen.Provider value={open}>\n      <Primitive.Item\n        {...props}\n        value={value}\n        data-slot=\"accordion-item\"\n        className={cn(\"roc-ui\", className)}\n      />\n    </ItemOpen.Provider>\n  );\n}\nfunction AccordionTrigger({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof Primitive.Trigger>) {\n  return (\n    <Primitive.Header className=\"roc-ui-accordion-heading\">\n      <Primitive.Trigger\n        {...props}\n        data-slot=\"accordion-trigger\"\n        className={cn(\"roc-ui\", className)}\n      >\n        {children}\n        <ChevronDownIcon aria-hidden=\"true\" className=\"roc-ui-icon\" />\n      </Primitive.Trigger>\n    </Primitive.Header>\n  );\n}\nfunction AccordionContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof Primitive.Content>) {\n  const open = React.useContext(ItemOpen);\n  return (\n    <Primitive.Content\n      {...props}\n      forceMount\n      inert={!open}\n      aria-hidden={!open}\n      data-slot=\"accordion-content\"\n      className={cn(\"roc-ui\", className)}\n    >\n      <div className=\"roc-ui-accordion-layout\" data-open={open}>\n        <div className=\"roc-ui-accordion-clip\">\n          <div className=\"roc-ui-accordion-body\">{children}</div>\n        </div>\n      </div>\n    </Primitive.Content>\n  );\n}\nexport { Accordion, AccordionItem, AccordionTrigger, AccordionContent };\n"
+    },
+    {
+      "path": "registry/roc/utils.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/accordion.css",
+      "type": "registry:file",
+      "target": "~/components/roc/accordion.css",
+      "content": "@import \"./ui-base.css\";\n.roc-ui[data-slot=\"accordion-item\"] {\n  border-bottom: 1px solid var(--roc-line, #e4e4e4);\n}\n.roc-ui[data-slot=\"accordion-item\"]:last-child {\n  border-bottom: 0;\n}\n.roc-ui-accordion-heading {\n  margin: 0;\n  font: inherit;\n}\n.roc-ui[data-slot=\"accordion-trigger\"] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 20px;\n  border: 0;\n  background: transparent;\n  width: 100%;\n  padding: 16px 0;\n  text-align: left;\n  font-weight: 500;\n  cursor: pointer;\n}\n.roc-ui[data-slot=\"accordion-trigger\"] svg {\n  transition: transform 300ms cubic-bezier(0.22, 0.8, 0.25, 1);\n  color: var(--roc-muted, #888);\n}\n.roc-ui[data-slot=\"accordion-trigger\"][data-state=\"open\"] svg {\n  transform: rotate(180deg);\n}\n.roc-ui-accordion-layout {\n  display: grid;\n  grid-template-rows: 1fr;\n  transition: grid-template-rows 320ms cubic-bezier(0.22, 0.8, 0.25, 1);\n}\n.roc-ui-accordion-layout[data-open=\"false\"] {\n  grid-template-rows: 0fr;\n}\n.roc-ui-accordion-clip {\n  min-height: 0;\n  overflow: hidden;\n}\n.roc-ui-accordion-body {\n  padding: 0 0 18px;\n  line-height: 1.65;\n  color: var(--roc-muted, #737373);\n}\n@media (prefers-reduced-motion: reduce) {\n  .roc-ui[data-slot=\"accordion-trigger\"] svg {\n    transition: none;\n  }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .roc-ui-accordion-layout {\n    transition: none;\n  }\n}\n"
+    },
+    {
+      "path": "registry/roc/ui-base.css",
+      "type": "registry:file",
+      "target": "~/components/roc/ui-base.css",
+      "content": "/* Shared ROC foundations. No global reset or host stylesheet required. */\n.roc-ui {\n  box-sizing: border-box;\n  font: inherit;\n  font-size: 13px;\n  color: var(--roc-ink, #252525);\n}\n.roc-ui *,\n.roc-ui *::before,\n.roc-ui *::after {\n  box-sizing: border-box;\n}\n.roc-ui:focus-visible {\n  outline: 2px solid var(--roc-focus, #737373);\n  outline-offset: 3px;\n}\n.roc-ui:disabled,\n.roc-ui[data-disabled] {\n  opacity: 0.45;\n  cursor: not-allowed;\n}\n.roc-ui-icon,\n.roc-ui > svg {\n  width: 16px;\n  height: 16px;\n  flex-shrink: 0;\n  pointer-events: none;\n}\n.roc-ui-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n@keyframes roc-ui-reveal {\n  from {\n    opacity: 0;\n    transform: translateY(4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes roc-ui-dismiss {\n  from {\n    opacity: 1;\n  }\n  to {\n    opacity: 0;\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  .roc-ui,\n  .roc-ui::before,\n  .roc-ui::after {\n    transition-duration: 0s !important;\n    animation-duration: 0.01ms !important;\n  }\n}\n"
+    },
+    {
+      "path": "registry/roc/SOURCE-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SOURCE-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2026 Songhai\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "path": "registry/roc/SHADCN-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SHADCN-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2023 shadcn\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    }
+  ]
+}

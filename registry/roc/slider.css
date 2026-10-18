@@ -1,0 +1,50 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="slider"] {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 36px;
+  touch-action: none;
+  user-select: none;
+}
+.roc-ui[data-slot="slider-track"] {
+  position: relative;
+  flex-grow: 1;
+  height: 4px;
+  border-radius: 99px;
+  background: var(--roc-line, #e2e2e2);
+  overflow: hidden;
+}
+.roc-ui[data-slot="slider-range"] {
+  position: absolute;
+  height: 100%;
+  background: var(--roc-ink, #252525);
+}
+.roc-ui[data-slot="slider-thumb"] {
+  display: block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--roc-line, #bcbcbc);
+  border-radius: 50%;
+  background: var(--roc-paper, #fff);
+  box-shadow: 0 1px 3px #0001;
+}
+.roc-ui[data-slot="slider-thumb"]::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+}
+.roc-ui[data-slot="slider"][data-orientation="vertical"] {
+  flex-direction: column;
+  width: 36px;
+  height: 180px;
+}
+.roc-ui[data-slot="slider-track"][data-orientation="vertical"] {
+  width: 4px;
+  height: 100%;
+}
+.roc-ui[data-slot="slider-range"][data-orientation="vertical"] {
+  width: 100%;
+}

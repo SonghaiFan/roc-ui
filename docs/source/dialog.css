@@ -1,0 +1,89 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="dialog-overlay"] {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #00000030;
+  animation: roc-ui-dismiss 160ms reverse;
+}
+.roc-ui[data-slot="dialog-overlay"][data-state="closed"] {
+  animation: roc-ui-dismiss 160ms;
+}
+.roc-ui[data-slot="dialog-content"] {
+  position: fixed;
+  z-index: 51;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  display: grid;
+  gap: 20px;
+  width: min(480px, calc(100vw - 40px));
+  max-height: calc(
+    100dvh - max(24px, env(safe-area-inset-top), var(--roc-safe-top, 0px)) -
+      max(24px, env(safe-area-inset-bottom), var(--roc-safe-bottom, 0px))
+  );
+  overflow: auto;
+  padding: 24px;
+  border: 1px solid var(--roc-line, #dedede);
+  border-radius: var(--roc-radius, 12px);
+  background: var(--roc-paper, #fff);
+  box-shadow: 0 16px 64px #00000018;
+  transition:
+    top 320ms cubic-bezier(0.22, 0.8, 0.25, 1),
+    translate 320ms cubic-bezier(0.22, 0.8, 0.25, 1),
+    width 320ms cubic-bezier(0.22, 0.8, 0.25, 1),
+    border-radius 320ms;
+  animation: roc-ui-reveal 180ms ease-out;
+}
+.roc-ui[data-slot="dialog-content"][data-state="closed"] {
+  animation: roc-ui-dismiss 160ms;
+}
+.roc-ui-dialog-dismiss {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+}
+.roc-ui[data-slot="dialog-header"] {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 18px;
+}
+.roc-ui[data-slot="dialog-title"] {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 550;
+}
+.roc-ui[data-slot="dialog-description"] {
+  margin: 0;
+  color: var(--roc-muted, #737373);
+  line-height: 1.6;
+}
+.roc-ui[data-slot="dialog-footer"] {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+@media (max-width: 640px) {
+  .roc-ui[data-slot="dialog-content"] {
+    top: calc(
+      100% - max(12px, env(safe-area-inset-bottom), var(--roc-safe-bottom, 0px))
+    );
+    translate: -50% -100%;
+    width: calc(
+      100vw - max(12px, env(safe-area-inset-left), var(--roc-safe-left, 0px)) -
+        max(12px, env(safe-area-inset-right), var(--roc-safe-right, 0px))
+    );
+    padding: 22px;
+  }
+}

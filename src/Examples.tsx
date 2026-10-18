@@ -1,3 +1,5 @@
+import { FoundationExample } from "./FoundationExamples";
+import { foundationIds } from "./foundations";
 import { ImageViewport } from "../registry/roc/image-viewport";
 import { VoicePlayer, createPlaybackGroup } from "../registry/roc/voice-player";
 import { SelectionToolbar } from "../registry/roc/selection-toolbar";
@@ -19,6 +21,7 @@ const tabs = [
 export function Example({ id, settings }: { id: string; settings: Settings }) {
   const [value, setValue] = useState("notes"),
     [message, setMessage] = useState("");
+  if (foundationIds.includes(id)) return <FoundationExample id={id} />;
   if (id === "image-viewport")
     return (
       <ImageViewport active naturalWidth={960} naturalHeight={640}>

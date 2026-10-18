@@ -1,0 +1,24 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="textarea"] {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  border: 1px solid var(--roc-line, #dcdcdc);
+  border-radius: var(--roc-radius, 8px);
+  padding: 10px 12px;
+  background: var(--roc-paper, #fff);
+  line-height: 1.65;
+}
+.roc-ui[data-slot="textarea"]::placeholder {
+  color: var(--roc-muted, #888);
+}
+.roc-ui[data-slot="textarea"][aria-invalid="true"] {
+  border-color: #bd4545;
+}
+@media (pointer: coarse) {
+  .roc-ui[data-slot="textarea"] {
+    font-size: 16px;
+  }
+}

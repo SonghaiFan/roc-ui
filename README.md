@@ -4,9 +4,34 @@ A React design system for objects that keep their identity through interaction.
 
 [Open the design space](https://songhaifan.github.io/roc-ui/) · [Component contracts](notes/react-design-system.md) · [ROC design skill](https://github.com/SonghaiFan/responsive-object-continuity)
 
-Ten independent components, displayed together in a responsive masonry canvas. Try the live objects, adjust the theme, inspect their source, and install only what you need. React + TypeScript + component-scoped CSS. MIT licensed.
+Twenty-five independent components, displayed together in a responsive masonry canvas. Try the live objects, adjust the theme, inspect their source, and install only what you need. React + TypeScript + component-scoped CSS. MIT licensed.
 
-## Components
+## shadcn foundations
+
+Fifteen common shadcn/ui components are downloaded from the official registry and adapted for ROC: **Button, Badge, Card, Input, Textarea, Checkbox, Switch, Slider, Separator, Tabs, Accordion, Dialog, Popover, Dropdown Menu and Tooltip**. The source snapshots and MIT license are preserved. Radix supplies the accessible primitives; ROC adds retained panels, stable feedback, responsive surfaces and scoped styles.
+
+[Adaptation contracts and limits](notes/shadcn-foundations.md) · [Original source snapshots](upstream/shadcn/)
+
+```sh
+npx shadcn@latest add https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/tabs.json
+```
+
+The CLI installs the selected component, its local source/CSS and its declared packages. No Tailwind setup is required. Use the familiar compound API:
+
+```tsx
+<Tabs defaultValue="write">
+  <TabsList>
+    <TabsTrigger value="write">Write</TabsTrigger>
+    <TabsTrigger value="read">Read</TabsTrigger>
+  </TabsList>
+  <TabsContent value="write"><Textarea aria-label="Draft" /></TabsContent>
+  <TabsContent value="read">Reading view</TabsContent>
+</Tabs>
+```
+
+Install `textarea` separately for this composition. Tabs and Accordion retain inactive editors; transient overlays retain caller-owned data but unmount their contents after dismissal.
+
+## Source-informed components
 
 | Component | Behaviour |
 | --- | --- |
@@ -31,7 +56,7 @@ In a React project configured for shadcn:
 npx shadcn@latest add https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/voice-player.json
 ```
 
-Replace `voice-player` with any component's kebab-case name. Files install into `components/roc`. React 19+ and CSS import support are required; there is no animation-package dependency. Each item includes its own stylesheet, small shared surface rules, necessary TypeScript helpers and the MIT notice. It does not install the gallery or unrelated component styles.
+Replace `voice-player` with any component's kebab-case name. Files install into `components/roc`. React 19+ and CSS import support are required; there is no animation-package dependency. The shadcn-derived foundations declare Radix and their utility/icon dependencies as needed. Each item includes its own stylesheet, small shared surface rules, necessary TypeScript helpers and the MIT notice. It does not install the gallery or unrelated component styles.
 
 ```tsx
 import { VoicePlayer } from "./components/roc/voice-player";
@@ -64,7 +89,7 @@ The layout follows the preview-first approach of [shadcn create](https://ui.shad
 
 ## 中文
 
-ROC 是一套独立的 React 组件，设计空间采用 masonry 布局，直接铺开所有可操作的组件。组件不依赖 Syuze、Franklin Board 或画廊运行时；示例数据、业务行为和展示页面与可下载代码分开。可组合音频控件、自定义选区操作，或把自己的 React 内容放进托盘。来源项目的物理参数和对象连续性原则被保留为可复用行为，而不是打包整个应用。
+ROC 现在包含 15 个基于 shadcn/ui 重做的基础组件，以及 10 个来自 Syuze / Franklin 交互经验的组件。基础组件保留组合 API 和 Radix 可访问性语义，再加入 ROC 的保留节点、响应式布局和连续反馈。ROC 是一套独立的 React 组件，设计空间采用 masonry 布局，直接铺开所有可操作的组件。组件不依赖 Syuze、Franklin Board 或画廊运行时；示例数据、业务行为和展示页面与可下载代码分开。可组合音频控件、自定义选区操作，或把自己的 React 内容放进托盘。来源项目的物理参数和对象连续性原则被保留为可复用行为，而不是打包整个应用。
 
 ## Develop and verify
 
@@ -81,7 +106,7 @@ npm run test:consumer
 
 The dev server builds once on startup; rebuild after edits. `npm run build` generates registry payloads in `public/r`, downloadable source in `public/source`, and the GitHub Pages snapshot in `docs`. Pages serves `main:/docs`.
 
-`test:consumer` compiles and server-renders only the downloaded registry files, then creates an independent StrictMode browser fixture. Browser scenarios in `tests/design-space.scenario.js`, `tests/consumer.scenario.js`, `tests/responsive-preview.scenario.js`, `tests/neutral-shell.scenario.js` and `tests/card-preview.scenario.js` run through Playwright CLI `run-code --filename …`. They currently target port 4190; adjust the origin for your server. Run the final build after consumer tests to remove the temporary fixture before deployment.
+`test:consumer` compiles and server-renders only the downloaded registry files, then creates an independent StrictMode browser fixture. Browser scenarios in `tests/design-space.scenario.js`, `tests/consumer.scenario.js`, `tests/responsive-preview.scenario.js`, `tests/neutral-shell.scenario.js`, `tests/foundations.scenario.js`, `tests/foundations-consumer.scenario.js` and `tests/card-preview.scenario.js` run through Playwright CLI `run-code --filename …`. They currently target port 4190; adjust the origin for your server. Run the final build after consumer tests to remove the temporary fixture before deployment.
 
 ## Provenance and scope
 

@@ -5,6 +5,7 @@ import {
   useState,
   type CSSProperties,
 } from "react";
+import { foundationIds } from "./foundations";
 import { catalog } from "./catalog";
 import { Example } from "./Examples";
 import { AutoHidePanel } from "./AutoHidePanel";
@@ -151,6 +152,7 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
   );
 }
 const order = [
+  ...foundationIds,
   "continuous-tabs",
   "voice-player",
   "source-tray",
@@ -359,6 +361,11 @@ export function App() {
         ? "ui-sans-serif, system-ui, sans-serif"
         : "Georgia, serif",
   } as CSSProperties;
+  useLayoutEffect(() => {
+    if (!embedded) return;
+    for (const [name, value] of Object.entries(style))
+      document.documentElement.style.setProperty(name, String(value));
+  }, [embedded, color, radius, surface, font]);
   if (embedded)
     return (
       <div className="design-space embedded-preview" style={style}>
@@ -409,7 +416,7 @@ export function App() {
                   <Example id={item.id} settings={settings} />
                 </div>
                 <footer className="component-footer">
-                  <span>{hints[item.id]}</span>
+                  <span>{hints[item.id] || item.description}</span>
                   <button
                     type="button"
                     onClick={() => open(item.id)}

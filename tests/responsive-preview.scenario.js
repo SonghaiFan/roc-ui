@@ -26,7 +26,7 @@ async (page) => {
   await page
     .getByRole("button", { name: "Design settings", exact: true })
     .click();
-  await page.getByRole("button", { name: /09 Page book/ }).click();
+  await page.getByRole("button", { name: /Page book/ }).click();
   await frame.waitForFunction(
     () => document.querySelector(".preview-canvas").dataset.focused === "true",
   );

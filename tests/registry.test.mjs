@@ -46,3 +46,29 @@ for (const entry of registry.items)
       );
     }
   });
+
+for (const entry of registry.items)
+  test(`${entry.name}: external imports and derived-source licenses ship with the item`, async () => {
+    const item = JSON.parse(
+      await readFile(`public/r/${entry.name}.json`, "utf8"),
+    );
+    const declared = new Set(item.dependencies);
+    for (const file of item.files) {
+      for (const match of file.content.matchAll(
+        /from\s*["']([^./][^"']+)["']/g,
+      )) {
+        const spec = match[1],
+          dependency = spec.startsWith("@")
+            ? spec.split("/").slice(0, 2).join("/")
+            : spec.split("/")[0];
+        assert.ok(
+          declared.has(dependency),
+          `Undeclared package: ${dependency}`,
+        );
+      }
+      if (file.content.includes("Adapted from shadcn/ui"))
+        assert.ok(
+          item.files.some((f) => f.path.endsWith("SHADCN-LICENSE.txt")),
+        );
+    }
+  });

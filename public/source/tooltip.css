@@ -1,0 +1,18 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="tooltip-content"] {
+  z-index: 60;
+  max-width: min(260px, calc(100vw - 24px));
+  padding: 8px 11px;
+  border-radius: 6px;
+  background: var(--roc-ink, #252525);
+  color: var(--roc-paper, #fff);
+  font-size: 11px;
+  line-height: 1.5;
+  animation: roc-ui-reveal 140ms ease-out;
+}
+.roc-ui[data-slot="tooltip-content"][data-state="closed"] {
+  animation: roc-ui-dismiss 100ms;
+}
+.roc-ui[data-slot="tooltip-content"] svg {
+  fill: var(--roc-ink, #252525);
+}

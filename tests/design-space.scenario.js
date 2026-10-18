@@ -17,8 +17,8 @@ async (page) => {
       30,
   );
   assert(
-    (await view.locator(".component-card").count()) === 10,
-    "All ten components mounted in the masonry canvas",
+    (await view.locator(".component-card").count()) === 25,
+    "All twenty-five components mounted in the masonry canvas",
   );
   const boxes = await view.locator(".component-card").evaluateAll((nodes) =>
     nodes.map((n) => {

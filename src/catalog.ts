@@ -1,4 +1,6 @@
+import { foundations } from "./foundations";
 export const catalog = [
+  ...foundations,
   {
     id: "expandable-card",
     actions: ["Expand", "Press"],
