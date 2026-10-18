@@ -10,9 +10,9 @@ ROC UI turns selected principles from the Responsive Object Continuity skill int
 
 | Component | Continuity contract |
 | --- | --- |
-| Expandable card | One mounted content subtree; drafts survive opening and closing |
+| Expandable card | One fixed reading composition; the original editor travels to the top layer and back |
 | Folder fan | Stable keyed cards travel between a pocket and an expanded collection |
-| Source stack | One source subtree through pile, spread and inline inspection |
+| Source stack | One source subtree through pile, spread and modal inspection |
 | Focus lanes | Shared row coordinates, stable lane order and retained event selection |
 | Continuous tabs | One selection marker; label geometry stays fixed |
 
@@ -23,7 +23,7 @@ Each gallery entry includes a working preview, complete source, usage, props, sc
 The gallery prioritizes live objects over documentation. Filter by interaction (Hover, Press, Expand, Select), open a component's workspace, and tune it while keeping the same mounted preview. Closing returns that same object and its draft state to the gallery.
 
 - Folder controls: colour, glass/paper material, up/right opening, press/hover trigger, spread and duration.
-- All components expose motion duration; card/source/tab components expose colour.
+- Reading previews use Syuze’s critically damped presentation profiles (opening mass .48, return mass .32, stiffness 100). Other transitions retain duration controls; source duration controls spread only.
 - A compact phone-width preview helps inspect layout; actual mobile layout stacks the preview above its controls.
 - Settings are encoded in the URL and restored by shared links and browser navigation. Reset restores defaults.
 - “Reverse mid-flight” and “Edit, close & return” are interactive continuity exercises.
@@ -40,7 +40,7 @@ In a React project already configured for shadcn:
 npx shadcn@latest add https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/folder-fan.json
 ```
 
-Replace `folder-fan` with any component name in the table, using kebab-case. Files install into `components/roc` at the project root. Adjust your import to your project's alias configuration. All required local files are included; the three layout components share `use-continuity.ts` and every component shares `roc.css`. React 19+ is the supported baseline. There is no runtime animation-package dependency.
+Replace `folder-fan` with any component name in the table, using kebab-case. Files install into `components/roc` at the project root. Adjust your import to your project's alias configuration. All required local files are included; layout components share `use-continuity.ts`; reading previews additionally include `card-preview.tsx` and `presentation-spring.ts` and every component shares `roc.css`. React 19+ is the supported baseline. There is no runtime animation-package dependency.
 
 ```tsx
 import { FolderFan } from "./components/roc/folder-fan";
@@ -63,7 +63,7 @@ export function Collection() {
 }
 ```
 
-For manual installation, copy the chosen TSX file, `use-continuity.ts` and `roc.css` from `registry/roc` into one directory. Components import the stylesheet themselves. Customize the prefixed CSS and `--roc-*` tokens. Re-adding another component may ask about shared-file replacement; preserve your local customizations.
+For manual installation, copy all files listed in the chosen `public/r/*.json` payload (including the two presentation helpers for card/source previews) from `registry/roc` into one directory. Components import the stylesheet themselves. Customize the prefixed CSS and `--roc-*` tokens. Re-adding another component may ask about shared-file replacement; preserve your local customizations.
 
 ## 中文
 
@@ -101,13 +101,15 @@ npx shadcn@latest build registry.json --output /tmp/roc-registry-check
 
 ## Boundaries
 
-- The components use measured layout retargeting and interruptible CSS transitions. It does not preserve release velocity or emulate Syuze's physical spring profiles.
-- Expandable card is an in-place disclosure. It allows text reflow and is not a modal or fixed-typesetting document presentation.
+- Card/source inspection uses the actual analytic, critically damped Syuze presentation profiles. Like that viewer, retargeting starts with zero velocity. Other components still use layout retargeting and CSS transitions; they are not a physical copy of the Syuze canvas.
+- Expandable card is now a native modal reading surface with a fixed composition width. Width changes scale its content; long content scrolls and unwinds during return. The prior `duration` prop is deprecated and ignored for reading presentation.
 - Folder fan is intended for 2–5 non-interactive compact cards. It provides unfolding, not drag-to-file or a board data model.
-- Source stack is intended for 2–4 sources; caller-provided controls stay mounted. It is inline inspection, not a focus-trapped dialog.
+- Source stack is intended for 2–4 sources; caller-provided controls stay mounted. Inspection uses the same native modal presentation as the document card.
 - Focus lanes use discrete zero-based rows. Event IDs should be unique across lanes. They are not quantitative time-scale charts.
 - Continuous tabs uses selection buttons, not ARIA tabs/tabpanels. The application owns selected content.
 - Reduced motion, keyboard controls and focus return are covered by the local scenarios. Chromium checks do not certify every browser, assistive technology or device.
+
+The focused `tests/card-preview.scenario.js` scenario checks paper/editor identity, unchanged typesetting, caret preservation, interruption, landing geometry, scroll return, phone resize, source inspection and reduced motion. See [the source comparison](notes/syuze-card-presentation.md) for measured scope and remaining differences.
 
 ## License
 

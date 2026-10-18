@@ -7,6 +7,7 @@ async (page) => {
  await note.getByRole('button',{name:'Open note ↗'}).click();
  await note.getByRole('textbox',{name:'Your note',exact:true}).fill('Keep this draft across the gallery');
  const editor=await note.locator('textarea').elementHandle();
+ await page.keyboard.press("Escape");await page.waitForFunction(()=>!document.querySelector(".roc-card-dialog:modal"));
  await page.getByRole('button',{name:'Explore Expandable card',exact:true}).click();
  assert(await editor.evaluate(el=>el===document.querySelector('.is-detail textarea')&&el.value==='Keep this draft across the gallery'),'Gallery-to-detail retains editor node and draft');
  assert(await page.locator('header').evaluate(el=>el.inert),'Background chrome is inert during detail');
@@ -49,8 +50,8 @@ async (page) => {
  assert(await page.getByRole('slider',{name:'Spread',exact:true}).inputValue()==='12'&&!page.url().includes('?'),'Reset restores defaults and canonical URL');
  await page.getByRole('button',{name:'Close component'}).click();
  await page.getByRole('button',{name:'Explore Source stack',exact:true}).click();
- await page.getByRole('button',{name:'Unfold sources'}).click();const source=await page.getByRole('textbox',{name:'Source note'}).elementHandle();await page.getByRole('textbox',{name:'Source note'}).fill('Still the same source');
- await page.locator('.is-detail .roc-source').first().getByRole('button',{name:'Inspect ↗'}).click();await page.getByRole('button',{name:'Return ↙'}).click();
+ await page.getByRole('button',{name:'Unfold sources'}).click();const source=await page.getByRole('textbox',{name:'Source note'}).elementHandle();await page.locator('.is-detail .roc-source').first().getByRole('button',{name:'Inspect ↗'}).click();await page.getByRole('textbox',{name:'Source note'}).fill('Still the same source');
+ await page.getByRole('button',{name:'Return ↙'}).click();await page.waitForFunction(()=>!document.querySelector('.roc-card-dialog:modal'));
  assert(await source.evaluate(el=>el.value==='Still the same source'&&el.isConnected),'Source inspection retains the original input');
  await page.getByRole('button',{name:'Close component'}).click();
  await page.setViewportSize({width:390,height:844});

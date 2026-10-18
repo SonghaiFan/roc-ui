@@ -5,7 +5,7 @@ const root = { $schema:'https://ui.shadcn.com/schema/registry.json', name:'roc',
 await mkdir('public/r',{recursive:true});
 await mkdir('public/source',{recursive:true});
 for (const name of names) {
-  const files = [`${name}.tsx`,'use-continuity.ts','roc.css'];
+  const files = [`${name}.tsx`,'use-continuity.ts','roc.css', ...(['expandable-card','source-stack'].includes(name) ? ['card-preview.tsx','presentation-spring.ts'] : [])];
   const item = { $schema:'https://ui.shadcn.com/schema/registry-item.json', name, type:'registry:component', title:name.split('-').map(x=>x[0].toUpperCase()+x.slice(1)).join(' '), description:'ROC: retained identity and coherent layout changes.', dependencies:['react'], files:[] };
   for (const file of files) {
     const path=`registry/roc/${file}`;

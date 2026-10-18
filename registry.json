@@ -27,6 +27,16 @@
           "path": "registry/roc/roc.css",
           "type": "registry:file",
           "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/card-preview.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/card-preview.tsx"
+        },
+        {
+          "path": "registry/roc/presentation-spring.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/presentation-spring.ts"
         }
       ]
     },
@@ -81,6 +91,16 @@
           "path": "registry/roc/roc.css",
           "type": "registry:file",
           "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/card-preview.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/card-preview.tsx"
+        },
+        {
+          "path": "registry/roc/presentation-spring.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/presentation-spring.ts"
         }
       ]
     },

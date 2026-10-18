@@ -61,3 +61,26 @@
 .roc-tab-marker{transition:transform var(--roc-duration,360ms) cubic-bezier(.22,.8,.25,1),width var(--roc-duration,360ms) cubic-bezier(.22,.8,.25,1);background:var(--roc-marker,#fff)}
 @container(max-width:350px){.roc-folder-card{width:94px;height:143px}.roc-folder-card strong{font-size:17px}.roc-folder-toggle{width:200px}.roc-folder-back{width:190px}.roc-folder[data-direction=right] .roc-folder-toggle,.roc-folder[data-direction=right] .roc-folder-back{width:132px}.roc-folder[data-direction=right] .roc-folder-toggle{padding:16px}}
 @media(prefers-reduced-motion:reduce){.roc-folder *,.roc-source,.roc-lane,.roc-tab-marker{transition:none!important}}
+/* Retained reading composition. Native top-layer promotion avoids transformed
+   ancestor clipping without moving or remounting the editor subtree. */
+.roc-card-preview{width:100%;position:relative;color:var(--roc-ink,#2c302c)}
+.roc-return-slot{position:relative;width:100%}
+.roc-card-dialog{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;padding:0;margin:0;border:0;overflow:visible;background:transparent;color:inherit;box-sizing:border-box}
+.roc-card-dialog:not([open]){display:none}
+.roc-card-dialog.is-reading{position:fixed;inset:0;width:100vw;height:100dvh;overflow:hidden}
+.roc-card-dialog::backdrop{background:rgb(244 241 234 / calc(var(--roc-reveal,0)*.78));backdrop-filter:blur(calc(var(--roc-reveal,0)*10px))}
+.roc-preview-paper{position:absolute;left:0;top:0;margin:0;background:var(--roc-card-color,#fcfbf8);border:1px solid #e1dfd4;box-shadow:0 2px 5px #252d2108,0 12px 32px #252d210a;overflow:clip;transform-origin:0 0}
+.roc-preview-scroll{width:100%;overflow:hidden;overscroll-behavior:contain;scrollbar-width:thin}
+.roc-preview-extent{position:relative;width:100%}
+.roc-preview-composition{position:absolute;left:0;top:0;transform-origin:0 0;padding:38px;font-size:16px;line-height:1.75;font-family:inherit;box-sizing:border-box}
+.roc-preview-composition h3{font:normal 32px/1.2 Georgia,serif;margin:20px 0;letter-spacing:-.025em}
+.roc-preview-composition .roc-eyebrow{font-size:11px}
+.roc-preview-composition .roc-paper-body{height:auto;visibility:visible;overflow:visible;font-size:16px;line-height:1.75}
+.roc-preview-composition .roc-source-content{max-height:none;overflow:visible;font-size:16px;line-height:1.75}
+.roc-preview-close{position:fixed;right:max(24px,env(safe-area-inset-right));top:max(16px,env(safe-area-inset-top));border:1px solid #dddcd4;background:#fcfbf8f0;border-radius:24px;padding:10px 16px;font:13px system-ui!important;z-index:1;opacity:var(--roc-reveal,0)}
+.roc-preview-trigger{position:relative;min-height:36px;margin-top:8px}
+.roc-expand>.roc-card-preview{max-width:250px}
+.roc-source{padding:0!important;border:0;background:transparent;box-shadow:none;border-radius:0;min-height:0}
+.roc-source .roc-preview-composition h3{font-size:30px}
+.roc-source .roc-preview-trigger{font-size:11px!important}
+.roc-preview-composition .mini-landscape{height:160px}
