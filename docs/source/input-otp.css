@@ -1,0 +1,281 @@
+@import "./shadcn-base.css";
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+.roc-shadcn {
+  --roc-sh-spacing: 0.25rem;
+  --roc-sh-text-sm: 0.875rem;
+  --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
+  --roc-sh-radius-md: 7px;
+  --roc-sh-default-transition-duration: 150ms;
+  --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --roc-sh-color-foreground: #252525;
+  --roc-sh-color-destructive: #b42318;
+  --roc-sh-color-input: #dedede;
+  --roc-sh-color-ring: #737373;
+}
+.roc-s-33228ff7d583 {
+  pointer-events: none;
+}
+.roc-s-747355bdc2a2 {
+  position: absolute;
+}
+.roc-s-d2d9e1f13413 {
+  position: relative;
+}
+.roc-s-ce13093ad8c9 {
+  inset: 0px;
+}
+.roc-s-222f930b8752 {
+  display: flex;
+}
+.roc-s-099be97e1fa4 {
+  height: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-539ae144f076 {
+  height: calc(var(--roc-sh-spacing) * 9);
+}
+.roc-s-6bb768bd2263 {
+  width: calc(var(--roc-sh-spacing) * 9);
+}
+.roc-s-86a02c9ddb39 {
+  width: 1px;
+}
+.roc-s-71556df3b421 {
+  align-items: center;
+}
+.roc-s-a503dd374cca {
+  justify-content: center;
+}
+.roc-s-074569488cca {
+  gap: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-582305bd5096 {
+  border-block-style: var(--roc-sh-tw-border-style);
+  border-block-width: 1px;
+}
+.roc-s-baf794b99c10 {
+  border-right-style: var(--roc-sh-tw-border-style);
+  border-right-width: 1px;
+}
+.roc-s-1267095cdeb7 {
+  border-color: var(--roc-sh-color-input);
+}
+.roc-s-e710919d2da4 {
+  background-color: var(--roc-sh-color-foreground);
+}
+.roc-s-c74ab393b96d {
+  font-size: var(--roc-sh-text-sm);
+  line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-sm--line-height));
+}
+.roc-s-7de07d413c13 {
+  --roc-sh-tw-shadow: 0 1px 2px 0
+    var(--roc-sh-tw-shadow-color, rgb(0 0 0 / 0.05));
+  box-shadow:
+    var(--roc-sh-tw-inset-shadow), var(--roc-sh-tw-inset-ring-shadow),
+    var(--roc-sh-tw-ring-offset-shadow), var(--roc-sh-tw-ring-shadow),
+    var(--roc-sh-tw-shadow);
+}
+.roc-s-9952ed32207c {
+  transition-property: all;
+  transition-timing-function: var(
+    --roc-sh-tw-ease,
+    var(--roc-sh-default-transition-timing-function)
+  );
+  transition-duration: var(
+    --roc-sh-tw-duration,
+    var(--roc-sh-default-transition-duration)
+  );
+}
+.roc-s-9af9d554c39b {
+  --roc-sh-tw-duration: 1000ms;
+  transition-duration: 1000ms;
+}
+.roc-s-b30fc56058b6 {
+  --roc-sh-tw-outline-style: none;
+  outline-style: none;
+}
+.roc-s-18124ac5a3c8:first-child {
+  border-top-left-radius: var(--roc-sh-radius-md);
+  border-bottom-left-radius: var(--roc-sh-radius-md);
+}
+.roc-s-8281a5bc6910:first-child {
+  border-left-style: var(--roc-sh-tw-border-style);
+  border-left-width: 1px;
+}
+.roc-s-77677d75e38f:last-child {
+  border-top-right-radius: var(--roc-sh-radius-md);
+  border-bottom-right-radius: var(--roc-sh-radius-md);
+}
+.roc-s-db567af109b7:disabled {
+  cursor: not-allowed;
+}
+.roc-s-7d94f63f5883:has(:disabled) {
+  opacity: 50%;
+}
+.roc-s-1fac1d7d1df3[aria-invalid="true"] {
+  border-color: var(--roc-sh-color-destructive);
+}
+.roc-s-1cd4fc90ffcb[data-active="true"] {
+  z-index: 10;
+}
+.roc-s-e1a91ca4c90d[data-active="true"] {
+  border-color: var(--roc-sh-color-ring);
+}
+.roc-s-f365ce803878[data-active="true"] {
+  --roc-sh-tw-ring-shadow: var(--roc-sh-tw-ring-inset,) 0 0 0
+    calc(3px + var(--roc-sh-tw-ring-offset-width))
+    var(--roc-sh-tw-ring-color, currentcolor);
+  box-shadow:
+    var(--roc-sh-tw-inset-shadow), var(--roc-sh-tw-inset-ring-shadow),
+    var(--roc-sh-tw-ring-offset-shadow), var(--roc-sh-tw-ring-shadow),
+    var(--roc-sh-tw-shadow);
+}
+.roc-s-d4dc38c0d646[data-active="true"] {
+  --roc-sh-tw-ring-color: color-mix(in srgb, #737373 50%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    --roc-sh-tw-ring-color: color-mix(
+      in oklab,
+      var(--roc-sh-color-ring) 50%,
+      transparent
+    );
+  }
+}
+.roc-s-8c61c3cda480[data-active="true"][aria-invalid="true"] {
+  border-color: var(--roc-sh-color-destructive);
+}
+.roc-s-17ad384cb01c[data-active="true"][aria-invalid="true"] {
+  --roc-sh-tw-ring-color: color-mix(in srgb, #b42318 20%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    --roc-sh-tw-ring-color: color-mix(
+      in oklab,
+      var(--roc-sh-color-destructive) 20%,
+      transparent
+    );
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .roc-s-9daa2369a41b {
+    background-color: color-mix(in srgb, #dedede 30%, transparent);
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .roc-s-9daa2369a41b {
+      background-color: color-mix(
+        in oklab,
+        var(--roc-sh-color-input) 30%,
+        transparent
+      );
+    }
+  }
+  .roc-s-82b5f48135e0[data-active="true"][aria-invalid="true"] {
+    --roc-sh-tw-ring-color: color-mix(in srgb, #b42318 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --roc-sh-tw-ring-color: color-mix(
+        in oklab,
+        var(--roc-sh-color-destructive) 40%,
+        transparent
+      );
+    }
+  }
+}
+@property --roc-sh-tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --roc-sh-tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --roc-sh-tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --roc-sh-tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --roc-sh-tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --roc-sh-tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    :where(
+      .roc-shadcn,
+      .roc-shadcn *,
+      .roc-shadcn::before,
+      .roc-shadcn::after
+    ) {
+      --roc-sh-tw-border-style: solid;
+      --roc-sh-tw-shadow: 0 0 #0000;
+      --roc-sh-tw-shadow-color: initial;
+      --roc-sh-tw-shadow-alpha: 100%;
+      --roc-sh-tw-inset-shadow: 0 0 #0000;
+      --roc-sh-tw-inset-shadow-color: initial;
+      --roc-sh-tw-inset-shadow-alpha: 100%;
+      --roc-sh-tw-ring-color: initial;
+      --roc-sh-tw-ring-shadow: 0 0 #0000;
+      --roc-sh-tw-inset-ring-color: initial;
+      --roc-sh-tw-inset-ring-shadow: 0 0 #0000;
+      --roc-sh-tw-ring-inset: initial;
+      --roc-sh-tw-ring-offset-width: 0px;
+      --roc-sh-tw-ring-offset-color: #fff;
+      --roc-sh-tw-ring-offset-shadow: 0 0 #0000;
+      --roc-sh-tw-duration: initial;
+    }
+  }
+}

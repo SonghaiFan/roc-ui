@@ -55,6 +55,53 @@ react/cjs/react-jsx-runtime.production.js:
    * LICENSE file in the root directory of this source tree.
    */
 
+use-sync-external-store/cjs/use-sync-external-store-shim.production.js:
+  /**
+   * @license React
+   * use-sync-external-store-shim.production.js
+   *
+   * Copyright (c) Meta Platforms, Inc. and affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
+use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.production.js:
+  /**
+   * @license React
+   * use-sync-external-store-shim/with-selector.production.js
+   *
+   * Copyright (c) Meta Platforms, Inc. and affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
+use-sync-external-store/cjs/use-sync-external-store-with-selector.production.js:
+  /**
+   * @license React
+   * use-sync-external-store-with-selector.production.js
+   *
+   * Copyright (c) Meta Platforms, Inc. and affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
+decimal.js-light/decimal.js:
+  /*! decimal.js-light v2.5.1 https://github.com/MikeMcl/decimal.js-light/LICENCE */
+
+react-is/cjs/react-is.production.js:
+  /**
+   * @license React
+   * react-is.production.js
+   *
+   * Copyright (c) Meta Platforms, Inc. and affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
 lucide-react/dist/esm/shared/src/utils/toKebabCase.mjs:
 lucide-react/dist/esm/shared/src/utils/toLucideIconData.mjs:
 lucide-react/dist/esm/shared/src/utils/toCamelCase.mjs:
@@ -67,17 +114,38 @@ lucide-react/dist/esm/shared/src/utils/hasA11yProp.mjs:
 lucide-react/dist/esm/context.mjs:
 lucide-react/dist/esm/Icon.mjs:
 lucide-react/dist/esm/createLucideIcon.mjs:
+lucide-react/dist/esm/icons/arrow-down.mjs:
+lucide-react/dist/esm/icons/arrow-left.mjs:
+lucide-react/dist/esm/icons/arrow-right.mjs:
 lucide-react/dist/esm/icons/bold.mjs:
+lucide-react/dist/esm/icons/calendar.mjs:
 lucide-react/dist/esm/icons/check.mjs:
 lucide-react/dist/esm/icons/chevron-down.mjs:
 lucide-react/dist/esm/icons/chevron-left.mjs:
 lucide-react/dist/esm/icons/chevron-right.mjs:
+lucide-react/dist/esm/icons/chevron-up.mjs:
+lucide-react/dist/esm/icons/circle-check.mjs:
 lucide-react/dist/esm/icons/circle.mjs:
+lucide-react/dist/esm/icons/clock.mjs:
+lucide-react/dist/esm/icons/copy.mjs:
+lucide-react/dist/esm/icons/file-text.mjs:
+lucide-react/dist/esm/icons/folder.mjs:
+lucide-react/dist/esm/icons/grip-vertical.mjs:
+lucide-react/dist/esm/icons/house.mjs:
 lucide-react/dist/esm/icons/info.mjs:
 lucide-react/dist/esm/icons/italic.mjs:
+lucide-react/dist/esm/icons/loader-circle.mjs:
+lucide-react/dist/esm/icons/mail.mjs:
+lucide-react/dist/esm/icons/minus.mjs:
+lucide-react/dist/esm/icons/octagon-x.mjs:
+lucide-react/dist/esm/icons/panel-left.mjs:
+lucide-react/dist/esm/icons/plus.mjs:
+lucide-react/dist/esm/icons/search.mjs:
+lucide-react/dist/esm/icons/settings.mjs:
 lucide-react/dist/esm/icons/text-align-center.mjs:
 lucide-react/dist/esm/icons/text-align-end.mjs:
 lucide-react/dist/esm/icons/text-align-start.mjs:
+lucide-react/dist/esm/icons/triangle-alert.mjs:
 lucide-react/dist/esm/icons/underline.mjs:
 lucide-react/dist/esm/icons/x.mjs:
 lucide-react/dist/esm/lucide-react.mjs:
@@ -87,3 +155,27 @@ lucide-react/dist/esm/lucide-react.mjs:
    * This source code is licensed under the ISC license.
    * See the LICENSE file in the root directory of this source tree.
    */
+
+@tanstack/table-core/build/lib/index.mjs:
+  /**
+     * table-core
+     *
+     * Copyright (c) TanStack
+     *
+     * This source code is licensed under the MIT license found in the
+     * LICENSE.md file in the root directory of this source tree.
+     *
+     * @license MIT
+     */
+
+@tanstack/react-table/build/lib/index.mjs:
+  /**
+     * react-table
+     *
+     * Copyright (c) TanStack
+     *
+     * This source code is licensed under the MIT license found in the
+     * LICENSE.md file in the root directory of this source tree.
+     *
+     * @license MIT
+     */

@@ -1,3 +1,4 @@
+import { CatalogExample } from "./CatalogExamples";
 import { useState } from "react";
 import {
   Info,
@@ -399,5 +400,5 @@ export function MoreFoundationExample({ id }: { id: string }) {
         </Pagination>
       </div>
     );
-  return null;
+  return <CatalogExample id={id} />;
 }

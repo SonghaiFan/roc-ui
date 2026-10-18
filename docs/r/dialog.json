@@ -5,11 +5,11 @@
   "title": "Dialog",
   "description": "ROC: retained identity and coherent layout changes.",
   "dependencies": [
-    "react",
-    "lucide-react",
-    "radix-ui",
-    "clsx",
-    "class-variance-authority"
+    "react@^19.0.0",
+    "lucide-react@^1.59.0",
+    "radix-ui@^1.8.1",
+    "clsx@^2.1.1",
+    "class-variance-authority@^0.7.1"
   ],
   "files": [
     {

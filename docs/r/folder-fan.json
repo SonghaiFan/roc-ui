@@ -5,7 +5,7 @@
   "title": "Folder Fan",
   "description": "ROC: retained identity and coherent layout changes.",
   "dependencies": [
-    "react"
+    "react@^19.0.0"
   ],
   "files": [
     {

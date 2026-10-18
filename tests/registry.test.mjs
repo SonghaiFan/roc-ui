@@ -52,7 +52,7 @@ for (const entry of registry.items)
     const item = JSON.parse(
       await readFile(`public/r/${entry.name}.json`, "utf8"),
     );
-    const declared = new Set(item.dependencies);
+    const declared = new Set(item.dependencies.map(dependency => dependency.replace(/@[^@/]+$/, "")));
     for (const file of item.files) {
       for (const match of file.content.matchAll(
         /from\s*["']([^./][^"']+)["']/g,

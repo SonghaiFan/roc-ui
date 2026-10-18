@@ -1,0 +1,50 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "type": "registry:component",
+  "title": "Collapsible",
+  "description": "ROC: retained identity and coherent layout changes.",
+  "dependencies": [
+    "react@^19.0.0",
+    "radix-ui@^1.8.1",
+    "clsx@^2.1.1"
+  ],
+  "files": [
+    {
+      "path": "registry/roc/collapsible.tsx",
+      "type": "registry:file",
+      "target": "~/components/roc/collapsible.tsx",
+      "content": "// Adapted from shadcn/ui (MIT). Retained content is a ROC extension.\n\"use client\";\nimport * as React from \"react\";\nimport { Collapsible as Primitive } from \"radix-ui\";\nimport { cn } from \"./utils\";\nimport \"./collapsible.css\";\nconst State = React.createContext(false);\nfunction Collapsible({\n  open: controlled,\n  defaultOpen = false,\n  onOpenChange,\n  children,\n  ...props\n}: React.ComponentProps<typeof Primitive.Root>) {\n  const [local, setLocal] = React.useState(defaultOpen);\n  const open = controlled ?? local;\n  return (\n    <State.Provider value={open}>\n      <Primitive.Root\n        open={open}\n        onOpenChange={(value) => {\n          if (controlled === undefined) setLocal(value);\n          onOpenChange?.(value);\n        }}\n        {...props}\n      >\n        {children}\n      </Primitive.Root>\n    </State.Provider>\n  );\n}\nconst CollapsibleTrigger = Primitive.Trigger;\nfunction CollapsibleContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof Primitive.Content>) {\n  const open = React.useContext(State);\n  return (\n    <Primitive.Content\n      {...props}\n      forceMount\n      className={cn(\"roc-ui roc-collapsible\", className)}\n      aria-hidden={!open}\n      inert={!open}\n      data-open={open}\n    >\n      <div className=\"roc-collapsible-inner\">{children}</div>\n    </Primitive.Content>\n  );\n}\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n"
+    },
+    {
+      "path": "registry/roc/utils.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/collapsible.css",
+      "type": "registry:file",
+      "target": "~/components/roc/collapsible.css",
+      "content": "@import \"./ui-base.css\";\n.roc-collapsible {\n  display: grid;\n  grid-template-rows: 0fr;\n  visibility: hidden;\n  transition:\n    grid-template-rows 220ms cubic-bezier(0.22, 1, 0.36, 1),\n    visibility 220ms;\n}\n.roc-collapsible[data-open=\"true\"] {\n  grid-template-rows: 1fr;\n  visibility: visible;\n}\n.roc-collapsible-inner {\n  min-height: 0;\n  overflow: hidden;\n}\n"
+    },
+    {
+      "path": "registry/roc/ui-base.css",
+      "type": "registry:file",
+      "target": "~/components/roc/ui-base.css",
+      "content": "/* Shared ROC foundations. No global reset or host stylesheet required. */\n.roc-ui {\n  box-sizing: border-box;\n  font: inherit;\n  font-size: 13px;\n  color: var(--roc-ink, #252525);\n}\n.roc-ui *,\n.roc-ui *::before,\n.roc-ui *::after {\n  box-sizing: border-box;\n}\n.roc-ui:focus-visible {\n  outline: 2px solid var(--roc-focus, #737373);\n  outline-offset: 3px;\n}\n.roc-ui:disabled,\n.roc-ui[data-disabled] {\n  opacity: 0.45;\n  cursor: not-allowed;\n}\n.roc-ui-icon,\n.roc-ui > svg {\n  width: 16px;\n  height: 16px;\n  flex-shrink: 0;\n  pointer-events: none;\n}\n.roc-ui-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n@keyframes roc-ui-reveal {\n  from {\n    opacity: 0;\n    transform: translateY(4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes roc-ui-dismiss {\n  from {\n    opacity: 1;\n  }\n  to {\n    opacity: 0;\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  .roc-ui,\n  .roc-ui::before,\n  .roc-ui::after {\n    transition-duration: 0s !important;\n    animation-duration: 0.01ms !important;\n  }\n}\n"
+    },
+    {
+      "path": "registry/roc/SOURCE-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SOURCE-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2026 Songhai\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "path": "registry/roc/SHADCN-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SHADCN-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2023 shadcn\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    }
+  ]
+}

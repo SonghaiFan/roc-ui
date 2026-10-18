@@ -1,0 +1,52 @@
+// Adapted from shadcn/ui (MIT). Retained content is a ROC extension.
+"use client";
+import * as React from "react";
+import { Collapsible as Primitive } from "radix-ui";
+import { cn } from "./utils";
+import "./collapsible.css";
+const State = React.createContext(false);
+function Collapsible({
+  open: controlled,
+  defaultOpen = false,
+  onOpenChange,
+  children,
+  ...props
+}: React.ComponentProps<typeof Primitive.Root>) {
+  const [local, setLocal] = React.useState(defaultOpen);
+  const open = controlled ?? local;
+  return (
+    <State.Provider value={open}>
+      <Primitive.Root
+        open={open}
+        onOpenChange={(value) => {
+          if (controlled === undefined) setLocal(value);
+          onOpenChange?.(value);
+        }}
+        {...props}
+      >
+        {children}
+      </Primitive.Root>
+    </State.Provider>
+  );
+}
+const CollapsibleTrigger = Primitive.Trigger;
+function CollapsibleContent({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof Primitive.Content>) {
+  const open = React.useContext(State);
+  return (
+    <Primitive.Content
+      {...props}
+      forceMount
+      className={cn("roc-ui roc-collapsible", className)}
+      aria-hidden={!open}
+      inert={!open}
+      data-open={open}
+    >
+      <div className="roc-collapsible-inner">{children}</div>
+    </Primitive.Content>
+  );
+}
+export { Collapsible, CollapsibleTrigger, CollapsibleContent };

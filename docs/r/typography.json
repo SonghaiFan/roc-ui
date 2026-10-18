@@ -1,0 +1,49 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography",
+  "type": "registry:component",
+  "title": "Typography",
+  "description": "ROC: retained identity and coherent layout changes.",
+  "dependencies": [
+    "react@^19.0.0",
+    "clsx@^2.1.1"
+  ],
+  "files": [
+    {
+      "path": "registry/roc/typography.tsx",
+      "type": "registry:file",
+      "target": "~/components/roc/typography.tsx",
+      "content": "// Composed from the shadcn/ui Typography documentation (MIT).\nimport * as React from \"react\";\nimport { cn } from \"./utils\";\nimport \"./typography.css\";\nexport function Typography({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return <div className={cn(\"roc-ui roc-typography\", className)} {...props} />;\n}\nexport function TypographyH1(props: React.ComponentProps<\"h1\">) {\n  return <h1 {...props} />;\n}\nexport function TypographyH2(props: React.ComponentProps<\"h2\">) {\n  return <h2 {...props} />;\n}\nexport function TypographyH3(props: React.ComponentProps<\"h3\">) {\n  return <h3 {...props} />;\n}\nexport function TypographyP(props: React.ComponentProps<\"p\">) {\n  return <p {...props} />;\n}\nexport function TypographyBlockquote(\n  props: React.ComponentProps<\"blockquote\">,\n) {\n  return <blockquote {...props} />;\n}\nexport function TypographyCode(props: React.ComponentProps<\"code\">) {\n  return <code {...props} />;\n}\nexport function TypographyMuted({\n  className,\n  ...props\n}: React.ComponentProps<\"p\">) {\n  return <p className={cn(\"roc-typography-muted\", className)} {...props} />;\n}\n"
+    },
+    {
+      "path": "registry/roc/utils.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/typography.css",
+      "type": "registry:file",
+      "target": "~/components/roc/typography.css",
+      "content": "@import \"./ui-base.css\";\n.roc-typography {\n  line-height: 1.7;\n  overflow-wrap: anywhere;\n}\n.roc-typography h1 {\n  font-size: clamp(28px, 5vw, 40px);\n  line-height: 1.12;\n  letter-spacing: -0.035em;\n  margin: 0 0 20px;\n  font-weight: 600;\n}\n.roc-typography h2 {\n  font-size: 24px;\n  line-height: 1.2;\n  letter-spacing: -0.025em;\n  margin: 24px 0 12px;\n  font-weight: 600;\n}\n.roc-typography h3 {\n  font-size: 18px;\n  margin: 20px 0 10px;\n  font-weight: 600;\n}\n.roc-typography p {\n  margin: 0 0 12px;\n}\n.roc-typography blockquote {\n  border-inline-start: 2px solid #ddd;\n  padding-inline-start: 16px;\n  margin: 20px 0;\n  font-style: italic;\n}\n.roc-typography code {\n  font-family: ui-monospace, monospace;\n  background: #f4f4f4;\n  border-radius: 4px;\n  padding: 2px 5px;\n  font-size: 0.9em;\n}\n.roc-typography-muted {\n  color: var(--roc-muted, #777);\n}\n"
+    },
+    {
+      "path": "registry/roc/ui-base.css",
+      "type": "registry:file",
+      "target": "~/components/roc/ui-base.css",
+      "content": "/* Shared ROC foundations. No global reset or host stylesheet required. */\n.roc-ui {\n  box-sizing: border-box;\n  font: inherit;\n  font-size: 13px;\n  color: var(--roc-ink, #252525);\n}\n.roc-ui *,\n.roc-ui *::before,\n.roc-ui *::after {\n  box-sizing: border-box;\n}\n.roc-ui:focus-visible {\n  outline: 2px solid var(--roc-focus, #737373);\n  outline-offset: 3px;\n}\n.roc-ui:disabled,\n.roc-ui[data-disabled] {\n  opacity: 0.45;\n  cursor: not-allowed;\n}\n.roc-ui-icon,\n.roc-ui > svg {\n  width: 16px;\n  height: 16px;\n  flex-shrink: 0;\n  pointer-events: none;\n}\n.roc-ui-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n@keyframes roc-ui-reveal {\n  from {\n    opacity: 0;\n    transform: translateY(4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes roc-ui-dismiss {\n  from {\n    opacity: 1;\n  }\n  to {\n    opacity: 0;\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  .roc-ui,\n  .roc-ui::before,\n  .roc-ui::after {\n    transition-duration: 0s !important;\n    animation-duration: 0.01ms !important;\n  }\n}\n"
+    },
+    {
+      "path": "registry/roc/SOURCE-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SOURCE-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2026 Songhai\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "path": "registry/roc/SHADCN-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SHADCN-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2023 shadcn\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    }
+  ]
+}

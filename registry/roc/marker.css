@@ -1,0 +1,160 @@
+@import "./shadcn-base.css";
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+.roc-shadcn {
+  --roc-sh-spacing: 0.25rem;
+  --roc-sh-text-sm: 0.875rem;
+  --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
+  --roc-sh-color-foreground: #252525;
+  --roc-sh-color-muted-foreground: #737373;
+  --roc-sh-color-border: #e5e5e5;
+}
+.roc-s-d2d9e1f13413 {
+  position: relative;
+}
+.roc-s-222f930b8752 {
+  display: flex;
+}
+.roc-s-100c22d5776b {
+  width: calc(var(--roc-sh-spacing) * 4);
+  height: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-db5d34295fcd {
+  min-height: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-58d0413dd93c {
+  width: 100%;
+}
+.roc-s-184ddc11e5f9 {
+  min-width: 0px;
+}
+.roc-s-27ead27a81df {
+  flex-shrink: 0;
+}
+.roc-s-71556df3b421 {
+  align-items: center;
+}
+.roc-s-074569488cca {
+  gap: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-bbe39cfb5cc6 {
+  border-bottom-style: var(--roc-sh-tw-border-style);
+  border-bottom-width: 1px;
+}
+.roc-s-b1e6016d4f99 {
+  border-color: var(--roc-sh-color-border);
+}
+.roc-s-2a81098af961 {
+  padding-bottom: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-1a5d10977b93 {
+  text-align: left;
+}
+.roc-s-c74ab393b96d {
+  font-size: var(--roc-sh-text-sm);
+  line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-sm--line-height));
+}
+.roc-s-1eb753eb16e8 {
+  overflow-wrap: break-word;
+}
+.roc-s-35f35c41d134 {
+  color: var(--roc-sh-color-muted-foreground);
+}
+.roc-s-02dfebc28ff9:is(
+  :where(.roc-s-7f968dfc1113)[data-variant="separator"] *
+) {
+  flex: none;
+}
+.roc-s-eb62b599cc0f:is(
+  :where(.roc-s-7f968dfc1113)[data-variant="separator"] *
+) {
+  text-align: center;
+}
+.roc-s-92370022fff3::before {
+  content: var(--roc-sh-tw-content);
+  margin-right: var(--roc-sh-spacing);
+}
+.roc-s-f2a35ef20100::before {
+  content: var(--roc-sh-tw-content);
+  height: 1px;
+}
+.roc-s-f0901564ac85::before {
+  content: var(--roc-sh-tw-content);
+  min-width: 0px;
+}
+.roc-s-7fcdf2a25108::before {
+  content: var(--roc-sh-tw-content);
+  flex: 1;
+}
+.roc-s-0a559d976312::before {
+  content: var(--roc-sh-tw-content);
+  background-color: var(--roc-sh-color-border);
+}
+.roc-s-b97fdf168025::after {
+  content: var(--roc-sh-tw-content);
+  margin-left: var(--roc-sh-spacing);
+}
+.roc-s-6d57d9f7be47::after {
+  content: var(--roc-sh-tw-content);
+  height: 1px;
+}
+.roc-s-5c1091e64898::after {
+  content: var(--roc-sh-tw-content);
+  min-width: 0px;
+}
+.roc-s-9d2e451defad::after {
+  content: var(--roc-sh-tw-content);
+  flex: 1;
+}
+.roc-s-0e8106026fea::after {
+  content: var(--roc-sh-tw-content);
+  background-color: var(--roc-sh-color-border);
+}
+.roc-s-eb5ef2dbc2d4 svg:not([class*="size-"]) {
+  width: calc(var(--roc-sh-spacing) * 4);
+  height: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-ac4e5f6d16c0:is(a) {
+  text-decoration-line: underline;
+}
+.roc-s-e97fb9d15235:is(a) {
+  text-underline-offset: 3px;
+}
+:is(.roc-s-d21ca853d27e > *):is(a) {
+  text-decoration-line: underline;
+}
+:is(.roc-s-ed0d9e4bd82f > *):is(a) {
+  text-underline-offset: 3px;
+}
+@media (hover: hover) {
+  .roc-s-f006185bfb5b:is(a):hover {
+    color: var(--roc-sh-color-foreground);
+  }
+  :is(.roc-s-b7d74dc6621d > *):is(a):hover {
+    color: var(--roc-sh-color-foreground);
+  }
+}
+@property --roc-sh-tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --roc-sh-tw-content {
+  syntax: "*";
+  initial-value: "";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    :where(
+      .roc-shadcn,
+      .roc-shadcn *,
+      .roc-shadcn::before,
+      .roc-shadcn::after
+    ) {
+      --roc-sh-tw-border-style: solid;
+      --roc-sh-tw-content: "";
+    }
+  }
+}

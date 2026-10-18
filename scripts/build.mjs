@@ -1,7 +1,7 @@
 import { build } from "esbuild";
 import { mkdir, readFile, writeFile, cp, rm } from "node:fs/promises";
 const foundationNames =
-  "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip alert avatar progress skeleton toggle toggle-group radio-group scroll-area breadcrumb pagination".split(
+  "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip alert avatar progress skeleton toggle toggle-group radio-group scroll-area breadcrumb pagination alert-dialog aspect-ratio attachment bubble button-group calendar carousel chart code-block collapsible combobox command context-menu data-table date-picker direction drawer empty field hover-card input-group input-otp item kbd label marker menubar message message-scroller native-select navigation-menu questionnaire resizable select sheet sidebar spinner table toast trace typography".split(
     " ",
   );
 const names = [
@@ -17,6 +17,7 @@ const names = [
   "page-book",
   "source-tray",
 ];
+const packageInfo = JSON.parse(await readFile("package.json", "utf8"));
 const root = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
   name: "roc",
@@ -36,6 +37,7 @@ for (const name of names) {
     seen.add(file);
     files.push(file);
     const content = await readFile(`registry/roc/${file}`, "utf8");
+    if(file.endsWith(".css") && content.includes("tailwindcss v")) await collect("TAILWIND-LICENSE.txt");
     for (const match of content.matchAll(/from\s*["']([^./][^"']+)["']/g)) {
       const spec = match[1];
       dependencies.add(
@@ -78,7 +80,11 @@ for (const name of names) {
       .map((x) => x[0].toUpperCase() + x.slice(1))
       .join(" "),
     description: "ROC: retained identity and coherent layout changes.",
-    dependencies: [...dependencies],
+    dependencies: [...dependencies].map((dep) =>
+      packageInfo.dependencies[dep]
+        ? `${dep}@${packageInfo.dependencies[dep]}`
+        : dep,
+    ),
     files: [],
   };
   for (const file of files) {
@@ -118,7 +124,10 @@ await build({
 });
 // Keep bundled dependency notices alongside the script, without whitespace-only lines.
 const notices = "dist/assets/main.js.LEGAL.txt";
-await writeFile(notices, (await readFile(notices, "utf8")).replace(/[ \t]+$/gm, ""));
+await writeFile(
+  notices,
+  (await readFile(notices, "utf8")).replace(/[ \t]+$/gm, ""),
+);
 await writeFile(
   "dist/index.html",
   `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ROC — a design space for reusable interfaces that preserve object identity. Interactive React components, source code, and continuity contracts."><meta name="theme-color" content="#fafbf8"><title>ROC — Objects, in continuity</title><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./assets/main.css"></head><body><div id="root"></div><script type="module" src="./assets/main.js"></script></body></html>`,

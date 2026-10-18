@@ -29,6 +29,17 @@ await writeFile(
   ".checks/more-foundations.tsx",
   await readFile("tests/fixtures/more-foundations.tsx"),
 );
+await writeFile(
+  ".checks/catalog-examples.tsx",
+  (await readFile("src/CatalogExamples.tsx", "utf8")).replaceAll(
+    "../registry/roc/",
+    "./components/roc/",
+  ),
+);
+await writeFile(
+  ".checks/catalog-consumer.tsx",
+  `import {CatalogExample,additionalIds} from "./catalog-examples"; export function CatalogConsumer(){return <>{additionalIds.map(id=><section key={id} data-component={id} style={{padding:20,borderBottom:"1px solid #ddd"}}><h2>{id}</h2><CatalogExample id={id}/></section>)}</>}`,
+);
 await build({
   entryPoints: [".checks/consumer.tsx"],
   bundle: true,
@@ -40,7 +51,10 @@ await build({
 });
 const { Consumer } = await import("../.checks/consumer.mjs");
 const markup = renderToString(createElement(Consumer));
-assert.equal((markup.match(/<section>/g) || []).length, registry.items.length);
+assert.equal(
+  (markup.match(/<section(?:>| data-component=)/g) || []).length,
+  registry.items.length,
+);
 await mkdir("dist/consumer-check", { recursive: true });
 await build({
   entryPoints: [".checks/consumer.tsx"],
@@ -55,5 +69,5 @@ await writeFile(
   '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="./consumer.css"><title>ROC isolated consumer</title></head><body><div id="root"></div><script type="module" src="./consumer.js"></script></body></html>',
 );
 console.log(
-  "Thirty-five downloaded registry components compile and server-render without gallery files. Browser fixture: /consumer-check/index.html",
+  "All downloaded registry components compile and server-render without gallery files. Browser fixture: /consumer-check/index.html",
 );

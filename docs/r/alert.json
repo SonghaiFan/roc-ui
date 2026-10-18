@@ -5,9 +5,9 @@
   "title": "Alert",
   "description": "ROC: retained identity and coherent layout changes.",
   "dependencies": [
-    "react",
-    "class-variance-authority",
-    "clsx"
+    "react@^19.0.0",
+    "class-variance-authority@^0.7.1",
+    "clsx@^2.1.1"
   ],
   "files": [
     {

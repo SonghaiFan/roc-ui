@@ -1,0 +1,18 @@
+@import "./shadcn-base.css";
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+.roc-shadcn {
+  --roc-sh-spacing: 0.25rem;
+  --roc-sh-animate-roc-sh-spin: roc-sh-spin 1s linear infinite;
+}
+.roc-s-100c22d5776b {
+  width: calc(var(--roc-sh-spacing) * 4);
+  height: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-2c14b55d77e6 {
+  animation: var(--roc-sh-animate-roc-sh-spin);
+}
+@keyframes roc-sh-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

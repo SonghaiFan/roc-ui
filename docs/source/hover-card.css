@@ -1,0 +1,148 @@
+@import "./shadcn-base.css";
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+.roc-shadcn {
+  --roc-sh-spacing: 0.25rem;
+  --roc-sh-radius-md: 7px;
+  --roc-sh-color-popover: #fff;
+  --roc-sh-color-popover-foreground: #252525;
+}
+.roc-s-3eef1ce97dba {
+  z-index: 50;
+}
+.roc-s-72b37c1a040d {
+  width: calc(var(--roc-sh-spacing) * 64);
+}
+.roc-s-f7df1783a7f8 {
+  transform-origin: var(--radix-hover-card-content-transform-origin);
+}
+.roc-s-3fa8c572949b {
+  border-radius: var(--roc-sh-radius-md);
+}
+.roc-s-4f1a55de40bc {
+  border-style: var(--roc-sh-tw-border-style);
+  border-width: 1px;
+}
+.roc-s-e593c38256e0 {
+  background-color: var(--roc-sh-color-popover);
+}
+.roc-s-99df86594a98 {
+  padding: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-5bd2afe89f0b {
+  color: var(--roc-sh-color-popover-foreground);
+}
+.roc-s-94ea94fde25f {
+  --roc-sh-tw-shadow:
+    0 4px 6px -1px var(--roc-sh-tw-shadow-color, rgb(0 0 0 / 0.1)),
+    0 2px 4px -2px var(--roc-sh-tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow:
+    var(--roc-sh-tw-inset-shadow), var(--roc-sh-tw-inset-ring-shadow),
+    var(--roc-sh-tw-ring-offset-shadow), var(--roc-sh-tw-ring-shadow),
+    var(--roc-sh-tw-shadow);
+}
+.roc-s-59edd3d33673 {
+  --roc-sh-tw-outline-style: none;
+  outline-style: none;
+  @media (forced-colors: active) {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+}
+@property --roc-sh-tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --roc-sh-tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --roc-sh-tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --roc-sh-tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --roc-sh-tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --roc-sh-tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    :where(
+      .roc-shadcn,
+      .roc-shadcn *,
+      .roc-shadcn::before,
+      .roc-shadcn::after
+    ) {
+      --roc-sh-tw-border-style: solid;
+      --roc-sh-tw-shadow: 0 0 #0000;
+      --roc-sh-tw-shadow-color: initial;
+      --roc-sh-tw-shadow-alpha: 100%;
+      --roc-sh-tw-inset-shadow: 0 0 #0000;
+      --roc-sh-tw-inset-shadow-color: initial;
+      --roc-sh-tw-inset-shadow-alpha: 100%;
+      --roc-sh-tw-ring-color: initial;
+      --roc-sh-tw-ring-shadow: 0 0 #0000;
+      --roc-sh-tw-inset-ring-color: initial;
+      --roc-sh-tw-inset-ring-shadow: 0 0 #0000;
+      --roc-sh-tw-ring-inset: initial;
+      --roc-sh-tw-ring-offset-width: 0px;
+      --roc-sh-tw-ring-offset-color: #fff;
+      --roc-sh-tw-ring-offset-shadow: 0 0 #0000;
+    }
+  }
+}

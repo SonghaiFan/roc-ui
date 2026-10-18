@@ -1,6 +1,6 @@
 {
   "retrievedAt": "2026-10-18T09:17:08.813Z",
-  "style": "new-york-v4",
+  "style": "mixed; see per-item source URLs",
   "items": [
     {
       "name": "button",
@@ -245,6 +245,396 @@
       "dependencies": [
         "cn"
       ]
+    },
+    {
+      "name": "alert-dialog",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/alert-dialog.json",
+      "retrievedAt": "2026-10-18T10:17:36.687Z",
+      "sha256": "03c0d4de131a9b049e9080724666045c8785074af7e07040a0a0f922a810e7c2",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/aspect-ratio.json",
+      "retrievedAt": "2026-10-18T10:17:36.716Z",
+      "sha256": "f80a95d041bfc0b7fb0f15c88eaccfb449803733b5254a83f2401e4383ced9e7",
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "attachment",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/attachment.json",
+      "retrievedAt": "2026-10-18T10:17:36.739Z",
+      "sha256": "f956407828a239269d4a23503045f4b300aeeb84c7ff7eb076c07f5d75c9b0b0",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "bubble",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/bubble.json",
+      "retrievedAt": "2026-10-18T10:17:36.766Z",
+      "sha256": "b1a9d96c03a81a98e1f3a789892210dfeeee9d7b65cbd1708bd0bbca41f84c76",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "button-group",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/button-group.json",
+      "retrievedAt": "2026-10-18T10:17:36.791Z",
+      "sha256": "750f0d0a247e36446efcb257b289657a6f98a492b4b7c5a2b7aabe291d23f1ec",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "calendar",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/calendar.json",
+      "retrievedAt": "2026-10-18T10:17:36.813Z",
+      "sha256": "746d0f9d907a20959c28b1e9ea38e163a28487c1219d45db5c457733fc3066ac",
+      "dependencies": [
+        "cn",
+        "react-day-picker@latest",
+        "date-fns"
+      ]
+    },
+    {
+      "name": "carousel",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/carousel.json",
+      "retrievedAt": "2026-10-18T10:17:36.835Z",
+      "sha256": "85fb22d3ec3b4db46aa107bdc57747543e2819049c31f48e6d50a3a14a10268b",
+      "dependencies": [
+        "cn",
+        "embla-carousel-react"
+      ]
+    },
+    {
+      "name": "chart",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/chart.json",
+      "retrievedAt": "2026-10-18T10:17:36.859Z",
+      "sha256": "2ea906f5c8e304dfb81c84e7b2172d13c03a302e183b7195cac24c101dee72e5",
+      "dependencies": [
+        "cn",
+        "recharts@3.8.0",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "code-block",
+      "url": "https://ui.shadcn.com/r/styles/base-nova/code-block.json",
+      "retrievedAt": "2026-10-18T10:17:36.907Z",
+      "sha256": "bbd35ba5fd2c877a87cd219650656521c515e8dd9d7d374eefd5275ebc45ce5c",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "collapsible",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/collapsible.json",
+      "retrievedAt": "2026-10-18T10:17:36.944Z",
+      "sha256": "fdc6666e9c728d7e731b0e4d67e11db81020aff47408c259549fc1aefcc8e3e7",
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "combobox",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/combobox.json",
+      "retrievedAt": "2026-10-18T10:17:36.971Z",
+      "sha256": "ecc152a123416631dd63058fdd92834a690947dd71b8b9746c6889b0aadb934b",
+      "dependencies": [
+        "cn",
+        "@base-ui/react"
+      ]
+    },
+    {
+      "name": "command",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/command.json",
+      "retrievedAt": "2026-10-18T10:17:37.001Z",
+      "sha256": "c1f02d0805a0c5c55428e3350214ca8150a4ce98a40ec962118ec66709f60038",
+      "dependencies": [
+        "cn",
+        "cmdk"
+      ]
+    },
+    {
+      "name": "context-menu",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/context-menu.json",
+      "retrievedAt": "2026-10-18T10:17:37.027Z",
+      "sha256": "e9680a7b71840b7203e1625acab8754d7c18122b66289baf281c3a6e31246ada",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "direction",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/direction.json",
+      "retrievedAt": "2026-10-18T10:17:37.133Z",
+      "sha256": "c6ad9acaec6ee7273cc4827c5b16981b2395875d5ce91702d0c213b7f5c959ac",
+      "dependencies": []
+    },
+    {
+      "name": "drawer",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/drawer.json",
+      "retrievedAt": "2026-10-18T10:17:37.161Z",
+      "sha256": "3a7c12a2ebfd888f76d3eb5a19ab12f64a8b09d37b8138492b39ac32e4fd8d09",
+      "dependencies": [
+        "cn",
+        "vaul"
+      ]
+    },
+    {
+      "name": "empty",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/empty.json",
+      "retrievedAt": "2026-10-18T10:17:37.186Z",
+      "sha256": "2c377f47c4e661d73a565d37c0678d2445edfdcae5446e5b79f23ccda9b80f1d",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "field",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/field.json",
+      "retrievedAt": "2026-10-18T10:17:37.206Z",
+      "sha256": "5524eca8a5aca35b2f02dac696144053ea8d3d02f722676942e4e92bb08efeb2",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "hover-card",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/hover-card.json",
+      "retrievedAt": "2026-10-18T10:17:37.227Z",
+      "sha256": "205af771916016bd2d483032060ca4c10eb3f72887230d1acc258c2229e4e63a",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "input-group",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/input-group.json",
+      "retrievedAt": "2026-10-18T10:17:37.248Z",
+      "sha256": "6f9d7df429c5916bb4a5ade1a12e912e51fc7e0cf1539edf2b296d1994967c70",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "input-otp",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/input-otp.json",
+      "retrievedAt": "2026-10-18T10:17:37.270Z",
+      "sha256": "4700e3d241168a63ef104531a643c7949b170b47351e6b005137f99d0b6b4a41",
+      "dependencies": [
+        "cn",
+        "input-otp"
+      ]
+    },
+    {
+      "name": "item",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/item.json",
+      "retrievedAt": "2026-10-18T10:17:37.302Z",
+      "sha256": "b8ad17f300d4de1dcee9b2b07abd3e7a97829cb7fcaaa4f6a9abee97504217e9",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "kbd",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/kbd.json",
+      "retrievedAt": "2026-10-18T10:17:37.324Z",
+      "sha256": "7e3ede01884e7ca5050d730b1fc2db92cc7350109ae50f776cebfb2c5a7e0fc3",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "label",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/label.json",
+      "retrievedAt": "2026-10-18T10:17:37.351Z",
+      "sha256": "b03d6bc91da205758df87c5403d74bae4d742f1f4ac5ae0b94ad7a29ab6350ea",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "marker",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/marker.json",
+      "retrievedAt": "2026-10-18T10:17:37.375Z",
+      "sha256": "3591c333d65e0aa6014c937d34d554f15e76288a10b5cdcf4bbb290e5ccb235e",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "menubar",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/menubar.json",
+      "retrievedAt": "2026-10-18T10:17:37.397Z",
+      "sha256": "a2e17191b5c4fda9e05ca144845ccb687bd8b23665e27032d95f1d20635bc48f",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "message",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/message.json",
+      "retrievedAt": "2026-10-18T10:17:37.419Z",
+      "sha256": "0004ca776ddc0a5eddcb2e10dd9253856db96037962238b36ed6a71493edffd0",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/message-scroller.json",
+      "retrievedAt": "2026-10-18T10:17:37.443Z",
+      "sha256": "9fa06194196391e5bda4fbd890f06ee06c8f1d2016b5f8e8d6d05a0780bbf091",
+      "dependencies": [
+        "cn",
+        "@shadcn/react"
+      ]
+    },
+    {
+      "name": "native-select",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/native-select.json",
+      "retrievedAt": "2026-10-18T10:17:37.465Z",
+      "sha256": "950729a758bef332865adc55f25c16667f45347ef850ee7be20b741667f55d8b",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/navigation-menu.json",
+      "retrievedAt": "2026-10-18T10:17:37.499Z",
+      "sha256": "43549da4f61ef6040c62c7ed9eede9bf0c304c7a6378a3e515c5a47d6421e50d",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "url": "https://ui.shadcn.com/r/styles/base-nova/questionnaire.json",
+      "retrievedAt": "2026-10-18T10:17:37.543Z",
+      "sha256": "7eac8ca2fb479be1a18c97cced020b93c22cec1926dea72c8be324cdb3b62fa9",
+      "dependencies": [
+        "cn",
+        "@shadcn/react"
+      ]
+    },
+    {
+      "name": "resizable",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/resizable.json",
+      "retrievedAt": "2026-10-18T10:17:37.564Z",
+      "sha256": "d6aa302ab794f451e9a38a68c746ded280eba15bcc4b9cf7a453624c4bcbafc6",
+      "dependencies": [
+        "cn",
+        "react-resizable-panels@^4"
+      ]
+    },
+    {
+      "name": "select",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/select.json",
+      "retrievedAt": "2026-10-18T10:17:37.585Z",
+      "sha256": "ca3189ea8101a04f144b6d0f0e7330841639bfa5f4d57e7cca0894d39b30817b",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "sheet",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/sheet.json",
+      "retrievedAt": "2026-10-18T10:17:37.605Z",
+      "sha256": "bdf118300491675f05a9181af491217ba690929338aefd108437c2b07d25432f",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "sidebar",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/sidebar.json",
+      "retrievedAt": "2026-10-18T10:17:37.627Z",
+      "sha256": "421f1735955361a12466c5c6e7d4c1124cc7f76422b4fdd5dcdf8451b8ae4052",
+      "dependencies": [
+        "cn",
+        "radix-ui",
+        "class-variance-authority",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "spinner",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/spinner.json",
+      "retrievedAt": "2026-10-18T10:17:37.652Z",
+      "sha256": "9516791ff6443cb5dee344f4f61df812c6b1fa455b86eb2febd10acc66c0c178",
+      "dependencies": [
+        "cn",
+        "class-variance-authority"
+      ]
+    },
+    {
+      "name": "table",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/table.json",
+      "retrievedAt": "2026-10-18T10:17:37.684Z",
+      "sha256": "35a45f90ee92883533c4c1029212d38bd263694e90ea54fbfaf66a099f7d3cc4",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "toast",
+      "url": "https://ui.shadcn.com/r/styles/base-nova/toast.json",
+      "retrievedAt": "2026-10-18T10:17:37.725Z",
+      "sha256": "161ed77c409fe7345ee6308f7cf66f7bcf2717d8d5e1a8b36a7f8e8fa0df745e",
+      "dependencies": [
+        "cn",
+        "@base-ui/react"
+      ]
+    },
+    {
+      "name": "trace",
+      "url": "https://ui.shadcn.com/r/styles/base-nova/trace.json",
+      "retrievedAt": "2026-10-18T10:17:37.770Z",
+      "sha256": "8533d800f5216797578f0954bf917aed6b8cd48016f73975c6a4caaf7ab539d4",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "data-table",
+      "url": "https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/v4/content/docs/components/radix/data-table.mdx",
+      "retrievedAt": "2026-10-18T10:26:13.611Z",
+      "sha256": "741cffe2e9e0cdf6d35ee61053734b174dbeffefcab54fea56faf66cef2b9e8c",
+      "kind": "recipe"
+    },
+    {
+      "name": "date-picker",
+      "url": "https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/v4/content/docs/components/radix/date-picker.mdx",
+      "retrievedAt": "2026-10-18T10:26:14.081Z",
+      "sha256": "d9e8900691bd5cb0d736e7b262813021b6528a3afd833fc9866dda99e5b69858",
+      "kind": "recipe"
+    },
+    {
+      "name": "typography",
+      "url": "https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/v4/content/docs/components/radix/typography.mdx",
+      "retrievedAt": "2026-10-18T10:26:14.602Z",
+      "sha256": "004334b84613b6d9611cc2876e077c6a026b1f23703c3b385d49ff178b227f2c",
+      "kind": "recipe"
     }
   ]
 }

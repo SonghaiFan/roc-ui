@@ -1,3 +1,4 @@
+import { additionalFoundations } from "./additional-foundations";
 const specs = [
   [
     "button",
@@ -225,9 +226,12 @@ const specs = [
     '<Pagination><PaginationContent><PaginationItem><PaginationPrevious href="?page=1" disabled /></PaginationItem><PaginationItem><PaginationLink href="?page=1" isActive>1</PaginationLink></PaginationItem><PaginationItem><PaginationNext href="?page=2" /></PaginationItem></PaginationContent></Pagination>',
   ],
 ];
-export const foundationIds = specs.map((s) => s[0]);
-export const foundations = specs.map(
-  ([id, name, action, description, rule, props, usage], i) => ({
+export const foundationIds = [
+  ...specs.map((s) => s[0]),
+  ...additionalFoundations.map((s) => s.id),
+];
+export const foundations = [
+  ...specs.map(([id, name, action, description, rule, props, usage], i) => ({
     id,
     name,
     actions: [action],
@@ -242,5 +246,6 @@ export const foundations = specs.map(
     limit: ["dialog", "popover", "dropdown-menu", "tooltip"].includes(id)
       ? "Transient overlay content unmounts after dismissal. Keep persistent form values above the overlay. An open dialog retains its input nodes across breakpoints; closing and reopening is not DOM identity continuity."
       : "Derived from the recorded shadcn/ui source. Inactive retained panels keep effects mounted; hosts own media pausing and expensive background work.",
-  }),
-);
+  })),
+  ...additionalFoundations,
+];

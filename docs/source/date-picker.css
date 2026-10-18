@@ -1,0 +1,9 @@
+.roc-date-picker-trigger {
+  width: 100%;
+  justify-content: flex-start;
+}
+.roc-ui.roc-date-picker-popup {
+  width: auto;
+  max-width: calc(100vw - 24px);
+  padding: 4px;
+}

@@ -5,8 +5,8 @@
   "title": "Skeleton",
   "description": "ROC: retained identity and coherent layout changes.",
   "dependencies": [
-    "react",
-    "clsx"
+    "react@^19.0.0",
+    "clsx@^2.1.1"
   ],
   "files": [
     {

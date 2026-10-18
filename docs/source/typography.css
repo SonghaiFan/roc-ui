@@ -1,0 +1,43 @@
+@import "./ui-base.css";
+.roc-typography {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.roc-typography h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin: 0 0 20px;
+  font-weight: 600;
+}
+.roc-typography h2 {
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 24px 0 12px;
+  font-weight: 600;
+}
+.roc-typography h3 {
+  font-size: 18px;
+  margin: 20px 0 10px;
+  font-weight: 600;
+}
+.roc-typography p {
+  margin: 0 0 12px;
+}
+.roc-typography blockquote {
+  border-inline-start: 2px solid #ddd;
+  padding-inline-start: 16px;
+  margin: 20px 0;
+  font-style: italic;
+}
+.roc-typography code {
+  font-family: ui-monospace, monospace;
+  background: #f4f4f4;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-size: 0.9em;
+}
+.roc-typography-muted {
+  color: var(--roc-muted, #777);
+}

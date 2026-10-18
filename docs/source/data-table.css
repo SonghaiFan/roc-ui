@@ -1,0 +1,27 @@
+@import "./ui-base.css";
+.roc-data-table {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+.roc-table-sort {
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  text-align: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.roc-table-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.roc-table-pagination > span {
+  margin-inline-end: auto;
+  color: #777;
+}

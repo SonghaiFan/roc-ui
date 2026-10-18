@@ -1,0 +1,245 @@
+@import "./shadcn-base.css";
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+.roc-shadcn {
+  --roc-sh-spacing: 0.25rem;
+  --roc-sh-text-sm: 0.875rem;
+  --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
+  --roc-sh-text-base: 1rem;
+  --roc-sh-text-base--line-height: calc(1.5 / 1);
+  --roc-sh-font-weight-normal: 400;
+  --roc-sh-font-weight-medium: 500;
+  --roc-sh-leading-snug: 1.375;
+  --roc-sh-leading-normal: 1.5;
+  --roc-sh-radius-md: 7px;
+  --roc-sh-color-background: var(--roc-paper, #fff);
+  --roc-sh-color-primary: var(--roc-accent, #252525);
+  --roc-sh-color-muted-foreground: #737373;
+  --roc-sh-color-destructive: #b42318;
+}
+.roc-s-222d94de2f4b {
+  container-type: inline-size;
+  container-name: field-group;
+}
+.roc-s-747355bdc2a2 {
+  position: absolute;
+}
+.roc-s-d2d9e1f13413 {
+  position: relative;
+}
+.roc-s-ce13093ad8c9 {
+  inset: 0px;
+}
+.roc-s-4e45f4841abb {
+  top: calc(1 / 2 * 100%);
+}
+.roc-s-1752f11474a6 {
+  margin-inline: auto;
+}
+.roc-s-15c71dfec7d2 {
+  margin-block: calc(var(--roc-sh-spacing) * -2);
+}
+.roc-s-7fc057c6b049 {
+  margin-bottom: calc(var(--roc-sh-spacing) * 3);
+}
+.roc-s-73f62657fa5e {
+  margin-left: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-496aca80e4d8 {
+  display: block;
+}
+.roc-s-222f930b8752 {
+  display: flex;
+}
+.roc-s-c6413460bac9 {
+  height: calc(var(--roc-sh-spacing) * 5);
+}
+.roc-s-8cfb5a42ef9f {
+  width: fit-content;
+}
+.roc-s-58d0413dd93c {
+  width: 100%;
+}
+.roc-s-7bd5bab6d7f4 {
+  flex: 1;
+}
+.roc-s-abcade9f1f8d {
+  list-style-type: disc;
+}
+.roc-s-302c0d124a94 {
+  flex-direction: column;
+}
+.roc-s-71556df3b421 {
+  align-items: center;
+}
+.roc-s-19e97f3f40e6 {
+  gap: var(--roc-sh-spacing);
+}
+.roc-s-70007b876865 {
+  gap: calc(var(--roc-sh-spacing) * 1.5);
+}
+.roc-s-074569488cca {
+  gap: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-d7db3451d154 {
+  gap: calc(var(--roc-sh-spacing) * 3);
+}
+.roc-s-8c7e0067a9a5 {
+  gap: calc(var(--roc-sh-spacing) * 6);
+}
+.roc-s-cc30d00b6367 {
+  gap: calc(var(--roc-sh-spacing) * 7);
+}
+.roc-s-5b272f3c5076 {
+  background-color: var(--roc-sh-color-background);
+}
+.roc-s-e7e01cc7f4df {
+  padding-inline: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-c74ab393b96d {
+  font-size: var(--roc-sh-text-sm);
+  line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-sm--line-height));
+}
+.roc-s-7844ca2c6709 {
+  --roc-sh-tw-leading: var(--roc-sh-leading-normal);
+  line-height: var(--roc-sh-leading-normal);
+}
+.roc-s-4c3c66460268 {
+  --roc-sh-tw-leading: var(--roc-sh-leading-snug);
+  line-height: var(--roc-sh-leading-snug);
+}
+.roc-s-daaac3fbf55e {
+  --roc-sh-tw-font-weight: var(--roc-sh-font-weight-medium);
+  font-weight: var(--roc-sh-font-weight-medium);
+}
+.roc-s-52101fc7d8bb {
+  --roc-sh-tw-font-weight: var(--roc-sh-font-weight-normal);
+  font-weight: var(--roc-sh-font-weight-normal);
+}
+.roc-s-887b9502d5c7 {
+  color: var(--roc-sh-color-destructive);
+}
+.roc-s-35f35c41d134 {
+  color: var(--roc-sh-color-muted-foreground);
+}
+.roc-s-f9abeb5519b1:is(
+  :where(.roc-s-83f8e50d0580):has(:is([data-orientation="horizontal"])) *
+) {
+  text-wrap: balance;
+}
+.roc-s-5038cf153bcf:is(:where(.roc-s-83f8e50d0580)[data-disabled="true"] *) {
+  opacity: 50%;
+}
+.roc-s-1304a3025ea1:is(:where(.roc-s-220da3c77607)[data-variant="outline"] *) {
+  margin-bottom: calc(var(--roc-sh-spacing) * -2);
+}
+.roc-s-d3a06646ec72:last-child {
+  margin-top: 0px;
+}
+.roc-s-473474db8aa1:has([data-state="checked"]) {
+  border-color: var(--roc-sh-color-primary);
+}
+.roc-s-e381b7741992:has([data-state="checked"]) {
+  background-color: color-mix(in srgb, #252525 5%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(
+      in oklab,
+      var(--roc-sh-color-primary) 5%,
+      transparent
+    );
+  }
+}
+.roc-s-b1e58eec23df:has(> [data-slot="checkbox-group"]) {
+  gap: calc(var(--roc-sh-spacing) * 3);
+}
+.roc-s-2120dbf3ec49:has(> [data-slot="field"]) {
+  width: 100%;
+}
+.roc-s-140979c1a385:has(> [data-slot="field"]) {
+  flex-direction: column;
+}
+.roc-s-1bcfe349a4ba:has(> [data-slot="field"]) {
+  border-radius: var(--roc-sh-radius-md);
+}
+.roc-s-82fdadbd8969:has(> [data-slot="field"]) {
+  border-style: var(--roc-sh-tw-border-style);
+  border-width: 1px;
+}
+.roc-s-cabdc03fe0ef:has(> [data-slot="radio-group"]) {
+  gap: calc(var(--roc-sh-spacing) * 3);
+}
+.roc-s-993a85d2fa04[data-invalid="true"] {
+  color: var(--roc-sh-color-destructive);
+}
+.roc-s-4254beb8e289[data-slot="checkbox-group"] {
+  gap: calc(var(--roc-sh-spacing) * 3);
+}
+.roc-s-fcdc268a7949[data-variant="label"] {
+  font-size: var(--roc-sh-text-sm);
+  line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-sm--line-height));
+}
+.roc-s-de65f8da41a3[data-variant="legend"] {
+  font-size: var(--roc-sh-text-base);
+  line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-base--line-height));
+}
+.roc-s-9a9db3cd4e21:nth-last-child(2) {
+  margin-top: calc(var(--roc-sh-spacing) * -1);
+}
+@media (prefers-color-scheme: dark) {
+  .roc-s-bfbf8664f3ef:has([data-state="checked"]) {
+    background-color: color-mix(in srgb, #252525 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(
+        in oklab,
+        var(--roc-sh-color-primary) 10%,
+        transparent
+      );
+    }
+  }
+}
+.roc-s-584be9d521b5 > *[data-slot="field"] {
+  padding: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-2faa4581af77 > [data-slot="field-group"] {
+  gap: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-e1bd2eaca11c > a {
+  text-decoration-line: underline;
+}
+.roc-s-30f54d824d9e > a {
+  text-underline-offset: 4px;
+}
+.roc-s-e8926eea1512 > a:hover {
+  color: var(--roc-sh-color-primary);
+}
+[data-variant="legend"] + .roc-s-f402ac9b1f67 {
+  margin-top: calc(var(--roc-sh-spacing) * -1.5);
+}
+@property --roc-sh-tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    :where(
+      .roc-shadcn,
+      .roc-shadcn *,
+      .roc-shadcn::before,
+      .roc-shadcn::after
+    ) {
+      --roc-sh-tw-leading: initial;
+      --roc-sh-tw-font-weight: initial;
+      --roc-sh-tw-border-style: solid;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+/* Scoped preflight for copied components. No selectors affect the host page. */
+@import "./ui-base.css";
+:where(.roc-shadcn, .roc-shadcn *, .roc-shadcn::before, .roc-shadcn::after) {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--roc-line, #e5e5e5);
+}
+:where(.roc-shadcn) {
+  font-family: inherit;
+  line-height: 1.5;
+  color: var(--roc-ink, #252525);
+  --roc-sh-color-primary: var(--roc-accent, #252525);
+  --roc-sh-color-primary-foreground: #fff;
+}
+:where(
+  button.roc-shadcn,
+  input.roc-shadcn,
+  select.roc-shadcn,
+  textarea.roc-shadcn
+) {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+}
+:where(button.roc-shadcn) {
+  cursor: pointer;
+}
+:where(button.roc-shadcn:disabled) {
+  cursor: not-allowed;
+}
+:where(
+  .roc-shadcn h1,
+  .roc-shadcn h2,
+  .roc-shadcn h3,
+  .roc-shadcn p,
+  .roc-shadcn pre,
+  h1.roc-shadcn,
+  h2.roc-shadcn,
+  h3.roc-shadcn,
+  p.roc-shadcn,
+  pre.roc-shadcn
+) {
+  margin: 0;
+}
+:where(ul.roc-shadcn, ol.roc-shadcn) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+:where(.roc-shadcn svg) {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+:where(.roc-shadcn input) {
+  min-width: 0;
+}
+.roc-shadcn:focus-visible {
+  outline: 2px solid var(--roc-focus, #737373);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-shadcn,
+  .roc-shadcn * {
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.roc-shadcn[hidden],
+.roc-shadcn [hidden] {
+  display: none !important;
+}

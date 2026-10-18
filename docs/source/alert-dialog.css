@@ -1,0 +1,322 @@
+@import "./shadcn-base.css";
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+.roc-shadcn {
+  --roc-sh-color-black: #000;
+  --roc-sh-spacing: 0.25rem;
+  --roc-sh-container-xs: 20rem;
+  --roc-sh-container-lg: 32rem;
+  --roc-sh-text-sm: 0.875rem;
+  --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
+  --roc-sh-text-lg: 1.125rem;
+  --roc-sh-text-lg--line-height: calc(1.75 / 1.125);
+  --roc-sh-font-weight-semibold: 600;
+  --roc-sh-radius-md: 7px;
+  --roc-sh-radius-lg: var(--roc-radius, 9px);
+  --roc-sh-color-background: var(--roc-paper, #fff);
+  --roc-sh-color-muted: #f5f5f5;
+  --roc-sh-color-muted-foreground: #737373;
+}
+.roc-s-992a93455c71 {
+  position: fixed;
+}
+.roc-s-ce13093ad8c9 {
+  inset: 0px;
+}
+.roc-s-b106d8cef296 {
+  top: 50%;
+}
+.roc-s-d7e936f862e3 {
+  left: 50%;
+}
+.roc-s-3eef1ce97dba {
+  z-index: 50;
+}
+.roc-s-02fd0ea53c0b {
+  margin-bottom: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-222f930b8752 {
+  display: flex;
+}
+.roc-s-0f2a693e93e2 {
+  display: grid;
+}
+.roc-s-123306850fe1 {
+  display: inline-flex;
+}
+.roc-s-7cf5b58023e6 {
+  width: calc(var(--roc-sh-spacing) * 16);
+  height: calc(var(--roc-sh-spacing) * 16);
+}
+.roc-s-58d0413dd93c {
+  width: 100%;
+}
+.roc-s-ca852e070db7 {
+  max-width: calc(100% - 2rem);
+}
+.roc-s-b790580e54ab {
+  --roc-sh-tw-translate-x: -50%;
+  translate: var(--roc-sh-tw-translate-x) var(--roc-sh-tw-translate-y);
+}
+.roc-s-8728d3e02c92 {
+  --roc-sh-tw-translate-y: -50%;
+  translate: var(--roc-sh-tw-translate-x) var(--roc-sh-tw-translate-y);
+}
+.roc-s-ffa47a20e6d9 {
+  grid-template-rows: auto 1fr;
+}
+.roc-s-c2c38b387d36 {
+  flex-direction: column-reverse;
+}
+.roc-s-4446c26b62a7 {
+  place-items: center;
+}
+.roc-s-71556df3b421 {
+  align-items: center;
+}
+.roc-s-a503dd374cca {
+  justify-content: center;
+}
+.roc-s-70007b876865 {
+  gap: calc(var(--roc-sh-spacing) * 1.5);
+}
+.roc-s-074569488cca {
+  gap: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-90fc3ec35a37 {
+  gap: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-49abc543ea42 {
+  border-radius: var(--roc-sh-radius-lg);
+}
+.roc-s-3fa8c572949b {
+  border-radius: var(--roc-sh-radius-md);
+}
+.roc-s-4f1a55de40bc {
+  border-style: var(--roc-sh-tw-border-style);
+  border-width: 1px;
+}
+.roc-s-5b272f3c5076 {
+  background-color: var(--roc-sh-color-background);
+}
+.roc-s-cba3ecce1586 {
+  background-color: color-mix(in srgb, #000 50%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(
+      in oklab,
+      var(--roc-sh-color-black) 50%,
+      transparent
+    );
+  }
+}
+.roc-s-87ecb59f2d2d {
+  background-color: var(--roc-sh-color-muted);
+}
+.roc-s-c432836760e3 {
+  padding: calc(var(--roc-sh-spacing) * 6);
+}
+.roc-s-05ab12448317 {
+  text-align: center;
+}
+.roc-s-035bd245837f {
+  font-size: var(--roc-sh-text-lg);
+  line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-lg--line-height));
+}
+.roc-s-c74ab393b96d {
+  font-size: var(--roc-sh-text-sm);
+  line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-sm--line-height));
+}
+.roc-s-87e86ce38eaf {
+  --roc-sh-tw-font-weight: var(--roc-sh-font-weight-semibold);
+  font-weight: var(--roc-sh-font-weight-semibold);
+}
+.roc-s-35f35c41d134 {
+  color: var(--roc-sh-color-muted-foreground);
+}
+.roc-s-0d4ca75de41c {
+  --roc-sh-tw-shadow:
+    0 10px 15px -3px var(--roc-sh-tw-shadow-color, rgb(0 0 0 / 0.1)),
+    0 4px 6px -4px var(--roc-sh-tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow:
+    var(--roc-sh-tw-inset-shadow), var(--roc-sh-tw-inset-ring-shadow),
+    var(--roc-sh-tw-ring-offset-shadow), var(--roc-sh-tw-ring-shadow),
+    var(--roc-sh-tw-shadow);
+}
+.roc-s-10e9f177b8fc {
+  --roc-sh-tw-duration: 200ms;
+  transition-duration: 200ms;
+}
+.roc-s-7a68fd2753d6:is(:where(.roc-s-6f251cb88324)[data-size="sm"] *) {
+  display: grid;
+}
+.roc-s-3014d16cc582:is(:where(.roc-s-6f251cb88324)[data-size="sm"] *) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.roc-s-3e74f7f21a0f:has([data-slot="alert-dialog-media"]) {
+  grid-template-rows: auto auto 1fr;
+}
+.roc-s-070eebcc4f58:has([data-slot="alert-dialog-media"]) {
+  column-gap: calc(var(--roc-sh-spacing) * 6);
+}
+.roc-s-4c2ad4dbde51[data-size="sm"] {
+  max-width: var(--roc-sh-container-xs);
+}
+@media (width >= 40rem) {
+  .roc-s-bd85140e6a7c {
+    flex-direction: row;
+  }
+  .roc-s-40b618ad2df3 {
+    justify-content: flex-end;
+  }
+  .roc-s-3654bb6eac3d:is(:where(.roc-s-6f251cb88324)[data-size="default"] *) {
+    grid-row: span 2 / span 2;
+  }
+  .roc-s-dd65da590bfb:is(:where(.roc-s-6f251cb88324)[data-size="default"] *) {
+    place-items: start;
+  }
+  .roc-s-c406108470f8:is(:where(.roc-s-6f251cb88324)[data-size="default"] *) {
+    text-align: left;
+  }
+  .roc-s-04ea8bec9e34:is(:where(.roc-s-6f251cb88324)[data-size="default"] *):is(
+      :where(.roc-s-6f251cb88324):has([data-slot="alert-dialog-media"]) *
+    ) {
+    grid-column-start: 2;
+  }
+  .roc-s-f5e1309ad2eb:is(
+      :where(.roc-s-6f251cb88324)[data-size="default"] *
+    ):has([data-slot="alert-dialog-media"]) {
+    grid-template-rows: auto 1fr;
+  }
+  .roc-s-a6360ea2be89[data-size="default"] {
+    max-width: var(--roc-sh-container-lg);
+  }
+}
+:is(.roc-s-635c19e44a8f > *):is(svg:not([class*="size-"])) {
+  width: calc(var(--roc-sh-spacing) * 8);
+  height: calc(var(--roc-sh-spacing) * 8);
+}
+@property --roc-sh-tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --roc-sh-tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --roc-sh-tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --roc-sh-tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --roc-sh-tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --roc-sh-tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --roc-sh-tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --roc-sh-tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --roc-sh-tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    :where(
+      .roc-shadcn,
+      .roc-shadcn *,
+      .roc-shadcn::before,
+      .roc-shadcn::after
+    ) {
+      --roc-sh-tw-translate-x: 0;
+      --roc-sh-tw-translate-y: 0;
+      --roc-sh-tw-translate-z: 0;
+      --roc-sh-tw-border-style: solid;
+      --roc-sh-tw-font-weight: initial;
+      --roc-sh-tw-shadow: 0 0 #0000;
+      --roc-sh-tw-shadow-color: initial;
+      --roc-sh-tw-shadow-alpha: 100%;
+      --roc-sh-tw-inset-shadow: 0 0 #0000;
+      --roc-sh-tw-inset-shadow-color: initial;
+      --roc-sh-tw-inset-shadow-alpha: 100%;
+      --roc-sh-tw-ring-color: initial;
+      --roc-sh-tw-ring-shadow: 0 0 #0000;
+      --roc-sh-tw-inset-ring-color: initial;
+      --roc-sh-tw-inset-ring-shadow: 0 0 #0000;
+      --roc-sh-tw-ring-inset: initial;
+      --roc-sh-tw-ring-offset-width: 0px;
+      --roc-sh-tw-ring-offset-color: #fff;
+      --roc-sh-tw-ring-offset-shadow: 0 0 #0000;
+      --roc-sh-tw-duration: initial;
+    }
+  }
+}

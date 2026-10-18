@@ -13,8 +13,8 @@ async (page) => {
   ).contentFrame();
   await view.locator("#pagination").waitFor();
   assert(
-    (await view.locator(".component-card").count()) === 25,
-    "All 25 customized foundations are mounted",
+    (await view.locator(".component-card").count()) === 66,
+    "All 66 customized foundations are mounted",
   );
   const focus = async (name) => {
     const back = page.getByRole("button", {

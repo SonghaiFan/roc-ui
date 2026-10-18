@@ -1,0 +1,17 @@
+@import "./ui-base.css";
+.roc-collapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 220ms;
+}
+.roc-collapsible[data-open="true"] {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+.roc-collapsible-inner {
+  min-height: 0;
+  overflow: hidden;
+}

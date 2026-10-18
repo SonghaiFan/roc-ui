@@ -1,0 +1,372 @@
+@import "./shadcn-base.css";
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+.roc-shadcn {
+  --roc-sh-color-black: #000;
+  --roc-sh-spacing: 0.25rem;
+  --roc-sh-container-sm: 24rem;
+  --roc-sh-text-sm: 0.875rem;
+  --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
+  --roc-sh-font-weight-semibold: 600;
+  --roc-sh-radius-xs: 3px;
+  --roc-sh-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --roc-sh-default-transition-duration: 150ms;
+  --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --roc-sh-color-background: var(--roc-paper, #fff);
+  --roc-sh-color-foreground: #252525;
+  --roc-sh-color-secondary: #f3f3f3;
+  --roc-sh-color-muted-foreground: #737373;
+  --roc-sh-color-ring: #737373;
+}
+.roc-s-32fb090591d9 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border-width: 0;
+}
+.roc-s-747355bdc2a2 {
+  position: absolute;
+}
+.roc-s-992a93455c71 {
+  position: fixed;
+}
+.roc-s-ce13093ad8c9 {
+  inset: 0px;
+}
+.roc-s-3ba24c062d55 {
+  inset-inline: 0px;
+}
+.roc-s-eb9e48c5dda9 {
+  inset-block: 0px;
+}
+.roc-s-98599e4ee250 {
+  top: 0px;
+}
+.roc-s-83ee6d9ede9d {
+  top: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-a74c4477017c {
+  right: 0px;
+}
+.roc-s-830b1d2217ca {
+  right: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-30150dd033ab {
+  bottom: 0px;
+}
+.roc-s-635702706586 {
+  left: 0px;
+}
+.roc-s-3eef1ce97dba {
+  z-index: 50;
+}
+.roc-s-930e37ac8b7d {
+  margin-top: auto;
+}
+.roc-s-222f930b8752 {
+  display: flex;
+}
+.roc-s-100c22d5776b {
+  width: calc(var(--roc-sh-spacing) * 4);
+  height: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-a66e9985b093 {
+  height: auto;
+}
+.roc-s-57c930dc1c31 {
+  height: 100%;
+}
+.roc-s-179cb7404c4a {
+  width: calc(3 / 4 * 100%);
+}
+.roc-s-302c0d124a94 {
+  flex-direction: column;
+}
+.roc-s-70007b876865 {
+  gap: calc(var(--roc-sh-spacing) * 1.5);
+}
+.roc-s-074569488cca {
+  gap: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-90fc3ec35a37 {
+  gap: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-30c08d7acd8f {
+  border-radius: var(--roc-sh-radius-xs);
+}
+.roc-s-894c3815a57f {
+  border-top-style: var(--roc-sh-tw-border-style);
+  border-top-width: 1px;
+}
+.roc-s-baf794b99c10 {
+  border-right-style: var(--roc-sh-tw-border-style);
+  border-right-width: 1px;
+}
+.roc-s-bbe39cfb5cc6 {
+  border-bottom-style: var(--roc-sh-tw-border-style);
+  border-bottom-width: 1px;
+}
+.roc-s-8d940fccb093 {
+  border-left-style: var(--roc-sh-tw-border-style);
+  border-left-width: 1px;
+}
+.roc-s-5b272f3c5076 {
+  background-color: var(--roc-sh-color-background);
+}
+.roc-s-cba3ecce1586 {
+  background-color: color-mix(in srgb, #000 50%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(
+      in oklab,
+      var(--roc-sh-color-black) 50%,
+      transparent
+    );
+  }
+}
+.roc-s-99df86594a98 {
+  padding: calc(var(--roc-sh-spacing) * 4);
+}
+.roc-s-c74ab393b96d {
+  font-size: var(--roc-sh-text-sm);
+  line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-sm--line-height));
+}
+.roc-s-87e86ce38eaf {
+  --roc-sh-tw-font-weight: var(--roc-sh-font-weight-semibold);
+  font-weight: var(--roc-sh-font-weight-semibold);
+}
+.roc-s-957a109f887f {
+  color: var(--roc-sh-color-foreground);
+}
+.roc-s-35f35c41d134 {
+  color: var(--roc-sh-color-muted-foreground);
+}
+.roc-s-edf5f892709c {
+  opacity: 70%;
+}
+.roc-s-0d4ca75de41c {
+  --roc-sh-tw-shadow:
+    0 10px 15px -3px var(--roc-sh-tw-shadow-color, rgb(0 0 0 / 0.1)),
+    0 4px 6px -4px var(--roc-sh-tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow:
+    var(--roc-sh-tw-inset-shadow), var(--roc-sh-tw-inset-ring-shadow),
+    var(--roc-sh-tw-ring-offset-shadow), var(--roc-sh-tw-ring-shadow),
+    var(--roc-sh-tw-shadow);
+}
+.roc-s-bd9fbbe5d14a {
+  --roc-sh-tw-ring-offset-color: var(--roc-sh-color-background);
+}
+.roc-s-70dd37c11434 {
+  transition-property:
+    color,
+    background-color,
+    border-color,
+    outline-color,
+    text-decoration-color,
+    fill,
+    stroke,
+    --roc-sh-tw-gradient-from,
+    --roc-sh-tw-gradient-via,
+    --roc-sh-tw-gradient-to,
+    opacity,
+    box-shadow,
+    transform,
+    translate,
+    scale,
+    rotate,
+    filter,
+    -webkit-backdrop-filter,
+    backdrop-filter,
+    display,
+    content-visibility,
+    overlay,
+    pointer-events;
+  transition-timing-function: var(
+    --roc-sh-tw-ease,
+    var(--roc-sh-default-transition-timing-function)
+  );
+  transition-duration: var(
+    --roc-sh-tw-duration,
+    var(--roc-sh-default-transition-duration)
+  );
+}
+.roc-s-2cdd01663c76 {
+  transition-property: opacity;
+  transition-timing-function: var(
+    --roc-sh-tw-ease,
+    var(--roc-sh-default-transition-timing-function)
+  );
+  transition-duration: var(
+    --roc-sh-tw-duration,
+    var(--roc-sh-default-transition-duration)
+  );
+}
+.roc-s-16c2539d9622 {
+  --roc-sh-tw-ease: var(--roc-sh-ease-in-out);
+  transition-timing-function: var(--roc-sh-ease-in-out);
+}
+@media (hover: hover) {
+  .roc-s-8da02faac748:hover {
+    opacity: 100%;
+  }
+}
+.roc-s-0d57d3d656f7:focus {
+  --roc-sh-tw-ring-shadow: var(--roc-sh-tw-ring-inset,) 0 0 0
+    calc(2px + var(--roc-sh-tw-ring-offset-width))
+    var(--roc-sh-tw-ring-color, currentcolor);
+  box-shadow:
+    var(--roc-sh-tw-inset-shadow), var(--roc-sh-tw-inset-ring-shadow),
+    var(--roc-sh-tw-ring-offset-shadow), var(--roc-sh-tw-ring-shadow),
+    var(--roc-sh-tw-shadow);
+}
+.roc-s-9db723027e39:focus {
+  --roc-sh-tw-ring-color: var(--roc-sh-color-ring);
+}
+.roc-s-c7969e2d6842:focus {
+  --roc-sh-tw-ring-offset-width: 2px;
+  --roc-sh-tw-ring-offset-shadow: var(--roc-sh-tw-ring-inset,) 0 0 0
+    var(--roc-sh-tw-ring-offset-width) var(--roc-sh-tw-ring-offset-color);
+}
+.roc-s-7ba15cadabe2:focus {
+  --roc-sh-tw-outline-style: none;
+  outline-style: none;
+  @media (forced-colors: active) {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+}
+.roc-s-8d3c1014b967:disabled {
+  pointer-events: none;
+}
+.roc-s-e49515ace633[data-state="closed"] {
+  --roc-sh-tw-duration: 300ms;
+  transition-duration: 300ms;
+}
+.roc-s-c7d98ce9dd2d[data-state="open"] {
+  background-color: var(--roc-sh-color-secondary);
+}
+.roc-s-e093c9dc2cfe[data-state="open"] {
+  --roc-sh-tw-duration: 500ms;
+  transition-duration: 500ms;
+}
+@media (width >= 40rem) {
+  .roc-s-4213d5ddc102 {
+    max-width: var(--roc-sh-container-sm);
+  }
+}
+@property --roc-sh-tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --roc-sh-tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --roc-sh-tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --roc-sh-tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --roc-sh-tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --roc-sh-tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    :where(
+      .roc-shadcn,
+      .roc-shadcn *,
+      .roc-shadcn::before,
+      .roc-shadcn::after
+    ) {
+      --roc-sh-tw-border-style: solid;
+      --roc-sh-tw-font-weight: initial;
+      --roc-sh-tw-shadow: 0 0 #0000;
+      --roc-sh-tw-shadow-color: initial;
+      --roc-sh-tw-shadow-alpha: 100%;
+      --roc-sh-tw-inset-shadow: 0 0 #0000;
+      --roc-sh-tw-inset-shadow-color: initial;
+      --roc-sh-tw-inset-shadow-alpha: 100%;
+      --roc-sh-tw-ring-color: initial;
+      --roc-sh-tw-ring-shadow: 0 0 #0000;
+      --roc-sh-tw-inset-ring-color: initial;
+      --roc-sh-tw-inset-ring-shadow: 0 0 #0000;
+      --roc-sh-tw-ring-inset: initial;
+      --roc-sh-tw-ring-offset-width: 0px;
+      --roc-sh-tw-ring-offset-color: #fff;
+      --roc-sh-tw-ring-offset-shadow: 0 0 #0000;
+      --roc-sh-tw-ease: initial;
+      --roc-sh-tw-duration: initial;
+    }
+  }
+}

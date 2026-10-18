@@ -1,0 +1,466 @@
+@import "./shadcn-base.css";
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+.roc-shadcn {
+  --roc-sh-spacing: 0.25rem;
+  --roc-sh-text-sm: 0.875rem;
+  --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
+  --roc-sh-leading-relaxed: 1.625;
+  --roc-sh-radius-xl: 12px;
+  --roc-sh-default-transition-duration: 150ms;
+  --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --roc-sh-color-background: var(--roc-paper, #fff);
+  --roc-sh-color-foreground: #252525;
+  --roc-sh-color-card: #fff;
+  --roc-sh-color-primary: var(--roc-accent, #252525);
+  --roc-sh-color-primary-foreground: #fff;
+  --roc-sh-color-secondary: #f3f3f3;
+  --roc-sh-color-secondary-foreground: #252525;
+  --roc-sh-color-muted: #f5f5f5;
+  --roc-sh-color-destructive: #b42318;
+  --roc-sh-color-border: #e5e5e5;
+  --roc-sh-color-input: #dedede;
+  --roc-sh-color-ring: #737373;
+}
+.roc-s-747355bdc2a2 {
+  position: absolute;
+}
+.roc-s-d2d9e1f13413 {
+  position: relative;
+}
+.roc-s-98599e4ee250 {
+  top: 0px;
+}
+.roc-s-8b66d98296a5 {
+  right: calc(var(--roc-sh-spacing) * 3);
+}
+.roc-s-30150dd033ab {
+  bottom: 0px;
+}
+.roc-s-ea31f8b3a958 {
+  left: calc(var(--roc-sh-spacing) * 3);
+}
+.roc-s-418e44ad4f9e {
+  z-index: 10;
+}
+.roc-s-222f930b8752 {
+  display: flex;
+}
+.roc-s-8cfb5a42ef9f {
+  width: fit-content;
+}
+.roc-s-d5cb992d8706 {
+  max-width: 80%;
+}
+.roc-s-81b198a2db84 {
+  max-width: 100%;
+}
+.roc-s-184ddc11e5f9 {
+  min-width: 0px;
+}
+.roc-s-27ead27a81df {
+  flex-shrink: 0;
+}
+.roc-s-3d1357349cb1 {
+  --roc-sh-tw-translate-y: calc(calc(3 / 4 * 100%) * -1);
+  translate: var(--roc-sh-tw-translate-x) var(--roc-sh-tw-translate-y);
+}
+.roc-s-c8db802467c9 {
+  --roc-sh-tw-translate-y: calc(3 / 4 * 100%);
+  translate: var(--roc-sh-tw-translate-x) var(--roc-sh-tw-translate-y);
+}
+.roc-s-302c0d124a94 {
+  flex-direction: column;
+}
+.roc-s-71556df3b421 {
+  align-items: center;
+}
+.roc-s-a503dd374cca {
+  justify-content: center;
+}
+.roc-s-19e97f3f40e6 {
+  gap: var(--roc-sh-spacing);
+}
+.roc-s-074569488cca {
+  gap: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-d5111d0e9f48 {
+  overflow: hidden;
+}
+.roc-s-b005d61d0953 {
+  border-radius: calc(infinity * 1px);
+}
+.roc-s-6ad537f2bbaa {
+  border-radius: var(--roc-sh-radius-xl);
+}
+.roc-s-4f1a55de40bc {
+  border-style: var(--roc-sh-tw-border-style);
+  border-width: 1px;
+}
+.roc-s-be97b11af432 {
+  --roc-sh-tw-border-style: none;
+  border-style: none;
+}
+.roc-s-e9c0d2f3599e {
+  border-color: transparent;
+}
+.roc-s-87ecb59f2d2d {
+  background-color: var(--roc-sh-color-muted);
+}
+.roc-s-1da2e8f173c5 {
+  padding-inline: calc(var(--roc-sh-spacing) * 1.5);
+}
+.roc-s-0f9e6672913a {
+  padding-inline: calc(var(--roc-sh-spacing) * 3);
+}
+.roc-s-be24efcccdb9 {
+  padding-block: calc(var(--roc-sh-spacing) * 0.5);
+}
+.roc-s-b5edc3ea7c91 {
+  padding-block: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-c74ab393b96d {
+  font-size: var(--roc-sh-text-sm);
+  line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-sm--line-height));
+}
+.roc-s-059428494356 {
+  --roc-sh-tw-leading: var(--roc-sh-leading-relaxed);
+  line-height: var(--roc-sh-leading-relaxed);
+}
+.roc-s-1eb753eb16e8 {
+  overflow-wrap: break-word;
+}
+.roc-s-ea7fd2c2745b {
+  --roc-sh-tw-ring-shadow: var(--roc-sh-tw-ring-inset,) 0 0 0
+    calc(3px + var(--roc-sh-tw-ring-offset-width))
+    var(--roc-sh-tw-ring-color, currentcolor);
+  box-shadow:
+    var(--roc-sh-tw-inset-shadow), var(--roc-sh-tw-inset-ring-shadow),
+    var(--roc-sh-tw-ring-offset-shadow), var(--roc-sh-tw-ring-shadow),
+    var(--roc-sh-tw-shadow);
+}
+.roc-s-4aec084365be {
+  --roc-sh-tw-ring-color: var(--roc-sh-color-card);
+}
+.roc-s-bceac5f707d0:is(:where(.roc-s-a7a3eeeabdda)[data-align="end"] *) {
+  align-self: flex-end;
+}
+.roc-s-9a446d4f4132:is(:where(.roc-s-2137fc689640)[data-align="end"] *) {
+  align-self: flex-end;
+}
+.roc-s-393835207416:has(:is(button)) {
+  padding: 0px;
+}
+.roc-s-e1409d26247b[data-align="end"] {
+  align-self: flex-end;
+}
+:is(.roc-s-31da9e6e796d > *)[data-slot="bubble-content"] {
+  border-radius: 0;
+}
+:is(.roc-s-8e61b6e66d0e > *)[data-slot="bubble-content"] {
+  border-color: var(--roc-sh-color-border);
+}
+:is(.roc-s-4c07fb5f3c7d > *)[data-slot="bubble-content"] {
+  background-color: oklch(from var(--primary) 0.93 calc(c * 0.4) h);
+}
+:is(.roc-s-f47926549252 > *)[data-slot="bubble-content"] {
+  background-color: var(--roc-sh-color-background);
+}
+:is(.roc-s-4578d8a15183 > *)[data-slot="bubble-content"] {
+  background-color: color-mix(in srgb, #b42318 10%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(
+      in oklab,
+      var(--roc-sh-color-destructive) 10%,
+      transparent
+    );
+  }
+}
+:is(.roc-s-eaf5f9d103a8 > *)[data-slot="bubble-content"] {
+  background-color: var(--roc-sh-color-muted);
+}
+:is(.roc-s-6ccf7ef27fd2 > *)[data-slot="bubble-content"] {
+  background-color: var(--roc-sh-color-primary);
+}
+:is(.roc-s-248f3e6ac6b3 > *)[data-slot="bubble-content"] {
+  background-color: var(--roc-sh-color-secondary);
+}
+:is(.roc-s-be34253f63e5 > *)[data-slot="bubble-content"] {
+  background-color: transparent;
+}
+:is(.roc-s-3578bd946493 > *)[data-slot="bubble-content"] {
+  padding: 0px;
+}
+:is(.roc-s-ff5ec7a609e1 > *)[data-slot="bubble-content"] {
+  color: var(--roc-sh-color-destructive);
+}
+:is(.roc-s-de918e7391b5 > *)[data-slot="bubble-content"] {
+  color: var(--roc-sh-color-foreground);
+}
+:is(.roc-s-45ea72e24647 > *)[data-slot="bubble-content"] {
+  color: var(--roc-sh-color-primary-foreground);
+}
+:is(.roc-s-65168d4b0c7d > *)[data-slot="bubble-content"] {
+  color: var(--roc-sh-color-secondary-foreground);
+}
+.roc-s-d00025bf56f5[data-variant="ghost"] {
+  max-width: 100%;
+}
+@media (prefers-color-scheme: dark) {
+  :is(.roc-s-fb4c9e552f15 > *)[data-slot="bubble-content"] {
+    background-color: oklch(from var(--primary) 0.3 calc(c * 0.4) h);
+  }
+  :is(.roc-s-a0917b627f8b > *)[data-slot="bubble-content"] {
+    background-color: color-mix(in srgb, #b42318 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(
+        in oklab,
+        var(--roc-sh-color-destructive) 20%,
+        transparent
+      );
+    }
+  }
+}
+.roc-s-146f528513a0:is(button) {
+  text-align: left;
+}
+.roc-s-ac89775d8d02:is(button, a) {
+  transition-property:
+    color, background-color, border-color, outline-color, text-decoration-color,
+    fill, stroke, --roc-sh-tw-gradient-from, --roc-sh-tw-gradient-via,
+    --roc-sh-tw-gradient-to;
+  transition-timing-function: var(
+    --roc-sh-tw-ease,
+    var(--roc-sh-default-transition-timing-function)
+  );
+  transition-duration: var(
+    --roc-sh-tw-duration,
+    var(--roc-sh-default-transition-duration)
+  );
+}
+.roc-s-2639a4c2e4eb:is(button, a) {
+  --roc-sh-tw-outline-style: none;
+  outline-style: none;
+}
+.roc-s-e00381a252a3:is(button, a):focus-visible {
+  border-color: var(--roc-sh-color-ring);
+}
+.roc-s-dd042d1469da:is(button, a):focus-visible {
+  --roc-sh-tw-ring-shadow: var(--roc-sh-tw-ring-inset,) 0 0 0
+    calc(3px + var(--roc-sh-tw-ring-offset-width))
+    var(--roc-sh-tw-ring-color, currentcolor);
+  box-shadow:
+    var(--roc-sh-tw-inset-shadow), var(--roc-sh-tw-inset-ring-shadow),
+    var(--roc-sh-tw-ring-offset-shadow), var(--roc-sh-tw-ring-shadow),
+    var(--roc-sh-tw-shadow);
+}
+.roc-s-0ad0dedeee98:is(button, a):focus-visible {
+  --roc-sh-tw-ring-color: color-mix(in srgb, #737373 50%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    --roc-sh-tw-ring-color: color-mix(
+      in oklab,
+      var(--roc-sh-color-ring) 50%,
+      transparent
+    );
+  }
+}
+.roc-s-43df09252070 > [data-slot="bubble-content"]:is(button, a):hover {
+  background-color: var(--muted);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in oklch, var(--muted), var(--foreground) 5%);
+  }
+}
+.roc-s-9ec2985f8c8a > [data-slot="bubble-content"]:is(button, a):hover {
+  background-color: var(--secondary);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(
+      in oklch,
+      var(--secondary),
+      var(--foreground) 5%
+    );
+  }
+}
+.roc-s-84202996f0b4 > [data-slot="bubble-content"]:is(button, a):hover {
+  background-color: oklch(from var(--primary) 0.88 calc(c * 0.5) h);
+}
+.roc-s-8ffbaa305805 > [data-slot="bubble-content"]:is(button, a):hover {
+  background-color: color-mix(in srgb, #b42318 20%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(
+      in oklab,
+      var(--roc-sh-color-destructive) 20%,
+      transparent
+    );
+  }
+}
+.roc-s-11849f73a0fb > [data-slot="bubble-content"]:is(button, a):hover {
+  background-color: var(--roc-sh-color-muted);
+}
+.roc-s-644eaf83ae45 > [data-slot="bubble-content"]:is(button, a):hover {
+  background-color: color-mix(in srgb, #252525 80%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(
+      in oklab,
+      var(--roc-sh-color-primary) 80%,
+      transparent
+    );
+  }
+}
+.roc-s-8b797798e4a6 > [data-slot="bubble-content"]:is(button, a):hover {
+  color: var(--roc-sh-color-foreground);
+}
+@media (prefers-color-scheme: dark) {
+  .roc-s-f92c9ddc7a41 > [data-slot="bubble-content"]:is(button, a):hover {
+    background-color: oklch(from var(--primary) 0.35 calc(c * 0.5) h);
+  }
+  .roc-s-9df25d800da4 > [data-slot="bubble-content"]:is(button, a):hover {
+    background-color: color-mix(in srgb, #b42318 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(
+        in oklab,
+        var(--roc-sh-color-destructive) 30%,
+        transparent
+      );
+    }
+  }
+  .roc-s-b3a9f50ccf9e > [data-slot="bubble-content"]:is(button, a):hover {
+    background-color: color-mix(in srgb, #dedede 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(
+        in oklab,
+        var(--roc-sh-color-input) 30%,
+        transparent
+      );
+    }
+  }
+  .roc-s-ebde28b1fc90 > [data-slot="bubble-content"]:is(button, a):hover {
+    background-color: color-mix(in srgb, #f5f5f5 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(
+        in oklab,
+        var(--roc-sh-color-muted) 50%,
+        transparent
+      );
+    }
+  }
+}
+@property --roc-sh-tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --roc-sh-tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --roc-sh-tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --roc-sh-tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --roc-sh-tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --roc-sh-tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --roc-sh-tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --roc-sh-tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --roc-sh-tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --roc-sh-tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    :where(
+      .roc-shadcn,
+      .roc-shadcn *,
+      .roc-shadcn::before,
+      .roc-shadcn::after
+    ) {
+      --roc-sh-tw-translate-x: 0;
+      --roc-sh-tw-translate-y: 0;
+      --roc-sh-tw-translate-z: 0;
+      --roc-sh-tw-border-style: solid;
+      --roc-sh-tw-leading: initial;
+      --roc-sh-tw-shadow: 0 0 #0000;
+      --roc-sh-tw-shadow-color: initial;
+      --roc-sh-tw-shadow-alpha: 100%;
+      --roc-sh-tw-inset-shadow: 0 0 #0000;
+      --roc-sh-tw-inset-shadow-color: initial;
+      --roc-sh-tw-inset-shadow-alpha: 100%;
+      --roc-sh-tw-ring-color: initial;
+      --roc-sh-tw-ring-shadow: 0 0 #0000;
+      --roc-sh-tw-inset-ring-color: initial;
+      --roc-sh-tw-inset-ring-shadow: 0 0 #0000;
+      --roc-sh-tw-ring-inset: initial;
+      --roc-sh-tw-ring-offset-width: 0px;
+      --roc-sh-tw-ring-offset-color: #fff;
+      --roc-sh-tw-ring-offset-shadow: 0 0 #0000;
+    }
+  }
+}

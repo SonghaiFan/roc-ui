@@ -1,0 +1,68 @@
+@import "./shadcn-base.css";
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+.roc-shadcn {
+  --roc-sh-spacing: 0.25rem;
+  --roc-sh-text-sm: 0.875rem;
+  --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
+  --roc-sh-font-weight-medium: 500;
+}
+.roc-s-222f930b8752 {
+  display: flex;
+}
+.roc-s-71556df3b421 {
+  align-items: center;
+}
+.roc-s-074569488cca {
+  gap: calc(var(--roc-sh-spacing) * 2);
+}
+.roc-s-c74ab393b96d {
+  font-size: var(--roc-sh-text-sm);
+  line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-sm--line-height));
+}
+.roc-s-761cdb81bddb {
+  --roc-sh-tw-leading: 1;
+  line-height: 1;
+}
+.roc-s-daaac3fbf55e {
+  --roc-sh-tw-font-weight: var(--roc-sh-font-weight-medium);
+  font-weight: var(--roc-sh-font-weight-medium);
+}
+.roc-s-78905c9e865c {
+  -webkit-user-select: none;
+  user-select: none;
+}
+.roc-s-9af9a4182597:is(:where(.group)[data-disabled="true"] *) {
+  pointer-events: none;
+}
+.roc-s-272ef88d6a0c:is(:where(.group)[data-disabled="true"] *) {
+  opacity: 50%;
+}
+.roc-s-f0ee83167878:is(:where(.peer):disabled ~ *) {
+  cursor: not-allowed;
+}
+.roc-s-25d26df52a1d:is(:where(.peer):disabled ~ *) {
+  opacity: 50%;
+}
+@property --roc-sh-tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --roc-sh-tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    :where(
+      .roc-shadcn,
+      .roc-shadcn *,
+      .roc-shadcn::before,
+      .roc-shadcn::after
+    ) {
+      --roc-sh-tw-leading: initial;
+      --roc-sh-tw-font-weight: initial;
+    }
+  }
+}

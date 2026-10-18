@@ -1,0 +1,62 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio",
+  "type": "registry:component",
+  "title": "Aspect Ratio",
+  "description": "ROC: retained identity and coherent layout changes.",
+  "dependencies": [
+    "react@^19.0.0",
+    "radix-ui@^1.8.1",
+    "clsx@^2.1.1"
+  ],
+  "files": [
+    {
+      "path": "registry/roc/aspect-ratio.tsx",
+      "type": "registry:file",
+      "target": "~/components/roc/aspect-ratio.tsx",
+      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport { cn } from \"./utils\";\n(\"use client\");\nimport { AspectRatio as AspectRatioPrimitive } from \"radix-ui\";\nfunction AspectRatio({\n  ...props\n}: React.ComponentProps<typeof AspectRatioPrimitive.Root>) {\n  return <AspectRatioPrimitive.Root data-slot=\"aspect-ratio\" {...props} />;\n}\nexport { AspectRatio };\n\nimport \"./aspect-ratio.css\";\n"
+    },
+    {
+      "path": "registry/roc/utils.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/aspect-ratio.css",
+      "type": "registry:file",
+      "target": "~/components/roc/aspect-ratio.css",
+      "content": "@import \"./shadcn-base.css\";\n/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */\n"
+    },
+    {
+      "path": "registry/roc/TAILWIND-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/TAILWIND-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) Tailwind Labs, Inc.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "path": "registry/roc/shadcn-base.css",
+      "type": "registry:file",
+      "target": "~/components/roc/shadcn-base.css",
+      "content": "/* Scoped preflight for copied components. No selectors affect the host page. */\n@import \"./ui-base.css\";\n:where(.roc-shadcn, .roc-shadcn *, .roc-shadcn::before, .roc-shadcn::after) {\n  box-sizing: border-box;\n  border-width: 0;\n  border-style: solid;\n  border-color: var(--roc-line, #e5e5e5);\n}\n:where(.roc-shadcn) {\n  font-family: inherit;\n  line-height: 1.5;\n  color: var(--roc-ink, #252525);\n  --roc-sh-color-primary: var(--roc-accent, #252525);\n  --roc-sh-color-primary-foreground: #fff;\n}\n:where(\n  button.roc-shadcn,\n  input.roc-shadcn,\n  select.roc-shadcn,\n  textarea.roc-shadcn\n) {\n  font: inherit;\n  color: inherit;\n  background: transparent;\n}\n:where(button.roc-shadcn) {\n  cursor: pointer;\n}\n:where(button.roc-shadcn:disabled) {\n  cursor: not-allowed;\n}\n:where(\n  .roc-shadcn h1,\n  .roc-shadcn h2,\n  .roc-shadcn h3,\n  .roc-shadcn p,\n  .roc-shadcn pre,\n  h1.roc-shadcn,\n  h2.roc-shadcn,\n  h3.roc-shadcn,\n  p.roc-shadcn,\n  pre.roc-shadcn\n) {\n  margin: 0;\n}\n:where(ul.roc-shadcn, ol.roc-shadcn) {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n:where(.roc-shadcn svg) {\n  width: 16px;\n  height: 16px;\n  flex-shrink: 0;\n}\n:where(.roc-shadcn input) {\n  min-width: 0;\n}\n.roc-shadcn:focus-visible {\n  outline: 2px solid var(--roc-focus, #737373);\n  outline-offset: 3px;\n}\n@media (prefers-reduced-motion: reduce) {\n  .roc-shadcn,\n  .roc-shadcn * {\n    scroll-behavior: auto !important;\n    transition-duration: 0s !important;\n    animation-duration: 0.01ms !important;\n    animation-iteration-count: 1 !important;\n  }\n}\n\n.roc-shadcn[hidden],\n.roc-shadcn [hidden] {\n  display: none !important;\n}\n"
+    },
+    {
+      "path": "registry/roc/ui-base.css",
+      "type": "registry:file",
+      "target": "~/components/roc/ui-base.css",
+      "content": "/* Shared ROC foundations. No global reset or host stylesheet required. */\n.roc-ui {\n  box-sizing: border-box;\n  font: inherit;\n  font-size: 13px;\n  color: var(--roc-ink, #252525);\n}\n.roc-ui *,\n.roc-ui *::before,\n.roc-ui *::after {\n  box-sizing: border-box;\n}\n.roc-ui:focus-visible {\n  outline: 2px solid var(--roc-focus, #737373);\n  outline-offset: 3px;\n}\n.roc-ui:disabled,\n.roc-ui[data-disabled] {\n  opacity: 0.45;\n  cursor: not-allowed;\n}\n.roc-ui-icon,\n.roc-ui > svg {\n  width: 16px;\n  height: 16px;\n  flex-shrink: 0;\n  pointer-events: none;\n}\n.roc-ui-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n@keyframes roc-ui-reveal {\n  from {\n    opacity: 0;\n    transform: translateY(4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes roc-ui-dismiss {\n  from {\n    opacity: 1;\n  }\n  to {\n    opacity: 0;\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  .roc-ui,\n  .roc-ui::before,\n  .roc-ui::after {\n    transition-duration: 0s !important;\n    animation-duration: 0.01ms !important;\n  }\n}\n"
+    },
+    {
+      "path": "registry/roc/SOURCE-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SOURCE-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2026 Songhai\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "path": "registry/roc/SHADCN-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SHADCN-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2023 shadcn\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    }
+  ]
+}

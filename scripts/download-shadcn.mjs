@@ -5,7 +5,7 @@ const defaults =
   "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip alert avatar progress skeleton toggle toggle-group radio-group scroll-area breadcrumb pagination".split(
     " ",
   );
-const names = process.argv.slice(2).length ? process.argv.slice(2) : defaults;
+
 const root = "upstream/shadcn";
 await mkdir(root, { recursive: true });
 async function get(url) {
@@ -17,6 +17,7 @@ let previous;
 try {
   previous = JSON.parse(await readFile(`${root}/manifest.json`, "utf8"));
 } catch {}
+const names = process.argv.slice(2).length ? process.argv.slice(2) : previous?.items?.map(item => item.name) ?? defaults;
 const items = (previous?.items ?? [])
   .filter((item) => !names.includes(item.name))
   .map((item) => ({
@@ -24,19 +25,19 @@ const items = (previous?.items ?? [])
     retrievedAt: item.retrievedAt ?? previous.retrievedAt,
   }));
 for (const name of names) {
-  const url = `https://ui.shadcn.com/r/styles/new-york-v4/${name}.json`,
-    raw = await get(url),
-    item = JSON.parse(raw);
-  await writeFile(`${root}/${name}.json`, raw);
-  for (const file of item.files)
-    await writeFile(`${root}/${path.basename(file.path)}`, file.content);
-  items.push({
-    name,
-    retrievedAt: new Date().toISOString(),
-    url,
-    sha256: createHash("sha256").update(raw).digest("hex"),
-    dependencies: item.dependencies ?? [],
-  });
+  const reference = previous?.items?.find(item => item.name === name);
+  const url = reference?.url ?? `https://ui.shadcn.com/r/styles/new-york-v4/${name}.json`;
+  const raw = await get(url);
+  const provenance = { name, retrievedAt: new Date().toISOString(), url, sha256: createHash("sha256").update(raw).digest("hex") };
+  if (reference?.kind === "recipe") {
+    await writeFile(`${root}/${name}.mdx`, raw);
+    items.push({ ...provenance, kind: "recipe" });
+  } else {
+    const item = JSON.parse(raw);
+    await writeFile(`${root}/${name}.json`, raw);
+    for (const file of item.files) await writeFile(`${root}/${path.basename(file.path)}`, file.content);
+    items.push({ ...provenance, dependencies: item.dependencies ?? [] });
+  }
 }
 await writeFile(
   `${root}/LICENSE.md`,
@@ -45,7 +46,7 @@ await writeFile(
 await writeFile(
   `${root}/manifest.json`,
   JSON.stringify(
-    { retrievedAt: new Date().toISOString(), style: "new-york-v4", items },
+    { retrievedAt: new Date().toISOString(), style: "mixed; see per-item source URLs", items },
     null,
     2,
   ) + "\n",
