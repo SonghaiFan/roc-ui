@@ -137,7 +137,9 @@ lucide-react/dist/esm/icons/info.mjs:
 lucide-react/dist/esm/icons/italic.mjs:
 lucide-react/dist/esm/icons/loader-circle.mjs:
 lucide-react/dist/esm/icons/mail.mjs:
+lucide-react/dist/esm/icons/maximize.mjs:
 lucide-react/dist/esm/icons/minus.mjs:
+lucide-react/dist/esm/icons/monitor.mjs:
 lucide-react/dist/esm/icons/octagon-x.mjs:
 lucide-react/dist/esm/icons/panel-left.mjs:
 lucide-react/dist/esm/icons/pin.mjs:
@@ -145,6 +147,8 @@ lucide-react/dist/esm/icons/plus.mjs:
 lucide-react/dist/esm/icons/search.mjs:
 lucide-react/dist/esm/icons/settings.mjs:
 lucide-react/dist/esm/icons/sliders-horizontal.mjs:
+lucide-react/dist/esm/icons/smartphone.mjs:
+lucide-react/dist/esm/icons/tablet.mjs:
 lucide-react/dist/esm/icons/text-align-center.mjs:
 lucide-react/dist/esm/icons/text-align-end.mjs:
 lucide-react/dist/esm/icons/text-align-start.mjs:

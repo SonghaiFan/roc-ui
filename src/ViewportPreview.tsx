@@ -1,4 +1,10 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
+import {
+  MaximizeIcon,
+  MonitorIcon,
+  SmartphoneIcon,
+  TabletIcon,
+} from "lucide-react";
 import { Badge } from "../registry/roc/badge";
 import { Button } from "../registry/roc/button";
 import { Label } from "../registry/roc/label";
@@ -19,38 +25,13 @@ const breakpoints = [
   { label: "xl", width: 1280 },
   { label: "2xl", width: 1536 },
 ];
-function DeviceIcon({ kind }: { kind: string }) {
-  return (
-    <svg
-      viewBox="0 0 20 20"
-      width="16"
-      height="16"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      aria-hidden="true"
-    >
-      {kind === "desktop" ? (
-        <>
-          <rect x="2" y="3" width="16" height="11" rx="1.5" />
-          <path d="M7 18h6M10 14v4" />
-        </>
-      ) : kind === "phone" ? (
-        <>
-          <rect x="6" y="2" width="8" height="16" rx="2" />
-          <path d="M9 15.5h2" />
-        </>
-      ) : kind === "tablet" ? (
-        <>
-          <rect x="3" y="2" width="14" height="16" rx="2" />
-          <path d="M9 15.5h2" />
-        </>
-      ) : (
-        <path d="M7 3H3v4m10-4h4v4M3 13v4h4m10-4v4h-4M3 3l5 5m9-5-5 5M3 17l5-5m9 5-5-5" />
-      )}
-    </svg>
-  );
-}
+const deviceIcons = {
+  fit: MaximizeIcon,
+  desktop: MonitorIcon,
+  tablet: TabletIcon,
+  phone: SmartphoneIcon,
+  custom: MaximizeIcon,
+};
 /** One browsing context, resized in place. Media queries, visualViewport and
  * top-layer dialogs all see the selected dimensions, including while moving. */
 export function ViewportPreview({
@@ -126,7 +107,10 @@ export function ViewportPreview({
                   setHeight(preset.height);
                 }}
               >
-                <DeviceIcon kind={preset.id} />
+                {(() => {
+                  const Icon = deviceIcons[preset.id];
+                  return <Icon aria-hidden="true" />;
+                })()}
                 <span>{preset.label}</span>
               </Toggle>
             ))}
@@ -156,9 +140,10 @@ export function ViewportPreview({
                 aria-label="Media breakpoints"
               >
                 {breakpoints.map((point) => (
-                  <button
+                  <Button
                     key={point.label}
-                    type="button"
+                    variant="ghost"
+                    size="xs"
                     style={{ left: `${((point.width - 320) / 1280) * 100}%` }}
                     aria-label={`${point.label} breakpoint: ${point.width} pixels`}
                     aria-pressed={Math.round(target) === point.width}
@@ -167,7 +152,7 @@ export function ViewportPreview({
                   >
                     <span>{point.label}</span>
                     <small>{point.width}</small>
-                  </button>
+                  </Button>
                 ))}
               </div>
             </div>

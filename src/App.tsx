@@ -66,7 +66,7 @@ import {
   useEdgePanel,
 } from "../registry/roc/edge-panel";
 import { ViewportPreview } from "./ViewportPreview";
-import { palette, type Settings } from "./settings";
+import { palette, type AccentName } from "./settings";
 import "./site.css";
 const repo = "https://github.com/SonghaiFan/roc-ui";
 const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
@@ -219,7 +219,7 @@ export function App() {
   );
   const [query, setQuery] = useState(""),
     [filter, setFilter] = useState("All"),
-    [color, setColor] = useState<Settings["color"]>("neutral"),
+    [color, setColor] = useState<AccentName>("neutral"),
     [radius, setRadius] = useState(12),
     [surface, setSurface] = useState("White"),
     [density, setDensity] = useState("Comfortable");
@@ -511,7 +511,7 @@ export function App() {
                       key={key}
                       aria-label={`${key} accent`}
                       pressed={color === key}
-                      onPressedChange={() => setColor(key as Settings["color"])}
+                      onPressedChange={() => setColor(key as AccentName)}
                       style={{ background: value }}
                     />
                   ))}

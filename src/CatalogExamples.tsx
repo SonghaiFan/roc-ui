@@ -862,7 +862,7 @@ function EdgePanelDemo() {
           style={{ "--roc-edge-panel-width": "190px" } as CSSProperties}
         >
           <div style={{ display: "grid", gap: 10, padding: 14 }}>
-            <label style={{ fontSize: 11 }}>
+            <Label style={{ fontSize: 11 }}>
               Accent
               <Slider
                 aria-label="Edge accent"
@@ -871,7 +871,7 @@ function EdgePanelDemo() {
                 value={accent}
                 onValueChange={setAccent}
               />
-            </label>
+            </Label>
           </div>
         </Edge.EdgePanelContent>
       </div>

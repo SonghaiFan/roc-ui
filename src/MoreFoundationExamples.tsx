@@ -41,6 +41,7 @@ import {
   PaginationNext,
 } from "../registry/roc/pagination";
 import { Button } from "../registry/roc/button";
+import { Label } from "../registry/roc/label";
 import { Textarea } from "../registry/roc/textarea";
 const portrait = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><rect width="80" height="80" fill="#dedbd4"/><circle cx="40" cy="30" r="15" fill="#8d8980"/><path d="M9 80a31 31 0 0 1 62 0" fill="#8d8980"/></svg>')}`;
 const pages = [
@@ -288,10 +289,10 @@ export function MoreFoundationExample({ id }: { id: string }) {
             ["team", "People in this workspace"],
             ["public", "Public link"],
           ].map(([value, label]) => (
-            <label className="foundation-choice" key={value}>
+            <Label className="foundation-choice" key={value}>
               <RadioGroupItem value={value} />
               <span>{label}</span>
-            </label>
+            </Label>
           ))}
         </RadioGroup>
         <span className="foundation-hint">

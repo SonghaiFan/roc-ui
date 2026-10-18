@@ -201,7 +201,11 @@ summary {
   color: #cbcbcb;
 }
 .component-index .roc-ui-button span:first-child {
-  font: 9px ui-monospace, SFMono-Regular, Menlo, monospace;
+  font:
+    9px ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
   color: #858585;
 }
 .component-index .roc-ui-button svg {
@@ -229,7 +233,11 @@ summary {
   min-width: 0;
 }
 .count {
-  font: 10px ui-monospace, SFMono-Regular, Menlo, monospace;
+  font:
+    10px ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
   color: #a3a3a3;
 }
 .search {
@@ -306,7 +314,11 @@ summary {
   min-width: 24px;
   height: 24px;
   min-height: 24px;
-  font: 11px ui-monospace, SFMono-Regular, Menlo, monospace;
+  font:
+    11px ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
   color: #8c8c8c;
 }
 .component-heading .roc-ui-button:hover {
@@ -349,134 +361,6 @@ summary {
   font-size: 9px;
   padding-top: 5px;
 }
-.demo-status {
-  display: block;
-  min-height: 14px;
-  text-align: center;
-  font-size: 9px;
-  color: #969c8e;
-  margin-top: 12px;
-}
-.tabs-demo {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 22px;
-  padding: 10px 0 12px;
-}
-.selection-line {
-  font-size: 11px;
-  color: #8c9482;
-  display: flex;
-  gap: 7px;
-  align-items: center;
-}
-.tiny-dot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--roc-accent);
-  display: inline-block;
-}
-.voice-demo {
-  display: grid;
-  gap: 12px;
-}
-.voice-demo > p {
-  font-size: 15px;
-  margin: 0 0 4px;
-}
-.voice-demo > small {
-  font-size: 9px;
-  color: #969c8e;
-  line-height: 1.6;
-}
-.selection-demo > small {
-  font: 9px ui-monospace, SFMono-Regular, Menlo, monospace;
-  color: #969d8b;
-  letter-spacing: 0.08em;
-}
-.selection-demo > [contenteditable] {
-  font:
-    19px/1.65 Georgia,
-    serif;
-  outline: none;
-  min-height: 160px;
-}
-.selection-demo > p {
-  font-size: 9px;
-  color: #8b9480;
-}
-.draft-label {
-  font-size: 11px;
-  color: #7e8974;
-  display: block;
-}
-.draft-label textarea {
-  width: 100%;
-  resize: vertical;
-  border: 1px solid #d8dcd1;
-  background: transparent;
-  border-radius: 5px;
-  padding: 10px;
-  font: inherit;
-  color: inherit;
-  min-height: 85px;
-}
-.small-note {
-  font-size: 11px;
-  color: #969c8e;
-}
-.mini-landscape {
-  height: 160px;
-  background: #dae5d9;
-  position: relative;
-  overflow: hidden;
-  border-radius: 3px;
-}
-.mini-landscape i {
-  display: block;
-  width: 220px;
-  height: 160px;
-  border-radius: 50%;
-  background: #8ca591;
-  position: absolute;
-  top: 50px;
-  left: -45px;
-  transform: rotate(-20deg);
-}
-.mini-landscape b {
-  display: block;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #c6b779;
-  position: absolute;
-  top: 20px;
-  right: 25px;
-}
-.demo-tray-note {
-  width: 100%;
-  height: 100%;
-  resize: none;
-  border: 0;
-  background: none;
-  font:
-    16px/1.6 Georgia,
-    serif;
-}
-.demo-tray-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.demo-tray-audio {
-  font-size: 10px;
-}
-.demo-tray-audio small {
-  display: block;
-  margin-top: 8px;
-}
 .empty {
   padding: 100px 20px;
   color: #7c7c7c;
@@ -506,7 +390,11 @@ summary {
   padding: 0;
 }
 .eyebrow {
-  font: 9px ui-monospace, SFMono-Regular, Menlo, monospace;
+  font:
+    9px ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
   letter-spacing: 0.1em;
   color: #898989;
 }
@@ -549,7 +437,11 @@ summary {
   background: transparent;
   box-shadow: none;
   padding-left: 0;
-  font: 11px ui-monospace, SFMono-Regular, Menlo, monospace;
+  font:
+    11px ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
 }
 .source-code {
   max-height: 55dvh;
@@ -577,18 +469,6 @@ summary {
   font-size: 9px;
   color: #989898;
   padding-top: 24px;
-}
-.component-image-viewport .component-preview {
-  padding: 16px 12px;
-}
-.component-page-book .component-preview {
-  padding: 24px 16px;
-}
-.component-folder-fan .component-preview {
-  padding: 0 10px 10px;
-}
-.component-source-stack .component-preview {
-  padding: 14px 10px 0;
 }
 /* The frame is a real viewport, never a scaled screenshot or a second preview. */
 .viewport-controls {
@@ -685,12 +565,6 @@ summary {
 .viewport-stage[data-dragging="true"] iframe {
   pointer-events: none;
 }
-.viewport-hint {
-  font-size: 10px;
-  color: #999;
-  margin: 10px 0 14px;
-  line-height: 1.6;
-}
 .embedded-preview {
   min-height: 100dvh;
   background: #fff;
@@ -708,41 +582,14 @@ summary {
 .preview-canvas[data-density="compact"] .component-preview {
   padding: 12px;
 }
-.focus-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 0 0 18px;
-  font-size: 11px;
-  color: #858585;
-}
-.focus-toolbar button {
-  border: 1px solid #dbdbdb;
-  background: #fff;
-  border-radius: 7px;
-  padding: 8px 12px;
-  color: #565656;
-}
 .preview-canvas[data-focused="true"] .masonry {
   columns: 1;
 }
 .preview-canvas[data-focused="true"] .component-preview {
   padding: 40px 24px;
 }
-.preview-canvas[data-focused="true"]
-  .component-image-viewport
-  .component-preview {
-  max-width: 900px;
-  margin: auto;
-}
 .preview-canvas[data-focused="true"] .component-footer {
   padding-top: 12px;
-}
-.preview-canvas[data-focused="true"] .selection-demo,
-.preview-canvas[data-focused="true"] .voice-demo {
-  max-width: 650px;
-  margin: auto;
 }
 @media (max-width: 640px) {
   .viewport-controls {
@@ -770,12 +617,6 @@ summary {
   }
   .preview-canvas[data-focused="true"] .component-preview {
     padding: 24px 12px;
-  }
-  .focus-toolbar {
-    font-size: 10px;
-  }
-  .viewport-hint {
-    font-size: 9px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -928,7 +769,11 @@ summary {
   min-width: 34px;
   justify-content: center;
   color: #999;
-  font: 10px ui-monospace, SFMono-Regular, Menlo, monospace;
+  font:
+    10px ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
 }
 .viewport-range {
   display: flex;
@@ -959,18 +804,22 @@ summary {
   height: 34px;
   margin: 0 7px;
 }
-.breakpoint-markers button {
+.breakpoint-markers .roc-ui-button {
   position: absolute;
   transform: translateX(-50%);
   display: grid;
   gap: 2px;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
   padding: 7px 3px 2px;
-  border: 0;
+  border-radius: 0;
   background: none;
   color: #888;
   font-size: 10px;
+  font-weight: 400;
 }
-.breakpoint-markers button::before {
+.breakpoint-markers .roc-ui-button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -985,10 +834,10 @@ summary {
     monospace;
   color: #aaa;
 }
-.breakpoint-markers button[aria-pressed="true"] {
+.breakpoint-markers .roc-ui-button[aria-pressed="true"] {
   color: #171717;
 }
-.breakpoint-markers button:focus-visible {
+.breakpoint-markers .roc-ui-button:focus-visible {
   outline: 2px solid #777;
   outline-offset: 2px;
 }
