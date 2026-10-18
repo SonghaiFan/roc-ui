@@ -587,3 +587,7 @@
   color: #888;
   user-select: none;
 }
+/* Micro-motion: the confirmation icon arrives small and blurred. */
+[data-slot="code-block-copy-button"][data-copied] svg {
+  animation: roc-ui-icon-in var(--roc-motion-fast) ease-in-out;
+}

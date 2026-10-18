@@ -581,3 +581,18 @@
     }
   }
 }
+/* Micro-motion: Base UI waits for these transitions before unmounting. */
+[data-slot="combobox-content"] {
+  transition:
+    opacity var(--roc-motion-fast) var(--roc-motion-ease),
+    transform var(--roc-motion-fast) var(--roc-motion-ease);
+}
+[data-slot="combobox-content"][data-starting-style],
+[data-slot="combobox-content"][data-ending-style] {
+  opacity: 0;
+  transform: scale(0.97);
+}
+[data-slot="combobox-content"][data-ending-style] {
+  transition-duration: var(--roc-motion-quick);
+  transform: scale(0.99);
+}

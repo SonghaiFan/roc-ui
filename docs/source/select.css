@@ -479,3 +479,11 @@
     }
   }
 }
+/* Micro-motion: popper select grows from the trigger; item-aligned select fades.
+   Radix Select unmounts closed content at once, so only the entrance is animated. */
+[data-slot="select-content"][data-state="open"][data-side] {
+  animation: roc-ui-pop-in var(--roc-motion-fast) var(--roc-motion-ease);
+}
+[data-slot="select-content"][data-state="open"]:not([data-side]) {
+  animation: roc-ui-dismiss var(--roc-motion-quick) reverse;
+}

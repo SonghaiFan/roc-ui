@@ -449,3 +449,7 @@
 .roc-shadcn[data-slot="input-group-addon"] {
   padding-inline: 10px;
 }
+/* Micro-motion: one short shake when the control inside becomes invalid. */
+[data-slot="input-group"]:has([aria-invalid="true"]) {
+  animation: roc-ui-shake 240ms var(--roc-motion-ease);
+}

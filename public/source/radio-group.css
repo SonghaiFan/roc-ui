@@ -15,6 +15,7 @@
   border-radius: 50%;
   background: var(--roc-paper, #fff);
   cursor: pointer;
+  transition: border-color var(--roc-motion-quick) var(--roc-motion-ease);
 }
 .roc-ui[data-slot="radio-group-item"]::before {
   content: "";
@@ -33,4 +34,14 @@
   width: 8px;
   height: 8px;
   fill: currentColor;
+}
+/* Micro-motion: the dot pops in with a small overshoot. */
+.roc-ui[data-slot="radio-group-indicator"] > svg {
+  animation: roc-radio-pop var(--roc-motion-medium) var(--roc-motion-bounce);
+}
+@keyframes roc-radio-pop {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
 }

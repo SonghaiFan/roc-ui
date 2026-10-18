@@ -20,7 +20,7 @@
   cursor: not-allowed;
 }
 /* Micro-motion scale, adapted from transitions.dev. Override on `.roc-ui`. */
-:where(.roc-ui) {
+:where(.roc-ui, .roc-shadcn) {
   --roc-motion-quick: 150ms;
   --roc-motion-fast: 250ms;
   --roc-motion-medium: 350ms;
@@ -57,6 +57,32 @@
   to {
     opacity: 0;
     transform: scale(var(--roc-pop-scale-out, 0.99));
+  }
+}
+/* Side panels slide from their own edge; set --roc-slide-x / --roc-slide-y. */
+@keyframes roc-ui-slide-in {
+  from {
+    translate: var(--roc-slide-x, 0) var(--roc-slide-y, 0);
+  }
+}
+@keyframes roc-ui-slide-out {
+  to {
+    translate: var(--roc-slide-x, 0) var(--roc-slide-y, 0);
+  }
+}
+/* A swapped icon arrives small and blurred; messages settle up from below. */
+@keyframes roc-ui-icon-in {
+  from {
+    opacity: 0;
+    scale: 0.25;
+    filter: blur(var(--roc-motion-blur));
+  }
+}
+@keyframes roc-ui-rise-in {
+  from {
+    opacity: 0;
+    translate: 0 4px;
+    filter: blur(var(--roc-motion-blur));
   }
 }
 /* Invalid fields answer with one short horizontal shake. */

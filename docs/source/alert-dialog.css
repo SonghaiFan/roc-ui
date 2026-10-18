@@ -320,3 +320,20 @@
     }
   }
 }
+/* Micro-motion: modal scale with a quicker exit, matching Dialog. */
+[data-slot="alert-dialog-overlay"][data-state="open"] {
+  animation: roc-ui-dismiss 160ms reverse;
+}
+[data-slot="alert-dialog-overlay"][data-state="closed"] {
+  animation: roc-ui-dismiss 160ms;
+}
+[data-slot="alert-dialog-content"] {
+  --roc-pop-scale: 0.96;
+  --roc-pop-scale-out: 0.96;
+}
+[data-slot="alert-dialog-content"][data-state="open"] {
+  animation: roc-ui-pop-in var(--roc-motion-fast) var(--roc-motion-ease);
+}
+[data-slot="alert-dialog-content"][data-state="closed"] {
+  animation: roc-ui-pop-out var(--roc-motion-quick) var(--roc-motion-ease);
+}

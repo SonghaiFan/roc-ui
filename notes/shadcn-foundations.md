@@ -36,6 +36,8 @@ The registry recursively includes local imports, styles, utilities and both appl
 
 ## Micro-motion
 
+The full per-component audit for the 66-component catalog is in [micro-motion.md](micro-motion.md). The first fifteen foundations:
+
 Small transitions are adapted from [transitions.dev](https://transitions.dev) (free for use in products under its licence). They share one scale on `:where(.roc-ui)` in `ui-base.css`: `--roc-motion-quick` 150 ms, `--roc-motion-fast` 250 ms, `--roc-motion-medium` 350 ms, `--roc-motion-ease`, `--roc-motion-bounce` and `--roc-motion-blur`. Override them on `.roc-ui` to retune every component at once; `prefers-reduced-motion` still removes them.
 
 | Foundation | Motion |

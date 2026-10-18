@@ -4,8 +4,8 @@
   grid-template-rows: 0fr;
   visibility: hidden;
   transition:
-    grid-template-rows 220ms cubic-bezier(0.22, 1, 0.36, 1),
-    visibility 220ms;
+    grid-template-rows var(--roc-motion-fast) var(--roc-motion-ease),
+    visibility var(--roc-motion-fast);
 }
 .roc-collapsible[data-open="true"] {
   grid-template-rows: 1fr;
@@ -14,4 +14,19 @@
 .roc-collapsible-inner {
   min-height: 0;
   overflow: hidden;
+  opacity: 0;
+  filter: blur(var(--roc-motion-blur));
+  transition:
+    opacity var(--roc-motion-fast) var(--roc-motion-ease),
+    filter var(--roc-motion-fast) var(--roc-motion-ease);
+}
+.roc-collapsible[data-open="true"] > .roc-collapsible-inner {
+  opacity: 1;
+  filter: blur(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-collapsible,
+  .roc-collapsible-inner {
+    transition: none;
+  }
 }

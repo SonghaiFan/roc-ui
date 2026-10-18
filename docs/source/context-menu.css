@@ -353,3 +353,12 @@
     }
   }
 }
+/* Micro-motion: grow from the trigger, settle back on exit. */
+[data-slot="context-menu-content"][data-state="open"],
+[data-slot="context-menu-sub-content"][data-state="open"] {
+  animation: roc-ui-pop-in var(--roc-motion-fast) var(--roc-motion-ease);
+}
+[data-slot="context-menu-content"][data-state="closed"],
+[data-slot="context-menu-sub-content"][data-state="closed"] {
+  animation: roc-ui-pop-out var(--roc-motion-quick) var(--roc-motion-ease);
+}

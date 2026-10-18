@@ -69,3 +69,16 @@
   background: var(--roc-marker, #eee);
   font-size: 11px;
 }
+/* Micro-motion: grouped avatars lift on hover and return with a small bounce. */
+[data-slot="avatar-group"] > [data-slot="avatar"] {
+  transition:
+    translate var(--roc-motion-fast) var(--roc-motion-bounce),
+    scale var(--roc-motion-fast) var(--roc-motion-bounce);
+}
+@media (hover: hover) {
+  [data-slot="avatar-group"] > [data-slot="avatar"]:hover {
+    translate: 0 -4px;
+    scale: 1.05;
+    transition-timing-function: var(--roc-motion-ease);
+  }
+}
