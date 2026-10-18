@@ -14,11 +14,11 @@ async (page) => {
   ).contentFrame();
   await view.locator("#tabs").waitFor();
   assert(
-    (await view.locator(".component-card").count()) === 25,
-    "All 15 shadcn-derived foundations and 10 source components are mounted",
+    (await view.locator(".component-card").count()) === 15,
+    "Only the 15 customized shadcn components are mounted",
   );
   const focus = async (name) => {
-    const back = view.getByRole("button", {
+    const back = page.getByRole("button", {
       name: "All components",
       exact: false,
     });

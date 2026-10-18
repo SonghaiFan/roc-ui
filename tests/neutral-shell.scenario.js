@@ -74,9 +74,9 @@ async (page) => {
   );
   await page.getByLabel("Keep settings open").click();
   await frame
-    .getByRole("button", { name: "Focus Source tray preview", exact: true })
+    .getByRole("button", { name: "Focus Tabs preview", exact: true })
     .click();
-  const note = frame.getByRole("textbox", { name: "Tray source note" });
+  const note = frame.getByRole("textbox", { name: "Tabs draft" });
   await note.fill("Retain me when the settings hide");
   assert(
     await panel.isVisible(),

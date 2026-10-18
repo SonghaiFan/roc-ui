@@ -7,6 +7,13 @@ const presets = [
   { id: "tablet", label: "Tablet", width: 768, height: 1024 },
   { id: "phone", label: "Phone", width: 390, height: 844 },
 ] as const;
+const breakpoints = [
+  { label: "sm", width: 640 },
+  { label: "md", width: 768 },
+  { label: "lg", width: 1024 },
+  { label: "xl", width: 1280 },
+  { label: "2xl", width: 1536 },
+];
 function DeviceIcon({ kind }: { kind: string }) {
   return (
     <svg
@@ -44,9 +51,13 @@ function DeviceIcon({ kind }: { kind: string }) {
 export function ViewportPreview({
   frame,
   onLoad,
+  detail,
+  onBack,
 }: {
   frame: RefObject<HTMLIFrameElement | null>;
   onLoad: () => void;
+  detail?: string;
+  onBack: () => void;
 }) {
   const stage = useRef<HTMLDivElement>(null),
     drag = useRef<{ x: number; width: number } | null>(null);
@@ -56,15 +67,13 @@ export function ViewportPreview({
     [available, setAvailable] = useState(1024),
     [measured, setMeasured] = useState(1024),
     [dragging, setDragging] = useState(false);
-  const target = device === "fit" ? available : width;
+  const target = !detail || device === "fit" ? available : width;
+  const activeBreakpoint =
+    [...breakpoints].reverse().find((point) => measured >= point.width)
+      ?.label ?? "base";
   useEffect(() => {
     const observer = new ResizeObserver((entries) =>
-      setAvailable(
-        Math.max(
-          320,
-          Math.min(1600, Math.floor(entries[0].contentRect.width) - 32),
-        ),
-      ),
+      setAvailable(Math.max(0, Math.floor(entries[0].contentRect.width) - 2)),
     );
     observer.observe(stage.current!);
     return () => observer.disconnect();
@@ -81,45 +90,83 @@ export function ViewportPreview({
     setWidth(Math.max(320, Math.min(1600, Math.round(next))));
   };
   return (
-    <section className="responsive-preview" aria-label="Responsive preview">
-      <div className="viewport-controls">
-        <div
-          className="device-switch"
-          role="group"
-          aria-label="Preview viewport"
-        >
-          {presets.map((preset) => (
-            <button
-              type="button"
-              key={preset.id}
-              aria-pressed={device === preset.id}
-              onClick={() => {
-                setDevice(preset.id);
-                if (preset.width) setWidth(preset.width);
-                setHeight(preset.height);
-              }}
-            >
-              <DeviceIcon kind={preset.id} />
-              <span>{preset.label}</span>
-            </button>
-          ))}
+    <section
+      className="responsive-preview"
+      data-detail={!!detail}
+      aria-label={detail ? "Component details" : "Component gallery"}
+    >
+      {detail && (
+        <header className="detail-heading">
+          <button type="button" onClick={onBack}>
+            ← All components
+          </button>
+          <h1>{detail}</h1>
+        </header>
+      )}
+      {detail && (
+        <div className="viewport-controls">
+          <div
+            className="device-switch"
+            role="group"
+            aria-label="Preview viewport"
+          >
+            {presets.map((preset) => (
+              <button
+                type="button"
+                key={preset.id}
+                aria-pressed={device === preset.id}
+                onClick={() => {
+                  setDevice(preset.id);
+                  if (preset.width) setWidth(preset.width);
+                  setHeight(preset.height);
+                }}
+              >
+                <DeviceIcon kind={preset.id} />
+                <span>{preset.label}</span>
+              </button>
+            ))}
+          </div>
+          <output className="viewport-size" aria-label="Viewport dimensions">
+            {measured} × {height}{" "}
+            <span className="active-breakpoint">{activeBreakpoint}</span>
+          </output>
+          <div className="viewport-range">
+            <label htmlFor="preview-width">Viewport width</label>
+            <div className="breakpoint-slider">
+              <input
+                id="preview-width"
+                aria-label="Preview width"
+                aria-valuetext={`${Math.round(target)} pixels, ${activeBreakpoint}`}
+                type="range"
+                min="320"
+                max="1600"
+                step="1"
+                value={Math.max(320, Math.min(1600, target))}
+                onChange={(e) => custom(Number(e.target.value))}
+              />
+              <div
+                className="breakpoint-markers"
+                aria-label="Media breakpoints"
+              >
+                {breakpoints.map((point) => (
+                  <button
+                    key={point.label}
+                    type="button"
+                    style={{ left: `${((point.width - 320) / 1280) * 100}%` }}
+                    aria-label={`${point.label} breakpoint: ${point.width} pixels`}
+                    aria-pressed={Math.round(target) === point.width}
+                    title={`min-width: ${point.width}px`}
+                    onClick={() => custom(point.width)}
+                  >
+                    <span>{point.label}</span>
+                    <small>{point.width}</small>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-        <label className="viewport-range">
-          <span>Width</span>
-          <input
-            aria-label="Preview width"
-            type="range"
-            min="320"
-            max="1600"
-            step="1"
-            value={Math.max(320, target)}
-            onChange={(e) => custom(Number(e.target.value))}
-          />
-        </label>
-        <output className="viewport-size" aria-label="Viewport dimensions">
-          {measured} × {height}
-        </output>
-      </div>
+      )}
       <div className="viewport-stage" ref={stage} data-dragging={dragging}>
         <div className="viewport-shell" style={{ width: target + 2 }}>
           <iframe
@@ -128,62 +175,63 @@ export function ViewportPreview({
             className="preview-frame"
             src={`${location.pathname}?preview=1`}
             onLoad={onLoad}
-            style={{ height }}
+            style={{
+              height: detail ? height : "max(800px, calc(100dvh - 100px))",
+            }}
           />
-          <div
-            role="separator"
-            aria-label="Resize preview"
-            aria-orientation="vertical"
-            aria-valuemin={320}
-            aria-valuemax={1600}
-            aria-valuenow={Math.round(target)}
-            tabIndex={0}
-            className="viewport-resizer"
-            onPointerDown={(e) => {
-              e.preventDefault();
-              e.currentTarget.setPointerCapture(e.pointerId);
-              drag.current = { x: e.clientX, width: measured };
-              setDragging(true);
-              custom(measured);
-            }}
-            onPointerMove={(e) => {
-              if (drag.current) {
-                const space = stage.current!.clientWidth - 32,
-                  start =
-                    drag.current.width <= space
-                      ? (space + drag.current.width) / 2
-                      : drag.current.width,
-                  edge = start + e.clientX - drag.current.x;
-                custom(edge <= space ? 2 * edge - space : edge);
-              }
-            }}
-            onPointerUp={(e) => {
-              drag.current = null;
-              setDragging(false);
-              e.currentTarget.releasePointerCapture(e.pointerId);
-            }}
-            onPointerCancel={() => {
-              drag.current = null;
-              setDragging(false);
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+          {detail && (
+            <div
+              role="separator"
+              aria-label="Resize preview"
+              aria-orientation="vertical"
+              aria-valuemin={320}
+              aria-valuemax={1600}
+              aria-valuenow={Math.round(target)}
+              tabIndex={0}
+              className="viewport-resizer"
+              onPointerDown={(e) => {
                 e.preventDefault();
-                custom(
-                  target +
-                    (e.key === "ArrowLeft" ? -1 : 1) * (e.shiftKey ? 100 : 10),
-                );
-              }
-            }}
-          >
-            <span />
-          </div>
+                e.currentTarget.setPointerCapture(e.pointerId);
+                drag.current = { x: e.clientX, width: measured };
+                setDragging(true);
+                custom(measured);
+              }}
+              onPointerMove={(e) => {
+                if (drag.current) {
+                  const space = stage.current!.clientWidth - 32,
+                    start =
+                      drag.current.width <= space
+                        ? (space + drag.current.width) / 2
+                        : drag.current.width,
+                    edge = start + e.clientX - drag.current.x;
+                  custom(edge <= space ? 2 * edge - space : edge);
+                }
+              }}
+              onPointerUp={(e) => {
+                drag.current = null;
+                setDragging(false);
+                e.currentTarget.releasePointerCapture(e.pointerId);
+              }}
+              onPointerCancel={() => {
+                drag.current = null;
+                setDragging(false);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+                  e.preventDefault();
+                  custom(
+                    target +
+                      (e.key === "ArrowLeft" ? -1 : 1) *
+                        (e.shiftKey ? 100 : 10),
+                  );
+                }
+              }}
+            >
+              <span />
+            </div>
+          )}
         </div>
       </div>
-      <p className="viewport-hint">
-        Resize the same live view. Open a component with ↗ to inspect its
-        responsive layout.
-      </p>
     </section>
   );
 }

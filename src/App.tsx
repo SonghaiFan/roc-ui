@@ -7,10 +7,10 @@ import {
 } from "react";
 import { foundationIds } from "./foundations";
 import { catalog } from "./catalog";
-import { Example } from "./Examples";
+import { FoundationExample } from "./FoundationExamples";
 import { AutoHidePanel } from "./AutoHidePanel";
 import { ViewportPreview } from "./ViewportPreview";
-import { defaults, palette, type Settings } from "./settings";
+import { palette, type Settings } from "./settings";
 import "./site.css";
 const repo = "https://github.com/SonghaiFan/roc-ui";
 const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
@@ -151,38 +151,15 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
     </dialog>
   );
 }
-const order = [
-  ...foundationIds,
-  "continuous-tabs",
-  "voice-player",
-  "source-tray",
-  "folder-fan",
-  "expandable-card",
-  "selection-toolbar",
-  "image-viewport",
-  "focus-lanes",
-  "page-book",
-  "source-stack",
-];
-const components = order.map((id) => catalog.find((item) => item.id === id)!);
-const hints: Record<string, string> = {
-  "continuous-tabs": "Move between views",
-  "voice-player": "Play, seek, change speed",
-  "source-tray": "Unfold the original objects",
-  "folder-fan": "Open a collection",
-  "expandable-card": "Read, edit, return to its place",
-  "selection-toolbar": "Select text to reveal the toolbar",
-  "image-viewport": "Pan, zoom, fit",
-  "focus-lanes": "Focus without losing context",
-  "page-book": "Turn a page or drag its edge",
-  "source-stack": "Spread, inspect, gather",
-};
+const components = foundationIds.map(
+  (id) => catalog.find((item) => item.id === id)!,
+);
 export function App() {
   const embedded = new URLSearchParams(location.search).get("preview") === "1";
   const frame = useRef<HTMLIFrameElement>(null);
   const [focused, setFocused] = useState("");
   const [selected, setSelected] = useState(
-    () => catalog.find((c) => c.id === location.hash.slice(1))?.id ?? "",
+    () => components.find((c) => c.id === location.hash.slice(1))?.id ?? "",
   );
   const [query, setQuery] = useState(""),
     [filter, setFilter] = useState("All"),
@@ -191,7 +168,6 @@ export function App() {
     [surface, setSurface] = useState("White"),
     [density, setDensity] = useState("Comfortable");
   const [font, setFont] = useState("System");
-  const settings = { ...defaults, color };
   const visible = components.filter(
     (c) =>
       (filter === "All" || c.actions.includes(filter)) &&
@@ -212,7 +188,7 @@ export function App() {
   useEffect(() => {
     const route = () =>
       setSelected(
-        catalog.find((c) => c.id === location.hash.slice(1))?.id ?? "",
+        components.find((c) => c.id === location.hash.slice(1))?.id ?? "",
       );
     window.addEventListener("popstate", route);
     return () => window.removeEventListener("popstate", route);
@@ -308,9 +284,17 @@ export function App() {
           setFont(c.font);
         }
         if (event.data?.type === "roc-focus") {
-          setFocused(event.data.id);
+          if (event.data.id === "" || foundationIds.includes(event.data.id))
+            setFocused(event.data.id);
           window.scrollTo({ top: 0, behavior: "instant" });
         }
+      } else if (
+        !embedded &&
+        event.source === frame.current?.contentWindow &&
+        event.data?.type === "roc-focused"
+      ) {
+        if (event.data.id === "" || foundationIds.includes(event.data.id))
+          setFocused(event.data.id);
       } else if (
         !embedded &&
         event.source === frame.current?.contentWindow &&
@@ -331,7 +315,7 @@ export function App() {
         event.data?.type === "roc-source"
       ) {
         const id = event.data.id;
-        if (catalog.some((c) => c.id === id)) {
+        if (components.some((c) => c.id === id)) {
           history.pushState(null, "", `#${id}`);
           setSelected(id);
         }
@@ -351,6 +335,17 @@ export function App() {
       document.removeEventListener("focusin", interact);
     };
   }, [embedded]);
+  useEffect(() => {
+    if (embedded)
+      parent.postMessage({ type: "roc-focused", id: focused }, location.origin);
+  }, [embedded, focused]);
+  const leaveDetails = () => {
+    setFocused("");
+    frame.current?.contentWindow?.postMessage(
+      { type: "roc-focus", id: "" },
+      location.origin,
+    );
+  };
   const style = {
     "--roc-accent": palette[color],
     "--roc-marker": `color-mix(in srgb,${palette[color]} 24%,white)`,
@@ -374,14 +369,6 @@ export function App() {
           data-density={density.toLowerCase()}
           data-focused={!!focused}
         >
-          {focused && (
-            <div className="focus-toolbar">
-              <button type="button" onClick={() => setFocused("")}>
-                ← All components
-              </button>
-              <span>{catalog.find((c) => c.id === focused)?.name}</span>
-            </div>
-          )}
           <div className="masonry" aria-label="Component previews">
             {components.map((item) => (
               <article
@@ -413,10 +400,10 @@ export function App() {
                   </button>
                 </header>
                 <div className="component-preview" data-component={item.id}>
-                  <Example id={item.id} settings={settings} />
+                  <FoundationExample id={item.id} />
                 </div>
                 <footer className="component-footer">
-                  <span>{hints[item.id] || item.description}</span>
+                  <span>{item.description}</span>
                   <button
                     type="button"
                     onClick={() => open(item.id)}
@@ -428,7 +415,7 @@ export function App() {
               </article>
             ))}
           </div>
-          {!visible.length && (
+          {!focused && !visible.length && (
             <div className="empty">
               No matching components.{" "}
               <button
@@ -559,7 +546,10 @@ export function App() {
             aria-label="Search components"
             placeholder="Find a component…"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              leaveDetails();
+            }}
           />
           <kbd>/</kbd>
         </label>
@@ -567,13 +557,14 @@ export function App() {
           className="filter"
           aria-label="Interaction"
           value={filter}
-          onChange={(e) => setFilter(e.target.value)}
+          onChange={(e) => {
+            setFilter(e.target.value);
+            leaveDetails();
+          }}
         >
-          {["All", "Select", "Press", "Expand", "Drag", "Play", "Edit"].map(
-            (value) => (
-              <option key={value}>{value}</option>
-            ),
-          )}
+          {["All", "Select", "Press", "Expand", "Drag", "Edit"].map((value) => (
+            <option key={value}>{value}</option>
+          ))}
         </select>
         <nav>
           <a href={skill} target="_blank" rel="noreferrer">
@@ -586,7 +577,12 @@ export function App() {
       </header>
       <div className="workspace">
         <main className="canvas" data-density={density.toLowerCase()}>
-          <ViewportPreview frame={frame} onLoad={syncFrame} />
+          <ViewportPreview
+            frame={frame}
+            onLoad={syncFrame}
+            detail={components.find((c) => c.id === focused)?.name}
+            onBack={leaveDetails}
+          />
           <footer className="canvas-footer">
             <span>Responsive Object Continuity</span>
             <span>React · MIT · Source included</span>

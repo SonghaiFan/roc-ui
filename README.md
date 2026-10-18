@@ -4,7 +4,7 @@ A React design system for objects that keep their identity through interaction.
 
 [Open the design space](https://songhaifan.github.io/roc-ui/) · [Component contracts](notes/react-design-system.md) · [ROC design skill](https://github.com/SonghaiFan/responsive-object-continuity)
 
-Twenty-five independent components, displayed together in a responsive masonry canvas. Try the live objects, adjust the theme, inspect their source, and install only what you need. React + TypeScript + component-scoped CSS. MIT licensed.
+Fifteen customized shadcn components, displayed together in a responsive masonry canvas. Try the live objects, adjust the theme, inspect their source, and install only what you need. React + TypeScript + component-scoped CSS. MIT licensed.
 
 ## shadcn foundations
 
@@ -31,7 +31,9 @@ The CLI installs the selected component, its local source/CSS and its declared p
 
 Install `textarea` separately for this composition. Tabs and Accordion retain inactive editors; transient overlays retain caller-owned data but unmount their contents after dismissal.
 
-## Source-informed components
+## Earlier source-informed components
+
+These ten earlier experiments are retained as downloadable source for existing consumers, but are no longer shown or imported by the design space.
 
 | Component | Behaviour |
 | --- | --- |
@@ -83,13 +85,13 @@ See [React component contracts](notes/react-design-system.md) for controlled sta
 
 ## Design space
 
-The masonry canvas fills the workspace with all components at their natural heights. The page chrome stays neutral. Hover or click Style to reveal the left appearance panel for surface, accent, typography, radius and spacing. It hides when you leave or interact with the preview; pin it to keep it open. The panel floats above the canvas, so showing it never resizes or reloads the components. The viewport toolbar switches between Fit, Desktop (1024 × 768), Tablet (768 × 1024) and Phone (390 × 844). Drag the right edge or use the width slider for intermediate widths. Click a component’s heading ↗, or choose it in the rail, to inspect it at the full selected width. One retained iframe provides real CSS media queries and viewport-bound dialogs; switching sizes does not reload the previews. Filtering hides components without unmounting them. Source inspection leaves the live preview in place. Source links use component hashes; theme controls are local to the session.
+The masonry canvas fills the workspace with the 15 customized shadcn components at their natural heights. The page chrome stays neutral. Hover or click Style to reveal the left appearance panel for surface, accent, typography, radius and spacing. It hides when you leave or interact with the preview; pin it to keep it open. The panel floats above the canvas, so showing it never resizes or reloads the components. Open a component with its heading ↗ or choose it in the Style panel to enter component details. Responsive controls appear only in this detail panel. The viewport toolbar switches between Fit, Desktop (1024 × 768), Tablet (768 × 1024) and Phone (390 × 844). Drag the right edge or use the width slider for intermediate widths. Click the slider markers to test sm (640), md (768), lg (1024), xl (1280) and 2xl (1536 px); the readout reports the active width interval. These are standard media-width reference points, not a claim that every component changes layout at every marker. Returning to All components hides the controls and restores the full-width masonry gallery without remounting the components. One retained iframe provides real CSS media queries and viewport-bound dialogs; switching sizes does not reload the previews. Filtering hides components without unmounting them. Source inspection leaves the live preview in place. Source links use component hashes; theme controls are local to the session.
 
 The layout follows the preview-first approach of [shadcn create](https://ui.shadcn.com/create?item=preview). No reference-site source or assets are bundled.
 
 ## 中文
 
-ROC 现在包含 15 个基于 shadcn/ui 重做的基础组件，以及 10 个来自 Syuze / Franklin 交互经验的组件。基础组件保留组合 API 和 Radix 可访问性语义，再加入 ROC 的保留节点、响应式布局和连续反馈。ROC 是一套独立的 React 组件，设计空间采用 masonry 布局，直接铺开所有可操作的组件。组件不依赖 Syuze、Franklin Board 或画廊运行时；示例数据、业务行为和展示页面与可下载代码分开。可组合音频控件、自定义选区操作，或把自己的 React 内容放进托盘。来源项目的物理参数和对象连续性原则被保留为可复用行为，而不是打包整个应用。
+ROC 设计空间只展示 15 个基于 shadcn/ui 重做的组件。早期 10 个来自 Syuze / Franklin 交互经验的组件保留下载源码，不再出现在画廊。响应式设备切换、宽度滑块和媒体断点标记仅在组件详情中显示。基础组件保留组合 API 和 Radix 可访问性语义，再加入 ROC 的保留节点、响应式布局和连续反馈。ROC 是一套独立的 React 组件，设计空间采用 masonry 布局，直接铺开所有可操作的组件。组件不依赖 Syuze、Franklin Board 或画廊运行时；示例数据、业务行为和展示页面与可下载代码分开。可组合音频控件、自定义选区操作，或把自己的 React 内容放进托盘。来源项目的物理参数和对象连续性原则被保留为可复用行为，而不是打包整个应用。
 
 ## Develop and verify
 
@@ -106,7 +108,7 @@ npm run test:consumer
 
 The dev server builds once on startup; rebuild after edits. `npm run build` generates registry payloads in `public/r`, downloadable source in `public/source`, and the GitHub Pages snapshot in `docs`. Pages serves `main:/docs`.
 
-`test:consumer` compiles and server-renders only the downloaded registry files, then creates an independent StrictMode browser fixture. Browser scenarios in `tests/design-space.scenario.js`, `tests/consumer.scenario.js`, `tests/responsive-preview.scenario.js`, `tests/neutral-shell.scenario.js`, `tests/foundations.scenario.js`, `tests/foundations-consumer.scenario.js` and `tests/card-preview.scenario.js` run through Playwright CLI `run-code --filename …`. They currently target port 4190; adjust the origin for your server. Run the final build after consumer tests to remove the temporary fixture before deployment.
+`test:consumer` compiles and server-renders only the downloaded registry files, then creates an independent StrictMode browser fixture. Browser scenarios in `tests/design-space.scenario.js`, `tests/consumer.scenario.js`, `tests/responsive-preview.scenario.js`, `tests/neutral-shell.scenario.js`, `tests/foundations.scenario.js`, `tests/foundations-consumer.scenario.js` run through Playwright CLI `run-code --filename …`. They currently target port 4190; adjust the origin for your server. Run the final build after consumer tests to remove the temporary fixture before deployment.
 
 ## Provenance and scope
 
