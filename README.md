@@ -6,6 +6,10 @@
 
 ROC UI turns selected principles from the Responsive Object Continuity skill into copyable components. These are small, standalone implementations inspired by its cases, not a packaged extraction of the complete Syuze or Franklin Board runtime.
 
+## Source collection
+
+[Explore the Syuze / Franklin component extraction map](notes/component-source-map.md): 14 source-backed candidates, including book pages, image presentation, selection tools, voice playback, source trays, folder spaces and filing. Each entry records its implementation, extraction boundary and status. This is a roadmap, not a claim that all are installable.
+
 ## Components
 
 | Component | Continuity contract |
