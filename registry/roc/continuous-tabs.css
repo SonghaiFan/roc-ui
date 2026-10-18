@@ -29,6 +29,7 @@
   font-size: 12px;
   border-radius: 5px;
   white-space: nowrap;
+  transition: color 250ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .roc-tabs button[data-active="true"] {
   color: #2c4227;

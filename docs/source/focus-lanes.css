@@ -62,7 +62,10 @@
 .roc-lane-title,
 .roc-event-label {
   opacity: 0;
-  transition: opacity 0.18s;
+  filter: blur(2px);
+  transition:
+    opacity 0.25s ease-in-out,
+    filter 0.25s ease-in-out;
 }
 .roc-lane-events {
   position: relative;
@@ -114,4 +117,5 @@
 .roc-lane.is-focused .roc-lane-title,
 .roc-lane.is-focused .roc-event-label {
   opacity: 1;
+  filter: blur(0);
 }

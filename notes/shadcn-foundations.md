@@ -41,6 +41,8 @@ Small transitions are adapted from [transitions.dev](https://transitions.dev) (f
 | Button | `pending` swaps labels with a blurred 4 px lift inside the same reserved slot |
 | Input, Textarea | `aria-invalid="true"` plays one 240 ms horizontal shake |
 
+Earlier components were reviewed against the same library. Voice player swaps play and pause as an icon swap, Continuous tabs eases its label colour with the marker, and Focus lanes de-blurs headings as a lane opens. Folder fan, Source stack, Focus lanes geometry, Page book, Image viewport, Expandable card, Card preview, Source tray and Selection toolbar are driven by measured geometry or springs, so no library transition fits and they are left unchanged.
+
 Exit motion on Dialog, Popover, Dropdown Menu and Tooltip is a CSS animation, not a transition, so Radix Presence keeps the content mounted until it finishes. Tooltip does not travel between triggers: each Radix tooltip is its own surface.
 
 ## Continuity boundaries
