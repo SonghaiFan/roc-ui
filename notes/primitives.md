@@ -39,6 +39,7 @@ Behaviour that is hard to get right (positioning, focus trapping, typeahead) com
 | `primitive-dropdown-menu.tsx`, `primitive-context-menu.tsx`, `primitive-menubar.tsx` | `Menu`, `ContextMenu`, `Menubar` via `primitive-menu-core.tsx` | One item vocabulary for all three. `onSelect` keeps working, including `preventDefault` to leave the menu open. Checkbox and radio items close the menu, as in Radix. Submenu sides are reported as `left`/`right` |
 | `primitive-select.tsx` | `Select` | The closed trigger shows the chosen label because the adapter reads `value` and text from the item elements in the tree and gives them to Base UI as `items`. Items rendered by a component you wrote still work; items produced some other way fall back to showing the value. Radix's `""` means no value. `data-position` tells popper from item-aligned |
 | `primitive-slider.tsx` | `Slider` | ROC keeps Track, Range and Thumbs as siblings; the adapter adds Base UI's Control (styled in `slider.css`), numbers the thumbs and moves `aria-label` onto each thumb's range input, which is the focusable element. Thumbs are edge-aligned like Radix |
+| `primitive-scroll-area.tsx` | `ScrollArea` | Radix's `type`, `scrollHideDelay` and `dir` are accepted and ignored. Base UI leaves scrollbar placement to CSS, so `scroll-area.css` positions them. A scrollbar is only mounted when there is overflow |
 | `primitive-collapsible.tsx` | owned | A disclosure needs no library. Closed content leaves an empty hidden region so `aria-controls` stays valid |
 
 Known differences from Radix:
@@ -56,7 +57,7 @@ Known differences from Radix:
 
 ## Still delegated to Radix
 
-Direction, Navigation Menu, Scroll Area. Each is a one-line re-export to replace with a Base UI adapter, checked against Radix with the same parity approach.
+Direction, Navigation Menu. Each is a one-line re-export to replace with a Base UI adapter, checked against Radix with the same parity approach.
 
 ## Not covered
 

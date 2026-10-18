@@ -14,15 +14,22 @@
   outline-offset: -3px;
 }
 .roc-ui[data-slot="scroll-area-scrollbar"] {
+  position: absolute;
   display: flex;
   touch-action: none;
   user-select: none;
   padding: 2px;
 }
 .roc-ui[data-slot="scroll-area-scrollbar"][data-orientation="vertical"] {
+  top: 0;
+  right: 0;
+  bottom: var(--scroll-area-corner-height, 0px);
   width: 10px;
 }
 .roc-ui[data-slot="scroll-area-scrollbar"][data-orientation="horizontal"] {
+  left: 0;
+  bottom: 0;
+  right: var(--scroll-area-corner-width, 0px);
   height: 10px;
   flex-direction: column;
 }
