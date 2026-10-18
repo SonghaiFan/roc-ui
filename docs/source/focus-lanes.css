@@ -1,0 +1,117 @@
+@import "./surface.css";
+.roc-lanes * {
+  box-sizing: border-box;
+}
+.roc-lanes button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.roc-lanes button:focus-visible {
+  outline: 2px solid var(--roc-accent, #64735f);
+  outline-offset: 5px;
+}
+.roc-lanes {
+  display: flex;
+  width: 100%;
+  min-width: 250px;
+  overflow: hidden;
+  border: 1px solid var(--roc-line, #d8dcd4);
+  border-radius: var(--roc-radius, 8px);
+  background: var(--roc-paper, #fcfdf9);
+}
+.roc-lane {
+  position: relative;
+  flex: 0 0 45px;
+  min-width: 0;
+  border-right: 1px solid var(--roc-line, #d8dcd4);
+  transition:
+    flex-basis 0.48s cubic-bezier(0.22, 0.8, 0.25, 1),
+    flex-grow 0.48s cubic-bezier(0.22, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+.roc-lane:last-child {
+  border: 0;
+}
+.roc-lane.is-focused {
+  flex: 1 1 0;
+}
+.roc-lane-heading {
+  height: 44px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--roc-line, #d8dcd4);
+  font-size: 12px !important;
+  text-align: left;
+  white-space: nowrap;
+}
+.roc-lane-dot,
+.roc-event-dot {
+  flex: none;
+  display: block;
+  width: 9px;
+  height: 9px;
+  background: var(--lane-color);
+  border-radius: 2px;
+}
+.roc-lane-title,
+.roc-event-label {
+  opacity: 0;
+  transition: opacity 0.18s;
+}
+.roc-lane-events {
+  position: relative;
+}
+.roc-lane-event {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  border: 0;
+  background: none;
+  padding: 0 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 11px !important;
+}
+.roc-lane-event:hover,
+.roc-lane-event.is-selected {
+  background: #edf0e7;
+}
+.roc-event-dot {
+  width: 12px;
+  height: 18px;
+}
+.roc-event-label {
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-lanes * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+.roc-lane {
+  transition:
+    flex-basis var(--roc-duration, 480ms) cubic-bezier(0.22, 0.8, 0.25, 1),
+    flex-grow var(--roc-duration, 480ms) cubic-bezier(0.22, 0.8, 0.25, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-lane {
+    transition: none !important;
+  }
+}
+
+.roc-lane.is-focused .roc-lane-title,
+.roc-lane.is-focused .roc-event-label {
+  opacity: 1;
+}

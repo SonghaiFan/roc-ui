@@ -1,0 +1,86 @@
+/* Shared surface primitives only. Tokens inherit from the host. No page reset. */
+:where(
+  .roc-expand,
+  .roc-folder,
+  .roc-sources,
+  .roc-lanes,
+  .roc-tabs,
+  .roc-card-preview,
+  .roc-image-viewport,
+  .roc-voice,
+  .roc-selection-toolbar,
+  .roc-page-book,
+  .roc-source-tray
+) {
+  color: var(--roc-ink, #30332e);
+  font-family: inherit;
+  box-sizing: border-box;
+}
+:where(
+    .roc-expand,
+    .roc-folder,
+    .roc-sources,
+    .roc-lanes,
+    .roc-tabs,
+    .roc-card-preview,
+    .roc-image-viewport,
+    .roc-voice,
+    .roc-selection-toolbar,
+    .roc-page-book,
+    .roc-source-tray
+  )
+  * {
+  box-sizing: border-box;
+}
+:where(
+    .roc-expand,
+    .roc-folder,
+    .roc-sources,
+    .roc-lanes,
+    .roc-tabs,
+    .roc-card-preview,
+    .roc-image-viewport,
+    .roc-voice,
+    .roc-selection-toolbar,
+    .roc-page-book,
+    .roc-source-tray
+  )
+  button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+:where(
+    .roc-expand,
+    .roc-folder,
+    .roc-sources,
+    .roc-lanes,
+    .roc-tabs,
+    .roc-card-preview,
+    .roc-image-viewport,
+    .roc-voice,
+    .roc-selection-toolbar,
+    .roc-page-book,
+    .roc-source-tray
+  )
+  button:focus-visible {
+  outline: 2px solid var(--roc-accent, #64735f);
+  outline-offset: 3px;
+}
+.roc-eyebrow {
+  font:
+    10px/1.4 ui-monospace,
+    monospace;
+  letter-spacing: 0.12em;
+  color: var(--roc-muted, #757b72);
+}
+.roc-text-button {
+  border: 0;
+  background: none;
+  padding: 9px 0;
+  font-size: 12px;
+  text-align: left;
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+}

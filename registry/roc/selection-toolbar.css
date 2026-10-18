@@ -1,0 +1,35 @@
+@import "./surface.css";
+.roc-selection-toolbar {
+  position: fixed;
+  inset: auto 10px 24px;
+  margin: 0 auto;
+  width: max-content;
+  max-width: calc(100vw - 20px);
+  border: 1px solid #ffffff24;
+  padding: 6px;
+  border-radius: var(--roc-radius, 14px);
+  background: var(--roc-toolbar, #292b28);
+  color: var(--roc-toolbar-ink, #fff);
+  box-shadow: 0 8px 30px #0002;
+  overflow-x: auto;
+  gap: 3px;
+  opacity: 0;
+}
+.roc-selection-toolbar:popover-open {
+  display: flex;
+}
+.roc-selection-toolbar button {
+  border: 0;
+  background: none;
+  color: inherit;
+  border-radius: var(--roc-radius, 8px);
+  min-width: 32px;
+  min-height: 32px;
+  font-size: 13px;
+}
+.roc-selection-toolbar button[aria-pressed="true"] {
+  background: #ffffff30;
+}
+.roc-selection-toolbar button:disabled {
+  opacity: 0.35;
+}

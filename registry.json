@@ -29,9 +29,24 @@
           "target": "~/components/roc/presentation-spring.ts"
         },
         {
-          "path": "registry/roc/roc.css",
+          "path": "registry/roc/card-preview.css",
           "type": "registry:file",
-          "target": "~/components/roc/roc.css"
+          "target": "~/components/roc/card-preview.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/roc/expandable-card.css",
+          "type": "registry:file",
+          "target": "~/components/roc/expandable-card.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -56,9 +71,19 @@
           "target": "~/components/roc/folder-fan.tsx"
         },
         {
-          "path": "registry/roc/roc.css",
+          "path": "registry/roc/folder-fan.css",
           "type": "registry:file",
-          "target": "~/components/roc/roc.css"
+          "target": "~/components/roc/folder-fan.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -98,9 +123,24 @@
           "target": "~/components/roc/presentation-spring.ts"
         },
         {
-          "path": "registry/roc/roc.css",
+          "path": "registry/roc/card-preview.css",
           "type": "registry:file",
-          "target": "~/components/roc/roc.css"
+          "target": "~/components/roc/card-preview.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/roc/source-stack.css",
+          "type": "registry:file",
+          "target": "~/components/roc/source-stack.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -125,9 +165,19 @@
           "target": "~/components/roc/focus-lanes.tsx"
         },
         {
-          "path": "registry/roc/roc.css",
+          "path": "registry/roc/focus-lanes.css",
           "type": "registry:file",
-          "target": "~/components/roc/roc.css"
+          "target": "~/components/roc/focus-lanes.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -152,9 +202,14 @@
           "target": "~/components/roc/continuous-tabs.tsx"
         },
         {
-          "path": "registry/roc/roc.css",
+          "path": "registry/roc/continuous-tabs.css",
           "type": "registry:file",
-          "target": "~/components/roc/roc.css"
+          "target": "~/components/roc/continuous-tabs.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -179,9 +234,14 @@
           "target": "~/components/roc/image-viewport.tsx"
         },
         {
-          "path": "registry/roc/roc.css",
+          "path": "registry/roc/image-viewport.css",
           "type": "registry:file",
-          "target": "~/components/roc/roc.css"
+          "target": "~/components/roc/image-viewport.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
         },
         {
           "path": "registry/roc/image-geometry.ts",
@@ -221,19 +281,14 @@
           "target": "~/components/roc/voice-player.tsx"
         },
         {
-          "path": "registry/roc/native-voice.js",
+          "path": "registry/roc/voice-player.css",
           "type": "registry:file",
-          "target": "~/components/roc/native-voice.js"
+          "target": "~/components/roc/voice-player.css"
         },
         {
-          "path": "registry/roc/native-voice.d.ts",
+          "path": "registry/roc/surface.css",
           "type": "registry:file",
-          "target": "~/components/roc/native-voice.d.ts"
-        },
-        {
-          "path": "registry/roc/roc.css",
-          "type": "registry:file",
-          "target": "~/components/roc/roc.css"
+          "target": "~/components/roc/surface.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -258,29 +313,24 @@
           "target": "~/components/roc/selection-toolbar.tsx"
         },
         {
-          "path": "registry/roc/native-toolbar.js",
+          "path": "registry/roc/position-motion.ts",
           "type": "registry:file",
-          "target": "~/components/roc/native-toolbar.js"
+          "target": "~/components/roc/position-motion.ts"
         },
         {
-          "path": "registry/roc/native-toolbar.d.ts",
+          "path": "registry/roc/physical-spring.ts",
           "type": "registry:file",
-          "target": "~/components/roc/native-toolbar.d.ts"
+          "target": "~/components/roc/physical-spring.ts"
         },
         {
-          "path": "registry/roc/native-spring.js",
+          "path": "registry/roc/selection-toolbar.css",
           "type": "registry:file",
-          "target": "~/components/roc/native-spring.js"
+          "target": "~/components/roc/selection-toolbar.css"
         },
         {
-          "path": "registry/roc/native-spring.d.ts",
+          "path": "registry/roc/surface.css",
           "type": "registry:file",
-          "target": "~/components/roc/native-spring.d.ts"
-        },
-        {
-          "path": "registry/roc/roc.css",
-          "type": "registry:file",
-          "target": "~/components/roc/roc.css"
+          "target": "~/components/roc/surface.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -305,19 +355,24 @@
           "target": "~/components/roc/page-book.tsx"
         },
         {
-          "path": "registry/roc/native-spring.js",
+          "path": "registry/roc/spring-frames.ts",
           "type": "registry:file",
-          "target": "~/components/roc/native-spring.js"
+          "target": "~/components/roc/spring-frames.ts"
         },
         {
-          "path": "registry/roc/native-spring.d.ts",
+          "path": "registry/roc/physical-spring.ts",
           "type": "registry:file",
-          "target": "~/components/roc/native-spring.d.ts"
+          "target": "~/components/roc/physical-spring.ts"
         },
         {
-          "path": "registry/roc/roc.css",
+          "path": "registry/roc/page-book.css",
           "type": "registry:file",
-          "target": "~/components/roc/roc.css"
+          "target": "~/components/roc/page-book.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -342,39 +397,34 @@
           "target": "~/components/roc/source-tray.tsx"
         },
         {
-          "path": "registry/roc/native-fan.js",
+          "path": "registry/roc/fan-layout.ts",
           "type": "registry:file",
-          "target": "~/components/roc/native-fan.js"
+          "target": "~/components/roc/fan-layout.ts"
         },
         {
-          "path": "registry/roc/native-fan.d.ts",
+          "path": "registry/roc/position-motion.ts",
           "type": "registry:file",
-          "target": "~/components/roc/native-fan.d.ts"
+          "target": "~/components/roc/position-motion.ts"
         },
         {
-          "path": "registry/roc/native-motion.js",
+          "path": "registry/roc/physical-spring.ts",
           "type": "registry:file",
-          "target": "~/components/roc/native-motion.js"
+          "target": "~/components/roc/physical-spring.ts"
         },
         {
-          "path": "registry/roc/native-motion.d.ts",
+          "path": "registry/roc/use-controllable-state.ts",
           "type": "registry:file",
-          "target": "~/components/roc/native-motion.d.ts"
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
-          "path": "registry/roc/native-spring.js",
+          "path": "registry/roc/source-tray.css",
           "type": "registry:file",
-          "target": "~/components/roc/native-spring.js"
+          "target": "~/components/roc/source-tray.css"
         },
         {
-          "path": "registry/roc/native-spring.d.ts",
+          "path": "registry/roc/surface.css",
           "type": "registry:file",
-          "target": "~/components/roc/native-spring.d.ts"
-        },
-        {
-          "path": "registry/roc/roc.css",
-          "type": "registry:file",
-          "target": "~/components/roc/roc.css"
+          "target": "~/components/roc/surface.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",

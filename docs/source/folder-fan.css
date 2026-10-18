@@ -1,0 +1,155 @@
+@import "./surface.css";
+.roc-folder {
+  height: 340px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  isolation: isolate;
+  margin: auto;
+  container-type: inline-size;
+}
+.roc-folder-back {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  width: 210px;
+  height: 150px;
+  transform: translateX(-50%);
+  border-radius: 8px 18px 15px 15px;
+  background: color-mix(in srgb, var(--folder-color, #a8c6ee), #454d5c 13%);
+  border: 1px solid #ffffff50;
+  box-shadow: inset 0 1px #ffffff70;
+  transition: left var(--roc-duration, 560ms) cubic-bezier(0.22, 0.8, 0.25, 1);
+}
+.roc-folder-back:before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  top: -14px;
+  height: 25px;
+  background: inherit;
+  border-radius: 9px 14px 0 0;
+}
+.roc-folder-items {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.roc-folder-card {
+  position: absolute;
+  width: 118px;
+  height: 152px;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ffffff70;
+  border-radius: var(--roc-radius, 9px);
+  background: var(--roc-paper, #fffcf6);
+  box-shadow: 0 5px 14px #22222216;
+  transform-origin: center;
+  transition:
+    left var(--roc-duration, 560ms) cubic-bezier(0.22, 0.8, 0.25, 1),
+    top var(--roc-duration, 560ms) cubic-bezier(0.22, 0.8, 0.25, 1),
+    transform var(--roc-duration, 560ms) cubic-bezier(0.22, 0.8, 0.25, 1),
+    box-shadow 0.2s;
+}
+.roc-folder-card:hover {
+  box-shadow: 0 13px 24px #22222220;
+}
+.roc-folder-card strong {
+  display: block;
+  font:
+    normal 20px/1.15 Georgia,
+    serif;
+  margin-top: 18px;
+  overflow-wrap: anywhere;
+}
+.roc-card-content {
+  display: block;
+  margin-top: 12px;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--roc-muted, #757b72);
+}
+.roc-folder-toggle {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 58%;
+  width: 228px;
+  height: 133px;
+  padding: 22px;
+  border: 1px solid #ffffff90;
+  border-radius: 9px 9px 19px 19px;
+  text-align: left;
+  transform: translateX(-50%);
+  transform-origin: 50% 100%;
+  background: var(--folder-color, #a8c6ee);
+  box-shadow:
+    inset 0 1px 1px #ffffff70,
+    0 14px 24px #2933420c;
+  transition:
+    transform var(--roc-duration, 560ms) cubic-bezier(0.22, 0.8, 0.25, 1),
+    left var(--roc-duration, 560ms) cubic-bezier(0.22, 0.8, 0.25, 1),
+    background 0.25s;
+}
+.roc-folder-toggle > span:first-child {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+.roc-folder-toggle > span:last-child {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #273344a6;
+}
+.roc-folder-toggle b {
+  font-size: 18px;
+  font-weight: 400;
+}
+.roc-folder[data-material="glass"] .roc-folder-toggle {
+  background: color-mix(in srgb, var(--folder-color, #a8c6ee) 67%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.roc-folder.is-open .roc-folder-toggle {
+  transform: translateX(-50%) perspective(650px) rotateX(-24deg);
+}
+.roc-folder[data-direction="right"] .roc-folder-back,
+.roc-folder[data-direction="right"] .roc-folder-toggle {
+  left: 28%;
+  width: 162px;
+}
+.roc-folder[data-direction="right"] .roc-folder-toggle {
+  transform-origin: 0% 50%;
+}
+.roc-folder[data-direction="right"].is-open .roc-folder-toggle {
+  transform: translateX(-50%) perspective(650px) rotateY(-26deg);
+}
+@container (max-width:350px) {
+  .roc-folder-card {
+    width: 94px;
+    height: 143px;
+  }
+  .roc-folder-card strong {
+    font-size: 17px;
+  }
+  .roc-folder-toggle {
+    width: 200px;
+  }
+  .roc-folder-back {
+    width: 190px;
+  }
+  .roc-folder[data-direction="right"] .roc-folder-toggle,
+  .roc-folder[data-direction="right"] .roc-folder-back {
+    width: 132px;
+  }
+  .roc-folder[data-direction="right"] .roc-folder-toggle {
+    padding: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-folder * {
+    transition: none !important;
+  }
+}

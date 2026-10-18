@@ -1,127 +1,94 @@
 # ROC UI
 
-**Objects, in continuity.** A small, interactive design space for reusable React interfaces that preserve object identity, state and context.
+A React design system for objects that keep their identity through interaction.
 
-[Explore the gallery](https://songhaifan.github.io/roc-ui/) · [Read the ROC skill](https://github.com/SonghaiFan/responsive-object-continuity)
+[Open the design space](https://songhaifan.github.io/roc-ui/) · [Component contracts](notes/react-design-system.md) · [ROC design skill](https://github.com/SonghaiFan/responsive-object-continuity)
 
-ROC UI turns selected principles from the Responsive Object Continuity skill into copyable components. These are small, standalone implementations inspired by its cases, not a packaged extraction of the complete Syuze or Franklin Board runtime.
-
-## Source collection
-
-[Explore the Syuze / Franklin component extraction map](notes/component-source-map.md): 14 source-backed candidates, including book pages, image presentation, selection tools, voice playback, source trays, folder spaces and filing. Each entry records its implementation, extraction boundary and status. This is a roadmap, not a claim that all are installable.
+Ten independent components, displayed together in a responsive masonry canvas. Try the live objects, adjust the theme, inspect their source, and install only what you need. React + TypeScript + component-scoped CSS. MIT licensed.
 
 ## Components
 
-| Component | Continuity contract |
+| Component | Behaviour |
 | --- | --- |
-| Expandable card | One fixed reading composition; the original editor travels to the top layer and back |
-| Folder fan | Stable keyed cards travel between a pocket and an expanded collection |
-| Source stack | One source subtree through pile, spread and modal inspection |
-| Focus lanes | Shared row coordinates, stable lane order and retained event selection |
-| Continuous tabs | One selection marker; label geometry stays fixed |
-| Image viewport | Franklin image zoom/pan/Fit and retained img |
-| Voice player | Syuze native audio controls, seek, rate and playback groups |
-| Selection toolbar | Syuze selection capture/restore with editor-owned commands |
-| Page book | Syuze cover/paper motion, angle shading and drag release |
-| Source tray | Native source shelf geometry, springs and retained media controls |
+| Expandable card | Retained reading composition, modal preview and return to its measured slot |
+| Folder fan | Keyed cards unfold from a collection |
+| Source stack | Pile, spread and inspect the same content |
+| Focus lanes | Expand one lane while retaining context and shared coordinates |
+| Continuous tabs | One marker follows a controlled selection |
+| Image viewport | Pointer-anchored zoom, constrained pan and spring Fit |
+| Voice player | Composable React audio controls, seeking, rate and optional playback groups |
+| Selection toolbar | Caller-defined actions over a retained selection Range |
+| Page book | Custom cover, paper turns, drag release and shading |
+| Source tray | Renderer-neutral children with source shelf geometry and reversible springs |
 
-Each gallery entry includes a working preview, complete source, usage, props, scope and a link to its design case. The gallery imports the same files distributed by the registry.
+The components are informed by Syuze and Franklin Board. Their application stores, business models, routing, attachment services and DOM widget factories are excluded. The gallery imports exactly the files distributed by the registry. Sample content and appearance controls live separately in `src/`.
 
-[Extraction provenance and API boundaries](notes/extracted-components.md) document which original mechanisms are preserved and which application workflows are excluded.
+## Install
 
-## Explore the design space
-
-The gallery prioritizes live objects over documentation. Filter by interaction (Hover, Press, Expand, Select), open a component's workspace, and tune it while keeping the same mounted preview. Closing returns that same object and its draft state to the gallery.
-
-- Folder controls: colour, glass/paper material, up/right opening, press/hover trigger, spread and duration.
-- Reading previews use Syuze’s critically damped presentation profiles (opening mass .48, return mass .32, stiffness 100). Other transitions retain duration controls; source duration controls spread only.
-- A compact phone-width preview helps inspect layout; actual mobile layout stacks the preview above its controls.
-- Settings are encoded in the URL and restored by shared links and browser navigation. Reset restores defaults.
-- “Reverse mid-flight” and “Edit, close & return” are interactive continuity exercises.
-- Source view includes copyable usage reflecting the current settings. The full source and CLI install still use the component defaults.
-- Design rationale and known boundaries are available in “Why it moves this way”.
-
-The gallery borrows the preview-first, compact-inspector interaction pattern observed on [Bencho](https://bencho.dev/); the components and styles here are independently implemented. No Bencho code or assets are bundled.
-
-## Install with shadcn
-
-In a React project already configured for shadcn:
+In a React project configured for shadcn:
 
 ```sh
-npx shadcn@latest add https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/folder-fan.json
+npx shadcn@latest add https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/voice-player.json
 ```
 
-Replace `folder-fan` with any component name in the table, using kebab-case. Files install into `components/roc` at the project root. Adjust your import to your project's alias configuration. All required local files, TypeScript declarations and upstream MIT notices are included; layout components share `use-continuity.ts`; reading previews additionally include `card-preview.tsx` and `presentation-spring.ts` and every component shares `roc.css`. React 19+ is the supported baseline. There is no runtime animation-package dependency.
+Replace `voice-player` with any component's kebab-case name. Files install into `components/roc`. React 19+ and CSS import support are required; there is no animation-package dependency. Each item includes its own stylesheet, small shared surface rules, necessary TypeScript helpers and the MIT notice. It does not install the gallery or unrelated component styles.
 
 ```tsx
-import { FolderFan } from "./components/roc/folder-fan";
+import { VoicePlayer } from "./components/roc/voice-player";
 
-export function Collection() {
-  return (
-    <FolderFan
-      title="Collected ideas"
-      items={[
-        { id: "note", label: "A first thought", color: "#fff9ed" },
-        { id: "photo", label: "The garden", color: "#edf0e6" },
-      ]}
-      material="glass"
-      direction="up"
-      spread={12}
-      duration={560}
-      onSelect={(id) => console.log(id)}
-    />
-  );
-}
+<VoicePlayer src={recordingUrl} label="Recording" />
 ```
 
-For manual installation, copy all files listed in the chosen `public/r/*.json` payload (including the two presentation helpers for card/source previews) from `registry/roc` into one directory. Components import the stylesheet themselves. Customize the prefixed CSS and `--roc-*` tokens. Re-adding another component may ask about shared-file replacement; preserve your local customizations.
+Or compose controls yourself:
+
+```tsx
+import {
+  VoicePlayerRoot, VoicePlayButton, VoiceTime,
+} from "./components/roc/voice-player";
+
+<VoicePlayerRoot src={recordingUrl}>
+  <VoiceTime />
+  <VoicePlayButton />
+</VoicePlayerRoot>
+```
+
+For manual installation, copy every file listed in the selected `public/r/*.json` payload into one directory. Components import their own CSS. Customize root `className`/`style`, inherited `--roc-*` tokens or the source itself. Preserve local customizations when the CLI asks about replacing shared files.
+
+See [React component contracts](notes/react-design-system.md) for controlled state, custom editor actions, tray composition, SSR and known limits.
+
+## Design space
+
+The masonry canvas fills the workspace with all components at their natural heights. A compact rail adjusts surface, accent, typography, radius and spacing. Filtering hides components without unmounting them. Source inspection leaves the live preview in place. Source links use component hashes; theme controls are local to the session.
+
+The layout follows the preview-first approach of [shadcn create](https://ui.shadcn.com/create?item=preview). No reference-site source or assets are bundled.
 
 ## 中文
 
-ROC 是一个基于对象连续性原则的组件设计空间。可以直接操作演示、查看源码，再把组件复制进自己的项目。组件采用 React + TypeScript + CSS，通过浏览器动画保持对象在不同布局中的连续性。
+ROC 是一套独立的 React 组件，设计空间采用 masonry 布局，直接铺开所有可操作的组件。组件不依赖 Syuze、Franklin Board 或画廊运行时；示例数据、业务行为和展示页面与可下载代码分开。可组合音频控件、自定义选区操作，或把自己的 React 内容放进托盘。来源项目的物理参数和对象连续性原则被保留为可复用行为，而不是打包整个应用。
 
-首版包含卡片展开、文件夹展开、来源卡片、焦点上下文栏和连续选择指示器。它们是独立的小组件，不是完整画布编辑器，也不声称与 Syuze 原版动效一比一。
-
-## Develop
-
-Requires a current Node.js LTS release and npm.
+## Develop and verify
 
 ```sh
 npm ci
 npm run dev
 # http://127.0.0.1:4186
-```
 
-The local server builds on startup; rerun `npm run build` after editing. It is intentionally a small static gallery, without HMR or a server backend.
-
-```sh
 npm run check
 npm run build
 npm test
+npm run test:consumer
 ```
 
-`npm run build` generates the gallery in `dist`, shadcn items in `public/r`, source downloads in `public/source`, and a GitHub Pages snapshot in `docs`. The checked-in `public/r` files support direct raw-GitHub installation. Rebuild before publishing source changes. GitHub Pages serves `main:/docs`.
+The dev server builds once on startup; rebuild after edits. `npm run build` generates registry payloads in `public/r`, downloadable source in `public/source`, and the GitHub Pages snapshot in `docs`. Pages serves `main:/docs`.
 
-To validate with the official registry builder:
+`test:consumer` compiles and server-renders only the downloaded registry files, then creates an independent StrictMode browser fixture. Browser scenarios in `tests/design-space.scenario.js`, `tests/consumer.scenario.js` and `tests/card-preview.scenario.js` run through Playwright CLI `run-code --filename …`. They currently target port 4190; adjust the origin for your server. Run the final build after consumer tests to remove the temporary fixture before deployment.
 
-```sh
-npx shadcn@latest build registry.json --output /tmp/roc-registry-check
-```
+## Provenance and scope
 
-`tests/browser.scenario.js` is a Playwright CLI scenario (not an `@playwright/test` spec). With the dev server running, open the local page in a named CLI session, then run it with `run-code --filename tests/browser.scenario.js` from this repository. It checks retained nodes across gallery/detail, draft state, focus return and confinement, URL settings and browser back, hover, source viewing, interrupted folder motion, narrow layout and reduced motion.
+[Source extraction map](notes/component-source-map.md) · [Original mechanism notes](notes/extracted-components.md) · [Reading presentation comparison](notes/syuze-card-presentation.md)
 
-## Boundaries
-
-- Card/source inspection uses the actual analytic, critically damped Syuze presentation profiles. Like that viewer, retargeting starts with zero velocity. Other components still use layout retargeting and CSS transitions; they are not a physical copy of the Syuze canvas.
-- Expandable card is now a native modal reading surface with a fixed composition width. Width changes scale its content; long content scrolls and unwinds during return. The prior `duration` prop is deprecated and ignored for reading presentation.
-- Folder fan is intended for 2–5 non-interactive compact cards. It provides unfolding, not drag-to-file or a board data model.
-- Source stack is intended for 2–4 sources; caller-provided controls stay mounted. Inspection uses the same native modal presentation as the document card.
-- Focus lanes use discrete zero-based rows. Event IDs should be unique across lanes. They are not quantitative time-scale charts.
-- Continuous tabs uses selection buttons, not ARIA tabs/tabpanels. The application owns selected content.
-- Reduced motion, keyboard controls and focus return are covered by the local scenarios. Chromium checks do not certify every browser, assistive technology or device.
-
-The focused `tests/card-preview.scenario.js` scenario checks paper/editor identity, unchanged typesetting, caret preservation, interruption, landing geometry, scroll return, phone resize, source inspection and reduced motion. See [the source comparison](notes/syuze-card-presentation.md) for measured scope and remaining differences.
+The library does not claim full motion parity with Syuze. Folder fan is a compact collection, not drag-to-file. Focus lanes use discrete rows. Continuous tabs is a selection group, not a tabpanel framework. Page book accepts pre-paginated reading content; application pagination is separate. Chromium validation does not certify every browser or device.
 
 ## License
 
-[MIT](LICENSE). ROC UI is an independent project and is not affiliated with shadcn/ui. The linked ROC cases provide provenance and design rationale; no third-party project assets or proprietary fonts are bundled.
+[MIT](LICENSE). Independent of shadcn/ui. No proprietary fonts or third-party project assets are bundled.

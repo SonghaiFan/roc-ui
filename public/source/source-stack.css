@@ -1,0 +1,48 @@
+@import "./surface.css";
+.roc-sources {
+  position: relative;
+  height: 320px;
+  width: 100%;
+  max-width: 580px;
+  margin: auto;
+  container-type: inline-size;
+}
+.roc-source-toggle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 12;
+}
+.roc-source-items {
+  position: absolute;
+  inset: 45px 0 0;
+}
+.roc-source {
+  position: absolute;
+  width: min(146px, 30cqw);
+  padding: 0;
+  transform-origin: 0 0;
+  transition: transform var(--roc-duration, 480ms)
+    cubic-bezier(0.22, 0.8, 0.25, 1);
+}
+.roc-source h3 {
+  font:
+    normal 30px/1.15 Georgia,
+    serif;
+  letter-spacing: -0.02em;
+  margin: 17px 0 12px;
+}
+.roc-source-content {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.roc-source .roc-preview-trigger {
+  font-size: 11px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-source {
+    transition: none;
+  }
+}

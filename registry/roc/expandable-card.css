@@ -1,0 +1,14 @@
+@import "./surface.css";
+.roc-expand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.roc-expand > .roc-card-preview {
+  max-width: 280px;
+}
+.roc-paper-body {
+  font-size: 16px;
+  line-height: 1.75;
+}

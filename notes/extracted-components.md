@@ -1,3 +1,5 @@
+> **v0.5 update:** the lifecycle wrappers described below were replaced by React-owned controls and typed geometry/motion helpers. `native-*.js` and the monolithic stylesheet are removed. Read [the current component contracts](react-design-system.md). This document preserves v0.4 extraction provenance, not the current implementation API.
+
 # Extracted components — ROC 0.4
 
 Five additional components are distributed by the registry and used directly in the gallery.

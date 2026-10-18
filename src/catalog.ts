@@ -1,12 +1,174 @@
 export const catalog = [
-  { id: "expandable-card", actions: ["Expand", "Press"], name: "Expandable card", category: "Surfaces", tag: "Identity", number: "01", description: "Read the same paper, enlarged. Close it and watch it return to the place you left.", rule: "One fixed composition and editor. Syuze presentation springs carry geometry, reveal and scroll back to a measured return slot.", limit: "Native modal reading surface; fixed typesetting scales to the viewport. Syuze spring profiles are retained; its full board and document workflow are not bundled.", props: "title: string · eyebrow?: string · children: ReactNode · defaultOpen?: boolean", usage: '<ExpandableCard title="A slower afternoon">\n  <textarea defaultValue="Keep this thought…" />\n</ExpandableCard>', source: "cases/010-retained-document-and-image-presentation.md" },
-  { id: "folder-fan", actions: ["Expand", "Hover", "Press"], name: "Folder fan", category: "Collections", tag: "Containment", number: "02", description: "An opening, a pocket, a place to return. The same cards unfold out of their container.", rule: "Cards stay keyed and mounted. The folder front explains where they belong.", limit: "Designed for 2–5 compact items. This component unfolds a collection; drag-to-file is not included.", props: "items: FolderItem[] · title?: string · onSelect?: (id: string) => void", usage: '<FolderFan title="Collected ideas" items={[\n  { id: "a", label: "A first thought" },\n  { id: "b", label: "Something to keep" },\n]} onSelect={setSelected} />', source: "cases/017-syuze-material-object-continuity.md" },
-  { id: "source-stack", actions: ["Expand", "Press"], name: "Source stack", category: "Collections", tag: "Provenance", number: "03", description: "Unfold the things behind an idea. Inspect a source, then return it to its place.", rule: "Pile, spread and inspect reuse the same source subtree, including input state.", limit: "Designed for 2–4 items. Inspection uses the retained modal reading surface; pile/spread still use the earlier layout motion. Supply asset-specific content.", props: "items: SourceItem[] (id, title, kind, content, color?)", usage: '<SourceStack items={[\n  { id: "note", title: "Field note", kind: "NOTE",\n    content: <input defaultValue="The original thought" /> },\n]} />', source: "cases/017-syuze-material-object-continuity.md" },
-  { id: "focus-lanes", actions: ["Select"], name: "Focus lanes", category: "Navigation", tag: "Context", number: "04", description: "Make room for one thread without losing the others. Shared coordinates keep the story aligned.", rule: "Focus changes width. Row, order, identity and event selection stay put.", limit: "Discrete row-based events, not a time-scale chart. Use unique event IDs; row indices start at zero.", props: "lanes: FocusLane[] · rows?: number · onSelect?: (id: string) => void", usage: '<FocusLanes rows={5} lanes={[\n  { id: "notes", title: "Notes", color: "#78916b",\n    events: [{ id: "n1", row: 0, label: "A first note" }] },\n]} />', source: "cases/016-focused-lanes-context-strips.md" },
-  { id: "continuous-tabs", actions: ["Select", "Press"], name: "Continuous tabs", category: "Navigation", tag: "Attention", number: "05", description: "A quiet marker follows your attention. The labels stay exactly where you expect them.", rule: "One marker moves. Selection never pushes the surrounding content.", limit: "Controlled selection buttons, not an ARIA tabpanel system. Compose the selected content in your application.", props: "items: ContinuousTab[] · value: string · onValueChange: (id: string) => void · label?: string", usage: '<ContinuousTabs\n  items={[{ id: "read", label: "Read" }, { id: "edit", label: "Edit" }]}\n  value={view} onValueChange={setView}\n/>', source: "cases/012-continuous-reading-surfaces.md" },
-  {"id": "image-viewport", "name": "Image viewport", "actions": ["Drag", "Select"], "category": "Extracted", "tag": "Source-backed", "number": "06", "description": "Zoom at your pointer. Pan the same image, then fit it back.", "rule": "Franklin’s retained image transform, constrained pan, anchor-based zoom and spring Fit.", "limit": "Extracted from the current Franklin React worktree. This is the inner viewport, not its full card-to-reader presentation.", "props": "active: boolean · naturalWidth: number · naturalHeight: number · children: ReactNode", "usage": "<ImageViewport active naturalWidth={960} naturalHeight={640}>\n  <img src=\"/photo.jpg\" alt=\"Your photograph\" />\n</ImageViewport>", "source": "cases/017-syuze-material-object-continuity.md"},
-  {"id": "voice-player", "name": "Voice player", "actions": ["Play", "Press"], "category": "Extracted", "tag": "Source-backed", "number": "07", "description": "The original recording, with a quiet line of progress.", "rule": "Syuze’s original audio control: seek, speed, mutual exclusion and actionable error state.", "limit": "Demo audio is a generated test tone. Pass your own URL; no microphone, uploads or transcription service is included.", "props": "src?: string · label?: string · group?: Set<() => void>", "usage": "<VoicePlayer src=\"/recording.wav\" label=\"A voice from home\" />", "source": "cases/017-syuze-material-object-continuity.md"},
-  {"id": "selection-toolbar", "name": "Selection toolbar", "actions": ["Select", "Edit"], "category": "Extracted", "tag": "Source-backed", "number": "08", "description": "Select a few words. Format without losing your place.", "rule": "Syuze’s real Range capture and restore, editor-owned format callbacks and contextual spring reveal.", "limit": "The host supplies formatting commands. The demo uses browser formatting; production editors should provide their own adapter.", "props": "editor: RefObject<HTMLElement | null> · onFormat(command) · getFormatState? · active?", "usage": "<SelectionToolbar editor={editorRef} onFormat={formatSelection} />", "source": "cases/017-syuze-material-object-continuity.md"},
-  {"id": "page-book", "name": "Page book", "actions": ["Drag", "Press"], "category": "Extracted", "tag": "Source-backed", "number": "09", "description": "A cover with weight. Pages that turn on their spine.", "rule": "Syuze’s leaf angle, matching shade and cover centering, with separate paper/board springs and release velocity.", "limit": "Pre-paginated content. Memoir business data, text pagination, chapter generation and gather entrance are excluded. Busy turns reject new input.", "props": "title: string · pages: { id: string; content: ReactNode }[] · coverColor?: string", "usage": "<PageBook title=\"Small observations\" pages={[{ id: \"one\", content: <p>A remembered afternoon.</p> }]} />", "source": "cases/017-syuze-material-object-continuity.md"},
-  {"id": "source-tray", "name": "Source tray", "actions": ["Expand", "Edit", "Play"], "category": "Extracted", "tag": "Source-backed", "number": "10", "description": "The actual sources behind a document, unfolded together.", "rule": "Syuze’s native shelf geometry and unfold/refold springs carry retained text, image and audio controls.", "limit": "Renderer-neutral retained content; no asset-specific full-view adapter or persistence. Audio pauses after gathering, matching the original tray.", "props": "items: { id: string; width: number; height: number; content: ReactNode }[] · label?: string", "usage": "<SourceTray items={[{ id: \"note\", width: 220, height: 180, content: <textarea defaultValue=\"Keep the original\" /> }]} />", "source": "cases/017-syuze-material-object-continuity.md"},
+  {
+    id: "expandable-card",
+    actions: ["Expand", "Press"],
+    name: "Expandable card",
+    category: "Surfaces",
+    tag: "Identity",
+    number: "01",
+    description:
+      "Read the same paper, enlarged. Close it and watch it return to the place you left.",
+    rule: "One fixed composition and editor. Syuze presentation springs carry geometry, reveal and scroll back to a measured return slot.",
+    limit:
+      "Native modal reading surface; fixed typesetting scales to the viewport. Syuze spring profiles are retained; its full board and document workflow are not bundled.",
+    props:
+      "title: string · eyebrow?: string · children: ReactNode · defaultOpen?: boolean",
+    usage:
+      '<ExpandableCard title="A slower afternoon">\n  <textarea defaultValue="Keep this thought…" />\n</ExpandableCard>',
+    source: "cases/010-retained-document-and-image-presentation.md",
+  },
+  {
+    id: "folder-fan",
+    actions: ["Expand", "Hover", "Press"],
+    name: "Folder fan",
+    category: "Collections",
+    tag: "Containment",
+    number: "02",
+    description:
+      "An opening, a pocket, a place to return. The same cards unfold out of their container.",
+    rule: "Cards stay keyed and mounted. The folder front explains where they belong.",
+    limit:
+      "Designed for 2–5 compact items. This component unfolds a collection; drag-to-file is not included.",
+    props:
+      "items: FolderItem[] · title?: string · onSelect?: (id: string) => void",
+    usage:
+      '<FolderFan title="Collected ideas" items={[\n  { id: "a", label: "A first thought" },\n  { id: "b", label: "Something to keep" },\n]} onSelect={setSelected} />',
+    source: "cases/017-syuze-material-object-continuity.md",
+  },
+  {
+    id: "source-stack",
+    actions: ["Expand", "Press"],
+    name: "Source stack",
+    category: "Collections",
+    tag: "Provenance",
+    number: "03",
+    description:
+      "Unfold the things behind an idea. Inspect a source, then return it to its place.",
+    rule: "Pile, spread and inspect reuse the same source subtree, including input state.",
+    limit:
+      "Designed for 2–4 items. Inspection uses the retained modal reading surface; pile/spread still use the earlier layout motion. Supply asset-specific content.",
+    props: "items: SourceItem[] (id, title, kind, content, color?)",
+    usage:
+      '<SourceStack items={[\n  { id: "note", title: "Field note", kind: "NOTE",\n    content: <input defaultValue="The original thought" /> },\n]} />',
+    source: "cases/017-syuze-material-object-continuity.md",
+  },
+  {
+    id: "focus-lanes",
+    actions: ["Select"],
+    name: "Focus lanes",
+    category: "Navigation",
+    tag: "Context",
+    number: "04",
+    description:
+      "Make room for one thread without losing the others. Shared coordinates keep the story aligned.",
+    rule: "Focus changes width. Row, order, identity and event selection stay put.",
+    limit:
+      "Discrete row-based events, not a time-scale chart. Use unique event IDs; row indices start at zero.",
+    props:
+      "lanes: FocusLane[] · rows?: number · onSelect?: (id: string) => void",
+    usage:
+      '<FocusLanes rows={5} lanes={[\n  { id: "notes", title: "Notes", color: "#78916b",\n    events: [{ id: "n1", row: 0, label: "A first note" }] },\n]} />',
+    source: "cases/016-focused-lanes-context-strips.md",
+  },
+  {
+    id: "continuous-tabs",
+    actions: ["Select", "Press"],
+    name: "Continuous tabs",
+    category: "Navigation",
+    tag: "Attention",
+    number: "05",
+    description:
+      "A quiet marker follows your attention. The labels stay exactly where you expect them.",
+    rule: "One marker moves. Selection never pushes the surrounding content.",
+    limit:
+      "Controlled selection buttons, not an ARIA tabpanel system. Compose the selected content in your application.",
+    props:
+      "items: ContinuousTab[] · value: string · onValueChange: (id: string) => void · label?: string",
+    usage:
+      '<ContinuousTabs\n  items={[{ id: "read", label: "Read" }, { id: "edit", label: "Edit" }]}\n  value={view} onValueChange={setView}\n/>',
+    source: "cases/012-continuous-reading-surfaces.md",
+  },
+  {
+    id: "image-viewport",
+    name: "Image viewport",
+    actions: ["Drag", "Select"],
+    category: "Extracted",
+    tag: "Source-backed",
+    number: "06",
+    description: "Zoom at your pointer. Pan the same image, then fit it back.",
+    rule: "Franklin’s retained image transform, constrained pan, anchor-based zoom and spring Fit.",
+    limit:
+      "Extracted from the current Franklin React worktree. This is the inner viewport, not its full card-to-reader presentation.",
+    props:
+      "active: boolean · naturalWidth: number · naturalHeight: number · children: ReactNode",
+    usage:
+      '<ImageViewport active naturalWidth={960} naturalHeight={640}>\n  <img src="/photo.jpg" alt="Your photograph" />\n</ImageViewport>',
+    source: "cases/017-syuze-material-object-continuity.md",
+  },
+  {
+    id: "voice-player",
+    name: "Voice player",
+    actions: ["Play", "Press"],
+    category: "Extracted",
+    tag: "Source-backed",
+    number: "07",
+    description: "The original recording, with a quiet line of progress.",
+    rule: "React media controls share a local playback context. Compose the controls independently; opt into a playback group.",
+    limit:
+      "Demo audio is a generated test tone. Pass your own URL; no microphone, uploads or transcription service is included.",
+    props:
+      "src?: string · label?: string · group?: PlaybackGroup · onPlaybackChange? · className? · style?",
+    usage: '<VoicePlayer src="/recording.wav" label="A voice from home" />',
+    source: "cases/017-syuze-material-object-continuity.md",
+  },
+  {
+    id: "selection-toolbar",
+    name: "Selection toolbar",
+    actions: ["Select", "Edit"],
+    category: "Extracted",
+    tag: "Source-backed",
+    number: "08",
+    description: "Select a few words. Format without losing your place.",
+    rule: "A retained DOM Range and an editor-owned command adapter. React renders the action list and contextual spring reveal.",
+    limit:
+      "The host supplies formatting commands. The demo uses browser formatting; production editors should provide their own adapter.",
+    props:
+      "editor: RefObject<HTMLElement | null> · onFormat(command, range) · actions? · getFormatState? · isActionDisabled?",
+    usage: "<SelectionToolbar editor={editorRef} onFormat={formatSelection} />",
+    source: "cases/017-syuze-material-object-continuity.md",
+  },
+  {
+    id: "page-book",
+    name: "Page book",
+    actions: ["Drag", "Press"],
+    category: "Extracted",
+    tag: "Source-backed",
+    number: "09",
+    description: "A cover with weight. Pages that turn on their spine.",
+    rule: "Syuze’s leaf angle, matching shade and cover centering, with separate paper/board springs and release velocity.",
+    limit:
+      "Pre-paginated content. Memoir business data, text pagination, chapter generation and gather entrance are excluded. Busy turns reject new input.",
+    props:
+      "title: string · pages: BookPage[] · cover?: ReactNode · onPageChange? · coverColor?",
+    usage:
+      '<PageBook title="Small observations" pages={[{ id: "one", content: <p>A remembered afternoon.</p> }]} />',
+    source: "cases/017-syuze-material-object-continuity.md",
+  },
+  {
+    id: "source-tray",
+    name: "Source tray",
+    actions: ["Expand", "Edit", "Play"],
+    category: "Extracted",
+    tag: "Source-backed",
+    number: "10",
+    description: "The actual sources behind a document, unfolded together.",
+    rule: "Typed shelf geometry and separate unfold/refold springs carry keyed React content without owning its behaviour.",
+    limit:
+      "Renderer-neutral retained content. The host owns media, persistence and close side effects through onSettled.",
+    props:
+      "items: TraySource[] · open? · defaultOpen? · onOpenChange? · onSettled? · label? · closeLabel?",
+    usage:
+      '<SourceTray items={[{ id: "note", width: 220, height: 180, content: <textarea defaultValue="Keep the original" /> }]} />',
+    source: "cases/017-syuze-material-object-continuity.md",
+  },
 ];

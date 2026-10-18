@@ -1,0 +1,47 @@
+@import "./surface.css";
+.roc-voice {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  background: var(--roc-paper, #fcfbf8);
+  border: 1px solid var(--roc-line, #e3e1da);
+  border-radius: var(--roc-radius, 12px);
+}
+.roc-voice button {
+  border: 0;
+  background: var(--roc-subtle, #eaece5);
+  border-radius: 50%;
+  min-width: 34px;
+  height: 34px;
+  font-size: 12px;
+  flex: none;
+}
+.roc-voice .roc-voice-rate {
+  border-radius: var(--roc-radius, 8px);
+  background: transparent;
+  min-width: 30px;
+}
+.roc-voice-seek {
+  flex: 1;
+  min-width: 20px;
+  width: 0;
+  accent-color: var(--roc-accent, #667e68);
+  height: 3px;
+}
+.roc-voice-time {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.roc-voice-error {
+  flex-basis: 100%;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--roc-error, #9d4935);
+}
+.roc-voice button:disabled {
+  opacity: 0.4;
+}
