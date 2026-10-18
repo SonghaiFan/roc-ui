@@ -9,17 +9,7 @@
   --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
   --roc-sh-font-weight-medium: 500;
   --roc-sh-tracking-widest: 0.1em;
-  --roc-sh-radius-xs: 3px;
-  --roc-sh-radius-sm: 5px;
-  --roc-sh-radius-md: 7px;
-  --roc-sh-color-background: var(--roc-paper, #fff);
-  --roc-sh-color-popover: #fff;
-  --roc-sh-color-popover-foreground: #252525;
-  --roc-sh-color-muted-foreground: #737373;
-  --roc-sh-color-accent: #f3f3f3;
-  --roc-sh-color-accent-foreground: #252525;
   --roc-sh-color-destructive: #b42318;
-  --roc-sh-color-border: #e5e5e5;
 }
 .roc-s-33228ff7d583 {
   pointer-events: none;

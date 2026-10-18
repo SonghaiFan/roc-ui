@@ -6,21 +6,9 @@
   --roc-sh-text-sm: 0.875rem;
   --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
   --roc-sh-leading-relaxed: 1.625;
-  --roc-sh-radius-xl: 12px;
   --roc-sh-default-transition-duration: 150ms;
   --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --roc-sh-color-background: var(--roc-paper, #fff);
-  --roc-sh-color-foreground: #252525;
-  --roc-sh-color-card: #fff;
-  --roc-sh-color-primary: var(--roc-accent, #252525);
-  --roc-sh-color-primary-foreground: #fff;
-  --roc-sh-color-secondary: #f3f3f3;
-  --roc-sh-color-secondary-foreground: #252525;
-  --roc-sh-color-muted: #f5f5f5;
   --roc-sh-color-destructive: #b42318;
-  --roc-sh-color-border: #e5e5e5;
-  --roc-sh-color-input: #dedede;
-  --roc-sh-color-ring: #737373;
 }
 .roc-s-747355bdc2a2 {
   position: absolute;

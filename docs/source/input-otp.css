@@ -5,13 +5,9 @@
   --roc-sh-spacing: 0.25rem;
   --roc-sh-text-sm: 0.875rem;
   --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
-  --roc-sh-radius-md: 7px;
   --roc-sh-default-transition-duration: 150ms;
   --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --roc-sh-color-foreground: #252525;
   --roc-sh-color-destructive: #b42318;
-  --roc-sh-color-input: #dedede;
-  --roc-sh-color-ring: #737373;
 }
 .roc-s-33228ff7d583 {
   pointer-events: none;

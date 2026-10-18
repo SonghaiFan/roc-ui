@@ -7,19 +7,9 @@
   --roc-sh-text-xs--line-height: calc(1 / 0.75);
   --roc-sh-text-sm: 0.875rem;
   --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
-  --roc-sh-radius-sm: 5px;
-  --roc-sh-radius-md: 7px;
   --roc-sh-default-transition-duration: 150ms;
   --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --roc-sh-color-popover: #fff;
-  --roc-sh-color-popover-foreground: #252525;
-  --roc-sh-color-muted-foreground: #737373;
-  --roc-sh-color-accent: #f3f3f3;
-  --roc-sh-color-accent-foreground: #252525;
   --roc-sh-color-destructive: #b42318;
-  --roc-sh-color-border: #e5e5e5;
-  --roc-sh-color-input: #dedede;
-  --roc-sh-color-ring: #737373;
 }
 .roc-s-33228ff7d583 {
   pointer-events: none;

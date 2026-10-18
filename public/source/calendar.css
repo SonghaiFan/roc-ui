@@ -9,16 +9,6 @@
   --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
   --roc-sh-font-weight-normal: 400;
   --roc-sh-font-weight-medium: 500;
-  --roc-sh-radius-md: 7px;
-  --roc-sh-color-background: var(--roc-paper, #fff);
-  --roc-sh-color-popover: #fff;
-  --roc-sh-color-primary: var(--roc-accent, #252525);
-  --roc-sh-color-primary-foreground: #fff;
-  --roc-sh-color-muted-foreground: #737373;
-  --roc-sh-color-accent: #f3f3f3;
-  --roc-sh-color-accent-foreground: #252525;
-  --roc-sh-color-input: #dedede;
-  --roc-sh-color-ring: #737373;
 }
 .roc-s-b75af7ef6c4d {
   visibility: hidden;
@@ -454,18 +444,25 @@
 }
 
 /* ROC button variants have scoped specificity; day states own their colors. */
-.roc-ui[data-day][data-selected-single="true"] {
-  background: var(--roc-ink, #252525);
-  color: var(--roc-paper, #fff);
-  border-radius: 6px;
+.roc-ui[data-day][data-selected-single="true"],
+.roc-ui[data-day][data-range-start="true"],
+.roc-ui[data-day][data-range-end="true"] {
+  background: var(--roc-sh-color-primary);
+  color: var(--roc-sh-color-primary-foreground);
+  border-radius: var(--roc-sh-radius-md);
 }
 .roc-ui[data-day][data-range-middle="true"] {
-  background: #eee;
-  color: #252525;
+  background: var(--roc-sh-color-accent);
+  color: var(--roc-sh-color-accent-foreground);
 }
 
 .roc-shadcn[data-slot="calendar"]:dir(rtl)
   :is(.rdp-button_next, .rdp-button_previous)
   > svg {
   transform: rotate(180deg);
+}
+
+/* A single selected day is its own pill; the cell behind it stays clear. */
+.roc-shadcn[data-slot="calendar"] td:has([data-selected-single="true"]) {
+  background: transparent;
 }

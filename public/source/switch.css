@@ -19,7 +19,7 @@
   inset: -7px;
 }
 .roc-ui[data-slot="switch"][data-state="checked"] {
-  background: var(--roc-ink, #252525);
+  background: var(--roc-accent, var(--roc-ink, #252525));
 }
 .roc-ui[data-slot="switch-thumb"] {
   width: 16px;

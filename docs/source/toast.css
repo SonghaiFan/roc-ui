@@ -11,12 +11,7 @@
   --roc-sh-animate-roc-sh-spin: roc-sh-spin 1s linear infinite;
   --roc-sh-default-transition-duration: 150ms;
   --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --roc-sh-color-foreground: #252525;
-  --roc-sh-color-popover: #fff;
-  --roc-sh-color-popover-foreground: #252525;
-  --roc-sh-color-muted-foreground: #737373;
   --roc-sh-color-destructive: #b42318;
-  --roc-sh-color-ring: #737373;
 }
 .roc-s-cb20bd519346 {
   pointer-events: auto;

@@ -34,7 +34,7 @@
 .roc-typography code {
   font-family: ui-monospace, monospace;
   background: #f4f4f4;
-  border-radius: 4px;
+  border-radius: max(0px, calc(var(--roc-radius, 9px) - 5px));
   padding: 2px 5px;
   font-size: 0.9em;
 }

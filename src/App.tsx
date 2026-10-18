@@ -35,6 +35,14 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "../registry/roc/input-group";
+import {
+  CodeBlock,
+  CodeBlockActions,
+  CodeBlockContent,
+  CodeBlockCopyButton,
+  CodeBlockHeader,
+  CodeBlockTitle,
+} from "../registry/roc/code-block";
 import { Kbd } from "../registry/roc/kbd";
 import { Label } from "../registry/roc/label";
 import { Picker } from "./Picker";
@@ -65,31 +73,6 @@ const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
 const registry =
   "https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/";
 type Item = (typeof catalog)[number];
-function Copy({ text, label = "Copy" }: { text: string; label?: string }) {
-  const [status, setStatus] = useState("");
-  useEffect(() => {
-    if (status) {
-      const timer = setTimeout(() => setStatus(""), 1800);
-      return () => clearTimeout(timer);
-    }
-  }, [status]);
-  return (
-    <Button
-      variant="outline"
-      size="sm"
-      onClick={async () => {
-        try {
-          await navigator.clipboard.writeText(text);
-          setStatus("Copied");
-        } catch {
-          setStatus("Copy unavailable");
-        }
-      }}
-    >
-      {status || label}
-    </Button>
-  );
-}
 function SourcePanel({ item, close }: { item: Item; close: () => void }) {
   const [files, setFiles] = useState<{ path: string; content: string }[]>([]),
     [file, setFile] = useState(`${item.id}.tsx`),
@@ -131,13 +114,19 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
           <SheetDescription className="panel-description">
             {item.description}
           </SheetDescription>
-          <div className="install">
-            <code>npx shadcn@latest add …/{item.id}.json</code>
-            <Copy
-              text={`npx shadcn@latest add ${registry}${item.id}.json`}
-              label="Copy install"
-            />
-          </div>
+          <CodeBlock className="install" size="sm">
+            <CodeBlockHeader>
+              <CodeBlockTitle>Install</CodeBlockTitle>
+              <CodeBlockActions>
+                <CodeBlockCopyButton
+                  value={`npx shadcn@latest add ${registry}${item.id}.json`}
+                />
+              </CodeBlockActions>
+            </CodeBlockHeader>
+            <CodeBlockContent wrap>
+              {`npx shadcn@latest add …/${item.id}.json`}
+            </CodeBlockContent>
+          </CodeBlock>
           <Collapsible className="usage" defaultOpen>
             <CollapsibleTrigger asChild>
               <Button variant="ghost" size="sm">
@@ -145,24 +134,32 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
               </Button>
             </CollapsibleTrigger>
             <CollapsibleContent>
-              <pre>{item.usage}</pre>
+              <CodeBlock size="sm">
+                <CodeBlockContent wrap>{item.usage}</CodeBlockContent>
+              </CodeBlock>
             </CollapsibleContent>
           </Collapsible>
-          <div className="source-tools">
-            <Picker
-              label="Source file"
-              value={file}
-              onValueChange={setFile}
-              options={(files.length
-                ? files
-                : [{ path: `registry/roc/${item.id}.tsx` }]
-              ).map((f) => ({ value: f.path.split("/").at(-1)! }))}
-            />
-            <Copy text={code} label="Copy file" />
-          </div>
-          <pre className="source-code">
-            {error || code || "Loading source…"}
-          </pre>
+          <CodeBlock className="source-code-block">
+            <CodeBlockHeader>
+              <CodeBlockTitle>
+                <Picker
+                  label="Source file"
+                  value={file}
+                  onValueChange={setFile}
+                  options={(files.length
+                    ? files
+                    : [{ path: `registry/roc/${item.id}.tsx` }]
+                  ).map((f) => ({ value: f.path.split("/").at(-1)! }))}
+                />
+              </CodeBlockTitle>
+              <CodeBlockActions>
+                <CodeBlockCopyButton value={code} />
+              </CodeBlockActions>
+            </CodeBlockHeader>
+            <CodeBlockContent className="source-code" lineNumbers>
+              {error || code || "Loading source…"}
+            </CodeBlockContent>
+          </CodeBlock>
           <Collapsible className="contract">
             <CollapsibleTrigger asChild>
               <Button variant="ghost" size="sm">
@@ -366,6 +363,7 @@ export function App() {
   const style = {
     "--roc-accent": palette[color],
     "--roc-marker": `color-mix(in srgb,${palette[color]} 24%,white)`,
+    "--roc-accent-foreground": "#252525",
     "--roc-radius": `${radius}px`,
     "--roc-paper": surface === "Paper" ? "#fcfbf7" : "#fff",
     "--preview-font":

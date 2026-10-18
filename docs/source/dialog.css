@@ -50,7 +50,7 @@
   height: 28px;
   padding: 4px;
   border: 0;
-  border-radius: 5px;
+  border-radius: max(0px, calc(var(--roc-radius, 9px) - 4px));
   background: transparent;
   cursor: pointer;
 }

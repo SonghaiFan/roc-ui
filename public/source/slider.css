@@ -19,7 +19,7 @@
 .roc-ui[data-slot="slider-range"] {
   position: absolute;
   height: 100%;
-  background: var(--roc-ink, #252525);
+  background: var(--roc-accent, var(--roc-ink, #252525));
 }
 .roc-ui[data-slot="slider-thumb"] {
   display: block;

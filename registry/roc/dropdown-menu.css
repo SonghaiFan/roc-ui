@@ -29,7 +29,7 @@
   align-items: center;
   gap: 9px;
   padding: 9px 10px;
-  border-radius: 4px;
+  border-radius: max(0px, calc(var(--roc-radius, 9px) - 5px));
   cursor: default;
   user-select: none;
   outline: none;

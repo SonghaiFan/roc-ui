@@ -5,10 +5,6 @@
   --roc-sh-spacing: 0.25rem;
   --roc-sh-default-transition-duration: 150ms;
   --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --roc-sh-color-background: var(--roc-paper, #fff);
-  --roc-sh-color-foreground: #252525;
-  --roc-sh-color-muted: #f5f5f5;
-  --roc-sh-color-border: #e5e5e5;
 }
 .roc-s-32fb090591d9 {
   position: absolute;

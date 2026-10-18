@@ -24,7 +24,8 @@
   border-radius: 50%;
 }
 .roc-ui[data-slot="radio-group-item"][data-state="checked"] {
-  border-color: var(--roc-ink, #252525);
+  border-color: var(--roc-accent, var(--roc-ink, #252525));
+  color: var(--roc-accent, var(--roc-ink, #252525));
 }
 .roc-ui[data-slot="radio-group-indicator"] {
   display: grid;

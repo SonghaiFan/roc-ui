@@ -24,8 +24,8 @@
   background: var(--roc-marker, #eee);
 }
 .roc-ui-toggle[data-state="on"] {
-  background: var(--roc-ink, #252525);
-  color: var(--roc-paper, #fff);
+  background: var(--roc-accent, var(--roc-ink, #252525));
+  color: var(--roc-accent-foreground, var(--roc-paper, #fff));
 }
 .roc-ui-toggle-sm {
   min-width: 32px;

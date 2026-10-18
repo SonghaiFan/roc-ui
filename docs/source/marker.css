@@ -5,9 +5,6 @@
   --roc-sh-spacing: 0.25rem;
   --roc-sh-text-sm: 0.875rem;
   --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
-  --roc-sh-color-foreground: #252525;
-  --roc-sh-color-muted-foreground: #737373;
-  --roc-sh-color-border: #e5e5e5;
 }
 .roc-s-d2d9e1f13413 {
   position: relative;

@@ -527,26 +527,6 @@ summary {
   color: #838383;
   margin: 20px 0;
 }
-.install {
-  background: #e8e8e8;
-  border: 1px solid #dedede;
-  border-radius: 8px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.install code {
-  font: 10px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
-  overflow-wrap: anywhere;
-  flex: 1;
-  min-width: 0;
-}
-.install .roc-ui-button,
-.source-tools .roc-ui-button {
-  font-size: 10px;
-  white-space: nowrap;
-}
 .usage {
   padding: 20px 0 10px;
 }
@@ -557,38 +537,23 @@ summary {
   font-size: 11px;
   font-weight: 400;
 }
-.usage pre {
-  font: 11px/1.8 ui-monospace, SFMono-Regular, Menlo, monospace;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  color: #676767;
+.usage [data-slot="code-block"] {
+  margin-top: 8px;
 }
-.source-tools {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-  border-top: 1px solid #e3e3e3;
+.source-code-block {
+  margin: 14px 0;
 }
-.source-tools [data-slot="select-trigger"] {
-  max-width: 75%;
+.source-code-block [data-slot="select-trigger"] {
+  max-width: 100%;
   border: 0;
   background: transparent;
   box-shadow: none;
   padding-left: 0;
   font: 11px ui-monospace, SFMono-Regular, Menlo, monospace;
-  color: #656565;
 }
 .source-code {
-  padding: 16px;
-  background: #efefef;
-  border: 1px solid #e2e2e2;
-  border-radius: 8px;
   max-height: 55dvh;
   overflow: auto;
-  font: 10px/1.8 ui-monospace, SFMono-Regular, Menlo, monospace;
-  color: #595959;
-  tab-size: 2;
 }
 .contract {
   padding-top: 20px;

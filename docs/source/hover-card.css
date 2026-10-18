@@ -3,9 +3,6 @@
 @layer properties;
 .roc-shadcn {
   --roc-sh-spacing: 0.25rem;
-  --roc-sh-radius-md: 7px;
-  --roc-sh-color-popover: #fff;
-  --roc-sh-color-popover-foreground: #252525;
 }
 .roc-s-3eef1ce97dba {
   z-index: 50;
