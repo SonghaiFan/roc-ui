@@ -2,7 +2,7 @@ async (page) => {
  const checks=[];const assert=(ok,msg)=>{if(!ok)throw Error(msg);checks.push(msg);};
  const origin='http://127.0.0.1:4186/';
  await page.setViewportSize({width:1440,height:1100});await page.goto(origin);
- assert(await page.locator('.tile').count()===5,'Gallery renders five retained components');
+ assert(await page.locator('.tile').count()===10,'Gallery renders ten retained components');
  const note=page.locator('[data-component="expandable-card"]');
  await note.getByRole('button',{name:'Open note ↗'}).click();
  await note.getByRole('textbox',{name:'Your note',exact:true}).fill('Keep this draft across the gallery');
@@ -21,7 +21,7 @@ async (page) => {
  await page.getByRole('button',{name:'Hover',exact:true}).click();
  assert(await page.locator('.tile-slot:visible').count()===1,'Interaction filter isolates hover-capable component');
  await page.getByRole('button',{name:'All',exact:true}).click();
- await page.getByRole('textbox',{name:'Search components'}).fill('source');assert(await page.locator('.tile-slot:visible').count()===1,'Search still filters the gallery');await page.getByRole('textbox',{name:'Search components'}).fill('');
+ await page.getByRole('textbox',{name:'Search components'}).fill('source');assert(await page.locator('.tile-slot:visible').count()===2,'Search still filters the gallery');await page.getByRole('textbox',{name:'Search components'}).fill('');
  const folder=await page.locator('.roc-folder-card').first().elementHandle();
  await page.getByRole('button',{name:'Explore Folder fan',exact:true}).click();
  await page.getByRole('button',{name:'rose',exact:true}).click();await page.getByRole('button',{name:'right',exact:true}).click();

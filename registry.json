@@ -19,16 +19,6 @@
           "target": "~/components/roc/expandable-card.tsx"
         },
         {
-          "path": "registry/roc/use-continuity.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-continuity.ts"
-        },
-        {
-          "path": "registry/roc/roc.css",
-          "type": "registry:file",
-          "target": "~/components/roc/roc.css"
-        },
-        {
           "path": "registry/roc/card-preview.tsx",
           "type": "registry:file",
           "target": "~/components/roc/card-preview.tsx"
@@ -37,6 +27,16 @@
           "path": "registry/roc/presentation-spring.ts",
           "type": "registry:file",
           "target": "~/components/roc/presentation-spring.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
         }
       ]
     },
@@ -56,14 +56,14 @@
           "target": "~/components/roc/folder-fan.tsx"
         },
         {
-          "path": "registry/roc/use-continuity.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-continuity.ts"
-        },
-        {
           "path": "registry/roc/roc.css",
           "type": "registry:file",
           "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
         }
       ]
     },
@@ -88,11 +88,6 @@
           "target": "~/components/roc/use-continuity.ts"
         },
         {
-          "path": "registry/roc/roc.css",
-          "type": "registry:file",
-          "target": "~/components/roc/roc.css"
-        },
-        {
           "path": "registry/roc/card-preview.tsx",
           "type": "registry:file",
           "target": "~/components/roc/card-preview.tsx"
@@ -101,6 +96,16 @@
           "path": "registry/roc/presentation-spring.ts",
           "type": "registry:file",
           "target": "~/components/roc/presentation-spring.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
         }
       ]
     },
@@ -120,14 +125,14 @@
           "target": "~/components/roc/focus-lanes.tsx"
         },
         {
-          "path": "registry/roc/use-continuity.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-continuity.ts"
-        },
-        {
           "path": "registry/roc/roc.css",
           "type": "registry:file",
           "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
         }
       ]
     },
@@ -147,14 +152,234 @@
           "target": "~/components/roc/continuous-tabs.tsx"
         },
         {
-          "path": "registry/roc/use-continuity.ts",
+          "path": "registry/roc/roc.css",
           "type": "registry:file",
-          "target": "~/components/roc/use-continuity.ts"
+          "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "image-viewport",
+      "type": "registry:component",
+      "title": "Image Viewport",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/image-viewport.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/image-viewport.tsx"
         },
         {
           "path": "registry/roc/roc.css",
           "type": "registry:file",
           "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/image-geometry.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/image-geometry.ts"
+        },
+        {
+          "path": "registry/roc/position-motion.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/position-motion.ts"
+        },
+        {
+          "path": "registry/roc/physical-spring.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/physical-spring.ts"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "voice-player",
+      "type": "registry:component",
+      "title": "Voice Player",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/voice-player.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/voice-player.tsx"
+        },
+        {
+          "path": "registry/roc/native-voice.js",
+          "type": "registry:file",
+          "target": "~/components/roc/native-voice.js"
+        },
+        {
+          "path": "registry/roc/native-voice.d.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/native-voice.d.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "selection-toolbar",
+      "type": "registry:component",
+      "title": "Selection Toolbar",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/selection-toolbar.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/selection-toolbar.tsx"
+        },
+        {
+          "path": "registry/roc/native-toolbar.js",
+          "type": "registry:file",
+          "target": "~/components/roc/native-toolbar.js"
+        },
+        {
+          "path": "registry/roc/native-toolbar.d.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/native-toolbar.d.ts"
+        },
+        {
+          "path": "registry/roc/native-spring.js",
+          "type": "registry:file",
+          "target": "~/components/roc/native-spring.js"
+        },
+        {
+          "path": "registry/roc/native-spring.d.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/native-spring.d.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "page-book",
+      "type": "registry:component",
+      "title": "Page Book",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/page-book.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/page-book.tsx"
+        },
+        {
+          "path": "registry/roc/native-spring.js",
+          "type": "registry:file",
+          "target": "~/components/roc/native-spring.js"
+        },
+        {
+          "path": "registry/roc/native-spring.d.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/native-spring.d.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "source-tray",
+      "type": "registry:component",
+      "title": "Source Tray",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/source-tray.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/source-tray.tsx"
+        },
+        {
+          "path": "registry/roc/native-fan.js",
+          "type": "registry:file",
+          "target": "~/components/roc/native-fan.js"
+        },
+        {
+          "path": "registry/roc/native-fan.d.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/native-fan.d.ts"
+        },
+        {
+          "path": "registry/roc/native-motion.js",
+          "type": "registry:file",
+          "target": "~/components/roc/native-motion.js"
+        },
+        {
+          "path": "registry/roc/native-motion.d.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/native-motion.d.ts"
+        },
+        {
+          "path": "registry/roc/native-spring.js",
+          "type": "registry:file",
+          "target": "~/components/roc/native-spring.js"
+        },
+        {
+          "path": "registry/roc/native-spring.d.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/native-spring.d.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
         }
       ]
     }

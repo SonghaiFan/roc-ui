@@ -15,11 +15,11 @@
 
 | 组件 | 原始实现 | 值得保留的体验 | 提取边界与状态 |
 | --- | --- | --- | --- |
-| **Book / PageTurn** 书本与纸页 | Syuze `src/components/memoir/MemoirBook.tsx`, `paginate.ts` | 厚封面与薄纸不同重量；翻页角度、阴影和书体平移联动；拖动后释放；单双页布局 | 高辨识度。先提取纸页/封面运动和分页渲染，再提供书本组合；通过 `pages`/内容 renderer 输入，移除 story store、翻译和 memoir 业务依赖。忙碌页目前拒绝重复翻动，不能声称任意中断。待提取。 |
-| **ImagePresentation / ImageViewport** 图片预览 | Franklin React `react/ImageViewport.tsx`, `Cards.tsx`, `presentation.ts`, `core/image-view.ts`, `core/presentation.ts` | 图片中心放大，缩放以指针为锚；双指缩放、平移、Fit；说明和信息与图片保持比例关系 | 第一批。保留自然尺寸、坐标约束与真实 img；把图片内缩放和卡片到阅读态的几何分开。核心 viewport 可独立，完整 presentation 仍依赖 board。待提取。 |
-| **SelectionToolbar** 文字选区工具栏 | Syuze `src/spatial/notes-toolbar.js`; Franklin `src/notes-toolbar.js` | 选中文字才出现；点击格式动作不丢选区；工具栏独立于纸面缩放；进出场运动可反向 | 第一批。输入 editor root、`onFormat`、`getFormatState`、active 状态；不绑定特定富文本编辑器。保留 Range 的捕获/恢复和清理。待提取。 |
-| **VoicePlayer / VoiceCard** 语音素材 | Syuze `src/spatial/voice-item.js`, `asset-card.js`, `asset-sheet.js` | 真正的音频控件、进度与倍速；播放互斥；等待/网络/解码/权限错误；原音频与文字稿并存 | 第一批。播放器输入 URL，播放组由外部注入；卡片组合播放器。文字稿为独立数据，不替换录音。不能承诺原版 sheet 在开合时保留同一 audio，它会建立自己的播放器。待提取。 |
-| **SourceTray** 文档素材托盘 | Syuze `src/spatial/document-source-fan.js`, `asset-preview.js` | 真实图片、文本、语音卡片从文档底部展开；点开后落回同一素材；播放器不被假按钮替代 | 第一批组合。接受 sources、renderer 和预览 adapter；保留大小、弹簧、层级及取消代次。原版 `update(refs)` 会重建节点，应明确更新策略。ROC 当前 SourceStack 不是此托盘的完整移植。待提取。 |
+| **Book / PageTurn** 书本与纸页 | Syuze `src/components/memoir/MemoirBook.tsx`, `paginate.ts` | 厚封面与薄纸不同重量；翻页角度、阴影和书体平移联动；拖动后释放；单双页布局 | 高辨识度。先提取纸页/封面运动和分页渲染，再提供书本组合；通过 `pages`/内容 renderer 输入，移除 story store、翻译和 memoir 业务依赖。忙碌页目前拒绝重复翻动，不能声称任意中断。已提取 PageBook 的翻页机制；自动分页、成书入口待提取。 |
+| **ImagePresentation / ImageViewport** 图片预览 | Franklin React `react/ImageViewport.tsx`, `Cards.tsx`, `presentation.ts`, `core/image-view.ts`, `core/presentation.ts` | 图片中心放大，缩放以指针为锚；双指缩放、平移、Fit；说明和信息与图片保持比例关系 | 第一批。保留自然尺寸、坐标约束与真实 img；把图片内缩放和卡片到阅读态的几何分开。核心 viewport 可独立，完整 presentation 仍依赖 board。已提取 ImageViewport；完整图片 presentation 待提取。 |
+| **SelectionToolbar** 文字选区工具栏 | Syuze `src/spatial/notes-toolbar.js`; Franklin `src/notes-toolbar.js` | 选中文字才出现；点击格式动作不丢选区；工具栏独立于纸面缩放；进出场运动可反向 | 第一批。输入 editor root、`onFormat`、`getFormatState`、active 状态；不绑定特定富文本编辑器。保留 Range 的捕获/恢复和清理。已提取并可安装。 |
+| **VoicePlayer / VoiceCard** 语音素材 | Syuze `src/spatial/voice-item.js`, `asset-card.js`, `asset-sheet.js` | 真正的音频控件、进度与倍速；播放互斥；等待/网络/解码/权限错误；原音频与文字稿并存 | 第一批。播放器输入 URL，播放组由外部注入；卡片组合播放器。文字稿为独立数据，不替换录音。不能承诺原版 sheet 在开合时保留同一 audio，它会建立自己的播放器。已提取 VoicePlayer；VoiceCard / sheet 组合待提取。 |
+| **SourceTray** 文档素材托盘 | Syuze `src/spatial/document-source-fan.js`, `asset-preview.js` | 真实图片、文本、语音卡片从文档底部展开；点开后落回同一素材；播放器不被假按钮替代 | 第一批组合。接受 sources、renderer 和预览 adapter；保留大小、弹簧、层级及取消代次。原版 `update(refs)` 会重建节点，应明确更新策略。ROC 当前 SourceStack 不是此托盘的完整移植。已提取 SourceTray 的布局和运动；原素材专属 full-view adapter 待提取。 |
 | **DocumentPresentation** 文档阅读面 | Syuze `document-view.js`, `presentation-motion.js`; Franklin React `react/presentation.ts`, `core/presentation.ts`, `EditableText.tsx` | 第一页就是全文的同一排版；编辑器、光标、滚动与返回位置连续；工具不参与文字缩放 | 已有 ROC 阅读态修正，尚非完整原版移植。继续提取原比例、内容裁切与编辑 adapter；不把 sticky note 的自由缩放混成文档排版。 |
 | **Folder** 上开口／侧开口文件夹 | Syuze `folder-appearance.js`, `folder-container.js`, `mount.js`; Franklin React `Containers.tsx`, `core/containers.ts` | 开口、铰链、收纳口和飞行方向一致；卡片展开为可读布局；相机共同取景；盖板与内容分别响应 | 需要保留完整 motion/layout 组合。原版不是把卡片旋转成一把扇子。ROC 当前 FolderFan 仍有差异；应替换机制，不应另造装饰版。待对齐。 |
 | **Stack / RadialStack** 堆叠与来源环 | Syuze `stack-radial.js`, `model.js`, `mount.js`; Franklin React `core/containers.ts` | 普通素材堆叠展开为网格；文档保持中心，来源环绕；成员保持身份，邻居为焦点让位 | 布局算法可先提取；完整交互依赖成员关系、选择、相机和焦点。显式传 `hubId`，不把 `storyId` 作为通用 API。待提取。 |
@@ -47,3 +47,7 @@
 - 对照开、关、中断、滚动后返回、resize、键盘、reduced motion 和卸载；输入选区、音频时间等按对象类型检查。
 - Preview 使用 registry 实际分发文件；安装到独立消费者项目验证。未达到这一步就只列“待提取”。
 - Skill 记录原则、机制与反例；ROC 展示和分发代码；完整 board 行为用 recipe 分享。三者之间相互链接。
+
+## 0.4 提取进展
+
+已加入可安装组件：[ImageViewport、VoicePlayer、SelectionToolbar、PageBook、SourceTray](extracted-components.md)。书本目前提取纸页/封面运动与单双页，分页和成书入口未提取；图片目前是内部手势 viewport，完整卡片 presentation 未提取。上表其余 board recipes 继续保留待提取状态。

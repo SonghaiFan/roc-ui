@@ -19,8 +19,15 @@ ROC UI turns selected principles from the Responsive Object Continuity skill int
 | Source stack | One source subtree through pile, spread and modal inspection |
 | Focus lanes | Shared row coordinates, stable lane order and retained event selection |
 | Continuous tabs | One selection marker; label geometry stays fixed |
+| Image viewport | Franklin image zoom/pan/Fit and retained img |
+| Voice player | Syuze native audio controls, seek, rate and playback groups |
+| Selection toolbar | Syuze selection capture/restore with editor-owned commands |
+| Page book | Syuze cover/paper motion, angle shading and drag release |
+| Source tray | Native source shelf geometry, springs and retained media controls |
 
 Each gallery entry includes a working preview, complete source, usage, props, scope and a link to its design case. The gallery imports the same files distributed by the registry.
+
+[Extraction provenance and API boundaries](notes/extracted-components.md) document which original mechanisms are preserved and which application workflows are excluded.
 
 ## Explore the design space
 
@@ -44,7 +51,7 @@ In a React project already configured for shadcn:
 npx shadcn@latest add https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/folder-fan.json
 ```
 
-Replace `folder-fan` with any component name in the table, using kebab-case. Files install into `components/roc` at the project root. Adjust your import to your project's alias configuration. All required local files are included; layout components share `use-continuity.ts`; reading previews additionally include `card-preview.tsx` and `presentation-spring.ts` and every component shares `roc.css`. React 19+ is the supported baseline. There is no runtime animation-package dependency.
+Replace `folder-fan` with any component name in the table, using kebab-case. Files install into `components/roc` at the project root. Adjust your import to your project's alias configuration. All required local files, TypeScript declarations and upstream MIT notices are included; layout components share `use-continuity.ts`; reading previews additionally include `card-preview.tsx` and `presentation-spring.ts` and every component shares `roc.css`. React 19+ is the supported baseline. There is no runtime animation-package dependency.
 
 ```tsx
 import { FolderFan } from "./components/roc/folder-fan";
