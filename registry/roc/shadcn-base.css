@@ -12,11 +12,11 @@
   color: var(--roc-ink, #252525);
   /* One place maps the ROC design tokens (ink, paper, line, muted, marker, focus, accent, radius)
      onto the shadcn-named variables every copied component reads. */
-  --roc-sh-radius-xs: max(0px, calc(var(--roc-radius, 9px) - 6px));
-  --roc-sh-radius-sm: max(0px, calc(var(--roc-radius, 9px) - 4px));
-  --roc-sh-radius-md: max(0px, calc(var(--roc-radius, 9px) - 2px));
-  --roc-sh-radius-lg: var(--roc-radius, 9px);
-  --roc-sh-radius-xl: calc(var(--roc-radius, 9px) + 3px);
+  --roc-sh-radius-xs: max(0px, calc(var(--roc-radius-control) - 6px));
+  --roc-sh-radius-sm: max(0px, calc(var(--roc-radius-control) - 4px));
+  --roc-sh-radius-md: var(--roc-radius-control);
+  --roc-sh-radius-lg: var(--roc-radius-surface);
+  --roc-sh-radius-xl: min(24px, calc(var(--roc-radius-surface) * 1.25));
   --roc-sh-color-background: var(--roc-paper, #fff);
   --roc-sh-color-foreground: var(--roc-ink, #252525);
   --roc-sh-color-card: var(--roc-paper, #fff);
@@ -78,9 +78,28 @@
 :where(.roc-shadcn input) {
   min-width: 0;
 }
-.roc-shadcn:focus-visible {
-  outline: 2px solid var(--roc-focus, #737373);
-  outline-offset: 3px;
+/* Menu rows sit 4px inside their surface, so their curves share a center. */
+.roc-shadcn:is(
+  [data-slot="context-menu-content"],
+  [data-slot="context-menu-sub-content"],
+  [data-slot="menubar-content"],
+  [data-slot="menubar-sub-content"],
+  [data-slot="select-content"]
+) {
+  border-radius: var(--roc-radius-popup);
+}
+.roc-shadcn:is(
+  [data-slot="context-menu-item"],
+  [data-slot="context-menu-checkbox-item"],
+  [data-slot="context-menu-radio-item"],
+  [data-slot="context-menu-sub-trigger"],
+  [data-slot="menubar-item"],
+  [data-slot="menubar-checkbox-item"],
+  [data-slot="menubar-radio-item"],
+  [data-slot="menubar-sub-trigger"],
+  [data-slot="select-item"]
+) {
+  border-radius: max(0px, calc(var(--roc-radius-popup) - 4px));
 }
 @media (prefers-reduced-motion: reduce) {
   .roc-shadcn,

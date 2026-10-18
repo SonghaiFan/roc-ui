@@ -1,4 +1,15 @@
 @import "./shadcn-base.css";
+/* The field container and its popup share the selected ROC corner radius. */
+.roc-shadcn.roc-combobox-input {
+  border-radius: var(--roc-radius-control);
+}
+.roc-shadcn[data-slot="combobox-content"] {
+  border-radius: var(--roc-radius-popup);
+  min-width: min(var(--anchor-width), var(--available-width), calc(100vw - 24px));
+}
+.roc-shadcn[data-slot="combobox-item"] {
+  border-radius: max(0px, calc(var(--roc-radius-popup) - 4px));
+}
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 .roc-shadcn {

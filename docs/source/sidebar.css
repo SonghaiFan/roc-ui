@@ -1,12 +1,14 @@
 @import "./ui-base.css";
 .roc-sidebar-host {
+  --roc-sidebar-radius: min(var(--roc-radius, 9px), 16px);
+  --roc-sidebar-inset: max(12px, calc(var(--roc-sidebar-radius) * 0.5 + 6px));
   display: flex;
   min-width: 0;
   container-type: inline-size;
   position: relative;
   isolation: isolate;
   border: 1px solid var(--roc-line, #e5e5e5);
-  border-radius: calc(var(--roc-radius, 9px) + 1px);
+  border-radius: var(--roc-sidebar-radius);
   overflow: hidden;
 }
 .roc-sidebar {
@@ -32,7 +34,12 @@
 }
 .roc-sidebar-header,
 .roc-sidebar-content {
-  padding: 12px;
+  padding: var(--roc-sidebar-inset);
+}
+.roc-sidebar-header {
+  /* Align headings with row content and keep glyphs clear of the outer curve. */
+  padding-inline: calc(var(--roc-sidebar-inset) + 8px);
+  padding-block-start: max(var(--roc-sidebar-inset), var(--roc-sidebar-radius));
 }
 .roc-sidebar-content {
   flex: 1;
@@ -53,7 +60,7 @@
 .roc-sidebar-link {
   font: inherit;
   border: 0;
-  border-radius: max(0px, calc(var(--roc-radius, 9px) - 3px));
+  border-radius: var(--roc-radius-compact);
   background: transparent;
   text-decoration: none;
   color: inherit;
@@ -76,15 +83,12 @@
 .roc-sidebar-inset {
   flex: 1;
   min-width: 0;
-  padding: 10px;
+  padding: max(12px, var(--roc-sidebar-radius));
   background: #fff;
 }
 @container (max-width:420px) {
   .roc-sidebar {
     --roc-sidebar-width: 140px;
-  }
-  .roc-sidebar-header,
-  .roc-sidebar-content {
-    padding: 8px;
+    --roc-sidebar-inset: max(8px, calc(var(--roc-sidebar-radius) * 0.5 + 4px));
   }
 }

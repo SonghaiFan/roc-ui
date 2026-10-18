@@ -1,6 +1,7 @@
 "use client";
 // Adapted from shadcn/ui (MIT). Retain panels and make reversal interruptible.
 import * as React from "react";
+import { AutoHeight } from "@animate-ui/react/primitives/effects/auto-height";
 import { Accordion as Primitive } from "./primitive-accordion";
 import { ChevronDownIcon } from "lucide-react";
 import { cn } from "./utils";
@@ -87,11 +88,12 @@ function AccordionContent({
       data-slot="accordion-content"
       className={cn("roc-ui", className)}
     >
-      <div className="roc-ui-accordion-layout" data-open={open}>
+      <AutoHeight className="roc-ui-accordion-layout" data-open={open} initial={false}
+        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}>
         <div className="roc-ui-accordion-clip">
           <div className="roc-ui-accordion-body">{children}</div>
         </div>
-      </div>
+      </AutoHeight>
     </Primitive.Content>
   );
 }

@@ -1,4 +1,36 @@
 @import "./shadcn-base.css";
+/* Reserve a control lane so the jump button never sits over message text. */
+.roc-shadcn[data-slot="message-scroller"] {
+  --roc-scroller-control-size: 32px;
+}
+.roc-shadcn[data-slot="message-scroller"]:has(> [data-slot="message-scroller-button"][data-direction="end"]) {
+  padding-block-end: calc(var(--roc-scroller-control-size) + 16px);
+}
+.roc-shadcn[data-slot="message-scroller"]:has(> [data-slot="message-scroller-button"][data-direction="start"]) {
+  padding-block-start: calc(var(--roc-scroller-control-size) + 16px);
+}
+@media (max-width: 640px), (pointer: coarse) {
+  .roc-shadcn[data-slot="message-scroller"] {
+    --roc-scroller-control-size: 44px;
+  }
+}
+.roc-shadcn[data-slot="message-scroller-button"] {
+  inset-inline-start: auto;
+  inset-inline-end: 12px;
+  --roc-sh-tw-translate-x: 0px;
+  border: 1px solid var(--roc-line, #dedede);
+  background: var(--roc-paper, #fff);
+  box-shadow: 0 2px 6px #0000000d;
+}
+.roc-shadcn[data-slot="message-scroller-button"][data-direction="end"] {
+  bottom: 8px;
+}
+.roc-shadcn[data-slot="message-scroller-button"][data-variant="secondary"] {
+  background: var(--roc-paper, #fff);
+}
+.roc-shadcn[data-slot="message-scroller-button"][data-direction="start"] {
+  top: 8px;
+}
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 .roc-shadcn {

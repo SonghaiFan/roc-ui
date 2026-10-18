@@ -1,7 +1,7 @@
 "use client";
 // ROC primitive: a short label that appears on hover or focus. Behaviour from Base UI.
 import * as React from "react";
-import { Tooltip as Base } from "@base-ui/react/tooltip";
+import { Tooltip as Base } from "@animate-ui/react/primitives/base-ui/tooltip";
 import { createContent, renderChild } from "./primitive-popup";
 
 const DelayContext = React.createContext<number | undefined>(undefined);

@@ -7,10 +7,6 @@
   color: inherit;
   cursor: pointer;
 }
-.roc-tabs button:focus-visible {
-  outline: 2px solid var(--roc-accent, #64735f);
-  outline-offset: 5px;
-}
 .roc-tabs {
   position: relative;
   display: inline-flex;

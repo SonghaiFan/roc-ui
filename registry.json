@@ -12,6 +12,7 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -26,16 +27,6 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -44,6 +35,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -100,6 +106,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -141,6 +162,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -186,6 +222,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -227,6 +278,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -292,6 +358,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -311,7 +392,9 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -355,6 +438,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -375,7 +473,7 @@
       "dependencies": [
         "react@^19.0.0",
         "clsx@^2.1.1",
-        "@base-ui/react@^1.9.0"
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -402,6 +500,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -460,6 +573,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -531,6 +659,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -550,6 +693,7 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
+        "@animate-ui/react@^2.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1"
       ],
@@ -595,6 +739,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -616,6 +775,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0",
         "class-variance-authority@^0.7.1"
       ],
@@ -656,11 +816,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -669,6 +824,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/dialog.css",
@@ -696,6 +866,7 @@
       "dependencies": [
         "react@^19.0.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0"
       ],
       "files": [
@@ -735,6 +906,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -756,6 +942,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0"
       ],
       "files": [
@@ -800,6 +987,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -820,6 +1022,7 @@
       "dependencies": [
         "react@^19.0.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0"
       ],
       "files": [
@@ -857,6 +1060,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -901,6 +1119,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -951,6 +1184,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -999,6 +1247,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -1042,6 +1305,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -1062,6 +1340,7 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1074,11 +1353,6 @@
           "path": "registry/roc/primitive-toggle.tsx",
           "type": "registry:file",
           "target": "~/components/roc/primitive-toggle.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
         },
         {
           "path": "registry/roc/primitive-utils.ts",
@@ -1106,6 +1380,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -1126,6 +1415,7 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1148,11 +1438,6 @@
           "path": "registry/roc/primitive-toggle.tsx",
           "type": "registry:file",
           "target": "~/components/roc/primitive-toggle.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
         },
         {
           "path": "registry/roc/primitive-utils.ts",
@@ -1188,6 +1473,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/toggle-group.css",
@@ -1269,6 +1569,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -1316,6 +1631,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -1372,6 +1702,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -1393,7 +1738,8 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1"
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -1412,16 +1758,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -1430,6 +1766,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/pagination.css",
@@ -1457,6 +1808,7 @@
       "dependencies": [
         "react@^19.0.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0",
         "class-variance-authority@^0.7.1"
       ],
@@ -1497,11 +1849,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -1510,6 +1857,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/alert-dialog.css",
@@ -1585,6 +1947,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -1605,7 +1982,8 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -1642,6 +2020,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/attachment.css",
@@ -1723,6 +2116,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -1787,6 +2195,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/button-group.css",
           "type": "registry:file",
           "target": "~/components/roc/button-group.css"
@@ -1824,7 +2247,8 @@
         "lucide-react@^1.59.0",
         "react-day-picker@^10.0.2",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1"
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -1843,16 +2267,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -1861,6 +2275,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/calendar.css",
@@ -1900,7 +2329,8 @@
         "embla-carousel-react@^8.6.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1"
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -1919,16 +2349,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -1937,6 +2357,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/carousel.css",
@@ -2008,6 +2443,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -2029,7 +2479,8 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "class-variance-authority@^0.7.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -2048,16 +2499,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -2066,6 +2507,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/code-block.css",
@@ -2102,6 +2558,7 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
+        "@animate-ui/react@^2.0.0",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -2146,6 +2603,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -2165,7 +2637,7 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "@base-ui/react@^1.9.0",
+        "@animate-ui/react@^2.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
         "class-variance-authority@^0.7.1"
@@ -2187,16 +2659,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -2205,6 +2667,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/input-group.tsx",
@@ -2274,6 +2751,7 @@
         "cmdk@^1.1.1",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0",
         "class-variance-authority@^0.7.1"
       ],
@@ -2319,11 +2797,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -2332,6 +2805,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/dialog.css",
@@ -2375,6 +2863,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0"
       ],
       "files": [
@@ -2429,6 +2918,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -2450,7 +2954,8 @@
         "react@^19.0.0",
         "@tanstack/react-table@^8.21.3",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1"
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -2489,6 +2994,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/input.tsx",
           "type": "registry:file",
           "target": "~/components/roc/input.tsx"
@@ -2502,16 +3022,6 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -2547,6 +3057,7 @@
         "react-day-picker@^10.0.2",
         "clsx@^2.1.1",
         "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0"
       ],
       "files": [
@@ -2571,16 +3082,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -2589,6 +3090,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/calendar.css",
@@ -2619,6 +3135,11 @@
           "path": "registry/roc/primitive-popup.tsx",
           "type": "registry:file",
           "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/popover.css",
@@ -2695,6 +3216,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -2749,6 +3285,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -2801,6 +3352,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -2877,6 +3443,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/separator.tsx",
           "type": "registry:file",
           "target": "~/components/roc/separator.tsx"
@@ -2917,6 +3498,7 @@
       "dependencies": [
         "react@^19.0.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0"
       ],
       "files": [
@@ -2966,6 +3548,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -2986,7 +3583,8 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -3005,16 +3603,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -3023,6 +3611,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/input.tsx",
@@ -3115,6 +3718,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -3177,6 +3795,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/item.css",
@@ -3247,6 +3880,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -3315,6 +3963,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -3379,6 +4042,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -3400,6 +4078,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0"
       ],
       "files": [
@@ -3452,6 +4131,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -3507,6 +4201,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -3529,7 +4238,8 @@
         "@shadcn/react@^0.3.1",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1"
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -3548,16 +4258,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -3566,6 +4266,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/message-scroller.css",
@@ -3635,6 +4350,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -3723,6 +4453,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -3745,7 +4490,8 @@
         "lucide-react@^1.59.0",
         "@shadcn/react@^0.3.1",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1"
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -3764,16 +4510,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -3782,6 +4518,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/questionnaire.css",
@@ -3854,6 +4605,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -3875,6 +4641,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0"
       ],
       "files": [
@@ -3924,6 +4691,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -3945,6 +4727,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
         "@base-ui/react@^1.9.0"
       ],
       "files": [
@@ -3999,6 +4782,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -4020,6 +4818,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -4057,6 +4856,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/input.tsx",
@@ -4128,6 +4942,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -4181,6 +5010,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -4201,7 +5045,7 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "@base-ui/react@^1.9.0",
+        "@animate-ui/react@^2.0.0",
         "clsx@^2.1.1",
         "class-variance-authority@^0.7.1"
       ],
@@ -4222,16 +5066,6 @@
           "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -4240,6 +5074,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/toast.css",
@@ -4277,7 +5126,8 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -4324,6 +5174,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/trace.css",
@@ -4384,6 +5249,21 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -4431,6 +5311,21 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/use-controllable-state.ts",
           "type": "registry:file",
           "target": "~/components/roc/use-controllable-state.ts"
@@ -4471,6 +5366,21 @@
           "path": "registry/roc/surface.css",
           "type": "registry:file",
           "target": "~/components/roc/surface.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/use-controllable-state.ts",
@@ -4525,6 +5435,21 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/use-controllable-state.ts",
           "type": "registry:file",
           "target": "~/components/roc/use-controllable-state.ts"
@@ -4567,6 +5492,21 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/use-controllable-state.ts",
           "type": "registry:file",
           "target": "~/components/roc/use-controllable-state.ts"
@@ -4604,6 +5544,21 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -4634,6 +5589,21 @@
           "path": "registry/roc/surface.css",
           "type": "registry:file",
           "target": "~/components/roc/surface.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/image-geometry.ts",
@@ -4683,6 +5653,21 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -4725,6 +5710,21 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -4765,6 +5765,21 @@
           "path": "registry/roc/surface.css",
           "type": "registry:file",
           "target": "~/components/roc/surface.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/SOURCE-LICENSE.txt",
@@ -4819,6 +5834,21 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
@@ -4835,6 +5865,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
         "clsx@^2.1.1",
         "@base-ui/react@^1.9.0"
       ],
@@ -4855,16 +5886,6 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -4873,6 +5894,21 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/scroll-area.tsx",
@@ -4900,6 +5936,11 @@
           "target": "~/components/roc/primitive-toggle.tsx"
         },
         {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
           "path": "registry/roc/use-controllable-state.ts",
           "type": "registry:file",
           "target": "~/components/roc/use-controllable-state.ts"
@@ -4908,6 +5949,11 @@
           "path": "registry/roc/toggle.css",
           "type": "registry:file",
           "target": "~/components/roc/toggle.css"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
         },
         {
           "path": "registry/roc/edge-panel.css",

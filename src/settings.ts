@@ -8,6 +8,13 @@ export const palette = {
 };
 export type AccentName = keyof typeof palette;
 
+export const radiusPresets = [
+  { value: "0", label: "Square" },
+  { value: "6", label: "Small" },
+  { value: "12", label: "Medium" },
+  { value: "20", label: "Large" },
+];
+
 export const accentForeground: Record<AccentName, string> = {
   black: "#ffffff",
   white: "#1a1a1a",

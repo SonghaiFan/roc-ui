@@ -8,7 +8,7 @@
   overflow: auto;
   padding: 5px;
   border: 1px solid var(--roc-line, #dedede);
-  border-radius: var(--roc-radius, 8px);
+  border-radius: var(--roc-radius-popup);
   background: var(--roc-paper, #fff);
   box-shadow: 0 8px 28px #00000012;
   transform-origin: var(--roc-dropdown-menu-content-transform-origin);
@@ -29,7 +29,7 @@
   align-items: center;
   gap: 9px;
   padding: 9px 10px;
-  border-radius: max(0px, calc(var(--roc-radius, 9px) - 5px));
+  border-radius: max(0px, calc(var(--roc-radius-popup) - 5px));
   cursor: default;
   user-select: none;
   outline: none;

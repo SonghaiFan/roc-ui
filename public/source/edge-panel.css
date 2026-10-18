@@ -5,7 +5,7 @@
   z-index: 19;
   top: 0;
   bottom: 0;
-  width: var(--roc-edge-panel-zone, 14px);
+  width: var(--roc-edge-panel-zone, 28px);
 }
 .roc-ui[data-slot="edge-panel-zone"][data-side="left"] {
   left: 0;
@@ -29,7 +29,7 @@
   background: var(--roc-paper, #fff);
   color: var(--roc-ink, #252525);
   border: 1px solid var(--roc-line, #dedede);
-  border-radius: calc(var(--roc-radius, 8px) + 2px);
+  border-radius: var(--roc-radius-surface);
   box-shadow: 0 12px 36px #00000018;
   transition:
     opacity var(--roc-motion-quick) ease,
@@ -82,9 +82,46 @@
   flex: 1 1 auto;
   min-height: 0;
 }
+.roc-ui[data-slot="edge-panel-backdrop"] {
+  display: none;
+}
+.roc-ui[data-slot="edge-panel-zone"][data-mobile] {
+  display: none;
+}
+.roc-ui[data-slot="edge-panel-backdrop"][data-mobile]:not([data-contained])[data-state="open"] {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 19;
+  background: #00000040;
+}
+.roc-ui[data-slot="edge-panel"][data-mobile]:not([data-contained]) {
+  --roc-edge-panel-max-height: min(80dvh, calc(100dvh - 80px));
+  --roc-edge-panel-safe-bottom: env(safe-area-inset-bottom);
+  top: auto;
+  bottom: max(8px, env(safe-area-inset-bottom));
+  left: max(8px, env(safe-area-inset-left));
+  right: max(8px, env(safe-area-inset-right));
+  width: auto;
+  max-width: none;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.roc-ui[data-slot="edge-panel"][data-mobile][data-state="closed"] {
+  transform: translateY(16px);
+}
+.roc-ui[data-slot="edge-panel"][data-mobile] [data-slot="edge-panel-pin"] {
+  display: none;
+}
+.roc-ui[data-slot="edge-panel"][data-mobile] [data-slot="edge-panel-close"] {
+  width: 44px;
+  height: 44px;
+}
+.roc-ui[data-slot="edge-panel"][data-mobile] [data-slot="select-trigger"] {
+  min-height: 44px;
+}
 .roc-ui-edge-panel-scroll [data-slot="scroll-area-viewport"] {
   max-height: calc(
-    var(--roc-edge-panel-max-height) - var(--roc-edge-panel-header, 56px) - 2px
+    var(--roc-edge-panel-max-height) - var(--roc-edge-panel-header, 56px) - 2px - var(--roc-edge-panel-safe-bottom, 0px)
   );
 }
 @media (prefers-reduced-motion: reduce) {

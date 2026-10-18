@@ -1,32 +1,4 @@
 @import "./ui-base.css";
-.roc-collapsible {
-  display: grid;
-  grid-template-rows: 0fr;
-  visibility: hidden;
-  transition:
-    grid-template-rows var(--roc-motion-fast) var(--roc-motion-ease),
-    visibility var(--roc-motion-fast);
-}
-.roc-collapsible[data-open="true"] {
-  grid-template-rows: 1fr;
-  visibility: visible;
-}
-.roc-collapsible-inner {
-  min-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  filter: blur(var(--roc-motion-blur));
-  transition:
-    opacity var(--roc-motion-fast) var(--roc-motion-ease),
-    filter var(--roc-motion-fast) var(--roc-motion-ease);
-}
-.roc-collapsible[data-open="true"] > .roc-collapsible-inner {
-  opacity: 1;
-  filter: blur(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .roc-collapsible,
-  .roc-collapsible-inner {
-    transition: none;
-  }
-}
+/* Animate UI retains the content and animates its measured height. */
+.roc-collapsible { display: block; }
+.roc-collapsible-inner { min-height: 0; overflow: hidden; }

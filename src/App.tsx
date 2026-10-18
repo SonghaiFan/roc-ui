@@ -6,7 +6,11 @@ import {
   type CSSProperties,
 } from "react";
 import {
+  CodeXmlIcon,
+  DownloadIcon,
   ExternalLinkIcon,
+  Maximize2Icon,
+  Minimize2Icon,
   SearchIcon,
   SlidersHorizontalIcon,
 } from "lucide-react";
@@ -46,7 +50,6 @@ import {
 import { Kbd } from "../registry/roc/kbd";
 import { Label } from "../registry/roc/label";
 import { Picker } from "./Picker";
-import { Slider } from "../registry/roc/slider";
 import { Toggle } from "../registry/roc/toggle";
 import {
   Sheet,
@@ -66,7 +69,7 @@ import {
   useEdgePanel,
 } from "../registry/roc/edge-panel";
 import { ViewportPreview } from "./ViewportPreview";
-import { palette, accentForeground, type AccentName } from "./settings";
+import { palette, accentForeground, radiusPresets, type AccentName } from "./settings";
 import "./site.css";
 const repo = "https://github.com/SonghaiFan/roc-ui";
 const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
@@ -199,12 +202,12 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
 }
 /** Interacting with the live preview dismisses an unpinned settings panel. */
 function DismissOnPreview() {
-  const { hide } = useEdgePanel();
+  const { hide, compact } = useEdgePanel();
   useEffect(() => {
-    const dismiss = () => hide();
+    const dismiss = () => { if (!compact) hide(); };
     window.addEventListener("roc-preview-interact", dismiss);
     return () => window.removeEventListener("roc-preview-interact", dismiss);
-  }, [hide]);
+  }, [hide, compact]);
   return null;
 }
 const components = foundationIds.map(
@@ -221,6 +224,7 @@ export function App() {
     [filter, setFilter] = useState("All"),
     [color, setColor] = useState<AccentName>("black"),
     [radius, setRadius] = useState(12),
+    [corners, setCorners] = useState("Smooth"),
     [surface, setSurface] = useState("White"),
     [density, setDensity] = useState("Comfortable");
   const [font, setFont] = useState("System");
@@ -272,7 +276,7 @@ export function App() {
     window.addEventListener("keydown", search);
     return () => window.removeEventListener("keydown", search);
   }, [selected]);
-  const config = { query, filter, color, radius, surface, density, font };
+  const config = { query, filter, color, radius, corners, surface, density, font };
   const latestConfig = useRef(config);
   latestConfig.current = config;
   const syncFrame = () =>
@@ -282,7 +286,7 @@ export function App() {
     );
   useEffect(() => {
     if (!embedded) syncFrame();
-  }, [query, filter, color, radius, surface, density, font]);
+  }, [query, filter, color, radius, corners, surface, density, font]);
   useEffect(() => {
     const receive = (event: MessageEvent) => {
       if (event.origin !== location.origin) return;
@@ -293,6 +297,7 @@ export function App() {
           setFilter(c.filter);
           setColor(c.color);
           setRadius(c.radius);
+          setCorners(c.corners);
           setSurface(c.surface);
           setDensity(c.density);
           setFont(c.font);
@@ -365,6 +370,7 @@ export function App() {
     "--roc-marker": `color-mix(in srgb,${palette[color]} 24%,white)`,
     "--roc-accent-foreground": accentForeground[color],
     "--roc-radius": `${radius}px`,
+    "--roc-corner-shape": corners === "Smooth" ? "squircle" : "round",
     "--roc-paper": surface === "Paper" ? "#fcfbf7" : "#fff",
     "--preview-font":
       font === "System"
@@ -375,7 +381,7 @@ export function App() {
     if (!embedded) return;
     for (const [name, value] of Object.entries(style))
       document.documentElement.style.setProperty(name, String(value));
-  }, [embedded, color, radius, surface, font]);
+  }, [embedded, color, radius, corners, surface, font]);
   if (embedded)
     return (
       <div className="design-space embedded-preview" style={style}>
@@ -409,7 +415,11 @@ export function App() {
                         window.scrollTo({ top: 0, behavior: "instant" });
                       }}
                     >
-                      ↗
+                      {focused === item.id ? (
+                        <Minimize2Icon aria-hidden="true" />
+                      ) : (
+                        <Maximize2Icon aria-hidden="true" />
+                      )}
                     </Button>
                     <Button
                       variant="ghost"
@@ -417,7 +427,7 @@ export function App() {
                       aria-label={`View ${item.name} source`}
                       onClick={() => open(item.id)}
                     >
-                      <span aria-hidden="true">〈/〉</span>
+                      <CodeXmlIcon aria-hidden="true" />
                     </Button>
                   </CardAction>
                 </CardHeader>
@@ -432,7 +442,7 @@ export function App() {
                     onClick={() => open(item.id)}
                     aria-label={`Install ${item.name}`}
                   >
-                    ↗
+                    <DownloadIcon aria-hidden="true" />
                   </Button>
                 </CardFooter>
               </Card>
@@ -527,19 +537,29 @@ export function App() {
                   options={[{ value: "System" }, { value: "Serif" }]}
                 />
               </Label>
-              <div className="rail-control">
-                <span>
-                  Radius <output>{radius}</output>
-                </span>
-                <Slider
-                  aria-label="Corner radius"
-                  min={0}
-                  max={24}
-                  step={2}
-                  value={[radius]}
-                  onValueChange={([next]) => setRadius(next)}
+              <Label className="rail-control">
+                <span>Corners</span>
+                <Picker
+                  dark
+                  label="Corner style"
+                  value={corners}
+                  onValueChange={setCorners}
+                  options={[
+                    { value: "Smooth" },
+                    { value: "Rounded" },
+                  ]}
                 />
-              </div>
+              </Label>
+              <Label className="rail-control">
+                <span>Radius</span>
+                <Picker
+                  dark
+                  label="Corner radius"
+                  value={String(radius)}
+                  onValueChange={(value) => setRadius(Number(value))}
+                  options={radiusPresets}
+                />
+              </Label>
               <Label className="rail-control">
                 <span>Spacing</span>
                 <Picker

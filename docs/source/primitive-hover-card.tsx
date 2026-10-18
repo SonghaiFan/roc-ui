@@ -1,7 +1,7 @@
 "use client";
 // ROC primitive: a card that previews a link on hover or focus. Behaviour from Base UI.
 import * as React from "react";
-import { PreviewCard as Base } from "@base-ui/react/preview-card";
+import { PreviewCard as Base } from "@animate-ui/react/primitives/base-ui/preview-card";
 import { createContent, renderChild } from "./primitive-popup";
 
 const DelayContext = React.createContext<{ open?: number; close?: number }>({});

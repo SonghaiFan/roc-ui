@@ -1,4 +1,17 @@
 @import "./shadcn-base.css";
+.roc-shadcn[data-slot="input-group"]:has([data-slot="input-group-control"]:focus-visible) {
+  box-shadow: inset 0 0 0 2px var(--roc-focus, #737373) !important;
+}
+.roc-shadcn[data-slot="input-group"] [data-slot="input-group-control"]:focus-visible {
+  outline: none;
+  box-shadow: none !important;
+}
+@media (forced-colors: active) {
+  .roc-shadcn[data-slot="input-group"]:has([data-slot="input-group-control"]:focus-visible) {
+    outline: 2px solid Highlight;
+    outline-offset: -2px;
+  }
+}
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 .roc-shadcn {

@@ -1,7 +1,7 @@
 // Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.
 "use client";
 import * as React from "react";
-import { Combobox as ComboboxPrimitive } from "@base-ui/react";
+import { Combobox as ComboboxPrimitive } from "@animate-ui/react/primitives/base-ui/combobox";
 import { cn } from "./utils";
 import { CheckIcon, ChevronDownIcon, XIcon } from "lucide-react";
 import { Button } from "./button";
@@ -62,7 +62,7 @@ function ComboboxInput({
 }) {
   return (
     <InputGroup
-      className={cn("roc-shadcn", cn("roc-u-w-auto", className))}
+      className={cn("roc-shadcn", cn("roc-combobox-input roc-u-w-auto", className))}
     >
       <ComboboxPrimitive.Input
         render={<InputGroupInput disabled={disabled} />}
@@ -106,6 +106,7 @@ function ComboboxContent({
   return (
     <ComboboxPrimitive.Portal>
       <ComboboxPrimitive.Positioner
+        collisionPadding={12}
         side={side}
         sideOffset={sideOffset}
         align={align}
@@ -114,6 +115,7 @@ function ComboboxContent({
         className={cn("roc-shadcn", "roc-u-isolate roc-u-z-50")}
       >
         <ComboboxPrimitive.Popup
+        data-roc-motion="animate-ui"
           data-slot="combobox-content"
           data-chips={!!anchor}
           className={cn(

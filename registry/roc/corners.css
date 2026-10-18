@@ -1,0 +1,26 @@
+/* Smooth squircle corners, following the visual treatment at https://corne.rs/.
+   Native corner shaping keeps borders, shadows and overflowing content intact.
+   Browsers without support retain the existing border-radius fallback. */
+:where(
+  [class^="roc-"],
+  [class*=" roc-"],
+  [class^="roc-"] *,
+  [class*=" roc-"] *
+) {
+  /* ROC limits by role, informed by Apple's compact-control and surface guidance.
+     These are ROC values, not platform-prescribed dimensions. Zero stays square. */
+  --roc-radius-compact: min(var(--roc-radius, 9px), 8px);
+  --roc-radius-control: min(var(--roc-radius, 9px), 10px);
+  --roc-radius-popup: min(var(--roc-radius, 9px), 12px);
+  --roc-radius-surface: min(var(--roc-radius, 12px), 20px);
+}
+@supports (corner-shape: squircle) {
+  :where(
+    [class^="roc-"],
+    [class*=" roc-"],
+    [class^="roc-"] *,
+    [class*=" roc-"] *
+  ) {
+    corner-shape: var(--roc-corner-shape, squircle);
+  }
+}

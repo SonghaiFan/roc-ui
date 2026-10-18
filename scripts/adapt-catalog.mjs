@@ -173,6 +173,13 @@ for (const name of names) {
     theme + "\n" + extra + "\n@tailwind utilities;",
   );
   const css = postcss.parse(compiler.build([...candidates]));
+  // Fully rounded utilities are circles or pills, rather than squircles.
+  css.walkDecls("border-radius", (decl) => {
+    if (decl.value.includes("infinity"))
+      decl.after({ prop: "corner-shape", value: "round" });
+    else if (decl.value === "inherit")
+      decl.after({ prop: "corner-shape", value: "inherit" });
+  });
   css.walkRules((rule) => {
     if (rule.selector === ":root, :host") rule.selector = ".roc-shadcn";
     else if (rule.selector === "*, ::before, ::after, ::backdrop")

@@ -1,4 +1,10 @@
 @import "./shadcn-base.css";
+.roc-shadcn[data-slot="message-content"] {
+  gap: 6px;
+}
+.roc-shadcn:is([data-slot="message-header"], [data-slot="message-footer"]) {
+  padding-inline: 14px;
+}
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 .roc-shadcn {
@@ -56,6 +62,7 @@
 }
 .roc-u-rounded-full {
   border-radius: calc(infinity * 1px);
+  corner-shape: round;
 }
 .roc-u-bg-muted {
   background-color: var(--roc-sh-color-muted);

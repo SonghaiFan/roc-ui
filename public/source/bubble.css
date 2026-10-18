@@ -1,4 +1,18 @@
 @import "./shadcn-base.css";
+/* Text bubbles need a readable rectangle even when their content wraps. */
+.roc-shadcn[data-slot="bubble"]:not([data-variant="ghost"])
+  > .roc-shadcn[data-slot="bubble-content"] {
+  border-radius: var(--roc-radius-popup);
+  padding: 10px 14px;
+}
+.roc-shadcn[data-slot="bubble-content"] {
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.roc-shadcn[data-slot="bubble"][data-variant="secondary"]
+  > .roc-shadcn[data-slot="bubble-content"] {
+  background: color-mix(in srgb, var(--roc-marker, #efefef) 35%, var(--roc-paper, #fff));
+}
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 .roc-shadcn {
@@ -77,6 +91,7 @@
 }
 .roc-u-rounded-full {
   border-radius: calc(infinity * 1px);
+  corner-shape: round;
 }
 .roc-u-rounded-xl {
   border-radius: var(--roc-sh-radius-xl);

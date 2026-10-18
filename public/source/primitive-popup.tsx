@@ -82,7 +82,7 @@ export function createContent(parts: Parts, prefix: string, openValue = "open") 
     align,
     sideOffset,
     alignOffset,
-    collisionPadding,
+    collisionPadding = 12,
     avoidCollisions = true,
     sticky,
     anchor,
@@ -111,6 +111,7 @@ export function createContent(parts: Parts, prefix: string, openValue = "open") 
         style={{ zIndex: stacking }}
       >
         <parts.Popup
+          data-roc-motion="animate-ui"
           {...props}
           ref={composeRefs(ref, popup)}
           render={(popupProps: Record<string, any>, state: { open: boolean }) => (

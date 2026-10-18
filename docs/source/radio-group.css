@@ -13,6 +13,7 @@
   padding: 0;
   border: 1px solid var(--roc-line, #bbb);
   border-radius: 50%;
+  corner-shape: round;
   background: var(--roc-paper, #fff);
   cursor: pointer;
   transition: border-color var(--roc-motion-quick) var(--roc-motion-ease);
@@ -22,6 +23,7 @@
   position: absolute;
   inset: -6px;
   border-radius: 50%;
+  corner-shape: round;
 }
 .roc-ui[data-slot="radio-group-item"][data-state="checked"] {
   border-color: var(--roc-accent, var(--roc-ink, #252525));

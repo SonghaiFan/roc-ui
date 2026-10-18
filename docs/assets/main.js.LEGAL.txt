@@ -127,7 +127,9 @@ lucide-react/dist/esm/icons/chevron-up.mjs:
 lucide-react/dist/esm/icons/circle-check.mjs:
 lucide-react/dist/esm/icons/circle.mjs:
 lucide-react/dist/esm/icons/clock.mjs:
+lucide-react/dist/esm/icons/code-xml.mjs:
 lucide-react/dist/esm/icons/copy.mjs:
+lucide-react/dist/esm/icons/download.mjs:
 lucide-react/dist/esm/icons/external-link.mjs:
 lucide-react/dist/esm/icons/file-text.mjs:
 lucide-react/dist/esm/icons/folder.mjs:
@@ -138,6 +140,8 @@ lucide-react/dist/esm/icons/italic.mjs:
 lucide-react/dist/esm/icons/loader-circle.mjs:
 lucide-react/dist/esm/icons/mail.mjs:
 lucide-react/dist/esm/icons/maximize.mjs:
+lucide-react/dist/esm/icons/maximize-2.mjs:
+lucide-react/dist/esm/icons/minimize-2.mjs:
 lucide-react/dist/esm/icons/minus.mjs:
 lucide-react/dist/esm/icons/monitor.mjs:
 lucide-react/dist/esm/icons/octagon-x.mjs:

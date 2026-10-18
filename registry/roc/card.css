@@ -5,7 +5,7 @@
   gap: 20px;
   background: var(--roc-paper, #fff);
   border: 1px solid var(--roc-line, #e2e2e2);
-  border-radius: var(--roc-radius, 12px);
+  border-radius: var(--roc-radius-surface);
   padding: 20px;
   min-width: 0;
 }

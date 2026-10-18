@@ -25,7 +25,7 @@
   overflow: auto;
   padding: 24px;
   border: 1px solid var(--roc-line, #dedede);
-  border-radius: var(--roc-radius, 12px);
+  border-radius: var(--roc-radius-surface);
   background: var(--roc-paper, #fff);
   box-shadow: 0 16px 64px #00000018;
   transition:
@@ -50,7 +50,7 @@
   height: 28px;
   padding: 4px;
   border: 0;
-  border-radius: max(0px, calc(var(--roc-radius, 9px) - 4px));
+  border-radius: var(--roc-radius-compact);
   background: transparent;
   cursor: pointer;
 }

@@ -1,4 +1,16 @@
 @import "./shadcn-base.css";
+/* Calendar cells own their dimensions; generic icon-button sizes must not widen the grid. */
+.roc-shadcn[data-slot="calendar"] {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.roc-shadcn[data-slot="calendar"] .roc-ui.roc-ui-button {
+  width: var(--cell-size, 32px);
+  height: var(--cell-size, 32px);
+  min-width: 0;
+  min-height: var(--cell-size, 32px);
+  padding: 0;
+}
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 .roc-shadcn {

@@ -5,7 +5,7 @@
   max-height: var(--roc-popover-content-available-height);
   overflow: auto;
   border: 1px solid var(--roc-line, #dedede);
-  border-radius: var(--roc-radius, 10px);
+  border-radius: var(--roc-radius-popup);
   background: var(--roc-paper, #fff);
   padding: 18px;
   box-shadow: 0 8px 28px #00000012;

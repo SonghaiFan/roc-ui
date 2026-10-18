@@ -15,6 +15,7 @@ type EdgePanelContextValue = {
   pinned: boolean;
   side: Side;
   contained: boolean;
+  compact: boolean;
   setPinned: (pinned: boolean) => void;
   show: () => void;
   hide: (force?: boolean) => void;
@@ -63,6 +64,14 @@ function EdgePanel({
   children?: React.ReactNode;
 }) {
   const generated = React.useId();
+  const [compact, setCompact] = React.useState(false);
+  React.useEffect(() => {
+    const media = matchMedia("(max-width: 640px), (hover: none), (pointer: coarse)");
+    const update = () => setCompact(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
   const [open, setOpen] = useControllableState(
     openProp,
     defaultOpen,
@@ -76,8 +85,21 @@ function EdgePanel({
   const panel = React.useRef<HTMLElement>(null),
     trigger = React.useRef<HTMLElement>(null),
     timer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
-  const live = React.useRef({ open, pinned, setOpen, setPinned, hideDelay });
-  live.current = { open, pinned, setOpen, setPinned, hideDelay };
+  React.useEffect(() => {
+    if (!open || !compact || contained) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const focusFrame = requestAnimationFrame(() => {
+      const target = panel.current?.querySelector<HTMLElement>('[data-slot="edge-panel-close"]') ?? panel.current;
+      target?.focus({ preventScroll: true });
+    });
+    return () => {
+      cancelAnimationFrame(focusFrame);
+      document.body.style.overflow = previous;
+    };
+  }, [open, compact, contained]);
+  const live = React.useRef({ open, pinned, compact, setOpen, setPinned, hideDelay });
+  live.current = { open, pinned, compact, setOpen, setPinned, hideDelay };
   const api = React.useMemo(() => {
     const cancel = () => {
       if (timer.current) clearTimeout(timer.current);
@@ -89,9 +111,10 @@ function EdgePanel({
       cancel();
       const state = live.current;
       if (state.pinned && !force) return;
-      if (panel.current?.contains(document.activeElement))
-        trigger.current?.focus({ preventScroll: true });
+      const restoreFocus = panel.current?.contains(document.activeElement);
+      state.open = false;
       state.setOpen(false);
+      if (restoreFocus) trigger.current?.focus({ preventScroll: true });
       if (force) state.setPinned(false);
     };
     return {
@@ -104,6 +127,7 @@ function EdgePanel({
       },
       scheduleHide: () => {
         cancel();
+        if (live.current.compact) return;
         timer.current = setTimeout(() => {
           if (!panel.current?.matches(":focus-within") && !popupOpen()) hide();
         }, live.current.hideDelay);
@@ -117,19 +141,29 @@ function EdgePanel({
         !!trigger.current?.contains(node) ||
         (api.popupOpen() && node instanceof Element && !!node.closest(POPUP)));
     const outside = (event: PointerEvent) => {
+      if (event.target instanceof Element && event.target.closest('[data-slot="edge-panel-zone"]')) return;
       if (!belongs(event.target as Node)) api.hide();
     };
     const escape = (event: KeyboardEvent) => {
       if (event.key === "Escape" && live.current.open) api.hide(true);
     };
+    const focus = (event: FocusEvent) => {
+      if (!live.current.open || !live.current.compact || contained) return;
+      const node = event.target as Node;
+      if (panel.current?.contains(node)) return;
+      if (api.popupOpen() && node instanceof Element && node.closest(POPUP)) return;
+      panel.current?.querySelector<HTMLElement>('[data-slot="edge-panel-close"]')?.focus({ preventScroll: true });
+    };
     document.addEventListener("keydown", escape);
     document.addEventListener("pointerdown", outside, true);
+    document.addEventListener("focusin", focus);
     return () => {
       api.cancel();
       document.removeEventListener("keydown", escape);
       document.removeEventListener("pointerdown", outside, true);
+      document.removeEventListener("focusin", focus);
     };
-  }, [api]);
+  }, [api, contained]);
   const value = React.useMemo(
     () => ({
       id: id ?? `edge-panel-${generated}`,
@@ -137,6 +171,7 @@ function EdgePanel({
       pinned,
       side,
       contained,
+      compact,
       setPinned,
       show: api.show,
       hide: api.hide,
@@ -145,7 +180,7 @@ function EdgePanel({
       panel,
       trigger,
     }),
-    [id, generated, open, pinned, side, contained, api],
+    [id, generated, open, pinned, side, contained, compact, api, setPinned],
   );
   return <EdgePanelContext value={value}>{children}</EdgePanelContext>;
 }
@@ -178,7 +213,7 @@ function EdgePanelTrigger({
       }}
       onPointerEnter={(event: React.PointerEvent<HTMLButtonElement>) => {
         onPointerEnter?.(event);
-        if (event.pointerType === "mouse") panel.show();
+        if (event.pointerType === "mouse" && !panel.compact) panel.show();
       }}
       onPointerLeave={(event: React.PointerEvent<HTMLButtonElement>) => {
         onPointerLeave?.(event);
@@ -186,9 +221,11 @@ function EdgePanelTrigger({
       }}
       onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
         onClick?.(event);
-        panel.show();
+        const closing = panel.compact && panel.open;
+        if (closing) panel.hide(true);
+        else panel.show();
         // Keyboard activation moves into the panel; pointer use leaves focus alone.
-        if (event.detail === 0)
+        if (event.detail === 0 && !closing)
           requestAnimationFrame(() =>
             panel.panel.current?.querySelector<HTMLElement>(FOCUSABLE)?.focus(),
           );
@@ -214,6 +251,7 @@ function EdgePanelContent({
   const data = {
     "data-side": panel.side,
     "data-contained": panel.contained || undefined,
+    "data-mobile": panel.compact || undefined,
   };
   return (
     <>
@@ -223,21 +261,36 @@ function EdgePanelContent({
         className="roc-ui roc-ui-edge-panel-zone"
         {...data}
         onPointerEnter={(event) => {
-          if (event.pointerType === "mouse") panel.show();
+          if (event.pointerType === "mouse" && !panel.compact) panel.show();
+        }}
+        onPointerMove={(event) => {
+          if (event.pointerType === "mouse" && !panel.compact) panel.show();
         }}
         onPointerLeave={panel.scheduleHide}
+      />
+      <div
+        aria-hidden="true"
+        data-slot="edge-panel-backdrop"
+        data-state={panel.open ? "open" : "closed"}
+        {...data}
+        className="roc-ui"
+        onClick={() => panel.hide(true)}
       />
       <aside
         ref={panel.panel}
         id={panel.id}
         data-slot="edge-panel"
         data-state={panel.open ? "open" : "closed"}
+        role={panel.compact && !panel.contained ? "dialog" : undefined}
+        aria-modal={panel.compact && !panel.contained && panel.open ? true : undefined}
+        tabIndex={-1}
         {...data}
         inert={!panel.open}
         className={cn("roc-ui roc-ui-edge-panel", className)}
         onPointerEnter={panel.cancel}
         onPointerLeave={panel.scheduleHide}
         onBlur={(event) => {
+          if (panel.compact) return;
           const next = event.relatedTarget as Node | null;
           if (
             !event.currentTarget.contains(next) &&
@@ -254,6 +307,18 @@ function EdgePanelContent({
           if (event.key === "Escape") {
             event.stopPropagation();
             panel.hide(true);
+          }
+          if (event.key === "Tab" && panel.compact && !panel.contained) {
+            const focusable = Array.from(event.currentTarget.querySelectorAll<HTMLElement>(
+              'button:not(:disabled),input:not(:disabled),select:not(:disabled),textarea:not(:disabled),[href],[tabindex="0"]',
+            )).filter((element) => element.getClientRects().length > 0);
+            const first = focusable[0], last = focusable.at(-1);
+            if (!first) { event.preventDefault(); return; }
+            if (event.shiftKey && (document.activeElement === first || document.activeElement === event.currentTarget)) {
+              event.preventDefault(); last?.focus();
+            } else if (!event.shiftKey && (document.activeElement === last || document.activeElement === event.currentTarget)) {
+              event.preventDefault(); first.focus();
+            }
           }
         }}
         {...props}

@@ -8,15 +8,18 @@
   min-height: 36px;
   padding: 8px 15px;
   border: 1px solid transparent;
-  border-radius: var(--roc-radius, 8px);
+  border-radius: var(--roc-button-radius, var(--roc-radius-control));
   font-weight: 500;
-  line-height: 1.2;
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
   transition:
     background-color var(--roc-motion-quick) ease-out,
     box-shadow var(--roc-motion-quick) ease-out;
+}
+/* Keep the shared .roc-ui font reset from changing text button height. */
+.roc-ui.roc-ui-button {
+  line-height: 1.2;
 }
 .roc-ui-button.roc-ui-button-variant-default {
   background: var(--roc-accent, var(--roc-ink, #252525));
@@ -45,11 +48,13 @@
   box-shadow: inset 0 0 0 100px #80808018;
 }
 .roc-ui-button.roc-ui-button-size-xs {
+  --roc-button-radius: var(--roc-radius-compact);
   min-height: 26px;
   padding: 4px 8px;
   font-size: 11px;
 }
 .roc-ui-button.roc-ui-button-size-sm {
+  --roc-button-radius: var(--roc-radius-compact);
   min-height: 32px;
   padding: 6px 12px;
 }

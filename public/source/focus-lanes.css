@@ -7,10 +7,6 @@
   color: inherit;
   cursor: pointer;
 }
-.roc-lanes button:focus-visible {
-  outline: 2px solid var(--roc-accent, #64735f);
-  outline-offset: 5px;
-}
 .roc-lanes {
   display: flex;
   width: 100%;

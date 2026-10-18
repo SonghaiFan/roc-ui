@@ -2,7 +2,7 @@
 // ROC primitive: a draggable value or range. Behaviour from Base UI.
 // Keeps ROC's markup (Track, Range and Thumbs as siblings) and adds the Control Base UI needs.
 import * as React from "react";
-import { Slider as Base } from "@base-ui/react/slider";
+import { Slider as Base } from "@animate-ui/react/primitives/base-ui/slider";
 
 type RootProps = Omit<
   React.ComponentProps<"div">,

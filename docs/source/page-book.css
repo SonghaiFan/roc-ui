@@ -1,7 +1,6 @@
 @import "./surface.css";
 .roc-page-book {
   width: 100%;
-  outline-offset: 4px;
   color: #30312c;
 }
 .roc-book-stage {
@@ -92,6 +91,7 @@
   border: 0;
   background: #ffffffa0;
   border-radius: 50%;
+  corner-shape: round;
   width: 32px;
   height: 32px;
 }

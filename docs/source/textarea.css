@@ -6,7 +6,7 @@
   min-height: 100px;
   resize: vertical;
   border: 1px solid var(--roc-line, #dcdcdc);
-  border-radius: var(--roc-radius, 8px);
+  border-radius: var(--roc-radius-control);
   padding: 10px 12px;
   background: var(--roc-paper, #fff);
   line-height: 1.65;

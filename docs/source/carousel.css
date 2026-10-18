@@ -83,6 +83,7 @@
 }
 .roc-u-rounded-full {
   border-radius: calc(infinity * 1px);
+  corner-shape: round;
 }
 .roc-u-pt-4 {
   padding-top: calc(var(--roc-sh-spacing) * 4);

@@ -4,6 +4,7 @@
   width: 100%;
   overflow: hidden;
   border-radius: 99px;
+  corner-shape: round;
   background: var(--roc-line, #e5e5e5);
 }
 .roc-ui[data-slot="progress-indicator"] {

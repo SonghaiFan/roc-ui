@@ -91,6 +91,14 @@ The masonry canvas fills the workspace with the 66 customized shadcn components 
 
 The layout follows the preview-first approach of [shadcn create](https://ui.shadcn.com/create?item=preview). No reference-site source or assets are bundled.
 
+## Motion
+
+ROC uses [Animate UI 2](https://animate-ui.com/docs/installation) and Motion. Buttons and toggles use its press spring; accordion and collapsible panels use Auto Height while retaining their content. Base UI adapters use Animate UI for dialogs, alert dialogs, sheets, popovers, hover cards, tooltips, menus, selects, comboboxes, sliders and toasts. Switch thumbs share Animate UI's motion tokens. Existing ROC components keep their continuous layout and state animations. Static text and structural elements stay still; interactive surfaces transition their colors and borders.
+
+Published registry entries declare their required animation packages automatically. No gallery provider is required: Animate UI primitives respect reduced motion by default. To adjust timing throughout an application, wrap it in `AnimateUIProvider` from `@animate-ui/react/provider`, for example `<AnimateUIProvider tempo={0.8} reducedMotion="user">…</AnimateUIProvider>`. The gallery uses `reducedMotion="user"`. CSS entry/exit keyframes are disabled only on parts animated by Animate UI, avoiding competing transforms.
+
+On phones and touch devices, Style opens a scrollable modal sheet with a close button, focus containment and a backdrop. Desktop retains the edge reveal and pin interaction. Radius has four size presets (Square, Small, Medium, Large), with Rounded and Smooth corner shapes.
+
 ## 中文
 
 ROC 设计空间只展示 66 个基于 shadcn/ui 重做的组件。早期 10 个来自 Syuze / Franklin 交互经验的组件保留下载源码，不再出现在画廊。响应式设备切换、宽度滑块和媒体断点标记仅在组件详情中显示。基础组件保留组合 API 和 Radix / Base UI 可访问性语义，再加入 ROC 的保留节点、响应式布局和连续反馈。ROC 是一套独立的 React 组件，设计空间采用 masonry 布局，直接铺开所有可操作的组件。组件不依赖 Syuze、Franklin Board 或画廊运行时；示例数据、业务行为和展示页面与可下载代码分开。可组合音频控件、自定义选区操作，或把自己的 React 内容放进托盘。来源项目的物理参数和对象连续性原则被保留为可复用行为，而不是打包整个应用。
@@ -120,4 +128,4 @@ The library does not claim full motion parity with Syuze. Folder fan is a compac
 
 ## License
 
-[MIT](LICENSE). Independent of shadcn/ui. No proprietary fonts or third-party project assets are bundled.
+[MIT](LICENSE) for ROC source. Dependencies retain their own licenses. Animate UI is an external dependency under its [MIT + Commons Clause license](https://github.com/imskyleen/animate-ui/blob/main/packages/react/LICENSE.md); ROC registry payloads contain ROC adapters and dependency declarations, rather than copied Animate UI sources. No proprietary fonts or third-party project assets are bundled.

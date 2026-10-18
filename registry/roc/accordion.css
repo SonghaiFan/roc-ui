@@ -33,14 +33,7 @@
 .roc-ui[data-slot="accordion-trigger"][data-state="open"] svg {
   transform: scaleY(-1);
 }
-.roc-ui-accordion-layout {
-  display: grid;
-  grid-template-rows: 1fr;
-  transition: grid-template-rows var(--roc-motion-fast) var(--roc-motion-ease);
-}
-.roc-ui-accordion-layout[data-open="false"] {
-  grid-template-rows: 0fr;
-}
+.roc-ui-accordion-layout { overflow: hidden; }
 .roc-ui-accordion-clip {
   min-height: 0;
   overflow: hidden;

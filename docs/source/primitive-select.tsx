@@ -1,7 +1,7 @@
 "use client";
 // ROC primitive: a button that opens a list of options. Behaviour from Base UI.
 import * as React from "react";
-import { Select as Base } from "@base-ui/react/select";
+import { Select as Base } from "@animate-ui/react/primitives/base-ui/select";
 import { createContent } from "./primitive-popup";
 
 type Div = Omit<React.ComponentProps<"div">, "ref"> & { ref?: React.Ref<any> };

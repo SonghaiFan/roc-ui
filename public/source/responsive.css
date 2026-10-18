@@ -1,0 +1,58 @@
+/* Shared viewport constraints for portalled controls, including standalone consumers. */
+:is(.roc-ui, .roc-shadcn)[data-slot]:is(
+  [data-slot="popover-content"],
+  [data-slot="hover-card-content"],
+  [data-slot="tooltip-content"],
+  [data-slot="select-content"],
+  [data-slot="combobox-content"],
+  [data-slot="dropdown-menu-content"],
+  [data-slot="dropdown-menu-sub-content"],
+  [data-slot="context-menu-content"],
+  [data-slot="context-menu-sub-content"],
+  [data-slot="menubar-content"],
+  [data-slot="menubar-sub-content"]
+) {
+  max-inline-size: min(var(--available-width, calc(100vw - 24px)), calc(100vw - 24px));
+  max-block-size: min(var(--available-height, calc(100dvh - 24px)), calc(100dvh - 24px));
+  overflow: auto;
+  overflow-wrap: anywhere;
+  overscroll-behavior: contain;
+}
+@media (max-width: 640px), (pointer: coarse) {
+  .roc-ui.roc-ui-button[data-slot],
+  .roc-ui[data-slot="native-select"],
+  .roc-shadcn[data-slot="select-trigger"] {
+    min-height: 44px;
+  }
+  .roc-ui.roc-ui-button[data-size^="icon"] {
+    width: 44px;
+    height: 44px;
+  }
+  .roc-ui[data-slot="input"],
+  .roc-ui[data-slot="textarea"],
+  .roc-shadcn[data-slot="input-group-control"] {
+    font-size: 16px;
+  }
+  .roc-ui[data-slot="input"],
+  .roc-shadcn[data-slot="input-group"],
+  .roc-ui[data-slot="slider"] {
+    min-height: 44px;
+  }
+  .roc-shadcn[data-slot="input-group"] [data-slot="input-group-control"] {
+    min-height: 42px;
+  }
+  .roc-sidebar-link,
+  .roc-ui[data-slot="tabs-trigger"],
+  .roc-ui[data-slot="toggle"],
+  .roc-shadcn[data-slot="select-item"],
+  .roc-shadcn[data-slot="combobox-item"] {
+    min-height: 44px;
+  }
+  .roc-ui[data-slot="dropdown-menu-item"],
+  .roc-ui[data-slot="dropdown-menu-checkbox-item"],
+  .roc-ui[data-slot="dropdown-menu-radio-item"],
+  .roc-shadcn[data-slot="context-menu-item"],
+  .roc-shadcn[data-slot="menubar-item"] {
+    min-height: 44px;
+  }
+}

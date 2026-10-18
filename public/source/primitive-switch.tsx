@@ -1,6 +1,8 @@
 "use client";
 // ROC primitive: an on/off switch with native form participation.
 import * as React from "react";
+import { motion } from "motion/react";
+import { motionTokens, useShouldReduceMotion, useTempoTransition } from "@animate-ui/react/utils/motion";
 import { FormInput } from "./primitive-form-input";
 import { composeEventHandlers, useComposedRefs } from "./primitive-utils";
 import { useControllableState } from "./use-controllable-state";
@@ -92,8 +94,15 @@ function Root({
 
 function Thumb(props: React.ComponentProps<"span">) {
   const { checked, disabled } = React.useContext(Context);
+  const reduce = useShouldReduceMotion();
+  const transition = useTempoTransition(motionTokens.spring.thumb);
+  const Thumb: React.ElementType = motion.span;
   return (
-    <span
+    <Thumb
+      initial={false}
+      animate={{ x: checked ? "var(--roc-switch-travel, 16px)" : 0 }}
+      transition={reduce ? { duration: 0 } : transition}
+      data-roc-motion="animate-ui"
       data-state={checked ? "checked" : "unchecked"}
       data-disabled={disabled ? "" : undefined}
       {...props}

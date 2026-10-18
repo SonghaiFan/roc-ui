@@ -1,4 +1,29 @@
 @import "./shadcn-base.css";
+/* Compact file surfaces retain text clearance as the theme radius increases. */
+.roc-shadcn[data-slot="attachment"][data-size] {
+  --roc-attachment-radius: min(var(--roc-radius, 12px), 14px);
+  --roc-attachment-inset: 8px;
+  border-radius: var(--roc-attachment-radius);
+  padding: var(--roc-attachment-inset);
+}
+.roc-shadcn[data-slot="attachment"][data-size="sm"] {
+  --roc-attachment-radius: min(var(--roc-radius, 12px), 10px);
+  --roc-attachment-inset: 6px;
+}
+.roc-shadcn[data-slot="attachment"][data-size="xs"] {
+  --roc-attachment-radius: min(var(--roc-radius, 12px), 8px);
+  --roc-attachment-inset: 4px;
+}
+.roc-shadcn[data-slot="attachment"][data-orientation="horizontal"] {
+  padding-inline-end: max(
+    var(--roc-attachment-inset),
+    calc(var(--roc-attachment-radius) * 0.5 + 6px)
+  );
+}
+.roc-shadcn[data-slot="attachment"] > .roc-shadcn[data-slot="attachment-media"] {
+  /* Concentric with the outer border across the container's inset. */
+  border-radius: max(0px, calc(var(--roc-attachment-radius) - var(--roc-attachment-inset)));
+}
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 .roc-shadcn {

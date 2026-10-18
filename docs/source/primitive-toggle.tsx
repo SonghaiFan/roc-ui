@@ -1,7 +1,7 @@
 "use client";
 // ROC primitive: a two-state button.
 import * as React from "react";
-import { Slot } from "./primitive-slot";
+import { Button as AnimatedButton } from "@animate-ui/react/primitives/buttons/button";
 import { composeEventHandlers } from "./primitive-utils";
 import { useControllableState } from "./use-controllable-state";
 
@@ -26,9 +26,11 @@ function Root({
     defaultPressed,
     onPressedChange,
   );
-  const Comp: React.ElementType = asChild ? Slot.Root : "button";
+  const Comp: React.ElementType = AnimatedButton;
   return (
     <Comp
+      asChild={asChild}
+      tapScale={disabled ? 1 : 0.97}
       type="button"
       aria-pressed={pressed}
       data-state={pressed ? "on" : "off"}

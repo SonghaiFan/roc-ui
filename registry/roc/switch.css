@@ -1,5 +1,6 @@
 @import "./ui-base.css";
 .roc-ui[data-slot="switch"] {
+  --roc-switch-radius: min(var(--roc-radius, 11px), 11px);
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -8,7 +9,7 @@
   height: 22px;
   padding: 3px;
   border: 0;
-  border-radius: 99px;
+  border-radius: var(--roc-switch-radius);
   cursor: pointer;
   background: var(--roc-line, #dedede);
   transition: background-color var(--roc-motion-quick) ease-out;
@@ -24,7 +25,8 @@
 .roc-ui[data-slot="switch-thumb"] {
   width: 16px;
   height: 16px;
-  border-radius: 50%;
+  /* Match the track's inner curve across its 3px padding. */
+  border-radius: max(0px, calc(var(--roc-switch-radius) - 3px));
   background: white;
   box-shadow: 0 1px 2px #0002;
   /* A transition, not a keyframe: the overshoot ease keeps reversals continuous. */
@@ -34,6 +36,8 @@
   transform: translateX(16px);
 }
 .roc-ui[data-slot="switch"][data-size="sm"] {
+  --roc-switch-radius: min(var(--roc-radius, 9px), 9px);
+  --roc-switch-travel: 12px;
   width: 30px;
   height: 18px;
   padding: 3px;
@@ -45,3 +49,6 @@
 .roc-ui[data-slot="switch"][data-size="sm"] [data-state="checked"] {
   transform: translateX(12px);
 }
+
+/* Motion owns the thumb transform, including interrupted reversals. */
+.roc-ui[data-slot="switch-thumb"][data-roc-motion] { transition: none; }

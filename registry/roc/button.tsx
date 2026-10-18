@@ -2,7 +2,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
-import { Slot } from "./primitive-slot";
+import { Button as AnimatedButton } from "@animate-ui/react/primitives/buttons/button";
 
 const buttonVariants = cva("roc-ui roc-ui-button", {
   variants: {
@@ -48,10 +48,12 @@ function Button({
     pendingLabel?: React.ReactNode;
     asChild?: boolean;
   }) {
-  const Comp = asChild ? Slot.Root : "button";
+  const Comp: React.ElementType = AnimatedButton;
 
   return (
     <Comp
+      asChild={asChild}
+      tapScale={disabled || pending ? 1 : 0.97}
       type={asChild ? type : (type ?? "button")}
       data-slot="button"
       data-variant={variant}

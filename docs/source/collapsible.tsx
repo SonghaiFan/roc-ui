@@ -1,6 +1,7 @@
 // Adapted from shadcn/ui (MIT). Retained content is a ROC extension.
 "use client";
 import * as React from "react";
+import { AutoHeight } from "@animate-ui/react/primitives/effects/auto-height";
 import { Collapsible as Primitive } from "./primitive-collapsible";
 import { cn } from "./utils";
 import "./collapsible.css";
@@ -45,7 +46,9 @@ function CollapsibleContent({
       inert={!open}
       data-open={open}
     >
-      <div className="roc-collapsible-inner">{children}</div>
+      <AutoHeight initial={false} animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}>
+        <div className="roc-collapsible-inner">{children}</div>
+      </AutoHeight>
     </Primitive.Content>
   );
 }

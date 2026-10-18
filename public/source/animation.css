@@ -1,0 +1,24 @@
+/* Animate UI owns presence. CSS keyframes must not compete with Motion's
+   transforms/opacity or keep an exiting portal alive a second time. */
+[data-roc-motion="animate-ui"][data-slot] {
+  animation: none !important;
+}
+/* These parts use spring positions, so a CSS transition would lag the pointer. */
+.roc-ui[data-slot="slider-thumb"],
+.roc-ui[data-slot="slider-range"] {
+  transition-property: background-color, border-color, box-shadow;
+}
+/* Static content stays still; interactive surfaces respond to state changes. */
+:where(.roc-ui, .roc-shadcn):is(
+  [data-slot="card"], [data-slot="item"], [data-slot="attachment"],
+  [data-slot="table-row"], [data-slot="sidebar-menu-button"]
+) {
+  transition: background-color 150ms ease-out, border-color 150ms ease-out,
+    box-shadow 150ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  :where(.roc-ui, .roc-shadcn):is(
+    [data-slot="card"], [data-slot="item"], [data-slot="attachment"],
+    [data-slot="table-row"], [data-slot="sidebar-menu-button"]
+  ) { transition: none; }
+}
