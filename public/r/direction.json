@@ -6,21 +6,27 @@
   "description": "ROC: retained identity and coherent layout changes.",
   "dependencies": [
     "react@^19.0.0",
-    "radix-ui@^1.8.1",
-    "clsx@^2.1.1"
+    "clsx@^2.1.1",
+    "radix-ui@^1.8.1"
   ],
   "files": [
     {
       "path": "registry/roc/direction.tsx",
       "type": "registry:file",
       "target": "~/components/roc/direction.tsx",
-      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport { cn } from \"./utils\";\n(\"use client\");\nimport * as React from \"react\";\nimport { Direction } from \"radix-ui\";\nfunction DirectionProvider({\n  dir,\n  direction,\n  children,\n}: React.ComponentProps<typeof Direction.DirectionProvider> & {\n  direction?: React.ComponentProps<typeof Direction.DirectionProvider>[\"dir\"];\n}) {\n  return (\n    <Direction.DirectionProvider dir={direction ?? dir}>\n      {children}\n    </Direction.DirectionProvider>\n  );\n}\nconst useDirection = Direction.useDirection;\nexport { DirectionProvider, useDirection };\n\nimport \"./direction.css\";\n"
+      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport { cn } from \"./utils\";\n(\"use client\");\nimport * as React from \"react\";\nimport { Direction } from \"./primitive-direction\";\nfunction DirectionProvider({\n  dir,\n  direction,\n  children,\n}: React.ComponentProps<typeof Direction.DirectionProvider> & {\n  direction?: React.ComponentProps<typeof Direction.DirectionProvider>[\"dir\"];\n}) {\n  return (\n    <Direction.DirectionProvider dir={direction ?? dir}>\n      {children}\n    </Direction.DirectionProvider>\n  );\n}\nconst useDirection = Direction.useDirection;\nexport { DirectionProvider, useDirection };\n\nimport \"./direction.css\";\n"
     },
     {
       "path": "registry/roc/utils.ts",
       "type": "registry:file",
       "target": "~/components/roc/utils.ts",
       "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/primitive-direction.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/primitive-direction.ts",
+      "content": "// ROC primitive seam. Backed by Radix for now; replace this file to own the behaviour.\nexport { Direction } from \"radix-ui\";\n"
     },
     {
       "path": "registry/roc/direction.css",

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
-import { Slot } from "radix-ui";
+import { Slot } from "./primitive-slot";
 import { Button } from "./button";
 const attachmentVariants = cva(
   "roc-s-7dc46014311f roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-81b198a2db84 roc-s-184ddc11e5f9 roc-s-27ead27a81df roc-s-faa8a23c68f6 roc-s-6ad537f2bbaa roc-s-4f1a55de40bc roc-s-16a9cd6c3710 roc-s-ee73a37f6b8a roc-s-eae178841c68 roc-s-ffc76056b3ba roc-s-2211f122f7ab roc-s-4e40aee410f5 roc-s-de3a9fac636c roc-s-79d229f5dd53",

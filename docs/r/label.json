@@ -6,7 +6,6 @@
   "description": "ROC: retained identity and coherent layout changes.",
   "dependencies": [
     "react@^19.0.0",
-    "radix-ui@^1.8.1",
     "clsx@^2.1.1"
   ],
   "files": [
@@ -14,13 +13,31 @@
       "path": "registry/roc/label.tsx",
       "type": "registry:file",
       "target": "~/components/roc/label.tsx",
-      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport * as React from \"react\";\nimport { cn } from \"./utils\";\nimport { Label as LabelPrimitive } from \"radix-ui\";\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"roc-shadcn\",\n        cn(\n          \"roc-s-222f930b8752 roc-s-71556df3b421 roc-s-074569488cca roc-s-c74ab393b96d roc-s-761cdb81bddb roc-s-daaac3fbf55e roc-s-78905c9e865c roc-s-9af9a4182597 roc-s-272ef88d6a0c roc-s-f0ee83167878 roc-s-25d26df52a1d\",\n          className,\n        ),\n      )}\n      {...props}\n    />\n  );\n}\nexport { Label };\n\nimport \"./label.css\";\n"
+      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport * as React from \"react\";\nimport { cn } from \"./utils\";\nimport { Label as LabelPrimitive } from \"./primitive-label\";\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"roc-shadcn\",\n        cn(\n          \"roc-s-222f930b8752 roc-s-71556df3b421 roc-s-074569488cca roc-s-c74ab393b96d roc-s-761cdb81bddb roc-s-daaac3fbf55e roc-s-78905c9e865c roc-s-9af9a4182597 roc-s-272ef88d6a0c roc-s-f0ee83167878 roc-s-25d26df52a1d\",\n          className,\n        ),\n      )}\n      {...props}\n    />\n  );\n}\nexport { Label };\n\nimport \"./label.css\";\n"
     },
     {
       "path": "registry/roc/utils.ts",
       "type": "registry:file",
       "target": "~/components/roc/utils.ts",
       "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/primitive-label.tsx",
+      "type": "registry:file",
+      "target": "~/components/roc/primitive-label.tsx",
+      "content": "\"use client\";\n// ROC primitive: a label that does not select its text on double click.\nimport * as React from \"react\";\nimport { Slot } from \"./primitive-slot\";\n\ntype RootProps = React.ComponentProps<\"label\"> & { asChild?: boolean };\n\nfunction Root({ asChild, onMouseDown, ...props }: RootProps) {\n  const Comp: React.ElementType = asChild ? Slot.Root : \"label\";\n  return (\n    <Comp\n      {...props}\n      onMouseDown={(event: React.MouseEvent<HTMLLabelElement>) => {\n        if ((event.target as HTMLElement).closest(\"button, input, select, textarea\"))\n          return;\n        onMouseDown?.(event);\n        if (!event.defaultPrevented && event.detail > 1) event.preventDefault();\n      }}\n    />\n  );\n}\n\nexport const Label = { Root };\n"
+    },
+    {
+      "path": "registry/roc/primitive-slot.tsx",
+      "type": "registry:file",
+      "target": "~/components/roc/primitive-slot.tsx",
+      "content": "\"use client\";\n// ROC primitive: render the caller's single child with our props merged in (`asChild`).\nimport * as React from \"react\";\nimport { composeRefs } from \"./primitive-utils\";\n\ntype AnyProps = Record<string, any>;\n\nfunction mergeProps(slotProps: AnyProps, childProps: AnyProps) {\n  const merged: AnyProps = { ...childProps };\n  for (const key in childProps) {\n    const slotValue = slotProps[key];\n    const childValue = childProps[key];\n    if (/^on[A-Z]/.test(key)) {\n      if (slotValue && childValue) {\n        merged[key] = (...args: unknown[]) => {\n          const result = childValue(...args);\n          slotValue(...args);\n          return result;\n        };\n      } else if (slotValue) merged[key] = slotValue;\n    } else if (key === \"style\") {\n      merged[key] = { ...slotValue, ...childValue };\n    } else if (key === \"className\") {\n      merged[key] = [slotValue, childValue].filter(Boolean).join(\" \");\n    }\n  }\n  return { ...slotProps, ...merged };\n}\n\ntype SlotProps = React.HTMLAttributes<HTMLElement> & {\n  children?: React.ReactNode;\n  ref?: React.Ref<any>;\n};\n\nfunction Root({ children, ref, ...slotProps }: SlotProps) {\n  if (!React.isValidElement(children)) {\n    if (React.Children.count(children) > 1) throw new Error(\"Slot needs one child\");\n    return null;\n  }\n  const child = children as React.ReactElement<AnyProps>;\n  return React.cloneElement(child, {\n    ...mergeProps(slotProps, child.props),\n    ref: ref ? composeRefs(ref, child.props.ref) : child.props.ref,\n  });\n}\n\nexport const Slot = { Root };\n"
+    },
+    {
+      "path": "registry/roc/primitive-utils.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/primitive-utils.ts",
+      "content": "\"use client\";\n// ROC primitive helpers. Small, dependency-free building blocks.\nimport * as React from \"react\";\n\n/** Run the caller's handler first; run ours unless the caller prevented default. */\nexport function composeEventHandlers<E extends { defaultPrevented: boolean }>(\n  original: ((event: E) => void) | undefined,\n  ours: ((event: E) => void) | undefined,\n) {\n  return (event: E) => {\n    original?.(event);\n    if (!event.defaultPrevented) ours?.(event);\n  };\n}\n\ntype PossibleRef<T> = React.Ref<T> | undefined;\n\n/** Merge refs, forwarding React 19 ref cleanups. */\nexport function composeRefs<T>(...refs: PossibleRef<T>[]): React.RefCallback<T> {\n  return (node) => {\n    const cleanups: Array<() => void> = [];\n    for (const ref of refs) {\n      if (typeof ref === \"function\") {\n        const cleanup = ref(node);\n        cleanups.push(\n          typeof cleanup === \"function\" ? cleanup : () => ref(null),\n        );\n      } else if (ref) {\n        (ref as React.RefObject<T | null>).current = node;\n        cleanups.push(() => {\n          (ref as React.RefObject<T | null>).current = null;\n        });\n      }\n    }\n    return () => cleanups.forEach((cleanup) => cleanup());\n  };\n}\n\nexport function useComposedRefs<T>(...refs: PossibleRef<T>[]) {\n  // eslint-disable-next-line react-hooks/exhaustive-deps\n  return React.useCallback(composeRefs(...refs), refs);\n}\n\nexport function usePrevious<T>(value: T) {\n  const ref = React.useRef({ value, previous: value });\n  return React.useMemo(() => {\n    if (ref.current.value !== value) {\n      ref.current.previous = ref.current.value;\n      ref.current.value = value;\n    }\n    return ref.current.previous;\n  }, [value]);\n}\n"
     },
     {
       "path": "registry/roc/label.css",

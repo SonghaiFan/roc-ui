@@ -2,7 +2,7 @@
 "use client";
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { Toggle as TogglePrimitive } from "radix-ui";
+import { Toggle as TogglePrimitive } from "./primitive-toggle";
 import { cn } from "./utils";
 const toggleVariants = cva("roc-ui roc-ui-toggle", {
   variants: {

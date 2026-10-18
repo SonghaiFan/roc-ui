@@ -10,7 +10,7 @@ Sixty-six customized shadcn components, displayed together in a responsive mason
 
 All **66 entries** in the official shadcn/ui component catalog are available in the gallery. The original 25 foundations are joined by calendars, date pickers, tables, charts, command menus, comboboxes, drawers, sheets, resizable panels, sidebars, fields, input groups, OTP inputs, messages, questionnaires, traces, and more. The complete list and implementation boundaries are recorded in [the catalog coverage](notes/catalog-coverage.md).
 
-Official source snapshots, recipe documentation, hashes, and the MIT license are preserved. Radix, Base UI, and the upstream specialist libraries supply interaction semantics. ROC adds retained disclosure content, an inline sidebar that keeps one tree across widths, stable chart measurements, neutral tokens, reduced-motion styles, and independently installable source.
+Official source snapshots, recipe documentation, hashes, and the MIT license are preserved. ROC owns its primitives (`primitive-*` files); where behaviour is still delegated, Radix, Base UI and specialist libraries sit behind that seam — see [notes/primitives.md](notes/primitives.md). ROC adds retained disclosure content, an inline sidebar that keeps one tree across widths, stable chart measurements, neutral tokens, reduced-motion styles, and independently installable source.
 
 [Adaptation contracts and limits](notes/shadcn-foundations.md) · [Original source snapshots](upstream/shadcn/)
 

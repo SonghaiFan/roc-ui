@@ -1,7 +1,7 @@
 // Adapted from shadcn/ui (MIT). ROC keeps one inline sidebar across widths.
 "use client";
 import * as React from "react";
-import { Slot } from "radix-ui";
+import { Slot } from "./primitive-slot";
 import { PanelLeft } from "lucide-react";
 import { Button } from "./button";
 import { Input } from "./input";

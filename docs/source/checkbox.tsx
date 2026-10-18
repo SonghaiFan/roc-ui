@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import { cn } from "./utils";
-import { Checkbox as CheckboxPrimitive } from "radix-ui";
+import { Checkbox as CheckboxPrimitive } from "./primitive-checkbox";
 
 function Checkbox({
   className,

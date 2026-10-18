@@ -1,7 +1,7 @@
 // Adapted from shadcn/ui (MIT). Retained content is a ROC extension.
 "use client";
 import * as React from "react";
-import { Collapsible as Primitive } from "radix-ui";
+import { Collapsible as Primitive } from "./primitive-collapsible";
 import { cn } from "./utils";
 import "./collapsible.css";
 const State = React.createContext(false);

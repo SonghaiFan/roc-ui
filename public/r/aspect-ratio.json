@@ -6,7 +6,6 @@
   "description": "ROC: retained identity and coherent layout changes.",
   "dependencies": [
     "react@^19.0.0",
-    "radix-ui@^1.8.1",
     "clsx@^2.1.1"
   ],
   "files": [
@@ -14,13 +13,19 @@
       "path": "registry/roc/aspect-ratio.tsx",
       "type": "registry:file",
       "target": "~/components/roc/aspect-ratio.tsx",
-      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport { cn } from \"./utils\";\n(\"use client\");\nimport { AspectRatio as AspectRatioPrimitive } from \"radix-ui\";\nfunction AspectRatio({\n  ...props\n}: React.ComponentProps<typeof AspectRatioPrimitive.Root>) {\n  return <AspectRatioPrimitive.Root data-slot=\"aspect-ratio\" {...props} />;\n}\nexport { AspectRatio };\n\nimport \"./aspect-ratio.css\";\n"
+      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport { cn } from \"./utils\";\n(\"use client\");\nimport { AspectRatio as AspectRatioPrimitive } from \"./primitive-aspect-ratio\";\nfunction AspectRatio({\n  ...props\n}: React.ComponentProps<typeof AspectRatioPrimitive.Root>) {\n  return <AspectRatioPrimitive.Root data-slot=\"aspect-ratio\" {...props} />;\n}\nexport { AspectRatio };\n\nimport \"./aspect-ratio.css\";\n"
     },
     {
       "path": "registry/roc/utils.ts",
       "type": "registry:file",
       "target": "~/components/roc/utils.ts",
       "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/primitive-aspect-ratio.tsx",
+      "type": "registry:file",
+      "target": "~/components/roc/primitive-aspect-ratio.tsx",
+      "content": "\"use client\";\n// ROC primitive: keep children at a fixed width-to-height ratio.\nimport * as React from \"react\";\n\ntype RootProps = React.ComponentProps<\"div\"> & { ratio?: number };\n\nfunction Root({ ratio = 1, style, children, ...props }: RootProps) {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"100%\",\n        aspectRatio: String(ratio > 0 ? ratio : 1),\n      }}\n    >\n      <div {...props} style={{ ...style, position: \"absolute\", inset: 0 }}>\n        {children}\n      </div>\n    </div>\n  );\n}\n\nexport const AspectRatio = { Root };\n"
     },
     {
       "path": "registry/roc/aspect-ratio.css",

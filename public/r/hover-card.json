@@ -6,21 +6,27 @@
   "description": "ROC: retained identity and coherent layout changes.",
   "dependencies": [
     "react@^19.0.0",
-    "radix-ui@^1.8.1",
-    "clsx@^2.1.1"
+    "clsx@^2.1.1",
+    "radix-ui@^1.8.1"
   ],
   "files": [
     {
       "path": "registry/roc/hover-card.tsx",
       "type": "registry:file",
       "target": "~/components/roc/hover-card.tsx",
-      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport * as React from \"react\";\nimport { cn } from \"./utils\";\nimport { HoverCard as HoverCardPrimitive } from \"radix-ui\";\nfunction HoverCard({\n  ...props\n}: React.ComponentProps<typeof HoverCardPrimitive.Root>) {\n  return <HoverCardPrimitive.Root data-slot=\"hover-card\" {...props} />;\n}\nfunction HoverCardTrigger({\n  ...props\n}: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {\n  return (\n    <HoverCardPrimitive.Trigger data-slot=\"hover-card-trigger\" {...props} />\n  );\n}\nfunction HoverCardContent({\n  className,\n  align = \"center\",\n  sideOffset = 4,\n  ...props\n}: React.ComponentProps<typeof HoverCardPrimitive.Content>) {\n  return (\n    <HoverCardPrimitive.Portal data-slot=\"hover-card-portal\">\n      <HoverCardPrimitive.Content\n        data-slot=\"hover-card-content\"\n        align={align}\n        sideOffset={sideOffset}\n        className={cn(\n          \"roc-shadcn\",\n          cn(\n            \"roc-s-3eef1ce97dba roc-s-72b37c1a040d roc-s-f7df1783a7f8 roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-e593c38256e0 roc-s-99df86594a98 roc-s-5bd2afe89f0b roc-s-94ea94fde25f roc-s-59edd3d33673 roc-s-89f6aab7a3f8 roc-s-3550f48d66b9 roc-s-7720fe004f5c roc-s-66b560f839de roc-s-0cb4489c3645 roc-s-bb5869ef903b roc-s-f4cf4be63707 roc-s-bae1e782f277 roc-s-45464a92c1f6 roc-s-9ca352480f25\",\n            className,\n          ),\n        )}\n        {...props}\n      />\n    </HoverCardPrimitive.Portal>\n  );\n}\nexport { HoverCard, HoverCardTrigger, HoverCardContent };\n\nimport \"./hover-card.css\";\n"
+      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport * as React from \"react\";\nimport { cn } from \"./utils\";\nimport { HoverCard as HoverCardPrimitive } from \"./primitive-hover-card\";\nfunction HoverCard({\n  ...props\n}: React.ComponentProps<typeof HoverCardPrimitive.Root>) {\n  return <HoverCardPrimitive.Root data-slot=\"hover-card\" {...props} />;\n}\nfunction HoverCardTrigger({\n  ...props\n}: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {\n  return (\n    <HoverCardPrimitive.Trigger data-slot=\"hover-card-trigger\" {...props} />\n  );\n}\nfunction HoverCardContent({\n  className,\n  align = \"center\",\n  sideOffset = 4,\n  ...props\n}: React.ComponentProps<typeof HoverCardPrimitive.Content>) {\n  return (\n    <HoverCardPrimitive.Portal data-slot=\"hover-card-portal\">\n      <HoverCardPrimitive.Content\n        data-slot=\"hover-card-content\"\n        align={align}\n        sideOffset={sideOffset}\n        className={cn(\n          \"roc-shadcn\",\n          cn(\n            \"roc-s-3eef1ce97dba roc-s-72b37c1a040d roc-s-f7df1783a7f8 roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-e593c38256e0 roc-s-99df86594a98 roc-s-5bd2afe89f0b roc-s-94ea94fde25f roc-s-59edd3d33673 roc-s-89f6aab7a3f8 roc-s-3550f48d66b9 roc-s-7720fe004f5c roc-s-66b560f839de roc-s-0cb4489c3645 roc-s-bb5869ef903b roc-s-f4cf4be63707 roc-s-bae1e782f277 roc-s-45464a92c1f6 roc-s-9ca352480f25\",\n            className,\n          ),\n        )}\n        {...props}\n      />\n    </HoverCardPrimitive.Portal>\n  );\n}\nexport { HoverCard, HoverCardTrigger, HoverCardContent };\n\nimport \"./hover-card.css\";\n"
     },
     {
       "path": "registry/roc/utils.ts",
       "type": "registry:file",
       "target": "~/components/roc/utils.ts",
       "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/primitive-hover-card.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/primitive-hover-card.ts",
+      "content": "// ROC primitive seam. Backed by Radix for now; replace this file to own the behaviour.\nexport { HoverCard } from \"radix-ui\";\n"
     },
     {
       "path": "registry/roc/hover-card.css",

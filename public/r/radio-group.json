@@ -7,21 +7,27 @@
   "dependencies": [
     "react@^19.0.0",
     "lucide-react@^1.59.0",
-    "radix-ui@^1.8.1",
-    "clsx@^2.1.1"
+    "clsx@^2.1.1",
+    "radix-ui@^1.8.1"
   ],
   "files": [
     {
       "path": "registry/roc/radio-group.tsx",
       "type": "registry:file",
       "target": "~/components/roc/radio-group.tsx",
-      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt and upstream provenance.\n\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"./utils\";\nimport { CircleIcon } from \"lucide-react\";\nimport { RadioGroup as RadioGroupPrimitive } from \"radix-ui\";\n\nfunction RadioGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return (\n    <RadioGroupPrimitive.Root\n      data-slot=\"radio-group\"\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction RadioGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\n  return (\n    <RadioGroupPrimitive.Item\n      data-slot=\"radio-group-item\"\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator\n        data-slot=\"radio-group-indicator\"\n        className=\"roc-ui\"\n      >\n        <CircleIcon className=\"roc-ui\" />\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  );\n}\n\nexport { RadioGroup, RadioGroupItem };\n\nimport \"./radio-group.css\";\n"
+      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt and upstream provenance.\n\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"./utils\";\nimport { CircleIcon } from \"lucide-react\";\nimport { RadioGroup as RadioGroupPrimitive } from \"./primitive-radio-group\";\n\nfunction RadioGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return (\n    <RadioGroupPrimitive.Root\n      data-slot=\"radio-group\"\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction RadioGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\n  return (\n    <RadioGroupPrimitive.Item\n      data-slot=\"radio-group-item\"\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator\n        data-slot=\"radio-group-indicator\"\n        className=\"roc-ui\"\n      >\n        <CircleIcon className=\"roc-ui\" />\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  );\n}\n\nexport { RadioGroup, RadioGroupItem };\n\nimport \"./radio-group.css\";\n"
     },
     {
       "path": "registry/roc/utils.ts",
       "type": "registry:file",
       "target": "~/components/roc/utils.ts",
       "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/primitive-radio-group.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/primitive-radio-group.ts",
+      "content": "// ROC primitive seam. Backed by Radix for now; replace this file to own the behaviour.\nexport { RadioGroup } from \"radix-ui\";\n"
     },
     {
       "path": "registry/roc/radio-group.css",

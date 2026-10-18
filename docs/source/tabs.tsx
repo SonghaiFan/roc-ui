@@ -1,7 +1,7 @@
 "use client";
 // Adapted from shadcn/ui (MIT). Same Radix API; retained panels and one marker.
 import * as React from "react";
-import { Tabs as Primitive } from "radix-ui";
+import { Tabs as Primitive } from "./primitive-tabs";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 import "./tabs.css";

@@ -2,7 +2,7 @@
 "use client";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
-import { Slot } from "radix-ui";
+import { Slot } from "./primitive-slot";
 import { Separator } from "./separator";
 const buttonGroupVariants = cva(
   "roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-30862f3b959a roc-s-0345cc29991c roc-s-d8679a91798e roc-s-5d4ae7bbcc1a roc-s-05e401854cf9 roc-s-55510ebb6d71 roc-s-6eb530dd2043",
