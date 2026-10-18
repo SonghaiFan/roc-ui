@@ -2,7 +2,7 @@
 import { useCallback, useLayoutEffect, useRef } from "react";
 
 /** Measure before changing layout; retain actual nodes and retarget from their visible pose.
- * Position continuity is guaranteed by construction; release velocity is not preserved.
+ * Layout retargeting preserves the current measured pose; release velocity is not preserved.
  */
 export function useContinuity(duration = 480) {
   const root = useRef<HTMLDivElement>(null);
@@ -17,6 +17,8 @@ export function useContinuity(duration = 480) {
   }, []);
   useLayoutEffect(() => {
     if (!before.current.size) return;
+    const configured = Number.parseFloat(root.current ? getComputedStyle(root.current).getPropertyValue("--roc-duration") : "");
+    const timing = Number.isFinite(configured) ? configured : duration;
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
     for (const [node, old] of before.current) {
       animations.current.get(node)?.cancel();
@@ -27,7 +29,7 @@ export function useContinuity(duration = 480) {
       const animation = node.animate([
         { translate: `${old.x - next.x}px ${old.y - next.y}px`, scale: scale ? `${old.width / next.width} ${old.height / next.height}` : "1" },
         { translate: "0px 0px", scale: "1" },
-      ], { duration, easing: "cubic-bezier(.22,.8,.25,1)" });
+      ], { duration: timing, easing: "cubic-bezier(.22,.8,.25,1)" });
       animations.current.set(node, animation);
       void animation.finished.then(() => {
         if (animations.current.get(node) === animation) animations.current.delete(node);

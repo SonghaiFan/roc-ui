@@ -18,6 +18,20 @@ ROC UI turns selected principles from the Responsive Object Continuity skill int
 
 Each gallery entry includes a working preview, complete source, usage, props, scope and a link to its design case. The gallery imports the same files distributed by the registry.
 
+## Explore the design space
+
+The gallery prioritizes live objects over documentation. Filter by interaction (Hover, Press, Expand, Select), open a component's workspace, and tune it while keeping the same mounted preview. Closing returns that same object and its draft state to the gallery.
+
+- Folder controls: colour, glass/paper material, up/right opening, press/hover trigger, spread and duration.
+- All components expose motion duration; card/source/tab components expose colour.
+- A compact phone-width preview helps inspect layout; actual mobile layout stacks the preview above its controls.
+- Settings are encoded in the URL and restored by shared links and browser navigation. Reset restores defaults.
+- “Reverse mid-flight” and “Edit, close & return” are interactive continuity exercises.
+- Source view includes copyable usage reflecting the current settings. The full source and CLI install still use the component defaults.
+- Design rationale and known boundaries are available in “Why it moves this way”.
+
+The gallery borrows the preview-first, compact-inspector interaction pattern observed on [Bencho](https://bencho.dev/); the components and styles here are independently implemented. No Bencho code or assets are bundled.
+
 ## Install with shadcn
 
 In a React project already configured for shadcn:
@@ -39,6 +53,10 @@ export function Collection() {
         { id: "note", label: "A first thought", color: "#fff9ed" },
         { id: "photo", label: "The garden", color: "#edf0e6" },
       ]}
+      material="glass"
+      direction="up"
+      spread={12}
+      duration={560}
       onSelect={(id) => console.log(id)}
     />
   );
@@ -79,11 +97,11 @@ To validate with the official registry builder:
 npx shadcn@latest build registry.json --output /tmp/roc-registry-check
 ```
 
-`tests/browser.scenario.js` is a Playwright CLI scenario (not an `@playwright/test` spec). With the dev server running, open the local page in a named CLI session, then run it with `run-code --filename tests/browser.scenario.js` from this repository. It checks retained nodes and drafts, focus return, selection geometry, source viewing, narrow layout and reduced motion.
+`tests/browser.scenario.js` is a Playwright CLI scenario (not an `@playwright/test` spec). With the dev server running, open the local page in a named CLI session, then run it with `run-code --filename tests/browser.scenario.js` from this repository. It checks retained nodes across gallery/detail, draft state, focus return and confinement, URL settings and browser back, hover, source viewing, interrupted folder motion, narrow layout and reduced motion.
 
 ## Boundaries
 
-- This first release uses position-continuous layout retargeting and CSS transitions. It does not preserve release velocity or emulate Syuze's physical spring profiles.
+- The components use measured layout retargeting and interruptible CSS transitions. It does not preserve release velocity or emulate Syuze's physical spring profiles.
 - Expandable card is an in-place disclosure. It allows text reflow and is not a modal or fixed-typesetting document presentation.
 - Folder fan is intended for 2–5 non-interactive compact cards. It provides unfolding, not drag-to-file or a board data model.
 - Source stack is intended for 2–4 sources; caller-provided controls stay mounted. It is inline inspection, not a focus-trapped dialog.

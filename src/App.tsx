@@ -1,55 +1,119 @@
-import { useEffect, useState } from "react";
-import { ExpandableCard } from "../registry/roc/expandable-card";
-import { FolderFan } from "../registry/roc/folder-fan";
-import { SourceStack } from "../registry/roc/source-stack";
-import { FocusLanes } from "../registry/roc/focus-lanes";
-import { ContinuousTabs } from "../registry/roc/continuous-tabs";
+import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import { catalog } from "./catalog";
+import { Example } from "./Examples";
+import { defaults, palette, readRoute, settingsHash, type Settings } from "./settings";
 import "./site.css";
 const repo = "https://github.com/SonghaiFan/roc-ui";
 const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
 const raw = "https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/";
-const tabs = [{ id: "notes", label: "Notes" }, { id: "images", label: "Images" }, { id: "voices", label: "Voices" }];
-function Example({ id }: { id: string }) {
-  const [value, setValue] = useState("notes"), [message, setMessage] = useState("");
-  if (id === "expandable-card") return <ExpandableCard title="On noticing" eyebrow="NOTE 001 / KEEP CLOSE"><p>A photograph, a few words, a voice you know. Some things are easier to remember when you give them a place.</p><label className="draft-label">Your note<textarea aria-label="Your note" defaultValue="There was still light in the garden." /></label><p className="small-note">Edit this. Close it. Your words will still be here.</p></ExpandableCard>;
-  if (id === "folder-fan") return <div className="demo-full"><FolderFan title="Small observations" items={[{ id: "light", label: "Afternoon light", content: "Notes from the window", color: "#fff9ed" }, { id: "walk", label: "A familiar walk", content: "The long way home", color: "#edf0e6" }, { id: "letter", label: "An unsent letter", content: "Words for later", color: "#f5eae2" }]} onSelect={id => setMessage(`Selected: ${id}`)} /><span className="demo-status" role="status">{message}</span></div>;
-  if (id === "source-stack") return <SourceStack items={[{ id: "letter", title: "A little note", kind: "TEXT / 01", color: "#f8f2df", content: <input aria-label="Source note" defaultValue="Meet me by the water." /> }, { id: "place", title: "The garden", kind: "DRAWING / 02", color: "#e5ecdf", content: <div className="mini-landscape" aria-label="Abstract illustration of a hillside"><i /><b /></div> }, { id: "memory", title: "Sunday, 4pm", kind: "MEMORY / 03", color: "#f1e6df", content: <p>Tea on the table. The door left open. Nothing in particular to do.</p> }]} />;
-  if (id === "focus-lanes") return <div className="lanes-demo"><FocusLanes rows={5} lanes={[{ id: "gather", title: "Gather", color: "#80926a", events: [{ id: "g1", row: 0, label: "A photograph arrives" }, { id: "g2", row: 2, label: "Keep a small detail" }, { id: "g3", row: 4, label: "A voice from home" }] }, { id: "connect", title: "Connect", color: "#c4a16b", events: [{ id: "c1", row: 1, label: "Find a common thread" }, { id: "c2", row: 3, label: "Put the pieces together" }] }, { id: "write", title: "Write", color: "#939bb4", events: [{ id: "w1", row: 2, label: "Begin a first draft" }, { id: "w2", row: 4, label: "Leave room for more" }] }]} onSelect={id => setMessage(`Selected: ${id}`)} /><span className="demo-status" role="status">{message || "Select any event to follow its thread"}</span></div>;
-  return <div className="tabs-demo"><ContinuousTabs items={tabs} value={value} onValueChange={setValue} label="Collection type" /><div className="selection-line"><span className="tiny-dot" />{value === "notes" ? "Words worth keeping." : value === "images" ? "Places you remember." : "Stories in a familiar voice."}</div></div>;
-}
+type Item = typeof catalog[number];
 function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) {
   const [status, setStatus] = useState("");
-  useEffect(() => { if (status) { const timer = setTimeout(() => setStatus(""), 2200); return () => clearTimeout(timer); } }, [status]);
-  return <button className="quiet-button" onClick={async () => { try { await navigator.clipboard.writeText(text); setStatus("Copied"); } catch { setStatus("Select text to copy"); } }} aria-label={label}>{status || label}</button>;
+  useEffect(() => { if(status) { const timer=setTimeout(()=>setStatus(""),2200); return ()=>clearTimeout(timer); } },[status]);
+  return <button type="button" className="copy-button" onClick={async()=>{try{await navigator.clipboard.writeText(text);setStatus("Copied ✓");}catch{setStatus("Select text to copy");}}}>{status||label}</button>;
 }
-function Detail({ item, close }: { item: typeof catalog[number]; close: () => void }) {
-  const [tab, setTab] = useState("preview"), [file, setFile] = useState(`${item.id}.tsx`), [code, setCode] = useState(""), [error, setError] = useState("");
-  const command = `npx shadcn@latest add ${raw}${item.id}.json`;
-  useEffect(() => { const controller = new AbortController(); setCode(""); setError(""); fetch(`./source/${file}`, { signal: controller.signal }).then(r => { if (!r.ok) throw Error("Source unavailable. Open the repository to read it."); return r.text(); }).then(setCode).catch(e => { if (e.name !== "AbortError") setError(e.message); }); return () => controller.abort(); }, [file]);
-  return <section className="detail" aria-labelledby="detail-heading"><button className="back-link" onClick={close}>← All components</button><div className="detail-title"><div><p className="eyebrow">{item.category} / {item.number}</p><h1 id="detail-heading">{item.name}</h1></div><span className="tag">{item.tag}</span></div><p className="detail-desc">{item.description}</p>
-    <div className="detail-switch"><button className={tab === "preview" ? "active" : ""} onClick={() => setTab("preview")}>Preview</button><button className={tab === "code" ? "active" : ""} onClick={() => setTab("code")}>Source code</button><span>React · TypeScript · CSS</span></div>
-    <div className="detail-stage" hidden={tab !== "preview"}><Example id={item.id} /></div>
-    <div className="code-view" hidden={tab !== "code"}><div className="code-tools"><select aria-label="Source file" value={file} onChange={e => setFile(e.target.value)}><option>{item.id}.tsx</option><option>use-continuity.ts</option><option>roc.css</option></select><CopyButton text={code} label="Copy source" /></div><pre>{error || code || "Loading source…"}</pre></div>
-    <div className="detail-notes"><div><p className="eyebrow">THE CONTINUITY CONTRACT</p><p>{item.rule}</p></div><div><p className="eyebrow">SCOPE</p><p>{item.limit}</p></div></div>
-    <h2>Make it yours</h2><p className="muted">Add the source to a project configured for shadcn, or copy the three files into one directory. No animation package required.</p><div className="command"><code>{command}</code><CopyButton text={command} label="Copy command" /></div><p className="muted">Usage</p><pre className="usage">{item.usage}</pre><p className="api"><strong>Props</strong> {item.props}</p><a className="case-link" href={`${skill}/blob/main/${item.source}`} target="_blank" rel="noreferrer">Read the design case ↗</a>
-  </section>;
+function Choice<T extends string>({ label, value, values, onChange }: { label:string; value:T; values:readonly T[]; onChange:(value:T)=>void }) {
+  return <div className="control-row"><span>{label}</span><div className="segmented" role="group" aria-label={label}>{values.map(v=><button type="button" key={v} aria-pressed={v===value} onClick={()=>onChange(v)}>{v}</button>)}</div></div>;
+}
+function Source({ item, settings }: { item:Item; settings:Settings }) {
+  const [file,setFile]=useState(`${item.id}.tsx`),[code,setCode]=useState(""),[error,setError]=useState("");
+  useEffect(()=>{const abort=new AbortController();setCode("");setError("");fetch(`./source/${file}`,{signal:abort.signal}).then(r=>{if(!r.ok)throw Error("Source unavailable. Open GitHub to read it.");return r.text();}).then(setCode).catch(e=>{if(e.name!=="AbortError")setError(e.message);});return ()=>abort.abort();},[file]);
+  const usage=item.id==="folder-fan" ? `<FolderFan\n  items={items}\n  color="${palette[settings.color]}"\n  material="${settings.material}"\n  direction="${settings.direction}"\n  spread={${settings.spread}}\n  duration={${settings.duration}}\n  trigger="${settings.trigger}"\n/>` : item.id==="expandable-card" ? `<ExpandableCard title="On noticing" duration={${settings.duration}}
+  color="color-mix(in srgb, ${palette[settings.color]} 8%, white)">
+  <textarea defaultValue="Your thought…" />
+</ExpandableCard>` : item.id==="source-stack" ? `<SourceStack items={sources} color="${palette[settings.color]}" duration={${settings.duration}} />` : item.id==="focus-lanes" ? `<FocusLanes lanes={lanes} rows={5} duration={${settings.duration}} />` : `<ContinuousTabs items={tabs} value={value} onValueChange={setValue}
+  color="color-mix(in srgb, ${palette[settings.color]} 24%, white)" duration={${settings.duration}} />`;
+  return <div className="code-content"><div className="code-tools"><select aria-label="Source file" value={file} onChange={e=>setFile(e.target.value)}><option>{item.id}.tsx</option><option>use-continuity.ts</option><option>roc.css</option></select><CopyButton text={code} label="Copy source" /></div><pre>{error||code||"Loading source…"}</pre><details><summary>Usage & props</summary><CopyButton text={usage} label="Copy usage"/><pre>{usage}</pre><p>{item.props} · duration?: number{item.id!=="focus-lanes"&&" · color?: string"}</p>{item.id!=="folder-fan"&&<p>Set <code>--roc-duration: {settings.duration}ms</code> on a wrapper to use this motion speed.</p>}</details></div>;
+}
+function Tile({ item, active, blocked, settings, update, open, close }: { item:Item; active:boolean; blocked:boolean; settings:Settings; update:(settings:Settings)=>void; open:()=>void; close:()=>void }) {
+  const [tab,setTab]=useState("preview"),[experiment,setExperiment]=useState("");
+  const article=useRef<HTMLElement>(null),preview=useRef<HTMLDivElement>(null),timer=useRef<ReturnType<typeof setTimeout> | null>(null);
+  const patch=(next:Partial<Settings>)=>update({...settings,...next});
+  useEffect(()=>{ if(!active&&timer.current) {clearTimeout(timer.current);timer.current=null;} return ()=>{if(timer.current)clearTimeout(timer.current);}; },[active]);
+  const reverse=()=>{
+    if(timer.current)clearTimeout(timer.current);
+    const root=preview.current;
+    const button=root?.querySelector<HTMLButtonElement>(item.id==="folder-fan"?".roc-folder-toggle":item.id==="source-stack"?".roc-source-toggle":".roc-expand .roc-text-button");
+    if(button){button.click();timer.current=setTimeout(()=>{button.click();timer.current=null;setExperiment("Changed direction mid-flight. The same objects returned.");},Math.min(180,settings.duration*.25));}
+    else {
+      const buttons=root?.querySelectorAll<HTMLButtonElement>(item.id==="focus-lanes"?".roc-lane-heading":".roc-tabs button");
+      if(buttons?.length){buttons[1]?.click();timer.current=setTimeout(()=>{buttons[0]?.click();timer.current=null;setExperiment("Selection returned. The surrounding labels stayed in place.");},120);}
+    }
+  };
+  const edit=()=>{
+    const root=preview.current;
+    const control=root?.querySelector<HTMLButtonElement>(item.id==="source-stack"?".roc-source-toggle":".roc-expand .roc-text-button");
+    if(control?.getAttribute("aria-expanded")==="false")control.click();
+    requestAnimationFrame(()=>{root?.querySelector<HTMLInputElement|HTMLTextAreaElement>("textarea,input")?.focus({preventScroll:true});});
+    setExperiment("Write something, close the object, then reopen it. Your words stay.");
+  };
+  return <article ref={article} className={`tile tile-${item.id} ${active?"is-detail":""}`} inert={blocked} role={active?"dialog":undefined} aria-modal={active?true:undefined} aria-labelledby={active?`${item.id}-title`:undefined}>
+    <div className="tile-stage">
+      <div className="stage-toolbar"><div className="view-switch" role="group" aria-label="View"><button type="button" aria-pressed={tab==="preview"} onClick={()=>setTab("preview")} title="Preview" aria-label="Preview">◈ <span>Preview</span></button>{active&&<button type="button" aria-pressed={tab==="code"} onClick={()=>setTab("code")} title="Source code" aria-label="Source code">〈〉<span>Code</span></button>}</div><button type="button" className="edit-launch" hidden={active} onClick={open} aria-label={`Explore ${item.name}`}>↗</button>{active&&<div className="stage-viewport"><button type="button" aria-pressed={settings.viewport==="full"} onClick={()=>patch({viewport:"full"})}>Desktop</button><button type="button" aria-pressed={settings.viewport==="phone"} onClick={()=>patch({viewport:"phone"})}>Phone</button></div>}</div>
+      <div className={`live-preview ${settings.viewport==="phone"&&active?"phone-preview":""}`} ref={preview} data-component={item.id} hidden={active&&tab!=="preview"} style={{"--roc-duration":`${settings.duration}ms`,"--demo-color":palette[settings.color],"--roc-marker":`color-mix(in srgb,${palette[settings.color]} 24%,white)`} as CSSProperties}>
+        <Example id={item.id} settings={settings}/>
+      </div>
+      {active&&tab==="code"&&<Source item={item} settings={settings}/>}
+      <div className="stage-caption" hidden={active&&tab!=="preview"}><span>{item.id==="folder-fan"?settings.trigger==="hover"?"Hover to unfold · press to keep open":"Press the folder to unfold":item.id==="source-stack"?"Unfold · inspect · return":item.id==="expandable-card"?"Open it. Leave a thought. Come back.":"Follow a different thread"}</span>{active&&<button type="button" onClick={reverse} title="Reverse mid-flight" aria-label="Reverse mid-flight">↔</button>}</div>
+    </div>
+    <div className="tile-label" hidden={active}><button type="button" onClick={open}>{item.name}<span>↗</span></button><span>{item.actions[0]}</span></div>
+    {active&&<aside className="inspector"><div className="inspector-title"><h2 id={`${item.id}-title`}>{item.name}</h2><button type="button" className="close-detail" onClick={close} aria-label="Close component">×</button></div><p className="inspector-desc">{item.description}</p>
+      <div className="controls">{item.id!=="focus-lanes"&&<div className="control-row"><span>Colour</span><div className="swatches" role="group" aria-label="Colour">{Object.entries(palette).map(([name,color])=><button type="button" key={name} aria-label={name} aria-pressed={settings.color===name} style={{background:color}} onClick={()=>patch({color:name as Settings["color"]})}/>)}</div></div>}
+        {item.id==="folder-fan"&&<><Choice label="Material" value={settings.material} values={["glass","paper"]} onChange={material=>patch({material})}/><Choice label="Direction" value={settings.direction} values={["up","right"]} onChange={direction=>patch({direction})}/><Choice label="Trigger" value={settings.trigger} values={["press","hover"]} onChange={trigger=>patch({trigger})}/><label className="range-control"><span>Spread <output>{settings.spread}°</output></span><input aria-label="Spread" type="range" min="4" max="22" value={settings.spread} onChange={e=>patch({spread:Number(e.target.value)})}/></label></>}
+        <label className="range-control"><span>Motion duration <output>{settings.duration} ms</output></span><input aria-label="Motion duration" type="range" min="180" max="1400" step="20" value={settings.duration} onChange={e=>patch({duration:Number(e.target.value)})}/></label>
+      </div>
+      <div className="experiment"><span className="section-label">TRY THE CONTINUITY</span><button type="button" onClick={reverse}>↔ Reverse mid-flight <span>↗</span></button>{["expandable-card","source-stack"].includes(item.id)&&<button type="button" onClick={edit}>✎ Edit, close & return <span>↗</span></button>}<p role="status">{experiment||"Interrupt the movement. The object should still feel like the same one."}</p></div>
+      <details className="why"><summary>Why it moves this way <span>+</span></summary><p>{item.rule}</p><p>{item.limit}</p><a href={`${skill}/blob/main/${item.source}`} target="_blank" rel="noreferrer">Read the design case ↗</a></details>
+      <div className="inspector-actions"><div className="action-pair"><CopyButton text={location.href} label="↗ Share settings"/><button type="button" onClick={()=>{update({...defaults});setExperiment("");}}>Reset settings</button></div><CopyButton text={`npx shadcn@latest add ${raw}${item.id}.json`} label="Copy install command"/><p>Open source · React · MIT</p></div>
+    </aside>}
+  </article>;
 }
 export function App() {
-  const [category, setCategory] = useState("All components"), [query, setQuery] = useState("");
-  const [selected, setSelected] = useState(() => location.hash.slice(1));
-  useEffect(() => { const sync = () => { setSelected(location.hash.slice(1)); window.scrollTo(0, 0); }; window.addEventListener("hashchange", sync); return () => window.removeEventListener("hashchange", sync); }, []);
-  useEffect(() => { const search = (event: KeyboardEvent) => { if (event.key === "/" && !(event.target instanceof HTMLElement && event.target.closest("input,textarea,[contenteditable]"))) { const input = document.querySelector<HTMLInputElement>('input[aria-label="Search components"]'); if (input) { event.preventDefault(); input.focus(); } } }; window.addEventListener("keydown", search); return () => window.removeEventListener("keydown", search); }, []);
-  const item = catalog.find(c => c.id === selected);
-  const visible = catalog.filter(c => (category === "All components" || c.category === category) && `${c.name} ${c.tag} ${c.description}`.toLowerCase().includes(query.toLowerCase()));
-  const choose = (value: string) => { setCategory(value); location.hash = ""; };
-  return <><header className="topbar"><a className="brand" href="#" aria-label="ROC home"><span className="brand-mark"><i /><i /><i /></span><b>roc</b><span className="brand-caption">objects, in continuity.</span></a><nav><a href={skill} target="_blank" rel="noreferrer">The skill ↗</a><a href={repo} target="_blank" rel="noreferrer">GitHub ↗</a><span className="version">v0.1</span></nav></header>
-    <div className="page-layout"><aside className="sidebar"><div><p className="eyebrow">DESIGN SPACE</p>{["All components", "Surfaces", "Collections", "Navigation"].map((name, i) => <button key={name} className={!item && category === name ? "selected" : ""} onClick={() => choose(name)}><span>{name}</span><small>{i === 0 ? "05" : i === 1 ? "01" : "02"}</small></button>)}</div><div className="side-principles"><p className="eyebrow">THE THREAD THROUGH IT ALL</p><p>Same object.<br />New arrangement.</p><a href={`${skill}#readme`} target="_blank" rel="noreferrer">Explore the principles ↗</a></div><div className="sidebar-bottom"><span className="tiny-dot" />Open source. Yours to shape.</div></aside>
-    <main>{item ? <Detail key={item.id} item={item} close={() => { location.hash = ""; }} /> : <><section className="intro"><p className="eyebrow"><span className="tiny-dot" /> RESPONSIVE OBJECT CONTINUITY</p><h1>Things move.<br /><em>They stay themselves.</em></h1><div className="intro-bottom"><p>A small collection of interfaces that keep their place.<br />Explore the motion. Take the source. Make it yours.</p><a className="intro-link" href={`${skill}/blob/main/SKILL.md`} target="_blank" rel="noreferrer">Built on the ROC skill <span>↗</span></a></div></section>
-      <div className="catalog-bar"><div><h2>{category}</h2><span>{String(visible.length).padStart(2, "0")}</span></div><label className="search"><span aria-hidden="true">⌕</span><input aria-label="Search components" value={query} onChange={e => setQuery(e.target.value)} placeholder="Find a component…" /><kbd>/</kbd></label></div>
-      <section className="component-grid" aria-label="Component gallery">{visible.map(c => <article className={`catalog-card card-${c.id}`} key={c.id}><div className="preview"><div className="preview-meta"><span>{c.number}</span><span>INTERACTIVE ↗</span></div><Example id={c.id} /></div><div className="component-info"><div><a href={`#${c.id}`}>{c.name} <span>↗</span></a><span className="tag">{c.tag}</span></div><p>{c.description}</p><a className="view-source" href={`#${c.id}`}>Explore component <span>→</span></a></div></article>)}</section>
-      {!visible.length && <div className="empty">No matching components. <button onClick={() => { setQuery(""); setCategory("All components"); }}>Clear filters</button></div>}
-      <section className="manifesto"><span className="eyebrow">A SMALL RULE, A DIFFERENT FEEL</span><h2>An interface should remember<br />what you were looking at.</h2><p>Retained objects. Coherent movement. Context that stays within reach.<br />Each component starts with a continuity contract, not an effect.</p><a href={skill} target="_blank" rel="noreferrer">Read the ROC skill ↗</a></section></>}
-      <footer><span>ROC / Responsive Object Continuity</span><span>Source available · MIT License</span></footer></main>
-    </div></>;
+  const initial=useRef(readRoute());
+  const [selected,setSelected]=useState(catalog.some(c=>c.id===initial.current.id)?initial.current.id:"");
+  const [settings,setSettings]=useState<Record<string,Settings>>(()=>Object.fromEntries(catalog.map(c=>[c.id,c.id===initial.current.id?initial.current.settings:{...defaults}])));
+  const [filter,setFilter]=useState("All"),[query,setQuery]=useState("");
+  const previousSelection=useRef(selected);
+  const gallery=useRef<HTMLDivElement>(null),opener=useRef<HTMLElement|null>(null),poses=useRef(new Map<string,DOMRect>());
+  const capture=()=>{poses.current.clear();gallery.current?.querySelectorAll<HTMLElement>(".live-preview").forEach(el=>poses.current.set(el.dataset.component!,el.getBoundingClientRect()));};
+  const navigate=(id:string)=>{capture();if(id)opener.current=document.activeElement as HTMLElement;history.pushState(null,"",id?settingsHash(id,settings[id]):`${location.pathname}${location.search}`);setSelected(id);};
+  useEffect(()=>{const route=()=>{capture();const next=readRoute();const id=catalog.some(c=>c.id===next.id)?next.id:"";setSelected(id);if(id)setSettings(prev=>({...prev,[id]:next.settings}));};window.addEventListener("popstate",route);window.addEventListener("hashchange",route);return ()=>{window.removeEventListener("popstate",route);window.removeEventListener("hashchange",route);};},[]);
+  useLayoutEffect(()=>{
+    const moving=selected||previousSelection.current;
+    const node=moving?gallery.current?.querySelector<HTMLElement>(`.live-preview[data-component="${moving}"]`):null;
+    const before=moving?poses.current.get(moving):null;
+    if(node&&before&&before.width&&before.height&&!matchMedia("(prefers-reduced-motion: reduce)").matches){
+      node.getAnimations().forEach(a=>a.cancel());
+      const next=node.getBoundingClientRect(),stage=node.closest<HTMLElement>(".tile-stage"),tile=node.closest<HTMLElement>(".tile");
+      if(!selected&&stage&&tile){stage.style.overflow="visible";tile.style.zIndex="60";}
+      const animation=node.animate([{transform:`translate(${before.x-next.x}px,${before.y-next.y}px) scale(${before.width/next.width},${before.height/next.height})`},{transform:"none"}],{duration:420,easing:"cubic-bezier(.22,.8,.25,1)"});
+      const finish=()=>{if(stage)stage.style.overflow="";if(tile)tile.style.zIndex="";};void animation.finished.then(finish,finish);
+    }
+    previousSelection.current=selected;poses.current.clear();
+  },[selected]);
+  useEffect(()=>{
+    if(!selected){opener.current?.focus({preventScroll:true});return;}
+    const old=document.body.style.overflow;document.body.style.overflow="hidden";
+    const focus=requestAnimationFrame(()=>gallery.current?.querySelector<HTMLButtonElement>(".is-detail .close-detail")?.focus({preventScroll:true}));
+    const key=(e:KeyboardEvent)=>{
+      if(e.key==="Escape"){e.preventDefault();navigate("");}
+      if(e.key==="Tab"){
+        const elements=[...gallery.current!.querySelectorAll<HTMLElement>(".is-detail button,.is-detail input,.is-detail select,.is-detail textarea,.is-detail a,.is-detail summary")].filter(n=>n.getClientRects().length&&!n.closest("[inert],[hidden]")&&!(n as HTMLButtonElement).disabled);
+        const first=elements[0],last=elements.at(-1);if(!first)return;
+        if(e.shiftKey&&(document.activeElement===first||!elements.includes(document.activeElement as HTMLElement))){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+      }
+    };
+    document.addEventListener("keydown",key);return ()=>{cancelAnimationFrame(focus);document.body.style.overflow=old;document.removeEventListener("keydown",key);};
+  },[selected]);
+  useEffect(()=>{const search=(event:KeyboardEvent)=>{if(event.key==="/"&&!selected&&!(event.target instanceof HTMLElement&&event.target.closest("input,textarea,[contenteditable]"))){event.preventDefault();document.querySelector<HTMLInputElement>('[aria-label="Search components"]')?.focus();}};window.addEventListener("keydown",search);return ()=>window.removeEventListener("keydown",search);},[selected]);
+  const update=(id:string,next:Settings)=>{setSettings(prev=>({...prev,[id]:next}));if(selected===id)history.replaceState(null,"",settingsHash(id,next));};
+  const visible=catalog.filter(c=>(filter==="All"||c.actions.includes(filter))&&`${c.name} ${c.description}`.toLowerCase().includes(query.toLowerCase()));
+  return <><header className="topbar" inert={!!selected}><a className="brand" href={location.pathname} aria-label="ROC home"><span className="brand-mark"><i/><i/><i/></span><b>roc</b></a><nav><a href="#components" onClick={e=>{e.preventDefault();document.getElementById("components")?.scrollIntoView({behavior:"smooth"});}}>Components</a><a href={skill} target="_blank" rel="noreferrer">The skill ↗</a></nav><label className="search"><span>⌕</span><input aria-label="Search components" placeholder="Search components" value={query} onChange={e=>setQuery(e.target.value)}/><kbd>/</kbd></label><a className="github" href={repo} target="_blank" rel="noreferrer">GitHub ↗</a></header>
+    <main><section className="intro" inert={!!selected}><span className="intro-badge"><i/> A playground for object continuity</span><h1>Interfaces you can feel.</h1><p>Objects that keep their identity, wherever they go.<br/>Play with the details. Take the source. Make it yours.</p><a href={skill} target="_blank" rel="noreferrer">Explore the principles ↗</a></section>
+      <div className="filters" id="components" inert={!!selected}><div role="group" aria-label="Interaction filters">{["All","Hover","Press","Expand","Select"].map(value=><button key={value} type="button" aria-pressed={filter===value} onClick={()=>{setFilter(value);if(value==="Hover")setSettings(prev=>({...prev,"folder-fan":{...prev["folder-fan"],trigger:"hover"}}));}}>{value}</button>)}</div><span>{visible.length} components · open source</span></div>
+      <div ref={gallery} className="component-grid">{catalog.map(item=><div className="tile-slot" key={item.id} hidden={!visible.includes(item)&&item.id!==selected}><Tile item={item} active={item.id===selected} blocked={!!selected&&item.id!==selected} settings={settings[item.id]} update={next=>update(item.id,next)} open={()=>navigate(item.id)} close={()=>navigate("")}/></div>)}</div>
+      {!visible.length&&<div className="empty" inert={!!selected}>No components found. <button onClick={()=>{setQuery("");setFilter("All");}}>Clear filters</button></div>}
+      <footer inert={!!selected}><span><b>roc</b> Same object. New arrangement.</span><a href={skill} target="_blank" rel="noreferrer">Built on Responsive Object Continuity ↗</a><span>MIT · v0.2</span></footer>
+    </main>{selected&&<div className="scrim" aria-hidden="true" onClick={()=>navigate("")}/>}
+  </>;
 }

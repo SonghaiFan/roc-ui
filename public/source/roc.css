@@ -42,3 +42,22 @@
 .roc-tab-marker{position:absolute;left:0;top:4px;bottom:4px;border-radius:5px;background:#fff;box-shadow:0 1px 4px #20282012;transition:transform .36s cubic-bezier(.22,.8,.25,1),width .36s cubic-bezier(.22,.8,.25,1)}
 @media(max-width:480px){.roc-folder-card{width:94px;padding:12px;height:145px}.roc-folder-card strong{font-size:17px}.roc-folder-back{width:190px}.roc-folder-toggle{width:205px}.roc-source{width:105px;padding:12px}.roc-source h3{font-size:16px}.roc-tabs button{padding:10px 12px}.roc-expand{padding:20px 12px}}
 @media(prefers-reduced-motion:reduce){.roc-folder *,.roc-sources *,.roc-lanes *,.roc-tabs *{transition:none!important;animation:none!important}}
+/* Configurable surfaces. Geometry stays inside the same retained collection. */
+.roc-folder{height:340px;max-width:500px;container-type:inline-size}
+.roc-folder-back{left:50%;top:49%;width:210px;height:150px;background:color-mix(in srgb,var(--folder-color,#a8c6ee),#454d5c 13%);border:1px solid #ffffff50;box-shadow:inset 0 1px #ffffff70;transition:left var(--roc-duration,560ms) cubic-bezier(.22,.8,.25,1)}
+.roc-folder-back:before{width:80px;top:-14px;height:25px}
+.roc-folder-card{width:118px;height:152px;padding:12px;border:1px solid #ffffff70;border-radius:9px;box-shadow:0 5px 14px #22222216;transform-origin:center;transition:left var(--roc-duration,560ms) cubic-bezier(.22,.8,.25,1),top var(--roc-duration,560ms) cubic-bezier(.22,.8,.25,1),transform var(--roc-duration,560ms) cubic-bezier(.22,.8,.25,1),box-shadow .2s}
+.roc-folder-card:hover{box-shadow:0 13px 24px #22222220}.roc-folder-card strong{font-size:20px}.roc-card-content{margin-top:12px}
+.roc-folder-toggle{left:50%;top:58%;width:228px;height:133px;padding:22px;border:1px solid #ffffff90;border-radius:9px 9px 19px 19px;transform:translateX(-50%);transform-origin:50% 100%;background:var(--folder-color,#a8c6ee);box-shadow:inset 0 1px 1px #ffffff70,0 14px 24px #2933420c;transition:transform var(--roc-duration,560ms) cubic-bezier(.22,.8,.25,1),left var(--roc-duration,560ms) cubic-bezier(.22,.8,.25,1),background .25s}
+.roc-folder-toggle>span:first-child{font-size:13px}.roc-folder-toggle>span:last-child{color:#273344a6}
+.roc-folder[data-material=glass] .roc-folder-toggle{background:color-mix(in srgb,var(--folder-color,#a8c6ee) 67%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.roc-folder.is-open .roc-folder-toggle{background:var(--folder-color,#a8c6ee);transform:translateX(-50%) perspective(650px) rotateX(-24deg)}
+.roc-folder.is-open[data-material=glass] .roc-folder-toggle{background:color-mix(in srgb,var(--folder-color,#a8c6ee) 67%,transparent)}
+.roc-folder[data-direction=right] .roc-folder-back,.roc-folder[data-direction=right] .roc-folder-toggle{left:28%;width:162px}
+.roc-folder[data-direction=right] .roc-folder-toggle{transform-origin:0% 50%}
+.roc-folder[data-direction=right].is-open .roc-folder-toggle{transform:translateX(-50%) perspective(650px) rotateY(-26deg)}
+.roc-source{transition:transform var(--roc-duration,480ms) cubic-bezier(.22,.8,.25,1),opacity .3s}
+.roc-lane{transition:flex-basis var(--roc-duration,480ms) cubic-bezier(.22,.8,.25,1),flex-grow var(--roc-duration,480ms) cubic-bezier(.22,.8,.25,1)}
+.roc-tab-marker{transition:transform var(--roc-duration,360ms) cubic-bezier(.22,.8,.25,1),width var(--roc-duration,360ms) cubic-bezier(.22,.8,.25,1);background:var(--roc-marker,#fff)}
+@container(max-width:350px){.roc-folder-card{width:94px;height:143px}.roc-folder-card strong{font-size:17px}.roc-folder-toggle{width:200px}.roc-folder-back{width:190px}.roc-folder[data-direction=right] .roc-folder-toggle,.roc-folder[data-direction=right] .roc-folder-back{width:132px}.roc-folder[data-direction=right] .roc-folder-toggle{padding:16px}}
+@media(prefers-reduced-motion:reduce){.roc-folder *,.roc-source,.roc-lane,.roc-tab-marker{transition:none!important}}
