@@ -1,6 +1,13 @@
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import {
+  useLayoutEffect,
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+} from "react";
 import { catalog } from "./catalog";
 import { Example } from "./Examples";
+import { ViewportPreview } from "./ViewportPreview";
 import { defaults, palette, type Settings } from "./settings";
 import "./site.css";
 const repo = "https://github.com/SonghaiFan/roc-ui";
@@ -168,6 +175,9 @@ const hints: Record<string, string> = {
   "source-stack": "Spread, inspect, gather",
 };
 export function App() {
+  const embedded = new URLSearchParams(location.search).get("preview") === "1";
+  const frame = useRef<HTMLIFrameElement>(null);
+  const [focused, setFocused] = useState("");
   const [selected, setSelected] = useState(
     () => catalog.find((c) => c.id === location.hash.slice(1))?.id ?? "",
   );
@@ -185,6 +195,10 @@ export function App() {
       `${c.name} ${c.description}`.toLowerCase().includes(query.toLowerCase()),
   );
   const open = (id: string) => {
+    if (embedded) {
+      parent.postMessage({ type: "roc-source", id }, location.origin);
+      return;
+    }
     history.pushState(null, "", `#${id}`);
     setSelected(id);
   };
@@ -211,6 +225,10 @@ export function App() {
         )
       ) {
         event.preventDefault();
+        if (embedded) {
+          parent.postMessage({ type: "roc-search" }, location.origin);
+          return;
+        }
         document
           .querySelector<HTMLInputElement>('[aria-label="Search components"]')
           ?.focus();
@@ -219,6 +237,100 @@ export function App() {
     window.addEventListener("keydown", search);
     return () => window.removeEventListener("keydown", search);
   }, [selected]);
+  useLayoutEffect(() => {
+    if (!embedded) return;
+    const canvas = document.querySelector<HTMLElement>(".preview-canvas")!;
+    const previous = new Map<HTMLElement, { x: number; y: number }>();
+    const measure = () => {
+      for (const card of canvas.querySelectorAll<HTMLElement>(
+        ".component-card",
+      )) {
+        if (card.hidden) {
+          previous.delete(card);
+          continue;
+        }
+        const before = previous.get(card),
+          matrix = new DOMMatrixReadOnly(getComputedStyle(card).transform);
+        card.getAnimations().forEach((animation) => animation.cancel());
+        const rect = card.getBoundingClientRect(),
+          next = { x: rect.x + scrollX, y: rect.y + scrollY };
+        if (before && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          const dx = before.x + matrix.m41 - next.x,
+            dy = before.y + matrix.m42 - next.y;
+          if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5)
+            card.animate(
+              [
+                { transform: `translate(${dx}px,${dy}px)` },
+                { transform: "none" },
+              ],
+              { duration: 320, easing: "cubic-bezier(.22,.8,.25,1)" },
+            );
+        }
+        previous.set(card, { x: next.x, y: next.y });
+      }
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(canvas);
+    return () => {
+      observer.disconnect();
+      canvas
+        .querySelectorAll(".component-card")
+        .forEach((card) => card.getAnimations().forEach((a) => a.cancel()));
+    };
+  }, [embedded]);
+  const config = { query, filter, color, radius, surface, density, font };
+  const latestConfig = useRef(config);
+  latestConfig.current = config;
+  const syncFrame = () =>
+    frame.current?.contentWindow?.postMessage(
+      { type: "roc-config", config: latestConfig.current },
+      location.origin,
+    );
+  useEffect(() => {
+    if (!embedded) syncFrame();
+  }, [query, filter, color, radius, surface, density, font]);
+  useEffect(() => {
+    const receive = (event: MessageEvent) => {
+      if (event.origin !== location.origin) return;
+      if (embedded && event.source === parent) {
+        if (event.data?.type === "roc-config") {
+          const c = event.data.config;
+          setQuery(c.query);
+          setFilter(c.filter);
+          setColor(c.color);
+          setRadius(c.radius);
+          setSurface(c.surface);
+          setDensity(c.density);
+          setFont(c.font);
+        }
+        if (event.data?.type === "roc-focus") {
+          setFocused(event.data.id);
+          window.scrollTo({ top: 0, behavior: "instant" });
+        }
+      } else if (
+        !embedded &&
+        event.source === frame.current?.contentWindow &&
+        event.data?.type === "roc-search"
+      ) {
+        document
+          .querySelector<HTMLInputElement>('[aria-label="Search components"]')
+          ?.focus();
+      } else if (
+        !embedded &&
+        event.source === frame.current?.contentWindow &&
+        event.data?.type === "roc-source"
+      ) {
+        const id = event.data.id;
+        if (catalog.some((c) => c.id === id)) {
+          history.pushState(null, "", `#${id}`);
+          setSelected(id);
+        }
+      }
+    };
+    window.addEventListener("message", receive);
+    return () => window.removeEventListener("message", receive);
+  }, [embedded]);
   const style = {
     "--roc-accent": palette[color],
     "--roc-marker": `color-mix(in srgb,${palette[color]} 24%,white)`,
@@ -229,6 +341,85 @@ export function App() {
         ? "ui-sans-serif, system-ui, sans-serif"
         : "Georgia, serif",
   } as CSSProperties;
+  if (embedded)
+    return (
+      <div className="design-space embedded-preview" style={style}>
+        <main
+          className="preview-canvas"
+          data-density={density.toLowerCase()}
+          data-focused={!!focused}
+        >
+          {focused && (
+            <div className="focus-toolbar">
+              <button type="button" onClick={() => setFocused("")}>
+                ← All components
+              </button>
+              <span>{catalog.find((c) => c.id === focused)?.name}</span>
+            </div>
+          )}
+          <div className="masonry" aria-label="Component previews">
+            {components.map((item) => (
+              <article
+                id={item.id}
+                key={item.id}
+                className={`component-card component-${item.id}`}
+                hidden={focused ? item.id !== focused : !visible.includes(item)}
+              >
+                <header className="component-heading">
+                  <h2>{item.name}</h2>
+                  <button
+                    type="button"
+                    className="focus-preview"
+                    aria-label={`Focus ${item.name} preview`}
+                    aria-pressed={focused === item.id}
+                    onClick={() => {
+                      setFocused(focused === item.id ? "" : item.id);
+                      window.scrollTo({ top: 0, behavior: "instant" });
+                    }}
+                  >
+                    ↗
+                  </button>
+                  <button
+                    type="button"
+                    aria-label={`View ${item.name} source`}
+                    onClick={() => open(item.id)}
+                  >
+                    <span aria-hidden="true">〈/〉</span>
+                  </button>
+                </header>
+                <div className="component-preview" data-component={item.id}>
+                  <Example id={item.id} settings={settings} />
+                </div>
+                <footer className="component-footer">
+                  <span>{hints[item.id]}</span>
+                  <button
+                    type="button"
+                    onClick={() => open(item.id)}
+                    aria-label={`Install ${item.name}`}
+                  >
+                    ↗
+                  </button>
+                </footer>
+              </article>
+            ))}
+          </div>
+          {!visible.length && (
+            <div className="empty">
+              No matching components.{" "}
+              <button
+                type="button"
+                onClick={() => {
+                  setQuery("");
+                  setFilter("All");
+                }}
+              >
+                Clear search
+              </button>
+            </div>
+          )}
+        </main>
+      </div>
+    );
   return (
     <div className="design-space" style={style}>
       <header className="topbar">
@@ -242,7 +433,7 @@ export function App() {
         </a>
         <span className="top-divider" />
         <span className="top-title">Component design space</span>
-        <span className="release">0.5</span>
+        <span className="release">0.6</span>
         <nav>
           <a href={skill} target="_blank" rel="noreferrer">
             Principles ↗
@@ -334,16 +525,9 @@ export function App() {
                 onClick={() => {
                   setQuery("");
                   setFilter("All");
-                  requestAnimationFrame(() =>
-                    document
-                      .getElementById(item.id)
-                      ?.scrollIntoView({
-                        behavior: matchMedia("(prefers-reduced-motion: reduce)")
-                          .matches
-                          ? "instant"
-                          : "smooth",
-                        block: "center",
-                      }),
+                  frame.current?.contentWindow?.postMessage(
+                    { type: "roc-focus", id: item.id },
+                    location.origin,
                   );
                 }}
               >
@@ -398,54 +582,7 @@ export function App() {
               )}
             </select>
           </div>
-          <div className="masonry" aria-label="Component previews">
-            {components.map((item) => (
-              <article
-                id={item.id}
-                key={item.id}
-                className={`component-card component-${item.id}`}
-                hidden={!visible.includes(item)}
-              >
-                <header className="component-heading">
-                  <h2>{item.name}</h2>
-                  <button
-                    type="button"
-                    aria-label={`View ${item.name} source`}
-                    onClick={() => open(item.id)}
-                  >
-                    <span aria-hidden="true">〈/〉</span>
-                  </button>
-                </header>
-                <div className="component-preview" data-component={item.id}>
-                  <Example id={item.id} settings={settings} />
-                </div>
-                <footer className="component-footer">
-                  <span>{hints[item.id]}</span>
-                  <button
-                    type="button"
-                    onClick={() => open(item.id)}
-                    aria-label={`Install ${item.name}`}
-                  >
-                    ↗
-                  </button>
-                </footer>
-              </article>
-            ))}
-          </div>
-          {!visible.length && (
-            <div className="empty">
-              No matching components.{" "}
-              <button
-                type="button"
-                onClick={() => {
-                  setQuery("");
-                  setFilter("All");
-                }}
-              >
-                Clear search
-              </button>
-            </div>
-          )}
+          <ViewportPreview frame={frame} onLoad={syncFrame} />
           <footer className="canvas-footer">
             <span>Responsive Object Continuity</span>
             <span>React · MIT · Source included</span>

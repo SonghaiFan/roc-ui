@@ -842,3 +842,212 @@ summary {
     display: flex;
   }
 }
+/* The frame is a real viewport, never a scaled screenshot or a second preview. */
+.viewport-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 0 0 16px;
+}
+.device-switch {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid #dce1d4;
+  background: #e8ece2;
+  border-radius: 9px;
+}
+.device-switch button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  background: transparent;
+  border-radius: 6px;
+  padding: 8px 11px;
+  font-size: 11px;
+  color: #7a8470;
+}
+.device-switch button[aria-pressed="true"] {
+  background: #fff;
+  color: #34402a;
+  box-shadow: 0 1px 4px #29301c12;
+}
+.viewport-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #89927e;
+  font-size: 10px;
+  margin-left: auto;
+}
+.viewport-range input {
+  width: 110px;
+  height: 3px;
+  accent-color: #829374;
+}
+.viewport-size {
+  font:
+    10px ui-monospace,
+    monospace;
+  color: #6f7f5d;
+  font-variant-numeric: tabular-nums;
+  min-width: 84px;
+  text-align: right;
+}
+.viewport-stage {
+  padding: 16px;
+  overflow: auto;
+  background: #e8ebe3;
+  border: 1px solid #dfe4d6;
+  border-radius: 10px;
+  scrollbar-width: thin;
+}
+.viewport-shell {
+  position: relative;
+  margin: 0 auto;
+  border: 1px solid #d7ddce;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px #28301909;
+  background: #f3f4f1;
+  transition: width 0.48s cubic-bezier(0.22, 0.8, 0.25, 1);
+}
+.preview-frame {
+  display: block;
+  border: 0;
+  width: 100%;
+  border-radius: 8px;
+  background: #f3f4f1;
+}
+.viewport-resizer {
+  position: absolute;
+  right: -12px;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ew-resize;
+  touch-action: none;
+  z-index: 1;
+}
+.viewport-resizer span {
+  height: 38px;
+  width: 5px;
+  border-radius: 8px;
+  background: #9ca68f;
+  box-shadow: 0 0 0 3px #e8ebe3;
+}
+.viewport-stage[data-dragging="true"] .viewport-shell {
+  transition: none;
+}
+.viewport-stage[data-dragging="true"] iframe {
+  pointer-events: none;
+}
+.viewport-hint {
+  font-size: 10px;
+  color: #959e89;
+  margin: 12px 0 18px;
+  line-height: 1.6;
+}
+.embedded-preview {
+  min-height: 100dvh;
+  background: #f3f4f1;
+}
+.preview-canvas {
+  padding: 22px;
+  min-width: 0;
+}
+.preview-canvas[data-density="compact"] .masonry {
+  column-gap: 12px;
+}
+.preview-canvas[data-density="compact"] .component-card {
+  margin-bottom: 12px;
+}
+.preview-canvas[data-density="compact"] .component-preview {
+  padding: 12px;
+}
+.component-heading .focus-preview {
+  margin-left: auto;
+}
+.focus-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 0 18px;
+  font-size: 11px;
+  color: #869078;
+}
+.focus-toolbar button {
+  border: 1px solid #dce1d4;
+  background: #fff;
+  border-radius: 7px;
+  padding: 8px 12px;
+  color: #556845;
+}
+.preview-canvas[data-focused="true"] .masonry {
+  columns: 1;
+}
+.preview-canvas[data-focused="true"] .component-preview {
+  padding: 40px 24px;
+}
+.preview-canvas[data-focused="true"]
+  .component-image-viewport
+  .component-preview {
+  max-width: 900px;
+  margin: auto;
+}
+.preview-canvas[data-focused="true"] .component-footer {
+  padding-top: 12px;
+}
+.preview-canvas[data-focused="true"] .selection-demo,
+.preview-canvas[data-focused="true"] .voice-demo {
+  max-width: 650px;
+  margin: auto;
+}
+@media (max-width: 640px) {
+  .viewport-controls {
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+  .device-switch {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .device-switch button {
+    padding: 8px;
+    gap: 5px;
+    font-size: 10px;
+  }
+  .viewport-range {
+    margin-left: 0;
+    flex: 1;
+  }
+  .viewport-range input {
+    flex: 1;
+    max-width: 160px;
+  }
+  .viewport-stage {
+    padding: 16px;
+  }
+  .preview-canvas {
+    padding: 14px;
+  }
+  .preview-canvas[data-focused="true"] .component-preview {
+    padding: 24px 12px;
+  }
+  .focus-toolbar {
+    font-size: 10px;
+  }
+  .viewport-hint {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .viewport-shell {
+    transition: none;
+  }
+}

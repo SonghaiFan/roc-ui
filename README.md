@@ -58,7 +58,7 @@ See [React component contracts](notes/react-design-system.md) for controlled sta
 
 ## Design space
 
-The masonry canvas fills the workspace with all components at their natural heights. A compact rail adjusts surface, accent, typography, radius and spacing. Filtering hides components without unmounting them. Source inspection leaves the live preview in place. Source links use component hashes; theme controls are local to the session.
+The masonry canvas fills the workspace with all components at their natural heights. A compact rail adjusts surface, accent, typography, radius and spacing. The viewport toolbar switches between Fit, Desktop (1024 × 768), Tablet (768 × 1024) and Phone (390 × 844). Drag the right edge or use the width slider for intermediate widths. Click a component’s heading ↗, or choose it in the rail, to inspect it at the full selected width. One retained iframe provides real CSS media queries and viewport-bound dialogs; switching sizes does not reload the previews. Filtering hides components without unmounting them. Source inspection leaves the live preview in place. Source links use component hashes; theme controls are local to the session.
 
 The layout follows the preview-first approach of [shadcn create](https://ui.shadcn.com/create?item=preview). No reference-site source or assets are bundled.
 
@@ -81,7 +81,7 @@ npm run test:consumer
 
 The dev server builds once on startup; rebuild after edits. `npm run build` generates registry payloads in `public/r`, downloadable source in `public/source`, and the GitHub Pages snapshot in `docs`. Pages serves `main:/docs`.
 
-`test:consumer` compiles and server-renders only the downloaded registry files, then creates an independent StrictMode browser fixture. Browser scenarios in `tests/design-space.scenario.js`, `tests/consumer.scenario.js` and `tests/card-preview.scenario.js` run through Playwright CLI `run-code --filename …`. They currently target port 4190; adjust the origin for your server. Run the final build after consumer tests to remove the temporary fixture before deployment.
+`test:consumer` compiles and server-renders only the downloaded registry files, then creates an independent StrictMode browser fixture. Browser scenarios in `tests/design-space.scenario.js`, `tests/consumer.scenario.js`, `tests/responsive-preview.scenario.js` and `tests/card-preview.scenario.js` run through Playwright CLI `run-code --filename …`. They currently target port 4190; adjust the origin for your server. Run the final build after consumer tests to remove the temporary fixture before deployment.
 
 ## Provenance and scope
 

@@ -82,7 +82,7 @@ The tray never queries descendant audio or knows what an attachment is. Its geom
 
 ## Gallery
 
-The design space uses CSS masonry columns with natural card heights. Components remain in one keyed React tree when filtering, resizing or changing the theme. Source inspection opens a separate native dialog containing code; it never moves the running preview. Column order follows DOM order down each column, then across; keyboard order follows that same DOM order.
+The design space uses CSS masonry columns with natural card heights. A persistent preview iframe supplies real viewport dimensions: Fit, Desktop 1024 × 768, Tablet 768 × 1024, Phone 390 × 844, or a custom width from 320–1600 px. The frame is resized, never re-keyed or navigated during a size switch. Media queries, `visualViewport`, native dialogs and popovers are scoped to that viewport. Theme/filter changes cross the same-origin boundary, while component state stays inside the retained frame. The component focus action uses the same keyed article, giving components the full viewport width for breakpoint inspection. Position-only layout motion follows masonry reflow; reduced motion reaches the same destination immediately. Components remain in one keyed React tree when filtering, resizing or changing the theme. Source inspection opens a separate native dialog containing code; it never moves the running preview. Column order follows DOM order down each column, then across; keyboard order follows that same DOM order.
 
 The layout is informed by the [shadcn create preview](https://ui.shadcn.com/create?item=preview). No shadcn site source or assets are copied.
 
@@ -94,5 +94,6 @@ The layout is informed by the [shadcn create preview](https://ui.shadcn.com/crea
 - `tests/consumer.scenario.js`: independent StrictMode consumer, no gallery CSS; controlled siblings, custom audio composition and custom editor action.
 - `tests/design-space.scenario.js`: masonry dimensions, theme/filter/node preservation, real media, editing, reading return, mobile and reduced motion.
 - `tests/card-preview.scenario.js`: focused reading-surface geometry and return checks.
+- `tests/responsive-preview.scenario.js`: real viewport dimensions, pointer/keyboard resizing, retained editor/audio/document instances, focused book layout, viewport-bounded reading surfaces and narrow-host controls.
 
 Current runtime verification is Chromium. Motion remains source-informed; this refactor does not claim pixel-for-pixel parity with the full Syuze application. `PageBook` expects pre-paginated reading content; its single/spread breakpoint regroups pages and should not be used to preserve stateful editors inside those pages. Folder fan is a compact, non-interactive card collection; use the tray for arbitrary interactive children.

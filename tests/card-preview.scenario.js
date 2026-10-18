@@ -5,7 +5,7 @@ async (page) => {
     checks.push(message);
   };
   await page.setViewportSize({ width: 1440, height: 1000 });
-  await page.goto("http://127.0.0.1:4190/");
+  await page.goto("http://127.0.0.1:4190/?preview=1");
   const card = page.locator(".roc-expand .roc-card-preview");
   const paper = await card.locator(".roc-preview-paper").elementHandle(),
     editor = await card.locator("textarea").elementHandle();
