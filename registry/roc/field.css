@@ -243,3 +243,7 @@
     }
   }
 }
+/* Micro-motion: an error message settles in rather than appearing. */
+[data-slot="field-error"] {
+  animation: roc-ui-rise-in var(--roc-motion-fast) var(--roc-motion-ease);
+}

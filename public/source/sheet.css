@@ -370,3 +370,28 @@
     }
   }
 }
+/* Micro-motion: panel slides from its edge; the scrim fades. */
+[data-slot="sheet-overlay"][data-state="open"] {
+  animation: roc-ui-dismiss 160ms reverse;
+}
+[data-slot="sheet-overlay"][data-state="closed"] {
+  animation: roc-ui-dismiss 160ms;
+}
+[data-slot="sheet-content"][data-side="right"] {
+  --roc-slide-x: 100%;
+}
+[data-slot="sheet-content"][data-side="left"] {
+  --roc-slide-x: -100%;
+}
+[data-slot="sheet-content"][data-side="top"] {
+  --roc-slide-y: -100%;
+}
+[data-slot="sheet-content"][data-side="bottom"] {
+  --roc-slide-y: 100%;
+}
+[data-slot="sheet-content"][data-state="open"] {
+  animation: roc-ui-slide-in var(--roc-motion-medium) var(--roc-motion-ease);
+}
+[data-slot="sheet-content"][data-state="closed"] {
+  animation: roc-ui-slide-out var(--roc-motion-fast) var(--roc-motion-ease);
+}

@@ -336,3 +336,7 @@
     }
   }
 }
+/* Micro-motion: one short shake when the field becomes invalid. */
+[data-slot="native-select"][aria-invalid="true"] {
+  animation: roc-ui-shake 240ms var(--roc-motion-ease);
+}

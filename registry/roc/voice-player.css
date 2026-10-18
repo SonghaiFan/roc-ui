@@ -45,3 +45,25 @@
 .roc-voice button:disabled {
   opacity: 0.4;
 }
+/* Play and pause share one slot and cross-fade with a small blur and scale. */
+.roc-voice .roc-voice-play {
+  display: inline-grid;
+  place-items: center;
+}
+.roc-voice-glyph {
+  grid-area: 1 / 1;
+  transition:
+    opacity 250ms ease-in-out,
+    transform 250ms ease-in-out,
+    filter 250ms ease-in-out;
+}
+.roc-voice-glyph[data-state="inactive"] {
+  opacity: 0;
+  transform: scale(0.25);
+  filter: blur(2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-voice-glyph {
+    transition: none;
+  }
+}

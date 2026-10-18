@@ -14,8 +14,8 @@
   line-height: 1.2;
   cursor: pointer;
   transition:
-    background-color 160ms,
-    color 160ms;
+    background-color var(--roc-motion-quick) ease-out,
+    color var(--roc-motion-quick) ease-out;
 }
 .roc-ui-toggle-outline {
   border-color: var(--roc-line, #dedede);

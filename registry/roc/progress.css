@@ -11,7 +11,7 @@
   height: 100%;
   background: var(--roc-ink, #252525);
   transform-origin: left;
-  transition: transform 260ms cubic-bezier(0.22, 0.8, 0.25, 1);
+  transition: transform var(--roc-motion-medium) var(--roc-motion-ease);
 }
 .roc-ui[data-slot="progress"][dir="rtl"] [data-slot="progress-indicator"] {
   transform-origin: right;

@@ -181,7 +181,20 @@ export function VoicePlayButton() {
       disabled={!s.available}
       onClick={s.toggle}
     >
-      {s.playing ? "Ⅱ" : "▶"}
+      <span
+        aria-hidden="true"
+        className="roc-voice-glyph"
+        data-state={s.playing ? "inactive" : "active"}
+      >
+        ▶
+      </span>
+      <span
+        aria-hidden="true"
+        className="roc-voice-glyph"
+        data-state={s.playing ? "active" : "inactive"}
+      >
+        Ⅱ
+      </span>
     </button>
   );
 }
