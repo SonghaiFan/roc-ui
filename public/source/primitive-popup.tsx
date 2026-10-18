@@ -42,6 +42,14 @@ export function renderChild(
 export const isNativeButton = (child: React.ReactElement) =>
   typeof child.type !== "string" || child.type === "button";
 
+/** Base UI reports logical sides for submenus; ROC CSS and components use physical ones. */
+export function physicalSide(side: string | undefined) {
+  if (side !== "inline-start" && side !== "inline-end") return side;
+  const rtl =
+    typeof document !== "undefined" && document.documentElement.dir === "rtl";
+  return (side === "inline-end") !== rtl ? "right" : "left";
+}
+
 /** A popup copies its own z-index to the positioner, so stacking matches the CSS. */
 function useStackingOf(ref: React.RefObject<HTMLElement | null>) {
   const [zIndex, setZIndex] = React.useState<string>();
@@ -102,7 +110,11 @@ export function createContent(parts: Parts, prefix: string, openValue = "open") 
           {...props}
           ref={composeRefs(ref, popup)}
           render={(popupProps: Record<string, any>, state: { open: boolean }) => (
-            <div {...popupProps} data-state={state.open ? openValue : "closed"} />
+            <div
+              {...popupProps}
+              data-side={physicalSide(popupProps["data-side"])}
+              data-state={state.open ? openValue : "closed"}
+            />
           )}
           style={
             {

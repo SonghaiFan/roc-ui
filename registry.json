@@ -746,7 +746,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -760,9 +760,24 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-dropdown-menu.ts",
+          "path": "registry/roc/primitive-dropdown-menu.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-dropdown-menu.ts"
+          "target": "~/components/roc/primitive-dropdown-menu.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-menu-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-menu-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/dropdown-menu.css",
@@ -2340,7 +2355,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -2354,9 +2369,24 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-context-menu.ts",
+          "path": "registry/roc/primitive-context-menu.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-context-menu.ts"
+          "target": "~/components/roc/primitive-context-menu.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-menu-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-menu-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/context-menu.css",
@@ -3345,7 +3375,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -3359,9 +3389,24 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-menubar.ts",
+          "path": "registry/roc/primitive-menubar.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-menubar.ts"
+          "target": "~/components/roc/primitive-menubar.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-menu-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-menu-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/menubar.css",

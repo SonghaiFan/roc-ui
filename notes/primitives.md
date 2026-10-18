@@ -36,18 +36,23 @@ Behaviour that is hard to get right (positioning, focus trapping, typeahead) com
 | `primitive-tooltip.tsx` | `Tooltip` | Adds `role="tooltip"` and `aria-describedby`, which Base UI leaves to the caller; reserves the arrow's height in the offset like Radix |
 | `primitive-hover-card.tsx` | `PreviewCard` | `openDelay` and `closeDelay` map to the trigger |
 | `primitive-dialog.tsx`, `primitive-alert-dialog.tsx` | `Dialog`, `AlertDialog` via `primitive-dialog-core.tsx` | Overlay/Content/Close shape; focus trap, scroll lock and inert outside from Base UI. Alert Dialog starts focus on Cancel and ignores outside clicks. Sheet reuses Dialog |
+| `primitive-dropdown-menu.tsx`, `primitive-context-menu.tsx`, `primitive-menubar.tsx` | `Menu`, `ContextMenu`, `Menubar` via `primitive-menu-core.tsx` | One item vocabulary for all three. `onSelect` keeps working, including `preventDefault` to leave the menu open. Checkbox and radio items close the menu, as in Radix. Submenu sides are reported as `left`/`right` |
 | `primitive-collapsible.tsx` | owned | A disclosure needs no library. Closed content leaves an empty hidden region so `aria-controls` stays valid |
 
 Known differences from Radix:
 
 - A Base UI tooltip opens for keyboard focus (`:focus-visible`), not for focus moved by script, so focus returning from a dialog does not pop a tooltip.
 - Only one tooltip is open at a time.
+- Menus keep disabled items reachable by keyboard (focus lands on them, they cannot be activated), as the ARIA menu pattern suggests. Radix skips them.
+- Link triggers (`asChild` on an `<a>`) get `role="button"` from Base UI.
+- Focus returns to the trigger when the exit animation ends (about 170 ms), the same as with Radix; a test must wait for it rather than sample once.
+- After a context menu closes, focus returns to the element that had it before, not to the page.
 - `onOpenChange(false)` can fire twice when a tooltip closes on click.
 - Content-level `onOpenAutoFocus`, `onEscapeKeyDown` and `onPointerDownOutside` are not forwarded; Base UI reports these on the root's `onOpenChange` details. No ROC component uses them.
 
 ## Still delegated to Radix
 
-Context Menu, Direction, Dropdown Menu, Menubar, Navigation Menu, Scroll Area, Select, Slider. Each is a one-line re-export to replace with a Base UI adapter, checked against Radix with the same parity approach.
+Direction, Dropdown Menu, Navigation Menu, Scroll Area, Select, Slider. Each is a one-line re-export to replace with a Base UI adapter, checked against Radix with the same parity approach.
 
 ## Not covered
 

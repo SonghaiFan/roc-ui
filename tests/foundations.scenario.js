@@ -247,6 +247,12 @@ async (page) => {
       "Rename selected",
     "Dropdown keyboard selection invokes the action",
   );
+  // Focus returns when the exit animation ends, so wait for it rather than sampling once.
+  await view.waitForFunction(
+    () =>
+      document.activeElement?.getAttribute("data-slot") ===
+      "dropdown-menu-trigger",
+  );
   assert(
     await menuTrigger.evaluate((el) => el === document.activeElement),
     "Menu restores trigger focus",
