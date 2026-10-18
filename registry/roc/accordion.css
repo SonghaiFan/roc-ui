@@ -23,16 +23,20 @@
   cursor: pointer;
 }
 .roc-ui[data-slot="accordion-trigger"] svg {
-  transition: transform 300ms cubic-bezier(0.22, 0.8, 0.25, 1);
+  transition: transform var(--roc-motion-fast) var(--roc-motion-ease);
   color: var(--roc-muted, #888);
 }
+/* Flip through a flat line; non-scaling stroke keeps the weight constant. */
+.roc-ui[data-slot="accordion-trigger"] svg path {
+  vector-effect: non-scaling-stroke;
+}
 .roc-ui[data-slot="accordion-trigger"][data-state="open"] svg {
-  transform: rotate(180deg);
+  transform: scaleY(-1);
 }
 .roc-ui-accordion-layout {
   display: grid;
   grid-template-rows: 1fr;
-  transition: grid-template-rows 320ms cubic-bezier(0.22, 0.8, 0.25, 1);
+  transition: grid-template-rows var(--roc-motion-fast) var(--roc-motion-ease);
 }
 .roc-ui-accordion-layout[data-open="false"] {
   grid-template-rows: 0fr;
@@ -45,6 +49,13 @@
   padding: 0 0 18px;
   line-height: 1.65;
   color: var(--roc-muted, #737373);
+  transition:
+    opacity var(--roc-motion-fast) var(--roc-motion-ease),
+    filter var(--roc-motion-fast) var(--roc-motion-ease);
+}
+.roc-ui-accordion-layout[data-open="false"] .roc-ui-accordion-body {
+  opacity: 0;
+  filter: blur(var(--roc-motion-blur));
 }
 @media (prefers-reduced-motion: reduce) {
   .roc-ui[data-slot="accordion-trigger"] svg {
@@ -53,7 +64,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .roc-ui-accordion-layout {
+  .roc-ui-accordion-layout,
+  .roc-ui-accordion-body {
     transition: none;
   }
 }

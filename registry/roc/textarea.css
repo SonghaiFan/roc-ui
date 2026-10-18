@@ -10,12 +10,14 @@
   padding: 10px 12px;
   background: var(--roc-paper, #fff);
   line-height: 1.65;
+  transition: border-color var(--roc-motion-quick) ease-out;
 }
 .roc-ui[data-slot="textarea"]::placeholder {
   color: var(--roc-muted, #888);
 }
 .roc-ui[data-slot="textarea"][aria-invalid="true"] {
   border-color: #bd4545;
+  animation: roc-ui-shake 240ms var(--roc-motion-ease);
 }
 @media (pointer: coarse) {
   .roc-ui[data-slot="textarea"] {

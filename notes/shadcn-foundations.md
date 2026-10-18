@@ -25,6 +25,24 @@ The adaptations use component-scoped CSS rather than shadcn's Tailwind utility s
 
 The registry recursively includes local imports, styles, utilities and both applicable license notices. External dependencies are derived from source imports: React, Radix UI, lucide-react, class-variance-authority and clsx as needed. No legacy Syuze or Franklin application runtime is installed. `upstream/` and gallery demos are not part of an install.
 
+## Micro-motion
+
+Small transitions are adapted from [transitions.dev](https://transitions.dev) (free for use in products under its licence). They share one scale on `:where(.roc-ui)` in `ui-base.css`: `--roc-motion-quick` 150 ms, `--roc-motion-fast` 250 ms, `--roc-motion-medium` 350 ms, `--roc-motion-ease`, `--roc-motion-bounce` and `--roc-motion-blur`. Override them on `.roc-ui` to retune every component at once; `prefers-reduced-motion` still removes them.
+
+| Foundation | Motion |
+| --- | --- |
+| Dropdown Menu, Popover | Scale from the Radix transform origin (0.97 → 1, 250 ms); quieter 0.99 exit (150 ms) |
+| Dialog | Scale 0.96 → 1 in 250 ms, 150 ms exit; position and width keep their own transitions |
+| Tooltip | 0.98 scale and fade in 150 ms, 50 ms exit |
+| Tabs | Marker and label colour share one 250 ms ease |
+| Accordion | Grid track, 2 px cross-blur on the body and a vertical chevron flip share 250 ms |
+| Switch | 350 ms thumb with a small overshoot, as a transition so reversals stay continuous |
+| Checkbox | The box fills in 150 ms, then the mark draws over 350 ms; unchecking retracts in 150 ms |
+| Button | `pending` swaps labels with a blurred 4 px lift inside the same reserved slot |
+| Input, Textarea | `aria-invalid="true"` plays one 240 ms horizontal shake |
+
+Exit motion on Dialog, Popover, Dropdown Menu and Tooltip is a CSS animation, not a transition, so Radix Presence keeps the content mounted until it finishes. Tooltip does not travel between triggers: each Radix tooltip is its own surface.
+
 ## Continuity boundaries
 
 - Retained Tabs and Accordion panels keep effects alive. The host must pause hidden audio or expensive work when appropriate. Inert prevents interaction; it does not pause side effects.

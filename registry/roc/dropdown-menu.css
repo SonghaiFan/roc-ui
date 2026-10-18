@@ -12,11 +12,11 @@
   background: var(--roc-paper, #fff);
   box-shadow: 0 8px 28px #00000012;
   transform-origin: var(--radix-dropdown-menu-content-transform-origin);
-  animation: roc-ui-reveal 160ms ease-out;
+  animation: roc-ui-pop-in var(--roc-motion-fast) var(--roc-motion-ease);
 }
 .roc-ui[data-slot="dropdown-menu-content"][data-state="closed"],
 .roc-ui[data-slot="dropdown-menu-sub-content"][data-state="closed"] {
-  animation: roc-ui-dismiss 120ms;
+  animation: roc-ui-pop-out var(--roc-motion-quick) var(--roc-motion-ease);
 }
 .roc-ui:is(
   [data-slot="dropdown-menu-item"],

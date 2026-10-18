@@ -3,7 +3,6 @@
 
 import * as React from "react";
 import { cn } from "./utils";
-import { CheckIcon } from "lucide-react";
 import { Checkbox as CheckboxPrimitive } from "radix-ui";
 
 function Checkbox({
@@ -19,8 +18,20 @@ function Checkbox({
       <CheckboxPrimitive.Indicator
         data-slot="checkbox-indicator"
         className="roc-ui"
+        forceMount
       >
-        <CheckIcon className="roc-ui-icon" />
+        <svg
+          className="roc-ui-icon roc-ui-checkbox-mark"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M3.5 8.5 6.5 11.5 12.5 4.5" pathLength={1} />
+        </svg>
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   );

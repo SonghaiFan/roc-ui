@@ -40,6 +40,7 @@
   white-space: nowrap;
   cursor: pointer;
   color: var(--roc-muted, #777);
+  transition: color var(--roc-motion-fast) var(--roc-motion-ease);
 }
 .roc-ui[data-slot="tabs-trigger"][data-state="active"] {
   color: var(--roc-ink, #222);
@@ -55,9 +56,9 @@
 }
 .roc-ui-tabs-marker[data-ready="true"] {
   transition:
-    transform 300ms cubic-bezier(0.22, 0.8, 0.25, 1),
-    width 300ms cubic-bezier(0.22, 0.8, 0.25, 1),
-    height 300ms cubic-bezier(0.22, 0.8, 0.25, 1);
+    transform var(--roc-motion-fast) var(--roc-motion-ease),
+    width var(--roc-motion-fast) var(--roc-motion-ease),
+    height var(--roc-motion-fast) var(--roc-motion-ease);
 }
 .roc-ui[data-slot="tabs-list"][data-variant="line"] {
   background: transparent;
@@ -76,7 +77,8 @@
   display: none !important;
 }
 @media (prefers-reduced-motion: reduce) {
-  .roc-ui-tabs-marker {
+  .roc-ui-tabs-marker,
+  .roc-ui[data-slot="tabs-trigger"] {
     transition: none !important;
   }
 }
