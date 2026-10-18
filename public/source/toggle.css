@@ -1,0 +1,45 @@
+@import "./ui-base.css";
+.roc-ui-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--roc-radius, 8px);
+  background: transparent;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    background-color 160ms,
+    color 160ms;
+}
+.roc-ui-toggle-outline {
+  border-color: var(--roc-line, #dedede);
+}
+.roc-ui-toggle:hover:not(:disabled) {
+  background: var(--roc-marker, #eee);
+}
+.roc-ui-toggle[data-state="on"] {
+  background: var(--roc-ink, #252525);
+  color: var(--roc-paper, #fff);
+}
+.roc-ui-toggle-sm {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 5px 8px;
+}
+.roc-ui-toggle-lg {
+  min-width: 42px;
+  min-height: 42px;
+  padding: 10px 14px;
+}
+@media (pointer: coarse) {
+  .roc-ui-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

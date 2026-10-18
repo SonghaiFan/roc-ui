@@ -1,0 +1,51 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb",
+  "type": "registry:component",
+  "title": "Breadcrumb",
+  "description": "ROC: retained identity and coherent layout changes.",
+  "dependencies": [
+    "react",
+    "lucide-react",
+    "radix-ui",
+    "clsx"
+  ],
+  "files": [
+    {
+      "path": "registry/roc/breadcrumb.tsx",
+      "type": "registry:file",
+      "target": "~/components/roc/breadcrumb.tsx",
+      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt and upstream provenance.\nimport * as React from \"react\";\nimport { cn } from \"./utils\";\nimport { ChevronRight, MoreHorizontal } from \"lucide-react\";\nimport { Slot } from \"radix-ui\";\n\nfunction Breadcrumb({ ...props }: React.ComponentProps<\"nav\">) {\n  return <nav aria-label=\"breadcrumb\" data-slot=\"breadcrumb\" {...props} />;\n}\n\nfunction BreadcrumbList({ className, ...props }: React.ComponentProps<\"ol\">) {\n  return (\n    <ol\n      data-slot=\"breadcrumb-list\"\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction BreadcrumbItem({ className, ...props }: React.ComponentProps<\"li\">) {\n  return (\n    <li\n      data-slot=\"breadcrumb-item\"\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction BreadcrumbLink({\n  asChild,\n  className,\n  ...props\n}: React.ComponentProps<\"a\"> & {\n  asChild?: boolean;\n}) {\n  const Comp = asChild ? Slot.Root : \"a\";\n\n  return (\n    <Comp\n      data-slot=\"breadcrumb-link\"\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction BreadcrumbPage({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"breadcrumb-page\"\n      role=\"link\"\n      aria-disabled=\"true\"\n      aria-current=\"page\"\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction BreadcrumbSeparator({\n  children,\n  className,\n  ...props\n}: React.ComponentProps<\"li\">) {\n  return (\n    <li\n      data-slot=\"breadcrumb-separator\"\n      role=\"presentation\"\n      aria-hidden=\"true\"\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    >\n      {children ?? <ChevronRight />}\n    </li>\n  );\n}\n\nfunction BreadcrumbEllipsis({\n  className,\n  ...props\n}: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"breadcrumb-ellipsis\"\n      role=\"presentation\"\n      aria-hidden=\"true\"\n      className={cn(\"roc-ui\", className)}\n      {...props}\n    >\n      <MoreHorizontal className=\"roc-ui\" />\n      <span className=\"roc-ui-sr-only\">More</span>\n    </span>\n  );\n}\n\nexport {\n  Breadcrumb,\n  BreadcrumbList,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n  BreadcrumbEllipsis,\n};\n\nimport \"./breadcrumb.css\";\n"
+    },
+    {
+      "path": "registry/roc/utils.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
+    },
+    {
+      "path": "registry/roc/breadcrumb.css",
+      "type": "registry:file",
+      "target": "~/components/roc/breadcrumb.css",
+      "content": "@import \"./ui-base.css\";\n.roc-ui[data-slot=\"breadcrumb-list\"] {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  line-height: 1.6;\n}\n.roc-ui[data-slot=\"breadcrumb-item\"] {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  min-width: 0;\n  overflow-wrap: anywhere;\n}\n.roc-ui[data-slot=\"breadcrumb-link\"] {\n  color: var(--roc-muted, #777);\n  text-decoration: none;\n  background: none;\n  border: 0;\n  padding: 0;\n  cursor: pointer;\n}\n.roc-ui[data-slot=\"breadcrumb-link\"]:hover {\n  color: var(--roc-ink, #252525);\n  text-decoration: underline;\n  text-underline-offset: 4px;\n}\n.roc-ui[data-slot=\"breadcrumb-separator\"] {\n  display: flex;\n  color: var(--roc-muted, #999);\n}\n.roc-ui[data-slot=\"breadcrumb-separator\"] > svg {\n  width: 13px;\n  height: 13px;\n}\n.roc-ui[data-slot=\"breadcrumb-ellipsis\"] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 24px;\n}\n"
+    },
+    {
+      "path": "registry/roc/ui-base.css",
+      "type": "registry:file",
+      "target": "~/components/roc/ui-base.css",
+      "content": "/* Shared ROC foundations. No global reset or host stylesheet required. */\n.roc-ui {\n  box-sizing: border-box;\n  font: inherit;\n  font-size: 13px;\n  color: var(--roc-ink, #252525);\n}\n.roc-ui *,\n.roc-ui *::before,\n.roc-ui *::after {\n  box-sizing: border-box;\n}\n.roc-ui:focus-visible {\n  outline: 2px solid var(--roc-focus, #737373);\n  outline-offset: 3px;\n}\n.roc-ui:disabled,\n.roc-ui[data-disabled] {\n  opacity: 0.45;\n  cursor: not-allowed;\n}\n.roc-ui-icon,\n.roc-ui > svg {\n  width: 16px;\n  height: 16px;\n  flex-shrink: 0;\n  pointer-events: none;\n}\n.roc-ui-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n@keyframes roc-ui-reveal {\n  from {\n    opacity: 0;\n    transform: translateY(4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes roc-ui-dismiss {\n  from {\n    opacity: 1;\n  }\n  to {\n    opacity: 0;\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  .roc-ui,\n  .roc-ui::before,\n  .roc-ui::after {\n    transition-duration: 0s !important;\n    animation-duration: 0.01ms !important;\n  }\n}\n"
+    },
+    {
+      "path": "registry/roc/SOURCE-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SOURCE-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2026 Songhai\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "path": "registry/roc/SHADCN-LICENSE.txt",
+      "type": "registry:file",
+      "target": "~/components/roc/SHADCN-LICENSE.txt",
+      "content": "MIT License\n\nCopyright (c) 2023 shadcn\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    }
+  ]
+}

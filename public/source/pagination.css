@@ -1,0 +1,33 @@
+@import "./ui-base.css";
+@import "./button.css";
+.roc-ui[data-slot="pagination"] {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.roc-ui[data-slot="pagination-content"] {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.roc-ui[data-slot="pagination-link"][aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: default;
+}
+.roc-ui[data-slot="pagination-ellipsis"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+@media (max-width: 640px) {
+  .roc-ui-pagination-label {
+    display: none;
+  }
+}
