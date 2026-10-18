@@ -38,7 +38,7 @@ The registry recursively includes local imports, styles, utilities and both appl
 
 The full per-component audit for the 66-component catalog is in [micro-motion.md](micro-motion.md). The first fifteen foundations:
 
-Small transitions are adapted from [transitions.dev](https://transitions.dev) (free for use in products under its licence). They share one scale on `:where(.roc-ui)` in `ui-base.css`: `--roc-motion-quick` 150 ms, `--roc-motion-fast` 250 ms, `--roc-motion-medium` 350 ms, `--roc-motion-ease`, `--roc-motion-bounce` and `--roc-motion-blur`. Override them on `.roc-ui` to retune every component at once; `prefers-reduced-motion` still removes them.
+Small transitions are adapted from [transitions.dev](https://transitions.dev) (free for use in products under its licence). They share one scale on `:where(.roc-ui, .roc-shadcn)` in `ui-base.css`: `--roc-motion-quick` 150 ms, `--roc-motion-fast` 250 ms, `--roc-motion-medium` 350 ms, `--roc-motion-ease`, `--roc-motion-bounce` and `--roc-motion-blur`. Override them on `.roc-ui` to retune every component at once; `prefers-reduced-motion` still removes them.
 
 | Foundation | Motion |
 | --- | --- |
@@ -51,6 +51,8 @@ Small transitions are adapted from [transitions.dev](https://transitions.dev) (f
 | Checkbox | The box fills in 150 ms, then the mark draws over 350 ms; unchecking retracts in 150 ms |
 | Button | `pending` swaps labels with a blurred 4 px lift inside the same reserved slot |
 | Input, Textarea | `aria-invalid="true"` plays one 240 ms horizontal shake |
+
+Earlier components were reviewed against the same library. Voice player swaps play and pause as an icon swap, Continuous tabs eases its label colour with the marker, and Focus lanes de-blurs headings as a lane opens. Folder fan, Source stack, Focus lanes geometry, Page book, Image viewport, Expandable card, Card preview, Source tray and Selection toolbar are driven by measured geometry or springs, so no library transition fits and they are left unchanged.
 
 Exit motion on Dialog, Popover, Dropdown Menu and Tooltip is a CSS animation, not a transition, so Radix Presence keeps the content mounted until it finishes. Tooltip does not travel between triggers: each Radix tooltip is its own surface.
 

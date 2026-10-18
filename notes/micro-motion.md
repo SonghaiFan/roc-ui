@@ -27,6 +27,10 @@ All 66 gallery components were reviewed against the [transitions.dev](https://tr
 
 Date Picker inherits Popover, Command inherits Dialog, Pagination inherits Button, Toggle Group inherits Toggle.
 
+## Earlier ten components (installable, not in the gallery)
+
+Voice Player swaps play and pause as an icon swap, Continuous Tabs eases its label colour with the marker, and Focus Lanes de-blurs headings as a lane opens. Folder Fan, Source Stack, Page Book, Image Viewport, Expandable Card, Card Preview, Source Tray and Selection Toolbar are driven by measured geometry or springs, so no library transition fits.
+
 ## Already had motion, left unchanged
 
 Toast (Base UI stacking with swipe), Trace (collapsible and chevron), Attachment (shimmer while uploading), Spinner, Questionnaire, Item, Message Scroller, Scroll Area, Table and Breadcrumb hover colour, Input OTP (caret and slot ring), Sidebar (200 ms linear width), Drawer (Vaul owns its gesture and spring), Carousel (Embla), Chart (Recharts; the gallery disables the initial bar animation).
