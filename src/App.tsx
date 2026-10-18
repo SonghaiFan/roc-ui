@@ -1,0 +1,55 @@
+import { useEffect, useState } from "react";
+import { ExpandableCard } from "../registry/roc/expandable-card";
+import { FolderFan } from "../registry/roc/folder-fan";
+import { SourceStack } from "../registry/roc/source-stack";
+import { FocusLanes } from "../registry/roc/focus-lanes";
+import { ContinuousTabs } from "../registry/roc/continuous-tabs";
+import { catalog } from "./catalog";
+import "./site.css";
+const repo = "https://github.com/SonghaiFan/roc-ui";
+const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
+const raw = "https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/";
+const tabs = [{ id: "notes", label: "Notes" }, { id: "images", label: "Images" }, { id: "voices", label: "Voices" }];
+function Example({ id }: { id: string }) {
+  const [value, setValue] = useState("notes"), [message, setMessage] = useState("");
+  if (id === "expandable-card") return <ExpandableCard title="On noticing" eyebrow="NOTE 001 / KEEP CLOSE"><p>A photograph, a few words, a voice you know. Some things are easier to remember when you give them a place.</p><label className="draft-label">Your note<textarea aria-label="Your note" defaultValue="There was still light in the garden." /></label><p className="small-note">Edit this. Close it. Your words will still be here.</p></ExpandableCard>;
+  if (id === "folder-fan") return <div className="demo-full"><FolderFan title="Small observations" items={[{ id: "light", label: "Afternoon light", content: "Notes from the window", color: "#fff9ed" }, { id: "walk", label: "A familiar walk", content: "The long way home", color: "#edf0e6" }, { id: "letter", label: "An unsent letter", content: "Words for later", color: "#f5eae2" }]} onSelect={id => setMessage(`Selected: ${id}`)} /><span className="demo-status" role="status">{message}</span></div>;
+  if (id === "source-stack") return <SourceStack items={[{ id: "letter", title: "A little note", kind: "TEXT / 01", color: "#f8f2df", content: <input aria-label="Source note" defaultValue="Meet me by the water." /> }, { id: "place", title: "The garden", kind: "DRAWING / 02", color: "#e5ecdf", content: <div className="mini-landscape" aria-label="Abstract illustration of a hillside"><i /><b /></div> }, { id: "memory", title: "Sunday, 4pm", kind: "MEMORY / 03", color: "#f1e6df", content: <p>Tea on the table. The door left open. Nothing in particular to do.</p> }]} />;
+  if (id === "focus-lanes") return <div className="lanes-demo"><FocusLanes rows={5} lanes={[{ id: "gather", title: "Gather", color: "#80926a", events: [{ id: "g1", row: 0, label: "A photograph arrives" }, { id: "g2", row: 2, label: "Keep a small detail" }, { id: "g3", row: 4, label: "A voice from home" }] }, { id: "connect", title: "Connect", color: "#c4a16b", events: [{ id: "c1", row: 1, label: "Find a common thread" }, { id: "c2", row: 3, label: "Put the pieces together" }] }, { id: "write", title: "Write", color: "#939bb4", events: [{ id: "w1", row: 2, label: "Begin a first draft" }, { id: "w2", row: 4, label: "Leave room for more" }] }]} onSelect={id => setMessage(`Selected: ${id}`)} /><span className="demo-status" role="status">{message || "Select any event to follow its thread"}</span></div>;
+  return <div className="tabs-demo"><ContinuousTabs items={tabs} value={value} onValueChange={setValue} label="Collection type" /><div className="selection-line"><span className="tiny-dot" />{value === "notes" ? "Words worth keeping." : value === "images" ? "Places you remember." : "Stories in a familiar voice."}</div></div>;
+}
+function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) {
+  const [status, setStatus] = useState("");
+  useEffect(() => { if (status) { const timer = setTimeout(() => setStatus(""), 2200); return () => clearTimeout(timer); } }, [status]);
+  return <button className="quiet-button" onClick={async () => { try { await navigator.clipboard.writeText(text); setStatus("Copied"); } catch { setStatus("Select text to copy"); } }} aria-label={label}>{status || label}</button>;
+}
+function Detail({ item, close }: { item: typeof catalog[number]; close: () => void }) {
+  const [tab, setTab] = useState("preview"), [file, setFile] = useState(`${item.id}.tsx`), [code, setCode] = useState(""), [error, setError] = useState("");
+  const command = `npx shadcn@latest add ${raw}${item.id}.json`;
+  useEffect(() => { const controller = new AbortController(); setCode(""); setError(""); fetch(`./source/${file}`, { signal: controller.signal }).then(r => { if (!r.ok) throw Error("Source unavailable. Open the repository to read it."); return r.text(); }).then(setCode).catch(e => { if (e.name !== "AbortError") setError(e.message); }); return () => controller.abort(); }, [file]);
+  return <section className="detail" aria-labelledby="detail-heading"><button className="back-link" onClick={close}>← All components</button><div className="detail-title"><div><p className="eyebrow">{item.category} / {item.number}</p><h1 id="detail-heading">{item.name}</h1></div><span className="tag">{item.tag}</span></div><p className="detail-desc">{item.description}</p>
+    <div className="detail-switch"><button className={tab === "preview" ? "active" : ""} onClick={() => setTab("preview")}>Preview</button><button className={tab === "code" ? "active" : ""} onClick={() => setTab("code")}>Source code</button><span>React · TypeScript · CSS</span></div>
+    <div className="detail-stage" hidden={tab !== "preview"}><Example id={item.id} /></div>
+    <div className="code-view" hidden={tab !== "code"}><div className="code-tools"><select aria-label="Source file" value={file} onChange={e => setFile(e.target.value)}><option>{item.id}.tsx</option><option>use-continuity.ts</option><option>roc.css</option></select><CopyButton text={code} label="Copy source" /></div><pre>{error || code || "Loading source…"}</pre></div>
+    <div className="detail-notes"><div><p className="eyebrow">THE CONTINUITY CONTRACT</p><p>{item.rule}</p></div><div><p className="eyebrow">SCOPE</p><p>{item.limit}</p></div></div>
+    <h2>Make it yours</h2><p className="muted">Add the source to a project configured for shadcn, or copy the three files into one directory. No animation package required.</p><div className="command"><code>{command}</code><CopyButton text={command} label="Copy command" /></div><p className="muted">Usage</p><pre className="usage">{item.usage}</pre><p className="api"><strong>Props</strong> {item.props}</p><a className="case-link" href={`${skill}/blob/main/${item.source}`} target="_blank" rel="noreferrer">Read the design case ↗</a>
+  </section>;
+}
+export function App() {
+  const [category, setCategory] = useState("All components"), [query, setQuery] = useState("");
+  const [selected, setSelected] = useState(() => location.hash.slice(1));
+  useEffect(() => { const sync = () => { setSelected(location.hash.slice(1)); window.scrollTo(0, 0); }; window.addEventListener("hashchange", sync); return () => window.removeEventListener("hashchange", sync); }, []);
+  useEffect(() => { const search = (event: KeyboardEvent) => { if (event.key === "/" && !(event.target instanceof HTMLElement && event.target.closest("input,textarea,[contenteditable]"))) { const input = document.querySelector<HTMLInputElement>('input[aria-label="Search components"]'); if (input) { event.preventDefault(); input.focus(); } } }; window.addEventListener("keydown", search); return () => window.removeEventListener("keydown", search); }, []);
+  const item = catalog.find(c => c.id === selected);
+  const visible = catalog.filter(c => (category === "All components" || c.category === category) && `${c.name} ${c.tag} ${c.description}`.toLowerCase().includes(query.toLowerCase()));
+  const choose = (value: string) => { setCategory(value); location.hash = ""; };
+  return <><header className="topbar"><a className="brand" href="#" aria-label="ROC home"><span className="brand-mark"><i /><i /><i /></span><b>roc</b><span className="brand-caption">objects, in continuity.</span></a><nav><a href={skill} target="_blank" rel="noreferrer">The skill ↗</a><a href={repo} target="_blank" rel="noreferrer">GitHub ↗</a><span className="version">v0.1</span></nav></header>
+    <div className="page-layout"><aside className="sidebar"><div><p className="eyebrow">DESIGN SPACE</p>{["All components", "Surfaces", "Collections", "Navigation"].map((name, i) => <button key={name} className={!item && category === name ? "selected" : ""} onClick={() => choose(name)}><span>{name}</span><small>{i === 0 ? "05" : i === 1 ? "01" : "02"}</small></button>)}</div><div className="side-principles"><p className="eyebrow">THE THREAD THROUGH IT ALL</p><p>Same object.<br />New arrangement.</p><a href={`${skill}#readme`} target="_blank" rel="noreferrer">Explore the principles ↗</a></div><div className="sidebar-bottom"><span className="tiny-dot" />Open source. Yours to shape.</div></aside>
+    <main>{item ? <Detail key={item.id} item={item} close={() => { location.hash = ""; }} /> : <><section className="intro"><p className="eyebrow"><span className="tiny-dot" /> RESPONSIVE OBJECT CONTINUITY</p><h1>Things move.<br /><em>They stay themselves.</em></h1><div className="intro-bottom"><p>A small collection of interfaces that keep their place.<br />Explore the motion. Take the source. Make it yours.</p><a className="intro-link" href={`${skill}/blob/main/SKILL.md`} target="_blank" rel="noreferrer">Built on the ROC skill <span>↗</span></a></div></section>
+      <div className="catalog-bar"><div><h2>{category}</h2><span>{String(visible.length).padStart(2, "0")}</span></div><label className="search"><span aria-hidden="true">⌕</span><input aria-label="Search components" value={query} onChange={e => setQuery(e.target.value)} placeholder="Find a component…" /><kbd>/</kbd></label></div>
+      <section className="component-grid" aria-label="Component gallery">{visible.map(c => <article className={`catalog-card card-${c.id}`} key={c.id}><div className="preview"><div className="preview-meta"><span>{c.number}</span><span>INTERACTIVE ↗</span></div><Example id={c.id} /></div><div className="component-info"><div><a href={`#${c.id}`}>{c.name} <span>↗</span></a><span className="tag">{c.tag}</span></div><p>{c.description}</p><a className="view-source" href={`#${c.id}`}>Explore component <span>→</span></a></div></article>)}</section>
+      {!visible.length && <div className="empty">No matching components. <button onClick={() => { setQuery(""); setCategory("All components"); }}>Clear filters</button></div>}
+      <section className="manifesto"><span className="eyebrow">A SMALL RULE, A DIFFERENT FEEL</span><h2>An interface should remember<br />what you were looking at.</h2><p>Retained objects. Coherent movement. Context that stays within reach.<br />Each component starts with a continuity contract, not an effect.</p><a href={skill} target="_blank" rel="noreferrer">Read the ROC skill ↗</a></section></>}
+      <footer><span>ROC / Responsive Object Continuity</span><span>Source available · MIT License</span></footer></main>
+    </div></>;
+}

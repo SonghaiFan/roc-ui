@@ -1,0 +1,142 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "roc",
+  "homepage": "https://github.com/SonghaiFan/roc-ui",
+  "items": [
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "expandable-card",
+      "type": "registry:component",
+      "title": "Expandable Card",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/expandable-card.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/expandable-card.tsx"
+        },
+        {
+          "path": "registry/roc/use-continuity.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-continuity.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "folder-fan",
+      "type": "registry:component",
+      "title": "Folder Fan",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/folder-fan.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/folder-fan.tsx"
+        },
+        {
+          "path": "registry/roc/use-continuity.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-continuity.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "source-stack",
+      "type": "registry:component",
+      "title": "Source Stack",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/source-stack.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/source-stack.tsx"
+        },
+        {
+          "path": "registry/roc/use-continuity.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-continuity.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "focus-lanes",
+      "type": "registry:component",
+      "title": "Focus Lanes",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/focus-lanes.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/focus-lanes.tsx"
+        },
+        {
+          "path": "registry/roc/use-continuity.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-continuity.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "continuous-tabs",
+      "type": "registry:component",
+      "title": "Continuous Tabs",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/continuous-tabs.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/continuous-tabs.tsx"
+        },
+        {
+          "path": "registry/roc/use-continuity.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-continuity.ts"
+        },
+        {
+          "path": "registry/roc/roc.css",
+          "type": "registry:file",
+          "target": "~/components/roc/roc.css"
+        }
+      ]
+    }
+  ]
+}
