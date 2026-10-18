@@ -34,7 +34,7 @@ function SelectTrigger({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-71556df3b421 roc-s-32c92bb1fde4 roc-s-074569488cca roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-1267095cdeb7 roc-s-8fca9236d191 roc-s-0f9e6672913a roc-s-b5edc3ea7c91 roc-s-c74ab393b96d roc-s-963f6168b7d6 roc-s-7de07d413c13 roc-s-4a85c59e17d7 roc-s-b30fc56058b6 roc-s-b906a32b31ee roc-s-365a4654f7b1 roc-s-392a26f4c1b0 roc-s-db567af109b7 roc-s-4600b77303d6 roc-s-1fac1d7d1df3 roc-s-5491fd0b4dc5 roc-s-540fbd6aa889 roc-s-4519a2e9495a roc-s-bb554e6b177f roc-s-c2f0a5ec4d37 roc-s-3fa59d92df97 roc-s-ea3977c6d87c roc-s-1c33b99a35b2 roc-s-9daa2369a41b roc-s-2d1843c40e8c roc-s-c88f65aa011e roc-s-bcae9d37090c roc-s-040e748a3fa0 roc-s-eb5ef2dbc2d4 roc-s-8637dfd54fbb",
+          "roc-u-flex roc-u-w-fit roc-u-items-center roc-u-justify-between roc-u-gap-2 roc-u-rounded-md roc-u-border roc-u-border-input roc-u-bg-transparent roc-u-px-3 roc-u-py-2 roc-u-text-sm roc-u-whitespace-nowrap roc-u-shadow-xs roc-u-transition-[color,box-shadow] roc-u-outline-none roc-u-focus-visible:border-ring roc-u-focus-visible:ring-[3px] roc-u-focus-visible:ring-ring/50 roc-u-disabled:cursor-not-allowed roc-u-disabled:opacity-50 roc-u-aria-invalid:border-destructive roc-u-aria-invalid:ring-destructive/20 roc-u-data-[placeholder]:text-muted-foreground roc-u-data-[size=default]:h-9 roc-u-data-[size=sm]:h-8 roc-u-*:data-[slot=select-value]:line-clamp-1 roc-u-*:data-[slot=select-value]:flex roc-u-*:data-[slot=select-value]:items-center roc-u-*:data-[slot=select-value]:gap-2 roc-u-dark:bg-input/30 roc-u-dark:hover:bg-input/50 roc-u-dark:aria-invalid:ring-destructive/40 roc-u-[&_svg]:pointer-events-none roc-u-[&_svg]:shrink-0 roc-u-[&_svg:not([class*='size-'])]:size-4 roc-u-[&_svg:not([class*='text-'])]:text-muted-foreground",
           className,
         ),
       )}
@@ -43,7 +43,7 @@ function SelectTrigger({
       {children}
       <SelectPrimitive.Icon asChild>
         <ChevronDownIcon
-          className={cn("roc-shadcn", "roc-s-100c22d5776b roc-s-0b5a4d1257ab")}
+          className={cn("roc-shadcn", "roc-u-size-4 roc-u-opacity-50")}
         />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
@@ -63,9 +63,9 @@ function SelectContent({
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-d2d9e1f13413 roc-s-3eef1ce97dba roc-s-c94cde061b6d roc-s-e9ab1547c94d roc-s-f7dba7cc75ac roc-s-3b82279f859f roc-s-2368e909f3a5 roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-e593c38256e0 roc-s-5bd2afe89f0b roc-s-94ea94fde25f roc-s-89f6aab7a3f8 roc-s-3550f48d66b9 roc-s-7720fe004f5c roc-s-66b560f839de roc-s-0cb4489c3645 roc-s-bb5869ef903b roc-s-f4cf4be63707 roc-s-bae1e782f277 roc-s-45464a92c1f6 roc-s-9ca352480f25",
+            "roc-u-relative roc-u-z-50 roc-u-max-h-(--radix-select-content-available-height) roc-u-min-w-[8rem] roc-u-origin-(--radix-select-content-transform-origin) roc-u-overflow-x-hidden roc-u-overflow-y-auto roc-u-rounded-md roc-u-border roc-u-bg-popover roc-u-text-popover-foreground roc-u-shadow-md roc-u-data-[side=bottom]:slide-in-from-top-2 roc-u-data-[side=left]:slide-in-from-right-2 roc-u-data-[side=right]:slide-in-from-left-2 roc-u-data-[side=top]:slide-in-from-bottom-2 roc-u-data-[state=closed]:animate-out roc-u-data-[state=closed]:fade-out-0 roc-u-data-[state=closed]:zoom-out-95 roc-u-data-[state=open]:animate-in roc-u-data-[state=open]:fade-in-0 roc-u-data-[state=open]:zoom-in-95",
             position === "popper" &&
-              "roc-s-b2b0fc159cf8 roc-s-4489b22da92f roc-s-ed40fce0f2eb roc-s-462270e7521d",
+              "roc-u-data-[side=bottom]:translate-y-1 roc-u-data-[side=left]:-translate-x-1 roc-u-data-[side=right]:translate-x-1 roc-u-data-[side=top]:-translate-y-1",
             className,
           ),
         )}
@@ -78,9 +78,9 @@ function SelectContent({
           className={cn(
             "roc-shadcn",
             cn(
-              "roc-s-1dee6e3ec67d",
+              "roc-u-p-1",
               position === "popper" &&
-                "roc-s-58d0413dd93c roc-s-09365d2a0df7 roc-s-7293b977658f",
+                "roc-u-w-full roc-u-min-w-[var(--radix-select-trigger-width)] roc-u-scroll-my-1",
             ),
           )}
         >
@@ -101,7 +101,7 @@ function SelectLabel({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-e7e01cc7f4df roc-s-a8c1dfb1d4ef roc-s-3992de70b033 roc-s-35f35c41d134",
+          "roc-u-px-2 roc-u-py-1.5 roc-u-text-xs roc-u-text-muted-foreground",
           className,
         ),
       )}
@@ -120,7 +120,7 @@ function SelectItem({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-d343f41ba73e roc-s-71556df3b421 roc-s-074569488cca roc-s-02e603944040 roc-s-a8c1dfb1d4ef roc-s-72686d6d04db roc-s-f5d8e661d857 roc-s-c74ab393b96d roc-s-59edd3d33673 roc-s-78905c9e865c roc-s-a8c1861c5d03 roc-s-a85c4c5d7465 roc-s-397f5ba426a0 roc-s-9beb654fcb0d roc-s-bcae9d37090c roc-s-040e748a3fa0 roc-s-eb5ef2dbc2d4 roc-s-8637dfd54fbb roc-s-15764d323d31 roc-s-0862cbb62f8d roc-s-87f6eccf0eeb",
+          "roc-u-relative roc-u-flex roc-u-w-full roc-u-cursor-default roc-u-items-center roc-u-gap-2 roc-u-rounded-sm roc-u-py-1.5 roc-u-pr-8 roc-u-pl-2 roc-u-text-sm roc-u-outline-hidden roc-u-select-none roc-u-focus:bg-accent roc-u-focus:text-accent-foreground roc-u-data-[disabled]:pointer-events-none roc-u-data-[disabled]:opacity-50 roc-u-[&_svg]:pointer-events-none roc-u-[&_svg]:shrink-0 roc-u-[&_svg:not([class*='size-'])]:size-4 roc-u-[&_svg:not([class*='text-'])]:text-muted-foreground roc-u-*:[span]:last:flex roc-u-*:[span]:last:items-center roc-u-*:[span]:last:gap-2",
           className,
         ),
       )}
@@ -130,11 +130,11 @@ function SelectItem({
         data-slot="select-item-indicator"
         className={cn(
           "roc-shadcn",
-          "roc-s-747355bdc2a2 roc-s-92fbe66c807f roc-s-222f930b8752 roc-s-61c000c8a98a roc-s-71556df3b421 roc-s-a503dd374cca",
+          "roc-u-absolute roc-u-right-2 roc-u-flex roc-u-size-3.5 roc-u-items-center roc-u-justify-center",
         )}
       >
         <SelectPrimitive.ItemIndicator>
-          <CheckIcon className={cn("roc-shadcn", "roc-s-100c22d5776b")} />
+          <CheckIcon className={cn("roc-shadcn", "roc-u-size-4")} />
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
@@ -151,7 +151,7 @@ function SelectSeparator({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-33228ff7d583 roc-s-abba77319850 roc-s-d8747231f142 roc-s-ae2c4b060bb9 roc-s-a943bea85d66",
+          "roc-u-pointer-events-none roc-u--mx-1 roc-u-my-1 roc-u-h-px roc-u-bg-border",
           className,
         ),
       )}
@@ -169,13 +169,13 @@ function SelectScrollUpButton({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-d343f41ba73e roc-s-71556df3b421 roc-s-a503dd374cca roc-s-1fcf28756bb1",
+          "roc-u-flex roc-u-cursor-default roc-u-items-center roc-u-justify-center roc-u-py-1",
           className,
         ),
       )}
       {...props}
     >
-      <ChevronUpIcon className={cn("roc-shadcn", "roc-s-100c22d5776b")} />
+      <ChevronUpIcon className={cn("roc-shadcn", "roc-u-size-4")} />
     </SelectPrimitive.ScrollUpButton>
   );
 }
@@ -189,13 +189,13 @@ function SelectScrollDownButton({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-d343f41ba73e roc-s-71556df3b421 roc-s-a503dd374cca roc-s-1fcf28756bb1",
+          "roc-u-flex roc-u-cursor-default roc-u-items-center roc-u-justify-center roc-u-py-1",
           className,
         ),
       )}
       {...props}
     >
-      <ChevronDownIcon className={cn("roc-shadcn", "roc-s-100c22d5776b")} />
+      <ChevronDownIcon className={cn("roc-shadcn", "roc-u-size-4")} />
     </SelectPrimitive.ScrollDownButton>
   );
 }

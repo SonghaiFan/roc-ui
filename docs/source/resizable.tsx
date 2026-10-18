@@ -13,7 +13,7 @@ function ResizablePanelGroup({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-57c930dc1c31 roc-s-58d0413dd93c roc-s-5c8a9bd15911",
+          "roc-u-flex roc-u-h-full roc-u-w-full roc-u-aria-[orientation=vertical]:flex-col",
           className,
         ),
       )}
@@ -37,7 +37,7 @@ function ResizableHandle({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-86a02c9ddb39 roc-s-71556df3b421 roc-s-a503dd374cca roc-s-a943bea85d66 roc-s-b1cf80175a45 roc-s-f359fcbfc047 roc-s-8fa21a9ac06d roc-s-b9aa6b65b8c6 roc-s-06590d554139 roc-s-39be5a15b766 roc-s-db549d38ff19 roc-s-788fbf3a9c5d roc-s-61740ab1bd1f roc-s-4fd955c4ef55 roc-s-986e32cea4c3 roc-s-c5f832639ef2 roc-s-fb2d65d4342a roc-s-08f085f6a3cd roc-s-239cf1ba5c2f roc-s-09c8e031a498 roc-s-07c408b0b9e0",
+          "roc-u-relative roc-u-flex roc-u-w-px roc-u-items-center roc-u-justify-center roc-u-bg-border roc-u-after:absolute roc-u-after:inset-y-0 roc-u-after:left-1/2 roc-u-after:w-1 roc-u-after:-translate-x-1/2 roc-u-focus-visible:ring-1 roc-u-focus-visible:ring-ring roc-u-focus-visible:ring-offset-1 roc-u-focus-visible:outline-hidden roc-u-aria-[orientation=horizontal]:h-px roc-u-aria-[orientation=horizontal]:w-full roc-u-aria-[orientation=horizontal]:after:left-0 roc-u-aria-[orientation=horizontal]:after:h-1 roc-u-aria-[orientation=horizontal]:after:w-full roc-u-aria-[orientation=horizontal]:after:translate-x-0 roc-u-aria-[orientation=horizontal]:after:-translate-y-1/2 roc-u-[&[aria-orientation=horizontal]>div]:rotate-90",
           className,
         ),
       )}
@@ -47,11 +47,11 @@ function ResizableHandle({
         <div
           className={cn(
             "roc-shadcn",
-            "roc-s-418e44ad4f9e roc-s-222f930b8752 roc-s-099be97e1fa4 roc-s-eb8f90e771df roc-s-71556df3b421 roc-s-a503dd374cca roc-s-30c08d7acd8f roc-s-4f1a55de40bc roc-s-a943bea85d66",
+            "roc-u-z-10 roc-u-flex roc-u-h-4 roc-u-w-3 roc-u-items-center roc-u-justify-center roc-u-rounded-xs roc-u-border roc-u-bg-border",
           )}
         >
           <GripVerticalIcon
-            className={cn("roc-shadcn", "roc-s-fe04aff4af4e")}
+            className={cn("roc-shadcn", "roc-u-size-2.5")}
           />
         </div>
       )}

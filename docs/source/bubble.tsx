@@ -11,7 +11,7 @@ function BubbleGroup({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-184ddc11e5f9 roc-s-302c0d124a94 roc-s-074569488cca",
+          "roc-u-flex roc-u-min-w-0 roc-u-flex-col roc-u-gap-2",
           className,
         ),
       )}
@@ -20,21 +20,21 @@ function BubbleGroup({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 const bubbleVariants = cva(
-  "roc-s-a7a3eeeabdda roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-d5cb992d8706 roc-s-184ddc11e5f9 roc-s-302c0d124a94 roc-s-19e97f3f40e6 roc-s-9a446d4f4132 roc-s-e1409d26247b roc-s-d00025bf56f5",
+  "roc-u-group/bubble roc-u-relative roc-u-flex roc-u-w-fit roc-u-max-w-[80%] roc-u-min-w-0 roc-u-flex-col roc-u-gap-1 roc-u-group-data-[align=end]/message:self-end roc-u-data-[align=end]:self-end roc-u-data-[variant=ghost]:max-w-full",
   {
     variants: {
       variant: {
-        default: "roc-s-6ccf7ef27fd2 roc-s-45ea72e24647 roc-s-644eaf83ae45",
-        secondary: "roc-s-248f3e6ac6b3 roc-s-65168d4b0c7d roc-s-9ec2985f8c8a",
-        muted: "roc-s-eaf5f9d103a8 roc-s-43df09252070",
+        default: "roc-u-*:data-[slot=bubble-content]:bg-primary roc-u-*:data-[slot=bubble-content]:text-primary-foreground roc-u-[&>[data-slot=bubble-content]:is(button,a):hover]:bg-primary/80",
+        secondary: "roc-u-*:data-[slot=bubble-content]:bg-secondary roc-u-*:data-[slot=bubble-content]:text-secondary-foreground roc-u-[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]",
+        muted: "roc-u-*:data-[slot=bubble-content]:bg-muted roc-u-[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--muted),var(--foreground)_5%)]",
         tinted:
-          "roc-s-4c07fb5f3c7d roc-s-de918e7391b5 roc-s-fb4c9e552f15 roc-s-84202996f0b4 roc-s-f92c9ddc7a41",
+          "roc-u-*:data-[slot=bubble-content]:bg-[oklch(from_var(--primary)_0.93_calc(c*0.4)_h)] roc-u-*:data-[slot=bubble-content]:text-foreground roc-u-dark:*:data-[slot=bubble-content]:bg-[oklch(from_var(--primary)_0.3_calc(c*0.4)_h)] roc-u-[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[oklch(from_var(--primary)_0.88_calc(c*0.5)_h)] roc-u-dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[oklch(from_var(--primary)_0.35_calc(c*0.5)_h)]",
         outline:
-          "roc-s-8e61b6e66d0e roc-s-f47926549252 roc-s-11849f73a0fb roc-s-8b797798e4a6 roc-s-b3a9f50ccf9e",
+          "roc-u-*:data-[slot=bubble-content]:border-border roc-u-*:data-[slot=bubble-content]:bg-background roc-u-[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted roc-u-[&>[data-slot=bubble-content]:is(button,a):hover]:text-foreground roc-u-dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-input/30",
         ghost:
-          "roc-s-be97b11af432 roc-s-31da9e6e796d roc-s-be34253f63e5 roc-s-3578bd946493 roc-s-11849f73a0fb roc-s-8b797798e4a6 roc-s-ebde28b1fc90",
+          "roc-u-border-none roc-u-*:data-[slot=bubble-content]:rounded-none roc-u-*:data-[slot=bubble-content]:bg-transparent roc-u-*:data-[slot=bubble-content]:p-0 roc-u-[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted roc-u-[&>[data-slot=bubble-content]:is(button,a):hover]:text-foreground roc-u-dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted/50",
         destructive:
-          "roc-s-4578d8a15183 roc-s-ff5ec7a609e1 roc-s-a0917b627f8b roc-s-8ffbaa305805 roc-s-9df25d800da4",
+          "roc-u-*:data-[slot=bubble-content]:bg-destructive/10 roc-u-*:data-[slot=bubble-content]:text-destructive roc-u-dark:*:data-[slot=bubble-content]:bg-destructive/20 roc-u-[&>[data-slot=bubble-content]:is(button,a):hover]:bg-destructive/20 roc-u-dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-destructive/30",
       },
     },
     defaultVariants: {
@@ -75,7 +75,7 @@ function BubbleContent({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-8cfb5a42ef9f roc-s-81b198a2db84 roc-s-184ddc11e5f9 roc-s-d5111d0e9f48 roc-s-6ad537f2bbaa roc-s-4f1a55de40bc roc-s-e9c0d2f3599e roc-s-0f9e6672913a roc-s-b5edc3ea7c91 roc-s-c74ab393b96d roc-s-059428494356 roc-s-1eb753eb16e8 roc-s-bceac5f707d0 roc-s-146f528513a0 roc-s-ac89775d8d02 roc-s-2639a4c2e4eb roc-s-e00381a252a3 roc-s-dd042d1469da roc-s-0ad0dedeee98",
+          "roc-u-w-fit roc-u-max-w-full roc-u-min-w-0 roc-u-overflow-hidden roc-u-rounded-xl roc-u-border roc-u-border-transparent roc-u-px-3 roc-u-py-2 roc-u-text-sm roc-u-leading-relaxed roc-u-wrap-break-word roc-u-group-data-[align=end]/bubble:self-end roc-u-[button]:text-left roc-u-[button,a]:transition-colors roc-u-[button,a]:outline-none roc-u-[button,a]:focus-visible:border-ring roc-u-[button,a]:focus-visible:ring-3 roc-u-[button,a]:focus-visible:ring-ring/50",
           className,
         ),
       )}
@@ -84,16 +84,16 @@ function BubbleContent({
   );
 }
 const bubbleReactionsVariants = cva(
-  "roc-s-747355bdc2a2 roc-s-418e44ad4f9e roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-27ead27a81df roc-s-71556df3b421 roc-s-a503dd374cca roc-s-19e97f3f40e6 roc-s-b005d61d0953 roc-s-87ecb59f2d2d roc-s-1da2e8f173c5 roc-s-be24efcccdb9 roc-s-c74ab393b96d roc-s-ea7fd2c2745b roc-s-4aec084365be roc-s-393835207416",
+  "roc-u-absolute roc-u-z-10 roc-u-flex roc-u-w-fit roc-u-shrink-0 roc-u-items-center roc-u-justify-center roc-u-gap-1 roc-u-rounded-full roc-u-bg-muted roc-u-px-1.5 roc-u-py-0.5 roc-u-text-sm roc-u-ring-3 roc-u-ring-card roc-u-has-[button]:p-0",
   {
     variants: {
       side: {
-        top: "roc-s-98599e4ee250 roc-s-3d1357349cb1",
-        bottom: "roc-s-30150dd033ab roc-s-c8db802467c9",
+        top: "roc-u-top-0 roc-u--translate-y-3/4",
+        bottom: "roc-u-bottom-0 roc-u-translate-y-3/4",
       },
       align: {
-        start: "roc-s-ea31f8b3a958",
-        end: "roc-s-8b66d98296a5",
+        start: "roc-u-left-3",
+        end: "roc-u-right-3",
       },
     },
     defaultVariants: {

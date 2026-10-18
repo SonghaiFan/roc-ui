@@ -7,14 +7,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 import { Button } from "./button";
 const codeBlockVariants = cva(
-  "roc-s-75bf3cc6bdff roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-184ddc11e5f9 roc-s-302c0d124a94 roc-s-d5111d0e9f48 roc-s-49abc543ea42 roc-s-c74ab393b96d roc-s-43fdcb63de9a roc-s-d37ae36da45c roc-s-28d990dcb89a",
+  "roc-u-group/code-block roc-u-relative roc-u-flex roc-u-w-full roc-u-min-w-0 roc-u-flex-col roc-u-overflow-hidden roc-u-rounded-lg roc-u-text-sm roc-u-has-[>[data-slot=code-block-content]:focus-visible]:ring-3 roc-u-has-[>[data-slot=code-block-content]:focus-visible]:ring-ring/50 roc-u-data-[size=sm]:text-xs",
   {
     variants: {
       variant: {
         default:
-          "roc-s-4f1a55de40bc roc-s-1267095cdeb7 roc-s-957a109f887f roc-s-2235a6296a5f roc-s-9daa2369a41b",
+          "roc-u-border roc-u-border-input roc-u-text-foreground roc-u-has-[>[data-slot=code-block-content]:focus-visible]:border-ring roc-u-dark:bg-input/30",
         destructive:
-          "roc-s-4f1a55de40bc roc-s-29b9aa7a43fb roc-s-887b9502d5c7 roc-s-60564e695298",
+          "roc-u-border roc-u-border-destructive/30 roc-u-text-destructive roc-u-dark:border-destructive/40",
       },
     },
     defaultVariants: {
@@ -51,7 +51,7 @@ function CodeBlockHeader({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-184ddc11e5f9 roc-s-27ead27a81df roc-s-71556df3b421 roc-s-074569488cca roc-s-0f9e6672913a roc-s-0a702d97ed7d roc-s-35f35c41d134 roc-s-da8324d164e6 roc-s-7a4a1b22ceb7 roc-s-8cef8cf299ec roc-s-2cacba11fbb5",
+          "roc-u-flex roc-u-min-w-0 roc-u-shrink-0 roc-u-items-center roc-u-gap-2 roc-u-px-3 roc-u-pt-3 roc-u-text-muted-foreground roc-u-group-data-[size=sm]/code-block:px-2.5 roc-u-group-data-[size=sm]/code-block:pt-2.5 roc-u-group-data-[variant=destructive]/code-block:text-destructive roc-u-*:has-[>[data-slot=code-block-title]]:min-w-0",
           className,
         ),
       )}
@@ -66,7 +66,7 @@ function CodeBlockTitle({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-184ddc11e5f9 roc-s-5a3a4ee420c2 roc-s-b902257d46c0 roc-s-c74ab393b96d roc-s-daaac3fbf55e roc-s-957a109f887f roc-s-f469c940b6eb roc-s-8cef8cf299ec roc-s-bcae9d37090c roc-s-09e4611fdeed roc-s-c007d4f16762 roc-s-e1a042407eac roc-s-2a4704b342e2",
+          "roc-u-min-w-0 roc-u-truncate roc-u-font-sans roc-u-text-sm roc-u-font-medium roc-u-text-foreground roc-u-group-data-[size=sm]/code-block:text-xs roc-u-group-data-[variant=destructive]/code-block:text-destructive roc-u-[&_svg]:pointer-events-none roc-u-[&_svg]:inline-block roc-u-[&_svg]:align-middle roc-u-[&_svg:not([class*='size-'])]:size-3.5 roc-u-*:[svg]:me-1.5",
           className,
         ),
       )}
@@ -84,7 +84,7 @@ function CodeBlockActions({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-4dfe6b3bc5be roc-s-5cf4ab3b6fa0 roc-s-8cc46fa87f41 roc-s-222f930b8752 roc-s-27ead27a81df roc-s-71556df3b421 roc-s-19e97f3f40e6 roc-s-c78e60a4c589 roc-s-567578629cc1 roc-s-12a28c222bfc roc-s-b4168d1f4661 roc-s-9a33638f68c2 roc-s-c1f72297d61f roc-s-1922588328c8 roc-s-6a5bccc56a2b roc-s-ab7133c1013c roc-s-a154dcd5b70d roc-s-de134ad67cc8 roc-s-34bb36260ddb roc-s-b88d58fe56f7 roc-s-0611cded818a roc-s-f7b2103e2d2d",
+          "roc-u--my-1 roc-u-ms-auto roc-u--me-1.5 roc-u-flex roc-u-shrink-0 roc-u-items-center roc-u-gap-1 roc-u-[[data-slot=code-block]>&]:absolute roc-u-[[data-slot=code-block]>&]:end-2 roc-u-[[data-slot=code-block]>&]:top-2 roc-u-[[data-slot=code-block]>&]:z-10 roc-u-[[data-slot=code-block]>&]:m-0 roc-u-[[data-slot=code-block]>&]:opacity-0 roc-u-[[data-slot=code-block]>&]:transition-opacity roc-u-[[data-slot=code-block]>&]:group-focus-within/code-block:opacity-100 roc-u-[[data-slot=code-block]>&]:group-hover/code-block:opacity-100 roc-u-group-data-[size=sm]/code-block:[[data-slot=code-block]>&]:end-1.5 roc-u-group-data-[size=sm]/code-block:[[data-slot=code-block]>&]:top-1.5 roc-u-[[data-slot=code-block]>&]:pointer-coarse:opacity-100 roc-u-[[data-slot=code-block]>&]:*:[button]:bg-background roc-u-[[data-slot=code-block]>&]:*:[button]:ring-1 roc-u-[[data-slot=code-block]>&]:*:[button]:ring-foreground/10",
           className,
         ),
       )}
@@ -137,7 +137,7 @@ function CodeBlockCopyButton({
       </Button>
       <span
         aria-live="polite"
-        className={cn("roc-shadcn", "roc-s-32fb090591d9")}
+        className={cn("roc-shadcn", "roc-u-sr-only")}
       >
         {copyError
           ? "Copy unavailable. Select and copy the code manually."
@@ -172,7 +172,7 @@ function CodeBlockContent({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-410da8dfa8ac roc-s-184ddc11e5f9 roc-s-eb3ca07c6bb1 roc-s-51bebba470f2 roc-s-1a26a0d28420 roc-s-0f9e6672913a roc-s-d3cea061f2f3 roc-s-e9347b78185f roc-s-02ded9244507 roc-s-059428494356 roc-s-b30fc56058b6 roc-s-61ee20d5e64f roc-s-32d7924585f7 roc-s-da8324d164e6 roc-s-dbe9a377d646 roc-s-d6c09e659619 roc-s-54c9d5074e55 roc-s-106e8278d276 roc-s-aa0b2903b9ed",
+          "roc-u-min-h-0 roc-u-min-w-0 roc-u-scroll-fade-x roc-u-scrollbar-thin roc-u-overflow-auto roc-u-px-3 roc-u-py-3 roc-u-text-start roc-u-font-mono roc-u-leading-relaxed roc-u-outline-none roc-u-group-has-data-[slot=code-block-footer]/code-block:pb-2 roc-u-group-has-data-[slot=code-block-header]/code-block:pt-2 roc-u-group-data-[size=sm]/code-block:px-2.5 roc-u-group-data-[size=sm]/code-block:py-2.5 roc-u-group-data-[size=sm]/code-block:group-has-data-[slot=code-block-header]/code-block:pt-1.5 roc-u-data-wrap:scroll-fade-y roc-u-data-wrap:wrap-break-word roc-u-data-wrap:whitespace-pre-wrap",
           className,
         ),
       )}
@@ -182,7 +182,7 @@ function CodeBlockContent({
         data-slot="code-block-code"
         className={cn(
           "roc-shadcn",
-          "roc-s-0f2a693e93e2 roc-s-828bd9641689 roc-s-e074b2e4a3c0 roc-s-954af9127360 roc-s-7bf827f36946 roc-s-408407fb2ef6",
+          "roc-u-grid roc-u-min-h-lh roc-u-min-w-max roc-u-content-start roc-u-in-data-numbered:grid-cols-[auto_1fr] roc-u-in-data-wrap:min-w-0",
         )}
       >
         {lineNumbers && typeof children === "string"
@@ -198,14 +198,14 @@ function CodeBlockContent({
   );
 }
 const codeBlockLineVariants = cva(
-  "roc-s-d2d9e1f13413 roc-s-713d77acec86 roc-s-496aca80e4d8 roc-s-828bd9641689 roc-s-0f9e6672913a roc-s-727530c32632 roc-s-da8324d164e6 roc-s-ff361807cd16 roc-s-fd65279fc876 roc-s-6b3251cca252 roc-s-b1cf80175a45 roc-s-8ae89c0efbd5 roc-s-6f609daa5719 roc-s-3e7de9f36386 roc-s-fe5ede87e8b1 roc-s-2383e30dd82d roc-s-5ab65059a701 roc-s-179aff6b7e41 roc-s-ace76a1f7f1a roc-s-be7ec57ebcf5 roc-s-86ce766c1003 roc-s-144f243fc5f6 roc-s-c64c5520c7af",
+  "roc-u-relative roc-u--mx-3 roc-u-block roc-u-min-h-lh roc-u-px-3 roc-u-group-data-[size=sm]/code-block:-mx-2.5 roc-u-group-data-[size=sm]/code-block:px-2.5 roc-u-before:min-w-6 roc-u-before:text-end roc-u-before:text-muted-foreground roc-u-after:absolute roc-u-after:start-1 roc-u-after:top-0 roc-u-after:text-muted-foreground roc-u-after:select-none roc-u-in-data-numbered:col-span-2 roc-u-in-data-numbered:grid roc-u-in-data-numbered:grid-cols-subgrid roc-u-in-data-numbered:gap-x-3 roc-u-in-data-numbered:[counter-increment:line] roc-u-in-data-numbered:before:content-[counter(line)] roc-u-in-data-numbered:before:select-none roc-u-in-data-numbered:supports-[content:counter(line)_/_'']:before:content-[counter(line)_/_'']",
   {
     variants: {
       variant: {
         default: "",
-        added: "roc-s-87ecb59f2d2d roc-s-418748faca5f",
-        removed: "roc-s-556bbcd00fb2 roc-s-8c950c5e6fec roc-s-cab58241d723",
-        highlighted: "roc-s-87ecb59f2d2d",
+        added: "roc-u-bg-muted roc-u-after:content-['+']",
+        removed: "roc-u-bg-destructive/10 roc-u-after:text-destructive roc-u-after:content-['−']",
+        highlighted: "roc-u-bg-muted",
       },
     },
     defaultVariants: {
@@ -237,7 +237,7 @@ function CodeBlockLine({
     >
       <span
         data-slot="code-block-line-content"
-        className={cn("roc-shadcn", "roc-s-184ddc11e5f9")}
+        className={cn("roc-shadcn", "roc-u-min-w-0")}
       >
         {empty ? "\n" : children}
       </span>
@@ -251,7 +251,7 @@ function CodeBlockFooter({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-184ddc11e5f9 roc-s-27ead27a81df roc-s-71556df3b421 roc-s-074569488cca roc-s-0f9e6672913a roc-s-17b03732cf78 roc-s-35f35c41d134 roc-s-da8324d164e6 roc-s-0fc96cca66ac",
+          "roc-u-flex roc-u-min-w-0 roc-u-shrink-0 roc-u-items-center roc-u-gap-2 roc-u-px-3 roc-u-pb-3 roc-u-text-muted-foreground roc-u-group-data-[size=sm]/code-block:px-2.5 roc-u-group-data-[size=sm]/code-block:pb-2.5",
           className,
         ),
       )}

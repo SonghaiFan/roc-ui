@@ -9,7 +9,7 @@ function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
       aria-label="Loading"
       className={cn(
         "roc-shadcn",
-        cn("roc-s-100c22d5776b roc-s-2c14b55d77e6", className),
+        cn("roc-u-size-4 roc-u-animate-spin", className),
       )}
       {...props}
     />

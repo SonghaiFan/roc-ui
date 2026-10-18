@@ -20,7 +20,7 @@ function NavigationMenu({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-973828d22eaf roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-c134b3a295c1 roc-s-7bd5bab6d7f4 roc-s-71556df3b421 roc-s-a503dd374cca",
+          "roc-u-group/navigation-menu roc-u-relative roc-u-flex roc-u-max-w-max roc-u-flex-1 roc-u-items-center roc-u-justify-center",
           className,
         ),
       )}
@@ -41,7 +41,7 @@ function NavigationMenuList({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-ad936fcbed63 roc-s-222f930b8752 roc-s-7bd5bab6d7f4 roc-s-bae566d754a0 roc-s-71556df3b421 roc-s-a503dd374cca roc-s-19e97f3f40e6",
+          "roc-u-group roc-u-flex roc-u-flex-1 roc-u-list-none roc-u-items-center roc-u-justify-center roc-u-gap-1",
           className,
         ),
       )}
@@ -56,13 +56,13 @@ function NavigationMenuItem({
   return (
     <NavigationMenuPrimitive.Item
       data-slot="navigation-menu-item"
-      className={cn("roc-shadcn", cn("roc-s-d2d9e1f13413", className))}
+      className={cn("roc-shadcn", cn("roc-u-relative", className))}
       {...props}
     />
   );
 }
 const navigationMenuTriggerStyle = cva(
-  "roc-s-ad936fcbed63 roc-s-123306850fe1 roc-s-539ae144f076 roc-s-1a3b2d110302 roc-s-71556df3b421 roc-s-a503dd374cca roc-s-3fa8c572949b roc-s-5b272f3c5076 roc-s-9513b3968002 roc-s-b5edc3ea7c91 roc-s-c74ab393b96d roc-s-daaac3fbf55e roc-s-4a85c59e17d7 roc-s-b30fc56058b6 roc-s-37ad15a95595 roc-s-9f1f77b92dcb roc-s-a8c1861c5d03 roc-s-a85c4c5d7465 roc-s-365a4654f7b1 roc-s-392a26f4c1b0 roc-s-1df9125eebaf roc-s-8d3c1014b967 roc-s-4600b77303d6 roc-s-c08b523d742c roc-s-1952cd5b00aa roc-s-6683d6959637 roc-s-4b2c04c28c89",
+  "roc-u-group roc-u-inline-flex roc-u-h-9 roc-u-w-max roc-u-items-center roc-u-justify-center roc-u-rounded-md roc-u-bg-background roc-u-px-4 roc-u-py-2 roc-u-text-sm roc-u-font-medium roc-u-transition-[color,box-shadow] roc-u-outline-none roc-u-hover:bg-accent roc-u-hover:text-accent-foreground roc-u-focus:bg-accent roc-u-focus:text-accent-foreground roc-u-focus-visible:ring-[3px] roc-u-focus-visible:ring-ring/50 roc-u-focus-visible:outline-1 roc-u-disabled:pointer-events-none roc-u-disabled:opacity-50 roc-u-data-[state=open]:bg-accent/50 roc-u-data-[state=open]:text-accent-foreground roc-u-data-[state=open]:hover:bg-accent roc-u-data-[state=open]:focus:bg-accent",
 );
 function NavigationMenuTrigger({
   className,
@@ -74,7 +74,7 @@ function NavigationMenuTrigger({
       data-slot="navigation-menu-trigger"
       className={cn(
         "roc-shadcn",
-        cn(navigationMenuTriggerStyle(), "roc-s-ad936fcbed63", className),
+        cn(navigationMenuTriggerStyle(), "roc-u-group", className),
       )}
       {...props}
     >
@@ -82,7 +82,7 @@ function NavigationMenuTrigger({
       <ChevronDownIcon
         className={cn(
           "roc-shadcn",
-          "roc-s-d2d9e1f13413 roc-s-dada435c833d roc-s-0ffd487f26ca roc-s-5e34f5313859 roc-s-70dd37c11434 roc-s-f07df86364db roc-s-a51b5996d2bb",
+          "roc-u-relative roc-u-top-[1px] roc-u-ml-1 roc-u-size-3 roc-u-transition roc-u-duration-300 roc-u-group-data-[state=open]:rotate-180",
         )}
         aria-hidden="true"
       />
@@ -99,8 +99,8 @@ function NavigationMenuContent({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-98599e4ee250 roc-s-635702706586 roc-s-58d0413dd93c roc-s-b97db4a9f432 roc-s-337853ce1f54 roc-s-728c5d7f3de3 roc-s-5d46523c1c03 roc-s-2b80965601b8 roc-s-c368656c7cea roc-s-38eca4883b01 roc-s-0658d6c18b89 roc-s-386139ab31b5 roc-s-371d804c0267 roc-s-6776c24a9e8d roc-s-2cf968c3a3a4",
-          "roc-s-842853f9122e roc-s-3407916e928d roc-s-07651829db95 roc-s-decf6bb870dc roc-s-70f47c59e1f5 roc-s-232ba64daa76 roc-s-d88c860b5728 roc-s-75cce7e2a885 roc-s-554c034d57b4 roc-s-b5fca8f9f38f roc-s-06df00951969 roc-s-05128f05d839 roc-s-595e06d193f8 roc-s-07b3d1890bd0 roc-s-b78a061cc2f0 roc-s-8ca7c2d5f56b roc-s-9569d612f0b4",
+          "roc-u-top-0 roc-u-left-0 roc-u-w-full roc-u-p-2 roc-u-pr-2.5 roc-u-data-[motion=from-end]:slide-in-from-right-52 roc-u-data-[motion=from-start]:slide-in-from-left-52 roc-u-data-[motion=to-end]:slide-out-to-right-52 roc-u-data-[motion=to-start]:slide-out-to-left-52 roc-u-data-[motion^=from-]:animate-in roc-u-data-[motion^=from-]:fade-in roc-u-data-[motion^=to-]:animate-out roc-u-data-[motion^=to-]:fade-out roc-u-md:absolute roc-u-md:w-auto",
+          "roc-u-group-data-[viewport=false]/navigation-menu:top-full roc-u-group-data-[viewport=false]/navigation-menu:mt-1.5 roc-u-group-data-[viewport=false]/navigation-menu:overflow-hidden roc-u-group-data-[viewport=false]/navigation-menu:rounded-md roc-u-group-data-[viewport=false]/navigation-menu:border roc-u-group-data-[viewport=false]/navigation-menu:bg-popover roc-u-group-data-[viewport=false]/navigation-menu:text-popover-foreground roc-u-group-data-[viewport=false]/navigation-menu:shadow roc-u-group-data-[viewport=false]/navigation-menu:duration-200 roc-u-**:data-[slot=navigation-menu-link]:focus:ring-0 roc-u-**:data-[slot=navigation-menu-link]:focus:outline-none roc-u-group-data-[viewport=false]/navigation-menu:data-[state=closed]:animate-out roc-u-group-data-[viewport=false]/navigation-menu:data-[state=closed]:fade-out-0 roc-u-group-data-[viewport=false]/navigation-menu:data-[state=closed]:zoom-out-95 roc-u-group-data-[viewport=false]/navigation-menu:data-[state=open]:animate-in roc-u-group-data-[viewport=false]/navigation-menu:data-[state=open]:fade-in-0 roc-u-group-data-[viewport=false]/navigation-menu:data-[state=open]:zoom-in-95",
           className,
         ),
       )}
@@ -117,7 +117,7 @@ function NavigationMenuViewport({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-747355bdc2a2 roc-s-b726f5a347ca roc-s-635702706586 roc-s-014aadadffad roc-s-3eef1ce97dba roc-s-222f930b8752 roc-s-a503dd374cca",
+          "roc-u-absolute roc-u-top-full roc-u-left-0 roc-u-isolate roc-u-z-50 roc-u-flex roc-u-justify-center",
         ),
       )}
     >
@@ -126,7 +126,7 @@ function NavigationMenuViewport({
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-59495c682798 roc-s-d2d9e1f13413 roc-s-5a06344d3117 roc-s-25728bc0c8aa roc-s-58d0413dd93c roc-s-d5111d0e9f48 roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-e593c38256e0 roc-s-5bd2afe89f0b roc-s-0bb09d80600e roc-s-0cb4489c3645 roc-s-f4cf4be63707 roc-s-bae1e782f277 roc-s-9995e5162991 roc-s-bdc127d6ea39",
+            "roc-u-origin-top-center roc-u-relative roc-u-mt-1.5 roc-u-h-[var(--radix-navigation-menu-viewport-height)] roc-u-w-full roc-u-overflow-hidden roc-u-rounded-md roc-u-border roc-u-bg-popover roc-u-text-popover-foreground roc-u-shadow roc-u-data-[state=closed]:animate-out roc-u-data-[state=closed]:zoom-out-95 roc-u-data-[state=open]:animate-in roc-u-data-[state=open]:zoom-in-90 roc-u-md:w-[var(--radix-navigation-menu-viewport-width)]",
             className,
           ),
         )}
@@ -145,7 +145,7 @@ function NavigationMenuLink({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-302c0d124a94 roc-s-19e97f3f40e6 roc-s-02e603944040 roc-s-b97db4a9f432 roc-s-c74ab393b96d roc-s-9952ed32207c roc-s-b30fc56058b6 roc-s-37ad15a95595 roc-s-9f1f77b92dcb roc-s-a8c1861c5d03 roc-s-a85c4c5d7465 roc-s-365a4654f7b1 roc-s-392a26f4c1b0 roc-s-1df9125eebaf roc-s-6f2003b19dc6 roc-s-1f9c6b72388b roc-s-2923539ebbde roc-s-28a6c82f3618 roc-s-eb5ef2dbc2d4 roc-s-8637dfd54fbb",
+          "roc-u-flex roc-u-flex-col roc-u-gap-1 roc-u-rounded-sm roc-u-p-2 roc-u-text-sm roc-u-transition-all roc-u-outline-none roc-u-hover:bg-accent roc-u-hover:text-accent-foreground roc-u-focus:bg-accent roc-u-focus:text-accent-foreground roc-u-focus-visible:ring-[3px] roc-u-focus-visible:ring-ring/50 roc-u-focus-visible:outline-1 roc-u-data-[active=true]:bg-accent/50 roc-u-data-[active=true]:text-accent-foreground roc-u-data-[active=true]:hover:bg-accent roc-u-data-[active=true]:focus:bg-accent roc-u-[&_svg:not([class*='size-'])]:size-4 roc-u-[&_svg:not([class*='text-'])]:text-muted-foreground",
           className,
         ),
       )}
@@ -163,7 +163,7 @@ function NavigationMenuIndicator({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-b726f5a347ca roc-s-33a37c4040fd roc-s-222f930b8752 roc-s-de88511473d1 roc-s-0ccd70f0f8e5 roc-s-a503dd374cca roc-s-d5111d0e9f48 roc-s-e3e9a7bfd8b5 roc-s-9f01b8ed6147 roc-s-56324c1d0658 roc-s-5fdc53977ab3",
+          "roc-u-top-full roc-u-z-[1] roc-u-flex roc-u-h-1.5 roc-u-items-end roc-u-justify-center roc-u-overflow-hidden roc-u-data-[state=hidden]:animate-out roc-u-data-[state=hidden]:fade-out roc-u-data-[state=visible]:animate-in roc-u-data-[state=visible]:fade-in",
           className,
         ),
       )}
@@ -172,7 +172,7 @@ function NavigationMenuIndicator({
       <div
         className={cn(
           "roc-shadcn",
-          "roc-s-d2d9e1f13413 roc-s-10f17fdc5a9c roc-s-f5728694f674 roc-s-d4ea834145ae roc-s-c80411b7591f roc-s-9940adbaae5b roc-s-a943bea85d66 roc-s-94ea94fde25f",
+          "roc-u-relative roc-u-top-[60%] roc-u-h-2 roc-u-w-2 roc-u-rotate-45 roc-u-rounded-tl-sm roc-u-bg-border roc-u-shadow-md",
         )}
       />
     </NavigationMenuPrimitive.Indicator>

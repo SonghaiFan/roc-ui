@@ -11,77 +11,77 @@
   --roc-sh-font-weight-medium: 500;
   --roc-sh-aspect-video: 16 / 9;
 }
-.roc-s-222f930b8752 {
+.roc-u-flex {
   display: flex;
 }
-.roc-s-0f2a693e93e2 {
+.roc-u-grid {
   display: grid;
 }
-.roc-s-63cd60faa2e1 {
+.roc-u-aspect-video {
   aspect-ratio: var(--roc-sh-aspect-video);
 }
-.roc-s-f5728694f674 {
+.roc-u-h-2 {
   height: calc(var(--roc-sh-spacing) * 2);
 }
-.roc-s-d4ea834145ae {
+.roc-u-w-2 {
   width: calc(var(--roc-sh-spacing) * 2);
 }
-.roc-s-58d0413dd93c {
+.roc-u-w-full {
   width: 100%;
 }
-.roc-s-e9ab1547c94d {
+.roc-u-min-w-\[8rem\] {
   min-width: 8rem;
 }
-.roc-s-7bd5bab6d7f4 {
+.roc-u-flex-1 {
   flex: 1;
 }
-.roc-s-27ead27a81df {
+.roc-u-shrink-0 {
   flex-shrink: 0;
 }
-.roc-s-faa8a23c68f6 {
+.roc-u-flex-wrap {
   flex-wrap: wrap;
 }
-.roc-s-71556df3b421 {
+.roc-u-items-center {
   align-items: center;
 }
-.roc-s-0ccd70f0f8e5 {
+.roc-u-items-end {
   align-items: flex-end;
 }
-.roc-s-b9677bd1cb66 {
+.roc-u-items-start {
   align-items: flex-start;
 }
-.roc-s-30862f3b959a {
+.roc-u-items-stretch {
   align-items: stretch;
 }
-.roc-s-32c92bb1fde4 {
+.roc-u-justify-between {
   justify-content: space-between;
 }
-.roc-s-a503dd374cca {
+.roc-u-justify-center {
   justify-content: center;
 }
-.roc-s-70007b876865 {
+.roc-u-gap-1\.5 {
   gap: calc(var(--roc-sh-spacing) * 1.5);
 }
-.roc-s-074569488cca {
+.roc-u-gap-2 {
   gap: calc(var(--roc-sh-spacing) * 2);
 }
-.roc-s-90fc3ec35a37 {
+.roc-u-gap-4 {
   gap: calc(var(--roc-sh-spacing) * 4);
 }
-.roc-s-45d69f0da1d1 {
+.roc-u-rounded-\[2px\] {
   border-radius: 2px;
 }
-.roc-s-49abc543ea42 {
+.roc-u-rounded-lg {
   border-radius: var(--roc-sh-radius-lg);
 }
-.roc-s-4f1a55de40bc {
+.roc-u-border {
   border-style: var(--roc-sh-tw-border-style);
   border-width: 1px;
 }
-.roc-s-83c8b3c3c003 {
+.roc-u-border-\(--color-border\) {
   border-color: var(--roc-sh-color-border);
 }
-.roc-s-163a623b3716 {
+.roc-u-border-border\/50 {
   border-color: color-mix(in srgb, #e5e5e5 50%, transparent);
   @supports (color: color-mix(in lab, red, red)) {
     border-color: color-mix(
@@ -91,52 +91,52 @@
     );
   }
 }
-.roc-s-51ace8da891d {
+.roc-u-bg-\(--color-bg\) {
   background-color: var(--roc-sh-color-bg);
 }
-.roc-s-5b272f3c5076 {
+.roc-u-bg-background {
   background-color: var(--roc-sh-color-background);
 }
-.roc-s-588daa1a9891 {
+.roc-u-px-2\.5 {
   padding-inline: calc(var(--roc-sh-spacing) * 2.5);
 }
-.roc-s-a8c1dfb1d4ef {
+.roc-u-py-1\.5 {
   padding-block: calc(var(--roc-sh-spacing) * 1.5);
 }
-.roc-s-0a702d97ed7d {
+.roc-u-pt-3 {
   padding-top: calc(var(--roc-sh-spacing) * 3);
 }
-.roc-s-17b03732cf78 {
+.roc-u-pb-3 {
   padding-bottom: calc(var(--roc-sh-spacing) * 3);
 }
-.roc-s-02ded9244507 {
+.roc-u-font-mono {
   font-family: var(--roc-sh-font-mono);
 }
-.roc-s-3992de70b033 {
+.roc-u-text-xs {
   font-size: var(--roc-sh-text-xs);
   line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-xs--line-height));
 }
-.roc-s-761cdb81bddb {
+.roc-u-leading-none {
   --roc-sh-tw-leading: 1;
   line-height: 1;
 }
-.roc-s-daaac3fbf55e {
+.roc-u-font-medium {
   --roc-sh-tw-font-weight: var(--roc-sh-font-weight-medium);
   font-weight: var(--roc-sh-font-weight-medium);
 }
-.roc-s-957a109f887f {
+.roc-u-text-foreground {
   color: var(--roc-sh-color-foreground);
 }
-.roc-s-35f35c41d134 {
+.roc-u-text-muted-foreground {
   color: var(--roc-sh-color-muted-foreground);
 }
-.roc-s-ba2d0eea2e16 {
+.roc-u-tabular-nums {
   --roc-sh-tw-numeric-spacing: tabular-nums;
   font-variant-numeric: var(--roc-sh-tw-ordinal,) var(--roc-sh-tw-slashed-zero,)
     var(--roc-sh-tw-numeric-figure,) var(--roc-sh-tw-numeric-spacing,)
     var(--roc-sh-tw-numeric-fraction,);
 }
-.roc-s-dd3cce628256 {
+.roc-u-shadow-xl {
   --roc-sh-tw-shadow:
     0 20px 25px -5px var(--roc-sh-tw-shadow-color, rgb(0 0 0 / 0.1)),
     0 8px 10px -6px var(--roc-sh-tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -145,22 +145,22 @@
     var(--roc-sh-tw-ring-offset-shadow), var(--roc-sh-tw-ring-shadow),
     var(--roc-sh-tw-shadow);
 }
-.roc-s-f1f3e4d6fda5 .recharts-cartesian-axis-tick text {
+.roc-u-\[\&_\.recharts-cartesian-axis-tick_text\]\:fill-muted-foreground .recharts-cartesian-axis-tick text {
   fill: var(--roc-sh-color-muted-foreground);
 }
-.roc-s-6795c2f7a311 .recharts-cartesian-grid line[stroke="#ccc"] {
+.roc-u-\[\&_\.recharts-cartesian-grid_line\[stroke\=\'\#ccc\'\]\]\:stroke-border\/50 .recharts-cartesian-grid line[stroke="#ccc"] {
   stroke: color-mix(in srgb, #e5e5e5 50%, transparent);
   @supports (color: color-mix(in lab, red, red)) {
     stroke: color-mix(in oklab, var(--roc-sh-color-border) 50%, transparent);
   }
 }
-.roc-s-250d66e6d4f0 .recharts-curve.recharts-tooltip-cursor {
+.roc-u-\[\&_\.recharts-curve\.recharts-tooltip-cursor\]\:stroke-border .recharts-curve.recharts-tooltip-cursor {
   stroke: var(--roc-sh-color-border);
 }
-.roc-s-4410323c06ff .recharts-dot[stroke="#fff"] {
+.roc-u-\[\&_\.recharts-dot\[stroke\=\'\#fff\'\]\]\:stroke-transparent .recharts-dot[stroke="#fff"] {
   stroke: transparent;
 }
-.roc-s-672352df819d .recharts-layer {
+.roc-u-\[\&_\.recharts-layer\]\:outline-hidden .recharts-layer {
   --roc-sh-tw-outline-style: none;
   outline-style: none;
   @media (forced-colors: active) {
@@ -168,19 +168,19 @@
     outline-offset: 2px;
   }
 }
-.roc-s-3782fa9cdd41 .recharts-polar-grid [stroke="#ccc"] {
+.roc-u-\[\&_\.recharts-polar-grid_\[stroke\=\'\#ccc\'\]\]\:stroke-border .recharts-polar-grid [stroke="#ccc"] {
   stroke: var(--roc-sh-color-border);
 }
-.roc-s-f2fd46a5be56 .recharts-radial-bar-background-sector {
+.roc-u-\[\&_\.recharts-radial-bar-background-sector\]\:fill-muted .recharts-radial-bar-background-sector {
   fill: var(--roc-sh-color-muted);
 }
-.roc-s-672554fba49d .recharts-rectangle.recharts-tooltip-cursor {
+.roc-u-\[\&_\.recharts-rectangle\.recharts-tooltip-cursor\]\:fill-muted .recharts-rectangle.recharts-tooltip-cursor {
   fill: var(--roc-sh-color-muted);
 }
-.roc-s-e5d9a3964f33 .recharts-reference-line [stroke="#ccc"] {
+.roc-u-\[\&_\.recharts-reference-line_\[stroke\=\'\#ccc\'\]\]\:stroke-border .recharts-reference-line [stroke="#ccc"] {
   stroke: var(--roc-sh-color-border);
 }
-.roc-s-40cdab5541e8 .recharts-sector {
+.roc-u-\[\&_\.recharts-sector\]\:outline-hidden .recharts-sector {
   --roc-sh-tw-outline-style: none;
   outline-style: none;
   @media (forced-colors: active) {
@@ -188,10 +188,10 @@
     outline-offset: 2px;
   }
 }
-.roc-s-af9224c80039 .recharts-sector[stroke="#fff"] {
+.roc-u-\[\&_\.recharts-sector\[stroke\=\'\#fff\'\]\]\:stroke-transparent .recharts-sector[stroke="#fff"] {
   stroke: transparent;
 }
-.roc-s-1a8eb218db68 .recharts-surface {
+.roc-u-\[\&_\.recharts-surface\]\:outline-hidden .recharts-surface {
   --roc-sh-tw-outline-style: none;
   outline-style: none;
   @media (forced-colors: active) {
@@ -199,19 +199,19 @@
     outline-offset: 2px;
   }
 }
-.roc-s-77d49873eca6 > svg {
+.roc-u-\[\&\>svg\]\:h-2\.5 > svg {
   height: calc(var(--roc-sh-spacing) * 2.5);
 }
-.roc-s-4fb9d5b75392 > svg {
+.roc-u-\[\&\>svg\]\:h-3 > svg {
   height: calc(var(--roc-sh-spacing) * 3);
 }
-.roc-s-dde011342fb5 > svg {
+.roc-u-\[\&\>svg\]\:w-2\.5 > svg {
   width: calc(var(--roc-sh-spacing) * 2.5);
 }
-.roc-s-7a3e022703d8 > svg {
+.roc-u-\[\&\>svg\]\:w-3 > svg {
   width: calc(var(--roc-sh-spacing) * 3);
 }
-.roc-s-019fd73c95db > svg {
+.roc-u-\[\&\>svg\]\:text-muted-foreground > svg {
   color: var(--roc-sh-color-muted-foreground);
 }
 @property --roc-sh-tw-border-style {

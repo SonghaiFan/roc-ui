@@ -14,7 +14,7 @@ function Menubar({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-539ae144f076 roc-s-71556df3b421 roc-s-19e97f3f40e6 roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-5b272f3c5076 roc-s-1dee6e3ec67d roc-s-7de07d413c13",
+          "roc-u-flex roc-u-h-9 roc-u-items-center roc-u-gap-1 roc-u-rounded-md roc-u-border roc-u-bg-background roc-u-p-1 roc-u-shadow-xs",
           className,
         ),
       )}
@@ -54,7 +54,7 @@ function MenubarTrigger({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-71556df3b421 roc-s-02e603944040 roc-s-e7e01cc7f4df roc-s-1fcf28756bb1 roc-s-c74ab393b96d roc-s-daaac3fbf55e roc-s-59edd3d33673 roc-s-78905c9e865c roc-s-a8c1861c5d03 roc-s-a85c4c5d7465 roc-s-4027d9c589b6 roc-s-1952cd5b00aa",
+          "roc-u-flex roc-u-items-center roc-u-rounded-sm roc-u-px-2 roc-u-py-1 roc-u-text-sm roc-u-font-medium roc-u-outline-hidden roc-u-select-none roc-u-focus:bg-accent roc-u-focus:text-accent-foreground roc-u-data-[state=open]:bg-accent roc-u-data-[state=open]:text-accent-foreground",
           className,
         ),
       )}
@@ -79,7 +79,7 @@ function MenubarContent({
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-3eef1ce97dba roc-s-40632e2f551e roc-s-0bcaea6638f7 roc-s-d5111d0e9f48 roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-e593c38256e0 roc-s-1dee6e3ec67d roc-s-5bd2afe89f0b roc-s-94ea94fde25f roc-s-89f6aab7a3f8 roc-s-3550f48d66b9 roc-s-7720fe004f5c roc-s-66b560f839de roc-s-bb5869ef903b roc-s-f4cf4be63707 roc-s-bae1e782f277 roc-s-45464a92c1f6 roc-s-9ca352480f25",
+            "roc-u-z-50 roc-u-min-w-[12rem] roc-u-origin-(--radix-menubar-content-transform-origin) roc-u-overflow-hidden roc-u-rounded-md roc-u-border roc-u-bg-popover roc-u-p-1 roc-u-text-popover-foreground roc-u-shadow-md roc-u-data-[side=bottom]:slide-in-from-top-2 roc-u-data-[side=left]:slide-in-from-right-2 roc-u-data-[side=right]:slide-in-from-left-2 roc-u-data-[side=top]:slide-in-from-bottom-2 roc-u-data-[state=closed]:fade-out-0 roc-u-data-[state=closed]:zoom-out-95 roc-u-data-[state=open]:animate-in roc-u-data-[state=open]:fade-in-0 roc-u-data-[state=open]:zoom-in-95",
             className,
           ),
         )}
@@ -105,7 +105,7 @@ function MenubarItem({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-d343f41ba73e roc-s-71556df3b421 roc-s-074569488cca roc-s-02e603944040 roc-s-e7e01cc7f4df roc-s-a8c1dfb1d4ef roc-s-c74ab393b96d roc-s-59edd3d33673 roc-s-78905c9e865c roc-s-a8c1861c5d03 roc-s-a85c4c5d7465 roc-s-397f5ba426a0 roc-s-9beb654fcb0d roc-s-6fa6a8ade7c4 roc-s-f3f7a9c5e1b3 roc-s-e2bb4ac97190 roc-s-353a727facfd roc-s-98a28c2293f7 roc-s-bcae9d37090c roc-s-040e748a3fa0 roc-s-eb5ef2dbc2d4 roc-s-8637dfd54fbb roc-s-82b114bbff3d",
+          "roc-u-relative roc-u-flex roc-u-cursor-default roc-u-items-center roc-u-gap-2 roc-u-rounded-sm roc-u-px-2 roc-u-py-1.5 roc-u-text-sm roc-u-outline-hidden roc-u-select-none roc-u-focus:bg-accent roc-u-focus:text-accent-foreground roc-u-data-[disabled]:pointer-events-none roc-u-data-[disabled]:opacity-50 roc-u-data-[inset]:pl-8 roc-u-data-[variant=destructive]:text-destructive roc-u-data-[variant=destructive]:focus:bg-destructive/10 roc-u-data-[variant=destructive]:focus:text-destructive roc-u-dark:data-[variant=destructive]:focus:bg-destructive/20 roc-u-[&_svg]:pointer-events-none roc-u-[&_svg]:shrink-0 roc-u-[&_svg:not([class*='size-'])]:size-4 roc-u-[&_svg:not([class*='text-'])]:text-muted-foreground roc-u-data-[variant=destructive]:*:[svg]:text-destructive!",
           className,
         ),
       )}
@@ -125,7 +125,7 @@ function MenubarCheckboxItem({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-d343f41ba73e roc-s-71556df3b421 roc-s-074569488cca roc-s-30c08d7acd8f roc-s-a8c1dfb1d4ef roc-s-98a5b6fff1d2 roc-s-75b27e813dcc roc-s-c74ab393b96d roc-s-59edd3d33673 roc-s-78905c9e865c roc-s-a8c1861c5d03 roc-s-a85c4c5d7465 roc-s-397f5ba426a0 roc-s-9beb654fcb0d roc-s-bcae9d37090c roc-s-040e748a3fa0 roc-s-eb5ef2dbc2d4",
+          "roc-u-relative roc-u-flex roc-u-cursor-default roc-u-items-center roc-u-gap-2 roc-u-rounded-xs roc-u-py-1.5 roc-u-pr-2 roc-u-pl-8 roc-u-text-sm roc-u-outline-hidden roc-u-select-none roc-u-focus:bg-accent roc-u-focus:text-accent-foreground roc-u-data-[disabled]:pointer-events-none roc-u-data-[disabled]:opacity-50 roc-u-[&_svg]:pointer-events-none roc-u-[&_svg]:shrink-0 roc-u-[&_svg:not([class*='size-'])]:size-4",
           className,
         ),
       )}
@@ -135,11 +135,11 @@ function MenubarCheckboxItem({
       <span
         className={cn(
           "roc-shadcn",
-          "roc-s-33228ff7d583 roc-s-747355bdc2a2 roc-s-5b9fdf1819c4 roc-s-222f930b8752 roc-s-61c000c8a98a roc-s-71556df3b421 roc-s-a503dd374cca",
+          "roc-u-pointer-events-none roc-u-absolute roc-u-left-2 roc-u-flex roc-u-size-3.5 roc-u-items-center roc-u-justify-center",
         )}
       >
         <MenubarPrimitive.ItemIndicator>
-          <CheckIcon className={cn("roc-shadcn", "roc-s-100c22d5776b")} />
+          <CheckIcon className={cn("roc-shadcn", "roc-u-size-4")} />
         </MenubarPrimitive.ItemIndicator>
       </span>
       {children}
@@ -157,7 +157,7 @@ function MenubarRadioItem({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-d343f41ba73e roc-s-71556df3b421 roc-s-074569488cca roc-s-30c08d7acd8f roc-s-a8c1dfb1d4ef roc-s-98a5b6fff1d2 roc-s-75b27e813dcc roc-s-c74ab393b96d roc-s-59edd3d33673 roc-s-78905c9e865c roc-s-a8c1861c5d03 roc-s-a85c4c5d7465 roc-s-397f5ba426a0 roc-s-9beb654fcb0d roc-s-bcae9d37090c roc-s-040e748a3fa0 roc-s-eb5ef2dbc2d4",
+          "roc-u-relative roc-u-flex roc-u-cursor-default roc-u-items-center roc-u-gap-2 roc-u-rounded-xs roc-u-py-1.5 roc-u-pr-2 roc-u-pl-8 roc-u-text-sm roc-u-outline-hidden roc-u-select-none roc-u-focus:bg-accent roc-u-focus:text-accent-foreground roc-u-data-[disabled]:pointer-events-none roc-u-data-[disabled]:opacity-50 roc-u-[&_svg]:pointer-events-none roc-u-[&_svg]:shrink-0 roc-u-[&_svg:not([class*='size-'])]:size-4",
           className,
         ),
       )}
@@ -166,14 +166,14 @@ function MenubarRadioItem({
       <span
         className={cn(
           "roc-shadcn",
-          "roc-s-33228ff7d583 roc-s-747355bdc2a2 roc-s-5b9fdf1819c4 roc-s-222f930b8752 roc-s-61c000c8a98a roc-s-71556df3b421 roc-s-a503dd374cca",
+          "roc-u-pointer-events-none roc-u-absolute roc-u-left-2 roc-u-flex roc-u-size-3.5 roc-u-items-center roc-u-justify-center",
         )}
       >
         <MenubarPrimitive.ItemIndicator>
           <CircleIcon
             className={cn(
               "roc-shadcn",
-              "roc-s-9e7600197f38 roc-s-717b342c2d01",
+              "roc-u-size-2 roc-u-fill-current",
             )}
           />
         </MenubarPrimitive.ItemIndicator>
@@ -196,7 +196,7 @@ function MenubarLabel({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-e7e01cc7f4df roc-s-a8c1dfb1d4ef roc-s-c74ab393b96d roc-s-daaac3fbf55e roc-s-6fa6a8ade7c4",
+          "roc-u-px-2 roc-u-py-1.5 roc-u-text-sm roc-u-font-medium roc-u-data-[inset]:pl-8",
           className,
         ),
       )}
@@ -214,7 +214,7 @@ function MenubarSeparator({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-abba77319850 roc-s-d8747231f142 roc-s-ae2c4b060bb9 roc-s-a943bea85d66",
+          "roc-u--mx-1 roc-u-my-1 roc-u-h-px roc-u-bg-border",
           className,
         ),
       )}
@@ -232,7 +232,7 @@ function MenubarShortcut({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-cc51bda60e7e roc-s-3992de70b033 roc-s-e1683b3c030a roc-s-35f35c41d134",
+          "roc-u-ml-auto roc-u-text-xs roc-u-tracking-widest roc-u-text-muted-foreground",
           className,
         ),
       )}
@@ -260,7 +260,7 @@ function MenubarSubTrigger({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-d343f41ba73e roc-s-71556df3b421 roc-s-02e603944040 roc-s-e7e01cc7f4df roc-s-a8c1dfb1d4ef roc-s-c74ab393b96d roc-s-b30fc56058b6 roc-s-78905c9e865c roc-s-a8c1861c5d03 roc-s-a85c4c5d7465 roc-s-6fa6a8ade7c4 roc-s-4027d9c589b6 roc-s-1952cd5b00aa",
+          "roc-u-flex roc-u-cursor-default roc-u-items-center roc-u-rounded-sm roc-u-px-2 roc-u-py-1.5 roc-u-text-sm roc-u-outline-none roc-u-select-none roc-u-focus:bg-accent roc-u-focus:text-accent-foreground roc-u-data-[inset]:pl-8 roc-u-data-[state=open]:bg-accent roc-u-data-[state=open]:text-accent-foreground",
           className,
         ),
       )}
@@ -270,7 +270,7 @@ function MenubarSubTrigger({
       <ChevronRightIcon
         className={cn(
           "roc-shadcn",
-          "roc-s-cc51bda60e7e roc-s-099be97e1fa4 roc-s-829c550fac1a",
+          "roc-u-ml-auto roc-u-h-4 roc-u-w-4",
         )}
       />
     </MenubarPrimitive.SubTrigger>
@@ -286,7 +286,7 @@ function MenubarSubContent({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-3eef1ce97dba roc-s-e9ab1547c94d roc-s-0bcaea6638f7 roc-s-d5111d0e9f48 roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-e593c38256e0 roc-s-1dee6e3ec67d roc-s-5bd2afe89f0b roc-s-0d4ca75de41c roc-s-89f6aab7a3f8 roc-s-3550f48d66b9 roc-s-7720fe004f5c roc-s-66b560f839de roc-s-0cb4489c3645 roc-s-bb5869ef903b roc-s-f4cf4be63707 roc-s-bae1e782f277 roc-s-45464a92c1f6 roc-s-9ca352480f25",
+          "roc-u-z-50 roc-u-min-w-[8rem] roc-u-origin-(--radix-menubar-content-transform-origin) roc-u-overflow-hidden roc-u-rounded-md roc-u-border roc-u-bg-popover roc-u-p-1 roc-u-text-popover-foreground roc-u-shadow-lg roc-u-data-[side=bottom]:slide-in-from-top-2 roc-u-data-[side=left]:slide-in-from-right-2 roc-u-data-[side=right]:slide-in-from-left-2 roc-u-data-[side=top]:slide-in-from-bottom-2 roc-u-data-[state=closed]:animate-out roc-u-data-[state=closed]:fade-out-0 roc-u-data-[state=closed]:zoom-out-95 roc-u-data-[state=open]:animate-in roc-u-data-[state=open]:fade-in-0 roc-u-data-[state=open]:zoom-in-95",
           className,
         ),
       )}

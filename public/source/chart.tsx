@@ -62,7 +62,7 @@ function ChartContainer({
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-222f930b8752 roc-s-63cd60faa2e1 roc-s-a503dd374cca roc-s-3992de70b033 roc-s-f1f3e4d6fda5 roc-s-6795c2f7a311 roc-s-250d66e6d4f0 roc-s-4410323c06ff roc-s-672352df819d roc-s-3782fa9cdd41 roc-s-f2fd46a5be56 roc-s-672554fba49d roc-s-e5d9a3964f33 roc-s-40cdab5541e8 roc-s-af9224c80039 roc-s-1a8eb218db68",
+            "roc-u-flex roc-u-aspect-video roc-u-justify-center roc-u-text-xs roc-u-[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground roc-u-[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 roc-u-[&_.recharts-curve.recharts-tooltip-cursor]:stroke-border roc-u-[&_.recharts-dot[stroke='#fff']]:stroke-transparent roc-u-[&_.recharts-layer]:outline-hidden roc-u-[&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border roc-u-[&_.recharts-radial-bar-background-sector]:fill-muted roc-u-[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted roc-u-[&_.recharts-reference-line_[stroke='#ccc']]:stroke-border roc-u-[&_.recharts-sector]:outline-hidden roc-u-[&_.recharts-sector[stroke='#fff']]:stroke-transparent roc-u-[&_.recharts-surface]:outline-hidden",
             className,
           ),
         )}
@@ -150,7 +150,7 @@ function ChartTooltipContent({
     if (labelFormatter) {
       return (
         <div
-          className={cn("roc-shadcn", cn("roc-s-daaac3fbf55e", labelClassName))}
+          className={cn("roc-shadcn", cn("roc-u-font-medium", labelClassName))}
         >
           {labelFormatter(value, payload)}
         </div>
@@ -161,7 +161,7 @@ function ChartTooltipContent({
     }
     return (
       <div
-        className={cn("roc-shadcn", cn("roc-s-daaac3fbf55e", labelClassName))}
+        className={cn("roc-shadcn", cn("roc-u-font-medium", labelClassName))}
       >
         {value}
       </div>
@@ -184,14 +184,14 @@ function ChartTooltipContent({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-0f2a693e93e2 roc-s-e9ab1547c94d roc-s-b9677bd1cb66 roc-s-70007b876865 roc-s-49abc543ea42 roc-s-4f1a55de40bc roc-s-163a623b3716 roc-s-5b272f3c5076 roc-s-588daa1a9891 roc-s-a8c1dfb1d4ef roc-s-3992de70b033 roc-s-dd3cce628256",
+          "roc-u-grid roc-u-min-w-[8rem] roc-u-items-start roc-u-gap-1.5 roc-u-rounded-lg roc-u-border roc-u-border-border/50 roc-u-bg-background roc-u-px-2.5 roc-u-py-1.5 roc-u-text-xs roc-u-shadow-xl",
           className,
         ),
       )}
     >
       {!nestLabel ? tooltipLabel : null}
       <div
-        className={cn("roc-shadcn", "roc-s-0f2a693e93e2 roc-s-70007b876865")}
+        className={cn("roc-shadcn", "roc-u-grid roc-u-gap-1.5")}
       >
         {payload
           .filter((item) => item.type !== "none")
@@ -205,8 +205,8 @@ function ChartTooltipContent({
                 className={cn(
                   "roc-shadcn",
                   cn(
-                    "roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-faa8a23c68f6 roc-s-30862f3b959a roc-s-074569488cca roc-s-77d49873eca6 roc-s-dde011342fb5 roc-s-019fd73c95db",
-                    indicator === "dot" && "roc-s-71556df3b421",
+                    "roc-u-flex roc-u-w-full roc-u-flex-wrap roc-u-items-stretch roc-u-gap-2 roc-u-[&>svg]:h-2.5 roc-u-[&>svg]:w-2.5 roc-u-[&>svg]:text-muted-foreground",
+                    indicator === "dot" && "roc-u-items-center",
                   ),
                 )}
               >
@@ -222,7 +222,7 @@ function ChartTooltipContent({
                           className={cn(
                             "roc-shadcn",
                             cn(
-                              "roc-s-27ead27a81df roc-s-45d69f0da1d1 roc-s-83c8b3c3c003 roc-s-51ace8da891d",
+                              "roc-u-shrink-0 roc-u-rounded-[2px] roc-u-border-(--color-border) roc-u-bg-(--color-bg)",
                               {
                                 "h-2.5 w-2.5": indicator === "dot",
                                 "w-1": indicator === "line",
@@ -245,22 +245,22 @@ function ChartTooltipContent({
                       className={cn(
                         "roc-shadcn",
                         cn(
-                          "roc-s-222f930b8752 roc-s-7bd5bab6d7f4 roc-s-32c92bb1fde4 roc-s-761cdb81bddb",
+                          "roc-u-flex roc-u-flex-1 roc-u-justify-between roc-u-leading-none",
                           nestLabel
-                            ? "roc-s-0ccd70f0f8e5"
-                            : "roc-s-71556df3b421",
+                            ? "roc-u-items-end"
+                            : "roc-u-items-center",
                         ),
                       )}
                     >
                       <div
                         className={cn(
                           "roc-shadcn",
-                          "roc-s-0f2a693e93e2 roc-s-70007b876865",
+                          "roc-u-grid roc-u-gap-1.5",
                         )}
                       >
                         {nestLabel ? tooltipLabel : null}
                         <span
-                          className={cn("roc-shadcn", "roc-s-35f35c41d134")}
+                          className={cn("roc-shadcn", "roc-u-text-muted-foreground")}
                         >
                           {itemConfig?.label ?? item.name}
                         </span>
@@ -269,7 +269,7 @@ function ChartTooltipContent({
                         <span
                           className={cn(
                             "roc-shadcn",
-                            "roc-s-02ded9244507 roc-s-daaac3fbf55e roc-s-957a109f887f roc-s-ba2d0eea2e16",
+                            "roc-u-font-mono roc-u-font-medium roc-u-text-foreground roc-u-tabular-nums",
                           )}
                         >
                           {typeof item.value === "number"
@@ -307,8 +307,8 @@ function ChartLegendContent({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-71556df3b421 roc-s-a503dd374cca roc-s-90fc3ec35a37",
-          verticalAlign === "top" ? "roc-s-17b03732cf78" : "roc-s-0a702d97ed7d",
+          "roc-u-flex roc-u-items-center roc-u-justify-center roc-u-gap-4",
+          verticalAlign === "top" ? "roc-u-pb-3" : "roc-u-pt-3",
           className,
         ),
       )}
@@ -324,7 +324,7 @@ function ChartLegendContent({
               className={cn(
                 "roc-shadcn",
                 cn(
-                  "roc-s-222f930b8752 roc-s-71556df3b421 roc-s-70007b876865 roc-s-4fb9d5b75392 roc-s-7a3e022703d8 roc-s-019fd73c95db",
+                  "roc-u-flex roc-u-items-center roc-u-gap-1.5 roc-u-[&>svg]:h-3 roc-u-[&>svg]:w-3 roc-u-[&>svg]:text-muted-foreground",
                 ),
               )}
             >
@@ -334,7 +334,7 @@ function ChartLegendContent({
                 <div
                   className={cn(
                     "roc-shadcn",
-                    "roc-s-f5728694f674 roc-s-d4ea834145ae roc-s-27ead27a81df roc-s-45d69f0da1d1",
+                    "roc-u-h-2 roc-u-w-2 roc-u-shrink-0 roc-u-rounded-[2px]",
                   )}
                   style={{
                     backgroundColor: item.color,

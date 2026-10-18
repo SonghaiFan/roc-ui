@@ -66,7 +66,7 @@ import {
   useEdgePanel,
 } from "../registry/roc/edge-panel";
 import { ViewportPreview } from "./ViewportPreview";
-import { palette, type AccentName } from "./settings";
+import { palette, accentForeground, type AccentName } from "./settings";
 import "./site.css";
 const repo = "https://github.com/SonghaiFan/roc-ui";
 const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
@@ -219,7 +219,7 @@ export function App() {
   );
   const [query, setQuery] = useState(""),
     [filter, setFilter] = useState("All"),
-    [color, setColor] = useState<AccentName>("neutral"),
+    [color, setColor] = useState<AccentName>("black"),
     [radius, setRadius] = useState(12),
     [surface, setSurface] = useState("White"),
     [density, setDensity] = useState("Comfortable");
@@ -363,7 +363,7 @@ export function App() {
   const style = {
     "--roc-accent": palette[color],
     "--roc-marker": `color-mix(in srgb,${palette[color]} 24%,white)`,
-    "--roc-accent-foreground": "#252525",
+    "--roc-accent-foreground": accentForeground[color],
     "--roc-radius": `${radius}px`,
     "--roc-paper": surface === "Paper" ? "#fcfbf7" : "#fff",
     "--preview-font":

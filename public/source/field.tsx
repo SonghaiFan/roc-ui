@@ -12,8 +12,8 @@ function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-302c0d124a94 roc-s-8c7e0067a9a5",
-          "roc-s-b1e58eec23df roc-s-cabdc03fe0ef",
+          "roc-u-flex roc-u-flex-col roc-u-gap-6",
+          "roc-u-has-[>[data-slot=checkbox-group]]:gap-3 roc-u-has-[>[data-slot=radio-group]]:gap-3",
           className,
         ),
       )}
@@ -35,9 +35,9 @@ function FieldLegend({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-7fc057c6b049 roc-s-daaac3fbf55e",
-          "roc-s-de65f8da41a3",
-          "roc-s-fcdc268a7949",
+          "roc-u-mb-3 roc-u-font-medium",
+          "roc-u-data-[variant=legend]:text-base",
+          "roc-u-data-[variant=label]:text-sm",
           className,
         ),
       )}
@@ -52,7 +52,7 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-220da3c77607 roc-s-222d94de2f4b roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-302c0d124a94 roc-s-cc30d00b6367 roc-s-4254beb8e289 roc-s-2faa4581af77",
+          "roc-u-group/field-group roc-u-@container/field-group roc-u-flex roc-u-w-full roc-u-flex-col roc-u-gap-7 roc-u-data-[slot=checkbox-group]:gap-3 roc-u-[&>[data-slot=field-group]]:gap-4",
           className,
         ),
       )}
@@ -61,7 +61,7 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 const fieldVariants = cva(
-  "roc-s-83f8e50d0580 roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-d7db3451d154 roc-s-993a85d2fa04",
+  "roc-u-group/field roc-u-flex roc-u-w-full roc-u-gap-3 roc-u-data-[invalid=true]:text-destructive",
   {
     variants: {
       orientation: {
@@ -108,7 +108,7 @@ function FieldContent({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-1f03f05ae1d7 roc-s-222f930b8752 roc-s-7bd5bab6d7f4 roc-s-302c0d124a94 roc-s-70007b876865 roc-s-4c3c66460268",
+          "roc-u-group/field-content roc-u-flex roc-u-flex-1 roc-u-flex-col roc-u-gap-1.5 roc-u-leading-snug",
           className,
         ),
       )}
@@ -126,9 +126,9 @@ function FieldLabel({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-755d2f1faff3 roc-s-3eb9a8785fde roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-074569488cca roc-s-4c3c66460268 roc-s-5038cf153bcf",
-          "roc-s-2120dbf3ec49 roc-s-140979c1a385 roc-s-1bcfe349a4ba roc-s-82fdadbd8969 roc-s-584be9d521b5",
-          "roc-s-473474db8aa1 roc-s-e381b7741992 roc-s-bfbf8664f3ef",
+          "roc-u-group/field-label roc-u-peer/field-label roc-u-flex roc-u-w-fit roc-u-gap-2 roc-u-leading-snug roc-u-group-data-[disabled=true]/field:opacity-50",
+          "roc-u-has-[>[data-slot=field]]:w-full roc-u-has-[>[data-slot=field]]:flex-col roc-u-has-[>[data-slot=field]]:rounded-md roc-u-has-[>[data-slot=field]]:border roc-u-[&>*]:data-[slot=field]:p-4",
+          "roc-u-has-data-[state=checked]:border-primary roc-u-has-data-[state=checked]:bg-primary/5 roc-u-dark:has-data-[state=checked]:bg-primary/10",
           className,
         ),
       )}
@@ -143,7 +143,7 @@ function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-71556df3b421 roc-s-074569488cca roc-s-c74ab393b96d roc-s-4c3c66460268 roc-s-daaac3fbf55e roc-s-5038cf153bcf",
+          "roc-u-flex roc-u-w-fit roc-u-items-center roc-u-gap-2 roc-u-text-sm roc-u-leading-snug roc-u-font-medium roc-u-group-data-[disabled=true]/field:opacity-50",
           className,
         ),
       )}
@@ -158,9 +158,9 @@ function FieldDescription({ className, ...props }: React.ComponentProps<"p">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-c74ab393b96d roc-s-7844ca2c6709 roc-s-52101fc7d8bb roc-s-35f35c41d134 roc-s-f9abeb5519b1",
-          "roc-s-d3a06646ec72 roc-s-9a9db3cd4e21 roc-s-f402ac9b1f67",
-          "roc-s-e1bd2eaca11c roc-s-30f54d824d9e roc-s-e8926eea1512",
+          "roc-u-text-sm roc-u-leading-normal roc-u-font-normal roc-u-text-muted-foreground roc-u-group-has-[[data-orientation=horizontal]]/field:text-balance",
+          "roc-u-last:mt-0 roc-u-nth-last-2:-mt-1 roc-u-[[data-variant=legend]+&]:-mt-1.5",
+          "roc-u-[&>a]:underline roc-u-[&>a]:underline-offset-4 roc-u-[&>a:hover]:text-primary",
           className,
         ),
       )}
@@ -182,7 +182,7 @@ function FieldSeparator({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d2d9e1f13413 roc-s-15c71dfec7d2 roc-s-c6413460bac9 roc-s-c74ab393b96d roc-s-1304a3025ea1",
+          "roc-u-relative roc-u--my-2 roc-u-h-5 roc-u-text-sm roc-u-group-data-[variant=outline]/field-group:-mb-2",
           className,
         ),
       )}
@@ -191,14 +191,14 @@ function FieldSeparator({
       <Separator
         className={cn(
           "roc-shadcn",
-          "roc-s-747355bdc2a2 roc-s-ce13093ad8c9 roc-s-4e45f4841abb",
+          "roc-u-absolute roc-u-inset-0 roc-u-top-1/2",
         )}
       />
       {children && (
         <span
           className={cn(
             "roc-shadcn",
-            "roc-s-d2d9e1f13413 roc-s-1752f11474a6 roc-s-496aca80e4d8 roc-s-8cfb5a42ef9f roc-s-5b272f3c5076 roc-s-e7e01cc7f4df roc-s-35f35c41d134",
+            "roc-u-relative roc-u-mx-auto roc-u-block roc-u-w-fit roc-u-bg-background roc-u-px-2 roc-u-text-muted-foreground",
           )}
           data-slot="field-separator-content"
         >
@@ -238,7 +238,7 @@ function FieldError({
       <ul
         className={cn(
           "roc-shadcn",
-          "roc-s-73f62657fa5e roc-s-222f930b8752 roc-s-abcade9f1f8d roc-s-302c0d124a94 roc-s-19e97f3f40e6",
+          "roc-u-ml-4 roc-u-flex roc-u-list-disc roc-u-flex-col roc-u-gap-1",
         )}
       >
         {uniqueErrors.map(
@@ -258,7 +258,7 @@ function FieldError({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-c74ab393b96d roc-s-52101fc7d8bb roc-s-887b9502d5c7",
+          "roc-u-text-sm roc-u-font-normal roc-u-text-destructive",
           className,
         ),
       )}

@@ -32,7 +32,7 @@ function SheetOverlay({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-992a93455c71 roc-s-ce13093ad8c9 roc-s-3eef1ce97dba roc-s-cba3ecce1586 roc-s-0cb4489c3645 roc-s-bb5869ef903b roc-s-bae1e782f277 roc-s-45464a92c1f6",
+          "roc-u-fixed roc-u-inset-0 roc-u-z-50 roc-u-bg-black/50 roc-u-data-[state=closed]:animate-out roc-u-data-[state=closed]:fade-out-0 roc-u-data-[state=open]:animate-in roc-u-data-[state=open]:fade-in-0",
           className,
         ),
       )}
@@ -59,15 +59,15 @@ function SheetContent({
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-992a93455c71 roc-s-3eef1ce97dba roc-s-222f930b8752 roc-s-302c0d124a94 roc-s-90fc3ec35a37 roc-s-5b272f3c5076 roc-s-0d4ca75de41c roc-s-70dd37c11434 roc-s-16c2539d9622 roc-s-0cb4489c3645 roc-s-e49515ace633 roc-s-bae1e782f277 roc-s-e093c9dc2cfe",
+            "roc-u-fixed roc-u-z-50 roc-u-flex roc-u-flex-col roc-u-gap-4 roc-u-bg-background roc-u-shadow-lg roc-u-transition roc-u-ease-in-out roc-u-data-[state=closed]:animate-out roc-u-data-[state=closed]:duration-300 roc-u-data-[state=open]:animate-in roc-u-data-[state=open]:duration-500",
             side === "right" &&
-              "roc-s-eb9e48c5dda9 roc-s-a74c4477017c roc-s-57c930dc1c31 roc-s-179cb7404c4a roc-s-8d940fccb093 roc-s-bddf3012e102 roc-s-783958b1d2bd roc-s-4213d5ddc102",
+              "roc-u-inset-y-0 roc-u-right-0 roc-u-h-full roc-u-w-3/4 roc-u-border-l roc-u-data-[state=closed]:slide-out-to-right roc-u-data-[state=open]:slide-in-from-right roc-u-sm:max-w-sm",
             side === "left" &&
-              "roc-s-eb9e48c5dda9 roc-s-635702706586 roc-s-57c930dc1c31 roc-s-179cb7404c4a roc-s-baf794b99c10 roc-s-5984dbdad10e roc-s-55ef7b573ebd roc-s-4213d5ddc102",
+              "roc-u-inset-y-0 roc-u-left-0 roc-u-h-full roc-u-w-3/4 roc-u-border-r roc-u-data-[state=closed]:slide-out-to-left roc-u-data-[state=open]:slide-in-from-left roc-u-sm:max-w-sm",
             side === "top" &&
-              "roc-s-3ba24c062d55 roc-s-98599e4ee250 roc-s-a66e9985b093 roc-s-bbe39cfb5cc6 roc-s-e2dc8825af51 roc-s-b6d5cf8447e4",
+              "roc-u-inset-x-0 roc-u-top-0 roc-u-h-auto roc-u-border-b roc-u-data-[state=closed]:slide-out-to-top roc-u-data-[state=open]:slide-in-from-top",
             side === "bottom" &&
-              "roc-s-3ba24c062d55 roc-s-30150dd033ab roc-s-a66e9985b093 roc-s-894c3815a57f roc-s-79970ba9f493 roc-s-e2f2e0f3f85c",
+              "roc-u-inset-x-0 roc-u-bottom-0 roc-u-h-auto roc-u-border-t roc-u-data-[state=closed]:slide-out-to-bottom roc-u-data-[state=open]:slide-in-from-bottom",
             className,
           ),
         )}
@@ -78,11 +78,11 @@ function SheetContent({
           <SheetPrimitive.Close
             className={cn(
               "roc-shadcn",
-              "roc-s-747355bdc2a2 roc-s-83ee6d9ede9d roc-s-830b1d2217ca roc-s-30c08d7acd8f roc-s-edf5f892709c roc-s-bd9fbbe5d14a roc-s-2cdd01663c76 roc-s-8da02faac748 roc-s-0d57d3d656f7 roc-s-9db723027e39 roc-s-c7969e2d6842 roc-s-7ba15cadabe2 roc-s-8d3c1014b967 roc-s-c7d98ce9dd2d",
+              "roc-u-absolute roc-u-top-4 roc-u-right-4 roc-u-rounded-xs roc-u-opacity-70 roc-u-ring-offset-background roc-u-transition-opacity roc-u-hover:opacity-100 roc-u-focus:ring-2 roc-u-focus:ring-ring roc-u-focus:ring-offset-2 roc-u-focus:outline-hidden roc-u-disabled:pointer-events-none roc-u-data-[state=open]:bg-secondary",
             )}
           >
-            <XIcon className={cn("roc-shadcn", "roc-s-100c22d5776b")} />
-            <span className={cn("roc-shadcn", "roc-s-32fb090591d9")}>
+            <XIcon className={cn("roc-shadcn", "roc-u-size-4")} />
+            <span className={cn("roc-shadcn", "roc-u-sr-only")}>
               Close
             </span>
           </SheetPrimitive.Close>
@@ -98,7 +98,7 @@ function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-302c0d124a94 roc-s-70007b876865 roc-s-99df86594a98",
+          "roc-u-flex roc-u-flex-col roc-u-gap-1.5 roc-u-p-4",
           className,
         ),
       )}
@@ -113,7 +113,7 @@ function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-930e37ac8b7d roc-s-222f930b8752 roc-s-302c0d124a94 roc-s-074569488cca roc-s-99df86594a98",
+          "roc-u-mt-auto roc-u-flex roc-u-flex-col roc-u-gap-2 roc-u-p-4",
           className,
         ),
       )}
@@ -130,7 +130,7 @@ function SheetTitle({
       data-slot="sheet-title"
       className={cn(
         "roc-shadcn",
-        cn("roc-s-87e86ce38eaf roc-s-957a109f887f", className),
+        cn("roc-u-font-semibold roc-u-text-foreground", className),
       )}
       {...props}
     />
@@ -145,7 +145,7 @@ function SheetDescription({
       data-slot="sheet-description"
       className={cn(
         "roc-shadcn",
-        cn("roc-s-c74ab393b96d roc-s-35f35c41d134", className),
+        cn("roc-u-text-sm roc-u-text-muted-foreground", className),
       )}
       {...props}
     />

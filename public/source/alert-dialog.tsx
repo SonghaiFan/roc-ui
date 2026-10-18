@@ -33,7 +33,7 @@ function AlertDialogOverlay({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-992a93455c71 roc-s-ce13093ad8c9 roc-s-3eef1ce97dba roc-s-cba3ecce1586 roc-s-0cb4489c3645 roc-s-bb5869ef903b roc-s-bae1e782f277 roc-s-45464a92c1f6",
+          "roc-u-fixed roc-u-inset-0 roc-u-z-50 roc-u-bg-black/50 roc-u-data-[state=closed]:animate-out roc-u-data-[state=closed]:fade-out-0 roc-u-data-[state=open]:animate-in roc-u-data-[state=open]:fade-in-0",
           className,
         ),
       )}
@@ -57,7 +57,7 @@ function AlertDialogContent({
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-6f251cb88324 roc-s-992a93455c71 roc-s-b106d8cef296 roc-s-d7e936f862e3 roc-s-3eef1ce97dba roc-s-0f2a693e93e2 roc-s-58d0413dd93c roc-s-ca852e070db7 roc-s-b790580e54ab roc-s-8728d3e02c92 roc-s-90fc3ec35a37 roc-s-49abc543ea42 roc-s-4f1a55de40bc roc-s-5b272f3c5076 roc-s-c432836760e3 roc-s-0d4ca75de41c roc-s-10e9f177b8fc roc-s-4c2ad4dbde51 roc-s-0cb4489c3645 roc-s-bb5869ef903b roc-s-f4cf4be63707 roc-s-bae1e782f277 roc-s-45464a92c1f6 roc-s-9ca352480f25 roc-s-a6360ea2be89",
+            "roc-u-group/alert-dialog-content roc-u-fixed roc-u-top-[50%] roc-u-left-[50%] roc-u-z-50 roc-u-grid roc-u-w-full roc-u-max-w-[calc(100%-2rem)] roc-u-translate-x-[-50%] roc-u-translate-y-[-50%] roc-u-gap-4 roc-u-rounded-lg roc-u-border roc-u-bg-background roc-u-p-6 roc-u-shadow-lg roc-u-duration-200 roc-u-data-[size=sm]:max-w-xs roc-u-data-[state=closed]:animate-out roc-u-data-[state=closed]:fade-out-0 roc-u-data-[state=closed]:zoom-out-95 roc-u-data-[state=open]:animate-in roc-u-data-[state=open]:fade-in-0 roc-u-data-[state=open]:zoom-in-95 roc-u-data-[size=default]:sm:max-w-lg",
             className,
           ),
         )}
@@ -76,7 +76,7 @@ function AlertDialogHeader({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-0f2a693e93e2 roc-s-ffa47a20e6d9 roc-s-4446c26b62a7 roc-s-70007b876865 roc-s-05ab12448317 roc-s-3e74f7f21a0f roc-s-070eebcc4f58 roc-s-dd65da590bfb roc-s-c406108470f8 roc-s-f5e1309ad2eb",
+          "roc-u-grid roc-u-grid-rows-[auto_1fr] roc-u-place-items-center roc-u-gap-1.5 roc-u-text-center roc-u-has-data-[slot=alert-dialog-media]:grid-rows-[auto_auto_1fr] roc-u-has-data-[slot=alert-dialog-media]:gap-x-6 roc-u-sm:group-data-[size=default]/alert-dialog-content:place-items-start roc-u-sm:group-data-[size=default]/alert-dialog-content:text-left roc-u-sm:group-data-[size=default]/alert-dialog-content:has-data-[slot=alert-dialog-media]:grid-rows-[auto_1fr]",
           className,
         ),
       )}
@@ -94,7 +94,7 @@ function AlertDialogFooter({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-c2c38b387d36 roc-s-074569488cca roc-s-7a68fd2753d6 roc-s-3014d16cc582 roc-s-bd85140e6a7c roc-s-40b618ad2df3",
+          "roc-u-flex roc-u-flex-col-reverse roc-u-gap-2 roc-u-group-data-[size=sm]/alert-dialog-content:grid roc-u-group-data-[size=sm]/alert-dialog-content:grid-cols-2 roc-u-sm:flex-row roc-u-sm:justify-end",
           className,
         ),
       )}
@@ -112,7 +112,7 @@ function AlertDialogTitle({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-035bd245837f roc-s-87e86ce38eaf roc-s-04ea8bec9e34",
+          "roc-u-text-lg roc-u-font-semibold roc-u-sm:group-data-[size=default]/alert-dialog-content:group-has-data-[slot=alert-dialog-media]/alert-dialog-content:col-start-2",
           className,
         ),
       )}
@@ -129,7 +129,7 @@ function AlertDialogDescription({
       data-slot="alert-dialog-description"
       className={cn(
         "roc-shadcn",
-        cn("roc-s-c74ab393b96d roc-s-35f35c41d134", className),
+        cn("roc-u-text-sm roc-u-text-muted-foreground", className),
       )}
       {...props}
     />
@@ -145,7 +145,7 @@ function AlertDialogMedia({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-02fd0ea53c0b roc-s-123306850fe1 roc-s-7cf5b58023e6 roc-s-71556df3b421 roc-s-a503dd374cca roc-s-3fa8c572949b roc-s-87ecb59f2d2d roc-s-3654bb6eac3d roc-s-635c19e44a8f",
+          "roc-u-mb-2 roc-u-inline-flex roc-u-size-16 roc-u-items-center roc-u-justify-center roc-u-rounded-md roc-u-bg-muted roc-u-sm:group-data-[size=default]/alert-dialog-content:row-span-2 roc-u-*:[svg:not([class*='size-'])]:size-8",
           className,
         ),
       )}

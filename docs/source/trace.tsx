@@ -15,7 +15,7 @@ function Trace({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-184ddc11e5f9 roc-s-302c0d124a94 roc-s-074569488cca roc-s-c77e591158e6 roc-s-e38a4d9daa63 roc-s-4f4a8e1c0099 roc-s-5846de8b54b1 roc-s-f30331c99a30 roc-s-829f3b09738b roc-s-c93baf97ce1a roc-s-42b38536b564 roc-s-c7a1c97c7c8d",
+          "roc-u-flex roc-u-w-full roc-u-min-w-0 roc-u-flex-col roc-u-gap-2 roc-u-*:has-[>[data-slot=trace-line]]:flex roc-u-*:has-[>[data-slot=trace-line]]:w-fit roc-u-*:has-[>[data-slot=trace-line]]:max-w-full roc-u-*:has-[>[data-slot=trace-line]]:min-w-0 roc-u-*:has-[>[data-slot=trace-line]]:rounded-md roc-u-*:has-[>[data-slot=trace-line]]:text-left roc-u-*:has-[>[data-slot=trace-line]]:outline-none roc-u-*:has-[>[data-slot=trace-line]]:focus-visible:ring-3 roc-u-*:has-[>[data-slot=trace-line]]:focus-visible:ring-ring/50",
           className,
         ),
       )}
@@ -37,7 +37,7 @@ function TraceLine({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-81b198a2db84 roc-s-184ddc11e5f9 roc-s-71556df3b421 roc-s-074569488cca roc-s-c74ab393b96d roc-s-35f35c41d134 roc-s-eae178841c68 roc-s-7edc6e83a8a8 roc-s-0683f21b1e6b roc-s-ab4c7e69b7ba roc-s-7812f5060410 roc-s-c89c6805bb54 roc-s-a3c6952473b3",
+          "roc-u-flex roc-u-w-fit roc-u-max-w-full roc-u-min-w-0 roc-u-items-center roc-u-gap-2 roc-u-text-sm roc-u-text-muted-foreground roc-u-transition-colors roc-u-in-[a,button]:cursor-pointer roc-u-in-[a:hover,button:hover]:text-foreground roc-u-data-[status=error]:text-destructive roc-u-data-[status=error]:in-[a:hover,button:hover]:text-destructive roc-u-data-[status=pending]:opacity-60 roc-u-data-[status=running]:*:data-[slot=trace-title]:shimmer",
           className,
         ),
       )}
@@ -53,7 +53,7 @@ function TraceIcon({ className, ...props }: React.ComponentProps<"span">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-100c22d5776b roc-s-27ead27a81df roc-s-71556df3b421 roc-s-a503dd374cca roc-s-bcae9d37090c roc-s-eb5ef2dbc2d4 roc-s-d703d695cc41",
+          "roc-u-flex roc-u-size-4 roc-u-shrink-0 roc-u-items-center roc-u-justify-center roc-u-[&_svg]:pointer-events-none roc-u-[&_svg:not([class*='size-'])]:size-4 roc-u-[[data-slot=trace-title]~&]:-ml-1",
           className,
         ),
       )}
@@ -68,7 +68,7 @@ function TraceTitle({ className, ...props }: React.ComponentProps<"span">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-184ddc11e5f9 roc-s-5a3a4ee420c2 roc-s-4ec29b929ff2",
+          "roc-u-min-w-0 roc-u-truncate roc-u-motion-reduce:shimmer-none",
           className,
         ),
       )}
@@ -86,7 +86,7 @@ function TraceDescription({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-27ead27a81df roc-s-4a6125f67a92 roc-s-ba2d0eea2e16",
+          "roc-u-shrink-0 roc-u-text-muted-foreground/70 roc-u-tabular-nums",
           className,
         ),
       )}
@@ -115,7 +115,7 @@ function TraceCollapsible({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-184ddc11e5f9 roc-s-302c0d124a94",
+          "roc-u-flex roc-u-w-full roc-u-min-w-0 roc-u-flex-col",
           className,
         ),
       )}
@@ -134,7 +134,7 @@ function TraceCollapsibleTrigger({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-b265c436f35d roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-81b198a2db84 roc-s-184ddc11e5f9 roc-s-d2fa8848968d roc-s-71556df3b421 roc-s-19e97f3f40e6 roc-s-3fa8c572949b roc-s-1a5d10977b93 roc-s-35f35c41d134 roc-s-eae178841c68 roc-s-b30fc56058b6 roc-s-4d6720d47806 roc-s-20add1417b2f roc-s-392a26f4c1b0 roc-s-21d6118f588a",
+          "roc-u-group/trace-collapsible-trigger roc-u-flex roc-u-w-fit roc-u-max-w-full roc-u-min-w-0 roc-u-cursor-pointer roc-u-items-center roc-u-gap-1 roc-u-rounded-md roc-u-text-left roc-u-text-muted-foreground roc-u-transition-colors roc-u-outline-none roc-u-hover:text-foreground roc-u-focus-visible:ring-3 roc-u-focus-visible:ring-ring/50 roc-u-has-[[data-status=error]]:text-destructive",
           className,
         ),
       )}
@@ -142,7 +142,7 @@ function TraceCollapsibleTrigger({
     >
       {children}
       <TraceIcon
-        className={cn("roc-shadcn", "roc-s-48a1d34f1a08 roc-s-5196b4b76fe0")}
+        className={cn("roc-shadcn", "roc-u-transition-transform roc-u-group-aria-expanded/trace-collapsible-trigger:rotate-90")}
       >
         <ChevronRightIcon />
       </TraceIcon>
@@ -159,7 +159,7 @@ function TraceCollapsibleContent({
       data-slot="trace-collapsible-content"
       className={cn(
         "roc-shadcn",
-        "roc-s-2d7a81b8ac8e roc-s-184ddc11e5f9 roc-s-d5111d0e9f48 roc-s-3578a3f09fa1 roc-s-10e9f177b8fc roc-s-c754b07be9bc roc-s-b0685045945f",
+        "roc-u-h-(--collapsible-panel-height) roc-u-min-w-0 roc-u-overflow-hidden roc-u-transition-[height] roc-u-duration-200 roc-u-data-ending-style:h-0 roc-u-data-starting-style:h-0",
       )}
       {...props}
     >
@@ -168,7 +168,7 @@ function TraceCollapsibleContent({
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-f28fea81a5cd roc-s-c6121c8e713a roc-s-32a6587a83f0 roc-s-184ddc11e5f9 roc-s-8d940fccb093 roc-s-1a52da5bc88c roc-s-0c3bdb637654 roc-s-059428494356 roc-s-1eb753eb16e8 roc-s-35f35c41d134",
+            "roc-u-mt-2 roc-u-mb-1 roc-u-ml-[calc(--spacing(2)-1px)] roc-u-min-w-0 roc-u-border-l roc-u-pr-1 roc-u-pl-4 roc-u-leading-relaxed roc-u-wrap-break-word roc-u-text-muted-foreground",
             className,
           ),
         )}

@@ -104,7 +104,7 @@ function Carousel({
     >
       <div
         onKeyDownCapture={handleKeyDown}
-        className={cn("roc-shadcn", cn("roc-s-d2d9e1f13413", className))}
+        className={cn("roc-shadcn", cn("roc-u-relative", className))}
         role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
@@ -120,17 +120,17 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       ref={carouselRef}
-      className={cn("roc-shadcn", "roc-s-d5111d0e9f48")}
+      className={cn("roc-shadcn", "roc-u-overflow-hidden")}
       data-slot="carousel-content"
     >
       <div
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-222f930b8752",
+            "roc-u-flex",
             orientation === "horizontal"
-              ? "roc-s-0a6a399f9efb"
-              : "roc-s-e086090e1cae roc-s-302c0d124a94",
+              ? "roc-u--ml-4"
+              : "roc-u--mt-4 roc-u-flex-col",
             className,
           ),
         )}
@@ -149,10 +149,10 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-184ddc11e5f9 roc-s-27ead27a81df roc-s-e32ee7fb8b83 roc-s-fec0aea7f726",
+          "roc-u-min-w-0 roc-u-shrink-0 roc-u-grow-0 roc-u-basis-full",
           orientation === "horizontal"
-            ? "roc-s-0c3bdb637654"
-            : "roc-s-5ca89c874a16",
+            ? "roc-u-pl-4"
+            : "roc-u-pt-4",
           className,
         ),
       )}
@@ -175,10 +175,10 @@ function CarouselPrevious({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-747355bdc2a2 roc-s-ebd37e04d422 roc-s-b005d61d0953",
+          "roc-u-absolute roc-u-size-8 roc-u-rounded-full",
           orientation === "horizontal"
-            ? "roc-s-4e45f4841abb roc-s-2ae997f9841a roc-s-5dde0fd996f0"
-            : "roc-s-49386075e1c4 roc-s-751d7f5e123b roc-s-832dd3994685 roc-s-990ccd031337",
+            ? "roc-u-top-1/2 roc-u--left-12 roc-u--translate-y-1/2"
+            : "roc-u--top-12 roc-u-left-1/2 roc-u--translate-x-1/2 roc-u-rotate-90",
           className,
         ),
       )}
@@ -187,7 +187,7 @@ function CarouselPrevious({
       {...props}
     >
       <ArrowLeft />
-      <span className={cn("roc-shadcn", "roc-s-32fb090591d9")}>
+      <span className={cn("roc-shadcn", "roc-u-sr-only")}>
         Previous slide
       </span>
     </Button>
@@ -208,10 +208,10 @@ function CarouselNext({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-747355bdc2a2 roc-s-ebd37e04d422 roc-s-b005d61d0953",
+          "roc-u-absolute roc-u-size-8 roc-u-rounded-full",
           orientation === "horizontal"
-            ? "roc-s-4e45f4841abb roc-s-38feafc9a1f9 roc-s-5dde0fd996f0"
-            : "roc-s-9275786fd335 roc-s-751d7f5e123b roc-s-832dd3994685 roc-s-990ccd031337",
+            ? "roc-u-top-1/2 roc-u--right-12 roc-u--translate-y-1/2"
+            : "roc-u--bottom-12 roc-u-left-1/2 roc-u--translate-x-1/2 roc-u-rotate-90",
           className,
         ),
       )}
@@ -220,7 +220,7 @@ function CarouselNext({
       {...props}
     >
       <ArrowRight />
-      <span className={cn("roc-shadcn", "roc-s-32fb090591d9")}>Next slide</span>
+      <span className={cn("roc-shadcn", "roc-u-sr-only")}>Next slide</span>
     </Button>
   );
 }

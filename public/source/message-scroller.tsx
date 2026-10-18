@@ -25,7 +25,7 @@ function MessageScroller({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-db75359a0c52 roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-4f43603c850c roc-s-410da8dfa8ac roc-s-302c0d124a94 roc-s-d5111d0e9f48",
+          "roc-u-group/message-scroller roc-u-relative roc-u-flex roc-u-size-full roc-u-min-h-0 roc-u-flex-col roc-u-overflow-hidden",
           className,
         ),
       )}
@@ -43,7 +43,7 @@ function MessageScrollerViewport({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-4f43603c850c roc-s-410da8dfa8ac roc-s-184ddc11e5f9 roc-s-99a63ca0c52a roc-s-51bebba470f2 roc-s-09aad479281c roc-s-2368e909f3a5 roc-s-998780cdef87 roc-s-c4265f330f92 roc-s-650161021cc7 roc-s-04930ecc6966",
+          "roc-u-size-full roc-u-min-h-0 roc-u-min-w-0 roc-u-scroll-fade-b roc-u-scrollbar-thin roc-u-scrollbar-gutter-stable roc-u-overflow-y-auto roc-u-overscroll-contain roc-u-contain-content roc-u-data-autoscrolling:scrollbar-none roc-u-data-pending-scroll:invisible",
           className,
         ),
       )}
@@ -61,7 +61,7 @@ function MessageScrollerContent({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-6cf42399d79e roc-s-7b9529b85009 roc-s-302c0d124a94 roc-s-a407069306f8",
+          "roc-u-flex roc-u-h-max roc-u-min-h-full roc-u-flex-col roc-u-gap-8",
           className,
         ),
       )}
@@ -81,7 +81,7 @@ function MessageScrollerItem({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-184ddc11e5f9 roc-s-27ead27a81df roc-s-95540cecf6da roc-s-56e120c241b2",
+          "roc-u-min-w-0 roc-u-shrink-0 roc-u-[contain-intrinsic-size:auto_10rem] roc-u-[content-visibility:auto]",
           className,
         ),
       )}
@@ -109,7 +109,7 @@ function MessageScrollerButton({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-747355bdc2a2 roc-s-6fb641e783f0 roc-s-832dd3994685 roc-s-b1e6016d4f99 roc-s-5b272f3c5076 roc-s-957a109f887f roc-s-2d87f6d61329 roc-s-10e9f177b8fc roc-s-e435a78a4f9f roc-s-4d6720d47806 roc-s-ef91e8451302 roc-s-9948be366c01 roc-s-39e04c00e01f roc-s-50e4a4ee72fb roc-s-341087410cfb roc-s-bc80033e68d5 roc-s-ffaa59b4cdcd roc-s-2c56d5bd1e6c roc-s-19b26cdb9c62 roc-s-0af8706ebfef roc-s-a1b3e37a03be roc-s-c1f23b4f38ef roc-s-e77b6702fb02 roc-s-68ba1bf2c65e roc-s-da969f284c81",
+          "roc-u-absolute roc-u-inset-s-1/2 roc-u--translate-x-1/2 roc-u-border-border roc-u-bg-background roc-u-text-foreground roc-u-transition-[translate,scale,opacity] roc-u-duration-200 roc-u-hover:bg-muted roc-u-hover:text-foreground roc-u-data-[active=false]:pointer-events-none roc-u-data-[active=false]:scale-95 roc-u-data-[active=false]:opacity-0 roc-u-data-[active=false]:duration-400 roc-u-data-[active=false]:ease-[cubic-bezier(0.7,0,0.84,0)] roc-u-data-[active=true]:translate-y-0 roc-u-data-[active=true]:scale-100 roc-u-data-[active=true]:opacity-100 roc-u-data-[active=true]:ease-[cubic-bezier(0.23,1,0.32,1)] roc-u-data-[direction=end]:bottom-4 roc-u-data-[direction=end]:data-[active=false]:translate-y-full roc-u-data-[direction=start]:top-4 roc-u-data-[direction=start]:data-[active=false]:-translate-y-full roc-u-rtl:translate-x-1/2 roc-u-data-[direction=start]:[&_svg]:rotate-180",
           className,
         ),
       )}
@@ -119,7 +119,7 @@ function MessageScrollerButton({
       {children ?? (
         <>
           <ArrowDownIcon />
-          <span className={cn("roc-shadcn", "roc-s-32fb090591d9")}>
+          <span className={cn("roc-shadcn", "roc-u-sr-only")}>
             {direction === "end" ? "Scroll to end" : "Scroll to start"}
           </span>
         </>

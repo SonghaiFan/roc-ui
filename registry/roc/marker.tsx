@@ -5,14 +5,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 import { Slot } from "./primitive-slot";
 const markerVariants = cva(
-  "roc-s-7f968dfc1113 roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-db5d34295fcd roc-s-58d0413dd93c roc-s-71556df3b421 roc-s-074569488cca roc-s-1a5d10977b93 roc-s-c74ab393b96d roc-s-35f35c41d134 roc-s-eb5ef2dbc2d4 roc-s-ac4e5f6d16c0 roc-s-e97fb9d15235 roc-s-f006185bfb5b",
+  "roc-u-group/marker roc-u-relative roc-u-flex roc-u-min-h-4 roc-u-w-full roc-u-items-center roc-u-gap-2 roc-u-text-left roc-u-text-sm roc-u-text-muted-foreground roc-u-[&_svg:not([class*='size-'])]:size-4 roc-u-[a]:underline roc-u-[a]:underline-offset-3 roc-u-[a]:hover:text-foreground",
   {
     variants: {
       variant: {
         default: "",
         separator:
-          "roc-s-92370022fff3 roc-s-f2a35ef20100 roc-s-f0901564ac85 roc-s-7fcdf2a25108 roc-s-0a559d976312 roc-s-b97fdf168025 roc-s-6d57d9f7be47 roc-s-5c1091e64898 roc-s-9d2e451defad roc-s-0e8106026fea",
-        border: "roc-s-bbe39cfb5cc6 roc-s-b1e6016d4f99 roc-s-2a81098af961",
+          "roc-u-before:mr-1 roc-u-before:h-px roc-u-before:min-w-0 roc-u-before:flex-1 roc-u-before:bg-border roc-u-after:ml-1 roc-u-after:h-px roc-u-after:min-w-0 roc-u-after:flex-1 roc-u-after:bg-border",
+        border: "roc-u-border-b roc-u-border-border roc-u-pb-2",
       },
     },
   },
@@ -44,7 +44,7 @@ function MarkerIcon({ className, ...props }: React.ComponentProps<"span">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-100c22d5776b roc-s-27ead27a81df roc-s-eb5ef2dbc2d4",
+          "roc-u-size-4 roc-u-shrink-0 roc-u-[&_svg:not([class*='size-'])]:size-4",
           className,
         ),
       )}
@@ -59,7 +59,7 @@ function MarkerContent({ className, ...props }: React.ComponentProps<"span">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-184ddc11e5f9 roc-s-1eb753eb16e8 roc-s-02dfebc28ff9 roc-s-eb62b599cc0f roc-s-d21ca853d27e roc-s-ed0d9e4bd82f roc-s-b7d74dc6621d",
+          "roc-u-min-w-0 roc-u-wrap-break-word roc-u-group-data-[variant=separator]/marker:flex-none roc-u-group-data-[variant=separator]/marker:text-center roc-u-*:[a]:underline roc-u-*:[a]:underline-offset-3 roc-u-*:[a]:hover:text-foreground",
           className,
         ),
       )}

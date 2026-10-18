@@ -14,14 +14,14 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-5788e917fbe5 roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-71556df3b421 roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-1267095cdeb7 roc-s-7de07d413c13 roc-s-4a85c59e17d7 roc-s-b30fc56058b6 roc-s-9daa2369a41b",
-          "roc-s-539ae144f076 roc-s-184ddc11e5f9 roc-s-f3f0724decc6",
-          "roc-s-f25292597409",
-          "roc-s-5e0ac88fef94",
-          "roc-s-715ee4bb5283 roc-s-6d8515239cb7 roc-s-53bbb9df1046",
-          "roc-s-f10ad9f740e0 roc-s-62406c48a8a9 roc-s-4339a1685853",
-          "roc-s-11b8d8efea69 roc-s-e13ec8b0a083 roc-s-3afc1f2f1b05",
-          "roc-s-59c94be4e394 roc-s-d51d614b77a9 roc-s-7be5f41c272b",
+          "roc-u-group/input-group roc-u-relative roc-u-flex roc-u-w-full roc-u-items-center roc-u-rounded-md roc-u-border roc-u-border-input roc-u-shadow-xs roc-u-transition-[color,box-shadow] roc-u-outline-none roc-u-dark:bg-input/30",
+          "roc-u-h-9 roc-u-min-w-0 roc-u-has-[>textarea]:h-auto",
+          "roc-u-has-[>[data-align=inline-start]]:[&>input]:pl-2",
+          "roc-u-has-[>[data-align=inline-end]]:[&>input]:pr-2",
+          "roc-u-has-[>[data-align=block-start]]:h-auto roc-u-has-[>[data-align=block-start]]:flex-col roc-u-has-[>[data-align=block-start]]:[&>input]:pb-3",
+          "roc-u-has-[>[data-align=block-end]]:h-auto roc-u-has-[>[data-align=block-end]]:flex-col roc-u-has-[>[data-align=block-end]]:[&>input]:pt-3",
+          "roc-u-has-[[data-slot=input-group-control]:focus-visible]:border-ring roc-u-has-[[data-slot=input-group-control]:focus-visible]:ring-[3px] roc-u-has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50",
+          "roc-u-has-[[data-slot][aria-invalid=true]]:border-destructive roc-u-has-[[data-slot][aria-invalid=true]]:ring-destructive/20 roc-u-dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40",
           className,
         ),
       )}
@@ -30,18 +30,18 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 const inputGroupAddonVariants = cva(
-  "roc-s-222f930b8752 roc-s-a66e9985b093 roc-s-1252913b5592 roc-s-71556df3b421 roc-s-a503dd374cca roc-s-074569488cca roc-s-a8c1dfb1d4ef roc-s-c74ab393b96d roc-s-daaac3fbf55e roc-s-35f35c41d134 roc-s-78905c9e865c roc-s-157f30958246 roc-s-630ee4b94ed4 roc-s-3d0d8ecf9bcb",
+  "roc-u-flex roc-u-h-auto roc-u-cursor-text roc-u-items-center roc-u-justify-center roc-u-gap-2 roc-u-py-1.5 roc-u-text-sm roc-u-font-medium roc-u-text-muted-foreground roc-u-select-none roc-u-group-data-[disabled=true]/input-group:opacity-50 roc-u-[&>kbd]:rounded-[calc(var(--radius)-5px)] roc-u-[&>svg:not([class*='size-'])]:size-4",
   {
     variants: {
       align: {
         "inline-start":
-          "roc-s-6de69a17604d roc-s-b20bbe8088fe roc-s-65c5d3c1e1d3 roc-s-7aa9d696c37d",
+          "roc-u-order-first roc-u-pl-3 roc-u-has-[>button]:ml-[-0.45rem] roc-u-has-[>kbd]:ml-[-0.35rem]",
         "inline-end":
-          "roc-s-922b168f4b88 roc-s-dd9f1ecfb256 roc-s-bbecdc7798bc roc-s-647dff1fd78c",
+          "roc-u-order-last roc-u-pr-3 roc-u-has-[>button]:mr-[-0.45rem] roc-u-has-[>kbd]:mr-[-0.35rem]",
         "block-start":
-          "roc-s-6de69a17604d roc-s-58d0413dd93c roc-s-c62ec162662e roc-s-0f9e6672913a roc-s-0a702d97ed7d roc-s-15bd882bcea7 roc-s-2922e7dd5610",
+          "roc-u-order-first roc-u-w-full roc-u-justify-start roc-u-px-3 roc-u-pt-3 roc-u-group-has-[>input]/input-group:pt-2.5 roc-u-[.border-b]:pb-3",
         "block-end":
-          "roc-s-922b168f4b88 roc-s-58d0413dd93c roc-s-c62ec162662e roc-s-0f9e6672913a roc-s-17b03732cf78 roc-s-d8dae959ce33 roc-s-20aafc100433",
+          "roc-u-order-last roc-u-w-full roc-u-justify-start roc-u-px-3 roc-u-pb-3 roc-u-group-has-[>input]/input-group:pb-2.5 roc-u-[.border-t]:pt-3",
       },
     },
     defaultVariants: {
@@ -74,15 +74,15 @@ function InputGroupAddon({
   );
 }
 const inputGroupButtonVariants = cva(
-  "roc-s-222f930b8752 roc-s-71556df3b421 roc-s-074569488cca roc-s-c74ab393b96d roc-s-89c3006b2722",
+  "roc-u-flex roc-u-items-center roc-u-gap-2 roc-u-text-sm roc-u-shadow-none",
   {
     variants: {
       size: {
-        xs: "roc-s-ce1945804664 roc-s-19e97f3f40e6 roc-s-1ccebaa2ad91 roc-s-e7e01cc7f4df roc-s-36a5a94dc738 roc-s-4fe4c85fdcab",
-        sm: "roc-s-1fb07b38c63b roc-s-70007b876865 roc-s-3fa8c572949b roc-s-588daa1a9891 roc-s-3b01ee05b16d",
+        xs: "roc-u-h-6 roc-u-gap-1 roc-u-rounded-[calc(var(--radius)-5px)] roc-u-px-2 roc-u-has-[>svg]:px-2 roc-u-[&>svg:not([class*='size-'])]:size-3.5",
+        sm: "roc-u-h-8 roc-u-gap-1.5 roc-u-rounded-md roc-u-px-2.5 roc-u-has-[>svg]:px-2.5",
         "icon-xs":
-          "roc-s-0712570dcc9f roc-s-1ccebaa2ad91 roc-s-04760bcd507f roc-s-febc93c1bd70",
-        "icon-sm": "roc-s-ebd37e04d422 roc-s-04760bcd507f roc-s-febc93c1bd70",
+          "roc-u-size-6 roc-u-rounded-[calc(var(--radius)-5px)] roc-u-p-0 roc-u-has-[>svg]:p-0",
+        "icon-sm": "roc-u-size-8 roc-u-p-0 roc-u-has-[>svg]:p-0",
       },
     },
     defaultVariants: {
@@ -117,7 +117,7 @@ function InputGroupText({ className, ...props }: React.ComponentProps<"span">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-71556df3b421 roc-s-074569488cca roc-s-c74ab393b96d roc-s-35f35c41d134 roc-s-bcae9d37090c roc-s-eb5ef2dbc2d4",
+          "roc-u-flex roc-u-items-center roc-u-gap-2 roc-u-text-sm roc-u-text-muted-foreground roc-u-[&_svg]:pointer-events-none roc-u-[&_svg:not([class*='size-'])]:size-4",
           className,
         ),
       )}
@@ -135,7 +135,7 @@ function InputGroupInput({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-7bd5bab6d7f4 roc-s-52417259a4f5 roc-s-dad556abfe15 roc-s-8fca9236d191 roc-s-89c3006b2722 roc-s-b55b9ee3d692 roc-s-9279f06cab0e",
+          "roc-u-flex-1 roc-u-rounded-none roc-u-border-0 roc-u-bg-transparent roc-u-shadow-none roc-u-focus-visible:ring-0 roc-u-dark:bg-transparent",
           className,
         ),
       )}
@@ -153,7 +153,7 @@ function InputGroupTextarea({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-7bd5bab6d7f4 roc-s-93adf2894f42 roc-s-52417259a4f5 roc-s-dad556abfe15 roc-s-8fca9236d191 roc-s-d3cea061f2f3 roc-s-89c3006b2722 roc-s-b55b9ee3d692 roc-s-9279f06cab0e",
+          "roc-u-flex-1 roc-u-resize-none roc-u-rounded-none roc-u-border-0 roc-u-bg-transparent roc-u-py-3 roc-u-shadow-none roc-u-focus-visible:ring-0 roc-u-dark:bg-transparent",
           className,
         ),
       )}

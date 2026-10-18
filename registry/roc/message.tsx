@@ -9,7 +9,7 @@ function MessageGroup({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-184ddc11e5f9 roc-s-302c0d124a94 roc-s-074569488cca",
+          "roc-u-flex roc-u-min-w-0 roc-u-flex-col roc-u-gap-2",
           className,
         ),
       )}
@@ -31,7 +31,7 @@ function Message({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-2137fc689640 roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-184ddc11e5f9 roc-s-074569488cca roc-s-c74ab393b96d roc-s-949551edc2b2",
+          "roc-u-group/message roc-u-relative roc-u-flex roc-u-w-full roc-u-min-w-0 roc-u-gap-2 roc-u-text-sm roc-u-data-[align=end]:flex-row-reverse",
           className,
         ),
       )}
@@ -46,7 +46,7 @@ function MessageAvatar({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-88b0809ec4a5 roc-s-27ead27a81df roc-s-71556df3b421 roc-s-a503dd374cca roc-s-8ba22fc6f03d roc-s-d5111d0e9f48 roc-s-b005d61d0953 roc-s-87ecb59f2d2d roc-s-d2eb319ba682",
+          "roc-u-flex roc-u-w-fit roc-u-min-w-8 roc-u-shrink-0 roc-u-items-center roc-u-justify-center roc-u-self-end roc-u-overflow-hidden roc-u-rounded-full roc-u-bg-muted roc-u-group-has-data-[slot=message-footer]/message:-translate-y-8",
           className,
         ),
       )}
@@ -61,7 +61,7 @@ function MessageContent({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-184ddc11e5f9 roc-s-302c0d124a94 roc-s-08f0549eb630 roc-s-1eb753eb16e8 roc-s-06987024abe7",
+          "roc-u-flex roc-u-w-full roc-u-min-w-0 roc-u-flex-col roc-u-gap-2.5 roc-u-wrap-break-word roc-u-group-data-[align=end]/message:*:data-slot:self-end",
           className,
         ),
       )}
@@ -76,7 +76,7 @@ function MessageHeader({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-81b198a2db84 roc-s-184ddc11e5f9 roc-s-71556df3b421 roc-s-0f9e6672913a roc-s-3992de70b033 roc-s-daaac3fbf55e roc-s-35f35c41d134 roc-s-b331a35b9564",
+          "roc-u-flex roc-u-max-w-full roc-u-min-w-0 roc-u-items-center roc-u-px-3 roc-u-text-xs roc-u-font-medium roc-u-text-muted-foreground roc-u-group-has-data-[variant=ghost]/message:px-0",
           className,
         ),
       )}
@@ -91,7 +91,7 @@ function MessageFooter({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-81b198a2db84 roc-s-184ddc11e5f9 roc-s-71556df3b421 roc-s-0f9e6672913a roc-s-3992de70b033 roc-s-daaac3fbf55e roc-s-35f35c41d134 roc-s-b331a35b9564 roc-s-71a0f6658714",
+          "roc-u-flex roc-u-max-w-full roc-u-min-w-0 roc-u-items-center roc-u-px-3 roc-u-text-xs roc-u-font-medium roc-u-text-muted-foreground roc-u-group-has-data-[variant=ghost]/message:px-0 roc-u-group-data-[align=end]/message:justify-end",
           className,
         ),
       )}

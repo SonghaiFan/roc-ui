@@ -6,18 +6,18 @@ import { cn } from "./utils";
 import { Slot } from "./primitive-slot";
 import { Button } from "./button";
 const attachmentVariants = cva(
-  "roc-s-7dc46014311f roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-81b198a2db84 roc-s-184ddc11e5f9 roc-s-27ead27a81df roc-s-faa8a23c68f6 roc-s-6ad537f2bbaa roc-s-4f1a55de40bc roc-s-16a9cd6c3710 roc-s-ee73a37f6b8a roc-s-eae178841c68 roc-s-ffc76056b3ba roc-s-2211f122f7ab roc-s-4e40aee410f5 roc-s-de3a9fac636c roc-s-79d229f5dd53",
+  "roc-u-group/attachment roc-u-relative roc-u-flex roc-u-w-fit roc-u-max-w-full roc-u-min-w-0 roc-u-shrink-0 roc-u-flex-wrap roc-u-rounded-xl roc-u-border roc-u-bg-card roc-u-text-card-foreground roc-u-transition-colors roc-u-focus-within:ring-1 roc-u-focus-within:ring-ring/50 roc-u-has-[>a,>button]:hover:bg-muted/50 roc-u-data-[state=error]:border-destructive/30 roc-u-data-[state=idle]:border-dashed",
   {
     variants: {
       size: {
         default:
-          "roc-s-074569488cca roc-s-c74ab393b96d roc-s-425931076a99 roc-s-98236ea1afb6 roc-s-cfc256fd857f",
-        sm: "roc-s-08f0549eb630 roc-s-3992de70b033 roc-s-c781fe2a72d3 roc-s-cbf1bde027aa roc-s-6da902603cc0",
-        xs: "roc-s-70007b876865 roc-s-49abc543ea42 roc-s-3992de70b033 roc-s-8d2a49776e93 roc-s-14ae10de3835 roc-s-c35a8a397faf",
+          "roc-u-gap-2 roc-u-text-sm roc-u-has-data-[slot=attachment-content]:px-2.5 roc-u-has-data-[slot=attachment-content]:py-2 roc-u-has-data-[slot=attachment-media]:p-2",
+        sm: "roc-u-gap-2.5 roc-u-text-xs roc-u-has-data-[slot=attachment-content]:px-2 roc-u-has-data-[slot=attachment-content]:py-1.5 roc-u-has-data-[slot=attachment-media]:p-1.5",
+        xs: "roc-u-gap-1.5 roc-u-rounded-lg roc-u-text-xs roc-u-has-data-[slot=attachment-content]:px-1.5 roc-u-has-data-[slot=attachment-content]:py-1 roc-u-has-data-[slot=attachment-media]:p-1",
       },
       orientation: {
-        horizontal: "roc-s-f0ebff9e366e roc-s-71556df3b421",
-        vertical: "roc-s-b29fddfef42c roc-s-302c0d124a94 roc-s-eea4ceb16768",
+        horizontal: "roc-u-min-w-40 roc-u-items-center",
+        vertical: "roc-u-w-24 roc-u-flex-col roc-u-has-data-[slot=attachment-content]:w-30",
       },
     },
   },
@@ -47,13 +47,13 @@ function Attachment({
   );
 }
 const attachmentMediaVariants = cva(
-  "roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-129d6f9b1e07 roc-s-512f7ceb0b0e roc-s-27ead27a81df roc-s-71556df3b421 roc-s-a503dd374cca roc-s-d5111d0e9f48 roc-s-49abc543ea42 roc-s-87ecb59f2d2d roc-s-957a109f887f roc-s-cbebfa0b3d78 roc-s-ab03ac0040c6 roc-s-e00ba0b0fa5e roc-s-3ace78fc242f roc-s-0c65e27e5f8a roc-s-55ad0d8e7721 roc-s-fc22a1c9e79a roc-s-bcae9d37090c roc-s-eb5ef2dbc2d4 roc-s-34607717f111 roc-s-3866ee69ecc7",
+  "roc-u-relative roc-u-flex roc-u-aspect-square roc-u-w-10 roc-u-shrink-0 roc-u-items-center roc-u-justify-center roc-u-overflow-hidden roc-u-rounded-lg roc-u-bg-muted roc-u-text-foreground roc-u-group-data-[orientation=vertical]/attachment:w-full roc-u-group-data-[size=sm]/attachment:w-8 roc-u-group-data-[size=xs]/attachment:w-7 roc-u-group-data-[size=xs]/attachment:rounded-md roc-u-group-data-[state=error]/attachment:bg-destructive/10 roc-u-group-data-[state=error]/attachment:text-destructive roc-u-group-data-[orientation=vertical]/attachment:*:data-[slot=spinner]:size-6! roc-u-[&_svg]:pointer-events-none roc-u-[&_svg:not([class*='size-'])]:size-4 roc-u-group-data-[orientation=vertical]/attachment:[&_svg:not([class*='size-'])]:size-6 roc-u-group-data-[size=xs]/attachment:[&_svg:not([class*='size-'])]:size-3.5",
   {
     variants: {
       variant: {
         icon: "",
         image:
-          "roc-s-5efd07d899d9 roc-s-cb181f3648de roc-s-e4c0de20f3b2 roc-s-3ef3066f82d9 roc-s-fe2e25edabfb roc-s-ad1690316c60",
+          "roc-u-opacity-60 roc-u-group-data-[state=done]/attachment:opacity-100 roc-u-group-data-[state=idle]/attachment:opacity-100 roc-u-*:[img]:aspect-square roc-u-*:[img]:w-full roc-u-*:[img]:object-cover",
       },
     },
     defaultVariants: {
@@ -88,7 +88,7 @@ function AttachmentContent({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-81b198a2db84 roc-s-184ddc11e5f9 roc-s-7bd5bab6d7f4 roc-s-bd41d85960e4 roc-s-9d31285888a8",
+          "roc-u-max-w-full roc-u-min-w-0 roc-u-flex-1 roc-u-leading-tight roc-u-group-data-[orientation=vertical]/attachment:px-1",
           className,
         ),
       )}
@@ -106,7 +106,7 @@ function AttachmentTitle({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-496aca80e4d8 roc-s-81b198a2db84 roc-s-184ddc11e5f9 roc-s-5a3a4ee420c2 roc-s-daaac3fbf55e roc-s-d54ef7dbea77 roc-s-18c5d963437a",
+          "roc-u-block roc-u-max-w-full roc-u-min-w-0 roc-u-truncate roc-u-font-medium roc-u-group-data-[state=processing]/attachment:shimmer roc-u-group-data-[state=uploading]/attachment:shimmer",
           className,
         ),
       )}
@@ -124,8 +124,8 @@ function AttachmentDescription({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-7afae652585f roc-s-496aca80e4d8 roc-s-184ddc11e5f9 roc-s-5a3a4ee420c2 roc-s-3992de70b033 roc-s-35f35c41d134 roc-s-5df1eee1b27e",
-          "roc-s-81b198a2db84",
+          "roc-u-mt-0.5 roc-u-block roc-u-min-w-0 roc-u-truncate roc-u-text-xs roc-u-text-muted-foreground roc-u-group-data-[state=error]/attachment:text-destructive/80",
+          "roc-u-max-w-full",
           className,
         ),
       )}
@@ -143,7 +143,7 @@ function AttachmentActions({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d2d9e1f13413 roc-s-4e8f0a87a0dc roc-s-222f930b8752 roc-s-27ead27a81df roc-s-71556df3b421 roc-s-6feee9d76f90 roc-s-6a641790bda9 roc-s-0942a004304b roc-s-96eb45262a23",
+          "roc-u-relative roc-u-z-20 roc-u-flex roc-u-shrink-0 roc-u-items-center roc-u-group-data-[orientation=vertical]/attachment:absolute roc-u-group-data-[orientation=vertical]/attachment:top-3 roc-u-group-data-[orientation=vertical]/attachment:right-3 roc-u-group-data-[orientation=vertical]/attachment:gap-1",
           className,
         ),
       )}
@@ -183,7 +183,7 @@ function AttachmentTrigger({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-747355bdc2a2 roc-s-ce13093ad8c9 roc-s-418e44ad4f9e roc-s-b30fc56058b6",
+          "roc-u-absolute roc-u-inset-0 roc-u-z-10 roc-u-outline-none",
           className,
         ),
       )}
@@ -198,7 +198,7 @@ function AttachmentGroup({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-184ddc11e5f9 roc-s-eb3ca07c6bb1 roc-s-25a90a2d78c3 roc-s-78e8e15ae146 roc-s-3ae2dd1c8162 roc-s-7d02e62c543b roc-s-d7db3451d154 roc-s-b40bd2e015fb roc-s-0569931d14e9 roc-s-1fcf28756bb1 roc-s-5ad165dd1d7d roc-s-46e439759a3a",
+          "roc-u-flex roc-u-min-w-0 roc-u-scroll-fade-x roc-u-snap-x roc-u-snap-mandatory roc-u-scroll-px-1 roc-u-scrollbar-none roc-u-gap-3 roc-u-overflow-x-auto roc-u-overscroll-x-contain roc-u-py-1 roc-u-*:data-[slot=attachment]:flex-none roc-u-*:data-[slot=attachment]:snap-start",
           className,
         ),
       )}

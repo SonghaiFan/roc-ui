@@ -9,98 +9,98 @@
   --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
   --roc-sh-font-weight-medium: 500;
 }
-.roc-s-d2d9e1f13413 {
+.roc-u-relative {
   position: relative;
 }
-.roc-s-222f930b8752 {
+.roc-u-flex {
   display: flex;
 }
-.roc-s-8cfb5a42ef9f {
+.roc-u-w-fit {
   width: fit-content;
 }
-.roc-s-58d0413dd93c {
+.roc-u-w-full {
   width: 100%;
 }
-.roc-s-81b198a2db84 {
+.roc-u-max-w-full {
   max-width: 100%;
 }
-.roc-s-184ddc11e5f9 {
+.roc-u-min-w-0 {
   min-width: 0px;
 }
-.roc-s-88b0809ec4a5 {
+.roc-u-min-w-8 {
   min-width: calc(var(--roc-sh-spacing) * 8);
 }
-.roc-s-27ead27a81df {
+.roc-u-shrink-0 {
   flex-shrink: 0;
 }
-.roc-s-302c0d124a94 {
+.roc-u-flex-col {
   flex-direction: column;
 }
-.roc-s-71556df3b421 {
+.roc-u-items-center {
   align-items: center;
 }
-.roc-s-a503dd374cca {
+.roc-u-justify-center {
   justify-content: center;
 }
-.roc-s-074569488cca {
+.roc-u-gap-2 {
   gap: calc(var(--roc-sh-spacing) * 2);
 }
-.roc-s-08f0549eb630 {
+.roc-u-gap-2\.5 {
   gap: calc(var(--roc-sh-spacing) * 2.5);
 }
-.roc-s-8ba22fc6f03d {
+.roc-u-self-end {
   align-self: flex-end;
 }
-.roc-s-d5111d0e9f48 {
+.roc-u-overflow-hidden {
   overflow: hidden;
 }
-.roc-s-b005d61d0953 {
+.roc-u-rounded-full {
   border-radius: calc(infinity * 1px);
 }
-.roc-s-87ecb59f2d2d {
+.roc-u-bg-muted {
   background-color: var(--roc-sh-color-muted);
 }
-.roc-s-0f9e6672913a {
+.roc-u-px-3 {
   padding-inline: calc(var(--roc-sh-spacing) * 3);
 }
-.roc-s-c74ab393b96d {
+.roc-u-text-sm {
   font-size: var(--roc-sh-text-sm);
   line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-sm--line-height));
 }
-.roc-s-3992de70b033 {
+.roc-u-text-xs {
   font-size: var(--roc-sh-text-xs);
   line-height: var(--roc-sh-tw-leading, var(--roc-sh-text-xs--line-height));
 }
-.roc-s-daaac3fbf55e {
+.roc-u-font-medium {
   --roc-sh-tw-font-weight: var(--roc-sh-font-weight-medium);
   font-weight: var(--roc-sh-font-weight-medium);
 }
-.roc-s-1eb753eb16e8 {
+.roc-u-wrap-break-word {
   overflow-wrap: break-word;
 }
-.roc-s-35f35c41d134 {
+.roc-u-text-muted-foreground {
   color: var(--roc-sh-color-muted-foreground);
 }
-.roc-s-d2eb319ba682:is(
-  :where(.roc-s-2137fc689640):has([data-slot="message-footer"]) *
+.roc-u-group-has-data-\[slot\=message-footer\]\/message\:-translate-y-8:is(
+  :where(.roc-u-group\/message):has([data-slot="message-footer"]) *
 ) {
   --roc-sh-tw-translate-y: calc(var(--roc-sh-spacing) * -8);
   translate: var(--roc-sh-tw-translate-x) var(--roc-sh-tw-translate-y);
 }
-.roc-s-b331a35b9564:is(
-  :where(.roc-s-2137fc689640):has([data-variant="ghost"]) *
+.roc-u-group-has-data-\[variant\=ghost\]\/message\:px-0:is(
+  :where(.roc-u-group\/message):has([data-variant="ghost"]) *
 ) {
   padding-inline: 0px;
 }
-.roc-s-71a0f6658714:is(:where(.roc-s-2137fc689640)[data-align="end"] *) {
+.roc-u-group-data-\[align\=end\]\/message\:justify-end:is(:where(.roc-u-group\/message)[data-align="end"] *) {
   justify-content: flex-end;
 }
 :is(
-  .roc-s-06987024abe7:is(:where(.roc-s-2137fc689640)[data-align="end"] *) > *
+  .roc-u-group-data-\[align\=end\]\/message\:\*\:data-slot\:self-end:is(:where(.roc-u-group\/message)[data-align="end"] *) > *
 )[data-slot] {
   align-self: flex-end;
 }
-.roc-s-949551edc2b2[data-align="end"] {
+.roc-u-data-\[align\=end\]\:flex-row-reverse[data-align="end"] {
   flex-direction: row-reverse;
 }
 @property --roc-sh-tw-font-weight {

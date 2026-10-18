@@ -27,7 +27,7 @@ function ToastViewport({ className, ...props }: ToastPrimitive.Viewport.Props) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-33228ff7d583 roc-s-992a93455c71 roc-s-38b75be6f15a roc-s-ec8003369386 roc-s-3eef1ce97dba roc-s-1752f11474a6 roc-s-fe3dd9b783fd roc-s-6f067cb084a4 roc-s-b30fc56058b6 roc-s-fba1c2b724bd roc-s-b6650f12069f roc-s-89aa1dd466b9 roc-s-867cb2f7c900",
+          "roc-u-pointer-events-none roc-u-fixed roc-u-inset-x-4 roc-u-bottom-4 roc-u-z-50 roc-u-mx-auto roc-u-w-auto roc-u-max-w-sm roc-u-outline-none roc-u-sm:right-4 roc-u-sm:left-auto roc-u-sm:mx-0 roc-u-sm:w-full",
           className,
         ),
       )}
@@ -42,21 +42,21 @@ function Toast({ className, ...props }: ToastPrimitive.Root.Props) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-e638400d3a78 roc-s-cb20bd519346 roc-s-747355bdc2a2 roc-s-a74c4477017c roc-s-30150dd033ab roc-s-69bb62dcb357 roc-s-58d0413dd93c roc-s-cf404c52763b roc-s-b741b095195e roc-s-4f1a55de40bc roc-s-e593c38256e0 roc-s-5bd2afe89f0b roc-s-0d4ca75de41c roc-s-6340d0b91c62 roc-s-b30fc56058b6 roc-s-78905c9e865c roc-s-b906a32b31ee roc-s-365a4654f7b1 roc-s-392a26f4c1b0",
-          "roc-s-de4869e5601e roc-s-7219b97921cd roc-s-33f18f81a3e5 roc-s-2a55a8480633 roc-s-568741366a9d roc-s-d95632988c38",
-          "roc-s-6a8ae886c4ee roc-s-70f193b94a55 roc-s-6e1ffa19619f",
-          "roc-s-b1cf80175a45 roc-s-fb7546c57e67 roc-s-3bb9d5b6c45d roc-s-65dcbd8dd4a3 roc-s-5dadadb9ebc2 roc-s-5dc0c502c15b",
-          "roc-s-5d2fbf18a63b roc-s-fd74f8193e01",
-          "roc-s-ecbcfc40de36 roc-s-10da064a4fd5",
-          "roc-s-37a43ab6b614",
-          "roc-s-1c6ac83dfcfd",
-          "roc-s-dcd64e2e7222",
-          "roc-s-18cdb1531fe7",
-          "roc-s-c3d730f33e6b",
-          "roc-s-f595428d08e4",
-          "roc-s-3dc300866b5d",
-          "roc-s-e80283c1c3ad",
-          "roc-s-524d021276bc",
+          "roc-u-group/toast roc-u-pointer-events-auto roc-u-absolute roc-u-right-0 roc-u-bottom-0 roc-u-z-[calc(1000-var(--toast-index))] roc-u-w-full roc-u-origin-bottom roc-u-rounded-2xl roc-u-border roc-u-bg-popover roc-u-text-popover-foreground roc-u-shadow-lg roc-u-will-change-transform roc-u-outline-none roc-u-select-none roc-u-focus-visible:border-ring roc-u-focus-visible:ring-[3px] roc-u-focus-visible:ring-ring/50",
+          "roc-u-[--gap:0.75rem] roc-u-[--height:var(--toast-frontmost-height,var(--toast-height))] roc-u-[--offset-y:calc(var(--toast-offset-y)*-1+calc(var(--toast-index)*var(--gap)*-1)+var(--toast-swipe-movement-y))] roc-u-[--peek:0.75rem] roc-u-[--scale:calc(max(0,1-(var(--toast-index)*0.1)))] roc-u-[--shrink:calc(1-var(--scale))]",
+          "roc-u-h-(--height) roc-u-[transform:translateX(var(--toast-swipe-movement-x))_translateY(calc(var(--toast-swipe-movement-y)-(var(--toast-index)*var(--peek))-(var(--shrink)*var(--height))))_scale(var(--scale))] roc-u-[transition:transform_500ms_cubic-bezier(0.22,1,0.36,1),opacity_500ms,height_150ms]",
+          "roc-u-after:absolute roc-u-after:top-full roc-u-after:left-0 roc-u-after:h-[calc(var(--gap)+1px)] roc-u-after:w-full roc-u-after:content-['']",
+          "roc-u-data-expanded:h-(--toast-height) roc-u-data-expanded:[transform:translateX(var(--toast-swipe-movement-x))_translateY(var(--offset-y))]",
+          "roc-u-data-limited:opacity-0 roc-u-data-starting-style:[transform:translateY(150%)]",
+          "roc-u-[&[data-ending-style]:not([data-limited]):not([data-swipe-direction])]:[transform:translateY(150%)]",
+          "roc-u-data-ending-style:data-[swipe-direction=down]:[transform:translateY(calc(var(--toast-swipe-movement-y)+150%))]",
+          "roc-u-data-ending-style:data-[swipe-direction=left]:[transform:translateX(calc(var(--toast-swipe-movement-x)-150%))_translateY(var(--offset-y))]",
+          "roc-u-data-ending-style:data-[swipe-direction=right]:[transform:translateX(calc(var(--toast-swipe-movement-x)+150%))_translateY(var(--offset-y))]",
+          "roc-u-data-ending-style:data-[swipe-direction=up]:[transform:translateY(calc(var(--toast-swipe-movement-y)-150%))]",
+          "roc-u-data-expanded:data-ending-style:data-[swipe-direction=down]:[transform:translateY(calc(var(--toast-swipe-movement-y)+150%))]",
+          "roc-u-data-expanded:data-ending-style:data-[swipe-direction=left]:[transform:translateX(calc(var(--toast-swipe-movement-x)-150%))_translateY(var(--offset-y))]",
+          "roc-u-data-expanded:data-ending-style:data-[swipe-direction=right]:[transform:translateX(calc(var(--toast-swipe-movement-x)+150%))_translateY(var(--offset-y))]",
+          "roc-u-data-expanded:data-ending-style:data-[swipe-direction=up]:[transform:translateY(calc(var(--toast-swipe-movement-y)-150%))]",
           className,
         ),
       )}
@@ -71,7 +71,7 @@ function ToastContent({ className, ...props }: ToastPrimitive.Content.Props) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-57c930dc1c31 roc-s-71556df3b421 roc-s-d7db3451d154 roc-s-d5111d0e9f48 roc-s-99df86594a98 roc-s-2cdd01663c76 roc-s-75c4fbfdedac roc-s-7afa4c63bbd8 roc-s-360c121a10de roc-s-26cacc22a312",
+          "roc-u-flex roc-u-h-full roc-u-items-center roc-u-gap-3 roc-u-overflow-hidden roc-u-p-4 roc-u-transition-opacity roc-u-duration-250 roc-u-ease-[cubic-bezier(0.22,1,0.36,1)] roc-u-data-behind:opacity-0 roc-u-data-expanded:opacity-100",
           className,
         ),
       )}
@@ -85,7 +85,7 @@ function ToastTitle({ className, ...props }: ToastPrimitive.Title.Props) {
       data-slot="toast-title"
       className={cn(
         "roc-shadcn",
-        cn("roc-s-c74ab393b96d roc-s-daaac3fbf55e", className),
+        cn("roc-u-text-sm roc-u-font-medium", className),
       )}
       {...props}
     />
@@ -100,7 +100,7 @@ function ToastDescription({
       data-slot="toast-description"
       className={cn(
         "roc-shadcn",
-        cn("roc-s-c74ab393b96d roc-s-35f35c41d134", className),
+        cn("roc-u-text-sm roc-u-text-muted-foreground", className),
       )}
       {...props}
     />
@@ -115,7 +115,7 @@ function ToastAction({
     <ToastPrimitive.Action
       data-slot="toast-action"
       render={render}
-      className={cn("roc-shadcn", cn("roc-s-27ead27a81df", className))}
+      className={cn("roc-shadcn", cn("roc-u-shrink-0", className))}
       {...props}
     />
   );
@@ -134,7 +134,7 @@ function ToastClose({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d2d9e1f13413 roc-s-27ead27a81df roc-s-35f35c41d134 roc-s-b1cf80175a45 roc-s-7744ea79f26f roc-s-5dc0c502c15b roc-s-4d6720d47806",
+          "roc-u-relative roc-u-shrink-0 roc-u-text-muted-foreground roc-u-after:absolute roc-u-after:-inset-2 roc-u-after:content-[''] roc-u-hover:text-foreground",
           className,
         ),
       )}
@@ -158,7 +158,7 @@ function ToastIcon({ type }: { type: string | undefined }) {
   if (type === "error") {
     icon = (
       <OctagonXIcon
-        className={cn("roc-shadcn", "roc-s-887b9502d5c7")}
+        className={cn("roc-shadcn", "roc-u-text-destructive")}
         aria-hidden="true"
       />
     );
@@ -166,7 +166,7 @@ function ToastIcon({ type }: { type: string | undefined }) {
   if (type === "loading") {
     icon = (
       <Loader2Icon
-        className={cn("roc-shadcn", "roc-s-2c14b55d77e6")}
+        className={cn("roc-shadcn", "roc-u-animate-spin")}
         aria-hidden="true"
       />
     );
@@ -179,7 +179,7 @@ function ToastIcon({ type }: { type: string | undefined }) {
       data-slot="toast-icon"
       className={cn(
         "roc-shadcn",
-        "roc-s-27ead27a81df roc-s-bcae9d37090c roc-s-eb5ef2dbc2d4",
+        "roc-u-shrink-0 roc-u-[&_svg]:pointer-events-none roc-u-[&_svg:not([class*='size-'])]:size-4",
       )}
     >
       {icon}
@@ -195,7 +195,7 @@ function ToastList() {
         <div
           className={cn(
             "roc-shadcn",
-            "roc-s-222f930b8752 roc-s-184ddc11e5f9 roc-s-7bd5bab6d7f4 roc-s-302c0d124a94 roc-s-19e97f3f40e6",
+            "roc-u-flex roc-u-min-w-0 roc-u-flex-1 roc-u-flex-col roc-u-gap-1",
           )}
         >
           <ToastTitle />

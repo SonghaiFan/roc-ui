@@ -30,7 +30,7 @@ function HoverCardContent({
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-3eef1ce97dba roc-s-72b37c1a040d roc-s-f7df1783a7f8 roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-e593c38256e0 roc-s-99df86594a98 roc-s-5bd2afe89f0b roc-s-94ea94fde25f roc-s-59edd3d33673 roc-s-89f6aab7a3f8 roc-s-3550f48d66b9 roc-s-7720fe004f5c roc-s-66b560f839de roc-s-0cb4489c3645 roc-s-bb5869ef903b roc-s-f4cf4be63707 roc-s-bae1e782f277 roc-s-45464a92c1f6 roc-s-9ca352480f25",
+            "roc-u-z-50 roc-u-w-64 roc-u-origin-(--radix-hover-card-content-transform-origin) roc-u-rounded-md roc-u-border roc-u-bg-popover roc-u-p-4 roc-u-text-popover-foreground roc-u-shadow-md roc-u-outline-hidden roc-u-data-[side=bottom]:slide-in-from-top-2 roc-u-data-[side=left]:slide-in-from-right-2 roc-u-data-[side=right]:slide-in-from-left-2 roc-u-data-[side=top]:slide-in-from-bottom-2 roc-u-data-[state=closed]:animate-out roc-u-data-[state=closed]:fade-out-0 roc-u-data-[state=closed]:zoom-out-95 roc-u-data-[state=open]:animate-in roc-u-data-[state=open]:fade-in-0 roc-u-data-[state=open]:zoom-in-95",
             className,
           ),
         )}

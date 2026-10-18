@@ -8,7 +8,7 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
       data-slot="table-container"
       className={cn(
         "roc-shadcn",
-        "roc-s-d2d9e1f13413 roc-s-58d0413dd93c roc-s-b40bd2e015fb",
+        "roc-u-relative roc-u-w-full roc-u-overflow-x-auto",
       )}
     >
       <table
@@ -16,7 +16,7 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-58d0413dd93c roc-s-b6be1c620928 roc-s-c74ab393b96d",
+            "roc-u-w-full roc-u-caption-bottom roc-u-text-sm",
             className,
           ),
         )}
@@ -29,7 +29,7 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
   return (
     <thead
       data-slot="table-header"
-      className={cn("roc-shadcn", cn("roc-s-b1a450761a78", className))}
+      className={cn("roc-shadcn", cn("roc-u-[&_tr]:border-b", className))}
       {...props}
     />
   );
@@ -38,7 +38,7 @@ function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
   return (
     <tbody
       data-slot="table-body"
-      className={cn("roc-shadcn", cn("roc-s-67612e93fbe6", className))}
+      className={cn("roc-shadcn", cn("roc-u-[&_tr:last-child]:border-0", className))}
       {...props}
     />
   );
@@ -50,7 +50,7 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-894c3815a57f roc-s-44de6d2f7d5f roc-s-daaac3fbf55e roc-s-9e7bada01c5a",
+          "roc-u-border-t roc-u-bg-muted/50 roc-u-font-medium roc-u-[&>tr]:last:border-b-0",
           className,
         ),
       )}
@@ -65,7 +65,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-bbe39cfb5cc6 roc-s-eae178841c68 roc-s-5cbdd1b32f1a roc-s-90cc7594aaef roc-s-e75faccf4b1d",
+          "roc-u-border-b roc-u-transition-colors roc-u-hover:bg-muted/50 roc-u-has-aria-expanded:bg-muted/50 roc-u-data-[state=selected]:bg-muted",
           className,
         ),
       )}
@@ -80,7 +80,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-fdd2f85cad6b roc-s-e7e01cc7f4df roc-s-1a5d10977b93 roc-s-0820fd7510bd roc-s-daaac3fbf55e roc-s-963f6168b7d6 roc-s-957a109f887f roc-s-de10e83be1d4 roc-s-6b348c7e5cae",
+          "roc-u-h-10 roc-u-px-2 roc-u-text-left roc-u-align-middle roc-u-font-medium roc-u-whitespace-nowrap roc-u-text-foreground roc-u-[&:has([role=checkbox])]:pr-0 roc-u-[&>[role=checkbox]]:translate-y-[2px]",
           className,
         ),
       )}
@@ -95,7 +95,7 @@ function TableCell({ className, ...props }: React.ComponentProps<"td">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-b97db4a9f432 roc-s-0820fd7510bd roc-s-963f6168b7d6 roc-s-de10e83be1d4 roc-s-6b348c7e5cae",
+          "roc-u-p-2 roc-u-align-middle roc-u-whitespace-nowrap roc-u-[&:has([role=checkbox])]:pr-0 roc-u-[&>[role=checkbox]]:translate-y-[2px]",
           className,
         ),
       )}
@@ -113,7 +113,7 @@ function TableCaption({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-dc1d1f5a54cf roc-s-c74ab393b96d roc-s-35f35c41d134",
+          "roc-u-mt-4 roc-u-text-sm roc-u-text-muted-foreground",
           className,
         ),
       )}

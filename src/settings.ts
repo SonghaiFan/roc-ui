@@ -1,9 +1,17 @@
-/** Accent choices offered by the gallery's Style panel. */
+/** Mondrian-inspired accent choices offered by the gallery's Style panel. */
 export const palette = {
-  neutral: "#bcbcbc",
-  blue: "#a7cbef",
-  rose: "#e9b7ca",
-  sage: "#bbccae",
-  lilac: "#c9bce7",
+  black: "#1a1a1a",
+  white: "#f5f2e8",
+  red: "#d32f2f",
+  blue: "#1646a0",
+  yellow: "#f7d117",
 };
 export type AccentName = keyof typeof palette;
+
+export const accentForeground: Record<AccentName, string> = {
+  black: "#ffffff",
+  white: "#1a1a1a",
+  red: "#ffffff",
+  blue: "#ffffff",
+  yellow: "#1a1a1a",
+};

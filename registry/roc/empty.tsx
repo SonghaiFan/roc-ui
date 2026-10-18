@@ -9,7 +9,7 @@ function Empty({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-184ddc11e5f9 roc-s-7bd5bab6d7f4 roc-s-302c0d124a94 roc-s-71556df3b421 roc-s-a503dd374cca roc-s-8c7e0067a9a5 roc-s-49abc543ea42 roc-s-8450eb0f1857 roc-s-c432836760e3 roc-s-05ab12448317 roc-s-f032143bc1c9 roc-s-1fc5f6c75526",
+          "roc-u-flex roc-u-min-w-0 roc-u-flex-1 roc-u-flex-col roc-u-items-center roc-u-justify-center roc-u-gap-6 roc-u-rounded-lg roc-u-border-dashed roc-u-p-6 roc-u-text-center roc-u-text-balance roc-u-md:p-12",
           className,
         ),
       )}
@@ -24,7 +24,7 @@ function EmptyHeader({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-6f067cb084a4 roc-s-302c0d124a94 roc-s-71556df3b421 roc-s-074569488cca roc-s-05ab12448317",
+          "roc-u-flex roc-u-max-w-sm roc-u-flex-col roc-u-items-center roc-u-gap-2 roc-u-text-center",
           className,
         ),
       )}
@@ -33,12 +33,12 @@ function EmptyHeader({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 const emptyMediaVariants = cva(
-  "roc-s-02fd0ea53c0b roc-s-222f930b8752 roc-s-27ead27a81df roc-s-71556df3b421 roc-s-a503dd374cca roc-s-bcae9d37090c roc-s-040e748a3fa0",
+  "roc-u-mb-2 roc-u-flex roc-u-shrink-0 roc-u-items-center roc-u-justify-center roc-u-[&_svg]:pointer-events-none roc-u-[&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "roc-s-8fca9236d191",
-        icon: "roc-s-222f930b8752 roc-s-d0a383a9c24f roc-s-27ead27a81df roc-s-71556df3b421 roc-s-a503dd374cca roc-s-49abc543ea42 roc-s-87ecb59f2d2d roc-s-957a109f887f roc-s-144c5576b3c2",
+        default: "roc-u-bg-transparent",
+        icon: "roc-u-flex roc-u-size-10 roc-u-shrink-0 roc-u-items-center roc-u-justify-center roc-u-rounded-lg roc-u-bg-muted roc-u-text-foreground roc-u-[&_svg:not([class*='size-'])]:size-6",
       },
     },
     defaultVariants: {
@@ -70,7 +70,7 @@ function EmptyTitle({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-035bd245837f roc-s-daaac3fbf55e roc-s-70250f0caadd",
+          "roc-u-text-lg roc-u-font-medium roc-u-tracking-tight",
           className,
         ),
       )}
@@ -85,7 +85,7 @@ function EmptyDescription({ className, ...props }: React.ComponentProps<"p">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-7f47e6d3ec0f roc-s-35f35c41d134 roc-s-e1bd2eaca11c roc-s-30f54d824d9e roc-s-e8926eea1512",
+          "roc-u-text-sm/relaxed roc-u-text-muted-foreground roc-u-[&>a]:underline roc-u-[&>a]:underline-offset-4 roc-u-[&>a:hover]:text-primary",
           className,
         ),
       )}
@@ -100,7 +100,7 @@ function EmptyContent({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-6f067cb084a4 roc-s-184ddc11e5f9 roc-s-302c0d124a94 roc-s-71556df3b421 roc-s-90fc3ec35a37 roc-s-c74ab393b96d roc-s-f032143bc1c9",
+          "roc-u-flex roc-u-w-full roc-u-max-w-sm roc-u-min-w-0 roc-u-flex-col roc-u-items-center roc-u-gap-4 roc-u-text-sm roc-u-text-balance",
           className,
         ),
       )}

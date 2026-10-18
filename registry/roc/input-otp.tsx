@@ -16,10 +16,10 @@ function InputOTP({
       data-slot="input-otp"
       containerClassName={cn(
         "roc-shadcn",
-        "roc-s-222f930b8752 roc-s-71556df3b421 roc-s-074569488cca roc-s-7d94f63f5883",
+        "roc-u-flex roc-u-items-center roc-u-gap-2 roc-u-has-disabled:opacity-50",
         containerClassName,
       )}
-      className={cn("roc-shadcn", cn("roc-s-db567af109b7", className))}
+      className={cn("roc-shadcn", cn("roc-u-disabled:cursor-not-allowed", className))}
       {...props}
     />
   );
@@ -30,7 +30,7 @@ function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="input-otp-group"
       className={cn(
         "roc-shadcn",
-        cn("roc-s-222f930b8752 roc-s-71556df3b421", className),
+        cn("roc-u-flex roc-u-items-center", className),
       )}
       {...props}
     />
@@ -52,7 +52,7 @@ function InputOTPSlot({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-539ae144f076 roc-s-6bb768bd2263 roc-s-71556df3b421 roc-s-a503dd374cca roc-s-582305bd5096 roc-s-baf794b99c10 roc-s-1267095cdeb7 roc-s-c74ab393b96d roc-s-7de07d413c13 roc-s-9952ed32207c roc-s-b30fc56058b6 roc-s-18124ac5a3c8 roc-s-8281a5bc6910 roc-s-77677d75e38f roc-s-1fac1d7d1df3 roc-s-1cd4fc90ffcb roc-s-e1a91ca4c90d roc-s-f365ce803878 roc-s-d4dc38c0d646 roc-s-8c61c3cda480 roc-s-17ad384cb01c roc-s-9daa2369a41b roc-s-82b5f48135e0",
+          "roc-u-relative roc-u-flex roc-u-h-9 roc-u-w-9 roc-u-items-center roc-u-justify-center roc-u-border-y roc-u-border-r roc-u-border-input roc-u-text-sm roc-u-shadow-xs roc-u-transition-all roc-u-outline-none roc-u-first:rounded-l-md roc-u-first:border-l roc-u-last:rounded-r-md roc-u-aria-invalid:border-destructive roc-u-data-[active=true]:z-10 roc-u-data-[active=true]:border-ring roc-u-data-[active=true]:ring-[3px] roc-u-data-[active=true]:ring-ring/50 roc-u-data-[active=true]:aria-invalid:border-destructive roc-u-data-[active=true]:aria-invalid:ring-destructive/20 roc-u-dark:bg-input/30 roc-u-dark:data-[active=true]:aria-invalid:ring-destructive/40",
           className,
         ),
       )}
@@ -63,13 +63,13 @@ function InputOTPSlot({
         <div
           className={cn(
             "roc-shadcn",
-            "roc-s-33228ff7d583 roc-s-747355bdc2a2 roc-s-ce13093ad8c9 roc-s-222f930b8752 roc-s-71556df3b421 roc-s-a503dd374cca",
+            "roc-u-pointer-events-none roc-u-absolute roc-u-inset-0 roc-u-flex roc-u-items-center roc-u-justify-center",
           )}
         >
           <div
             className={cn(
               "roc-shadcn",
-              "roc-s-099be97e1fa4 roc-s-86a02c9ddb39 roc-s-c5580f5631cf roc-s-e710919d2da4 roc-s-9af9d554c39b",
+              "roc-u-h-4 roc-u-w-px roc-u-animate-caret-blink roc-u-bg-foreground roc-u-duration-1000",
             )}
           />
         </div>

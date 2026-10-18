@@ -16,7 +16,7 @@ function Questionnaire({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-58d0413dd93c roc-s-184ddc11e5f9 roc-s-302c0d124a94 roc-s-90fc3ec35a37",
+          "roc-u-flex roc-u-w-full roc-u-min-w-0 roc-u-flex-col roc-u-gap-4",
           className,
         ),
       )}
@@ -34,7 +34,7 @@ function QuestionnaireProgress({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-e389595d47f2 roc-s-8cfb5a42ef9f roc-s-ef788a6142bc roc-s-3992de70b033 roc-s-daaac3fbf55e roc-s-35f35c41d134 roc-s-ba2d0eea2e16",
+          "roc-u-min-h-[1lh] roc-u-w-fit roc-u-min-w-[14ch] roc-u-text-xs roc-u-font-medium roc-u-text-muted-foreground roc-u-tabular-nums",
           className,
         ),
       )}
@@ -52,7 +52,7 @@ function QuestionnaireItem({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-184ddc11e5f9 roc-s-302c0d124a94 roc-s-90fc3ec35a37 roc-s-dad556abfe15 roc-s-04760bcd507f roc-s-b30fc56058b6",
+          "roc-u-flex roc-u-min-w-0 roc-u-flex-col roc-u-gap-4 roc-u-border-0 roc-u-p-0 roc-u-outline-none",
           className,
         ),
       )}
@@ -70,7 +70,7 @@ function QuestionnaireTitle({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-cb49612abaf0 roc-s-757071a1d1c4 roc-s-4c3c66460268 roc-s-daaac3fbf55e roc-s-fadc8c3407e4 roc-s-08c59a83ed79",
+          "roc-u-cn-font-heading roc-u-text-base roc-u-leading-snug roc-u-font-medium roc-u-text-pretty roc-u-[&:not(:has(~[data-slot=questionnaire-description]))]:mb-4",
           className,
         ),
       )}
@@ -88,7 +88,7 @@ function QuestionnaireDescription({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-c74ab393b96d roc-s-fadc8c3407e4 roc-s-35f35c41d134",
+          "roc-u-text-sm roc-u-text-pretty roc-u-text-muted-foreground",
           className,
         ),
       )}
@@ -106,7 +106,7 @@ function QuestionnaireChoices({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-c47747706879 roc-s-0f2a693e93e2 roc-s-184ddc11e5f9 roc-s-074569488cca",
+          "roc-u-group/questionnaire-choices roc-u-grid roc-u-min-w-0 roc-u-gap-2",
           className,
         ),
       )}
@@ -125,8 +125,8 @@ function QuestionnaireChoice({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-3d4a718e2d3f roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-0aab39f69faa roc-s-d2fa8848968d roc-s-b9677bd1cb66 roc-s-08f0549eb630 roc-s-49abc543ea42 roc-s-4f1a55de40bc roc-s-1267095cdeb7 roc-s-8fca9236d191 roc-s-0f9e6672913a roc-s-ee09e8f0b71a roc-s-e9347b78185f roc-s-c74ab393b96d roc-s-eae178841c68 roc-s-b30fc56058b6 roc-s-78905c9e865c roc-s-5cbdd1b32f1a roc-s-dd9d67cda4d1 roc-s-4a2716487541 roc-s-b9e0ce65d6bb roc-s-15f349e76cbc roc-s-9a6e8fc29609 roc-s-24b63e4d2b83 roc-s-447e368055fe roc-s-96583cf81d68",
-          "roc-s-34370c059280 roc-s-e9ba2243f185 roc-s-f390e131d537",
+          "roc-u-group/questionnaire-choice roc-u-relative roc-u-flex roc-u-min-h-11 roc-u-cursor-pointer roc-u-items-start roc-u-gap-2.5 roc-u-rounded-lg roc-u-border roc-u-border-input roc-u-bg-transparent roc-u-px-3 roc-u-py-2.5 roc-u-text-start roc-u-text-sm roc-u-transition-colors roc-u-outline-none roc-u-select-none roc-u-hover:bg-muted/50 roc-u-has-[>input:focus-visible]:border-ring roc-u-has-[>input:focus-visible]:ring-3 roc-u-has-[>input:focus-visible]:ring-ring/50 roc-u-data-invalid:border-destructive roc-u-dark:bg-input/20 roc-u-data-checked:border-primary/40 roc-u-data-checked:bg-muted roc-u-dark:data-checked:bg-muted",
+          "roc-u-data-disabled:pointer-events-none roc-u-data-disabled:cursor-not-allowed roc-u-data-disabled:opacity-50",
           className,
         ),
       )}
@@ -136,7 +136,7 @@ function QuestionnaireChoice({
         data-slot="questionnaire-choice-input"
         className={cn(
           "roc-shadcn",
-          "roc-s-747355bdc2a2 roc-s-ce13093ad8c9 roc-s-418e44ad4f9e roc-s-4f43603c850c roc-s-d2fa8848968d roc-s-94f91922a10e",
+          "roc-u-absolute roc-u-inset-0 roc-u-z-10 roc-u-size-full roc-u-cursor-pointer roc-u-opacity-0",
         )}
       />
       <span
@@ -144,21 +144,21 @@ function QuestionnaireChoice({
         data-slot="questionnaire-choice-indicator"
         className={cn(
           "roc-shadcn",
-          "roc-s-33228ff7d583 roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-100c22d5776b roc-s-27ead27a81df roc-s-1916ff7475c6 roc-s-71556df3b421 roc-s-a503dd374cca roc-s-b79cc137d7bf roc-s-4f1a55de40bc roc-s-1267095cdeb7 roc-s-0598b26fb866 roc-s-338adc5f020d roc-s-9efba5a24cbe roc-s-32c5879f0427 roc-s-f8e36b0dca9e roc-s-9daa2369a41b roc-s-ada821fc6f2a",
+          "roc-u-pointer-events-none roc-u-relative roc-u-flex roc-u-size-4 roc-u-shrink-0 roc-u-translate-y-[--spacing(0.45)] roc-u-items-center roc-u-justify-center roc-u-rounded-[4px] roc-u-border roc-u-border-input roc-u-group-has-data-[slot=questionnaire-choice-description]/questionnaire-choice:translate-y-0.5 roc-u-group-data-[type=radio]/questionnaire-choice:rounded-full roc-u-group-data-checked/questionnaire-choice:border-primary roc-u-group-data-checked/questionnaire-choice:bg-primary roc-u-group-data-checked/questionnaire-choice:text-primary-foreground roc-u-dark:bg-input/30 roc-u-dark:group-data-checked/questionnaire-choice:bg-primary",
         )}
       >
         <span
           data-slot="questionnaire-choice-indicator-dot"
           className={cn(
             "roc-shadcn",
-            "roc-s-e564b4081d7a roc-s-9e7600197f38 roc-s-b005d61d0953 roc-s-376b818650a1 roc-s-8486cb8b20a4 roc-s-8462b4eb8213",
+            "roc-u-hidden roc-u-size-2 roc-u-rounded-full roc-u-bg-primary-foreground roc-u-group-data-[type=checkbox]/questionnaire-choice:hidden roc-u-group-data-checked/questionnaire-choice:block",
           )}
         />
         <CheckIcon
           data-slot="questionnaire-choice-indicator-check"
           className={cn(
             "roc-shadcn",
-            "roc-s-e564b4081d7a roc-s-61c000c8a98a roc-s-f8e4ae093b04 roc-s-8462b4eb8213",
+            "roc-u-hidden roc-u-size-3.5 roc-u-group-data-[type=radio]/questionnaire-choice:hidden roc-u-group-data-checked/questionnaire-choice:block",
           )}
         />
       </span>
@@ -166,7 +166,7 @@ function QuestionnaireChoice({
         data-slot="questionnaire-choice-label"
         className={cn(
           "roc-shadcn",
-          "roc-s-222f930b8752 roc-s-184ddc11e5f9 roc-s-7bd5bab6d7f4 roc-s-302c0d124a94 roc-s-11773e883e74 roc-s-4c3c66460268",
+          "roc-u-flex roc-u-min-w-0 roc-u-flex-1 roc-u-flex-col roc-u-gap-0.5 roc-u-leading-snug",
         )}
       >
         {children}
@@ -175,7 +175,7 @@ function QuestionnaireChoice({
         data-slot="questionnaire-choice-shortcut"
         className={cn(
           "roc-shadcn",
-          "roc-s-33228ff7d583 roc-s-5cf4ab3b6fa0 roc-s-e564b4081d7a roc-s-2bd43fb57913 roc-s-27ead27a81df roc-s-1916ff7475c6 roc-s-71556df3b421 roc-s-a503dd374cca roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-1267095cdeb7 roc-s-5b272f3c5076 roc-s-02ded9244507 roc-s-e7e0a77fac94 roc-s-761cdb81bddb roc-s-daaac3fbf55e roc-s-35f35c41d134 roc-s-0598b26fb866 roc-s-482586d1bb26",
+          "roc-u-pointer-events-none roc-u-ms-auto roc-u-hidden roc-u-size-5 roc-u-shrink-0 roc-u-translate-y-[--spacing(0.45)] roc-u-items-center roc-u-justify-center roc-u-rounded-md roc-u-border roc-u-border-input roc-u-bg-background roc-u-font-mono roc-u-text-[0.625rem] roc-u-leading-none roc-u-font-medium roc-u-text-muted-foreground roc-u-group-has-data-[slot=questionnaire-choice-description]/questionnaire-choice:translate-y-0.5 roc-u-group-data-[shortcut]/questionnaire-choice:inline-flex",
         )}
       />
     </QuestionnairePrimitive.Choice>
@@ -188,7 +188,7 @@ function QuestionnaireChoiceDescription({
   return (
     <span
       data-slot="questionnaire-choice-description"
-      className={cn("roc-shadcn", cn("roc-s-35f35c41d134", className))}
+      className={cn("roc-shadcn", cn("roc-u-text-muted-foreground", className))}
       {...props}
     />
   );
@@ -202,7 +202,7 @@ function QuestionnaireInput({
       data-slot="questionnaire-input-wrapper"
       className={cn(
         "roc-shadcn",
-        "roc-s-096fccb531a5 roc-s-d2d9e1f13413 roc-s-58d0413dd93c roc-s-184ddc11e5f9",
+        "roc-u-group/questionnaire-input roc-u-relative roc-u-w-full roc-u-min-w-0",
       )}
     >
       <QuestionnairePrimitive.Input
@@ -210,8 +210,8 @@ function QuestionnaireInput({
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-1fb07b38c63b roc-s-0aab39f69faa roc-s-58d0413dd93c roc-s-184ddc11e5f9 roc-s-49abc543ea42 roc-s-4f1a55de40bc roc-s-1267095cdeb7 roc-s-8fca9236d191 roc-s-588daa1a9891 roc-s-1fcf28756bb1 roc-s-757071a1d1c4 roc-s-cf68cd146f6a roc-s-b30fc56058b6 roc-s-b906a32b31ee roc-s-20add1417b2f roc-s-392a26f4c1b0 roc-s-8d3c1014b967 roc-s-db567af109b7 roc-s-047aab096166 roc-s-4600b77303d6 roc-s-1fac1d7d1df3 roc-s-3c234c6f29d7 roc-s-5491fd0b4dc5 roc-s-4ca394e00772 roc-s-c05c9b99939d roc-s-9daa2369a41b roc-s-39f71ad78fa5 roc-s-2ad9bf6ab2cb roc-s-c88f65aa011e",
-            "roc-s-8c498cb46d9e roc-s-03d0b4ef751a roc-s-20315da78444",
+            "roc-u-h-8 roc-u-min-h-11 roc-u-w-full roc-u-min-w-0 roc-u-rounded-lg roc-u-border roc-u-border-input roc-u-bg-transparent roc-u-px-2.5 roc-u-py-1 roc-u-text-base roc-u-transition-[color,box-shadow,background-color] roc-u-outline-none roc-u-focus-visible:border-ring roc-u-focus-visible:ring-3 roc-u-focus-visible:ring-ring/50 roc-u-disabled:pointer-events-none roc-u-disabled:cursor-not-allowed roc-u-disabled:bg-input/50 roc-u-disabled:opacity-50 roc-u-aria-invalid:border-destructive roc-u-aria-invalid:ring-3 roc-u-aria-invalid:ring-destructive/20 roc-u-sm:min-h-0 roc-u-md:text-sm roc-u-dark:bg-input/30 roc-u-dark:disabled:bg-input/80 roc-u-dark:aria-invalid:border-destructive/50 roc-u-dark:aria-invalid:ring-destructive/40",
+            "roc-u-selection:bg-primary roc-u-selection:text-primary-foreground roc-u-placeholder:text-muted-foreground",
             className,
           ),
         )}
@@ -230,7 +230,7 @@ function QuestionnaireError({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-f28fea81a5cd roc-s-c74ab393b96d roc-s-887b9502d5c7",
+          "roc-u-mt-2 roc-u-text-sm roc-u-text-destructive",
           className,
         ),
       )}
@@ -248,7 +248,7 @@ function QuestionnaireActions({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-0f2a693e93e2 roc-s-0aab39f69faa roc-s-58d0413dd93c roc-s-38ac45c61497 roc-s-71556df3b421 roc-s-074569488cca roc-s-fc6282b6c842",
+          "roc-u-grid roc-u-min-h-11 roc-u-w-full roc-u-grid-cols-[minmax(0,1fr)_auto_auto] roc-u-items-center roc-u-gap-2 roc-u-sm:min-h-8",
           className,
         ),
       )}
@@ -273,7 +273,7 @@ function QuestionnairePrevious({
         "roc-shadcn",
         cn(
           buttonVariants({ size, variant }),
-          "roc-s-20cb9e4e7877 roc-s-fadce0e78566 roc-s-0aab39f69faa roc-s-71e0beedb1f3 roc-s-4ca394e00772",
+          "roc-u-col-start-1 roc-u-row-start-1 roc-u-min-h-11 roc-u-justify-self-start roc-u-sm:min-h-0",
           className,
         ),
       )}
@@ -300,7 +300,7 @@ function QuestionnaireSkip({
         "roc-shadcn",
         cn(
           buttonVariants({ size, variant }),
-          "roc-s-29a5b1dea191 roc-s-fadce0e78566 roc-s-0aab39f69faa roc-s-9dafba487ea1 roc-s-4ca394e00772",
+          "roc-u-col-start-2 roc-u-row-start-1 roc-u-min-h-11 roc-u-justify-self-end roc-u-sm:min-h-0",
           className,
         ),
       )}
@@ -327,7 +327,7 @@ function QuestionnaireNext({
         "roc-shadcn",
         cn(
           buttonVariants({ size, variant }),
-          "roc-s-28ba349c8be8 roc-s-fadce0e78566 roc-s-0aab39f69faa roc-s-9dafba487ea1 roc-s-4ca394e00772",
+          "roc-u-col-start-3 roc-u-row-start-1 roc-u-min-h-11 roc-u-justify-self-end roc-u-sm:min-h-0",
           className,
         ),
       )}
@@ -354,7 +354,7 @@ function QuestionnaireSubmit({
         "roc-shadcn",
         cn(
           buttonVariants({ size, variant }),
-          "roc-s-28ba349c8be8 roc-s-fadce0e78566 roc-s-0aab39f69faa roc-s-9dafba487ea1 roc-s-4ca394e00772",
+          "roc-u-col-start-3 roc-u-row-start-1 roc-u-min-h-11 roc-u-justify-self-end roc-u-sm:min-h-0",
           className,
         ),
       )}

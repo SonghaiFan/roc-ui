@@ -6,15 +6,13 @@ import { compile } from "tailwindcss";
 import postcss from "postcss";
 import selectorParser from "postcss-selector-parser";
 import { readFile, writeFile } from "node:fs/promises";
-import { createHash } from "node:crypto";
 const names =
   "alert-dialog aspect-ratio attachment bubble button-group calendar carousel chart code-block collapsible combobox command context-menu direction drawer empty field hover-card input-group input-otp item kbd label marker menubar message message-scroller native-select navigation-menu questionnaire resizable select sheet spinner table toast trace".split(
     " ",
   );
 const theme = await readFile("node_modules/tailwindcss/theme.css", "utf8");
 const extra = `@theme { --color-background:var(--roc-paper,#fff);--color-foreground:#252525;--color-card:#fff;--color-card-foreground:#252525;--color-popover:#fff;--color-popover-foreground:#252525;--color-primary:var(--roc-accent,#252525);--color-primary-foreground:#fff;--color-secondary:#f3f3f3;--color-secondary-foreground:#252525;--color-muted:#f5f5f5;--color-muted-foreground:#737373;--color-accent:#f3f3f3;--color-accent-foreground:#252525;--color-destructive:#b42318;--color-border:#e5e5e5;--color-input:#dedede;--color-ring:#737373;--radius-xs:3px;--radius-sm:5px;--radius-md:7px;--radius-lg:var(--roc-radius,9px);--radius-xl:12px;--radius-2xl:16px; }`;
-const h = (s) =>
-  "roc-s-" + createHash("sha256").update(s).digest("hex").slice(0, 12);
+const utilityClass = (name) => "roc-u-" + name;
 const printer = ts.createPrinter();
 for (const name of names) {
   let source = await readFile("upstream/shadcn/" + name + ".tsx", "utf8");
@@ -58,7 +56,7 @@ for (const name of names) {
   const mapLiteral = (n) => {
     const words = n.text.split(/\s+/).filter(Boolean);
     words.forEach((c) => candidates.add(c));
-    return ts.factory.createStringLiteral(words.map(h).join(" "));
+    return ts.factory.createStringLiteral(words.map(utilityClass).join(" "));
   };
   const transformed = ts.transform(sf, [
     (context) => {
@@ -189,7 +187,7 @@ for (const name of names) {
               c.value.startsWith("group/") ||
               c.value.startsWith("peer/")
             )
-              c.value = h(c.value);
+              c.value = utilityClass(c.value);
           }),
         ).processSync(rule.selector);
       } catch {}

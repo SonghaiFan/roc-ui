@@ -13,7 +13,7 @@ function Label({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-71556df3b421 roc-s-074569488cca roc-s-c74ab393b96d roc-s-761cdb81bddb roc-s-daaac3fbf55e roc-s-78905c9e865c roc-s-9af9a4182597 roc-s-272ef88d6a0c roc-s-f0ee83167878 roc-s-25d26df52a1d",
+          "roc-u-flex roc-u-items-center roc-u-gap-2 roc-u-text-sm roc-u-leading-none roc-u-font-medium roc-u-select-none roc-u-group-data-[disabled=true]:pointer-events-none roc-u-group-data-[disabled=true]:opacity-50 roc-u-peer-disabled:cursor-not-allowed roc-u-peer-disabled:opacity-50",
           className,
         ),
       )}

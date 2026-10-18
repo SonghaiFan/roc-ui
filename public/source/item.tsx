@@ -13,7 +13,7 @@ function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-c283bdcd73f0 roc-s-222f930b8752 roc-s-302c0d124a94",
+          "roc-u-group/item-group roc-u-flex roc-u-flex-col",
           className,
         ),
       )}
@@ -29,23 +29,23 @@ function ItemSeparator({
     <Separator
       data-slot="item-separator"
       orientation="horizontal"
-      className={cn("roc-shadcn", cn("roc-s-4f43e31e043e", className))}
+      className={cn("roc-shadcn", cn("roc-u-my-0", className))}
       {...props}
     />
   );
 }
 const itemVariants = cva(
-  "roc-s-e072114ac035 roc-s-222f930b8752 roc-s-faa8a23c68f6 roc-s-71556df3b421 roc-s-3fa8c572949b roc-s-4f1a55de40bc roc-s-e9c0d2f3599e roc-s-c74ab393b96d roc-s-eae178841c68 roc-s-aa96ad346e97 roc-s-b30fc56058b6 roc-s-b906a32b31ee roc-s-365a4654f7b1 roc-s-392a26f4c1b0 roc-s-3d5f796096d0 roc-s-2801b7aeff18",
+  "roc-u-group/item roc-u-flex roc-u-flex-wrap roc-u-items-center roc-u-rounded-md roc-u-border roc-u-border-transparent roc-u-text-sm roc-u-transition-colors roc-u-duration-100 roc-u-outline-none roc-u-focus-visible:border-ring roc-u-focus-visible:ring-[3px] roc-u-focus-visible:ring-ring/50 roc-u-[a]:transition-colors roc-u-[a]:hover:bg-accent/50",
   {
     variants: {
       variant: {
-        default: "roc-s-8fca9236d191",
-        outline: "roc-s-b1e6016d4f99",
-        muted: "roc-s-44de6d2f7d5f",
+        default: "roc-u-bg-transparent",
+        outline: "roc-u-border-border",
+        muted: "roc-u-bg-muted/50",
       },
       size: {
-        default: "roc-s-90fc3ec35a37 roc-s-99df86594a98",
-        sm: "roc-s-08f0549eb630 roc-s-9513b3968002 roc-s-d3cea061f2f3",
+        default: "roc-u-gap-4 roc-u-p-4",
+        sm: "roc-u-gap-2.5 roc-u-px-4 roc-u-py-3",
       },
     },
     defaultVariants: {
@@ -79,14 +79,14 @@ function Item({
   );
 }
 const itemMediaVariants = cva(
-  "roc-s-222f930b8752 roc-s-27ead27a81df roc-s-71556df3b421 roc-s-a503dd374cca roc-s-074569488cca roc-s-c4124515fdee roc-s-741676090dcd roc-s-bcae9d37090c",
+  "roc-u-flex roc-u-shrink-0 roc-u-items-center roc-u-justify-center roc-u-gap-2 roc-u-group-has-[[data-slot=item-description]]/item:translate-y-0.5 roc-u-group-has-[[data-slot=item-description]]/item:self-start roc-u-[&_svg]:pointer-events-none",
   {
     variants: {
       variant: {
-        default: "roc-s-8fca9236d191",
-        icon: "roc-s-ebd37e04d422 roc-s-02e603944040 roc-s-4f1a55de40bc roc-s-87ecb59f2d2d roc-s-eb5ef2dbc2d4",
+        default: "roc-u-bg-transparent",
+        icon: "roc-u-size-8 roc-u-rounded-sm roc-u-border roc-u-bg-muted roc-u-[&_svg:not([class*='size-'])]:size-4",
         image:
-          "roc-s-d0a383a9c24f roc-s-d5111d0e9f48 roc-s-02e603944040 roc-s-2f1350a1d279 roc-s-229ebfc9a355",
+          "roc-u-size-10 roc-u-overflow-hidden roc-u-rounded-sm roc-u-[&_img]:size-full roc-u-[&_img]:object-cover",
       },
     },
     defaultVariants: {
@@ -118,7 +118,7 @@ function ItemContent({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-7bd5bab6d7f4 roc-s-302c0d124a94 roc-s-19e97f3f40e6 roc-s-00840773681c",
+          "roc-u-flex roc-u-flex-1 roc-u-flex-col roc-u-gap-1 roc-u-[&+[data-slot=item-content]]:flex-none",
           className,
         ),
       )}
@@ -133,7 +133,7 @@ function ItemTitle({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-8cfb5a42ef9f roc-s-71556df3b421 roc-s-074569488cca roc-s-c74ab393b96d roc-s-4c3c66460268 roc-s-daaac3fbf55e",
+          "roc-u-flex roc-u-w-fit roc-u-items-center roc-u-gap-2 roc-u-text-sm roc-u-leading-snug roc-u-font-medium",
           className,
         ),
       )}
@@ -148,8 +148,8 @@ function ItemDescription({ className, ...props }: React.ComponentProps<"p">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-ff5c6b1ee450 roc-s-c74ab393b96d roc-s-7844ca2c6709 roc-s-52101fc7d8bb roc-s-f032143bc1c9 roc-s-35f35c41d134",
-          "roc-s-e1bd2eaca11c roc-s-30f54d824d9e roc-s-e8926eea1512",
+          "roc-u-line-clamp-2 roc-u-text-sm roc-u-leading-normal roc-u-font-normal roc-u-text-balance roc-u-text-muted-foreground",
+          "roc-u-[&>a]:underline roc-u-[&>a]:underline-offset-4 roc-u-[&>a:hover]:text-primary",
           className,
         ),
       )}
@@ -164,7 +164,7 @@ function ItemActions({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-71556df3b421 roc-s-074569488cca",
+          "roc-u-flex roc-u-items-center roc-u-gap-2",
           className,
         ),
       )}
@@ -179,7 +179,7 @@ function ItemHeader({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-fec0aea7f726 roc-s-71556df3b421 roc-s-32c92bb1fde4 roc-s-074569488cca",
+          "roc-u-flex roc-u-basis-full roc-u-items-center roc-u-justify-between roc-u-gap-2",
           className,
         ),
       )}
@@ -194,7 +194,7 @@ function ItemFooter({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-fec0aea7f726 roc-s-71556df3b421 roc-s-32c92bb1fde4 roc-s-074569488cca",
+          "roc-u-flex roc-u-basis-full roc-u-items-center roc-u-justify-between roc-u-gap-2",
           className,
         ),
       )}

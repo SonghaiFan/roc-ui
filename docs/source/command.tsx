@@ -21,7 +21,7 @@ function Command({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-222f930b8752 roc-s-57c930dc1c31 roc-s-58d0413dd93c roc-s-302c0d124a94 roc-s-d5111d0e9f48 roc-s-3fa8c572949b roc-s-e593c38256e0 roc-s-5bd2afe89f0b",
+          "roc-u-flex roc-u-h-full roc-u-w-full roc-u-flex-col roc-u-overflow-hidden roc-u-rounded-md roc-u-bg-popover roc-u-text-popover-foreground",
           className,
         ),
       )}
@@ -44,21 +44,21 @@ function CommandDialog({
 }) {
   return (
     <Dialog {...props}>
-      <DialogHeader className={cn("roc-shadcn", "roc-s-32fb090591d9")}>
+      <DialogHeader className={cn("roc-shadcn", "roc-u-sr-only")}>
         <DialogTitle>{title}</DialogTitle>
         <DialogDescription>{description}</DialogDescription>
       </DialogHeader>
       <DialogContent
         className={cn(
           "roc-shadcn",
-          cn("roc-s-d5111d0e9f48 roc-s-04760bcd507f", className),
+          cn("roc-u-overflow-hidden roc-u-p-0", className),
         )}
         showCloseButton={showCloseButton}
       >
         <Command
           className={cn(
             "roc-shadcn",
-            "roc-s-10a03fa28f14 roc-s-8fcda2a38df2 roc-s-2d72ddbc758f roc-s-fa4dcbaf770b roc-s-77408629f84a roc-s-ba17ce9c01c5 roc-s-ec0a1ada694a roc-s-3db94f770644 roc-s-98d11503a494 roc-s-ecc052a24bb2 roc-s-95ecca1d7827 roc-s-567d75db6837 roc-s-6d82666deb29",
+            "roc-u-**:data-[slot=command-input-wrapper]:h-12 roc-u-[&_[cmdk-group-heading]]:px-2 roc-u-[&_[cmdk-group-heading]]:font-medium roc-u-[&_[cmdk-group-heading]]:text-muted-foreground roc-u-[&_[cmdk-group]]:px-2 roc-u-[&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 roc-u-[&_[cmdk-input-wrapper]_svg]:h-5 roc-u-[&_[cmdk-input-wrapper]_svg]:w-5 roc-u-[&_[cmdk-input]]:h-12 roc-u-[&_[cmdk-item]]:px-2 roc-u-[&_[cmdk-item]]:py-3 roc-u-[&_[cmdk-item]_svg]:h-5 roc-u-[&_[cmdk-item]_svg]:w-5",
           )}
         >
           {children}
@@ -76,13 +76,13 @@ function CommandInput({
       data-slot="command-input-wrapper"
       className={cn(
         "roc-shadcn",
-        "roc-s-222f930b8752 roc-s-539ae144f076 roc-s-71556df3b421 roc-s-074569488cca roc-s-bbe39cfb5cc6 roc-s-0f9e6672913a",
+        "roc-u-flex roc-u-h-9 roc-u-items-center roc-u-gap-2 roc-u-border-b roc-u-px-3",
       )}
     >
       <SearchIcon
         className={cn(
           "roc-shadcn",
-          "roc-s-100c22d5776b roc-s-27ead27a81df roc-s-0b5a4d1257ab",
+          "roc-u-size-4 roc-u-shrink-0 roc-u-opacity-50",
         )}
       />
       <CommandPrimitive.Input
@@ -90,7 +90,7 @@ function CommandInput({
         className={cn(
           "roc-shadcn",
           cn(
-            "roc-s-222f930b8752 roc-s-fdd2f85cad6b roc-s-58d0413dd93c roc-s-3fa8c572949b roc-s-8fca9236d191 roc-s-d3cea061f2f3 roc-s-c74ab393b96d roc-s-59edd3d33673 roc-s-20315da78444 roc-s-db567af109b7 roc-s-4600b77303d6",
+            "roc-u-flex roc-u-h-10 roc-u-w-full roc-u-rounded-md roc-u-bg-transparent roc-u-py-3 roc-u-text-sm roc-u-outline-hidden roc-u-placeholder:text-muted-foreground roc-u-disabled:cursor-not-allowed roc-u-disabled:opacity-50",
             className,
           ),
         )}
@@ -109,7 +109,7 @@ function CommandList({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-e4cdcd06ee9f roc-s-f030a1475cdf roc-s-3b82279f859f roc-s-2368e909f3a5",
+          "roc-u-max-h-[300px] roc-u-scroll-py-1 roc-u-overflow-x-hidden roc-u-overflow-y-auto",
           className,
         ),
       )}
@@ -125,7 +125,7 @@ function CommandEmpty({
       data-slot="command-empty"
       className={cn(
         "roc-shadcn",
-        "roc-s-54402b76b277 roc-s-05ab12448317 roc-s-c74ab393b96d",
+        "roc-u-py-6 roc-u-text-center roc-u-text-sm",
       )}
       {...props}
     />
@@ -141,7 +141,7 @@ function CommandGroup({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d5111d0e9f48 roc-s-1dee6e3ec67d roc-s-957a109f887f roc-s-8fcda2a38df2 roc-s-2eef4a416e7c roc-s-159a1790006f roc-s-2d72ddbc758f roc-s-fa4dcbaf770b",
+          "roc-u-overflow-hidden roc-u-p-1 roc-u-text-foreground roc-u-[&_[cmdk-group-heading]]:px-2 roc-u-[&_[cmdk-group-heading]]:py-1.5 roc-u-[&_[cmdk-group-heading]]:text-xs roc-u-[&_[cmdk-group-heading]]:font-medium roc-u-[&_[cmdk-group-heading]]:text-muted-foreground",
           className,
         ),
       )}
@@ -159,7 +159,7 @@ function CommandSeparator({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-abba77319850 roc-s-ae2c4b060bb9 roc-s-a943bea85d66",
+          "roc-u--mx-1 roc-u-h-px roc-u-bg-border",
           className,
         ),
       )}
@@ -177,7 +177,7 @@ function CommandItem({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-d343f41ba73e roc-s-71556df3b421 roc-s-074569488cca roc-s-02e603944040 roc-s-e7e01cc7f4df roc-s-a8c1dfb1d4ef roc-s-c74ab393b96d roc-s-59edd3d33673 roc-s-78905c9e865c roc-s-ae189665dda5 roc-s-119c7ba8f69c roc-s-9909245679cf roc-s-d688e57af012 roc-s-bcae9d37090c roc-s-040e748a3fa0 roc-s-eb5ef2dbc2d4 roc-s-8637dfd54fbb",
+          "roc-u-relative roc-u-flex roc-u-cursor-default roc-u-items-center roc-u-gap-2 roc-u-rounded-sm roc-u-px-2 roc-u-py-1.5 roc-u-text-sm roc-u-outline-hidden roc-u-select-none roc-u-data-[disabled=true]:pointer-events-none roc-u-data-[disabled=true]:opacity-50 roc-u-data-[selected=true]:bg-accent roc-u-data-[selected=true]:text-accent-foreground roc-u-[&_svg]:pointer-events-none roc-u-[&_svg]:shrink-0 roc-u-[&_svg:not([class*='size-'])]:size-4 roc-u-[&_svg:not([class*='text-'])]:text-muted-foreground",
           className,
         ),
       )}
@@ -195,7 +195,7 @@ function CommandShortcut({
       className={cn(
         "roc-shadcn",
         cn(
-          "roc-s-cc51bda60e7e roc-s-3992de70b033 roc-s-e1683b3c030a roc-s-35f35c41d134",
+          "roc-u-ml-auto roc-u-text-xs roc-u-tracking-widest roc-u-text-muted-foreground",
           className,
         ),
       )}

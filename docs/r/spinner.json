@@ -14,7 +14,7 @@
       "path": "registry/roc/spinner.tsx",
       "type": "registry:file",
       "target": "~/components/roc/spinner.tsx",
-      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport { cn } from \"./utils\";\nimport { Loader2Icon } from \"lucide-react\";\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\n  return (\n    <Loader2Icon\n      role=\"status\"\n      aria-label=\"Loading\"\n      className={cn(\n        \"roc-shadcn\",\n        cn(\"roc-s-100c22d5776b roc-s-2c14b55d77e6\", className),\n      )}\n      {...props}\n    />\n  );\n}\nexport { Spinner };\n\nimport \"./spinner.css\";\n"
+      "content": "// Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.\n\"use client\";\nimport { cn } from \"./utils\";\nimport { Loader2Icon } from \"lucide-react\";\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\n  return (\n    <Loader2Icon\n      role=\"status\"\n      aria-label=\"Loading\"\n      className={cn(\n        \"roc-shadcn\",\n        cn(\"roc-u-size-4 roc-u-animate-spin\", className),\n      )}\n      {...props}\n    />\n  );\n}\nexport { Spinner };\n\nimport \"./spinner.css\";\n"
     },
     {
       "path": "registry/roc/utils.ts",
@@ -26,7 +26,7 @@
       "path": "registry/roc/spinner.css",
       "type": "registry:file",
       "target": "~/components/roc/spinner.css",
-      "content": "@import \"./shadcn-base.css\";\n/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */\n.roc-shadcn {\n  --roc-sh-spacing: 0.25rem;\n  --roc-sh-animate-roc-sh-spin: roc-sh-spin 1s linear infinite;\n}\n.roc-s-100c22d5776b {\n  width: calc(var(--roc-sh-spacing) * 4);\n  height: calc(var(--roc-sh-spacing) * 4);\n}\n.roc-s-2c14b55d77e6 {\n  animation: var(--roc-sh-animate-roc-sh-spin);\n}\n@keyframes roc-sh-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n"
+      "content": "@import \"./shadcn-base.css\";\n/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */\n.roc-shadcn {\n  --roc-sh-spacing: 0.25rem;\n  --roc-sh-animate-roc-sh-spin: roc-sh-spin 1s linear infinite;\n}\n.roc-u-size-4 {\n  width: calc(var(--roc-sh-spacing) * 4);\n  height: calc(var(--roc-sh-spacing) * 4);\n}\n.roc-u-animate-spin {\n  animation: var(--roc-sh-animate-roc-sh-spin);\n}\n@keyframes roc-sh-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n"
     },
     {
       "path": "registry/roc/TAILWIND-LICENSE.txt",
