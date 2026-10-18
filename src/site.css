@@ -1002,6 +1002,7 @@ summary {
   background: #fff;
 }
 .responsive-preview[data-detail="false"] .viewport-shell {
+  transition: none;
   border-color: transparent;
 }
 .detail-heading {

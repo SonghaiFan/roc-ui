@@ -168,7 +168,10 @@ export function ViewportPreview({
         </div>
       )}
       <div className="viewport-stage" ref={stage} data-dragging={dragging}>
-        <div className="viewport-shell" style={{ width: target + 2 }}>
+        <div
+          className="viewport-shell"
+          style={{ width: !detail || device === "fit" ? "100%" : target + 2 }}
+        >
           <iframe
             ref={frame}
             title="Live component previews"

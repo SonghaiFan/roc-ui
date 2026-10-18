@@ -216,48 +216,6 @@ export function App() {
     window.addEventListener("keydown", search);
     return () => window.removeEventListener("keydown", search);
   }, [selected]);
-  useLayoutEffect(() => {
-    if (!embedded) return;
-    const canvas = document.querySelector<HTMLElement>(".preview-canvas")!;
-    const previous = new Map<HTMLElement, { x: number; y: number }>();
-    const measure = () => {
-      for (const card of canvas.querySelectorAll<HTMLElement>(
-        ".component-card",
-      )) {
-        if (card.hidden) {
-          previous.delete(card);
-          continue;
-        }
-        const before = previous.get(card),
-          matrix = new DOMMatrixReadOnly(getComputedStyle(card).transform);
-        card.getAnimations().forEach((animation) => animation.cancel());
-        const rect = card.getBoundingClientRect(),
-          next = { x: rect.x + scrollX, y: rect.y + scrollY };
-        if (before && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          const dx = before.x + matrix.m41 - next.x,
-            dy = before.y + matrix.m42 - next.y;
-          if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5)
-            card.animate(
-              [
-                { transform: `translate(${dx}px,${dy}px)` },
-                { transform: "none" },
-              ],
-              { duration: 320, easing: "cubic-bezier(.22,.8,.25,1)" },
-            );
-        }
-        previous.set(card, { x: next.x, y: next.y });
-      }
-    };
-    measure();
-    const observer = new ResizeObserver(measure);
-    observer.observe(canvas);
-    return () => {
-      observer.disconnect();
-      canvas
-        .querySelectorAll(".component-card")
-        .forEach((card) => card.getAnimations().forEach((a) => a.cancel()));
-    };
-  }, [embedded]);
   const config = { query, filter, color, radius, surface, density, font };
   const latestConfig = useRef(config);
   latestConfig.current = config;
