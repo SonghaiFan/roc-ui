@@ -506,6 +506,11 @@
           "target": "~/components/roc/primitive-roving.ts"
         },
         {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
+        },
+        {
           "path": "registry/roc/use-controllable-state.ts",
           "type": "registry:file",
           "target": "~/components/roc/use-controllable-state.ts"
@@ -558,6 +563,11 @@
           "path": "registry/roc/primitive-accordion.tsx",
           "type": "registry:file",
           "target": "~/components/roc/primitive-accordion.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
         },
         {
           "path": "registry/roc/primitive-utils.ts",
@@ -1130,6 +1140,11 @@
           "target": "~/components/roc/primitive-toggle-group.tsx"
         },
         {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
+        },
+        {
           "path": "registry/roc/primitive-toggle.tsx",
           "type": "registry:file",
           "target": "~/components/roc/primitive-toggle.tsx"
@@ -1232,6 +1247,11 @@
           "path": "registry/roc/primitive-roving.ts",
           "type": "registry:file",
           "target": "~/components/roc/primitive-roving.ts"
+        },
+        {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
         },
         {
           "path": "registry/roc/use-controllable-state.ts",
@@ -2631,7 +2651,7 @@
       "dependencies": [
         "react@^19.0.0",
         "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -2645,9 +2665,14 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-direction.ts",
+          "path": "registry/roc/primitive-direction.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-direction.ts"
+          "target": "~/components/roc/primitive-direction.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
         },
         {
           "path": "registry/roc/direction.css",
@@ -3634,7 +3659,7 @@
         "class-variance-authority@^0.7.1",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "react-dom@^19.0.0"
       ],
       "files": [
         {
@@ -3648,9 +3673,34 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-navigation-menu.ts",
+          "path": "registry/roc/primitive-navigation-menu.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-navigation-menu.ts"
+          "target": "~/components/roc/primitive-navigation-menu.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/roc/primitive-roving.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-roving.ts"
         },
         {
           "path": "registry/roc/navigation-menu.css",

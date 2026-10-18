@@ -6,7 +6,7 @@ import { createContent, renderChild } from "./primitive-popup";
 
 const DelayContext = React.createContext<number | undefined>(undefined);
 const IdContext = React.createContext<string | undefined>(undefined);
-// Radix reserves the arrow's height inside the offset when there is an arrow;
+// shadcn reserves the arrow's height inside the offset when there is an arrow;
 // Base UI does not. The arrow tells its content it exists.
 const ARROW_HEIGHT = 5;
 const ArrowContext = React.createContext<(present: boolean) => void>(() => {});

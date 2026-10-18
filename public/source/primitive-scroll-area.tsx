@@ -5,7 +5,7 @@ import { ScrollArea as Base } from "@base-ui/react/scroll-area";
 
 type Div = Omit<React.ComponentProps<"div">, "ref"> & { ref?: React.Ref<any> };
 
-/** Radix props that have no Base UI counterpart are accepted and ignored. */
+/** shadcn props with no Base UI counterpart are accepted and ignored. */
 function Root({
   type: _type,
   scrollHideDelay: _scrollHideDelay,

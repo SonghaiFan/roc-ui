@@ -7,7 +7,7 @@
   "dependencies": [
     "react@^19.0.0",
     "clsx@^2.1.1",
-    "radix-ui@^1.8.1"
+    "@base-ui/react@^1.9.0"
   ],
   "files": [
     {
@@ -23,10 +23,16 @@
       "content": "import { clsx, type ClassValue } from \"clsx\";\n/** Scoped CSS needs no Tailwind runtime or host configuration. */\nexport function cn(...inputs: ClassValue[]) {\n  return clsx(inputs);\n}\n"
     },
     {
-      "path": "registry/roc/primitive-direction.ts",
+      "path": "registry/roc/primitive-direction.tsx",
       "type": "registry:file",
-      "target": "~/components/roc/primitive-direction.ts",
-      "content": "// ROC primitive seam. Backed by Radix for now; replace this file to own the behaviour.\nexport { Direction } from \"radix-ui\";\n"
+      "target": "~/components/roc/primitive-direction.tsx",
+      "content": "\"use client\";\n// ROC primitive: sets the reading direction for everything below it.\nimport * as React from \"react\";\nimport { DirectionProvider as BaseProvider } from \"@base-ui/react/direction-provider\";\nimport { DirectionContext, useDirectionContext, type Dir } from \"./primitive-direction-context\";\n\nfunction DirectionProvider({\n  dir,\n  children,\n}: {\n  dir: Dir;\n  children?: React.ReactNode;\n}) {\n  return (\n    <DirectionContext.Provider value={dir}>\n      <BaseProvider direction={dir}>{children}</BaseProvider>\n    </DirectionContext.Provider>\n  );\n}\n\n/** The direction in effect: the argument, else the provider, else left to right. */\nfunction useDirection(local?: Dir): Dir {\n  return useDirectionContext(local) ?? \"ltr\";\n}\n\nexport const Direction = { DirectionProvider, useDirection };\n"
+    },
+    {
+      "path": "registry/roc/primitive-direction-context.ts",
+      "type": "registry:file",
+      "target": "~/components/roc/primitive-direction-context.ts",
+      "content": "\"use client\";\n// ROC primitive: the reading direction set by a DirectionProvider, with no dependencies.\nimport * as React from \"react\";\n\nexport type Dir = \"ltr\" | \"rtl\";\n\nexport const DirectionContext = React.createContext<Dir | undefined>(undefined);\n\n/** A `dir` prop wins, then the provider; undefined means \"use the CSS direction\". */\nexport function useDirectionContext(local?: Dir): Dir | undefined {\n  return local ?? React.useContext(DirectionContext);\n}\n"
     },
     {
       "path": "registry/roc/direction.css",

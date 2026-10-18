@@ -1,6 +1,12 @@
 # Owning the primitives
 
-ROC components should not depend on someone else's package name. Every behavioural dependency now enters through a local `primitive-*` file, so a component imports `./primitive-dialog`, never `radix-ui`.
+ROC components do not depend on someone else's package name. Every behavioural dependency enters through a local `primitive-*` file, so a component imports `./primitive-dialog`, never a third-party package. **No component installs Radix.**
+
+Three tiers, from most to least owned:
+
+1. **Written here.** Behaviour simple enough to own: Slot, Label, Separator, Aspect Ratio, Progress, Avatar, Toggle, Switch, Checkbox, Tabs, Accordion, Radio Group, Toggle Group, Collapsible, Navigation Menu and Direction.
+2. **Base UI behind the seam.** Behaviour that is hard to get right: positioning, focus trapping, typeahead, drag and scroll geometry. Popover, Tooltip, Hover Card, Dialog, Alert Dialog, the three menus, Select, Slider and Scroll Area.
+3. **Specialist libraries.** Charts, carousels, calendars, tables and similar, listed under "Not covered".
 
 ## Owned
 
@@ -55,9 +61,12 @@ Known differences from Radix:
 - `onOpenChange(false)` can fire twice when a tooltip closes on click.
 - Content-level `onOpenAutoFocus`, `onEscapeKeyDown` and `onPointerDownOutside` are not forwarded; Base UI reports these on the root's `onOpenChange` details. No ROC component uses them.
 
-## Still delegated to Radix
+## Written here, in brief
 
-Direction, Navigation Menu. Each is a one-line re-export to replace with a Base UI adapter, checked against Radix with the same parity approach.
+| File | Notes |
+| --- | --- |
+| `primitive-navigation-menu.tsx` | Hover opens after a delay, instantly while moving between items; click toggles; Escape, outside click and focus-out dismiss; `data-motion` tells panels which way to slide; optional shared viewport and indicator. A Base UI version always renders through a shared popup, so ROC's inline layout needs its own |
+| `primitive-direction.tsx`, `primitive-direction-context.ts` | A provider whose direction the owned primitives read without importing Base UI; it also feeds Base UI's own provider |
 
 ## Not covered
 
@@ -65,7 +74,7 @@ Combobox and Toast are written directly on Base UI. Vaul, cmdk, Embla, react-day
 
 ## Checks
 
-`tests/parity/` renders Tabs, Accordion, Radio Group and Toggle Group with the owned primitives and with Radix side by side, drives both with the same 43 mouse and keyboard steps, and compares every control's ARIA and state, the visible panels, focus, callbacks, submitted and reset form data and the Tab-key walk. It matches except for:
+`tests/parity/` renders each primitive with ROC's own file and with Radix (kept as a dev dependency for this purpose only) side by side, drives both with the same 43 mouse and keyboard steps, and compares every control's ARIA and state, the visible panels, focus, callbacks, submitted and reset form data and the Tab-key walk. It matches except for:
 
 - Radix makes a radio or toggle group container tabbable after interaction, giving one extra Tab stop. ROC keeps one stop per group, as the ARIA radio pattern describes.
 - Pressing a disabled tab with the mouse drops focus to the page; Radix keeps it on the active tab because its list is a focusable container. Native disabled buttons receive no mouse events, so this is left as the browser behaves.

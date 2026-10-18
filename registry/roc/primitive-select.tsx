@@ -20,7 +20,7 @@ const textOf = (node: React.ReactNode): string =>
 /**
  * The trigger must show the chosen label while the list is closed, but Base UI only
  * knows labels of mounted items. Read `value` and text from the item elements in the
- * tree (the way Radix reads its ItemText) and hand them over as `items`.
+ * tree and hand them over as `items`.
  */
 function collectItems(node: React.ReactNode, found: Map<string, string>) {
   React.Children.forEach(node, (child) => {
@@ -66,7 +66,7 @@ function Root({
     <Base.Root
       {...props}
       items={items}
-      // Radix uses "" for "nothing chosen"; Base UI uses null.
+      // shadcn uses "" for "nothing chosen"; Base UI uses null.
       value={value === undefined ? undefined : value === "" ? null : value}
       defaultValue={defaultValue === undefined || defaultValue === "" ? null : defaultValue}
       onValueChange={(next: string | null) => onValueChange?.(next ?? "")}

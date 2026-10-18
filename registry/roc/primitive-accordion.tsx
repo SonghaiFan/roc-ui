@@ -1,6 +1,7 @@
 "use client";
 // ROC primitive: a stack of headers that each reveal a panel.
 import * as React from "react";
+import { useDirectionContext } from "./primitive-direction-context";
 import { composeEventHandlers, useComposedRefs } from "./primitive-utils";
 import { ROVING_ROOT, handleRovingKey, type Orientation } from "./primitive-roving";
 
@@ -63,7 +64,7 @@ function Root(props: RootProps) {
     onValueChange,
     disabled = false,
     orientation = "vertical",
-    dir,
+    dir: dirProp,
     onKeyDown,
     ref,
     ...rest
@@ -73,6 +74,7 @@ function Root(props: RootProps) {
     defaultValue?: string | string[];
     onValueChange?: (value: any) => void;
   };
+  const dir = useDirectionContext(dirProp);
   const collapsible = type === "multiple" || !!(props as SingleProps).collapsible;
   delete (rest as { collapsible?: boolean }).collapsible;
   const [internal, setInternal] = React.useState(() => toArray(defaultValue));

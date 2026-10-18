@@ -27,6 +27,6 @@ function Root({
 export const Menubar = {
   ...menu,
   Root,
-  /** One menu in the bar. Radix's `value` is not needed: each menu owns its state. */
+  /** One menu in the bar. The bar needs no `value`: each menu owns its state. */
   Menu: menu.Root,
 };

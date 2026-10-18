@@ -54,13 +54,13 @@
   height: calc(var(--roc-sh-spacing) * 4);
 }
 .roc-s-4b782fd2821c {
-  height: var(--radix-select-trigger-height);
+  height: var(--roc-select-trigger-height);
 }
 .roc-s-ae2c4b060bb9 {
   height: 1px;
 }
 .roc-s-c94cde061b6d {
-  max-height: var(--radix-select-content-available-height);
+  max-height: var(--roc-select-content-available-height);
 }
 .roc-s-8cfb5a42ef9f {
   width: fit-content;
@@ -72,10 +72,10 @@
   min-width: 8rem;
 }
 .roc-s-09365d2a0df7 {
-  min-width: var(--radix-select-trigger-width);
+  min-width: var(--roc-select-trigger-width);
 }
 .roc-s-f7dba7cc75ac {
-  transform-origin: var(--radix-select-content-transform-origin);
+  transform-origin: var(--roc-select-content-transform-origin);
 }
 .roc-s-d343f41ba73e {
   cursor: default;

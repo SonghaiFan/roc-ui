@@ -6,10 +6,10 @@ All 66 gallery components were reviewed against the [transitions.dev](https://tr
 
 | Components | Transition | Motion |
 | --- | --- | --- |
-| Dropdown Menu, Popover, Context Menu, Menubar, Hover Card | Menu dropdown | Scale 0.97 → 1 from the Radix transform origin in 250 ms; 0.99 exit in 150 ms |
+| Dropdown Menu, Popover, Context Menu, Menubar, Hover Card | Menu dropdown | Scale 0.97 → 1 from the trigger's transform origin in 250 ms; 0.99 exit in 150 ms |
 | Dialog, Alert Dialog | Modal | Scale 0.96 → 1 in 250 ms; 150 ms exit; scrim fades |
 | Tooltip | Tooltip | 0.98 scale and fade in 150 ms; 50 ms exit |
-| Select | Menu dropdown | Entrance only (Radix Select unmounts closed content at once). Popper grows from the trigger; item-aligned fades so it stays over the trigger |
+| Select | Menu dropdown | Popper grows from the trigger and settles back; item-aligned fades so it stays over the trigger |
 | Combobox | Menu dropdown | Base UI starting/ending-style transition, so it stays mounted while it leaves |
 | Sheet | Panel reveal | Slides from its own edge in 350 ms, leaves in 250 ms; scrim fades |
 | Navigation Menu | Page side-by-side | Panels slide 12 px toward the trigger they came from with a 2 px blur; viewport or panel grows from the top |
@@ -48,4 +48,4 @@ The Navigation Menu slide between triggers (`data-motion`) needs two triggers; t
 
 ## Notes for maintainers
 
-The precompiled catalog dropped Tailwind's `animate-in`/`zoom-in`/`slide-in` classes, so most upstream overlays had no entrance or exit before this pass. Exit motion on Radix and Base UI surfaces is a CSS animation or `data-ending-style` transition, which keeps the content mounted until it finishes. `scripts/adapt-catalog.mjs` regenerates the CSS and would overwrite these rules.
+The precompiled catalog dropped Tailwind's `animate-in`/`zoom-in`/`slide-in` classes, so most upstream overlays had no entrance or exit before this pass. Exit motion on Base UI surfaces is a CSS animation or `data-ending-style` transition, which keeps the content mounted until it finishes. `scripts/adapt-catalog.mjs` regenerates the CSS and would overwrite these rules.

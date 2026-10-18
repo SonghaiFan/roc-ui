@@ -63,13 +63,13 @@
   height: 1px;
 }
 .roc-s-be6b61edce8b {
-  max-height: var(--radix-context-menu-content-available-height);
+  max-height: var(--roc-context-menu-content-available-height);
 }
 .roc-s-e9ab1547c94d {
   min-width: 8rem;
 }
 .roc-s-46e43ffa5bf3 {
-  transform-origin: var(--radix-context-menu-content-transform-origin);
+  transform-origin: var(--roc-context-menu-content-transform-origin);
 }
 .roc-s-d343f41ba73e {
   cursor: default;

@@ -15,7 +15,7 @@ export function createMenu(
   Base: any,
   prefix: string,
   triggerTag: "button" | "span",
-  /** Context menus open to the right of the pointer, like Radix. */
+  /** Context menus open to the right of the pointer. */
   defaults: { side?: "right"; align?: "start" } = {},
 ) {
   const BaseContent = createContent(
@@ -159,7 +159,7 @@ export function createMenu(
           label={textValue}
           checked={checked === undefined ? undefined : checked === true}
           onCheckedChange={(next: boolean) => onCheckedChange?.(next)}
-          // Radix closes the menu when a checkbox is chosen; Base UI keeps it open.
+          // shadcn menus close when a checkbox is chosen; Base UI keeps them open.
           closeOnClick
           onClick={(event: React.MouseEvent<HTMLDivElement>) => {
             keepOpen.current = false;

@@ -75,7 +75,7 @@
   height: calc(var(--roc-sh-spacing) * 9);
 }
 .roc-s-25728bc0c8aa {
-  height: var(--radix-navigation-menu-viewport-height);
+  height: var(--roc-navigation-menu-viewport-height);
 }
 .roc-s-d4ea834145ae {
   width: calc(var(--roc-sh-spacing) * 2);
@@ -384,7 +384,7 @@
     position: absolute;
   }
   .roc-s-bdc127d6ea39 {
-    width: var(--radix-navigation-menu-viewport-width);
+    width: var(--roc-navigation-menu-viewport-width);
   }
   .roc-s-2cf968c3a3a4 {
     width: auto;

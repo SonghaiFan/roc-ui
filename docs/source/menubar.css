@@ -79,7 +79,7 @@
   min-width: 12rem;
 }
 .roc-s-0bcaea6638f7 {
-  transform-origin: var(--radix-menubar-content-transform-origin);
+  transform-origin: var(--roc-menubar-content-transform-origin);
 }
 .roc-s-d343f41ba73e {
   cursor: default;

@@ -14,7 +14,7 @@
   width: calc(var(--roc-sh-spacing) * 64);
 }
 .roc-s-f7df1783a7f8 {
-  transform-origin: var(--radix-hover-card-content-transform-origin);
+  transform-origin: var(--roc-hover-card-content-transform-origin);
 }
 .roc-s-3fa8c572949b {
   border-radius: var(--roc-sh-radius-md);

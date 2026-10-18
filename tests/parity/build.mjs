@@ -2,7 +2,7 @@
 import { build } from "esbuild";
 import { mkdir, writeFile } from "node:fs/promises";
 await mkdir("tests/parity/dist", { recursive: true });
-const pages = { harness: "index", popover: "popover", popups: "popups", dialogs: "dialogs", menus: "menus", select: "select", slider: "slider", "scroll-area": "scroll-area" };
+const pages = { harness: "index", popover: "popover", popups: "popups", dialogs: "dialogs", menus: "menus", select: "select", slider: "slider", "scroll-area": "scroll-area", "navigation-menu": "navigation-menu" };
 for (const [entry, page] of Object.entries(pages)) {
   await build({
     entryPoints: [`tests/parity/${entry}.tsx`],

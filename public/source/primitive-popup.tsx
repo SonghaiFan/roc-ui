@@ -64,8 +64,8 @@ function useStackingOf(ref: React.RefObject<HTMLElement | null>) {
 type Parts = { Positioner: React.ElementType; Popup: React.ElementType };
 
 /**
- * Build a Content component. `prefix` names the CSS variables that Radix-era CSS
- * reads (`--radix-<prefix>-content-transform-origin` and friends).
+ * Build a Content component. `prefix` names the CSS variables that ROC and shadcn CSS
+ * reads (`--roc-<prefix>-content-transform-origin` and friends).
  */
 export function createContent(parts: Parts, prefix: string, openValue = "open") {
   type Props = Omit<React.ComponentProps<"div">, "ref"> &
@@ -122,11 +122,11 @@ export function createContent(parts: Parts, prefix: string, openValue = "open") 
           )}
           style={
             {
-              [`--radix-${prefix}-content-transform-origin`]: "var(--transform-origin)",
-              [`--radix-${prefix}-content-available-height`]: "var(--available-height)",
-              [`--radix-${prefix}-content-available-width`]: "var(--available-width)",
-              [`--radix-${prefix}-trigger-width`]: "var(--anchor-width)",
-              [`--radix-${prefix}-trigger-height`]: "var(--anchor-height)",
+              [`--roc-${prefix}-content-transform-origin`]: "var(--transform-origin)",
+              [`--roc-${prefix}-content-available-height`]: "var(--available-height)",
+              [`--roc-${prefix}-content-available-width`]: "var(--available-width)",
+              [`--roc-${prefix}-trigger-width`]: "var(--anchor-width)",
+              [`--roc-${prefix}-trigger-height`]: "var(--anchor-height)",
               ...style,
             } as React.CSSProperties
           }

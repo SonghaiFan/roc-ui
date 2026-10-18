@@ -8,6 +8,7 @@ import {
   useRovingTabStop,
   type Orientation,
 } from "./primitive-roving";
+import { useDirectionContext } from "./primitive-direction-context";
 import { useControllableState } from "./use-controllable-state";
 
 type Context = {
@@ -44,10 +45,11 @@ function Root({
   defaultValue,
   onValueChange,
   orientation = "horizontal",
-  dir,
+  dir: dirProp,
   activationMode = "automatic",
   ...props
 }: RootProps) {
+  const dir = useDirectionContext(dirProp);
   const baseId = React.useId();
   const [value, setValue] = useControllableState<string | undefined>(
     valueProp,

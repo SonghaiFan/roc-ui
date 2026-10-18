@@ -1,6 +1,7 @@
 "use client";
 // ROC primitive: a set of toggles that behave as one choice (single) or many (multiple).
 import * as React from "react";
+import { useDirectionContext } from "./primitive-direction-context";
 import { Toggle } from "./primitive-toggle";
 import { composeEventHandlers, useComposedRefs } from "./primitive-utils";
 import {
@@ -58,7 +59,7 @@ function Root(props: SingleProps | MultipleProps) {
     onValueChange,
     disabled = false,
     orientation,
-    dir,
+    dir: dirProp,
     loop = true,
     rovingFocus = true,
     onKeyDown,
@@ -70,6 +71,7 @@ function Root(props: SingleProps | MultipleProps) {
     defaultValue?: string | string[];
     onValueChange?: (value: any) => void;
   };
+  const dir = useDirectionContext(dirProp);
   const [internal, setInternal] = React.useState(() => toArray(defaultValue));
   const values = value === undefined ? internal : toArray(value);
   const change = (next: string[]) => {

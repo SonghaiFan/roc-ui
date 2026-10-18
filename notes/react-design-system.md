@@ -13,7 +13,7 @@ component.css + surface.css component styles and small shared surface rules
 pure TypeScript helpers    geometry and analytic springs
 ```
 
-Registry files do not import `src/`, application stores, routers, databases, generated assets or Syuze/Franklin runtime modules. The original ten components depend on React 19. The twenty-five shadcn-derived foundations also declare Radix, icon and utility packages where imported; see [foundation contracts](shadcn-foundations.md). CSS imports require a bundler that handles CSS. DOM selection, media, animation and native dialog/popover work run after mount; the components also server-render without accessing `window` during render.
+Registry files do not import `src/`, application stores, routers, databases, generated assets or Syuze/Franklin runtime modules. The original ten components depend on React 19. The twenty-five shadcn-derived foundations also declare Base UI, icon and utility packages where imported; see [foundation contracts](shadcn-foundations.md). CSS imports require a bundler that handles CSS. DOM selection, media, animation and native dialog/popover work run after mount; the components also server-render without accessing `window` during render.
 
 The original MIT notice remains in each install. Source provenance identifies where a behaviour came from, not a requirement to install that application.
 

@@ -10,7 +10,7 @@
   line-height: 1.5;
   --roc-pop-scale: 0.98;
   --roc-pop-scale-out: 0.98;
-  transform-origin: var(--radix-tooltip-content-transform-origin);
+  transform-origin: var(--roc-tooltip-content-transform-origin);
   animation: roc-ui-pop-in var(--roc-motion-quick) ease-out;
 }
 .roc-ui[data-slot="tooltip-content"][data-state="closed"] {

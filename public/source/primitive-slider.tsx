@@ -43,7 +43,7 @@ function Root({
   children,
   ...props
 }: RootProps) {
-  // Base UI needs each thumb's index; Radix infers it from order.
+  // Base UI needs each thumb's index; shadcn infers it from order.
   let next = 0;
   const numbered = React.Children.map(children, (child) =>
     React.isValidElement(child) && child.type === Thumb
@@ -59,7 +59,7 @@ function Root({
       onValueCommitted={(v: number | readonly number[]) => onValueCommit?.(asArray(v))}
       minStepsBetweenValues={minStepsBetweenThumbs}
       thumbAlignment="edge"
-      // Like Radix, a dragged thumb may cross the other; values stay sorted.
+      // A dragged thumb may cross the other; values stay sorted.
       thumbCollisionBehavior="swap"
     >
       <Base.Control data-slot="slider-control">{numbered}</Base.Control>
