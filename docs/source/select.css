@@ -479,11 +479,17 @@
     }
   }
 }
-/* Micro-motion: popper select grows from the trigger; item-aligned select fades.
-   Radix Select unmounts closed content at once, so only the entrance is animated. */
-[data-slot="select-content"][data-state="open"][data-side] {
+/* Micro-motion: popper select grows from the trigger and settles back; item-aligned
+   select fades so it stays over its trigger. */
+[data-slot="select-content"][data-state="open"][data-position="popper"] {
   animation: roc-ui-pop-in var(--roc-motion-fast) var(--roc-motion-ease);
 }
-[data-slot="select-content"][data-state="open"]:not([data-side]) {
+[data-slot="select-content"][data-state="closed"][data-position="popper"] {
+  animation: roc-ui-pop-out var(--roc-motion-quick) var(--roc-motion-ease);
+}
+[data-slot="select-content"][data-state="open"][data-position="item-aligned"] {
   animation: roc-ui-dismiss var(--roc-motion-quick) reverse;
+}
+[data-slot="select-content"][data-state="closed"][data-position="item-aligned"] {
+  animation: roc-ui-dismiss var(--roc-motion-quick);
 }

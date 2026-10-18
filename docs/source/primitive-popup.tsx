@@ -72,6 +72,8 @@ export function createContent(parts: Parts, prefix: string, openValue = "open") 
     PositionProps & {
       ref?: React.Ref<HTMLDivElement>;
       anchor?: Element | null;
+      /** Extra props for Base UI's Positioner, such as `alignItemWithTrigger`. */
+      positionerProps?: Record<string, unknown>;
       /** Keep mounted while closed. Not needed: Portal handles presence. */
       forceMount?: boolean;
     };
@@ -84,6 +86,7 @@ export function createContent(parts: Parts, prefix: string, openValue = "open") 
     avoidCollisions = true,
     sticky,
     anchor,
+    positionerProps,
     forceMount: _forceMount,
     style,
     ref,
@@ -104,6 +107,7 @@ export function createContent(parts: Parts, prefix: string, openValue = "open") 
         }
         sticky={sticky === "always"}
         anchor={anchor ?? undefined}
+        {...positionerProps}
         style={{ zIndex: stacking }}
       >
         <parts.Popup
