@@ -38,6 +38,7 @@ Behaviour that is hard to get right (positioning, focus trapping, typeahead) com
 | `primitive-dialog.tsx`, `primitive-alert-dialog.tsx` | `Dialog`, `AlertDialog` via `primitive-dialog-core.tsx` | Overlay/Content/Close shape; focus trap, scroll lock and inert outside from Base UI. Alert Dialog starts focus on Cancel and ignores outside clicks. Sheet reuses Dialog |
 | `primitive-dropdown-menu.tsx`, `primitive-context-menu.tsx`, `primitive-menubar.tsx` | `Menu`, `ContextMenu`, `Menubar` via `primitive-menu-core.tsx` | One item vocabulary for all three. `onSelect` keeps working, including `preventDefault` to leave the menu open. Checkbox and radio items close the menu, as in Radix. Submenu sides are reported as `left`/`right` |
 | `primitive-select.tsx` | `Select` | The closed trigger shows the chosen label because the adapter reads `value` and text from the item elements in the tree and gives them to Base UI as `items`. Items rendered by a component you wrote still work; items produced some other way fall back to showing the value. Radix's `""` means no value. `data-position` tells popper from item-aligned |
+| `primitive-slider.tsx` | `Slider` | ROC keeps Track, Range and Thumbs as siblings; the adapter adds Base UI's Control (styled in `slider.css`), numbers the thumbs and moves `aria-label` onto each thumb's range input, which is the focusable element. Thumbs are edge-aligned like Radix |
 | `primitive-collapsible.tsx` | owned | A disclosure needs no library. Closed content leaves an empty hidden region so `aria-controls` stays valid |
 
 Known differences from Radix:
@@ -46,6 +47,7 @@ Known differences from Radix:
 - Only one tooltip is open at a time.
 - Menus keep disabled items reachable by keyboard (focus lands on them, they cannot be activated), as the ARIA menu pattern suggests. Radix skips them.
 - A Select list stays mounted but hidden (`display: none`) after closing, so item labels stay available. Opening a popper Select with no value focuses the list, not the first option. `onValueChange` fires before `onOpenChange(false)`.
+- Slider: clicking the track puts the thumb under the pointer (a click at 25% gives 23, Radix 25). The filled range ends at the thumb centre. Dragging one thumb across another keeps the values sorted but the other thumb may move (`swap`).
 - Link triggers (`asChild` on an `<a>`) get `role="button"` from Base UI.
 - Focus returns to the trigger when the exit animation ends (about 170 ms), the same as with Radix; a test must wait for it rather than sample once.
 - After a context menu closes, focus returns to the element that had it before, not to the page.
@@ -54,7 +56,7 @@ Known differences from Radix:
 
 ## Still delegated to Radix
 
-Direction, Navigation Menu, Scroll Area, Slider. Each is a one-line re-export to replace with a Base UI adapter, checked against Radix with the same parity approach.
+Direction, Navigation Menu, Scroll Area. Each is a one-line re-export to replace with a Base UI adapter, checked against Radix with the same parity approach.
 
 ## Not covered
 
