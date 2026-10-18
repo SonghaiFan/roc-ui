@@ -606,7 +606,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "radix-ui@^1.8.1",
+        "@base-ui/react@^1.9.0",
         "class-variance-authority@^0.7.1"
       ],
       "files": [
@@ -621,9 +621,24 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-dialog.ts",
+          "path": "registry/roc/primitive-dialog.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-dialog.ts"
+          "target": "~/components/roc/primitive-dialog.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-dialog-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.tsx",
@@ -634,11 +649,6 @@
           "path": "registry/roc/primitive-slot.tsx",
           "type": "registry:file",
           "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -1412,7 +1422,7 @@
       "dependencies": [
         "react@^19.0.0",
         "clsx@^2.1.1",
-        "radix-ui@^1.8.1",
+        "@base-ui/react@^1.9.0",
         "class-variance-authority@^0.7.1"
       ],
       "files": [
@@ -1427,9 +1437,24 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-alert-dialog.ts",
+          "path": "registry/roc/primitive-alert-dialog.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-alert-dialog.ts"
+          "target": "~/components/roc/primitive-alert-dialog.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-dialog-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.tsx",
@@ -1440,11 +1465,6 @@
           "path": "registry/roc/primitive-slot.tsx",
           "type": "registry:file",
           "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -2219,7 +2239,7 @@
         "cmdk@^1.1.1",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "radix-ui@^1.8.1",
+        "@base-ui/react@^1.9.0",
         "class-variance-authority@^0.7.1"
       ],
       "files": [
@@ -2239,9 +2259,24 @@
           "target": "~/components/roc/dialog.tsx"
         },
         {
-          "path": "registry/roc/primitive-dialog.ts",
+          "path": "registry/roc/primitive-dialog.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-dialog.ts"
+          "target": "~/components/roc/primitive-dialog.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-dialog-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.tsx",
@@ -2252,11 +2287,6 @@
           "path": "registry/roc/primitive-slot.tsx",
           "type": "registry:file",
           "target": "~/components/roc/primitive-slot.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -3810,7 +3840,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -3824,9 +3854,24 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-dialog.ts",
+          "path": "registry/roc/primitive-dialog.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-dialog.ts"
+          "target": "~/components/roc/primitive-dialog.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-dialog-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/sheet.css",

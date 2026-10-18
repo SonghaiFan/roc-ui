@@ -35,6 +35,7 @@ Behaviour that is hard to get right (positioning, focus trapping, typeahead) com
 | `primitive-popover.tsx` | `Popover` | `Anchor` positions against a separate element; `modal` supported |
 | `primitive-tooltip.tsx` | `Tooltip` | Adds `role="tooltip"` and `aria-describedby`, which Base UI leaves to the caller; reserves the arrow's height in the offset like Radix |
 | `primitive-hover-card.tsx` | `PreviewCard` | `openDelay` and `closeDelay` map to the trigger |
+| `primitive-dialog.tsx`, `primitive-alert-dialog.tsx` | `Dialog`, `AlertDialog` via `primitive-dialog-core.tsx` | Overlay/Content/Close shape; focus trap, scroll lock and inert outside from Base UI. Alert Dialog starts focus on Cancel and ignores outside clicks. Sheet reuses Dialog |
 | `primitive-collapsible.tsx` | owned | A disclosure needs no library. Closed content leaves an empty hidden region so `aria-controls` stays valid |
 
 Known differences from Radix:
@@ -46,7 +47,7 @@ Known differences from Radix:
 
 ## Still delegated to Radix
 
-Alert Dialog, Context Menu, Dialog (also used by Sheet), Direction, Dropdown Menu, Menubar, Navigation Menu, Scroll Area, Select, Slider. Each is a one-line re-export to replace with a Base UI adapter, checked against Radix with the same parity approach.
+Context Menu, Direction, Dropdown Menu, Menubar, Navigation Menu, Scroll Area, Select, Slider. Each is a one-line re-export to replace with a Base UI adapter, checked against Radix with the same parity approach.
 
 ## Not covered
 
