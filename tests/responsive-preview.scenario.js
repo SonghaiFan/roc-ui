@@ -6,6 +6,7 @@ async (page) => {
     if (!ok) throw Error(m);
     checks.push(m);
   };
+  await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.setViewportSize({ width: 1440, height: 1100 });
   await page.goto("http://127.0.0.1:4190/");
   const frame = await (
@@ -22,6 +23,9 @@ async (page) => {
     await frame.evaluate(() => innerWidth === 1024),
     "Desktop sets a real 1024 px browsing viewport",
   );
+  await page
+    .getByRole("button", { name: "Design settings", exact: true })
+    .click();
   await page.getByRole("button", { name: /09 Page book/ }).click();
   await frame.waitForFunction(
     () => document.querySelector(".preview-canvas").dataset.focused === "true",
@@ -32,6 +36,9 @@ async (page) => {
     "Focused book uses a desktop spread",
   );
   await preset("Phone", 390);
+  await frame.waitForFunction(
+    () => document.querySelector(".roc-page-book").dataset.mode === "single",
+  );
   assert(
     (await frame.locator(".roc-page-book").getAttribute("data-mode")) ===
       "single",
@@ -64,6 +71,9 @@ async (page) => {
   );
   await page.getByLabel("Preview width", { exact: true }).fill("530");
   await frame.waitForFunction(() => innerWidth === 530);
+  await page.waitForFunction(
+    () => document.querySelector(".viewport-size").textContent === "530 × 768",
+  );
   assert(
     (await page.getByLabel("Viewport dimensions").innerText()) === "530 × 768",
     "Custom width readout matches the real viewport",
@@ -156,6 +166,9 @@ async (page) => {
     await body.evaluate((el) => el === document.body),
     "One iframe document survives all presets and width changes",
   );
+  await page
+    .getByRole("button", { name: "Design settings", exact: true })
+    .click();
   await page.getByLabel("blue accent").click();
   await frame.waitForFunction(
     () =>

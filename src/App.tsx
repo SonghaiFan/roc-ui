@@ -7,6 +7,7 @@ import {
 } from "react";
 import { catalog } from "./catalog";
 import { Example } from "./Examples";
+import { AutoHidePanel } from "./AutoHidePanel";
 import { ViewportPreview } from "./ViewportPreview";
 import { defaults, palette, type Settings } from "./settings";
 import "./site.css";
@@ -183,9 +184,9 @@ export function App() {
   );
   const [query, setQuery] = useState(""),
     [filter, setFilter] = useState("All"),
-    [color, setColor] = useState<Settings["color"]>("sage"),
+    [color, setColor] = useState<Settings["color"]>("neutral"),
     [radius, setRadius] = useState(12),
-    [surface, setSurface] = useState("Paper"),
+    [surface, setSurface] = useState("White"),
     [density, setDensity] = useState("Comfortable");
   const [font, setFont] = useState("System");
   const settings = { ...defaults, color };
@@ -311,6 +312,12 @@ export function App() {
       } else if (
         !embedded &&
         event.source === frame.current?.contentWindow &&
+        event.data?.type === "roc-preview-interact"
+      ) {
+        window.dispatchEvent(new Event("roc-preview-interact"));
+      } else if (
+        !embedded &&
+        event.source === frame.current?.contentWindow &&
         event.data?.type === "roc-search"
       ) {
         document
@@ -330,6 +337,17 @@ export function App() {
     };
     window.addEventListener("message", receive);
     return () => window.removeEventListener("message", receive);
+  }, [embedded]);
+  useEffect(() => {
+    if (!embedded) return;
+    const interact = () =>
+      parent.postMessage({ type: "roc-preview-interact" }, location.origin);
+    document.addEventListener("pointerdown", interact, true);
+    document.addEventListener("focusin", interact);
+    return () => {
+      document.removeEventListener("pointerdown", interact, true);
+      document.removeEventListener("focusin", interact);
+    };
   }, [embedded]);
   const style = {
     "--roc-accent": palette[color],
@@ -421,36 +439,16 @@ export function App() {
       </div>
     );
   return (
-    <div className="design-space" style={style}>
+    <div className="design-space">
       <header className="topbar">
-        <a className="brand" href={location.pathname}>
-          <span className="brand-mark">
-            <i />
-            <i />
-            <i />
-          </span>
-          <b>roc</b>
+        <a className="brand" href={location.pathname} aria-label="ROC home">
+          roc
         </a>
-        <span className="top-divider" />
-        <span className="top-title">Component design space</span>
-        <span className="release">0.6</span>
-        <nav>
-          <a href={skill} target="_blank" rel="noreferrer">
-            Principles ↗
-          </a>
-          <a href={repo} target="_blank" rel="noreferrer">
-            GitHub ↗
-          </a>
-        </nav>
-      </header>
-      <div className="workspace">
-        <aside className="design-controls" aria-label="Design settings">
-          <div className="rail-heading">
-            <span>Make it yours</span>
-            <span>⌘</span>
-          </div>
+        <span className="top-title">
+          Components <span className="count">{visible.length}</span>
+        </span>
+        <AutoHidePanel>
           <div className="rail-section">
-            <span className="rail-caption">APPEARANCE</span>
             <label className="rail-control">
               <span>Surface</span>
               <select
@@ -529,6 +527,7 @@ export function App() {
                     { type: "roc-focus", id: item.id },
                     location.origin,
                   );
+                  window.dispatchEvent(new Event("roc-preview-interact"));
                 }}
               >
                 <span>{String(i + 1).padStart(2, "0")}</span>
@@ -538,11 +537,6 @@ export function App() {
             ))}
           </div>
           <div className="rail-bottom">
-            <p>
-              Independent React components.
-              <br />
-              Own the code. Keep the feel.
-            </p>
             <a
               href={`${repo}/blob/main/notes/react-design-system.md`}
               target="_blank"
@@ -551,37 +545,40 @@ export function App() {
               Composition guide ↗
             </a>
           </div>
-        </aside>
+        </AutoHidePanel>
+        <label className="search">
+          <span>⌕</span>
+          <input
+            aria-label="Search components"
+            placeholder="Find a component…"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <kbd>/</kbd>
+        </label>
+        <select
+          className="filter"
+          aria-label="Interaction"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+        >
+          {["All", "Select", "Press", "Expand", "Drag", "Play", "Edit"].map(
+            (value) => (
+              <option key={value}>{value}</option>
+            ),
+          )}
+        </select>
+        <nav>
+          <a href={skill} target="_blank" rel="noreferrer">
+            Principles ↗
+          </a>
+          <a href={repo} target="_blank" rel="noreferrer">
+            GitHub ↗
+          </a>
+        </nav>
+      </header>
+      <div className="workspace">
         <main className="canvas" data-density={density.toLowerCase()}>
-          <div className="canvas-toolbar">
-            <div>
-              <span className="status-dot" />
-              <h1>All components</h1>
-              <span className="count">{visible.length}</span>
-            </div>
-            <label className="search">
-              <span>⌕</span>
-              <input
-                aria-label="Search components"
-                placeholder="Find a component…"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-              />
-              <kbd>/</kbd>
-            </label>
-            <select
-              className="filter"
-              aria-label="Interaction"
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-            >
-              {["All", "Select", "Press", "Expand", "Drag", "Play", "Edit"].map(
-                (value) => (
-                  <option key={value}>{value}</option>
-                ),
-              )}
-            </select>
-          </div>
           <ViewportPreview frame={frame} onLoad={syncFrame} />
           <footer className="canvas-footer">
             <span>Responsive Object Continuity</span>

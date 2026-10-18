@@ -27,8 +27,8 @@ async (page) => {
     }),
   );
   assert(
-    new Set(boxes.map((b) => Math.round(b.x))).size === 3,
-    "Desktop uses three masonry columns",
+    new Set(boxes.map((b) => Math.round(b.x))).size >= 3,
+    "Desktop fills the canvas with masonry columns",
   );
   assert(
     new Set(boxes.map((b) => Math.round(b.h))).size > 5,
@@ -177,6 +177,9 @@ async (page) => {
     "Search filters without removing other components",
   );
   await page.getByLabel("Search components").fill("");
+  await page
+    .getByRole("button", { name: "Design settings", exact: true })
+    .click();
   await page.getByLabel("blue accent").click();
   await page.getByLabel("Spacing").selectOption("Compact");
   await page.getByLabel("Corner radius").fill("6");
@@ -188,6 +191,7 @@ async (page) => {
     ),
     "Theme and density preserve editor state",
   );
+  await page.getByLabel("Close settings", { exact: true }).click();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(700);
   assert(

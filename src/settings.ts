@@ -1,4 +1,5 @@
 export const palette = {
+  neutral: "#bcbcbc",
   blue: "#a7cbef",
   rose: "#e9b7ca",
   sage: "#bbccae",
