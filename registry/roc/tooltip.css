@@ -8,10 +8,13 @@
   color: var(--roc-paper, #fff);
   font-size: 11px;
   line-height: 1.5;
-  animation: roc-ui-reveal 140ms ease-out;
+  --roc-pop-scale: 0.98;
+  --roc-pop-scale-out: 0.98;
+  transform-origin: var(--radix-tooltip-content-transform-origin);
+  animation: roc-ui-pop-in var(--roc-motion-quick) ease-out;
 }
 .roc-ui[data-slot="tooltip-content"][data-state="closed"] {
-  animation: roc-ui-dismiss 100ms;
+  animation: roc-ui-pop-out 50ms ease-out;
 }
 .roc-ui[data-slot="tooltip-content"] svg {
   fill: var(--roc-ink, #252525);

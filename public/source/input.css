@@ -9,13 +9,14 @@
   padding: 8px 11px;
   background: var(--roc-paper, #fff);
   line-height: 1.5;
-  transition: border-color 140ms;
+  transition: border-color var(--roc-motion-quick) ease-out;
 }
 .roc-ui[data-slot="input"]::placeholder {
   color: var(--roc-muted, #888);
 }
 .roc-ui[data-slot="input"][aria-invalid="true"] {
   border-color: #bd4545;
+  animation: roc-ui-shake 240ms var(--roc-motion-ease);
 }
 .roc-ui[data-slot="input"]::file-selector-button {
   border: 0;

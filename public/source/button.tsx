@@ -65,12 +65,15 @@ function Button({
         children
       ) : (
         <span className="roc-ui-button-label">
-          <span style={{ visibility: pending ? "hidden" : undefined }}>
+          <span
+            aria-hidden={pending}
+            data-state={pending ? "inactive" : "active"}
+          >
             {children}
           </span>
           <span
             aria-hidden={!pending}
-            style={{ visibility: pending ? undefined : "hidden" }}
+            data-state={pending ? "active" : "inactive"}
           >
             {pendingLabel}
           </span>

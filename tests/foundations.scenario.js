@@ -14,8 +14,8 @@ async (page) => {
   ).contentFrame();
   await view.locator("#tabs").waitFor();
   assert(
-    (await view.locator(".component-card").count()) === 25,
-    "Only the 25 customized shadcn components are mounted",
+    (await view.locator(".component-card").count()) === 66,
+    "All 66 customized shadcn components are mounted",
   );
   const focus = async (name) => {
     const back = page.getByRole("button", {
@@ -129,11 +129,23 @@ async (page) => {
   );
   await focus("Checkbox");
   const check = view.getByRole("checkbox", { name: "Keep original sources" });
+  const checkMark = await check.locator("svg path").elementHandle();
   await check.focus();
   await check.press("Space");
   assert(
     (await check.getAttribute("aria-checked")) === "false",
     "Checkbox preserves native keyboard selection",
+  );
+  await page.waitForTimeout(200);
+  assert(
+    await checkMark.evaluate((el) => el.isConnected && parseFloat(getComputedStyle(el).strokeDashoffset) === 1),
+    "Unchecked checkbox retains its retracted mark",
+  );
+  await check.press("Space");
+  await page.waitForTimeout(400);
+  assert(
+    await checkMark.evaluate((el) => el.isConnected && parseFloat(getComputedStyle(el).strokeDashoffset) === 0 && getComputedStyle(el).opacity === "1"),
+    "The same checkbox mark finishes drawing when checked",
   );
   await focus("Slider");
   const slider = view.getByRole("slider", { name: "Reading width" });
@@ -250,6 +262,14 @@ async (page) => {
   await tip.press("Escape");
   await focus("Accordion");
   await page.emulateMedia({ reducedMotion: "reduce" });
+  assert(
+    await checkMark.evaluate((el) => getComputedStyle(el).transitionDuration === "0s"),
+    "Reduced motion removes checkbox stroke animation",
+  );
+  assert(
+    await thumb.evaluate((el) => getComputedStyle(el).transitionDuration === "0s"),
+    "Reduced motion removes switch overshoot",
+  );
   await fold.click();
   assert(
     await node.evaluate(

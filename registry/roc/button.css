@@ -15,8 +15,8 @@
   white-space: nowrap;
   text-decoration: none;
   transition:
-    background-color 140ms,
-    box-shadow 140ms;
+    background-color var(--roc-motion-quick) ease-out,
+    box-shadow var(--roc-motion-quick) ease-out;
 }
 .roc-ui-button.roc-ui-button-variant-default {
   background: var(--roc-ink, #252525);
@@ -95,4 +95,28 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+/* Pending swaps the label in place: the outgoing text lifts away blurred while
+   the incoming text settles up from below. */
+.roc-ui-button-label > span {
+  transition:
+    opacity var(--roc-motion-quick) ease-in-out,
+    transform var(--roc-motion-quick) ease-in-out,
+    filter var(--roc-motion-quick) ease-in-out;
+}
+.roc-ui-button-label > span[data-state="inactive"] {
+  opacity: 0;
+  filter: blur(var(--roc-motion-blur));
+  pointer-events: none;
+}
+.roc-ui-button-label > span:first-child[data-state="inactive"] {
+  transform: translateY(-4px);
+}
+.roc-ui-button-label > span:last-child[data-state="inactive"] {
+  transform: translateY(4px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-ui-button-label > span {
+    transition: none;
+  }
 }

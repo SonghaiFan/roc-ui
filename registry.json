@@ -230,7 +230,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "lucide-react@^1.59.0",
         "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
