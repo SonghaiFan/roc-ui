@@ -39,6 +39,14 @@ async (page) => {
   assert(await panel.isVisible(), "Hover reveals the left settings panel");
   await page.mouse.move(1100, 30);
   await panel.waitFor({ state: "hidden" });
+  await page.mouse.move(3, 500);
+  await panel.waitFor({ state: "visible" });
+  assert(
+    await panel.isVisible(),
+    "Moving the pointer to the window edge reveals the panel",
+  );
+  await page.mouse.move(1100, 30);
+  await panel.waitFor({ state: "hidden" });
   assert(
     !(await panel.isVisible()),
     "Leaving the panel automatically hides it",

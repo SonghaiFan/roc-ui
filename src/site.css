@@ -95,38 +95,7 @@ summary {
   --roc-muted: #a6a6a6;
   --roc-marker: #ffffff14;
   --roc-focus: #d4d4d4;
-  position: fixed;
-  z-index: 20;
-  top: 116px;
-  left: 12px;
-  width: 248px;
-  max-width: calc(100vw - 24px);
-  max-height: calc(100dvh - 128px);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background: #262626;
-  color: #ededed;
-  border: 1px solid #383838;
-  border-radius: 10px;
-  box-shadow: 0 12px 36px #00000018;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-8px);
-  transition:
-    opacity 160ms ease,
-    transform 200ms ease,
-    visibility 160ms;
-}
-.design-controls .rail-heading {
-  flex: none;
-}
-.rail-scroll {
-  flex: 1 1 auto;
-  min-height: 0;
-}
-.rail-scroll [data-slot="scroll-area-viewport"] {
-  max-height: calc(100dvh - 128px - 62px);
+  --roc-edge-panel-top: 116px;
 }
 .design-controls .roc-shadcn,
 .picker-dark.roc-shadcn,
@@ -136,31 +105,13 @@ summary {
   --roc-sh-color-ring: #d4d4d4;
   color: #f1f1f1;
 }
-.design-controls[data-open="true"] {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
+.design-controls [data-slot="edge-panel-header"] {
+  border-bottom-color: #ffffff16;
 }
-.rail-heading > div {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-.rail-heading .roc-ui-toggle {
+.design-controls [data-slot="edge-panel-header"] .roc-ui-toggle {
   min-height: 28px;
   padding: 4px 8px;
   font-size: 10px;
-}
-.rail-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 16px;
-  border-bottom: 1px solid #ffffff16;
-  font-size: 12px;
-}
-.rail-heading > span:last-child {
-  color: #949494;
 }
 .rail-section {
   padding: 18px 12px;
@@ -892,8 +843,7 @@ summary {
 }
 @media (max-width: 640px) {
   .design-controls {
-    top: 144px;
-    max-height: calc(100dvh - 156px);
+    --roc-edge-panel-top: 144px;
   }
   .topbar {
     gap: 10px;
@@ -930,11 +880,6 @@ summary {
   }
   .canvas-footer {
     font-size: 8px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .design-controls {
-    transition: none;
   }
 }
 

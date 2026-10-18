@@ -4824,6 +4824,107 @@
           "target": "~/components/roc/SOURCE-LICENSE.txt"
         }
       ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "edge-panel",
+      "type": "registry:component",
+      "title": "Edge Panel",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "lucide-react@^1.59.0",
+        "class-variance-authority@^0.7.1",
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/edge-panel.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/edge-panel.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/scroll-area.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/scroll-area.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-scroll-area.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-scroll-area.tsx"
+        },
+        {
+          "path": "registry/roc/scroll-area.css",
+          "type": "registry:file",
+          "target": "~/components/roc/scroll-area.css"
+        },
+        {
+          "path": "registry/roc/toggle.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/toggle.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-toggle.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-toggle.tsx"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/roc/toggle.css",
+          "type": "registry:file",
+          "target": "~/components/roc/toggle.css"
+        },
+        {
+          "path": "registry/roc/edge-panel.css",
+          "type": "registry:file",
+          "target": "~/components/roc/edge-panel.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
     }
   ]
 }

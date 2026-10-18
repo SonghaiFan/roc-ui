@@ -5,7 +5,11 @@ import {
   useState,
   type CSSProperties,
 } from "react";
-import { ExternalLinkIcon, SearchIcon } from "lucide-react";
+import {
+  ExternalLinkIcon,
+  SearchIcon,
+  SlidersHorizontalIcon,
+} from "lucide-react";
 import { Badge } from "../registry/roc/badge";
 import { Button } from "../registry/roc/button";
 import {
@@ -47,7 +51,12 @@ import {
 import { foundationIds } from "./foundations";
 import { catalog } from "./catalog";
 import { FoundationExample } from "./FoundationExamples";
-import { AutoHidePanel } from "./AutoHidePanel";
+import {
+  EdgePanel,
+  EdgePanelContent,
+  EdgePanelTrigger,
+  useEdgePanel,
+} from "../registry/roc/edge-panel";
 import { ViewportPreview } from "./ViewportPreview";
 import { palette, type Settings } from "./settings";
 import "./site.css";
@@ -190,6 +199,16 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
       </SheetContent>
     </Sheet>
   );
+}
+/** Interacting with the live preview dismisses an unpinned settings panel. */
+function DismissOnPreview() {
+  const { hide } = useEdgePanel();
+  useEffect(() => {
+    const dismiss = () => hide();
+    window.addEventListener("roc-preview-interact", dismiss);
+    return () => window.removeEventListener("roc-preview-interact", dismiss);
+  }, [hide]);
+  return null;
 }
 const components = foundationIds.map(
   (id) => catalog.find((item) => item.id === id)!,
@@ -455,103 +474,124 @@ export function App() {
             {visible.length}
           </Badge>
         </span>
-        <AutoHidePanel>
-          <div className="rail-section">
-            <Label className="rail-control">
-              <span>Surface</span>
-              <Picker
-                dark
-                label="Surface"
-                value={surface}
-                onValueChange={setSurface}
-                options={[{ value: "Paper" }, { value: "White" }]}
-              />
-            </Label>
-            <div className="rail-control">
-              <span>Accent</span>
-              <div className="swatches">
-                {Object.entries(palette).map(([key, value]) => (
-                  <Toggle
-                    key={key}
-                    aria-label={`${key} accent`}
-                    pressed={color === key}
-                    onPressedChange={() => setColor(key as Settings["color"])}
-                    style={{ background: value }}
-                  />
-                ))}
-              </div>
-            </div>
-            <Label className="rail-control">
-              <span>Type</span>
-              <Picker
-                dark
-                label="Typeface"
-                value={font}
-                onValueChange={setFont}
-                options={[{ value: "System" }, { value: "Serif" }]}
-              />
-            </Label>
-            <div className="rail-control">
-              <span>
-                Radius <output>{radius}</output>
-              </span>
-              <Slider
-                aria-label="Corner radius"
-                min={0}
-                max={24}
-                step={2}
-                value={[radius]}
-                onValueChange={([next]) => setRadius(next)}
-              />
-            </div>
-            <Label className="rail-control">
-              <span>Spacing</span>
-              <Picker
-                dark
-                label="Spacing"
-                value={density}
-                onValueChange={setDensity}
-                options={[{ value: "Comfortable" }, { value: "Compact" }]}
-              />
-            </Label>
-          </div>
-          <div className="rail-section component-index">
-            <span className="rail-caption">
-              COMPONENTS <b>{components.length.toString().padStart(2, "0")}</b>
-            </span>
-            {components.map((item, i) => (
-              <Button
-                variant="ghost"
-                size="sm"
-                key={item.id}
-                onClick={() => {
-                  setQuery("");
-                  setFilter("All");
-                  frame.current?.contentWindow?.postMessage(
-                    { type: "roc-focus", id: item.id },
-                    location.origin,
-                  );
-                  window.dispatchEvent(new Event("roc-preview-interact"));
-                }}
-              >
-                <span>{String(i + 1).padStart(2, "0")}</span>
-                {item.name}
-                <ExternalLinkIcon aria-hidden="true" />
-              </Button>
-            ))}
-          </div>
-          <div className="rail-bottom">
-            <Button variant="link" size="sm" asChild>
-              <a
-                href={`${repo}/blob/main/notes/react-design-system.md`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Composition guide ↗
-              </a>
+        <EdgePanel id="design-settings">
+          <DismissOnPreview />
+          <EdgePanelTrigger asChild>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="style-trigger"
+              aria-label="Design settings"
+            >
+              <SlidersHorizontalIcon aria-hidden="true" />
+              <span>Style</span>
             </Button>
-          </div>
-        </AutoHidePanel>
+          </EdgePanelTrigger>
+          <EdgePanelContent
+            title="Appearance"
+            className="design-controls"
+            aria-label="Design settings panel"
+            pinLabel="Keep settings open"
+            closeLabel="Close settings"
+          >
+            <div className="rail-section">
+              <Label className="rail-control">
+                <span>Surface</span>
+                <Picker
+                  dark
+                  label="Surface"
+                  value={surface}
+                  onValueChange={setSurface}
+                  options={[{ value: "Paper" }, { value: "White" }]}
+                />
+              </Label>
+              <div className="rail-control">
+                <span>Accent</span>
+                <div className="swatches">
+                  {Object.entries(palette).map(([key, value]) => (
+                    <Toggle
+                      key={key}
+                      aria-label={`${key} accent`}
+                      pressed={color === key}
+                      onPressedChange={() => setColor(key as Settings["color"])}
+                      style={{ background: value }}
+                    />
+                  ))}
+                </div>
+              </div>
+              <Label className="rail-control">
+                <span>Type</span>
+                <Picker
+                  dark
+                  label="Typeface"
+                  value={font}
+                  onValueChange={setFont}
+                  options={[{ value: "System" }, { value: "Serif" }]}
+                />
+              </Label>
+              <div className="rail-control">
+                <span>
+                  Radius <output>{radius}</output>
+                </span>
+                <Slider
+                  aria-label="Corner radius"
+                  min={0}
+                  max={24}
+                  step={2}
+                  value={[radius]}
+                  onValueChange={([next]) => setRadius(next)}
+                />
+              </div>
+              <Label className="rail-control">
+                <span>Spacing</span>
+                <Picker
+                  dark
+                  label="Spacing"
+                  value={density}
+                  onValueChange={setDensity}
+                  options={[{ value: "Comfortable" }, { value: "Compact" }]}
+                />
+              </Label>
+            </div>
+            <div className="rail-section component-index">
+              <span className="rail-caption">
+                COMPONENTS{" "}
+                <b>{components.length.toString().padStart(2, "0")}</b>
+              </span>
+              {components.map((item, i) => (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  key={item.id}
+                  onClick={() => {
+                    setQuery("");
+                    setFilter("All");
+                    frame.current?.contentWindow?.postMessage(
+                      { type: "roc-focus", id: item.id },
+                      location.origin,
+                    );
+                    window.dispatchEvent(new Event("roc-preview-interact"));
+                  }}
+                >
+                  <span>{String(i + 1).padStart(2, "0")}</span>
+                  {item.name}
+                  <ExternalLinkIcon aria-hidden="true" />
+                </Button>
+              ))}
+            </div>
+            <div className="rail-bottom">
+              <Button variant="link" size="sm" asChild>
+                <a
+                  href={`${repo}/blob/main/notes/react-design-system.md`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Composition guide ↗
+                </a>
+              </Button>
+            </div>
+          </EdgePanelContent>
+        </EdgePanel>
         <InputGroup className="search">
           <InputGroupAddon>
             <SearchIcon aria-hidden="true" />

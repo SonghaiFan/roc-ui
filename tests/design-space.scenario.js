@@ -14,8 +14,8 @@ async (page) => {
   await view.locator("#tabs").waitFor();
   await page.waitForTimeout(600);
   assert(
-    (await view.locator(".component-card").count()) === 66,
-    "All 66 customized shadcn components are mounted",
+    (await view.locator(".component-card").count()) === 67,
+    "All 67 customized shadcn components are mounted",
   );
   assert(
     (await view
