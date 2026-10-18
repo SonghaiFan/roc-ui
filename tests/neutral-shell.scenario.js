@@ -21,12 +21,10 @@ async (page) => {
   const body = await frame.locator("body").elementHandle();
   const size = await frame.evaluate(() => innerWidth);
   const shell = () =>
-    page
-      .locator(".topbar")
-      .evaluate((el) => ({
-        background: getComputedStyle(el).backgroundColor,
-        color: getComputedStyle(el).color,
-      }));
+    page.locator(".topbar").evaluate((el) => ({
+      background: getComputedStyle(el).backgroundColor,
+      color: getComputedStyle(el).color,
+    }));
   const before = await shell();
   assert(
     (await panel.getAttribute("inert")) !== null && !(await panel.isVisible()),
@@ -48,7 +46,8 @@ async (page) => {
   await trigger.click();
   await panel.waitFor({ state: "visible" });
   await page.getByLabel("blue accent").click();
-  await page.getByLabel("Surface", { exact: true }).selectOption("Paper");
+  await page.getByLabel("Surface", { exact: true }).click();
+  await page.getByRole("option", { name: "Paper" }).click();
   await frame.waitForFunction(
     () =>
       getComputedStyle(document.querySelector(".design-space"))

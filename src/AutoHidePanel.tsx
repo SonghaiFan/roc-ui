@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Button } from "../registry/roc/button";
+import { ScrollArea } from "../registry/roc/scroll-area";
 import { Toggle } from "../registry/roc/toggle";
 
 /** Settings float above the canvas; hiding them never resizes or remounts it. */
@@ -11,6 +12,13 @@ export function AutoHidePanel({ children }: { children: ReactNode }) {
     timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const live = useRef({ open, pinned });
   live.current = { open, pinned };
+  // Select menus portal out of the panel; they still belong to it.
+  const inPopup = (node: Node | null) =>
+    node instanceof Element && !!node.closest(".picker-content");
+  const popupOpen = () =>
+    !!panel.current?.querySelector(
+      '[data-slot="select-trigger"][aria-expanded="true"]',
+    );
   const cancel = () => {
     if (timer.current) clearTimeout(timer.current);
     timer.current = null;
@@ -30,14 +38,15 @@ export function AutoHidePanel({ children }: { children: ReactNode }) {
   const leave = () => {
     cancel();
     timer.current = setTimeout(() => {
-      if (!panel.current?.matches(":focus-within")) close();
+      if (!panel.current?.matches(":focus-within") && !popupOpen()) close();
     }, 400);
   };
   useEffect(() => {
     const outside = (event: PointerEvent) => {
       if (
         !panel.current?.contains(event.target as Node) &&
-        !trigger.current?.contains(event.target as Node)
+        !trigger.current?.contains(event.target as Node) &&
+        !inPopup(event.target as Node)
       )
         close();
     };
@@ -73,7 +82,9 @@ export function AutoHidePanel({ children }: { children: ReactNode }) {
           reveal();
           if (e.detail === 0)
             requestAnimationFrame(() =>
-              panel.current?.querySelector("select")?.focus(),
+              panel.current
+                ?.querySelector<HTMLElement>('[data-slot="select-trigger"]')
+                ?.focus(),
             );
         }}
       >
@@ -103,7 +114,8 @@ export function AutoHidePanel({ children }: { children: ReactNode }) {
         onBlur={(e) => {
           if (
             !e.currentTarget.contains(e.relatedTarget as Node) &&
-            e.relatedTarget !== trigger.current
+            e.relatedTarget !== trigger.current &&
+            !inPopup(e.relatedTarget as Node)
           )
             close();
         }}
@@ -135,7 +147,7 @@ export function AutoHidePanel({ children }: { children: ReactNode }) {
             </Button>
           </div>
         </div>
-        {children}
+        <ScrollArea className="rail-scroll">{children}</ScrollArea>
       </aside>
     </div>
   );

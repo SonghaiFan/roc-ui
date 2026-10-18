@@ -80,7 +80,7 @@ function SelectContent({
             cn(
               "roc-s-1dee6e3ec67d",
               position === "popper" &&
-                "roc-s-4b782fd2821c roc-s-58d0413dd93c roc-s-09365d2a0df7 roc-s-7293b977658f",
+                "roc-s-58d0413dd93c roc-s-09365d2a0df7 roc-s-7293b977658f",
             ),
           )}
         >

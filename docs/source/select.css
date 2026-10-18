@@ -493,3 +493,7 @@
 [data-slot="select-content"][data-state="closed"][data-position="item-aligned"] {
   animation: roc-ui-dismiss var(--roc-motion-quick);
 }
+[data-slot="select-content"]:focus,
+[data-slot="select-content"]:focus-visible {
+  outline: none;
+}

@@ -33,10 +33,7 @@ import {
 } from "../registry/roc/input-group";
 import { Kbd } from "../registry/roc/kbd";
 import { Label } from "../registry/roc/label";
-import {
-  NativeSelect,
-  NativeSelectOption,
-} from "../registry/roc/native-select";
+import { Picker } from "./Picker";
 import { Slider } from "../registry/roc/slider";
 import { Toggle } from "../registry/roc/toggle";
 import {
@@ -143,23 +140,15 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
             </CollapsibleContent>
           </Collapsible>
           <div className="source-tools">
-            <NativeSelect
-              aria-label="Source file"
+            <Picker
+              label="Source file"
               value={file}
-              onChange={(e) => setFile(e.target.value)}
-            >
-              {(files.length
+              onValueChange={setFile}
+              options={(files.length
                 ? files
                 : [{ path: `registry/roc/${item.id}.tsx` }]
-              ).map((f) => (
-                <NativeSelectOption
-                  key={f.path}
-                  value={f.path.split("/").at(-1)}
-                >
-                  {f.path.split("/").at(-1)}
-                </NativeSelectOption>
-              ))}
-            </NativeSelect>
+              ).map((f) => ({ value: f.path.split("/").at(-1)! }))}
+            />
             <Copy text={code} label="Copy file" />
           </div>
           <pre className="source-code">
@@ -470,14 +459,13 @@ export function App() {
           <div className="rail-section">
             <Label className="rail-control">
               <span>Surface</span>
-              <NativeSelect
-                aria-label="Surface"
+              <Picker
+                dark
+                label="Surface"
                 value={surface}
-                onChange={(e) => setSurface(e.target.value)}
-              >
-                <NativeSelectOption>Paper</NativeSelectOption>
-                <NativeSelectOption>White</NativeSelectOption>
-              </NativeSelect>
+                onValueChange={setSurface}
+                options={[{ value: "Paper" }, { value: "White" }]}
+              />
             </Label>
             <div className="rail-control">
               <span>Accent</span>
@@ -495,14 +483,13 @@ export function App() {
             </div>
             <Label className="rail-control">
               <span>Type</span>
-              <NativeSelect
-                aria-label="Typeface"
+              <Picker
+                dark
+                label="Typeface"
                 value={font}
-                onChange={(e) => setFont(e.target.value)}
-              >
-                <NativeSelectOption>System</NativeSelectOption>
-                <NativeSelectOption>Serif</NativeSelectOption>
-              </NativeSelect>
+                onValueChange={setFont}
+                options={[{ value: "System" }, { value: "Serif" }]}
+              />
             </Label>
             <div className="rail-control">
               <span>
@@ -519,14 +506,13 @@ export function App() {
             </div>
             <Label className="rail-control">
               <span>Spacing</span>
-              <NativeSelect
-                aria-label="Spacing"
+              <Picker
+                dark
+                label="Spacing"
                 value={density}
-                onChange={(e) => setDensity(e.target.value)}
-              >
-                <NativeSelectOption>Comfortable</NativeSelectOption>
-                <NativeSelectOption>Compact</NativeSelectOption>
-              </NativeSelect>
+                onValueChange={setDensity}
+                options={[{ value: "Comfortable" }, { value: "Compact" }]}
+              />
             </Label>
           </div>
           <div className="rail-section component-index">
@@ -583,21 +569,19 @@ export function App() {
             <Kbd>/</Kbd>
           </InputGroupAddon>
         </InputGroup>
-        <NativeSelect
+        <Picker
           className="filter"
-          aria-label="Interaction"
+          label="Interaction"
           value={filter}
-          onChange={(e) => {
-            setFilter(e.target.value);
+          onValueChange={(value) => {
+            setFilter(value);
             leaveDetails();
           }}
-        >
-          {["All", ...new Set(components.flatMap((item) => item.actions))].map(
-            (value) => (
-              <NativeSelectOption key={value}>{value}</NativeSelectOption>
-            ),
-          )}
-        </NativeSelect>
+          options={[
+            "All",
+            ...new Set(components.flatMap((item) => item.actions)),
+          ].map((value) => ({ value }))}
+        />
         <nav>
           <Button variant="link" size="sm" asChild>
             <a href={skill} target="_blank" rel="noreferrer">

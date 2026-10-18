@@ -58,8 +58,9 @@ async (page) => {
   await view
     .getByRole("button", { name: "View Tabs source", exact: true })
     .click();
-  await page.locator(".source-panel[data-state=\"open\"]").waitFor();
-  await page.getByLabel("Source file").selectOption("tabs.css");
+  await page.locator('.source-panel[data-state="open"]').waitFor();
+  await page.getByLabel("Source file").click();
+  await page.getByRole("option", { name: "tabs.css" }).click();
   await page.waitForFunction(() =>
     document.querySelector(".source-code").textContent.includes(".roc-ui-tabs"),
   );

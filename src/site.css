@@ -102,8 +102,9 @@ summary {
   width: 248px;
   max-width: calc(100vw - 24px);
   max-height: calc(100dvh - 128px);
-  overflow: auto;
-  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   background: #262626;
   color: #ededed;
   border: 1px solid #383838;
@@ -117,7 +118,19 @@ summary {
     transform 200ms ease,
     visibility 160ms;
 }
-.design-controls .roc-shadcn {
+.design-controls .rail-heading {
+  flex: none;
+}
+.rail-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.rail-scroll [data-slot="scroll-area-viewport"] {
+  max-height: calc(100dvh - 128px - 62px);
+}
+.design-controls .roc-shadcn,
+.picker-dark.roc-shadcn,
+.picker-dark .roc-shadcn {
   --roc-sh-color-input: #ffffff24;
   --roc-sh-color-muted-foreground: #a6a6a6;
   --roc-sh-color-ring: #d4d4d4;
@@ -167,6 +180,7 @@ summary {
   font-weight: 400;
 }
 .rail-control {
+  align-items: stretch;
   border: 1px solid #ffffff1b;
   display: flex;
   flex-direction: column;
@@ -185,21 +199,23 @@ summary {
   color: #eeeeee;
   font-variant-numeric: tabular-nums;
 }
-.rail-control [data-slot="native-select-wrapper"] {
-  width: 100%;
-}
-.rail-control select {
+.rail-control [data-slot="select-trigger"] {
   width: 100%;
   height: auto;
-  padding: 0 20px 0 0;
+  min-height: 0;
+  padding: 0;
   border: 0;
   background: none;
   box-shadow: none;
   font-size: 12px;
 }
-.rail-control select option {
-  color: #222;
-  background: white;
+.picker-dark.roc-shadcn,
+.picker-dark .roc-shadcn {
+  --roc-sh-color-popover: #2c2c2c;
+  --roc-sh-color-popover-foreground: #ededed;
+  --roc-sh-color-border: #ffffff24;
+  --roc-sh-color-accent: #ffffff14;
+  --roc-sh-color-accent-foreground: #fff;
 }
 .swatches {
   display: flex;
@@ -282,10 +298,8 @@ summary {
   font-size: 11px;
   color: #727272;
 }
-.topbar [data-slot="native-select-wrapper"] {
+.topbar .filter[data-slot="select-trigger"] {
   width: 92px;
-}
-.topbar select {
   height: 32px;
   border-color: transparent;
   box-shadow: none;
@@ -605,10 +619,8 @@ summary {
   padding: 14px 0;
   border-top: 1px solid #e3e3e3;
 }
-.source-tools [data-slot="native-select-wrapper"] {
+.source-tools [data-slot="select-trigger"] {
   max-width: 75%;
-}
-.source-tools select {
   border: 0;
   background: transparent;
   box-shadow: none;
@@ -1133,4 +1145,8 @@ summary {
 .foundation-page-copy p {
   font-size: 13px;
   line-height: 1.6;
+}
+.picker-dark[data-slot="select-content"] {
+  border-color: #ffffff24;
+  box-shadow: 0 10px 28px #00000040;
 }
