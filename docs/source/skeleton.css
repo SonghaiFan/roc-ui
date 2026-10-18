@@ -1,0 +1,6 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="skeleton"] {
+  background: var(--roc-marker, #eee);
+  border-radius: var(--roc-radius, 8px);
+  flex-shrink: 0;
+}

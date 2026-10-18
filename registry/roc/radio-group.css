@@ -1,0 +1,36 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="radio-group"] {
+  display: grid;
+  gap: 14px;
+}
+.roc-ui[data-slot="radio-group-item"] {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid var(--roc-line, #bbb);
+  border-radius: 50%;
+  background: var(--roc-paper, #fff);
+  cursor: pointer;
+}
+.roc-ui[data-slot="radio-group-item"]::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+}
+.roc-ui[data-slot="radio-group-item"][data-state="checked"] {
+  border-color: var(--roc-ink, #252525);
+}
+.roc-ui[data-slot="radio-group-indicator"] {
+  display: grid;
+  place-items: center;
+}
+.roc-ui[data-slot="radio-group-indicator"] > svg {
+  width: 8px;
+  height: 8px;
+  fill: currentColor;
+}

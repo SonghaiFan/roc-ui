@@ -1,0 +1,34 @@
+@import "./ui-base.css";
+.roc-ui-alert {
+  display: grid;
+  grid-template-columns: 0 minmax(0, 1fr);
+  gap: 4px 0;
+  padding: 16px;
+  border: 1px solid var(--roc-line, #dedede);
+  border-radius: var(--roc-radius, 8px);
+  background: var(--roc-paper, #fff);
+  overflow-wrap: anywhere;
+}
+.roc-ui-alert:has(> svg) {
+  grid-template-columns: 16px minmax(0, 1fr);
+  column-gap: 12px;
+}
+.roc-ui-alert > svg {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  margin-top: 2px;
+}
+.roc-ui[data-slot="alert-title"] {
+  grid-column: 2;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.roc-ui[data-slot="alert-description"] {
+  grid-column: 2;
+  line-height: 1.6;
+  color: var(--roc-muted, #777);
+}
+.roc-ui-alert-destructive,
+.roc-ui-alert-destructive [data-slot="alert-description"] {
+  color: #b73838;
+}

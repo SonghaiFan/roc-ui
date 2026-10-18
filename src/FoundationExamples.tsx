@@ -1,3 +1,4 @@
+import { MoreFoundationExample } from "./MoreFoundationExamples";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../registry/roc/button";
 import { Badge } from "../registry/roc/badge";
@@ -405,5 +406,5 @@ export function FoundationExample({ id }: { id: string }) {
         </div>
       </TooltipProvider>
     );
-  return null;
+  return <MoreFoundationExample id={id} />;
 }

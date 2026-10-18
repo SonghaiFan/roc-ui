@@ -1,3 +1,4 @@
+import { MoreFoundationConsumer } from "./more-foundations";
 import { FoundationConsumer } from "./foundations";
 import { StrictMode, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
@@ -26,6 +27,7 @@ export function Consumer() {
     >
       <h1>Independent consumer</h1>
       <FoundationConsumer />
+      <MoreFoundationConsumer />
       <button id="external-toggle" onClick={() => setOpen((v) => !v)}>
         External state
       </button>

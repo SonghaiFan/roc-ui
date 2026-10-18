@@ -12,8 +12,8 @@ async (page) => {
     .getByRole("button", { name: "Consumer button", exact: true })
     .waitFor();
   assert(
-    (await page.locator("main > section").count()) === 25,
-    "All 25 downloaded components render in the standalone consumer",
+    (await page.locator("main > section").count()) === 35,
+    "All 35 downloaded components render in the standalone consumer",
   );
   assert(
     await page.getByRole("link", { name: "Variant classes" }).evaluate((el) => {

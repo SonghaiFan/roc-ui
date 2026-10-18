@@ -1,6 +1,6 @@
 # shadcn foundations, adapted for ROC
 
-Version 0.8 adds 15 foundations to the existing 10 source-informed components. The starting point is the official shadcn/ui `new-york-v4` source, retained verbatim under `upstream/shadcn/` with URL, retrieval time, checksums and MIT license. The distributed code is in `registry/roc/`.
+Version 0.10 includes 25 customized foundations; the earlier 10 source-informed components remain downloadable but are not displayed in the gallery. The starting point is the official shadcn/ui `new-york-v4` source, retained verbatim under `upstream/shadcn/` with URL, retrieval time, checksums and MIT license. The distributed code is in `registry/roc/`.
 
 ## What is kept
 
@@ -20,6 +20,15 @@ The composition names (`Tabs`, `TabsList`, `TabsTrigger`, `TabsContent`, etc.), 
 | Accordion | Force-mounted content with inert closed panels. Inner CSS grid tracks animate opening, closing and reversal; the Radix measurement wrapper owns no layout animation. |
 | Dialog | One open form changes from a centred desktop surface to a bottom-aligned phone surface. Visible height subtracts device/host safe edges. Radix keeps focus trapping, Escape and focus return. |
 | Popover, Dropdown Menu, Tooltip | Trigger-relative context, collision-aware placement, keyboard access and reduced-motion paths. Tooltips are supplemental, delayed context, never the only label for an action. |
+| Alert | Inline semantic notice with neutral/destructive variants. The caller controls when to announce updates. |
+| Avatar | Reserved dimensions for image/fallback, three sizes, presence badge and groups; no layout shift when a portrait loads. |
+| Progress | One retained fill, custom `max`, clamped finite values and real Radix progress semantics. Missing/null value means indeterminate, with no `aria-valuenow`; reduced motion uses a static indicator. |
+| Skeleton | Static, decorative placeholder. The host supplies dimensions and loading announcements, reserving the final footprint without ambient shimmer. |
+| Toggle / Toggle Group | Pressed state, single/multiple selection, roving focus and scoped appearance. Native controls and caller-owned data stay in place. |
+| Radio Group | Radio semantics, form integration, disabled options and arrow-key selection. Labels remain caller-composed. |
+| Scroll Area | Retained native viewport, Radix scrollbars, keyboard focus, `viewportProps` for refs/accessibility and `scrollbars` (vertical, horizontal or both). Host supplies height/width. |
+| Breadcrumb | Semantic path with wrapping, `asChild` links and `aria-current="page"`. Routing remains with the host. |
+| Pagination | Current-page links and explicit `disabled` behavior. Disabled links have no `href`, cannot invoke `onClick` and leave the tab order. Host owns the page data and navigation. |
 
 The adaptations use component-scoped CSS rather than shadcn's Tailwind utility strings. Consumers do not need a Tailwind build, gallery CSS or application aliases. Use `--roc-paper`, `--roc-ink`, `--roc-line`, `--roc-muted`, `--roc-marker`, `--roc-radius`, and `--roc-focus` for appearance. Put shared tokens on the document root if portals should inherit them. A themed app with several independent roots may instead use the underlying Radix portal composition.
 

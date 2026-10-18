@@ -22,7 +22,7 @@ async (browserPage) => {
         watch.disconnect();
         const sample = () => {
           const cards = [...canvas.querySelectorAll(".component-card")];
-          if (cards.length !== 15) return;
+          if (cards.length !== 25) return;
           window.startupProbe.samples.push({
             width: innerWidth,
             cards: cards.map((card) => {

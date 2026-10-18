@@ -520,9 +520,11 @@ export function App() {
             leaveDetails();
           }}
         >
-          {["All", "Select", "Press", "Expand", "Drag", "Edit"].map((value) => (
-            <option key={value}>{value}</option>
-          ))}
+          {["All", ...new Set(components.flatMap((item) => item.actions))].map(
+            (value) => (
+              <option key={value}>{value}</option>
+            ),
+          )}
         </select>
         <nav>
           <a href={skill} target="_blank" rel="noreferrer">

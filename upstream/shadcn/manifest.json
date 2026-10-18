@@ -1,7 +1,6 @@
 {
-  "retrievedAt": "2026-10-18T08:37:02.263028+00:00",
+  "retrievedAt": "2026-10-18T09:17:08.813Z",
   "style": "new-york-v4",
-  "cliVersion": "4.22.0",
   "items": [
     {
       "name": "button",
@@ -10,7 +9,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "badge",
@@ -19,7 +19,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "card",
@@ -27,7 +28,8 @@
       "sha256": "c7ebaa49ba2a0613838558f3892c5007523c2dc26d6b36a244145d454a796106",
       "dependencies": [
         "cn"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "input",
@@ -35,7 +37,8 @@
       "sha256": "b1fffa12ba72ce30a291749012b47235eda110648b8106725ced22b5b31c8f1b",
       "dependencies": [
         "cn"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "textarea",
@@ -43,7 +46,8 @@
       "sha256": "2367d3964326b19ca2355f872d08153c86932abd4b103b5fd02039a3f2cb8ae5",
       "dependencies": [
         "cn"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "checkbox",
@@ -52,7 +56,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "switch",
@@ -61,7 +66,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "slider",
@@ -70,7 +76,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "separator",
@@ -79,7 +86,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "tabs",
@@ -88,7 +96,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "accordion",
@@ -97,7 +106,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "dialog",
@@ -106,7 +116,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "popover",
@@ -115,7 +126,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "dropdown-menu",
@@ -124,7 +136,8 @@
       "dependencies": [
         "cn",
         "radix-ui"
-      ]
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
     },
     {
       "name": "tooltip",
@@ -133,6 +146,104 @@
       "dependencies": [
         "cn",
         "radix-ui"
+      ],
+      "retrievedAt": "2026-10-18T08:37:02.263028+00:00"
+    },
+    {
+      "name": "alert",
+      "retrievedAt": "2026-10-18T09:17:07.883Z",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/alert.json",
+      "sha256": "413c97869ec0e53efa4a37f590833bcf4a7a57255f5a2e909c6bb5bac7b4570d",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "avatar",
+      "retrievedAt": "2026-10-18T09:17:07.914Z",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/avatar.json",
+      "sha256": "f843fc6e2d2fea1337bdcdc8b70c5189f84562d87f8e852e994f4bbdd7cd229d",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "progress",
+      "retrievedAt": "2026-10-18T09:17:07.961Z",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/progress.json",
+      "sha256": "ca0c7ae4d88b8039a9ee64653569cf8be6a058070d9f719d2294c9d49d56bcab",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "skeleton",
+      "retrievedAt": "2026-10-18T09:17:08.025Z",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/skeleton.json",
+      "sha256": "1ed4d99f9d632d9697a054eefcd19932abd68cef7808407986f6e14da401edf7",
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "toggle",
+      "retrievedAt": "2026-10-18T09:17:08.111Z",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/toggle.json",
+      "sha256": "8c9f96fb87e2aa88961f4ded82fa9867ef0dadbc3e5ec51d16f1ebfa820037ea",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "retrievedAt": "2026-10-18T09:17:08.139Z",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/toggle-group.json",
+      "sha256": "7b010cdf719088efdf887e392fbdc9fdd0b76d4f7b3b0e9db319616a90e8cf16",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "radio-group",
+      "retrievedAt": "2026-10-18T09:17:08.427Z",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/radio-group.json",
+      "sha256": "299fa36d5c5df3aefa40a59d8d3f92a1ccc9feae6b5187135851d9846348f1af",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "retrievedAt": "2026-10-18T09:17:08.453Z",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/scroll-area.json",
+      "sha256": "a5e2e040b90e584c5282ee7ea758d1af5f5fbd88ecc89f11dddb098462d1e865",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "retrievedAt": "2026-10-18T09:17:08.480Z",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/breadcrumb.json",
+      "sha256": "18043f281e20e08fa017a3bba2b2dec462ebba2b0ebf9685b34225cf7b253bfa",
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "pagination",
+      "retrievedAt": "2026-10-18T09:17:08.523Z",
+      "url": "https://ui.shadcn.com/r/styles/new-york-v4/pagination.json",
+      "sha256": "e70ae7251fdb0f3c4c7473b158a15b35fa0a84ce999ce3aea66e6d6d3d409750",
+      "dependencies": [
+        "cn"
       ]
     }
   ]

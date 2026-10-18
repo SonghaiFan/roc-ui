@@ -1,0 +1,71 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="avatar"] {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.roc-ui[data-slot="avatar"][data-size="sm"] {
+  width: 24px;
+  height: 24px;
+  font-size: 11px;
+}
+.roc-ui[data-slot="avatar"][data-size="lg"] {
+  width: 40px;
+  height: 40px;
+}
+.roc-ui[data-slot="avatar-image"],
+.roc-ui[data-slot="avatar-fallback"] {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+.roc-ui[data-slot="avatar-fallback"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--roc-marker, #eee);
+  color: var(--roc-muted, #777);
+  font-size: inherit;
+}
+.roc-ui[data-slot="avatar-badge"] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  background: var(--roc-ink, #252525);
+  color: var(--roc-paper, #fff);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--roc-paper, #fff);
+}
+.roc-ui[data-slot="avatar-badge"] > svg {
+  width: 8px;
+  height: 8px;
+}
+.roc-ui[data-slot="avatar-group"] {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+.roc-ui[data-slot="avatar-group"] > * {
+  margin-left: -8px;
+  box-shadow: 0 0 0 2px var(--roc-paper, #fff);
+}
+.roc-ui[data-slot="avatar-group-count"] {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--roc-marker, #eee);
+  font-size: 11px;
+}

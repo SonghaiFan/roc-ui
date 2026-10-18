@@ -1,0 +1,45 @@
+@import "./ui-base.css";
+.roc-ui[data-slot="breadcrumb-list"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+.roc-ui[data-slot="breadcrumb-item"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.roc-ui[data-slot="breadcrumb-link"] {
+  color: var(--roc-muted, #777);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.roc-ui[data-slot="breadcrumb-link"]:hover {
+  color: var(--roc-ink, #252525);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.roc-ui[data-slot="breadcrumb-separator"] {
+  display: flex;
+  color: var(--roc-muted, #999);
+}
+.roc-ui[data-slot="breadcrumb-separator"] > svg {
+  width: 13px;
+  height: 13px;
+}
+.roc-ui[data-slot="breadcrumb-ellipsis"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+}

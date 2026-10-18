@@ -1,7 +1,7 @@
 import { build } from "esbuild";
 import { mkdir, readFile, writeFile, cp, rm } from "node:fs/promises";
 const foundationNames =
-  "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip".split(
+  "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip alert avatar progress skeleton toggle toggle-group radio-group scroll-area breadcrumb pagination".split(
     " ",
   );
 const names = [

@@ -1110,3 +1110,54 @@ summary {
     text-align: left;
   }
 }
+
+.foundation-loading-sample {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 56px;
+}
+.foundation-loading-avatar {
+  width: 40px;
+  height: 40px;
+  flex: none;
+}
+.foundation-loading-copy {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+.foundation-loading-copy strong {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+}
+.foundation-loading-copy .foundation-hint {
+  line-height: 16px;
+}
+.foundation-scroll-notes {
+  padding: 4px 18px 4px 4px;
+}
+.foundation-scroll-notes textarea {
+  margin-bottom: 12px;
+}
+.foundation-scroll-row {
+  display: flex;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+}
+.foundation-scroll-row > span {
+  color: #aaa;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+.foundation-page-copy {
+  min-height: 78px;
+}
+.foundation-page-copy p {
+  font-size: 13px;
+  line-height: 1.6;
+}

@@ -1,10 +1,11 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import path from "node:path";
-const names =
-  "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip".split(
+const defaults =
+  "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip alert avatar progress skeleton toggle toggle-group radio-group scroll-area breadcrumb pagination".split(
     " ",
   );
+const names = process.argv.slice(2).length ? process.argv.slice(2) : defaults;
 const root = "upstream/shadcn";
 await mkdir(root, { recursive: true });
 async function get(url) {
@@ -12,7 +13,16 @@ async function get(url) {
   if (!response.ok) throw Error(`${response.status}: ${url}`);
   return Buffer.from(await response.arrayBuffer());
 }
-const items = [];
+let previous;
+try {
+  previous = JSON.parse(await readFile(`${root}/manifest.json`, "utf8"));
+} catch {}
+const items = (previous?.items ?? [])
+  .filter((item) => !names.includes(item.name))
+  .map((item) => ({
+    ...item,
+    retrievedAt: item.retrievedAt ?? previous.retrievedAt,
+  }));
 for (const name of names) {
   const url = `https://ui.shadcn.com/r/styles/new-york-v4/${name}.json`,
     raw = await get(url),
@@ -22,6 +32,7 @@ for (const name of names) {
     await writeFile(`${root}/${path.basename(file.path)}`, file.content);
   items.push({
     name,
+    retrievedAt: new Date().toISOString(),
     url,
     sha256: createHash("sha256").update(raw).digest("hex"),
     dependencies: item.dependencies ?? [],
@@ -40,5 +51,5 @@ await writeFile(
   ) + "\n",
 );
 console.log(
-  `Downloaded ${items.length} reference snapshots. ROC source was not modified.`,
+  `Downloaded ${names.length} snapshots; ${items.length} total references. ROC source was not modified.`,
 );
