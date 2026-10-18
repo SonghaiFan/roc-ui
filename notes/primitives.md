@@ -17,24 +17,29 @@ Written in this repository, with the same props and `data-*` attributes the comp
 | `primitive-toggle.tsx` | `Toggle` | Controlled or uncontrolled `pressed` |
 | `primitive-switch.tsx` | `Switch` | Native form participation, `reset` support, controlled or uncontrolled |
 | `primitive-checkbox.tsx` | `Checkbox` | `checked`, unchecked and `indeterminate` (`aria-checked="mixed"`); Space toggles, Enter does not |
-| `primitive-form-input.tsx`, `primitive-utils.ts` | internal | Hidden checkbox for forms; ref and handler composition |
+| `primitive-tabs.tsx` | `Tabs` | `tablist`/`tab`/`tabpanel` with arrow, Home and End keys, automatic or manual activation, horizontal or vertical, values with spaces in ids |
+| `primitive-accordion.tsx` | `Accordion` | `single` (optionally `collapsible`) or `multiple`; arrow keys loop across headers and skip disabled ones |
+| `primitive-radio-group.tsx` | `RadioGroup` | Arrow keys move and check, Enter does not, one tab stop, form submit and reset |
+| `primitive-toggle-group.tsx` | `ToggleGroup` | `single` (`radiogroup`/`radio`) or `multiple` (`toolbar`/`aria-pressed`), roving focus |
+| `primitive-roving.ts` | internal | Shared arrow-key focus movement and single tab stop for the four above; direction comes from the `dir` prop or CSS, not a provider |
+| `primitive-form-input.tsx`, `primitive-utils.ts` | internal | Hidden input for forms; ref and handler composition |
 
-Components that now install with no `radix-ui` dependency: 44 of the 66 in the gallery, including Button, Badge, Card, Checkbox, Switch, Toggle, Label, Separator, Progress and Avatar.
+Components that now install with no `radix-ui` dependency: 48 of the 66 in the gallery, including Button, Badge, Card, Checkbox, Switch, Toggle, Label, Separator, Progress, Avatar, Tabs, Accordion and Radio Group.
 
 ## Still delegated
 
 These files are one-line re-exports. Replacing one means rewriting that file and nothing else.
 
-Accordion, Alert Dialog, Collapsible, Context Menu, Dialog (also used by Sheet), Direction, Dropdown Menu, Hover Card, Menubar, Navigation Menu, Popover, Radio Group, Scroll Area, Select, Slider, Tabs, Toggle Group, Tooltip.
+Alert Dialog, Collapsible, Context Menu, Dialog (also used by Sheet), Direction, Dropdown Menu, Hover Card, Menubar, Navigation Menu, Popover, Scroll Area, Select, Slider, Tooltip.
 
 Suggested order, easiest and most testable first:
 
-1. Collapsible, Accordion, Tabs, Radio Group, Toggle Group: roving focus and disclosure state only.
-2. Slider and Scroll Area: pointer capture and measurement.
+1. Collapsible and Slider: disclosure state, then pointer capture.
+2. Scroll Area: measurement and custom scrollbars.
 3. Dialog and Alert Dialog: focus trap, scroll lock, dismissal and focus return.
 4. Popover, Tooltip, Hover Card, Dropdown Menu, Context Menu, Menubar, Select, Navigation Menu: positioning, collision handling, typeahead and submenus. Largest.
 
-Direction stays delegated until the others go: Radix components read direction from their own context.
+Direction stays delegated until the others go: Radix overlays read direction from their own context. The owned primitives read `dir` or the computed CSS direction.
 
 ## Not covered
 
@@ -42,4 +47,10 @@ Base UI (Combobox, Toast), Vaul, cmdk, Embla, react-day-picker, input-otp, react
 
 ## Checks
 
-The native primitives have a browser harness for form submit and reset, indeterminate, keyboard, controlled mode, `asChild` merging and ARIA. One real bug it found: a form-reset listener re-added on every render is skipped when React renders mid-dispatch, so listeners subscribe once and read the latest setter through a ref.
+`tests/parity/` renders Tabs, Accordion, Radio Group and Toggle Group with the owned primitives and with Radix side by side, drives both with the same 43 mouse and keyboard steps, and compares every control's ARIA and state, the visible panels, focus, callbacks, submitted and reset form data and the Tab-key walk. It matches except for:
+
+- Radix makes a radio or toggle group container tabbable after interaction, giving one extra Tab stop. ROC keeps one stop per group, as the ARIA radio pattern describes.
+- Pressing a disabled tab with the mouse drops focus to the page; Radix keeps it on the active tab because its list is a focusable container. Native disabled buttons receive no mouse events, so this is left as the browser behaves.
+- Radix defers focus moves by a tick and reads key-up state to decide whether an arrow key should check a radio. A key released within that tick (a scripted press, not a person) does not check it. ROC moves focus synchronously.
+
+Bugs the checks found while writing these primitives: a form-reset listener re-added on every render is skipped when React renders mid-dispatch (so listeners subscribe once and read the latest setter through a ref), and an unmounted `AvatarImage` must reset its root so the fallback returns.

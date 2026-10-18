@@ -482,7 +482,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -492,9 +491,24 @@
           "target": "~/components/roc/tabs.tsx"
         },
         {
-          "path": "registry/roc/primitive-tabs.ts",
+          "path": "registry/roc/primitive-tabs.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-tabs.ts"
+          "target": "~/components/roc/primitive-tabs.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-roving.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-roving.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -532,7 +546,6 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -542,9 +555,19 @@
           "target": "~/components/roc/accordion.tsx"
         },
         {
-          "path": "registry/roc/primitive-accordion.ts",
+          "path": "registry/roc/primitive-accordion.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-accordion.ts"
+          "target": "~/components/roc/primitive-accordion.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-roving.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-roving.ts"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -1048,7 +1071,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1058,14 +1080,9 @@
           "target": "~/components/roc/toggle-group.tsx"
         },
         {
-          "path": "registry/roc/primitive-toggle-group.ts",
+          "path": "registry/roc/primitive-toggle-group.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-toggle-group.ts"
-        },
-        {
-          "path": "registry/roc/toggle.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/toggle.tsx"
+          "target": "~/components/roc/primitive-toggle-group.tsx"
         },
         {
           "path": "registry/roc/primitive-toggle.tsx",
@@ -1086,6 +1103,16 @@
           "path": "registry/roc/use-controllable-state.ts",
           "type": "registry:file",
           "target": "~/components/roc/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/roc/primitive-roving.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-roving.ts"
+        },
+        {
+          "path": "registry/roc/toggle.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/toggle.tsx"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -1128,8 +1155,7 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "clsx@^2.1.1"
       ],
       "files": [
         {
@@ -1143,9 +1169,29 @@
           "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/primitive-radio-group.ts",
+          "path": "registry/roc/primitive-radio-group.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-radio-group.ts"
+          "target": "~/components/roc/primitive-radio-group.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-form-input.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-form-input.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-roving.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-roving.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/radio-group.css",
