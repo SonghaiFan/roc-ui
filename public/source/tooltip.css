@@ -19,3 +19,25 @@
 .roc-ui[data-slot="tooltip-content"] svg {
   fill: var(--roc-ink, #252525);
 }
+/* The arrow sits on the popup edge facing the trigger and points at it. */
+.roc-ui[data-slot="tooltip-content"] [data-slot="tooltip-arrow"] {
+  display: block;
+  width: 10px;
+  height: 5px;
+  pointer-events: none;
+}
+[data-slot="tooltip-arrow"][data-side="top"] {
+  bottom: -5px;
+  rotate: 180deg;
+}
+[data-slot="tooltip-arrow"][data-side="bottom"] {
+  top: -5px;
+}
+[data-slot="tooltip-arrow"][data-side="left"] {
+  right: -7.5px;
+  rotate: 90deg;
+}
+[data-slot="tooltip-arrow"][data-side="right"] {
+  left: -7.5px;
+  rotate: -90deg;
+}

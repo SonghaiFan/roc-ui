@@ -253,7 +253,10 @@ async (page) => {
   );
   await focus("Tooltip");
   const tip = view.getByRole("button", { name: "Keep original", exact: true });
+  // Base UI opens a tooltip for keyboard focus (:focus-visible), not scripted focus.
   await tip.focus();
+  await page.keyboard.press("Shift+Tab");
+  await page.keyboard.press("Tab");
   await view.getByRole("tooltip").waitFor();
   assert(
     await view.getByRole("tooltip").isVisible(),

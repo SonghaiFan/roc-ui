@@ -26,24 +26,31 @@ Written in this repository, with the same props and `data-*` attributes the comp
 
 Components that now install with no `radix-ui` dependency: 48 of the 66 in the gallery, including Button, Badge, Card, Checkbox, Switch, Toggle, Label, Separator, Progress, Avatar, Tabs, Accordion and Radio Group.
 
-## Still delegated
+## Base UI behind the seam
 
-These files are one-line re-exports. Replacing one means rewriting that file and nothing else.
+Behaviour that is hard to get right (positioning, focus trapping, typeahead) comes from [Base UI](https://base-ui.com/), not Radix. The goal is that `radix-ui` leaves the project. Each primitive keeps the shape ROC components already use (`Content`, `asChild`, `data-state`, the `--radix-*` CSS variables), implemented on Base UI's `Portal > Positioner > Popup` parts by `primitive-popup.tsx`.
 
-Alert Dialog, Collapsible, Context Menu, Dialog (also used by Sheet), Direction, Dropdown Menu, Hover Card, Menubar, Navigation Menu, Popover, Scroll Area, Select, Slider, Tooltip.
+| File | Base UI part | Notes |
+| --- | --- | --- |
+| `primitive-popover.tsx` | `Popover` | `Anchor` positions against a separate element; `modal` supported |
+| `primitive-tooltip.tsx` | `Tooltip` | Adds `role="tooltip"` and `aria-describedby`, which Base UI leaves to the caller; reserves the arrow's height in the offset like Radix |
+| `primitive-hover-card.tsx` | `PreviewCard` | `openDelay` and `closeDelay` map to the trigger |
+| `primitive-collapsible.tsx` | owned | A disclosure needs no library. Closed content leaves an empty hidden region so `aria-controls` stays valid |
 
-Suggested order, easiest and most testable first:
+Known differences from Radix:
 
-1. Collapsible and Slider: disclosure state, then pointer capture.
-2. Scroll Area: measurement and custom scrollbars.
-3. Dialog and Alert Dialog: focus trap, scroll lock, dismissal and focus return.
-4. Popover, Tooltip, Hover Card, Dropdown Menu, Context Menu, Menubar, Select, Navigation Menu: positioning, collision handling, typeahead and submenus. Largest.
+- A Base UI tooltip opens for keyboard focus (`:focus-visible`), not for focus moved by script, so focus returning from a dialog does not pop a tooltip.
+- Only one tooltip is open at a time.
+- `onOpenChange(false)` can fire twice when a tooltip closes on click.
+- Content-level `onOpenAutoFocus`, `onEscapeKeyDown` and `onPointerDownOutside` are not forwarded; Base UI reports these on the root's `onOpenChange` details. No ROC component uses them.
 
-Direction stays delegated until the others go: Radix overlays read direction from their own context. The owned primitives read `dir` or the computed CSS direction.
+## Still delegated to Radix
+
+Alert Dialog, Context Menu, Dialog (also used by Sheet), Direction, Dropdown Menu, Menubar, Navigation Menu, Scroll Area, Select, Slider. Each is a one-line re-export to replace with a Base UI adapter, checked against Radix with the same parity approach.
 
 ## Not covered
 
-Base UI (Combobox, Toast), Vaul, cmdk, Embla, react-day-picker, input-otp, react-resizable-panels, Recharts, TanStack Table and `@shadcn/react` are specialist libraries and remain external.
+Combobox and Toast are written directly on Base UI. Vaul, cmdk, Embla, react-day-picker, input-otp, react-resizable-panels, Recharts, TanStack Table and `@shadcn/react` are specialist libraries and remain external.
 
 ## Checks
 
