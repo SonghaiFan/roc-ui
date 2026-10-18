@@ -11,11 +11,6 @@
   --roc-sh-text-lg: 1.125rem;
   --roc-sh-text-lg--line-height: calc(1.75 / 1.125);
   --roc-sh-font-weight-semibold: 600;
-  --roc-sh-radius-md: 7px;
-  --roc-sh-radius-lg: var(--roc-radius, 9px);
-  --roc-sh-color-background: var(--roc-paper, #fff);
-  --roc-sh-color-muted: #f5f5f5;
-  --roc-sh-color-muted-foreground: #737373;
 }
 .roc-s-992a93455c71 {
   position: fixed;

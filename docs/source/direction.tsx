@@ -3,7 +3,7 @@
 import { cn } from "./utils";
 ("use client");
 import * as React from "react";
-import { Direction } from "radix-ui";
+import { Direction } from "./primitive-direction";
 function DirectionProvider({
   dir,
   direction,

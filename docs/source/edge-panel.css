@@ -1,0 +1,94 @@
+@import "./ui-base.css";
+/* Hidden until the pointer reaches the edge; hiding never resizes or remounts what is behind it. */
+.roc-ui[data-slot="edge-panel-zone"] {
+  position: fixed;
+  z-index: 19;
+  top: 0;
+  bottom: 0;
+  width: var(--roc-edge-panel-zone, 14px);
+}
+.roc-ui[data-slot="edge-panel-zone"][data-side="left"] {
+  left: 0;
+}
+.roc-ui[data-slot="edge-panel-zone"][data-side="right"] {
+  right: 0;
+}
+.roc-ui[data-slot="edge-panel"] {
+  --roc-edge-panel-max-height: calc(
+    100dvh - var(--roc-edge-panel-top, 12px) - 12px
+  );
+  position: fixed;
+  z-index: 20;
+  top: var(--roc-edge-panel-top, 12px);
+  width: var(--roc-edge-panel-width, 248px);
+  max-width: calc(100vw - 24px);
+  max-height: var(--roc-edge-panel-max-height);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--roc-paper, #fff);
+  color: var(--roc-ink, #252525);
+  border: 1px solid var(--roc-line, #dedede);
+  border-radius: calc(var(--roc-radius, 8px) + 2px);
+  box-shadow: 0 12px 36px #00000018;
+  transition:
+    opacity var(--roc-motion-quick) ease,
+    transform var(--roc-motion-fast) var(--roc-motion-ease),
+    visibility var(--roc-motion-quick);
+}
+.roc-ui[data-slot="edge-panel"][data-side="left"] {
+  left: var(--roc-edge-panel-inset, 12px);
+}
+.roc-ui[data-slot="edge-panel"][data-side="right"] {
+  right: var(--roc-edge-panel-inset, 12px);
+}
+.roc-ui[data-slot="edge-panel-zone"][data-contained],
+.roc-ui[data-slot="edge-panel"][data-contained] {
+  position: absolute;
+}
+.roc-ui[data-slot="edge-panel"][data-contained] {
+  --roc-edge-panel-max-height: calc(100% - var(--roc-edge-panel-top, 12px) - 12px);
+  max-width: calc(100% - 24px);
+}
+.roc-ui[data-slot="edge-panel"][data-state="closed"] {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-8px);
+}
+.roc-ui[data-slot="edge-panel"][data-state="closed"][data-side="right"] {
+  transform: translateX(8px);
+}
+.roc-ui[data-slot="edge-panel"][data-state="open"] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.roc-ui-edge-panel-header {
+  flex: none;
+  height: var(--roc-edge-panel-header, 56px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px 0 16px;
+  border-bottom: 1px solid var(--roc-line, #dedede);
+  font-size: 12px;
+}
+.roc-ui-edge-panel-header > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.roc-ui-edge-panel-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.roc-ui-edge-panel-scroll [data-slot="scroll-area-viewport"] {
+  max-height: calc(
+    var(--roc-edge-panel-max-height) - var(--roc-edge-panel-header, 56px) - 2px
+  );
+}
+@media (prefers-reduced-motion: reduce) {
+  .roc-ui[data-slot="edge-panel"] {
+    transition: none;
+  }
+}

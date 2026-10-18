@@ -7,19 +7,9 @@
   --roc-sh-text-xs--line-height: calc(1 / 0.75);
   --roc-sh-text-sm: 0.875rem;
   --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
-  --roc-sh-radius-sm: 5px;
-  --roc-sh-radius-md: 7px;
   --roc-sh-default-transition-duration: 150ms;
   --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --roc-sh-color-popover: #fff;
-  --roc-sh-color-popover-foreground: #252525;
-  --roc-sh-color-muted-foreground: #737373;
-  --roc-sh-color-accent: #f3f3f3;
-  --roc-sh-color-accent-foreground: #252525;
   --roc-sh-color-destructive: #b42318;
-  --roc-sh-color-border: #e5e5e5;
-  --roc-sh-color-input: #dedede;
-  --roc-sh-color-ring: #737373;
 }
 .roc-s-33228ff7d583 {
   pointer-events: none;
@@ -54,13 +44,13 @@
   height: calc(var(--roc-sh-spacing) * 4);
 }
 .roc-s-4b782fd2821c {
-  height: var(--radix-select-trigger-height);
+  height: var(--roc-select-trigger-height);
 }
 .roc-s-ae2c4b060bb9 {
   height: 1px;
 }
 .roc-s-c94cde061b6d {
-  max-height: var(--radix-select-content-available-height);
+  max-height: var(--roc-select-content-available-height);
 }
 .roc-s-8cfb5a42ef9f {
   width: fit-content;
@@ -72,10 +62,10 @@
   min-width: 8rem;
 }
 .roc-s-09365d2a0df7 {
-  min-width: var(--radix-select-trigger-width);
+  min-width: var(--roc-select-trigger-width);
 }
 .roc-s-f7dba7cc75ac {
-  transform-origin: var(--radix-select-content-transform-origin);
+  transform-origin: var(--roc-select-content-transform-origin);
 }
 .roc-s-d343f41ba73e {
   cursor: default;
@@ -479,11 +469,21 @@
     }
   }
 }
-/* Micro-motion: popper select grows from the trigger; item-aligned select fades.
-   Radix Select unmounts closed content at once, so only the entrance is animated. */
-[data-slot="select-content"][data-state="open"][data-side] {
+/* Micro-motion: popper select grows from the trigger and settles back; item-aligned
+   select fades so it stays over its trigger. */
+[data-slot="select-content"][data-state="open"][data-position="popper"] {
   animation: roc-ui-pop-in var(--roc-motion-fast) var(--roc-motion-ease);
 }
-[data-slot="select-content"][data-state="open"]:not([data-side]) {
+[data-slot="select-content"][data-state="closed"][data-position="popper"] {
+  animation: roc-ui-pop-out var(--roc-motion-quick) var(--roc-motion-ease);
+}
+[data-slot="select-content"][data-state="open"][data-position="item-aligned"] {
   animation: roc-ui-dismiss var(--roc-motion-quick) reverse;
+}
+[data-slot="select-content"][data-state="closed"][data-position="item-aligned"] {
+  animation: roc-ui-dismiss var(--roc-motion-quick);
+}
+[data-slot="select-content"]:focus,
+[data-slot="select-content"]:focus-visible {
+  outline: none;
 }

@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import { cn } from "./utils";
-import { Slider as SliderPrimitive } from "radix-ui";
+import { Slider as SliderPrimitive } from "./primitive-slider";
 
 function Slider({
   className,
@@ -12,9 +12,13 @@ function Slider({
   min = 0,
   max = 100,
   thumbLabels,
+  getValueText,
+  "aria-label": ariaLabel,
   ...props
 }: React.ComponentProps<typeof SliderPrimitive.Root> & {
   thumbLabels?: string[];
+  /** Spoken value for a thumb, e.g. "640 pixels, sm". Defaults to the number. */
+  getValueText?: (value: number, index: number) => string;
 }) {
   const _values = React.useMemo(
     () =>
@@ -34,6 +38,8 @@ function Slider({
       min={min}
       max={max}
       className={cn("roc-ui", className)}
+      // One thumb carries the label itself; a range labels the group.
+      aria-label={_values.length > 1 ? ariaLabel : undefined}
       {...props}
     >
       <SliderPrimitive.Track data-slot="slider-track" className={cn("roc-ui")}>
@@ -46,8 +52,9 @@ function Slider({
         <SliderPrimitive.Thumb
           aria-label={
             thumbLabels?.[index] ??
-            (_values.length === 1 ? props["aria-label"] : undefined)
+            (_values.length === 1 ? ariaLabel : undefined)
           }
+          aria-valuetext={getValueText?.(_values[index], index)}
           data-slot="slider-thumb"
           key={index}
           className="roc-ui"

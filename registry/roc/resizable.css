@@ -3,9 +3,6 @@
 @layer properties;
 .roc-shadcn {
   --roc-sh-spacing: 0.25rem;
-  --roc-sh-radius-xs: 3px;
-  --roc-sh-color-border: #e5e5e5;
-  --roc-sh-color-ring: #737373;
 }
 .roc-s-d2d9e1f13413 {
   position: relative;

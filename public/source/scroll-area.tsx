@@ -1,7 +1,7 @@
 // Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt and upstream provenance.
 "use client";
 import * as React from "react";
-import { ScrollArea as ScrollAreaPrimitive } from "radix-ui";
+import { ScrollArea as ScrollAreaPrimitive } from "./primitive-scroll-area";
 import { cn } from "./utils";
 type ViewportProps = React.ComponentProps<typeof ScrollAreaPrimitive.Viewport>;
 function ScrollArea({

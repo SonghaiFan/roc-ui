@@ -10,8 +10,30 @@
   font-family: inherit;
   line-height: 1.5;
   color: var(--roc-ink, #252525);
-  --roc-sh-color-primary: var(--roc-accent, #252525);
-  --roc-sh-color-primary-foreground: #fff;
+  /* One place maps the ROC design tokens (ink, paper, line, muted, marker, focus, accent, radius)
+     onto the shadcn-named variables every copied component reads. */
+  --roc-sh-radius-xs: max(0px, calc(var(--roc-radius, 9px) - 6px));
+  --roc-sh-radius-sm: max(0px, calc(var(--roc-radius, 9px) - 4px));
+  --roc-sh-radius-md: max(0px, calc(var(--roc-radius, 9px) - 2px));
+  --roc-sh-radius-lg: var(--roc-radius, 9px);
+  --roc-sh-radius-xl: calc(var(--roc-radius, 9px) + 3px);
+  --roc-sh-color-background: var(--roc-paper, #fff);
+  --roc-sh-color-foreground: var(--roc-ink, #252525);
+  --roc-sh-color-card: var(--roc-paper, #fff);
+  --roc-sh-color-card-foreground: var(--roc-ink, #252525);
+  --roc-sh-color-popover: var(--roc-paper, #fff);
+  --roc-sh-color-popover-foreground: var(--roc-ink, #252525);
+  --roc-sh-color-muted: color-mix(in srgb, var(--roc-ink, #252525) 4%, var(--roc-paper, #fff));
+  --roc-sh-color-muted-foreground: var(--roc-muted, #737373);
+  --roc-sh-color-accent: var(--roc-marker, #f3f3f3);
+  --roc-sh-color-accent-foreground: var(--roc-ink, #252525);
+  --roc-sh-color-secondary: var(--roc-marker, #f3f3f3);
+  --roc-sh-color-secondary-foreground: var(--roc-ink, #252525);
+  --roc-sh-color-border: var(--roc-line, #e5e5e5);
+  --roc-sh-color-input: var(--roc-line, #dedede);
+  --roc-sh-color-ring: var(--roc-focus, #737373);
+  --roc-sh-color-primary: var(--roc-accent, var(--roc-ink, #252525));
+  --roc-sh-color-primary-foreground: var(--roc-accent-foreground, var(--roc-paper, #fff));
 }
 :where(
   button.roc-shadcn,

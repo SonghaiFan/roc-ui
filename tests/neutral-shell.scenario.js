@@ -21,12 +21,10 @@ async (page) => {
   const body = await frame.locator("body").elementHandle();
   const size = await frame.evaluate(() => innerWidth);
   const shell = () =>
-    page
-      .locator(".topbar")
-      .evaluate((el) => ({
-        background: getComputedStyle(el).backgroundColor,
-        color: getComputedStyle(el).color,
-      }));
+    page.locator(".topbar").evaluate((el) => ({
+      background: getComputedStyle(el).backgroundColor,
+      color: getComputedStyle(el).color,
+    }));
   const before = await shell();
   assert(
     (await panel.getAttribute("inert")) !== null && !(await panel.isVisible()),
@@ -41,6 +39,14 @@ async (page) => {
   assert(await panel.isVisible(), "Hover reveals the left settings panel");
   await page.mouse.move(1100, 30);
   await panel.waitFor({ state: "hidden" });
+  await page.mouse.move(3, 500);
+  await panel.waitFor({ state: "visible" });
+  assert(
+    await panel.isVisible(),
+    "Moving the pointer to the window edge reveals the panel",
+  );
+  await page.mouse.move(1100, 30);
+  await panel.waitFor({ state: "hidden" });
   assert(
     !(await panel.isVisible()),
     "Leaving the panel automatically hides it",
@@ -48,7 +54,8 @@ async (page) => {
   await trigger.click();
   await panel.waitFor({ state: "visible" });
   await page.getByLabel("blue accent").click();
-  await page.getByLabel("Surface", { exact: true }).selectOption("Paper");
+  await page.getByLabel("Surface", { exact: true }).click();
+  await page.getByRole("option", { name: "Paper" }).click();
   await frame.waitForFunction(
     () =>
       getComputedStyle(document.querySelector(".design-space"))

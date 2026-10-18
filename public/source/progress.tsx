@@ -1,7 +1,7 @@
 // Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt and upstream provenance.
 "use client";
 import * as React from "react";
-import { Progress as ProgressPrimitive } from "radix-ui";
+import { Progress as ProgressPrimitive } from "./primitive-progress";
 import { cn } from "./utils";
 function Progress({
   className,

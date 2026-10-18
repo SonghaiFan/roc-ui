@@ -14,18 +14,9 @@
   --roc-sh-text-base--line-height: calc(1.5 / 1);
   --roc-sh-font-weight-medium: 500;
   --roc-sh-leading-snug: 1.375;
-  --roc-sh-radius-md: 7px;
-  --roc-sh-radius-lg: var(--roc-radius, 9px);
   --roc-sh-default-transition-duration: 150ms;
   --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --roc-sh-color-background: var(--roc-paper, #fff);
-  --roc-sh-color-primary: var(--roc-accent, #252525);
-  --roc-sh-color-primary-foreground: #fff;
-  --roc-sh-color-muted: #f5f5f5;
-  --roc-sh-color-muted-foreground: #737373;
   --roc-sh-color-destructive: #b42318;
-  --roc-sh-color-input: #dedede;
-  --roc-sh-color-ring: #737373;
 }
 .roc-s-33228ff7d583 {
   pointer-events: none;
@@ -157,7 +148,7 @@
   justify-self: flex-start;
 }
 .roc-s-b79cc137d7bf {
-  border-radius: 4px;
+  border-radius: max(0px, calc(var(--roc-radius, 9px) - 5px));
 }
 .roc-s-b005d61d0953 {
   border-radius: calc(infinity * 1px);

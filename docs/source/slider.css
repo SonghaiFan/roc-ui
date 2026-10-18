@@ -19,7 +19,7 @@
 .roc-ui[data-slot="slider-range"] {
   position: absolute;
   height: 100%;
-  background: var(--roc-ink, #252525);
+  background: var(--roc-accent, var(--roc-ink, #252525));
 }
 .roc-ui[data-slot="slider-thumb"] {
   display: block;
@@ -47,4 +47,21 @@
 }
 .roc-ui[data-slot="slider-range"][data-orientation="vertical"] {
   width: 100%;
+}
+/* Base UI nests the track and thumbs in a control that takes the pointer. */
+.roc-ui[data-slot="slider"] > [data-slot="slider-control"] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+.roc-ui[data-slot="slider"][data-orientation="vertical"] > [data-slot="slider-control"] {
+  flex-direction: column;
+}
+/* The focusable element is the range input inside the thumb. */
+.roc-ui[data-slot="slider-thumb"]:has(input:focus-visible) {
+  outline: 2px solid var(--roc-focus, #737373);
+  outline-offset: 3px;
 }

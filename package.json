@@ -21,7 +21,6 @@
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.5.0",
     "lucide-react": "^1.59.0",
-    "radix-ui": "^1.8.1",
     "react": "^19.0.0",
     "react-day-picker": "^10.0.2",
     "react-dom": "^19.0.0",
@@ -35,6 +34,7 @@
     "esbuild": "^0.28.0",
     "postcss": "^8.5.30",
     "postcss-selector-parser": "^7.1.6",
+    "radix-ui": "^1.8.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.0"
   }

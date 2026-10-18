@@ -1,6 +1,6 @@
 # Full shadcn catalog in ROC
 
-The gallery covers the 66 entries in the official shadcn/ui Components catalog retrieved on 2026-10-18. Blocks and the separate AI Elements collection are outside this catalog. Ten earlier ROC components remain installable but are not displayed in the gallery.
+The gallery covers the 66 entries in the official shadcn/ui Components catalog retrieved on 2026-10-18. Blocks and the separate AI Elements collection are outside this catalog. ROC adds one component of its own, Edge Panel (`edge-panel`), which the gallery uses for its own Style panel; it is the 67th card. Ten earlier ROC components remain installable but are not displayed in the gallery.
 
 ## Distribution
 
@@ -25,7 +25,7 @@ Original sources live in `upstream/shadcn`, with URL, timestamp and SHA-256 in t
 
 ## Gallery
 
-The 66 previews use the existing keyed React tree and one iframe. Component details contain the viewport presets and breakpoint slider. The overview stays full-width and uses CSS masonry columns without automatic position animation. New previews reserve media/chart/scroll geometry before asynchronous initialization.
+The 67 previews use the existing keyed React tree and one iframe. Component details contain the viewport presets and breakpoint slider. The overview stays full-width and uses CSS masonry columns without automatic position animation. New previews reserve media/chart/scroll geometry before asynchronous initialization.
 
 ## Catalog
 

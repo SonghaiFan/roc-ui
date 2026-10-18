@@ -16,6 +16,7 @@ const names = [
   "selection-toolbar",
   "page-book",
   "source-tray",
+  "edge-panel",
 ];
 const packageInfo = JSON.parse(await readFile("package.json", "utf8"));
 const root = {
@@ -71,6 +72,10 @@ for (const name of names) {
   await collect(`${name}.tsx`);
   await collect("SOURCE-LICENSE.txt");
   if (foundationNames.includes(name)) await collect("SHADCN-LICENSE.txt");
+  // Anything that bundles shadcn-derived source ships the shadcn licence, however it was reached.
+  for (const file of [...files])
+    if ((await readFile(`registry/roc/${file}`, "utf8")).includes("Adapted from shadcn/ui"))
+      await collect("SHADCN-LICENSE.txt");
   const item = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
     name,

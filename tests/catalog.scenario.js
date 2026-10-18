@@ -13,8 +13,8 @@ async (page) => {
   ).contentFrame();
   await view.locator("#typography").waitFor();
   assert(
-    (await view.locator(".component-card").count()) === 66,
-    "66 components mounted",
+    (await view.locator(".component-card").count()) === 67,
+    "67 components mounted",
   );
   const focus = async (name) => {
     const back = page.getByRole("button", {

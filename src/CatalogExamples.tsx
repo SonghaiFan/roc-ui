@@ -1,4 +1,4 @@
-import { useState, useId, type ReactNode } from "react";
+import { useState, useId, type CSSProperties, type ReactNode } from "react";
 import {
   FileText,
   Search,
@@ -13,6 +13,8 @@ import {
   Clock,
 } from "lucide-react";
 import { Button } from "../registry/roc/button";
+import { Slider } from "../registry/roc/slider";
+import * as Edge from "../registry/roc/edge-panel";
 import { Input } from "../registry/roc/input";
 import { Textarea } from "../registry/roc/textarea";
 import * as A from "../registry/roc/alert-dialog";
@@ -838,6 +840,44 @@ function SelectDemo() {
     </Select.Select>
   );
 }
+function EdgePanelDemo() {
+  const [accent, setAccent] = useState([40]);
+  return (
+    <Edge.EdgePanel contained>
+      <div
+        style={{ position: "relative", minHeight: 240, padding: "0 0 0 16px" }}
+      >
+        <Textarea
+          aria-label="Edge panel canvas"
+          defaultValue="Move the pointer to the left edge of this box."
+          style={{ minHeight: 200 }}
+        />
+        <Edge.EdgePanelTrigger asChild>
+          <Button variant="ghost" size="sm" style={{ marginTop: 8 }}>
+            Style
+          </Button>
+        </Edge.EdgePanelTrigger>
+        <Edge.EdgePanelContent
+          title="Appearance"
+          style={{ "--roc-edge-panel-width": "190px" } as CSSProperties}
+        >
+          <div style={{ display: "grid", gap: 10, padding: 14 }}>
+            <Label style={{ fontSize: 11 }}>
+              Accent
+              <Slider
+                aria-label="Edge accent"
+                min={0}
+                max={100}
+                value={accent}
+                onValueChange={setAccent}
+              />
+            </Label>
+          </div>
+        </Edge.EdgePanelContent>
+      </div>
+    </Edge.EdgePanel>
+  );
+}
 function SheetDemo() {
   const [value, setValue] = useState("Field notes");
   return (
@@ -1084,6 +1124,7 @@ const demos: Record<string, () => ReactNode> = {
   questionnaire: QuestionnaireDemo,
   resizable: ResizableDemo,
   select: SelectDemo,
+  "edge-panel": EdgePanelDemo,
   sheet: SheetDemo,
   sidebar: SidebarDemo,
   spinner: SpinnerDemo,

@@ -9,7 +9,7 @@
 .roc-ui[data-slot="progress-indicator"] {
   width: 100%;
   height: 100%;
-  background: var(--roc-ink, #252525);
+  background: var(--roc-accent, var(--roc-ink, #252525));
   transform-origin: left;
   transition: transform var(--roc-motion-medium) var(--roc-motion-ease);
 }

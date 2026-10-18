@@ -6,13 +6,9 @@
   --roc-sh-text-sm: 0.875rem;
   --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
   --roc-sh-leading-relaxed: 1.625;
-  --roc-sh-radius-md: 7px;
   --roc-sh-default-transition-duration: 150ms;
   --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --roc-sh-color-foreground: #252525;
-  --roc-sh-color-muted-foreground: #737373;
   --roc-sh-color-destructive: #b42318;
-  --roc-sh-color-ring: #737373;
 }
 .roc-s-f28fea81a5cd {
   margin-top: calc(var(--roc-sh-spacing) * 2);

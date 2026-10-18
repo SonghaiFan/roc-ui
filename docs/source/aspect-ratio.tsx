@@ -2,7 +2,7 @@
 "use client";
 import { cn } from "./utils";
 ("use client");
-import { AspectRatio as AspectRatioPrimitive } from "radix-ui";
+import { AspectRatio as AspectRatioPrimitive } from "./primitive-aspect-ratio";
 function AspectRatio({
   ...props
 }: React.ComponentProps<typeof AspectRatioPrimitive.Root>) {

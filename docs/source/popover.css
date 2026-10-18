@@ -2,14 +2,14 @@
 .roc-ui[data-slot="popover-content"] {
   z-index: 50;
   width: min(288px, calc(100vw - 24px));
-  max-height: var(--radix-popover-content-available-height);
+  max-height: var(--roc-popover-content-available-height);
   overflow: auto;
   border: 1px solid var(--roc-line, #dedede);
   border-radius: var(--roc-radius, 10px);
   background: var(--roc-paper, #fff);
   padding: 18px;
   box-shadow: 0 8px 28px #00000012;
-  transform-origin: var(--radix-popover-content-transform-origin);
+  transform-origin: var(--roc-popover-content-transform-origin);
   animation: roc-ui-pop-in var(--roc-motion-fast) var(--roc-motion-ease);
 }
 .roc-ui[data-slot="popover-content"][data-state="closed"] {

@@ -13,7 +13,7 @@ component.css + surface.css component styles and small shared surface rules
 pure TypeScript helpers    geometry and analytic springs
 ```
 
-Registry files do not import `src/`, application stores, routers, databases, generated assets or Syuze/Franklin runtime modules. The original ten components depend on React 19. The twenty-five shadcn-derived foundations also declare Radix, icon and utility packages where imported; see [foundation contracts](shadcn-foundations.md). CSS imports require a bundler that handles CSS. DOM selection, media, animation and native dialog/popover work run after mount; the components also server-render without accessing `window` during render.
+Registry files do not import `src/`, application stores, routers, databases, generated assets or Syuze/Franklin runtime modules. The original ten components depend on React 19. The twenty-five shadcn-derived foundations also declare Base UI, icon and utility packages where imported; see [foundation contracts](shadcn-foundations.md). CSS imports require a bundler that handles CSS. DOM selection, media, animation and native dialog/popover work run after mount; the components also server-render without accessing `window` during render.
 
 The original MIT notice remains in each install. Source provenance identifies where a behaviour came from, not a requirement to install that application.
 
@@ -101,3 +101,7 @@ The layout is informed by the [shadcn create preview](https://ui.shadcn.com/crea
 - `tests/more-foundations.scenario.js` and `tests/more-foundations-consumer.scenario.js`: additional component semantics, keyboard controls, fixed loading footprints, custom progress max, scroll retention and independent usage.
 
 Current runtime verification is Chromium. Motion remains source-informed; this refactor does not claim pixel-for-pixel parity with the full Syuze application. `PageBook` expects pre-paginated reading content; its single/spread breakpoint regroups pages and should not be used to preserve stateful editors inside those pages. Folder fan is a compact, non-interactive card collection; use the tray for arbitrary interactive children.
+
+## Tokens the gallery controls
+
+Every component reads the same small set, so one change reaches all of them: `--roc-accent` and `--roc-accent-foreground` (filled and selected states: primary Button, Badge, Toggle, Switch, Slider, Checkbox, Radio, Progress, Calendar day), `--roc-radius` (corners; the shadcn-derived components step down from it as `--roc-sh-radius-xs … xl`), `--roc-paper`/`--roc-ink`/`--roc-line`/`--roc-muted` (surface, text, borders), `--roc-marker` (hover and soft fills) and `--roc-focus`. `shadcn-base.css` is the one place that maps these onto the `--roc-sh-*` variables the copied components use; per-component CSS no longer carries its own colour or radius literals.

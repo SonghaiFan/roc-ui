@@ -1,7 +1,7 @@
 "use client";
-// Adapted from shadcn/ui (MIT). Same Radix API; retained panels and one marker.
+// Adapted from shadcn/ui (MIT). Same compound API; retained panels and one marker.
 import * as React from "react";
-import { Tabs as Primitive } from "radix-ui";
+import { Tabs as Primitive } from "./primitive-tabs";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 import "./tabs.css";
@@ -83,7 +83,7 @@ function TabsList({
       mutation.disconnect();
     };
   }, []);
-  // The observer measures Radix's committed selection, including controlled updates.
+  // The observer measures the committed selection, including controlled updates.
   return (
     <Primitive.List
       {...props}

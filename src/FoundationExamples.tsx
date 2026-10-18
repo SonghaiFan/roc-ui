@@ -1,6 +1,7 @@
 import { MoreFoundationExample } from "./MoreFoundationExamples";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../registry/roc/button";
+import { Label } from "../registry/roc/label";
 import { Badge } from "../registry/roc/badge";
 import {
   Card,
@@ -144,53 +145,53 @@ export function FoundationExample({ id }: { id: string }) {
   if (id === "input")
     return (
       <div className="foundation-demo">
-        <label className="foundation-field">
+        <Label className="foundation-field">
           Title
           <Input defaultValue="Small observations" />
-        </label>
-        <label className="foundation-field">
+        </Label>
+        <Label className="foundation-field">
           Email
           <Input type="email" placeholder="you@example.com" />
-        </label>
+        </Label>
       </div>
     );
   if (id === "textarea")
     return (
-      <label className="foundation-field">
+      <Label className="foundation-field">
         A thought to return to
         <Textarea value={text} onChange={(e) => setText(e.target.value)} />
         <span className="foundation-hint">
           {text.length} characters · resize the preview, keep writing
         </span>
-      </label>
+      </Label>
     );
   if (id === "checkbox")
     return (
       <div className="foundation-demo">
-        <label className="foundation-choice">
+        <Label className="foundation-choice">
           <Checkbox
             checked={checked}
             onCheckedChange={(v) => setChecked(v === true)}
           />
           Keep original sources
-        </label>
-        <label className="foundation-choice">
+        </Label>
+        <Label className="foundation-choice">
           <Checkbox defaultChecked="indeterminate" />
           Some items selected
-        </label>
-        <label className="foundation-choice">
+        </Label>
+        <Label className="foundation-choice">
           <Checkbox disabled />
           Unavailable option
-        </label>
+        </Label>
       </div>
     );
   if (id === "switch")
     return (
       <div className="foundation-demo">
-        <label className="foundation-choice">
+        <Label className="foundation-choice">
           <Switch checked={checked} onCheckedChange={setChecked} />
           Show annotations
-        </label>
+        </Label>
         <span className="foundation-hint">
           The same thumb follows each reversal.
         </span>
@@ -234,22 +235,22 @@ export function FoundationExample({ id }: { id: string }) {
           <TabsTrigger value="details">Details</TabsTrigger>
         </TabsList>
         <TabsContent value="write">
-          <label className="foundation-field">
+          <Label className="foundation-field">
             Working draft
             <Textarea
               aria-label="Tabs draft"
               defaultValue="Write here. Switch views. Return to the same draft."
             />
-          </label>
+          </Label>
         </TabsContent>
         <TabsContent value="details">
           <div className="foundation-demo">
             <Badge variant="outline">Local draft</Badge>
             <p>Your writing remains mounted while this view is active.</p>
-            <label className="foundation-choice">
+            <Label className="foundation-choice">
               <Switch defaultChecked />
               Keep annotations
-            </label>
+            </Label>
           </div>
         </TabsContent>
       </Tabs>
@@ -290,21 +291,21 @@ export function FoundationExample({ id }: { id: string }) {
                 its arrangement.
               </DialogDescription>
             </DialogHeader>
-            <label className="foundation-field">
+            <Label className="foundation-field">
               Document title
               <Input
                 aria-label="Dialog document title"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
               />
-            </label>
-            <label className="foundation-field">
+            </Label>
+            <Label className="foundation-field">
               Notes
               <Textarea
                 aria-label="Dialog notes"
                 defaultValue="This input stays mounted through a viewport change."
               />
-            </label>
+            </Label>
             <DialogFooter>
               <DialogClose asChild>
                 <Button>Done</Button>
@@ -332,18 +333,18 @@ export function FoundationExample({ id }: { id: string }) {
               </PopoverDescription>
             </PopoverHeader>
             <div className="foundation-demo">
-              <label className="foundation-choice">
+              <Label className="foundation-choice">
                 <Switch checked={checked} onCheckedChange={setChecked} />
                 Annotations
-              </label>
-              <label className="foundation-field">
+              </Label>
+              <Label className="foundation-field">
                 Display name
                 <Input
                   aria-label="Popover display name"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                 />
-              </label>
+              </Label>
             </div>
           </PopoverContent>
         </Popover>

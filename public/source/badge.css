@@ -12,8 +12,8 @@
   white-space: nowrap;
 }
 .roc-ui-badge.roc-ui-badge-variant-default {
-  background: var(--roc-ink, #252525);
-  color: var(--roc-paper, #fff);
+  background: var(--roc-accent, var(--roc-ink, #252525));
+  color: var(--roc-accent-foreground, var(--roc-paper, #fff));
 }
 .roc-ui-badge.roc-ui-badge-variant-secondary {
   background: var(--roc-marker, #efefef);

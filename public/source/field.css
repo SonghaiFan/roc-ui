@@ -11,10 +11,6 @@
   --roc-sh-font-weight-medium: 500;
   --roc-sh-leading-snug: 1.375;
   --roc-sh-leading-normal: 1.5;
-  --roc-sh-radius-md: 7px;
-  --roc-sh-color-background: var(--roc-paper, #fff);
-  --roc-sh-color-primary: var(--roc-accent, #252525);
-  --roc-sh-color-muted-foreground: #737373;
   --roc-sh-color-destructive: #b42318;
 }
 .roc-s-222d94de2f4b {

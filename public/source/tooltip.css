@@ -3,14 +3,14 @@
   z-index: 60;
   max-width: min(260px, calc(100vw - 24px));
   padding: 8px 11px;
-  border-radius: 6px;
+  border-radius: max(0px, calc(var(--roc-radius, 9px) - 3px));
   background: var(--roc-ink, #252525);
   color: var(--roc-paper, #fff);
   font-size: 11px;
   line-height: 1.5;
   --roc-pop-scale: 0.98;
   --roc-pop-scale-out: 0.98;
-  transform-origin: var(--radix-tooltip-content-transform-origin);
+  transform-origin: var(--roc-tooltip-content-transform-origin);
   animation: roc-ui-pop-in var(--roc-motion-quick) ease-out;
 }
 .roc-ui[data-slot="tooltip-content"][data-state="closed"] {
@@ -18,4 +18,26 @@
 }
 .roc-ui[data-slot="tooltip-content"] svg {
   fill: var(--roc-ink, #252525);
+}
+/* The arrow sits on the popup edge facing the trigger and points at it. */
+.roc-ui[data-slot="tooltip-content"] [data-slot="tooltip-arrow"] {
+  display: block;
+  width: 10px;
+  height: 5px;
+  pointer-events: none;
+}
+[data-slot="tooltip-arrow"][data-side="top"] {
+  bottom: -5px;
+  rotate: 180deg;
+}
+[data-slot="tooltip-arrow"][data-side="bottom"] {
+  top: -5px;
+}
+[data-slot="tooltip-arrow"][data-side="left"] {
+  right: -7.5px;
+  rotate: 90deg;
+}
+[data-slot="tooltip-arrow"][data-side="right"] {
+  left: -7.5px;
+  rotate: -90deg;
 }

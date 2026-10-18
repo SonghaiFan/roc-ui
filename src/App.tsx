@@ -5,53 +5,78 @@ import {
   useState,
   type CSSProperties,
 } from "react";
+import {
+  ExternalLinkIcon,
+  SearchIcon,
+  SlidersHorizontalIcon,
+} from "lucide-react";
+import { Badge } from "../registry/roc/badge";
+import { Button } from "../registry/roc/button";
+import {
+  Card,
+  CardAction,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../registry/roc/card";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "../registry/roc/collapsible";
+import {
+  Empty,
+  EmptyContent,
+  EmptyHeader,
+  EmptyTitle,
+} from "../registry/roc/empty";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "../registry/roc/input-group";
+import {
+  CodeBlock,
+  CodeBlockActions,
+  CodeBlockContent,
+  CodeBlockCopyButton,
+  CodeBlockHeader,
+  CodeBlockTitle,
+} from "../registry/roc/code-block";
+import { Kbd } from "../registry/roc/kbd";
+import { Label } from "../registry/roc/label";
+import { Picker } from "./Picker";
+import { Slider } from "../registry/roc/slider";
+import { Toggle } from "../registry/roc/toggle";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "../registry/roc/sheet";
 import { foundationIds } from "./foundations";
 import { catalog } from "./catalog";
 import { FoundationExample } from "./FoundationExamples";
-import { AutoHidePanel } from "./AutoHidePanel";
+import {
+  EdgePanel,
+  EdgePanelContent,
+  EdgePanelTrigger,
+  useEdgePanel,
+} from "../registry/roc/edge-panel";
 import { ViewportPreview } from "./ViewportPreview";
-import { palette, type Settings } from "./settings";
+import { palette, type AccentName } from "./settings";
 import "./site.css";
 const repo = "https://github.com/SonghaiFan/roc-ui";
 const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
 const registry =
   "https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/";
 type Item = (typeof catalog)[number];
-function Copy({ text, label = "Copy" }: { text: string; label?: string }) {
-  const [status, setStatus] = useState("");
-  useEffect(() => {
-    if (status) {
-      const timer = setTimeout(() => setStatus(""), 1800);
-      return () => clearTimeout(timer);
-    }
-  }, [status]);
-  return (
-    <button
-      className="copy"
-      type="button"
-      onClick={async () => {
-        try {
-          await navigator.clipboard.writeText(text);
-          setStatus("Copied");
-        } catch {
-          setStatus("Copy unavailable");
-        }
-      }}
-    >
-      {status || label}
-    </button>
-  );
-}
 function SourcePanel({ item, close }: { item: Item; close: () => void }) {
-  const dialog = useRef<HTMLDialogElement>(null);
   const [files, setFiles] = useState<{ path: string; content: string }[]>([]),
     [file, setFile] = useState(`${item.id}.tsx`),
     [error, setError] = useState("");
-  useEffect(() => {
-    const node = dialog.current!;
-    node.showModal();
-    return () => node.close();
-  }, []);
   useEffect(() => {
     const controller = new AbortController();
     fetch(`./r/${item.id}.json`, { signal: controller.signal })
@@ -68,88 +93,119 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
   }, [item.id]);
   const code = files.find((f) => f.path.endsWith(`/${file}`))?.content ?? "";
   return (
-    <dialog
-      ref={dialog}
-      className="source-panel"
-      onCancel={(e) => {
-        e.preventDefault();
-        close();
-      }}
-      onClick={(e) => {
-        if (e.target === e.currentTarget) close();
-      }}
-      aria-labelledby="source-title"
-    >
-      <div className="panel-body">
-        <header>
-          <div>
-            <span className="eyebrow">COMPONENT SOURCE</span>
-            <h2 id="source-title">{item.name}</h2>
-          </div>
-          <button
-            type="button"
-            className="icon-button"
-            aria-label="Close source"
-            onClick={close}
-          >
-            ×
-          </button>
-        </header>
-        <p className="panel-description">{item.description}</p>
-        <div className="install">
-          <code>npx shadcn@latest add …/{item.id}.json</code>
-          <Copy
-            text={`npx shadcn@latest add ${registry}${item.id}.json`}
-            label="Copy install"
-          />
+    <Sheet open onOpenChange={(open) => !open && close()}>
+      <SheetContent className="source-panel" showCloseButton={false}>
+        <div className="panel-body">
+          <SheetHeader>
+            <div>
+              <span className="eyebrow">COMPONENT SOURCE</span>
+              <SheetTitle>{item.name}</SheetTitle>
+            </div>
+            <SheetClose asChild>
+              <Button
+                variant="secondary"
+                size="icon-sm"
+                aria-label="Close source"
+              >
+                ×
+              </Button>
+            </SheetClose>
+          </SheetHeader>
+          <SheetDescription className="panel-description">
+            {item.description}
+          </SheetDescription>
+          <CodeBlock className="install" size="sm">
+            <CodeBlockHeader>
+              <CodeBlockTitle>Install</CodeBlockTitle>
+              <CodeBlockActions>
+                <CodeBlockCopyButton
+                  value={`npx shadcn@latest add ${registry}${item.id}.json`}
+                />
+              </CodeBlockActions>
+            </CodeBlockHeader>
+            <CodeBlockContent wrap>
+              {`npx shadcn@latest add …/${item.id}.json`}
+            </CodeBlockContent>
+          </CodeBlock>
+          <Collapsible className="usage" defaultOpen>
+            <CollapsibleTrigger asChild>
+              <Button variant="ghost" size="sm">
+                Usage
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <CodeBlock size="sm">
+                <CodeBlockContent wrap>{item.usage}</CodeBlockContent>
+              </CodeBlock>
+            </CollapsibleContent>
+          </Collapsible>
+          <CodeBlock className="source-code-block">
+            <CodeBlockHeader>
+              <CodeBlockTitle>
+                <Picker
+                  label="Source file"
+                  value={file}
+                  onValueChange={setFile}
+                  options={(files.length
+                    ? files
+                    : [{ path: `registry/roc/${item.id}.tsx` }]
+                  ).map((f) => ({ value: f.path.split("/").at(-1)! }))}
+                />
+              </CodeBlockTitle>
+              <CodeBlockActions>
+                <CodeBlockCopyButton value={code} />
+              </CodeBlockActions>
+            </CodeBlockHeader>
+            <CodeBlockContent className="source-code" lineNumbers>
+              {error || code || "Loading source…"}
+            </CodeBlockContent>
+          </CodeBlock>
+          <Collapsible className="contract">
+            <CollapsibleTrigger asChild>
+              <Button variant="ghost" size="sm">
+                Behaviour &amp; boundaries
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <p>{item.rule}</p>
+              <p>{item.limit}</p>
+              <Button variant="link" size="sm" asChild>
+                <a
+                  href={`${repo}/blob/main/notes/react-design-system.md`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  React component contracts ↗
+                </a>
+              </Button>
+            </CollapsibleContent>
+          </Collapsible>
+          <footer>
+            <span>React · TypeScript · CSS · MIT</span>
+            <Button variant="link" size="sm" asChild>
+              <a
+                href={`${repo}/tree/main/registry/roc`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View on GitHub ↗
+              </a>
+            </Button>
+          </footer>
         </div>
-        <details className="usage" open>
-          <summary>Usage</summary>
-          <pre>{item.usage}</pre>
-        </details>
-        <div className="source-tools">
-          <select
-            aria-label="Source file"
-            value={file}
-            onChange={(e) => setFile(e.target.value)}
-          >
-            {(files.length
-              ? files
-              : [{ path: `registry/roc/${item.id}.tsx` }]
-            ).map((f) => (
-              <option key={f.path} value={f.path.split("/").at(-1)}>
-                {f.path.split("/").at(-1)}
-              </option>
-            ))}
-          </select>
-          <Copy text={code} label="Copy file" />
-        </div>
-        <pre className="source-code">{error || code || "Loading source…"}</pre>
-        <details className="contract">
-          <summary>Behaviour & boundaries</summary>
-          <p>{item.rule}</p>
-          <p>{item.limit}</p>
-          <a
-            href={`${repo}/blob/main/notes/react-design-system.md`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            React component contracts ↗
-          </a>
-        </details>
-        <footer>
-          <span>React · TypeScript · CSS · MIT</span>
-          <a
-            href={`${repo}/tree/main/registry/roc`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            View on GitHub ↗
-          </a>
-        </footer>
-      </div>
-    </dialog>
+      </SheetContent>
+    </Sheet>
   );
+}
+/** Interacting with the live preview dismisses an unpinned settings panel. */
+function DismissOnPreview() {
+  const { hide } = useEdgePanel();
+  useEffect(() => {
+    const dismiss = () => hide();
+    window.addEventListener("roc-preview-interact", dismiss);
+    return () => window.removeEventListener("roc-preview-interact", dismiss);
+  }, [hide]);
+  return null;
 }
 const components = foundationIds.map(
   (id) => catalog.find((item) => item.id === id)!,
@@ -163,7 +219,7 @@ export function App() {
   );
   const [query, setQuery] = useState(""),
     [filter, setFilter] = useState("All"),
-    [color, setColor] = useState<Settings["color"]>("neutral"),
+    [color, setColor] = useState<AccentName>("neutral"),
     [radius, setRadius] = useState(12),
     [surface, setSurface] = useState("White"),
     [density, setDensity] = useState("Comfortable");
@@ -307,6 +363,7 @@ export function App() {
   const style = {
     "--roc-accent": palette[color],
     "--roc-marker": `color-mix(in srgb,${palette[color]} 24%,white)`,
+    "--roc-accent-foreground": "#252525",
     "--roc-radius": `${radius}px`,
     "--roc-paper": surface === "Paper" ? "#fcfbf7" : "#fff",
     "--preview-font":
@@ -329,63 +386,76 @@ export function App() {
         >
           <div className="masonry" aria-label="Component previews">
             {components.map((item) => (
-              <article
+              <Card
                 id={item.id}
                 key={item.id}
                 className={`component-card component-${item.id}`}
                 hidden={focused ? item.id !== focused : !visible.includes(item)}
+                role="article"
               >
-                <header className="component-heading">
-                  <h2>{item.name}</h2>
-                  <button
-                    type="button"
-                    className="focus-preview"
-                    aria-label={`Focus ${item.name} preview`}
-                    aria-pressed={focused === item.id}
-                    onClick={() => {
-                      setFocused(focused === item.id ? "" : item.id);
-                      window.scrollTo({ top: 0, behavior: "instant" });
-                    }}
-                  >
-                    ↗
-                  </button>
-                  <button
-                    type="button"
-                    aria-label={`View ${item.name} source`}
-                    onClick={() => open(item.id)}
-                  >
-                    <span aria-hidden="true">〈/〉</span>
-                  </button>
-                </header>
+                <CardHeader className="component-heading">
+                  <CardTitle role="heading" aria-level={2}>
+                    {item.name}
+                  </CardTitle>
+                  <CardAction>
+                    <Button
+                      variant="ghost"
+                      size="icon-sm"
+                      className="focus-preview"
+                      aria-label={`Focus ${item.name} preview`}
+                      aria-pressed={focused === item.id}
+                      onClick={() => {
+                        setFocused(focused === item.id ? "" : item.id);
+                        window.scrollTo({ top: 0, behavior: "instant" });
+                      }}
+                    >
+                      ↗
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon-sm"
+                      aria-label={`View ${item.name} source`}
+                      onClick={() => open(item.id)}
+                    >
+                      <span aria-hidden="true">〈/〉</span>
+                    </Button>
+                  </CardAction>
+                </CardHeader>
                 <div className="component-preview" data-component={item.id}>
                   <FoundationExample id={item.id} />
                 </div>
-                <footer className="component-footer">
+                <CardFooter className="component-footer">
                   <span>{item.description}</span>
-                  <button
-                    type="button"
+                  <Button
+                    variant="ghost"
+                    size="icon-xs"
                     onClick={() => open(item.id)}
                     aria-label={`Install ${item.name}`}
                   >
                     ↗
-                  </button>
-                </footer>
-              </article>
+                  </Button>
+                </CardFooter>
+              </Card>
             ))}
           </div>
           {!focused && !visible.length && (
-            <div className="empty">
-              No matching components.{" "}
-              <button
-                type="button"
-                onClick={() => {
-                  setQuery("");
-                  setFilter("All");
-                }}
-              >
-                Clear search
-              </button>
-            </div>
+            <Empty className="empty">
+              <EmptyHeader>
+                <EmptyTitle>No matching components.</EmptyTitle>
+              </EmptyHeader>
+              <EmptyContent>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setQuery("");
+                    setFilter("All");
+                  }}
+                >
+                  Clear search
+                </Button>
+              </EmptyContent>
+            </Empty>
           )}
         </main>
       </div>
@@ -397,110 +467,134 @@ export function App() {
           roc
         </a>
         <span className="top-title">
-          Components <span className="count">{visible.length}</span>
+          Components{" "}
+          <Badge variant="secondary" className="count">
+            {visible.length}
+          </Badge>
         </span>
-        <AutoHidePanel>
-          <div className="rail-section">
-            <label className="rail-control">
-              <span>Surface</span>
-              <select
-                aria-label="Surface"
-                value={surface}
-                onChange={(e) => setSurface(e.target.value)}
-              >
-                <option>Paper</option>
-                <option>White</option>
-              </select>
-            </label>
-            <div className="rail-control">
-              <span>Accent</span>
-              <div className="swatches">
-                {Object.entries(palette).map(([key, value]) => (
-                  <button
-                    type="button"
-                    key={key}
-                    aria-label={`${key} accent`}
-                    aria-pressed={color === key}
-                    style={{ background: value }}
-                    onClick={() => setColor(key as Settings["color"])}
-                  />
-                ))}
-              </div>
-            </div>
-            <label className="rail-control">
-              <span>Type</span>
-              <select
-                aria-label="Typeface"
-                value={font}
-                onChange={(e) => setFont(e.target.value)}
-              >
-                <option>System</option>
-                <option>Serif</option>
-              </select>
-            </label>
-            <label className="rail-control">
-              <span>
-                Radius <output>{radius}</output>
-              </span>
-              <input
-                aria-label="Corner radius"
-                type="range"
-                min={0}
-                max={24}
-                step={2}
-                value={radius}
-                onChange={(e) => setRadius(Number(e.target.value))}
-              />
-            </label>
-            <label className="rail-control">
-              <span>Spacing</span>
-              <select
-                aria-label="Spacing"
-                value={density}
-                onChange={(e) => setDensity(e.target.value)}
-              >
-                <option>Comfortable</option>
-                <option>Compact</option>
-              </select>
-            </label>
-          </div>
-          <div className="rail-section component-index">
-            <span className="rail-caption">
-              COMPONENTS <b>{components.length.toString().padStart(2, "0")}</b>
-            </span>
-            {components.map((item, i) => (
-              <button
-                type="button"
-                key={item.id}
-                onClick={() => {
-                  setQuery("");
-                  setFilter("All");
-                  frame.current?.contentWindow?.postMessage(
-                    { type: "roc-focus", id: item.id },
-                    location.origin,
-                  );
-                  window.dispatchEvent(new Event("roc-preview-interact"));
-                }}
-              >
-                <span>{String(i + 1).padStart(2, "0")}</span>
-                {item.name}
-                <span>↗</span>
-              </button>
-            ))}
-          </div>
-          <div className="rail-bottom">
-            <a
-              href={`${repo}/blob/main/notes/react-design-system.md`}
-              target="_blank"
-              rel="noreferrer"
+        <EdgePanel id="design-settings">
+          <DismissOnPreview />
+          <EdgePanelTrigger asChild>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="style-trigger"
+              aria-label="Design settings"
             >
-              Composition guide ↗
-            </a>
-          </div>
-        </AutoHidePanel>
-        <label className="search">
-          <span>⌕</span>
-          <input
+              <SlidersHorizontalIcon aria-hidden="true" />
+              <span>Style</span>
+            </Button>
+          </EdgePanelTrigger>
+          <EdgePanelContent
+            title="Appearance"
+            className="design-controls"
+            aria-label="Design settings panel"
+            pinLabel="Keep settings open"
+            closeLabel="Close settings"
+          >
+            <div className="rail-section">
+              <Label className="rail-control">
+                <span>Surface</span>
+                <Picker
+                  dark
+                  label="Surface"
+                  value={surface}
+                  onValueChange={setSurface}
+                  options={[{ value: "Paper" }, { value: "White" }]}
+                />
+              </Label>
+              <div className="rail-control">
+                <span>Accent</span>
+                <div className="swatches">
+                  {Object.entries(palette).map(([key, value]) => (
+                    <Toggle
+                      key={key}
+                      aria-label={`${key} accent`}
+                      pressed={color === key}
+                      onPressedChange={() => setColor(key as AccentName)}
+                      style={{ background: value }}
+                    />
+                  ))}
+                </div>
+              </div>
+              <Label className="rail-control">
+                <span>Type</span>
+                <Picker
+                  dark
+                  label="Typeface"
+                  value={font}
+                  onValueChange={setFont}
+                  options={[{ value: "System" }, { value: "Serif" }]}
+                />
+              </Label>
+              <div className="rail-control">
+                <span>
+                  Radius <output>{radius}</output>
+                </span>
+                <Slider
+                  aria-label="Corner radius"
+                  min={0}
+                  max={24}
+                  step={2}
+                  value={[radius]}
+                  onValueChange={([next]) => setRadius(next)}
+                />
+              </div>
+              <Label className="rail-control">
+                <span>Spacing</span>
+                <Picker
+                  dark
+                  label="Spacing"
+                  value={density}
+                  onValueChange={setDensity}
+                  options={[{ value: "Comfortable" }, { value: "Compact" }]}
+                />
+              </Label>
+            </div>
+            <div className="rail-section component-index">
+              <span className="rail-caption">
+                COMPONENTS{" "}
+                <b>{components.length.toString().padStart(2, "0")}</b>
+              </span>
+              {components.map((item, i) => (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  key={item.id}
+                  onClick={() => {
+                    setQuery("");
+                    setFilter("All");
+                    frame.current?.contentWindow?.postMessage(
+                      { type: "roc-focus", id: item.id },
+                      location.origin,
+                    );
+                    window.dispatchEvent(new Event("roc-preview-interact"));
+                  }}
+                >
+                  <span>{String(i + 1).padStart(2, "0")}</span>
+                  {item.name}
+                  <ExternalLinkIcon aria-hidden="true" />
+                </Button>
+              ))}
+            </div>
+            <div className="rail-bottom">
+              <Button variant="link" size="sm" asChild>
+                <a
+                  href={`${repo}/blob/main/notes/react-design-system.md`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Composition guide ↗
+                </a>
+              </Button>
+            </div>
+          </EdgePanelContent>
+        </EdgePanel>
+        <InputGroup className="search">
+          <InputGroupAddon>
+            <SearchIcon aria-hidden="true" />
+          </InputGroupAddon>
+          <InputGroupInput
             aria-label="Search components"
             placeholder="Find a component…"
             value={query}
@@ -509,30 +603,34 @@ export function App() {
               leaveDetails();
             }}
           />
-          <kbd>/</kbd>
-        </label>
-        <select
+          <InputGroupAddon align="inline-end">
+            <Kbd>/</Kbd>
+          </InputGroupAddon>
+        </InputGroup>
+        <Picker
           className="filter"
-          aria-label="Interaction"
+          label="Interaction"
           value={filter}
-          onChange={(e) => {
-            setFilter(e.target.value);
+          onValueChange={(value) => {
+            setFilter(value);
             leaveDetails();
           }}
-        >
-          {["All", ...new Set(components.flatMap((item) => item.actions))].map(
-            (value) => (
-              <option key={value}>{value}</option>
-            ),
-          )}
-        </select>
+          options={[
+            "All",
+            ...new Set(components.flatMap((item) => item.actions)),
+          ].map((value) => ({ value }))}
+        />
         <nav>
-          <a href={skill} target="_blank" rel="noreferrer">
-            Principles ↗
-          </a>
-          <a href={repo} target="_blank" rel="noreferrer">
-            GitHub ↗
-          </a>
+          <Button variant="link" size="sm" asChild>
+            <a href={skill} target="_blank" rel="noreferrer">
+              Principles ↗
+            </a>
+          </Button>
+          <Button variant="link" size="sm" asChild>
+            <a href={repo} target="_blank" rel="noreferrer">
+              GitHub ↗
+            </a>
+          </Button>
         </nav>
       </header>
       <div className="workspace">

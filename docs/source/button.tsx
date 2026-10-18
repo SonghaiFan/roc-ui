@@ -2,7 +2,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
-import { Slot } from "radix-ui";
+import { Slot } from "./primitive-slot";
 
 const buttonVariants = cva("roc-ui roc-ui-button", {
   variants: {

@@ -9,16 +9,7 @@
   --roc-sh-text-sm--line-height: calc(1.25 / 0.875);
   --roc-sh-font-weight-medium: 500;
   --roc-sh-tracking-widest: 0.1em;
-  --roc-sh-radius-sm: 5px;
-  --roc-sh-radius-md: 7px;
-  --roc-sh-color-foreground: #252525;
-  --roc-sh-color-popover: #fff;
-  --roc-sh-color-popover-foreground: #252525;
-  --roc-sh-color-muted-foreground: #737373;
-  --roc-sh-color-accent: #f3f3f3;
-  --roc-sh-color-accent-foreground: #252525;
   --roc-sh-color-destructive: #b42318;
-  --roc-sh-color-border: #e5e5e5;
 }
 .roc-s-33228ff7d583 {
   pointer-events: none;
@@ -63,13 +54,13 @@
   height: 1px;
 }
 .roc-s-be6b61edce8b {
-  max-height: var(--radix-context-menu-content-available-height);
+  max-height: var(--roc-context-menu-content-available-height);
 }
 .roc-s-e9ab1547c94d {
   min-width: 8rem;
 }
 .roc-s-46e43ffa5bf3 {
-  transform-origin: var(--radix-context-menu-content-transform-origin);
+  transform-origin: var(--roc-context-menu-content-transform-origin);
 }
 .roc-s-d343f41ba73e {
   cursor: default;

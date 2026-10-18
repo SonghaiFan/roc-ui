@@ -12,7 +12,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -25,6 +24,16 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -57,7 +66,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -70,6 +78,16 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/badge.css",
@@ -230,7 +248,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -243,6 +260,26 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-checkbox.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-checkbox.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-form-input.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-form-input.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/checkbox.css",
@@ -274,7 +311,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -287,6 +323,26 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-switch.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-switch.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-form-input.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-form-input.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/switch.css",
@@ -318,8 +374,8 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -331,6 +387,11 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-slider.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slider.tsx"
         },
         {
           "path": "registry/roc/slider.css",
@@ -362,7 +423,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -375,6 +435,21 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-separator.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-separator.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/separator.css",
@@ -406,7 +481,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "class-variance-authority@^0.7.1",
         "clsx@^2.1.1"
       ],
@@ -415,6 +489,31 @@
           "path": "registry/roc/tabs.tsx",
           "type": "registry:file",
           "target": "~/components/roc/tabs.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-tabs.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-tabs.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-roving.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-roving.ts"
+        },
+        {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -451,7 +550,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1"
       ],
@@ -460,6 +558,26 @@
           "path": "registry/roc/accordion.tsx",
           "type": "registry:file",
           "target": "~/components/roc/accordion.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-accordion.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-accordion.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-roving.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-roving.ts"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -497,8 +615,8 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0",
         "class-variance-authority@^0.7.1"
       ],
       "files": [
@@ -513,9 +631,34 @@
           "target": "~/components/roc/utils.ts"
         },
         {
+          "path": "registry/roc/primitive-dialog.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-dialog-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
         },
         {
           "path": "registry/roc/button.css",
@@ -552,8 +695,8 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -565,6 +708,21 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-popover.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popover.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/popover.css",
@@ -597,8 +755,8 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -610,6 +768,26 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-dropdown-menu.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dropdown-menu.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-menu-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-menu-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/dropdown-menu.css",
@@ -641,8 +819,8 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -654,6 +832,21 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-tooltip.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-tooltip.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/tooltip.css",
@@ -729,7 +922,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -742,6 +934,11 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-avatar.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-avatar.tsx"
         },
         {
           "path": "registry/roc/avatar.css",
@@ -773,7 +970,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -781,6 +977,11 @@
           "path": "registry/roc/progress.tsx",
           "type": "registry:file",
           "target": "~/components/roc/progress.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-progress.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-progress.tsx"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -861,7 +1062,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -869,6 +1069,26 @@
           "path": "registry/roc/toggle.tsx",
           "type": "registry:file",
           "target": "~/components/roc/toggle.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-toggle.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-toggle.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -906,7 +1126,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -914,6 +1133,41 @@
           "path": "registry/roc/toggle-group.tsx",
           "type": "registry:file",
           "target": "~/components/roc/toggle-group.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-toggle-group.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-toggle-group.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
+        },
+        {
+          "path": "registry/roc/primitive-toggle.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-toggle.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/roc/primitive-roving.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-roving.ts"
         },
         {
           "path": "registry/roc/toggle.tsx",
@@ -961,7 +1215,6 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -974,6 +1227,36 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-radio-group.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-radio-group.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-form-input.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-form-input.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-roving.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-roving.ts"
+        },
+        {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/radio-group.css",
@@ -1005,7 +1288,7 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
+        "@base-ui/react@^1.9.0",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1013,6 +1296,11 @@
           "path": "registry/roc/scroll-area.tsx",
           "type": "registry:file",
           "target": "~/components/roc/scroll-area.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-scroll-area.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-scroll-area.tsx"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -1050,7 +1338,6 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1063,6 +1350,16 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/breadcrumb.css",
@@ -1096,8 +1393,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1"
+        "class-variance-authority@^0.7.1"
       ],
       "files": [
         {
@@ -1114,6 +1410,16 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -1150,8 +1456,8 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0",
         "class-variance-authority@^0.7.1"
       ],
       "files": [
@@ -1166,9 +1472,34 @@
           "target": "~/components/roc/utils.ts"
         },
         {
+          "path": "registry/roc/primitive-alert-dialog.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-alert-dialog.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-dialog-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
         },
         {
           "path": "registry/roc/button.css",
@@ -1215,7 +1546,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1228,6 +1558,11 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-aspect-ratio.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-aspect-ratio.tsx"
         },
         {
           "path": "registry/roc/aspect-ratio.css",
@@ -1270,7 +1605,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1283,6 +1617,16 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.tsx",
@@ -1335,7 +1679,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1348,6 +1691,16 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/bubble.css",
@@ -1390,7 +1743,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1405,9 +1757,24 @@
           "target": "~/components/roc/utils.ts"
         },
         {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
           "path": "registry/roc/separator.tsx",
           "type": "registry:file",
           "target": "~/components/roc/separator.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-separator.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-separator.tsx"
         },
         {
           "path": "registry/roc/separator.css",
@@ -1457,8 +1824,7 @@
         "lucide-react@^1.59.0",
         "react-day-picker@^10.0.2",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1"
+        "class-variance-authority@^0.7.1"
       ],
       "files": [
         {
@@ -1475,6 +1841,16 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -1524,8 +1900,7 @@
         "embla-carousel-react@^8.6.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1"
+        "class-variance-authority@^0.7.1"
       ],
       "files": [
         {
@@ -1542,6 +1917,16 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -1644,8 +2029,7 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "class-variance-authority@^0.7.1",
-        "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "clsx@^2.1.1"
       ],
       "files": [
         {
@@ -1662,6 +2046,16 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -1708,7 +2102,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1716,6 +2109,26 @@
           "path": "registry/roc/collapsible.tsx",
           "type": "registry:file",
           "target": "~/components/roc/collapsible.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-collapsible.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-collapsible.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -1755,8 +2168,7 @@
         "@base-ui/react@^1.9.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1"
+        "class-variance-authority@^0.7.1"
       ],
       "files": [
         {
@@ -1773,6 +2185,16 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -1852,7 +2274,7 @@
         "cmdk@^1.1.1",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "radix-ui@^1.8.1",
+        "@base-ui/react@^1.9.0",
         "class-variance-authority@^0.7.1"
       ],
       "files": [
@@ -1872,9 +2294,34 @@
           "target": "~/components/roc/dialog.tsx"
         },
         {
+          "path": "registry/roc/primitive-dialog.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-dialog-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
         },
         {
           "path": "registry/roc/button.css",
@@ -1927,8 +2374,8 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -1940,6 +2387,26 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-context-menu.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-context-menu.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-menu-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-menu-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/context-menu.css",
@@ -1983,8 +2450,7 @@
         "react@^19.0.0",
         "@tanstack/react-table@^8.21.3",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1"
+        "class-variance-authority@^0.7.1"
       ],
       "files": [
         {
@@ -2038,6 +2504,16 @@
           "target": "~/components/roc/button.tsx"
         },
         {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
           "path": "registry/roc/button.css",
           "type": "registry:file",
           "target": "~/components/roc/button.css"
@@ -2071,7 +2547,7 @@
         "react-day-picker@^10.0.2",
         "clsx@^2.1.1",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1"
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -2093,6 +2569,16 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -2125,6 +2611,16 @@
           "target": "~/components/roc/popover.tsx"
         },
         {
+          "path": "registry/roc/primitive-popover.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popover.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
           "path": "registry/roc/popover.css",
           "type": "registry:file",
           "target": "~/components/roc/popover.css"
@@ -2154,8 +2650,8 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -2167,6 +2663,16 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-direction.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
         },
         {
           "path": "registry/roc/direction.css",
@@ -2317,8 +2823,7 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "clsx@^2.1.1"
       ],
       "files": [
         {
@@ -2335,6 +2840,21 @@
           "path": "registry/roc/label.tsx",
           "type": "registry:file",
           "target": "~/components/roc/label.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-label.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-label.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/label.css",
@@ -2360,6 +2880,11 @@
           "path": "registry/roc/separator.tsx",
           "type": "registry:file",
           "target": "~/components/roc/separator.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-separator.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-separator.tsx"
         },
         {
           "path": "registry/roc/separator.css",
@@ -2391,8 +2916,8 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -2404,6 +2929,21 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-hover-card.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-hover-card.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/hover-card.css",
@@ -2446,8 +2986,7 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "clsx@^2.1.1"
       ],
       "files": [
         {
@@ -2464,6 +3003,16 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -2586,7 +3135,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -2601,9 +3149,24 @@
           "target": "~/components/roc/utils.ts"
         },
         {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
           "path": "registry/roc/separator.tsx",
           "type": "registry:file",
           "target": "~/components/roc/separator.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-separator.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-separator.tsx"
         },
         {
           "path": "registry/roc/separator.css",
@@ -2703,7 +3266,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -2716,6 +3278,21 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-label.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-label.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/label.css",
@@ -2758,7 +3335,6 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -2771,6 +3347,16 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/marker.css",
@@ -2813,8 +3399,8 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -2826,6 +3412,26 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-menubar.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-menubar.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-menu-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-menu-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/menubar.css",
@@ -2923,8 +3529,7 @@
         "@shadcn/react@^0.3.1",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1"
+        "class-variance-authority@^0.7.1"
       ],
       "files": [
         {
@@ -2941,6 +3546,16 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -3043,8 +3658,8 @@
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
         "lucide-react@^1.59.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "react-dom@^19.0.0"
       ],
       "files": [
         {
@@ -3056,6 +3671,36 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-navigation-menu.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-navigation-menu.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-direction-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction-context.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/roc/primitive-roving.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-roving.ts"
         },
         {
           "path": "registry/roc/navigation-menu.css",
@@ -3100,8 +3745,7 @@
         "lucide-react@^1.59.0",
         "@shadcn/react@^0.3.1",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1"
+        "class-variance-authority@^0.7.1"
       ],
       "files": [
         {
@@ -3118,6 +3762,16 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -3220,8 +3874,8 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -3233,6 +3887,21 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-select.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-select.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/select.css",
@@ -3275,8 +3944,8 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "radix-ui@^1.8.1",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -3288,6 +3957,26 @@
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-dialog.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-dialog-core.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-dialog-core.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/sheet.css",
@@ -3329,7 +4018,6 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "radix-ui@^1.8.1",
         "lucide-react@^1.59.0",
         "class-variance-authority@^0.7.1",
         "clsx@^2.1.1"
@@ -3339,6 +4027,16 @@
           "path": "registry/roc/sidebar.tsx",
           "type": "registry:file",
           "target": "~/components/roc/sidebar.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.tsx",
@@ -3505,8 +4203,7 @@
         "lucide-react@^1.59.0",
         "@base-ui/react@^1.9.0",
         "clsx@^2.1.1",
-        "class-variance-authority@^0.7.1",
-        "radix-ui@^1.8.1"
+        "class-variance-authority@^0.7.1"
       ],
       "files": [
         {
@@ -3523,6 +4220,16 @@
           "path": "registry/roc/button.tsx",
           "type": "registry:file",
           "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
         },
         {
           "path": "registry/roc/button.css",
@@ -3570,8 +4277,7 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "clsx@^2.1.1",
-        "radix-ui@^1.8.1"
+        "clsx@^2.1.1"
       ],
       "files": [
         {
@@ -3588,6 +4294,26 @@
           "path": "registry/roc/collapsible.tsx",
           "type": "registry:file",
           "target": "~/components/roc/collapsible.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-collapsible.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-collapsible.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/collapsible.css",
@@ -4096,6 +4822,107 @@
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "edge-panel",
+      "type": "registry:component",
+      "title": "Edge Panel",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "lucide-react@^1.59.0",
+        "class-variance-authority@^0.7.1",
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/edge-panel.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/edge-panel.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-slot.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/scroll-area.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/scroll-area.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-scroll-area.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-scroll-area.tsx"
+        },
+        {
+          "path": "registry/roc/scroll-area.css",
+          "type": "registry:file",
+          "target": "~/components/roc/scroll-area.css"
+        },
+        {
+          "path": "registry/roc/toggle.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/toggle.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-toggle.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-toggle.tsx"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
+        },
+        {
+          "path": "registry/roc/toggle.css",
+          "type": "registry:file",
+          "target": "~/components/roc/toggle.css"
+        },
+        {
+          "path": "registry/roc/edge-panel.css",
+          "type": "registry:file",
+          "target": "~/components/roc/edge-panel.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
         }
       ]
     }

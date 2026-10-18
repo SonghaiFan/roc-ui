@@ -3,7 +3,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
-import { Slot } from "radix-ui";
+import { Slot } from "./primitive-slot";
 const markerVariants = cva(
   "roc-s-7f968dfc1113 roc-s-d2d9e1f13413 roc-s-222f930b8752 roc-s-db5d34295fcd roc-s-58d0413dd93c roc-s-71556df3b421 roc-s-074569488cca roc-s-1a5d10977b93 roc-s-c74ab393b96d roc-s-35f35c41d134 roc-s-eb5ef2dbc2d4 roc-s-ac4e5f6d16c0 roc-s-e97fb9d15235 roc-s-f006185bfb5b",
   {

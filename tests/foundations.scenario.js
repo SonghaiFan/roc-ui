@@ -14,8 +14,8 @@ async (page) => {
   ).contentFrame();
   await view.locator("#tabs").waitFor();
   assert(
-    (await view.locator(".component-card").count()) === 66,
-    "All 66 customized shadcn components are mounted",
+    (await view.locator(".component-card").count()) === 67,
+    "All 67 customized shadcn components are mounted",
   );
   const focus = async (name) => {
     const back = page.getByRole("button", {
@@ -247,13 +247,22 @@ async (page) => {
       "Rename selected",
     "Dropdown keyboard selection invokes the action",
   );
+  // Focus returns when the exit animation ends, so wait for it rather than sampling once.
+  await view.waitForFunction(
+    () =>
+      document.activeElement?.getAttribute("data-slot") ===
+      "dropdown-menu-trigger",
+  );
   assert(
     await menuTrigger.evaluate((el) => el === document.activeElement),
     "Menu restores trigger focus",
   );
   await focus("Tooltip");
   const tip = view.getByRole("button", { name: "Keep original", exact: true });
+  // Base UI opens a tooltip for keyboard focus (:focus-visible), not scripted focus.
   await tip.focus();
+  await page.keyboard.press("Shift+Tab");
+  await page.keyboard.press("Tab");
   await view.getByRole("tooltip").waitFor();
   assert(
     await view.getByRole("tooltip").isVisible(),

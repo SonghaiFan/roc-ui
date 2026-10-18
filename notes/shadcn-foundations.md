@@ -4,7 +4,7 @@ Version 0.10 includes 25 customized foundations; the earlier 10 source-informed 
 
 ## What is kept
 
-The composition names (`Tabs`, `TabsList`, `TabsTrigger`, `TabsContent`, etc.), native field props, Radix semantics, controlled/uncontrolled state patterns, `asChild` composition and variant helpers remain available. Dialog, Popover, Dropdown Menu and Tooltip use Radix for focus, dismissal and positioning. The project does not reimplement a generic focus trap.
+The composition names (`Tabs`, `TabsList`, `TabsTrigger`, `TabsContent`, etc.), native field props, ARIA semantics, controlled/uncontrolled state patterns, `asChild` composition and variant helpers remain available. Dialog, Popover, Dropdown Menu and Tooltip use Base UI for focus, dismissal and positioning; the project does not reimplement a generic focus trap. See [primitives.md](primitives.md) for what ROC owns.
 
 ## What ROC changes
 
@@ -16,23 +16,23 @@ The composition names (`Tabs`, `TabsList`, `TabsTrigger`, `TabsContent`, etc.), 
 | Checkbox | Checked/indeterminate semantics with a larger interaction target. |
 | Switch | The same thumb follows state changes; reversals continue from the current transform. |
 | Slider | Direct pointer manipulation and keyboard refinement. `thumbLabels` names multiple thumbs; a single thumb inherits `aria-label`. |
-| Tabs | Radix tab semantics plus one measured selection marker. Panels are force-mounted, with inactive panels hidden and inert. An uncontrolled editor retains its DOM node, value and selection. |
-| Accordion | Force-mounted content with inert closed panels. Inner CSS grid tracks animate opening, closing and reversal; the Radix measurement wrapper owns no layout animation. |
-| Dialog | One open form changes from a centred desktop surface to a bottom-aligned phone surface. Visible height subtracts device/host safe edges. Radix keeps focus trapping, Escape and focus return. |
+| Tabs | Tab semantics plus one measured selection marker. Panels are force-mounted, with inactive panels hidden and inert. An uncontrolled editor retains its DOM node, value and selection. |
+| Accordion | Force-mounted content with inert closed panels. Inner CSS grid tracks animate opening, closing and reversal; the primitive owns no layout animation. |
+| Dialog | One open form changes from a centred desktop surface to a bottom-aligned phone surface. Visible height subtracts device/host safe edges. Base UI keeps focus trapping, Escape and focus return. |
 | Popover, Dropdown Menu, Tooltip | Trigger-relative context, collision-aware placement, keyboard access and reduced-motion paths. Tooltips are supplemental, delayed context, never the only label for an action. |
 | Alert | Inline semantic notice with neutral/destructive variants. The caller controls when to announce updates. |
 | Avatar | Reserved dimensions for image/fallback, three sizes, presence badge and groups; no layout shift when a portrait loads. |
-| Progress | One retained fill, custom `max`, clamped finite values and real Radix progress semantics. Missing/null value means indeterminate, with no `aria-valuenow`; reduced motion uses a static indicator. |
+| Progress | One retained fill, custom `max`, clamped finite values and real progressbar semantics. Missing/null value means indeterminate, with no `aria-valuenow`; reduced motion uses a static indicator. |
 | Skeleton | Static, decorative placeholder. The host supplies dimensions and loading announcements, reserving the final footprint without ambient shimmer. |
 | Toggle / Toggle Group | Pressed state, single/multiple selection, roving focus and scoped appearance. Native controls and caller-owned data stay in place. |
 | Radio Group | Radio semantics, form integration, disabled options and arrow-key selection. Labels remain caller-composed. |
-| Scroll Area | Retained native viewport, Radix scrollbars, keyboard focus, `viewportProps` for refs/accessibility and `scrollbars` (vertical, horizontal or both). Host supplies height/width. |
+| Scroll Area | Retained native viewport, custom scrollbars, keyboard focus, `viewportProps` for refs/accessibility and `scrollbars` (vertical, horizontal or both). Host supplies height/width. |
 | Breadcrumb | Semantic path with wrapping, `asChild` links and `aria-current="page"`. Routing remains with the host. |
 | Pagination | Current-page links and explicit `disabled` behavior. Disabled links have no `href`, cannot invoke `onClick` and leave the tab order. Host owns the page data and navigation. |
 
-The adaptations use component-scoped CSS rather than shadcn's Tailwind utility strings. Consumers do not need a Tailwind build, gallery CSS or application aliases. Use `--roc-paper`, `--roc-ink`, `--roc-line`, `--roc-muted`, `--roc-marker`, `--roc-radius`, and `--roc-focus` for appearance. Put shared tokens on the document root if portals should inherit them. A themed app with several independent roots may instead use the underlying Radix portal composition.
+The adaptations use component-scoped CSS rather than shadcn's Tailwind utility strings. Consumers do not need a Tailwind build, gallery CSS or application aliases. Use `--roc-paper`, `--roc-ink`, `--roc-line`, `--roc-muted`, `--roc-marker`, `--roc-radius`, and `--roc-focus` for appearance. Put shared tokens on the document root if portals should inherit them. A themed app with several independent roots may instead use the underlying Base UI portal composition.
 
-The registry recursively includes local imports, styles, utilities and both applicable license notices. External dependencies are derived from source imports: React, Radix UI, lucide-react, class-variance-authority and clsx as needed. No legacy Syuze or Franklin application runtime is installed. `upstream/` and gallery demos are not part of an install.
+The registry recursively includes local imports, styles, utilities and both applicable license notices. External dependencies are derived from source imports: React, Base UI, lucide-react, class-variance-authority and clsx as needed. No component installs Radix. No legacy Syuze or Franklin application runtime is installed. `upstream/` and gallery demos are not part of an install.
 
 ## Micro-motion
 
@@ -42,7 +42,7 @@ Small transitions are adapted from [transitions.dev](https://transitions.dev) (f
 
 | Foundation | Motion |
 | --- | --- |
-| Dropdown Menu, Popover | Scale from the Radix transform origin (0.97 → 1, 250 ms); quieter 0.99 exit (150 ms) |
+| Dropdown Menu, Popover | Scale from the trigger's transform origin (0.97 → 1, 250 ms); quieter 0.99 exit (150 ms) |
 | Dialog | Scale 0.96 → 1 in 250 ms, 150 ms exit; position and width keep their own transitions |
 | Tooltip | 0.98 scale and fade in 150 ms, 50 ms exit |
 | Tabs | Marker and label colour share one 250 ms ease |
@@ -54,7 +54,7 @@ Small transitions are adapted from [transitions.dev](https://transitions.dev) (f
 
 Earlier components were reviewed against the same library. Voice player swaps play and pause as an icon swap, Continuous tabs eases its label colour with the marker, and Focus lanes de-blurs headings as a lane opens. Folder fan, Source stack, Focus lanes geometry, Page book, Image viewport, Expandable card, Card preview, Source tray and Selection toolbar are driven by measured geometry or springs, so no library transition fits and they are left unchanged.
 
-Exit motion on Dialog, Popover, Dropdown Menu and Tooltip is a CSS animation, not a transition, so Radix Presence keeps the content mounted until it finishes. Tooltip does not travel between triggers: each Radix tooltip is its own surface.
+Exit motion on Dialog, Popover, Dropdown Menu and Tooltip is a CSS animation, not a transition, so the content stays mounted until it finishes. Tooltip does not travel between triggers: each tooltip is its own surface.
 
 ## Continuity boundaries
 
@@ -68,4 +68,4 @@ Exit motion on Dialog, Popover, Dropdown Menu and Tooltip is a CSS animation, no
 
 `npm run check`, registry closure/dependency checks, isolated consumer compilation and server rendering cover the downloadable boundary. Browser scenarios exercise keyboard selection and dismissal, retained editor identity, interrupted Accordion reversal, marker destination, pending-button geometry, dialog phone/desktop geometry and covered bottom edges. Runtime checks are Chromium; this does not certify physical iOS/Android devices or all assistive technologies.
 
-A source-backed issue encountered during adaptation: Radix Collapsible temporarily sets `transitionDuration: 0s` on its content while measuring. Putting the grid transition on that element jumped from 118 px to 0 px within the sampled 50 ms, despite a computed 320 ms transition. Moving the transition to an inner retained wrapper keeps measurement and animation ownership separate. The browser scenario checks an intermediate nonzero height, reversal and the zero-height destination.
+A source-backed issue encountered during adaptation, when Collapsible was still built on Radix: its collapsible content temporarily set `transitionDuration: 0s` on its content while measuring. Putting the grid transition on that element jumped from 118 px to 0 px within the sampled 50 ms, despite a computed 320 ms transition. Moving the transition to an inner retained wrapper keeps measurement and animation ownership separate. The browser scenario checks an intermediate nonzero height, reversal and the zero-height destination.

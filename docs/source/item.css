@@ -9,16 +9,8 @@
   --roc-sh-font-weight-medium: 500;
   --roc-sh-leading-snug: 1.375;
   --roc-sh-leading-normal: 1.5;
-  --roc-sh-radius-sm: 5px;
-  --roc-sh-radius-md: 7px;
   --roc-sh-default-transition-duration: 150ms;
   --roc-sh-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --roc-sh-color-primary: var(--roc-accent, #252525);
-  --roc-sh-color-muted: #f5f5f5;
-  --roc-sh-color-muted-foreground: #737373;
-  --roc-sh-color-accent: #f3f3f3;
-  --roc-sh-color-border: #e5e5e5;
-  --roc-sh-color-ring: #737373;
 }
 .roc-s-4f43e31e043e {
   margin-block: 0px;
