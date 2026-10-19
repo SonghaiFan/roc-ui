@@ -4,12 +4,13 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  gap: 8px;
-  min-height: 36px;
+  gap: var(--roc-space-2, 8px);
+  min-height: var(--roc-control-height, 36px);
   padding: 8px 15px;
   border: 1px solid transparent;
   border-radius: var(--roc-button-radius, var(--roc-radius-control));
-  font-weight: 500;
+  font-family: var(--roc-font-control, inherit);
+  font-weight: var(--roc-weight-control, 500);
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;

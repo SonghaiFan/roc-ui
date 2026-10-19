@@ -1,0 +1,14 @@
+@import "./ui-base.css";
+.roc-motion-text { position: relative; font-size: inherit; line-height: 1.4; }
+.roc-motion-text > [data-slot="splitting-text"] { display: inline; }
+.roc-typing-frame { display: inline-grid; }
+.roc-typing-reserve, .roc-typing-visible { grid-area: 1 / 1; }
+.roc-typing-reserve { visibility: hidden; }
+.roc-motion-number { font-size: inherit; font-variant-numeric: tabular-nums; display: inline-block; line-height: 1.2; }
+.roc-number-digits { display: inline-flex; }
+.roc-number-window { height: 1.2em; width: 1ch; overflow: hidden; display: inline-block; }
+.roc-number-window > span { display: flex; flex-direction: column; }
+.roc-number-window > span > span { height: 1.2em; }
+.roc-number-slide { overflow: hidden; vertical-align: bottom; }
+.roc-number-slide > span[aria-hidden] { display: inline-block; position: relative; }
+.roc-number-slide > span[aria-hidden] > span { display: inline-block; }

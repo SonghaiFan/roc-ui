@@ -1,3 +1,9 @@
+import { DesignSystem } from "./DesignSystem";
+import { InterfaceExample, interfaceIds, interfaceStories } from "./InterfaceExamples";
+import { collections, collectionFor } from "./collections";
+import { ToggleGroup, ToggleGroupItem } from "../registry/roc/toggle-group";
+import { PreviewControlsTarget } from "./PreviewControls";
+import { motionIds } from "./motion-catalog";
 import {
   useLayoutEffect,
   useEffect,
@@ -7,7 +13,6 @@ import {
 } from "react";
 import {
   CodeXmlIcon,
-  DownloadIcon,
   ExternalLinkIcon,
   Maximize2Icon,
   Minimize2Icon,
@@ -58,18 +63,14 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTitle,
+  SheetTrigger,
 } from "../registry/roc/sheet";
 import { foundationIds } from "./foundations";
 import { catalog } from "./catalog";
 import { FoundationExample } from "./FoundationExamples";
-import {
-  EdgePanel,
-  EdgePanelContent,
-  EdgePanelTrigger,
-  useEdgePanel,
-} from "../registry/roc/edge-panel";
+
 import { ViewportPreview } from "./ViewportPreview";
-import { palette, accentForeground, radiusPresets, type AccentName } from "./settings";
+import { palette, accentForeground, radiusPresets, fontFamilies, type AccentName } from "./settings";
 import "./site.css";
 const repo = "https://github.com/SonghaiFan/roc-ui";
 const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
@@ -200,23 +201,70 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
     </Sheet>
   );
 }
-/** Interacting with the live preview dismisses an unpinned settings panel. */
-function DismissOnPreview() {
-  const { hide, compact } = useEdgePanel();
-  useEffect(() => {
-    const dismiss = () => { if (!compact) hide(); };
-    window.addEventListener("roc-preview-interact", dismiss);
-    return () => window.removeEventListener("roc-preview-interact", dismiss);
-  }, [hide, compact]);
-  return null;
+function ComponentDisplayCard({ item, focused, hidden, onFocus, onSource }: {
+  item: Item; focused: boolean; hidden: boolean; onFocus: () => void; onSource: () => void;
+}) {
+  const [controls, setControls] = useState<HTMLDivElement | null>(null);
+  return <PreviewControlsTarget value={controls}>
+    <Card
+      id={item.id}
+      className={`component-card component-${item.id}`}
+      hidden={hidden}
+      role="article"
+    >
+      <CardHeader className="component-heading">
+        <CardTitle role="heading" aria-level={2}>
+          <span className="component-family">{interfaceStories[item.id]?.origin ?? collectionFor(item)}</span>
+          {item.name}
+        </CardTitle>
+        <CardAction>
+          <div className="preview-header-controls" ref={setControls} />
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            className="focus-preview"
+            aria-label={`Focus ${item.name} preview`}
+            aria-pressed={focused}
+            onClick={onFocus}
+          >
+            {focused ? (
+              <Minimize2Icon aria-hidden="true" />
+            ) : (
+              <Maximize2Icon aria-hidden="true" />
+            )}
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            aria-label={`${item.name} source and install`}
+            title="Source & install"
+            onClick={onSource}
+          >
+            <CodeXmlIcon aria-hidden="true" />
+          </Button>
+        </CardAction>
+      </CardHeader>
+      <div className="component-preview" data-component={item.id}>
+        {interfaceIds.includes(item.id) ? <InterfaceExample id={item.id} /> : <FoundationExample id={item.id} />}
+      </div>
+      <CardFooter className="component-footer">
+        <span>{interfaceStories[item.id]?.principle ?? item.description}</span>
+      </CardFooter>
+    </Card>
+  </PreviewControlsTarget>;
 }
-const components = foundationIds.map(
+const primitiveIds = [...foundationIds, ...motionIds];
+const galleryIds = [...primitiveIds, ...interfaceIds];
+const components = galleryIds.map(
   (id) => catalog.find((item) => item.id === id)!,
 );
 export function App() {
   const embedded = new URLSearchParams(location.search).get("preview") === "1";
   const frame = useRef<HTMLIFrameElement>(null);
   const [focused, setFocused] = useState("");
+  const [appearanceOpen, setAppearanceOpen] = useState(false);
+  const focusReturn = useRef("");
+  const skipReturn = useRef(false);
   const [selected, setSelected] = useState(
     () => components.find((c) => c.id === location.hash.slice(1))?.id ?? "",
   );
@@ -228,10 +276,12 @@ export function App() {
     [surface, setSurface] = useState("White"),
     [density, setDensity] = useState("Comfortable");
   const [font, setFont] = useState("System");
+  const [collection, setCollection] = useState("All");
   const visible = components.filter(
     (c) =>
+      (interfaceIds.includes(c.id) || collection === "All" || collectionFor(c) === collection) &&
       (filter === "All" || c.actions.includes(filter)) &&
-      `${c.name} ${c.description}`.toLowerCase().includes(query.toLowerCase()),
+      `${c.name} ${c.description} ${collectionFor(c)}`.toLowerCase().includes(query.toLowerCase()),
   );
   const open = (id: string) => {
     if (embedded) {
@@ -276,7 +326,7 @@ export function App() {
     window.addEventListener("keydown", search);
     return () => window.removeEventListener("keydown", search);
   }, [selected]);
-  const config = { query, filter, color, radius, corners, surface, density, font };
+  const config = { collection, query, filter, color, radius, corners, surface, density, font };
   const latestConfig = useRef(config);
   latestConfig.current = config;
   const syncFrame = () =>
@@ -286,13 +336,14 @@ export function App() {
     );
   useEffect(() => {
     if (!embedded) syncFrame();
-  }, [query, filter, color, radius, corners, surface, density, font]);
+  }, [collection, query, filter, color, radius, corners, surface, density, font]);
   useEffect(() => {
     const receive = (event: MessageEvent) => {
       if (event.origin !== location.origin) return;
       if (embedded && event.source === parent) {
         if (event.data?.type === "roc-config") {
           const c = event.data.config;
+          setCollection(c.collection ?? "All");
           setQuery(c.query);
           setFilter(c.filter);
           setColor(c.color);
@@ -302,17 +353,29 @@ export function App() {
           setDensity(c.density);
           setFont(c.font);
         }
+        if (event.data?.type === "roc-section" && ["design-system", "primitives", "interfaces"].includes(event.data.id)) {
+          skipReturn.current = true;
+          setFocused("");
+          requestAnimationFrame(() => document.getElementById(event.data.id)?.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" }));
+        }
         if (event.data?.type === "roc-focus") {
-          if (event.data.id === "" || foundationIds.includes(event.data.id))
+          if (event.data.id === "" || galleryIds.includes(event.data.id))
             setFocused(event.data.id);
           window.scrollTo({ top: 0, behavior: "instant" });
         }
+      } else if (!embedded && event.source === frame.current?.contentWindow && event.data?.type === "roc-category") {
+        if (collections.some(group => group.name === event.data.value)) setCollection(event.data.value);
+      } else if (!embedded && event.source === frame.current?.contentWindow && event.data?.type === "roc-theme") {
+        const { setting, value } = event.data;
+        if (setting === "color" && Object.hasOwn(palette, value)) setColor(value as AccentName);
+        if (setting === "radius" && radiusPresets.some(preset => Number(preset.value) === value)) setRadius(value);
+        if (setting === "font" && Object.hasOwn(fontFamilies, value)) setFont(value);
       } else if (
         !embedded &&
         event.source === frame.current?.contentWindow &&
         event.data?.type === "roc-focused"
       ) {
-        if (event.data.id === "" || foundationIds.includes(event.data.id))
+        if (event.data.id === "" || galleryIds.includes(event.data.id))
           setFocused(event.data.id);
       } else if (
         !embedded &&
@@ -358,6 +421,16 @@ export function App() {
     if (embedded)
       parent.postMessage({ type: "roc-focused", id: focused }, location.origin);
   }, [embedded, focused]);
+  useLayoutEffect(() => {
+    if (!embedded) return;
+    if (focused) { focusReturn.current = focused; return; }
+    const id = focusReturn.current;
+    focusReturn.current = "";
+    if (skipReturn.current) { skipReturn.current = false; return; }
+    if (!id) return;
+    const task = requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: "start", behavior: "instant" }));
+    return () => cancelAnimationFrame(task);
+  }, [embedded, focused]);
   const leaveDetails = () => {
     setFocused("");
     frame.current?.contentWindow?.postMessage(
@@ -372,10 +445,10 @@ export function App() {
     "--roc-radius": `${radius}px`,
     "--roc-corner-shape": corners === "Smooth" ? "squircle" : "round",
     "--roc-paper": surface === "Paper" ? "#fcfbf7" : "#fff",
-    "--preview-font":
-      font === "System"
-        ? "ui-sans-serif, system-ui, sans-serif"
-        : "Georgia, serif",
+    "--preview-font": fontFamilies[font as keyof typeof fontFamilies] ?? fontFamilies.System,
+    "--roc-font-body": fontFamilies[font as keyof typeof fontFamilies] ?? fontFamilies.System,
+    "--roc-font-heading": fontFamilies[font as keyof typeof fontFamilies] ?? fontFamilies.System,
+    "--roc-font-control": fontFamilies[font as keyof typeof fontFamilies] ?? fontFamilies.System,
   } as CSSProperties;
   useLayoutEffect(() => {
     if (!embedded) return;
@@ -390,64 +463,42 @@ export function App() {
           data-density={density.toLowerCase()}
           data-focused={!!focused}
         >
-          <div className="masonry" aria-label="Component previews">
-            {components.map((item) => (
-              <Card
-                id={item.id}
-                key={item.id}
-                className={`component-card component-${item.id}`}
+          <section id="design-system" className="gallery-layer foundation-layer" aria-labelledby="design-system-title" hidden={!!focused}>
+            <div className="layer-heading"><span className="layer-number">01</span><div><h1 id="design-system-title">Design System</h1><p>The shared visual language. Colour, typography, corners and space.</p></div><span className="layer-meta">The foundation</span></div>
+            <DesignSystem color={color} radius={radius} font={font}
+              onColor={value => { setColor(value); parent.postMessage({ type: "roc-theme", setting: "color", value }, location.origin); }}
+              onRadius={value => { setRadius(value); parent.postMessage({ type: "roc-theme", setting: "radius", value }, location.origin); }}
+              onFont={value => { setFont(value); parent.postMessage({ type: "roc-theme", setting: "font", value }, location.origin); }} />
+            <div className="layer-connection"><span>Shared tokens</span><span>Used by primitives and interfaces ↓</span></div>
+          </section>
+          <section id="primitives" className="gallery-layer" aria-labelledby="primitives-title" hidden={!!focused && interfaceIds.includes(focused)}>
+            <div className="layer-heading" hidden={!!focused}><span className="layer-number">02</span><div><h2 id="primitives-title">Primitives</h2><p>One behaviour at a time. Built with the same visual foundations.</p></div><span className="layer-meta">{primitiveIds.length} components</span></div>
+            <div className="catalog-browser" hidden={!!focused}>
+              <ToggleGroup type="single" value={collection} onValueChange={value => {
+                setCollection(value || "All");
+                parent.postMessage({ type: "roc-category", value: value || "All" }, location.origin);
+              }} className="collection-switch" aria-label="Component categories">
+                {collections.map(group => <ToggleGroupItem key={group.name} value={group.name} aria-label={group.name}>{group.name}</ToggleGroupItem>)}
+              </ToggleGroup>
+              <div className="catalog-results"><p>{collections.find(group => group.name === collection)?.description}</p><output aria-live="polite">{visible.filter(item => primitiveIds.includes(item.id)).length} results</output></div>
+            </div>
+            <div className="masonry" aria-label="Primitive previews">
+              {components.filter(item => primitiveIds.includes(item.id)).map(item => <ComponentDisplayCard key={item.id} item={item} focused={focused === item.id}
                 hidden={focused ? item.id !== focused : !visible.includes(item)}
-                role="article"
-              >
-                <CardHeader className="component-heading">
-                  <CardTitle role="heading" aria-level={2}>
-                    {item.name}
-                  </CardTitle>
-                  <CardAction>
-                    <Button
-                      variant="ghost"
-                      size="icon-sm"
-                      className="focus-preview"
-                      aria-label={`Focus ${item.name} preview`}
-                      aria-pressed={focused === item.id}
-                      onClick={() => {
-                        setFocused(focused === item.id ? "" : item.id);
-                        window.scrollTo({ top: 0, behavior: "instant" });
-                      }}
-                    >
-                      {focused === item.id ? (
-                        <Minimize2Icon aria-hidden="true" />
-                      ) : (
-                        <Maximize2Icon aria-hidden="true" />
-                      )}
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon-sm"
-                      aria-label={`View ${item.name} source`}
-                      onClick={() => open(item.id)}
-                    >
-                      <CodeXmlIcon aria-hidden="true" />
-                    </Button>
-                  </CardAction>
-                </CardHeader>
-                <div className="component-preview" data-component={item.id}>
-                  <FoundationExample id={item.id} />
-                </div>
-                <CardFooter className="component-footer">
-                  <span>{item.description}</span>
-                  <Button
-                    variant="ghost"
-                    size="icon-xs"
-                    onClick={() => open(item.id)}
-                    aria-label={`Install ${item.name}`}
-                  >
-                    <DownloadIcon aria-hidden="true" />
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
+                onFocus={() => { setFocused(focused === item.id ? "" : item.id); window.scrollTo({ top: 0, behavior: "instant" }); }}
+                onSource={() => open(item.id)} />)}
+            </div>
+            <div className="layer-connection" hidden={!!focused}><span>Composed behaviours</span><span>Combined into complete experiences ↓</span></div>
+          </section>
+          <section id="interfaces" className="gallery-layer" aria-labelledby="interfaces-title" hidden={!!focused && !interfaceIds.includes(focused)}>
+            <div className="layer-heading" hidden={!!focused}><span className="layer-number">03</span><div><h2 id="interfaces-title">Interfaces</h2><p>Complete interactions, drawn from real projects. Try the flow, keep the context.</p></div><span className="layer-meta">{interfaceIds.length} practice cases</span></div>
+            <div className="masonry interface-gallery" aria-label="Interface practice cases">
+              {components.filter(item => interfaceIds.includes(item.id)).map(item => <ComponentDisplayCard key={item.id} item={item} focused={focused === item.id}
+                hidden={focused ? item.id !== focused : !visible.includes(item)}
+                onFocus={() => { setFocused(focused === item.id ? "" : item.id); window.scrollTo({ top: 0, behavior: "instant" }); }}
+                onSource={() => open(item.id)} />)}
+            </div>
+          </section>
           {!focused && !visible.length && (
             <Empty className="empty">
               <EmptyHeader>
@@ -460,6 +511,7 @@ export function App() {
                   onClick={() => {
                     setQuery("");
                     setFilter("All");
+                    setCollection("All");
                   }}
                 >
                   Clear search
@@ -476,15 +528,14 @@ export function App() {
         <a className="brand" href={location.pathname} aria-label="ROC home">
           roc
         </a>
-        <span className="top-title">
-          Components{" "}
-          <Badge variant="secondary" className="count">
-            {visible.length}
-          </Badge>
-        </span>
-        <EdgePanel id="design-settings">
-          <DismissOnPreview />
-          <EdgePanelTrigger asChild>
+        <nav className="level-navigation" aria-label="Gallery levels">
+          {[["design-system", "Design System"], ["primitives", "Primitives"], ["interfaces", "Interfaces"]].map(([id, label], i) => <Button key={id} variant="ghost" size="sm" onClick={() => {
+            leaveDetails();
+            frame.current?.contentWindow?.postMessage({ type: "roc-section", id }, location.origin);
+          }}><span>{String(i + 1).padStart(2, "0")}</span>{label}</Button>)}
+        </nav>
+        <Sheet open={appearanceOpen} onOpenChange={setAppearanceOpen}>
+          <SheetTrigger asChild>
             <Button
               variant="ghost"
               size="sm"
@@ -494,19 +545,25 @@ export function App() {
               <SlidersHorizontalIcon aria-hidden="true" />
               <span>Style</span>
             </Button>
-          </EdgePanelTrigger>
-          <EdgePanelContent
-            title="Appearance"
-            className="design-controls"
-            aria-label="Design settings panel"
-            pinLabel="Keep settings open"
-            closeLabel="Close settings"
-          >
+          </SheetTrigger>
+          <SheetContent side="left" className="source-panel appearance-panel" showCloseButton={false}>
+            <div className="panel-body">
+              <SheetHeader>
+                <div>
+                  <span className="eyebrow">DESIGN SETTINGS</span>
+                  <SheetTitle>Appearance</SheetTitle>
+                </div>
+                <SheetClose asChild>
+                  <Button variant="secondary" size="icon-sm" aria-label="Close appearance">×</Button>
+                </SheetClose>
+              </SheetHeader>
+              <SheetDescription className="panel-description">
+                Shared tokens for primitives and interface cases.
+              </SheetDescription>
             <div className="rail-section">
               <Label className="rail-control">
                 <span>Surface</span>
                 <Picker
-                  dark
                   label="Surface"
                   value={surface}
                   onValueChange={setSurface}
@@ -530,7 +587,6 @@ export function App() {
               <Label className="rail-control">
                 <span>Type</span>
                 <Picker
-                  dark
                   label="Typeface"
                   value={font}
                   onValueChange={setFont}
@@ -540,7 +596,6 @@ export function App() {
               <Label className="rail-control">
                 <span>Corners</span>
                 <Picker
-                  dark
                   label="Corner style"
                   value={corners}
                   onValueChange={setCorners}
@@ -553,7 +608,6 @@ export function App() {
               <Label className="rail-control">
                 <span>Radius</span>
                 <Picker
-                  dark
                   label="Corner radius"
                   value={String(radius)}
                   onValueChange={(value) => setRadius(Number(value))}
@@ -563,39 +617,12 @@ export function App() {
               <Label className="rail-control">
                 <span>Spacing</span>
                 <Picker
-                  dark
                   label="Spacing"
                   value={density}
                   onValueChange={setDensity}
                   options={[{ value: "Comfortable" }, { value: "Compact" }]}
                 />
               </Label>
-            </div>
-            <div className="rail-section component-index">
-              <span className="rail-caption">
-                COMPONENTS{" "}
-                <b>{components.length.toString().padStart(2, "0")}</b>
-              </span>
-              {components.map((item, i) => (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  key={item.id}
-                  onClick={() => {
-                    setQuery("");
-                    setFilter("All");
-                    frame.current?.contentWindow?.postMessage(
-                      { type: "roc-focus", id: item.id },
-                      location.origin,
-                    );
-                    window.dispatchEvent(new Event("roc-preview-interact"));
-                  }}
-                >
-                  <span>{String(i + 1).padStart(2, "0")}</span>
-                  {item.name}
-                  <ExternalLinkIcon aria-hidden="true" />
-                </Button>
-              ))}
             </div>
             <div className="rail-bottom">
               <Button variant="link" size="sm" asChild>
@@ -608,15 +635,16 @@ export function App() {
                 </a>
               </Button>
             </div>
-          </EdgePanelContent>
-        </EdgePanel>
+            </div>
+          </SheetContent>
+        </Sheet>
         <InputGroup className="search">
           <InputGroupAddon>
             <SearchIcon aria-hidden="true" />
           </InputGroupAddon>
           <InputGroupInput
             aria-label="Search components"
-            placeholder="Find a component…"
+            placeholder="Find a component or case…"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -640,7 +668,7 @@ export function App() {
             ...new Set(components.flatMap((item) => item.actions)),
           ].map((value) => ({ value }))}
         />
-        <nav>
+        <nav className="external-navigation">
           <Button variant="link" size="sm" asChild>
             <a href={skill} target="_blank" rel="noreferrer">
               Principles ↗
@@ -663,7 +691,7 @@ export function App() {
           />
           <footer className="canvas-footer">
             <span>Responsive Object Continuity</span>
-            <span>React · MIT · Source included</span>
+            <span>Design System → Primitives → Interfaces</span>
           </footer>
         </main>
       </div>

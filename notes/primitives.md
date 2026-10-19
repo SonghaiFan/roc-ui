@@ -1,83 +1,34 @@
-# Owning the primitives
+# Primitive implementation boundaries
 
-ROC components do not depend on someone else's package name. Every behavioural dependency enters through a local `primitive-*` file, so a component imports `./primitive-dialog`, never a third-party package. **No component installs Radix.**
+The [project constitution](../CONSTITUTION.md) governs this document. ROC is a collection of ROC skill practice cases. Local adapters support coherent UI/UX and reuse; owning primitives or avoiding libraries is not a goal.
 
-Three tiers, from most to least owned:
+## Responsibilities
 
-1. **Written here.** Behaviour simple enough to own: Slot, Label, Separator, Aspect Ratio, Progress, Avatar, Toggle, Switch, Checkbox, Tabs, Accordion, Radio Group, Toggle Group, Collapsible, Navigation Menu and Direction.
-2. **Base UI behind the seam.** Behaviour that is hard to get right: positioning, focus trapping, typeahead, drag and scroll geometry. Popover, Tooltip, Hover Card, Dialog, Alert Dialog, the three menus, Select, Slider and Scroll Area.
-3. **Specialist libraries.** Charts, carousels, calendars, tables and similar, listed under "Not covered".
+- **Interaction:** use mature libraries for state, keyboard behavior, accessibility, form participation, focus and dismissal. Current examples predominantly use Base UI.
+- **Animation:** use existing animation implementations where suitable. Current examples use Animate UI, including its Base UI adapters, text primitives and shared motion settings.
+- **ROC:** choose visual tokens, defaults, content, composition and interaction contracts that demonstrate object continuity. Review the final UI/UX in the running case.
 
-## Owned
+These responsibilities do not mandate a single technology stack. Specialist libraries and native elements remain valid when they fit the case better.
 
-Written in this repository, with the same props and `data-*` attributes the components and CSS already use:
+## Current seams
 
-| File | Replaces | Notes |
-| --- | --- | --- |
-| `primitive-slot.tsx` | `Slot` | `asChild` merges props, handlers (child first), `style`, `className` and refs onto the single child |
-| `primitive-label.tsx` | `Label` | Does not select text on double click, except inside form controls |
-| `primitive-separator.tsx` | `Separator` | `decorative` removes it from the accessibility tree; `aria-orientation` only when vertical |
-| `primitive-aspect-ratio.tsx` | `AspectRatio` | CSS `aspect-ratio` on the wrapper, children fill an absolute inner box |
-| `primitive-progress.tsx` | `Progress` | `indeterminate`, `loading` and `complete` states; `aria-valuenow` is absent when indeterminate |
-| `primitive-avatar.tsx` | `Avatar` | Fallback shows until the image has loaded, and returns if the image unmounts or fails |
-| `primitive-toggle.tsx` | `Toggle` | Controlled or uncontrolled `pressed` |
-| `primitive-switch.tsx` | `Switch` | Native form participation, `reset` support, controlled or uncontrolled |
-| `primitive-checkbox.tsx` | `Checkbox` | `checked`, unchecked and `indeterminate` (`aria-checked="mixed"`); Space toggles, Enter does not |
-| `primitive-tabs.tsx` | `Tabs` | `tablist`/`tab`/`tabpanel` with arrow, Home and End keys, automatic or manual activation, horizontal or vertical, values with spaces in ids |
-| `primitive-accordion.tsx` | `Accordion` | `single` (optionally `collapsible`) or `multiple`; arrow keys loop across headers and skip disabled ones |
-| `primitive-radio-group.tsx` | `RadioGroup` | Arrow keys move and check, Enter does not, one tab stop, form submit and reset |
-| `primitive-toggle-group.tsx` | `ToggleGroup` | `single` (`radiogroup`/`radio`) or `multiple` (`toolbar`/`aria-pressed`), roving focus |
-| `primitive-roving.ts` | internal | Shared arrow-key focus movement and single tab stop for the four above; direction comes from the `dir` prop or CSS, not a provider |
-| `primitive-form-input.tsx`, `primitive-utils.ts` | internal | Hidden input for forms; ref and handler composition |
-
-Components that now install with no `radix-ui` dependency: 48 of the 66 in the gallery, including Button, Badge, Card, Checkbox, Switch, Toggle, Label, Separator, Progress, Avatar, Tabs, Accordion and Radio Group.
-
-## Base UI behind the seam
-
-Behaviour that is hard to get right (positioning, focus trapping, typeahead) comes from [Base UI](https://base-ui.com/), not Radix. The goal is that `radix-ui` leaves the project. Each primitive keeps the shape ROC components already use (`Content`, `asChild`, `data-state`, the `--radix-*` CSS variables), implemented on Base UI's `Portal > Positioner > Popup` parts by `primitive-popup.tsx`.
-
-| File | Base UI part | Notes |
-| --- | --- | --- |
-| `primitive-popover.tsx` | `Popover` | `Anchor` positions against a separate element; `modal` supported |
-| `primitive-tooltip.tsx` | `Tooltip` | Adds `role="tooltip"` and `aria-describedby`, which Base UI leaves to the caller; reserves the arrow's height in the offset like Radix |
-| `primitive-hover-card.tsx` | `PreviewCard` | `openDelay` and `closeDelay` map to the trigger |
-| `primitive-dialog.tsx`, `primitive-alert-dialog.tsx` | `Dialog`, `AlertDialog` via `primitive-dialog-core.tsx` | Overlay/Content/Close shape; focus trap, scroll lock and inert outside from Base UI. Alert Dialog starts focus on Cancel and ignores outside clicks. Sheet reuses Dialog |
-| `primitive-dropdown-menu.tsx`, `primitive-context-menu.tsx`, `primitive-menubar.tsx` | `Menu`, `ContextMenu`, `Menubar` via `primitive-menu-core.tsx` | One item vocabulary for all three. `onSelect` keeps working, including `preventDefault` to leave the menu open. Checkbox and radio items close the menu, as in Radix. Submenu sides are reported as `left`/`right` |
-| `primitive-select.tsx` | `Select` | The closed trigger shows the chosen label because the adapter reads `value` and text from the item elements in the tree and gives them to Base UI as `items`. Items rendered by a component you wrote still work; items produced some other way fall back to showing the value. Radix's `""` means no value. `data-position` tells popper from item-aligned |
-| `primitive-slider.tsx` | `Slider` | ROC keeps Track, Range and Thumbs as siblings; the adapter adds Base UI's Control (styled in `slider.css`), numbers the thumbs and moves `aria-label` onto each thumb's range input, which is the focusable element. Thumbs are edge-aligned like Radix |
-| `primitive-scroll-area.tsx` | `ScrollArea` | Radix's `type`, `scrollHideDelay` and `dir` are accepted and ignored. Base UI leaves scrollbar placement to CSS, so `scroll-area.css` positions them. A scrollbar is only mounted when there is overflow |
-| `primitive-collapsible.tsx` | owned | A disclosure needs no library. Closed content leaves an empty hidden region so `aria-controls` stays valid |
-
-Known differences from Radix:
-
-- A Base UI tooltip opens for keyboard focus (`:focus-visible`), not for focus moved by script, so focus returning from a dialog does not pop a tooltip.
-- Only one tooltip is open at a time.
-- Menus keep disabled items reachable by keyboard (focus lands on them, they cannot be activated), as the ARIA menu pattern suggests. Radix skips them.
-- A Select list stays mounted but hidden (`display: none`) after closing, so item labels stay available. Opening a popper Select with no value focuses the list, not the first option. `onValueChange` fires before `onOpenChange(false)`.
-- Slider: clicking the track puts the thumb under the pointer (a click at 25% gives 23, Radix 25). The filled range ends at the thumb centre. Dragging one thumb across another keeps the values sorted but the other thumb may move (`swap`).
-- Link triggers (`asChild` on an `<a>`) get `role="button"` from Base UI.
-- Focus returns to the trigger when the exit animation ends (about 170 ms), the same as with Radix; a test must wait for it rather than sample once.
-- After a context menu closes, focus returns to the element that had it before, not to the page.
-- `onOpenChange(false)` can fire twice when a tooltip closes on click.
-- Content-level `onOpenAutoFocus`, `onEscapeKeyDown` and `onPointerDownOutside` are not forwarded; Base UI reports these on the root's `onOpenChange` details. No ROC component uses them.
-
-## Written here, in brief
-
-| File | Notes |
+| Cases | Implementation |
 | --- | --- |
-| `primitive-navigation-menu.tsx` | Hover opens after a delay, instantly while moving between items; click toggles; Escape, outside click and focus-out dismiss; `data-motion` tells panels which way to slide; optional shared viewport and indicator. A Base UI version always renders through a shared popup, so ROC's inline layout needs its own |
-| `primitive-direction.tsx`, `primitive-direction-context.ts` | A provider whose direction the owned primitives read without importing Base UI; it also feeds Base UI's own provider |
+| Checkbox, Switch, Radio, Toggle, Toggle Group | Base UI state/form/keyboard behavior, Animate UI indicators/thumb/button/group motion, ROC state-attribute and compound-API adapters |
+| Accordion, Collapsible | Animate UI's Base UI disclosure panels with retained content by default; ROC visual wrappers |
+| Tabs | Animate UI's Base UI tabs, shared selection marker and panel motion; ROC variants and retained panels |
+| Dialog, Alert Dialog, Sheet; Popover, Tooltip, Hover Card; menus and Select | Existing Animate UI Base UI adapters behind ROC trigger/content/portal APIs |
+| Slider, Combobox, Toast | Animate UI Base UI implementations with ROC presentation |
+| Scroll Area, Direction | Base UI behavior directly |
+| Text effects | Installed Animate UI primitives with ROC styling and demo controls |
+| Charts, tables, calendar, carousel, resizable panels, drawers | Existing specialist libraries; selected for the actual interaction |
+| Navigation Menu and source-informed spatial cases | Existing case-specific implementations; replace only when the alternative improves the case and preserves its interaction contract |
+| Slot, Label, Separator, Aspect Ratio and other small presentation helpers | Native/React composition where sufficient |
 
-## Not covered
+`RocMotionProvider` bridges ROC's public pace/reduced-motion/check defaults to `AnimateUIProvider`. ROC-only compositions consume Animate UI's timing tokens. Library providers should share this setting rather than maintaining conflicting motion policies.
 
-Combobox and Toast are written directly on Base UI. Vaul, cmdk, Embla, react-day-picker, input-otp, react-resizable-panels, Recharts, TanStack Table and `@shadcn/react` are specialist libraries and remain external.
+Legacy `data-state`, `asChild`, single/multiple selection and compound component APIs may be translated at local seams. Such translation must not duplicate a library's keyboard, focus or form state machine. Keep animation-owned transforms and indicator drawing free from competing CSS motion.
 
-## Checks
+## Validation
 
-`tests/parity/` renders each primitive with ROC's own file and with Radix (kept as a dev dependency for this purpose only) side by side, drives both with the same 43 mouse and keyboard steps, and compares every control's ARIA and state, the visible panels, focus, callbacks, submitted and reset form data and the Tab-key walk. It matches except for:
-
-- Radix makes a radio or toggle group container tabbable after interaction, giving one extra Tab stop. ROC keeps one stop per group, as the ARIA radio pattern describes.
-- Pressing a disabled tab with the mouse drops focus to the page; Radix keeps it on the active tab because its list is a focusable container. Native disabled buttons receive no mouse events, so this is left as the browser behaves.
-- Radix defers focus moves by a tick and reads key-up state to decide whether an arrow key should check a radio. A key released within that tick (a scripted press, not a person) does not check it. ROC moves focus synchronously.
-
-Bugs the checks found while writing these primitives: a form-reset listener re-added on every render is skipped when React renders mid-dispatch (so listeners subscribe once and read the latest setter through a ref), and an unmounted `AvatarImage` must reset its root so the fallback returns.
+Build registry payloads from current sources and check dependency closure. Validate isolated consumers as well as the gallery. For interaction changes, exercise keyboard and pointer paths, native forms/reset, disabled/mixed states, retained drafts, focus/dismissal and reduced motion. Historical parity tests are reference evidence, not a requirement to preserve every old library's internal implementation.

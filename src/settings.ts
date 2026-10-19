@@ -22,3 +22,9 @@ export const accentForeground: Record<AccentName, string> = {
   blue: "#ffffff",
   yellow: "#1a1a1a",
 };
+
+export const fontFamilies = {
+  System: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+  Serif: 'Georgia, "Times New Roman", serif',
+} as const;
+export const spacingScale = [4, 8, 12, 16, 24, 32] as const;

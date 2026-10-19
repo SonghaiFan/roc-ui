@@ -1,6 +1,8 @@
-# ROC React design system
+# ROC practice-case implementation contracts
 
-Version 0.5 separates reusable components from the gallery and from the original applications. The gallery is one consumer of the registry, not a runtime required by it.
+The [project constitution](../CONSTITUTION.md) governs these implementation notes. ROC is a collection of ROC skill practice cases with a coherent UI/UX standard. Components and registry payloads are reuse mechanisms; they do not define ROC as an independent component library or restrict the choice of libraries.
+
+Reusable case code stays separate from the gallery and the original applications.
 
 ## Dependency boundary
 

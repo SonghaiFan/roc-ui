@@ -5,6 +5,3625 @@
   "items": [
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "copy-button",
+      "type": "registry:component",
+      "title": "Copy Button",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1",
+        "motion@^14.3.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/copy-button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/copy-button.tsx"
+        },
+        {
+          "path": "registry/roc/motion-buttons.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/counting-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/counting-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.css"
+        },
+        {
+          "path": "registry/roc/motion-buttons.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.css"
+        },
+        {
+          "path": "registry/roc/copy-button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/copy-button.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "flip-button",
+      "type": "registry:component",
+      "title": "Flip Button",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1",
+        "motion@^14.3.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/flip-button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/flip-button.tsx"
+        },
+        {
+          "path": "registry/roc/motion-buttons.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/counting-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/counting-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.css"
+        },
+        {
+          "path": "registry/roc/motion-buttons.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.css"
+        },
+        {
+          "path": "registry/roc/flip-button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/flip-button.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "github-stars-button",
+      "type": "registry:component",
+      "title": "Github Stars Button",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1",
+        "motion@^14.3.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/github-stars-button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/github-stars-button.tsx"
+        },
+        {
+          "path": "registry/roc/motion-buttons.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/counting-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/counting-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.css"
+        },
+        {
+          "path": "registry/roc/motion-buttons.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.css"
+        },
+        {
+          "path": "registry/roc/github-stars-button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/github-stars-button.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "icon-button",
+      "type": "registry:component",
+      "title": "Icon Button",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1",
+        "motion@^14.3.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/icon-button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/icon-button.tsx"
+        },
+        {
+          "path": "registry/roc/motion-buttons.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/counting-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/counting-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.css"
+        },
+        {
+          "path": "registry/roc/motion-buttons.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.css"
+        },
+        {
+          "path": "registry/roc/icon-button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/icon-button.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "liquid-button",
+      "type": "registry:component",
+      "title": "Liquid Button",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1",
+        "motion@^14.3.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/liquid-button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/liquid-button.tsx"
+        },
+        {
+          "path": "registry/roc/motion-buttons.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/counting-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/counting-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.css"
+        },
+        {
+          "path": "registry/roc/motion-buttons.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.css"
+        },
+        {
+          "path": "registry/roc/liquid-button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/liquid-button.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "ripple-button",
+      "type": "registry:component",
+      "title": "Ripple Button",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1",
+        "motion@^14.3.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/ripple-button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/ripple-button.tsx"
+        },
+        {
+          "path": "registry/roc/motion-buttons.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/counting-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/counting-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.css"
+        },
+        {
+          "path": "registry/roc/motion-buttons.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.css"
+        },
+        {
+          "path": "registry/roc/ripple-button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ripple-button.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "theme-toggler-button",
+      "type": "registry:component",
+      "title": "Theme Toggler Button",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1",
+        "motion@^14.3.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/theme-toggler-button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/theme-toggler-button.tsx"
+        },
+        {
+          "path": "registry/roc/motion-buttons.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/counting-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/counting-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.css"
+        },
+        {
+          "path": "registry/roc/motion-buttons.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.css"
+        },
+        {
+          "path": "registry/roc/theme-toggler-button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/theme-toggler-button.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "blur",
+      "type": "registry:component",
+      "title": "Blur",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/blur.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/blur.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/blur.css",
+          "type": "registry:file",
+          "target": "~/components/roc/blur.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "click",
+      "type": "registry:component",
+      "title": "Click",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/click.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/click.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/click.css",
+          "type": "registry:file",
+          "target": "~/components/roc/click.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "effect",
+      "type": "registry:component",
+      "title": "Effect",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/effect.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/effect.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/effect.css",
+          "type": "registry:file",
+          "target": "~/components/roc/effect.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "fade",
+      "type": "registry:component",
+      "title": "Fade",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/fade.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/fade.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/fade.css",
+          "type": "registry:file",
+          "target": "~/components/roc/fade.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "highlight",
+      "type": "registry:component",
+      "title": "Highlight",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/highlight.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/highlight.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/highlight.css",
+          "type": "registry:file",
+          "target": "~/components/roc/highlight.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "image-zoom",
+      "type": "registry:component",
+      "title": "Image Zoom",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/image-zoom.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/image-zoom.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/image-zoom.css",
+          "type": "registry:file",
+          "target": "~/components/roc/image-zoom.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "magnetic",
+      "type": "registry:component",
+      "title": "Magnetic",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/magnetic.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/magnetic.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/magnetic.css",
+          "type": "registry:file",
+          "target": "~/components/roc/magnetic.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "particles",
+      "type": "registry:component",
+      "title": "Particles",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/particles.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/particles.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/particles.css",
+          "type": "registry:file",
+          "target": "~/components/roc/particles.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "scroll-fade",
+      "type": "registry:component",
+      "title": "Scroll Fade",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/scroll-fade.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/scroll-fade.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/scroll-fade.css",
+          "type": "registry:file",
+          "target": "~/components/roc/scroll-fade.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "shine",
+      "type": "registry:component",
+      "title": "Shine",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/shine.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/shine.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/shine.css",
+          "type": "registry:file",
+          "target": "~/components/roc/shine.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "slide",
+      "type": "registry:component",
+      "title": "Slide",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/slide.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/slide.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/slide.css",
+          "type": "registry:file",
+          "target": "~/components/roc/slide.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "theme-toggler",
+      "type": "registry:component",
+      "title": "Theme Toggler",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/theme-toggler.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/theme-toggler.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/theme-toggler.css",
+          "type": "registry:file",
+          "target": "~/components/roc/theme-toggler.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "tilt",
+      "type": "registry:component",
+      "title": "Tilt",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/tilt.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/tilt.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/tilt.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tilt.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "zoom",
+      "type": "registry:component",
+      "title": "Zoom",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/zoom.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/zoom.tsx"
+        },
+        {
+          "path": "registry/roc/motion-effects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-effects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-effects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/zoom.css",
+          "type": "registry:file",
+          "target": "~/components/roc/zoom.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "auto-height",
+      "type": "registry:component",
+      "title": "Auto Height",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/auto-height.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/auto-height.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/auto-height.css",
+          "type": "registry:file",
+          "target": "~/components/roc/auto-height.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "avatar-group",
+      "type": "registry:component",
+      "title": "Avatar Group",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/avatar-group.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/avatar-group.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.css"
+        },
+        {
+          "path": "registry/roc/avatar-group.css",
+          "type": "registry:file",
+          "target": "~/components/roc/avatar-group.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "cursor",
+      "type": "registry:component",
+      "title": "Cursor",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/cursor.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/cursor.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.css"
+        },
+        {
+          "path": "registry/roc/cursor.css",
+          "type": "registry:file",
+          "target": "~/components/roc/cursor.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "github-stars",
+      "type": "registry:component",
+      "title": "Github Stars",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1",
+        "motion@^14.3.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/github-stars.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/github-stars.tsx"
+        },
+        {
+          "path": "registry/roc/motion-buttons.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/counting-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/counting-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.css"
+        },
+        {
+          "path": "registry/roc/motion-buttons.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-buttons.css"
+        },
+        {
+          "path": "registry/roc/github-stars.css",
+          "type": "registry:file",
+          "target": "~/components/roc/github-stars.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "motion-grid",
+      "type": "registry:component",
+      "title": "Motion Grid",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/motion-grid.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-grid.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.css"
+        },
+        {
+          "path": "registry/roc/motion-grid.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-grid.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "pinned-list",
+      "type": "registry:component",
+      "title": "Pinned List",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/pinned-list.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/pinned-list.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.css"
+        },
+        {
+          "path": "registry/roc/pinned-list.css",
+          "type": "registry:file",
+          "target": "~/components/roc/pinned-list.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "scroll-progress",
+      "type": "registry:component",
+      "title": "Scroll Progress",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/scroll-progress.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/scroll-progress.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.css"
+        },
+        {
+          "path": "registry/roc/scroll-progress.css",
+          "type": "registry:file",
+          "target": "~/components/roc/scroll-progress.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "spring",
+      "type": "registry:component",
+      "title": "Spring",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/spring.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/spring.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/motion-layouts.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-layouts.css"
+        },
+        {
+          "path": "registry/roc/spring.css",
+          "type": "registry:file",
+          "target": "~/components/roc/spring.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "counting-number",
+      "type": "registry:component",
+      "title": "Counting Number",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/counting-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/counting-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/counting-number.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "gradient-text",
+      "type": "registry:component",
+      "title": "Gradient Text",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/gradient-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/gradient-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/gradient-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/gradient-text.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "highlight-text",
+      "type": "registry:component",
+      "title": "Highlight Text",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/highlight-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/highlight-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/highlight-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/highlight-text.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "morphing-text",
+      "type": "registry:component",
+      "title": "Morphing Text",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/morphing-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/morphing-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/morphing-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/morphing-text.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "rolling-text",
+      "type": "registry:component",
+      "title": "Rolling Text",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/rolling-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/rolling-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/rolling-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/rolling-text.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "rotating-text",
+      "type": "registry:component",
+      "title": "Rotating Text",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/rotating-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/rotating-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/rotating-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/rotating-text.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "scrolling-number",
+      "type": "registry:component",
+      "title": "Scrolling Number",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/scrolling-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/scrolling-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/scrolling-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/scrolling-number.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "shimmering-text",
+      "type": "registry:component",
+      "title": "Shimmering Text",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/shimmering-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/shimmering-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/shimmering-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/shimmering-text.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "sliding-number",
+      "type": "registry:component",
+      "title": "Sliding Number",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/sliding-number.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/sliding-number.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/sliding-number.css",
+          "type": "registry:file",
+          "target": "~/components/roc/sliding-number.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "sliding-text",
+      "type": "registry:component",
+      "title": "Sliding Text",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/sliding-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/sliding-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/sliding-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/sliding-text.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "splitting-text",
+      "type": "registry:component",
+      "title": "Splitting Text",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/splitting-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/splitting-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/splitting-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/splitting-text.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "swapping-text",
+      "type": "registry:component",
+      "title": "Swapping Text",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/swapping-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/swapping-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/swapping-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/swapping-text.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "typing-text",
+      "type": "registry:component",
+      "title": "Typing Text",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "motion@^14.3.0",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/typing-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/typing-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-text.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.tsx"
+        },
+        {
+          "path": "registry/roc/motion-config.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-config.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/motion-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/motion-text.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/typing-text.css",
+          "type": "registry:file",
+          "target": "~/components/roc/typing-text.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "preview-link-card",
+      "type": "registry:component",
+      "title": "Preview Link Card",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0",
+        "@base-ui/react@^1.9.0",
+        "class-variance-authority@^0.7.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/preview-link-card.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/preview-link-card.tsx"
+        },
+        {
+          "path": "registry/roc/popover.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/popover.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/primitive-popover.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popover.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-popup.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-popup.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/popover.css",
+          "type": "registry:file",
+          "target": "~/components/roc/popover.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/preview-link-card.css",
+          "type": "registry:file",
+          "target": "~/components/roc/preview-link-card.css"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "button",
       "type": "registry:component",
       "title": "Button",
@@ -35,6 +3654,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -106,6 +3730,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -162,6 +3791,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -222,6 +3856,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -280,6 +3919,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -314,7 +3958,8 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -333,21 +3978,6 @@
           "target": "~/components/roc/primitive-checkbox.tsx"
         },
         {
-          "path": "registry/roc/primitive-form-input.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-form-input.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
-          "path": "registry/roc/use-controllable-state.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-controllable-state.ts"
-        },
-        {
           "path": "registry/roc/checkbox.css",
           "type": "registry:file",
           "target": "~/components/roc/checkbox.css"
@@ -356,6 +3986,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -393,7 +4028,6 @@
       "dependencies": [
         "react@^19.0.0",
         "clsx@^2.1.1",
-        "motion@^14.3.0",
         "@animate-ui/react@^2.0.0"
       ],
       "files": [
@@ -413,21 +4047,6 @@
           "target": "~/components/roc/primitive-switch.tsx"
         },
         {
-          "path": "registry/roc/primitive-form-input.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-form-input.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
-          "path": "registry/roc/use-controllable-state.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-controllable-state.ts"
-        },
-        {
           "path": "registry/roc/switch.css",
           "type": "registry:file",
           "target": "~/components/roc/switch.css"
@@ -436,6 +4055,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -500,6 +4124,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -575,6 +4204,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -610,6 +4244,8 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "@base-ui/react@^1.9.0",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -624,24 +4260,14 @@
           "target": "~/components/roc/primitive-tabs.tsx"
         },
         {
-          "path": "registry/roc/primitive-utils.ts",
+          "path": "registry/roc/primitive-direction.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
-          "path": "registry/roc/primitive-roving.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-roving.ts"
+          "target": "~/components/roc/primitive-direction.tsx"
         },
         {
           "path": "registry/roc/primitive-direction-context.ts",
           "type": "registry:file",
           "target": "~/components/roc/primitive-direction-context.ts"
-        },
-        {
-          "path": "registry/roc/use-controllable-state.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -657,6 +4283,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -693,8 +4324,9 @@
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
         "react@^19.0.0",
-        "@animate-ui/react@^2.0.0",
         "lucide-react@^1.59.0",
+        "@animate-ui/react@^2.0.0",
+        "@base-ui/react@^1.9.0",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -709,19 +4341,14 @@
           "target": "~/components/roc/primitive-accordion.tsx"
         },
         {
+          "path": "registry/roc/primitive-direction.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction.tsx"
+        },
+        {
           "path": "registry/roc/primitive-direction-context.ts",
           "type": "registry:file",
           "target": "~/components/roc/primitive-direction-context.ts"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
-          "path": "registry/roc/primitive-roving.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-roving.ts"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -737,6 +4364,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -826,6 +4458,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -904,6 +4541,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -987,6 +4629,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -1062,6 +4709,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -1119,6 +4771,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -1184,6 +4841,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -1247,6 +4909,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -1305,6 +4972,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -1340,6 +5012,7 @@
       "dependencies": [
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
+        "@base-ui/react@^1.9.0",
         "@animate-ui/react@^2.0.0",
         "clsx@^2.1.1"
       ],
@@ -1355,16 +5028,6 @@
           "target": "~/components/roc/primitive-toggle.tsx"
         },
         {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
-          "path": "registry/roc/use-controllable-state.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-controllable-state.ts"
-        },
-        {
           "path": "registry/roc/utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/utils.ts"
@@ -1378,6 +5041,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -1416,6 +5084,7 @@
         "react@^19.0.0",
         "class-variance-authority@^0.7.1",
         "@animate-ui/react@^2.0.0",
+        "@base-ui/react@^1.9.0",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -1430,34 +5099,24 @@
           "target": "~/components/roc/primitive-toggle-group.tsx"
         },
         {
+          "path": "registry/roc/primitive-direction.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-direction.tsx"
+        },
+        {
           "path": "registry/roc/primitive-direction-context.ts",
           "type": "registry:file",
           "target": "~/components/roc/primitive-direction-context.ts"
         },
         {
-          "path": "registry/roc/primitive-toggle.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-toggle.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
-          "path": "registry/roc/use-controllable-state.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-controllable-state.ts"
-        },
-        {
-          "path": "registry/roc/primitive-roving.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-roving.ts"
-        },
-        {
           "path": "registry/roc/toggle.tsx",
           "type": "registry:file",
           "target": "~/components/roc/toggle.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-toggle.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-toggle.tsx"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -1473,6 +5132,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -1515,7 +5179,9 @@
       "dependencies": [
         "react@^19.0.0",
         "lucide-react@^1.59.0",
-        "clsx@^2.1.1"
+        "clsx@^2.1.1",
+        "@base-ui/react@^1.9.0",
+        "@animate-ui/react@^2.0.0"
       ],
       "files": [
         {
@@ -1534,29 +5200,14 @@
           "target": "~/components/roc/primitive-radio-group.tsx"
         },
         {
-          "path": "registry/roc/primitive-form-input.tsx",
+          "path": "registry/roc/primitive-direction.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-form-input.tsx"
-        },
-        {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
-          "path": "registry/roc/primitive-roving.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-roving.ts"
+          "target": "~/components/roc/primitive-direction.tsx"
         },
         {
           "path": "registry/roc/primitive-direction-context.ts",
           "type": "registry:file",
           "target": "~/components/roc/primitive-direction-context.ts"
-        },
-        {
-          "path": "registry/roc/use-controllable-state.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/radio-group.css",
@@ -1567,6 +5218,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -1631,6 +5287,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -1702,6 +5363,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -1766,6 +5432,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -1859,6 +5530,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -1947,6 +5623,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -2020,6 +5701,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -2116,6 +5802,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -2193,6 +5884,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -2277,6 +5973,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -2357,6 +6058,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -2443,6 +6149,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -2509,6 +6220,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -2559,6 +6275,7 @@
       "dependencies": [
         "react@^19.0.0",
         "@animate-ui/react@^2.0.0",
+        "@base-ui/react@^1.9.0",
         "clsx@^2.1.1"
       ],
       "files": [
@@ -2573,19 +6290,14 @@
           "target": "~/components/roc/primitive-collapsible.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
+          "path": "registry/roc/primitive-popup.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
+          "target": "~/components/roc/primitive-popup.tsx"
         },
         {
           "path": "registry/roc/primitive-utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
-          "path": "registry/roc/use-controllable-state.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/utils.ts",
@@ -2601,6 +6313,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -2667,6 +6384,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -2807,6 +6529,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -2918,6 +6645,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -2992,6 +6724,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -3090,6 +6827,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -3216,6 +6958,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -3285,6 +7032,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -3352,6 +7104,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -3441,6 +7198,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -3548,6 +7310,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -3611,6 +7378,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -3718,6 +7490,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -3795,6 +7572,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -3880,6 +7662,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -3963,6 +7750,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -4040,6 +7832,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -4133,6 +7930,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -4201,6 +8003,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -4266,6 +8073,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -4350,6 +8162,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -4453,6 +8270,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -4518,6 +8340,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -4605,6 +8432,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -4689,6 +8521,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -4782,6 +8619,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -4856,6 +8698,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -4942,6 +8789,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5010,6 +8862,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5076,6 +8933,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5127,7 +8989,8 @@
         "react@^19.0.0",
         "lucide-react@^1.59.0",
         "clsx@^2.1.1",
-        "@animate-ui/react@^2.0.0"
+        "@animate-ui/react@^2.0.0",
+        "@base-ui/react@^1.9.0"
       ],
       "files": [
         {
@@ -5151,19 +9014,14 @@
           "target": "~/components/roc/primitive-collapsible.tsx"
         },
         {
-          "path": "registry/roc/primitive-slot.tsx",
+          "path": "registry/roc/primitive-popup.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/primitive-slot.tsx"
+          "target": "~/components/roc/primitive-popup.tsx"
         },
         {
           "path": "registry/roc/primitive-utils.ts",
           "type": "registry:file",
           "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
-          "path": "registry/roc/use-controllable-state.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/collapsible.css",
@@ -5174,6 +9032,11 @@
           "path": "registry/roc/ui-base.css",
           "type": "registry:file",
           "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -5249,6 +9112,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5311,6 +9179,11 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5366,6 +9239,11 @@
           "path": "registry/roc/surface.css",
           "type": "registry:file",
           "target": "~/components/roc/surface.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -5435,6 +9313,11 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5492,6 +9375,11 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5544,6 +9432,11 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5589,6 +9482,11 @@
           "path": "registry/roc/surface.css",
           "type": "registry:file",
           "target": "~/components/roc/surface.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -5653,6 +9551,11 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5710,6 +9613,11 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5765,6 +9673,11 @@
           "path": "registry/roc/surface.css",
           "type": "registry:file",
           "target": "~/components/roc/surface.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
         },
         {
           "path": "registry/roc/animation.css",
@@ -5834,6 +9747,11 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5896,6 +9814,11 @@
           "target": "~/components/roc/ui-base.css"
         },
         {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
           "path": "registry/roc/animation.css",
           "type": "registry:file",
           "target": "~/components/roc/animation.css"
@@ -5936,16 +9859,6 @@
           "target": "~/components/roc/primitive-toggle.tsx"
         },
         {
-          "path": "registry/roc/primitive-utils.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/primitive-utils.ts"
-        },
-        {
-          "path": "registry/roc/use-controllable-state.ts",
-          "type": "registry:file",
-          "target": "~/components/roc/use-controllable-state.ts"
-        },
-        {
           "path": "registry/roc/toggle.css",
           "type": "registry:file",
           "target": "~/components/roc/toggle.css"
@@ -5954,6 +9867,16 @@
           "path": "registry/roc/primitive-slot.tsx",
           "type": "registry:file",
           "target": "~/components/roc/primitive-slot.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-utils.ts"
+        },
+        {
+          "path": "registry/roc/use-controllable-state.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/use-controllable-state.ts"
         },
         {
           "path": "registry/roc/edge-panel.css",

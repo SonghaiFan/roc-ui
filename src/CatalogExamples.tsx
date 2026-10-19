@@ -1,3 +1,4 @@
+import { demoImages } from "./demo-assets";
 import { useState, useId, type CSSProperties, type ReactNode } from "react";
 import {
   FileText,
@@ -94,7 +95,6 @@ const columns = [
   { accessorKey: "name", header: "Collection" },
   { accessorKey: "status", header: "Status" },
 ];
-const art = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360"><rect width="640" height="360" fill="#e7e5e0"/><circle cx="490" cy="85" r="35" fill="#fcfaf6"/><path d="M0 290L180 100L350 290L470 150L640 320V360H0Z" fill="#aaa9a1"/><path d="M0 330L180 190L350 350L470 250L640 360H0Z" fill="#777a71"/></svg>')}`;
 function AlertDialogDemo() {
   const [done, setDone] = useState(false);
   return (
@@ -220,6 +220,7 @@ function CarouselDemo() {
                   textAlign: "center",
                 }}
               >
+                <img src={demoImages[[0, 9, 5][i]].src} alt={demoImages[[0, 9, 5][i]].alt} loading="lazy" decoding="async" style={{ width: "100%", aspectRatio: "3 / 4", objectFit: "cover", borderRadius: 6 }} />
                 <span style={note}>0{i + 1}</span>
                 <h3>{name}</h3>
               </div>
@@ -1046,8 +1047,10 @@ const demos: Record<string, () => ReactNode> = {
   "aspect-ratio": () => (
     <AspectRatio ratio={16 / 9}>
       <img
-        src={art}
-        alt="Abstract mountain landscape"
+        src={demoImages[11].src}
+        alt={demoImages[11].alt}
+        loading="lazy"
+        decoding="async"
         style={{
           width: "100%",
           height: "100%",

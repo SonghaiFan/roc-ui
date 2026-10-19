@@ -1,3 +1,5 @@
+import { MotionExample } from "./MotionExamples";
+import { motionIds } from "./motion-catalog";
 import { MoreFoundationExample } from "./MoreFoundationExamples";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../registry/roc/button";
@@ -76,6 +78,7 @@ export function FoundationExample({ id }: { id: string }) {
     },
     [],
   );
+  if (motionIds.includes(id)) return <MotionExample id={id} />;
   if (id === "button")
     return (
       <div className="foundation-demo">

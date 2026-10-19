@@ -1,47 +1,10 @@
 "use client";
-// ROC primitive: a two-state button.
 import * as React from "react";
+import { Toggle as Base } from "@base-ui/react/toggle";
 import { Button as AnimatedButton } from "@animate-ui/react/primitives/buttons/button";
-import { composeEventHandlers } from "./primitive-utils";
-import { useControllableState } from "./use-controllable-state";
-
-type RootProps = Omit<React.ComponentProps<"button">, "defaultValue"> & {
-  pressed?: boolean;
-  defaultPressed?: boolean;
-  onPressedChange?: (pressed: boolean) => void;
-  asChild?: boolean;
-};
-
-function Root({
-  pressed: pressedProp,
-  defaultPressed = false,
-  onPressedChange,
-  asChild,
-  disabled,
-  onClick,
-  ...props
-}: RootProps) {
-  const [pressed, setPressed] = useControllableState(
-    pressedProp,
-    defaultPressed,
-    onPressedChange,
-  );
-  const Comp: React.ElementType = AnimatedButton;
-  return (
-    <Comp
-      asChild={asChild}
-      tapScale={disabled ? 1 : 0.97}
-      type="button"
-      aria-pressed={pressed}
-      data-state={pressed ? "on" : "off"}
-      data-disabled={disabled ? "" : undefined}
-      disabled={disabled}
-      {...props}
-      onClick={composeEventHandlers(onClick, () => {
-        if (!disabled) setPressed(!pressed);
-      })}
-    />
-  );
+type Props = Omit<React.ComponentProps<"button">, "value"> & { value?: string } & { pressed?: boolean; defaultPressed?: boolean; onPressedChange?: (pressed: boolean) => void };
+function Root({ onPressedChange, ...props }: Props) {
+  return <Base {...props} onPressedChange={next => onPressedChange?.(next)}
+    render={(p, state) => <AnimatedButton {...(p as object)} disabled={state.disabled} tapScale={state.disabled ? 1 : 0.97} data-state={state.pressed ? "on" : "off"} />} />;
 }
-
 export const Toggle = { Root };

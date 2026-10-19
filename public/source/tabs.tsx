@@ -5,30 +5,8 @@ import { Tabs as Primitive } from "./primitive-tabs";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 import "./tabs.css";
-const Selection = React.createContext<string | undefined>(undefined);
-function Tabs({
-  className,
-  value,
-  defaultValue,
-  onValueChange,
-  ...props
-}: React.ComponentProps<typeof Primitive.Root>) {
-  const [internal, setInternal] = React.useState(defaultValue);
-  const selected = value === undefined ? internal : value;
-  return (
-    <Selection.Provider value={selected}>
-      <Primitive.Root
-        {...props}
-        className={cn("roc-ui", className)}
-        data-slot="tabs"
-        value={selected}
-        onValueChange={(next) => {
-          if (value === undefined) setInternal(next);
-          onValueChange?.(next);
-        }}
-      />
-    </Selection.Provider>
-  );
+function Tabs({ className, ...props }: React.ComponentProps<typeof Primitive.Root>) {
+  return <Primitive.Root {...props} className={cn("roc-ui", className)} data-slot="tabs" />;
 }
 const tabsListVariants = cva("roc-ui", {
   variants: {
@@ -43,47 +21,6 @@ function TabsList({
   ...props
 }: React.ComponentProps<typeof Primitive.List> &
   VariantProps<typeof tabsListVariants>) {
-  const marker = React.useRef<HTMLSpanElement>(null);
-  React.useLayoutEffect(() => {
-    const node = marker.current!,
-      list = node.parentElement!;
-    let ready = false;
-    const measure = () => {
-      const active = list.querySelector<HTMLElement>(
-        '[role="tab"][data-state="active"]',
-      );
-      if (!active) {
-        node.hidden = true;
-        return;
-      }
-      node.hidden = false;
-      node.style.width = `${active.offsetWidth}px`;
-      node.style.height = `${active.offsetHeight}px`;
-      node.style.transform = `translate(${active.offsetLeft}px,${active.offsetTop}px)`;
-      if (!ready) {
-        node.getBoundingClientRect();
-        node.dataset.ready = "true";
-        ready = true;
-      }
-    };
-    measure();
-    const resize = new ResizeObserver(measure);
-    resize.observe(list);
-    Array.from(list.children)
-      .filter((n) => n !== node)
-      .forEach((n) => resize.observe(n));
-    const mutation = new MutationObserver(measure);
-    mutation.observe(list, {
-      subtree: true,
-      attributes: true,
-      attributeFilter: ["data-state"],
-    });
-    return () => {
-      resize.disconnect();
-      mutation.disconnect();
-    };
-  }, []);
-  // The observer measures the committed selection, including controlled updates.
   return (
     <Primitive.List
       {...props}
@@ -91,7 +28,6 @@ function TabsList({
       data-variant={variant}
       className={cn(tabsListVariants({ variant }), className)}
     >
-      <span ref={marker} className="roc-ui-tabs-marker" aria-hidden="true" />
       {children}
     </Primitive.List>
   );
@@ -113,14 +49,11 @@ function TabsContent({
   value,
   ...props
 }: React.ComponentProps<typeof Primitive.Content>) {
-  const active = React.useContext(Selection) === value;
   return (
     <Primitive.Content
       {...props}
       value={value}
       forceMount
-      hidden={!active}
-      inert={!active}
       data-slot="tabs-content"
       className={cn("roc-ui", className)}
     />

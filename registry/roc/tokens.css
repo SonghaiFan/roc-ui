@@ -1,0 +1,25 @@
+/* Shared design tokens for ROC practice cases. Hosts may override any --roc-* token. */
+:where(:root) {
+  --roc-ink: #252525;
+  --roc-muted: #737373;
+  --roc-paper: #ffffff;
+  --roc-line: #e5e5e5;
+  --roc-accent: #1a1a1a;
+  --roc-accent-foreground: #ffffff;
+  --roc-marker: #efefef;
+  --roc-focus: #737373;
+  --roc-font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --roc-font-heading: var(--roc-font-body);
+  --roc-font-control: var(--roc-font-body);
+  --roc-font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --roc-text-body: 13px;
+  --roc-weight-control: 500;
+  --roc-radius: 12px;
+  --roc-space-1: 4px;
+  --roc-space-2: 8px;
+  --roc-space-3: 12px;
+  --roc-space-4: 16px;
+  --roc-space-6: 24px;
+  --roc-space-8: 32px;
+  --roc-control-height: 36px;
+}

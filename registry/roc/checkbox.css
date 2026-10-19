@@ -41,24 +41,3 @@
   height: 2px;
   background: currentColor;
 }
-/* The box fills first, then the mark draws itself. Unchecking retracts quickly. */
-.roc-ui-checkbox-mark path {
-  stroke-dasharray: 1 1;
-  stroke-dashoffset: 1;
-  opacity: 0;
-  transition:
-    stroke-dashoffset var(--roc-motion-quick) var(--roc-motion-ease),
-    opacity 0s linear var(--roc-motion-quick);
-}
-.roc-ui[data-slot="checkbox"][data-state="checked"] .roc-ui-checkbox-mark path {
-  stroke-dashoffset: 0;
-  opacity: 1;
-  transition:
-    stroke-dashoffset var(--roc-motion-medium) var(--roc-motion-ease),
-    opacity 0s;
-}
-@media (prefers-reduced-motion: reduce) {
-  .roc-ui-checkbox-mark path {
-    transition: none !important;
-  }
-}

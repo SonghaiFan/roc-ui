@@ -4,7 +4,10 @@ const foundationNames =
   "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip alert avatar progress skeleton toggle toggle-group radio-group scroll-area breadcrumb pagination alert-dialog aspect-ratio attachment bubble button-group calendar carousel chart code-block collapsible combobox command context-menu data-table date-picker direction drawer empty field hover-card input-group input-otp item kbd label marker menubar message message-scroller native-select navigation-menu questionnaire resizable select sheet sidebar spinner table toast trace typography".split(
     " ",
   );
+const motionItems = JSON.parse(await readFile("catalog/motion.json", "utf8"));
 const names = [
+  ...motionItems.map(item => item.id),
+  "preview-link-card",
   ...foundationNames,
   "expandable-card",
   "folder-fan",

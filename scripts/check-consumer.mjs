@@ -1,5 +1,5 @@
 import { build } from "esbuild";
-import { mkdir, readFile, writeFile, rm } from "node:fs/promises";
+import { mkdir, readFile, writeFile, rm, cp } from "node:fs/promises";
 import { renderToString } from "react-dom/server";
 import { createElement } from "react";
 import assert from "node:assert/strict";
@@ -36,6 +36,11 @@ await writeFile(
     "./components/roc/",
   ),
 );
+await writeFile(".checks/demo-assets.ts", await readFile("src/demo-assets.ts", "utf8"));
+await writeFile(".checks/PreviewControls.tsx", await readFile("src/PreviewControls.tsx", "utf8"));
+const motionIds = [...JSON.parse(await readFile("catalog/motion.json", "utf8")).map(item => item.id), "preview-link-card"];
+await writeFile(".checks/motion-examples.tsx", (await readFile("src/MotionExamples.tsx", "utf8")).replaceAll("../registry/roc/", "./components/roc/"));
+await writeFile(".checks/motion-consumer.tsx", `import {MotionExample} from "./motion-examples"; export function MotionConsumer(){return <>{${JSON.stringify(motionIds)}.map(id=><section key={id} data-component={id}><h2>{id}</h2><MotionExample id={id}/></section>)}</>}`);
 await writeFile(
   ".checks/catalog-consumer.tsx",
   `import {CatalogExample,additionalIds} from "./catalog-examples"; export function CatalogConsumer(){return <>{additionalIds.map(id=><section key={id} data-component={id} style={{padding:20,borderBottom:"1px solid #ddd"}}><h2>{id}</h2><CatalogExample id={id}/></section>)}</>}`,
@@ -56,6 +61,7 @@ assert.equal(
   registry.items.length,
 );
 await mkdir("dist/consumer-check", { recursive: true });
+await cp("public/demo-images", "dist/consumer-check/demo-images", { recursive: true });
 await build({
   entryPoints: [".checks/consumer.tsx"],
   bundle: true,

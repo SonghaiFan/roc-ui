@@ -1,3 +1,4 @@
+@import "./tokens.css";
 @import "./animation.css";
 @import "./corners.css";
 @import "./responsive.css";
@@ -5,7 +6,8 @@
 .roc-ui {
   box-sizing: border-box;
   font: inherit;
-  font-size: 13px;
+  font-family: var(--roc-font-body, inherit);
+  font-size: var(--roc-text-body, 13px);
   color: var(--roc-ink, #252525);
 }
 .roc-ui *,

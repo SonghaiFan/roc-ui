@@ -1,16 +1,28 @@
 # ROC UI
 
-A React design system for objects that keep their identity through interaction.
+A collection of Responsive Object Continuity skill practice cases, with a shared UI and UX standard.
 
-[Open the design space](https://songhaifan.github.io/roc-ui/) · [Component contracts](notes/react-design-system.md) · [ROC design skill](https://github.com/SonghaiFan/responsive-object-continuity)
+[Project constitution](CONSTITUTION.md) · [Open the design space](https://songhaifan.github.io/roc-ui/) · [Component contracts](notes/react-design-system.md) · [ROC design skill](https://github.com/SonghaiFan/responsive-object-continuity)
 
-Sixty-six customized shadcn components, displayed together in a responsive masonry canvas. Try the live objects, adjust the theme, inspect their source, and install only what you need. React + TypeScript + component-scoped CSS. MIT licensed.
+ROC is a place to try, inspect and reuse interactive cases that apply the [ROC skill](https://github.com/SonghaiFan/responsive-object-continuity). It is not defined by building an independent component library. Existing libraries are welcome; ROC provides the common visual language, defaults, composition and interaction quality. Downloadable components and the registry are ways to reuse these cases.
+
+Base UI for interaction and Animate UI for motion is a useful implementation pattern, not an exclusive stack. See the [project constitution](CONSTITUTION.md) for the governing principles.
+
+## Three levels, one gallery
+
+The gallery progresses from top to bottom: **Design System → Primitives → Interfaces**. Header links jump to these sections in the same retained preview.
+
+- **Design System:** a live style board for shared colour, typography, corners, spacing and controls. The token source is [`registry/roc/tokens.css`](registry/roc/tokens.css).
+- **Primitives:** foundation and motion cases grouped into Actions, Inputs, Navigation, Overlays, Collections, Text & numbers, Effects and Layout.
+- **Interfaces:** ten earlier source-informed interactions, composed with real content and retained drafts. These include reading surfaces, collections, image inspection, audio notes, contextual editing and source trays.
+
+See [design tokens and layer boundaries](notes/design-system.md).
 
 ## shadcn foundations
 
 All **66 entries** in the official shadcn/ui component catalog are available in the gallery, plus ROC's own **Edge Panel** (67 cards). The original 25 foundations are joined by calendars, date pickers, tables, charts, command menus, comboboxes, drawers, sheets, resizable panels, sidebars, fields, input groups, OTP inputs, messages, questionnaires, traces, and more. The complete list and implementation boundaries are recorded in [the catalog coverage](notes/catalog-coverage.md).
 
-Official source snapshots, recipe documentation, hashes, and the MIT license are preserved. ROC owns its primitives (`primitive-*` files). Simple behaviour is written in the repository; positioning, focus trapping and menus come from [Base UI](https://base-ui.com/) behind the same seam; specialist libraries cover charts, carousels and tables. No component installs Radix — see [notes/primitives.md](notes/primitives.md). ROC adds retained disclosure content, an inline sidebar that keeps one tree across widths, stable chart measurements, neutral tokens, reduced-motion styles, and independently installable source.
+Source snapshots, recipe documentation, hashes and applicable licenses are preserved. Current cases combine Base UI, Animate UI and specialist libraries with ROC visuals and composition. Local `primitive-*` adapters preserve useful APIs and styling boundaries; they are not an ownership or dependency restriction. See [implementation boundaries](notes/primitives.md).
 
 [Adaptation contracts and limits](notes/shadcn-foundations.md) · [Original source snapshots](upstream/shadcn/)
 
@@ -35,7 +47,7 @@ Install `textarea` separately for this composition. Tabs and Accordion retain in
 
 ## Earlier source-informed components
 
-These ten earlier experiments are retained as downloadable source for existing consumers, but are no longer shown or imported by the design space.
+These ten source-informed practice cases form the Interfaces level. They are displayed in the gallery with real content and remain available as reusable source.
 
 | Component | Behaviour |
 | --- | --- |
@@ -101,7 +113,7 @@ On phones and touch devices, Style opens a scrollable modal sheet with a close b
 
 ## 中文
 
-ROC 设计空间只展示 66 个基于 shadcn/ui 重做的组件。早期 10 个来自 Syuze / Franklin 交互经验的组件保留下载源码，不再出现在画廊。响应式设备切换、宽度滑块和媒体断点标记仅在组件详情中显示。基础组件保留组合 API 和 Radix / Base UI 可访问性语义，再加入 ROC 的保留节点、响应式布局和连续反馈。ROC 是一套独立的 React 组件，设计空间采用 masonry 布局，直接铺开所有可操作的组件。组件不依赖 Syuze、Franklin Board 或画廊运行时；示例数据、业务行为和展示页面与可下载代码分开。可组合音频控件、自定义选区操作，或把自己的 React 内容放进托盘。来源项目的物理参数和对象连续性原则被保留为可复用行为，而不是打包整个应用。
+ROC 设计空间只展示 66 个基于 shadcn/ui 重做的组件。早期 10 个来自 Syuze / Franklin 交互经验的组件保留下载源码，不再出现在画廊。响应式设备切换、宽度滑块和媒体断点标记仅在组件详情中显示。基础组件保留组合 API 和 Radix / Base UI 可访问性语义，再加入 ROC 的保留节点、响应式布局和连续反馈。ROC 是 ROC skill 的实践案例合集，以统一的 UI 与 UX 标准把关，允许引入任何适合的现有 library；可下载的 React 组件是案例复用的一种形式，设计空间采用 masonry 布局，直接铺开所有可操作的组件。组件不依赖 Syuze、Franklin Board 或画廊运行时；示例数据、业务行为和展示页面与可下载代码分开。可组合音频控件、自定义选区操作，或把自己的 React 内容放进托盘。来源项目的物理参数和对象连续性原则被保留为可复用行为，而不是打包整个应用。
 
 ## Develop and verify
 

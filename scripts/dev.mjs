@@ -3,7 +3,7 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
 const root=resolve('dist'), port=Number(process.env.PORT||4186);
-const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.tsx':'text/plain','.ts':'text/plain','.svg':'image/svg+xml','.wav':'audio/wav'};
+const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.tsx':'text/plain','.ts':'text/plain','.jpg':'image/jpeg','.svg':'image/svg+xml','.wav':'audio/wav'};
 createServer(async(req,res)=>{
  try {
   const url=new URL(req.url,'http://localhost'),file=resolve(root,'.'+decodeURIComponent(url.pathname==='/'?'/index.html':url.pathname));
