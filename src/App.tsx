@@ -1,3 +1,7 @@
+import { franklinBoardPreset } from "../registry/roc/franklin-board-preset";
+import { BookmarkCheck } from "./components/animate-ui/icons/bookmark-check";
+import { ThemeToggler as AnimateThemeToggler } from "@animate-ui/react/primitives/effects/theme-toggler";
+import { ThemeTogglerButton } from "../registry/roc/theme-toggler-button";
 import { DesignSystem } from "./DesignSystem";
 import { InterfaceExample, interfaceIds, interfaceStories } from "./InterfaceExamples";
 import { collections, collectionFor } from "./collections";
@@ -10,6 +14,7 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type ReactNode,
 } from "react";
 import {
   CodeXmlIcon,
@@ -17,7 +22,6 @@ import {
   Maximize2Icon,
   Minimize2Icon,
   SearchIcon,
-  SlidersHorizontalIcon,
 } from "lucide-react";
 import { Badge } from "../registry/roc/badge";
 import { Button } from "../registry/roc/button";
@@ -53,9 +57,7 @@ import {
   CodeBlockTitle,
 } from "../registry/roc/code-block";
 import { Kbd } from "../registry/roc/kbd";
-import { Label } from "../registry/roc/label";
 import { Picker } from "./Picker";
-import { Toggle } from "../registry/roc/toggle";
 import {
   Sheet,
   SheetClose,
@@ -201,13 +203,13 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
     </Sheet>
   );
 }
-function ComponentDisplayCard({ item, focused, hidden, onFocus, onSource }: {
-  item: Item; focused: boolean; hidden: boolean; onFocus: () => void; onSource: () => void;
+function ComponentDisplayCard({ item, focused, hidden, onFocus, onSource, children, displayId, starred, onStar }: {
+  item: Item; focused: boolean; hidden: boolean; onFocus: () => void; onSource: () => void; children?: ReactNode; displayId?: string; starred?: boolean; onStar?: () => void;
 }) {
   const [controls, setControls] = useState<HTMLDivElement | null>(null);
   return <PreviewControlsTarget value={controls}>
     <Card
-      id={item.id}
+      id={displayId ?? item.id}
       className={`component-card component-${item.id}`}
       hidden={hidden}
       role="article"
@@ -219,6 +221,7 @@ function ComponentDisplayCard({ item, focused, hidden, onFocus, onSource }: {
         </CardTitle>
         <CardAction>
           <div className="preview-header-controls" ref={setControls} />
+          {onStar && <Button variant="ghost" size="icon-sm" aria-label={`${starred ? "Unsave" : "Save"} ${item.name}`} aria-pressed={starred} onClick={onStar}><BookmarkCheck animateOnHover size={16} className={starred ? "bookmark-icon is-saved" : "bookmark-icon"} aria-hidden="true" /></Button>}
           <Button
             variant="ghost"
             size="icon-sm"
@@ -245,7 +248,7 @@ function ComponentDisplayCard({ item, focused, hidden, onFocus, onSource }: {
         </CardAction>
       </CardHeader>
       <div className="component-preview" data-component={item.id}>
-        {interfaceIds.includes(item.id) ? <InterfaceExample id={item.id} /> : <FoundationExample id={item.id} />}
+        {children ?? (interfaceIds.includes(item.id) ? <InterfaceExample id={item.id} /> : <FoundationExample id={item.id} />)}
       </div>
       <CardFooter className="component-footer">
         <span>{interfaceStories[item.id]?.principle ?? item.description}</span>
@@ -253,8 +256,9 @@ function ComponentDisplayCard({ item, focused, hidden, onFocus, onSource }: {
     </Card>
   </PreviewControlsTarget>;
 }
+const designSystemIds = ["typography", "button", "badge", "card", "input", "toggle-group", "theme-toggler-button"];
 const primitiveIds = [...foundationIds, ...motionIds];
-const galleryIds = [...primitiveIds, ...interfaceIds];
+const galleryIds = [...new Set([...primitiveIds, ...designSystemIds, ...interfaceIds])];
 const components = galleryIds.map(
   (id) => catalog.find((item) => item.id === id)!,
 );
@@ -263,6 +267,16 @@ export function App() {
   const frame = useRef<HTMLIFrameElement>(null);
   const [focused, setFocused] = useState("");
   const [appearanceOpen, setAppearanceOpen] = useState(false);
+  const [appearancePreset, setAppearancePreset] = useState("ROC");
+  const [starredIds, setStarredIds] = useState<string[]>(() => {
+    try { const saved = JSON.parse(localStorage.getItem("roc-starred-primitives") ?? "null"); return Array.isArray(saved) ? saved.filter(id => primitiveIds.includes(id)) : designSystemIds; } catch { return designSystemIds; }
+  });
+  const toggleStar = (id: string) => setStarredIds(current => {
+    const next = current.includes(id) ? current.filter(value => value !== id) : [...current, id];
+    if (embedded) parent.postMessage({ type: "roc-stars", value: next }, location.origin);
+    return next;
+  });
+  useEffect(() => { if (!embedded) localStorage.setItem("roc-starred-primitives", JSON.stringify(starredIds)); }, [embedded, starredIds]);
   const focusReturn = useRef("");
   const skipReturn = useRef(false);
   const [selected, setSelected] = useState(
@@ -273,7 +287,7 @@ export function App() {
     [color, setColor] = useState<AccentName>("black"),
     [radius, setRadius] = useState(12),
     [corners, setCorners] = useState("Smooth"),
-    [surface, setSurface] = useState("White"),
+    [surface, setSurface] = useState("Light"),
     [density, setDensity] = useState("Comfortable");
   const [font, setFont] = useState("System");
   const [collection, setCollection] = useState("All");
@@ -326,7 +340,7 @@ export function App() {
     window.addEventListener("keydown", search);
     return () => window.removeEventListener("keydown", search);
   }, [selected]);
-  const config = { collection, query, filter, color, radius, corners, surface, density, font };
+  const config = { collection, query, filter, color, radius, corners, surface, density, font, starredIds, appearancePreset };
   const latestConfig = useRef(config);
   latestConfig.current = config;
   const syncFrame = () =>
@@ -336,7 +350,7 @@ export function App() {
     );
   useEffect(() => {
     if (!embedded) syncFrame();
-  }, [collection, query, filter, color, radius, corners, surface, density, font]);
+  }, [collection, query, filter, color, radius, corners, surface, density, font, starredIds, appearancePreset]);
   useEffect(() => {
     const receive = (event: MessageEvent) => {
       if (event.origin !== location.origin) return;
@@ -352,6 +366,8 @@ export function App() {
           setSurface(c.surface);
           setDensity(c.density);
           setFont(c.font);
+          setAppearancePreset(c.appearancePreset ?? "ROC");
+          if (Array.isArray(c.starredIds)) setStarredIds(c.starredIds.filter((id: string) => primitiveIds.includes(id)));
         }
         if (event.data?.type === "roc-section" && ["design-system", "primitives", "interfaces"].includes(event.data.id)) {
           skipReturn.current = true;
@@ -363,6 +379,8 @@ export function App() {
             setFocused(event.data.id);
           window.scrollTo({ top: 0, behavior: "instant" });
         }
+      } else if (!embedded && event.source === frame.current?.contentWindow && event.data?.type === "roc-stars") {
+        if (Array.isArray(event.data.value)) setStarredIds(event.data.value.filter((id: string) => primitiveIds.includes(id)));
       } else if (!embedded && event.source === frame.current?.contentWindow && event.data?.type === "roc-category") {
         if (collections.some(group => group.name === event.data.value)) setCollection(event.data.value);
       } else if (!embedded && event.source === frame.current?.contentWindow && event.data?.type === "roc-theme") {
@@ -370,6 +388,9 @@ export function App() {
         if (setting === "color" && Object.hasOwn(palette, value)) setColor(value as AccentName);
         if (setting === "radius" && radiusPresets.some(preset => Number(preset.value) === value)) setRadius(value);
         if (setting === "font" && Object.hasOwn(fontFamilies, value)) setFont(value);
+        if (setting === "surface" && ["Dark", "Light"].includes(value)) setSurface(value);
+        if (setting === "corners" && ["Smooth", "Rounded"].includes(value)) setCorners(value);
+        if (setting === "density" && ["Comfortable", "Compact"].includes(value)) setDensity(value);
       } else if (
         !embedded &&
         event.source === frame.current?.contentWindow &&
@@ -439,22 +460,33 @@ export function App() {
     );
   };
   const style = {
-    "--roc-accent": palette[color],
-    "--roc-marker": `color-mix(in srgb,${palette[color]} 24%,white)`,
-    "--roc-accent-foreground": accentForeground[color],
+    ...(appearancePreset === "Franklin Board" ? franklinBoardPreset.variables : { "--roc-canvas": "var(--roc-paper)", "--roc-radius-object": `${radius}px`, "--roc-radius-folder": `${radius}px`, "--roc-radius-image": `${radius}px`, "--roc-folder-paper": "var(--roc-paper)", "--roc-object-shadow": "none" }),
+    "--roc-selected-accent": "#121316",
+    "--roc-secondary": "#2563eb",
+    "--roc-tertiary": "#f97316",
+    "--roc-neutral": "#71717a",
+    "--roc-selected-accent-foreground": accentForeground[color],
+    "--roc-accent": surface === "Dark" ? "#f5f5f5" : "#121316",
+    "--roc-accent-foreground": surface === "Dark" && color === "black" ? "#171717" : accentForeground[color],
     "--roc-radius": `${radius}px`,
     "--roc-corner-shape": corners === "Smooth" ? "squircle" : "round",
-    "--roc-paper": surface === "Paper" ? "#fcfbf7" : "#fff",
+    "--roc-paper": surface === "Dark" ? "#1c1c1e" : "#fff",
+    "--roc-ink": surface === "Dark" ? "#eeeeee" : "#252525",
+    "--roc-muted": surface === "Dark" ? "#a3a3a3" : "#737373",
+    "--roc-line": surface === "Dark" ? "#3b3b3d" : "#e5e5e5",
+    "--roc-marker": surface === "Dark" ? "#343438" : "#efefef",
     "--preview-font": fontFamilies[font as keyof typeof fontFamilies] ?? fontFamilies.System,
     "--roc-font-body": fontFamilies[font as keyof typeof fontFamilies] ?? fontFamilies.System,
     "--roc-font-heading": fontFamilies[font as keyof typeof fontFamilies] ?? fontFamilies.System,
     "--roc-font-control": fontFamilies[font as keyof typeof fontFamilies] ?? fontFamilies.System,
-  } as CSSProperties;
+  } as unknown as CSSProperties;
   useLayoutEffect(() => {
-    if (!embedded) return;
+    document.documentElement.dataset.theme = surface.toLowerCase();
+    document.documentElement.classList.toggle("dark", surface === "Dark");
+    document.documentElement.style.colorScheme = surface.toLowerCase();
     for (const [name, value] of Object.entries(style))
       document.documentElement.style.setProperty(name, String(value));
-  }, [embedded, color, radius, corners, surface, font]);
+  }, [embedded, color, radius, corners, surface, font, appearancePreset]);
   if (embedded)
     return (
       <div className="design-space embedded-preview" style={style}>
@@ -463,15 +495,16 @@ export function App() {
           data-density={density.toLowerCase()}
           data-focused={!!focused}
         >
-          <section id="design-system" className="gallery-layer foundation-layer" aria-labelledby="design-system-title" hidden={!!focused}>
-            <div className="layer-heading"><span className="layer-number">01</span><div><h1 id="design-system-title">Design System</h1><p>The shared visual language. Colour, typography, corners and space.</p></div><span className="layer-meta">The foundation</span></div>
-            <DesignSystem color={color} radius={radius} font={font}
-              onColor={value => { setColor(value); parent.postMessage({ type: "roc-theme", setting: "color", value }, location.origin); }}
-              onRadius={value => { setRadius(value); parent.postMessage({ type: "roc-theme", setting: "radius", value }, location.origin); }}
-              onFont={value => { setFont(value); parent.postMessage({ type: "roc-theme", setting: "font", value }, location.origin); }} />
+          <section id="design-system" className="gallery-layer foundation-layer" aria-labelledby="design-system-title" hidden={!!focused && !starredIds.includes(focused)}>
+            <div className="layer-heading" hidden={!!focused}><span className="layer-number">01</span><div><h1 id="design-system-title">Design System</h1><p>The shared visual language. Colour, typography, corners and space.</p></div><span className="layer-meta">Saved primitives</span></div>
+            <DesignSystem>
+              {components.filter(item => starredIds.includes(item.id)).sort((a, b) => starredIds.indexOf(a.id) - starredIds.indexOf(b.id)).map(item => <ComponentDisplayCard key={item.id} displayId={`starred-${item.id}`} starred onStar={() => toggleStar(item.id)} item={item} focused={focused === item.id} hidden={!!focused && focused !== item.id} onFocus={() => setFocused(focused === item.id ? "" : item.id)} onSource={() => open(item.id)}>
+                {item.id === "theme-toggler-button" ? <AnimateThemeToggler theme={surface === "Dark" ? "dark" : "light"} resolvedTheme={surface === "Dark" ? "dark" : "light"} setTheme={theme => { const value = theme === "dark" ? "Dark" : "Light"; setSurface(value); parent.postMessage({ type: "roc-theme", setting: "surface", value }, location.origin); }}>{({ effective, toggleTheme }) => <ThemeTogglerButton dark={effective === "dark"} onDarkChange={dark => toggleTheme(dark ? "dark" : "light")} />}</AnimateThemeToggler> : undefined}
+              </ComponentDisplayCard>)}
+            </DesignSystem>
             <div className="layer-connection"><span>Shared tokens</span><span>Used by primitives and interfaces ↓</span></div>
           </section>
-          <section id="primitives" className="gallery-layer" aria-labelledby="primitives-title" hidden={!!focused && interfaceIds.includes(focused)}>
+          <section id="primitives" className="gallery-layer" aria-labelledby="primitives-title" hidden={!!focused && (!primitiveIds.includes(focused) || starredIds.includes(focused))}>
             <div className="layer-heading" hidden={!!focused}><span className="layer-number">02</span><div><h2 id="primitives-title">Primitives</h2><p>One behaviour at a time. Built with the same visual foundations.</p></div><span className="layer-meta">{primitiveIds.length} components</span></div>
             <div className="catalog-browser" hidden={!!focused}>
               <ToggleGroup type="single" value={collection} onValueChange={value => {
@@ -483,7 +516,7 @@ export function App() {
               <div className="catalog-results"><p>{collections.find(group => group.name === collection)?.description}</p><output aria-live="polite">{visible.filter(item => primitiveIds.includes(item.id)).length} results</output></div>
             </div>
             <div className="masonry" aria-label="Primitive previews">
-              {components.filter(item => primitiveIds.includes(item.id)).map(item => <ComponentDisplayCard key={item.id} item={item} focused={focused === item.id}
+              {components.filter(item => primitiveIds.includes(item.id)).map(item => <ComponentDisplayCard key={item.id} starred={starredIds.includes(item.id)} onStar={() => toggleStar(item.id)} item={item} focused={focused === item.id}
                 hidden={focused ? item.id !== focused : !visible.includes(item)}
                 onFocus={() => { setFocused(focused === item.id ? "" : item.id); window.scrollTo({ top: 0, behavior: "instant" }); }}
                 onSource={() => open(item.id)} />)}
@@ -535,106 +568,20 @@ export function App() {
           }}><span>{String(i + 1).padStart(2, "0")}</span>{label}</Button>)}
         </nav>
         <Sheet open={appearanceOpen} onOpenChange={setAppearanceOpen}>
-          <SheetTrigger asChild>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="style-trigger"
-              aria-label="Design settings"
-            >
-              <SlidersHorizontalIcon aria-hidden="true" />
-              <span>Style</span>
-            </Button>
-          </SheetTrigger>
+          <SheetTrigger asChild><Button variant="ghost" size="sm" aria-label="Appearance settings">Appearance</Button></SheetTrigger>
           <SheetContent side="left" className="source-panel appearance-panel" showCloseButton={false}>
             <div className="panel-body">
-              <SheetHeader>
-                <div>
-                  <span className="eyebrow">DESIGN SETTINGS</span>
-                  <SheetTitle>Appearance</SheetTitle>
-                </div>
-                <SheetClose asChild>
-                  <Button variant="secondary" size="icon-sm" aria-label="Close appearance">×</Button>
-                </SheetClose>
-              </SheetHeader>
-              <SheetDescription className="panel-description">
-                Shared tokens for primitives and interface cases.
-              </SheetDescription>
-            <div className="rail-section">
-              <Label className="rail-control">
-                <span>Surface</span>
-                <Picker
-                  label="Surface"
-                  value={surface}
-                  onValueChange={setSurface}
-                  options={[{ value: "Paper" }, { value: "White" }]}
-                />
-              </Label>
-              <div className="rail-control">
-                <span>Accent</span>
-                <div className="swatches">
-                  {Object.entries(palette).map(([key, value]) => (
-                    <Toggle
-                      key={key}
-                      aria-label={`${key} accent`}
-                      pressed={color === key}
-                      onPressedChange={() => setColor(key as AccentName)}
-                      style={{ background: value }}
-                    />
-                  ))}
-                </div>
+              <SheetHeader><SheetTitle>Appearance</SheetTitle><SheetClose asChild><Button variant="ghost" size="icon-sm" aria-label="Close appearance">×</Button></SheetClose></SheetHeader>
+              <SheetDescription>Shared settings for every preview.</SheetDescription>
+              <div className="appearance-controls">
+                <label>Preset<Picker label="Appearance preset" value={appearancePreset} onValueChange={value => { setAppearancePreset(value); setRadius(value === "Franklin Board" ? 16 : 12); setCorners("Rounded"); setFont("System"); setDensity("Comfortable"); }} options={[{ value: "ROC" }, { value: "Franklin Board" }]} /></label>
+                <div className="appearance-scheme"><span>Colour scheme</span><strong>Technical Precision</strong><div aria-label="Primary, Secondary, Tertiary and Neutral colour scheme">{["#121316", "#2563eb", "#f97316", "#71717a"].map(value => <span key={value} style={{ background: value }} />)}</div></div>
+                <label>Theme<Picker label="Theme" value={surface} onValueChange={setSurface} options={[{ value: "Light" }, { value: "Dark" }]} /></label>
+                <label>Typeface<Picker label="Typeface" value={font} onValueChange={setFont} options={[{ value: "System" }, { value: "Serif" }]} /></label>
+                <label>Corner style<Picker label="Corner style" value={corners} onValueChange={setCorners} options={[{ value: "Smooth" }, { value: "Rounded" }]} /></label>
+                <label>Radius<Picker label="Corner radius" value={String(radius)} onValueChange={value => setRadius(Number(value))} options={radiusPresets} /></label>
+                <label>Density<Picker label="Density" value={density} onValueChange={setDensity} options={[{ value: "Comfortable" }, { value: "Compact" }]} /></label>
               </div>
-              <Label className="rail-control">
-                <span>Type</span>
-                <Picker
-                  label="Typeface"
-                  value={font}
-                  onValueChange={setFont}
-                  options={[{ value: "System" }, { value: "Serif" }]}
-                />
-              </Label>
-              <Label className="rail-control">
-                <span>Corners</span>
-                <Picker
-                  label="Corner style"
-                  value={corners}
-                  onValueChange={setCorners}
-                  options={[
-                    { value: "Smooth" },
-                    { value: "Rounded" },
-                  ]}
-                />
-              </Label>
-              <Label className="rail-control">
-                <span>Radius</span>
-                <Picker
-                  label="Corner radius"
-                  value={String(radius)}
-                  onValueChange={(value) => setRadius(Number(value))}
-                  options={radiusPresets}
-                />
-              </Label>
-              <Label className="rail-control">
-                <span>Spacing</span>
-                <Picker
-                  label="Spacing"
-                  value={density}
-                  onValueChange={setDensity}
-                  options={[{ value: "Comfortable" }, { value: "Compact" }]}
-                />
-              </Label>
-            </div>
-            <div className="rail-bottom">
-              <Button variant="link" size="sm" asChild>
-                <a
-                  href={`${repo}/blob/main/notes/react-design-system.md`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Composition guide ↗
-                </a>
-              </Button>
-            </div>
             </div>
           </SheetContent>
         </Sheet>

@@ -1,7 +1,7 @@
 @import "./surface.css";
 .roc-page-book {
   width: 100%;
-  color: #30312c;
+  color: var(--roc-ink);
 }
 .roc-book-stage {
   height: calc(var(--book-h) + 18px);
@@ -35,7 +35,7 @@
   inset: 0;
   overflow: hidden;
   background: var(--roc-paper, #fcfbf8);
-  border: 1px solid #dedcd4;
+  border: 1px solid var(--roc-line);
   border-radius: 3px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;

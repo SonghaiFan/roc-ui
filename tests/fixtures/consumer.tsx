@@ -1,3 +1,4 @@
+import { BoardDocument, BoardNote, BoardFolder, BoardImageStack } from "./components/roc/board-objects";
 import { MotionConsumer } from "./motion-consumer";
 import { CatalogConsumer } from "./catalog-consumer";
 import { MoreFoundationConsumer } from "./more-foundations";
@@ -162,6 +163,10 @@ export function Consumer() {
           ]}
         />
       </section>
+    <section data-component="board-document"><BoardDocument /></section>
+    <section data-component="board-note"><BoardNote /></section>
+    <section data-component="board-folder"><BoardFolder /></section>
+    <section data-component="board-image-stack"><BoardImageStack images={[{src:"./demo-images/landscape-01.jpg",alt:"Coastal photograph"}]} /></section>
     </main>
   );
 }

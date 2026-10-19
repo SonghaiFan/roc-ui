@@ -34,6 +34,14 @@ for (const entry of registry.items)
     );
     assert.ok(item.files.some((f) => f.path.endsWith(`/${entry.name}.css`)));
     for (const file of item.files) {
+      if (file.path.endsWith("/franklin-react-react-controller.ts")) {
+        assert.ok(entry.name.startsWith("board-"));
+        assert.ok(!file.content.includes("iframe"));
+        // Pointer guides and marquee are transient controller decorations;
+        // user content remains rendered and keyed by React in Board.tsx.
+        assert.equal((file.content.match(/document\.createElement/g) || []).length, 2);
+        continue;
+      }
       assert.ok(
         !/native-.*\.(?:js|d\.ts)$|\/roc\.css$/.test(file.path),
         file.path,

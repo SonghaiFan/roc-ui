@@ -58,8 +58,7 @@
 .roc-folder-card strong {
   display: block;
   font:
-    normal 20px/1.15 Georgia,
-    serif;
+    normal 20px/1.15 var(--roc-font-heading, system-ui);
   margin-top: 18px;
   overflow-wrap: anywhere;
 }
@@ -101,7 +100,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 11px;
-  color: #273344a6;
+  color: var(--roc-ink);
 }
 .roc-folder-toggle b {
   font-size: 18px;
@@ -153,3 +152,18 @@
     transition: none !important;
   }
 }
+
+.roc-folder-card { overflow: hidden; white-space: normal; }
+.roc-folder-card strong { font-size: 16px; margin-top: 8px; }
+.roc-folder-card .roc-card-content { margin-top: 8px; height: 74px; overflow: hidden; border-radius: 4px; }
+.roc-folder-toggle { color: white; }
+.roc-folder-toggle > span:last-child { color: rgb(255 255 255 / .8); }
+
+/* The retained world has one spring transform writer, shared with BoardFolder. */
+.roc-folder { overflow: hidden; }
+.roc-folder-world { position: absolute; inset: 0; transform-origin: 0 0; }
+.roc-folder .roc-folder-back { left: 0; top: 4px; width: 228px; height: 172px; transform: none; transition: none; }
+.roc-folder .roc-folder-card { left: 0; top: 0; width: 118px; height: 152px; transition: box-shadow .2s; }
+.roc-folder .roc-folder-toggle { left: 0; top: 24px; width: 228px; height: 152px; transform: none; transition: background .25s; }
+.roc-folder .roc-folder-toggle { transform-origin: center bottom; }
+.roc-folder[data-direction="right"] .roc-folder-toggle { transform-origin: left center; }

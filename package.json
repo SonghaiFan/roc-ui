@@ -7,7 +7,7 @@
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
     "check": "tsc --noEmit",
-    "test": "node --test tests/registry.test.mjs",
+    "test": "node --test tests/registry.test.mjs tests/folder-motion.test.mjs",
     "test:consumer": "node scripts/check-consumer.mjs"
   },
   "dependencies": {

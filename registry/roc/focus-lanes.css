@@ -84,7 +84,7 @@
 }
 .roc-lane-event:hover,
 .roc-lane-event.is-selected {
-  background: #edf0e7;
+  background: var(--roc-marker);
 }
 .roc-event-dot {
   width: 12px;

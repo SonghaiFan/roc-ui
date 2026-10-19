@@ -117,7 +117,6 @@ lucide-react/dist/esm/createLucideIcon.mjs:
 lucide-react/dist/esm/icons/arrow-down.mjs:
 lucide-react/dist/esm/icons/arrow-left.mjs:
 lucide-react/dist/esm/icons/arrow-right.mjs:
-lucide-react/dist/esm/icons/arrow-up-right.mjs:
 lucide-react/dist/esm/icons/bold.mjs:
 lucide-react/dist/esm/icons/calendar.mjs:
 lucide-react/dist/esm/icons/check.mjs:
@@ -151,7 +150,6 @@ lucide-react/dist/esm/icons/plus.mjs:
 lucide-react/dist/esm/icons/rotate-ccw.mjs:
 lucide-react/dist/esm/icons/search.mjs:
 lucide-react/dist/esm/icons/settings.mjs:
-lucide-react/dist/esm/icons/sliders-horizontal.mjs:
 lucide-react/dist/esm/icons/smartphone.mjs:
 lucide-react/dist/esm/icons/tablet.mjs:
 lucide-react/dist/esm/icons/text-align-center.mjs:
@@ -159,7 +157,6 @@ lucide-react/dist/esm/icons/text-align-end.mjs:
 lucide-react/dist/esm/icons/text-align-start.mjs:
 lucide-react/dist/esm/icons/triangle-alert.mjs:
 lucide-react/dist/esm/icons/underline.mjs:
-lucide-react/dist/esm/icons/user-round.mjs:
 lucide-react/dist/esm/icons/x.mjs:
 lucide-react/dist/esm/lucide-react.mjs:
   /**

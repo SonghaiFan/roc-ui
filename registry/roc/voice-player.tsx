@@ -1,4 +1,6 @@
 "use client";
+import { Button } from "./button";
+import { Slider } from "./slider";
 import {
   createContext,
   useContext,
@@ -174,7 +176,7 @@ const timeLabel = (seconds: number) =>
 export function VoicePlayButton() {
   const s = useVoicePlayer();
   return (
-    <button
+    <Button variant="ghost" size="sm"
       type="button"
       className="roc-voice-play"
       aria-label={s.playing ? "Pause audio" : "Play audio"}
@@ -195,28 +197,22 @@ export function VoicePlayButton() {
       >
         Ⅱ
       </span>
-    </button>
+    </Button>
   );
 }
 export function VoiceSeek() {
   const s = useVoicePlayer();
   return (
-    <input
+    <Slider
       className="roc-voice-seek"
-      type="range"
       aria-label="Playback position"
-      aria-valuetext={`${timeLabel(s.time)} of ${timeLabel(s.duration)}`}
+      getValueText={value => `${timeLabel(value)} of ${timeLabel(s.duration)}`}
       min={0}
       max={s.duration || 1}
       step={0.01}
-      value={s.time}
+      value={[s.time]}
       disabled={!s.duration}
-      onChange={(e) => s.seek(Number(e.target.value))}
-      style={
-        {
-          "--roc-progress": s.duration ? s.time / s.duration : 0,
-        } as CSSProperties
-      }
+      onValueChange={value => s.seek(Array.isArray(value) ? value[0] : value)}
     />
   );
 }
@@ -231,7 +227,7 @@ export function VoiceTime() {
 export function VoiceRate({ rates = [1, 1.5, 2] }: { rates?: number[] }) {
   const s = useVoicePlayer();
   return (
-    <button
+    <Button variant="ghost" size="sm"
       type="button"
       className="roc-voice-rate"
       aria-label={`Playback speed, ${s.rate} times`}
@@ -241,7 +237,7 @@ export function VoiceRate({ rates = [1, 1.5, 2] }: { rates?: number[] }) {
       }
     >
       {s.rate}×
-    </button>
+    </Button>
   );
 }
 export interface VoicePlayerProps

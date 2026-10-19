@@ -60,6 +60,7 @@ export function SourceStack({
         } as CSSProperties
       }
       className={`roc-sources ${spread ? "is-spread" : ""} ${className}`}
+      onClick={event => { if (spread && (event.target === event.currentTarget || event.target === event.currentTarget.querySelector(".roc-source-items"))) change(() => setSpread(false)); }}
       onKeyDown={(e) => {
         if (e.key === "Escape" && spread) {
           e.stopPropagation();
@@ -73,10 +74,12 @@ export function SourceStack({
         ref={toggle}
         className="roc-text-button roc-source-toggle"
         aria-expanded={spread}
+        aria-label={typeof openLabel === "string" ? openLabel : "Unfold sources"}
+        hidden={spread}
         aria-controls={id}
         onClick={() => change(() => setSpread(!spread))}
       >
-        {spread ? closeLabel : openLabel} <span>↗</span>
+        <span className="roc-ui-sr-only">{openLabel}</span>
       </button>
       <div
         id={id}

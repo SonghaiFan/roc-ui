@@ -1,5 +1,6 @@
 // Extracted from Franklin Board React worktree; MIT. See SOURCE-LICENSE.txt.
 "use client";
+import { Button } from "./button";
 import "./image-viewport.css";
 import {
   useLayoutEffect,
@@ -305,30 +306,30 @@ export function ImageViewport({
         hidden={!active}
         aria-label="Image view controls"
       >
-        <button
+        <Button variant="ghost" size="sm"
           type="button"
           onClick={() => api.current?.zoom(1 / 1.25)}
           aria-label="Zoom image out"
           title="Zoom out (−)"
         >
           −
-        </button>
-        <button
+        </Button>
+        <Button variant="ghost" size="sm"
           type="button"
           onClick={() => api.current?.fit()}
           aria-label="Fit image"
           title="Fit image (0)"
         >
           {Math.abs(scale - 1) < 0.001 ? "Fit" : `${Math.round(scale * 100)}%`}
-        </button>
-        <button
+        </Button>
+        <Button variant="ghost" size="sm"
           type="button"
           onClick={() => api.current?.zoom(1.25)}
           aria-label="Zoom image in"
           title="Zoom in (+)"
         >
           +
-        </button>
+        </Button>
       </div>
     </div>
   );

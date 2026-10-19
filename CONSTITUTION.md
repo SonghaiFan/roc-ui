@@ -16,6 +16,8 @@ ROC 不是以建设独立组件库为目标的项目，而是 [Responsive Object
 2. **Primitives**：使用这些 tokens 的基础组件，按 Actions、Inputs、Navigation、Overlays、Collections、Text & numbers、Effects、Layout 分类。每个案例聚焦一种基础行为。
 3. **Interfaces**：结合 tokens 与基础组件，形成相对完整的功能与交互体验，包括最早从真实项目中提取的阅读、资料收集、图片检查、编辑与来源托盘等案例。
 
+Interfaces 优先组合前两层已展示的真实 primitives，并引用同一套视觉 tokens。通用按钮、输入、文字、状态与容器复用已有组件；专用的空间、媒体、选择与连续性行为保留在案例层，避免另造一套通用控件或只做外观仿制。
+
 三层是理解与组织案例的层级，不是强制的软件包依赖图。允许直接引入成熟 library，也允许保留对案例体验有价值的既有实现。切换分类、查看详情或调整设置时，保留同一个案例及其用户状态。
 
 ## 二、技术选择开放

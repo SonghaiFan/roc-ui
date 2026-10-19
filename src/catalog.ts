@@ -1,6 +1,7 @@
 import { motionCatalog } from "./motion-catalog";
 import { foundations } from "./foundations";
 export const catalog = [
+  ...[ ["board-document", "Board document"], ["board-note", "Board note"], ["board-folder", "Board folder"], ["board-image-stack", "Board image stack"] ].map(([id, name]) => ({ id, name, actions: ["Press", "Edit", "Expand"], category: "Extracted", tag: "Source-backed", number: "FB", description: "Franklin React worktree objects with retained editors and camera transitions.", rule: "Reuse the React worktree controller, geometry and springs with retained object nodes.", limit: "React extraction; plain-text editing, in-memory data unless onCommit is persisted.", props: "See the exported component types.", usage: `<${name.replaceAll(" ", "")} />`, source: "notes/franklin-board-preset.md" })),
   ...motionCatalog,
   ...foundations,
   {

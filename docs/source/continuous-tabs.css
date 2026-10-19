@@ -12,8 +12,8 @@
   display: inline-flex;
   border: 1px solid var(--roc-line, #d8dcd4);
   padding: 4px;
-  border-radius: 9px;
-  background: #f0f1eb;
+  border-radius: var(--roc-radius-control);
+  background: var(--roc-marker);
   max-width: 100%;
 }
 .roc-tabs button {
@@ -23,20 +23,20 @@
   border: 0;
   padding: 11px 18px;
   font-size: 12px;
-  border-radius: 5px;
+  border-radius: var(--roc-radius-control);
   white-space: nowrap;
   transition: color 250ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .roc-tabs button[data-active="true"] {
-  color: #2c4227;
+  color: var(--roc-ink);
 }
 .roc-tab-marker {
   position: absolute;
   left: 0;
   top: 4px;
   bottom: 4px;
-  border-radius: 5px;
-  background: #fff;
+  border-radius: var(--roc-radius-control);
+  background: var(--roc-paper);
   box-shadow: 0 1px 4px #20282012;
   transition:
     transform 0.36s cubic-bezier(0.22, 0.8, 0.25, 1),

@@ -9150,7 +9150,10 @@
       "title": "Expandable Card",
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
-        "react@^19.0.0"
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
       ],
       "files": [
         {
@@ -9164,19 +9167,24 @@
           "target": "~/components/roc/card-preview.tsx"
         },
         {
-          "path": "registry/roc/presentation-spring.ts",
+          "path": "registry/roc/button.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/presentation-spring.ts"
+          "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/card-preview.css",
+          "path": "registry/roc/utils.ts",
           "type": "registry:file",
-          "target": "~/components/roc/card-preview.css"
+          "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/surface.css",
+          "path": "registry/roc/button.css",
           "type": "registry:file",
-          "target": "~/components/roc/surface.css"
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
         },
         {
           "path": "registry/roc/tokens.css",
@@ -9199,6 +9207,21 @@
           "target": "~/components/roc/responsive.css"
         },
         {
+          "path": "registry/roc/presentation-spring.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/presentation-spring.ts"
+        },
+        {
+          "path": "registry/roc/card-preview.css",
+          "type": "registry:file",
+          "target": "~/components/roc/card-preview.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
+        },
+        {
           "path": "registry/roc/use-controllable-state.ts",
           "type": "registry:file",
           "target": "~/components/roc/use-controllable-state.ts"
@@ -9212,6 +9235,11 @@
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
         }
       ]
     },
@@ -9261,6 +9289,31 @@
           "target": "~/components/roc/responsive.css"
         },
         {
+          "path": "registry/roc/folder-motion.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/folder-motion.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-position.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-position.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-spring.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-spring.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-containers.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-containers.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-types.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-types.ts"
+        },
+        {
           "path": "registry/roc/use-controllable-state.ts",
           "type": "registry:file",
           "target": "~/components/roc/use-controllable-state.ts"
@@ -9269,6 +9322,11 @@
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/FRANKLIN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/FRANKLIN-LICENSE.txt"
         }
       ]
     },
@@ -9279,7 +9337,10 @@
       "title": "Source Stack",
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
-        "react@^19.0.0"
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
       ],
       "files": [
         {
@@ -9298,19 +9359,24 @@
           "target": "~/components/roc/card-preview.tsx"
         },
         {
-          "path": "registry/roc/presentation-spring.ts",
+          "path": "registry/roc/button.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/presentation-spring.ts"
+          "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/card-preview.css",
+          "path": "registry/roc/utils.ts",
           "type": "registry:file",
-          "target": "~/components/roc/card-preview.css"
+          "target": "~/components/roc/utils.ts"
         },
         {
-          "path": "registry/roc/surface.css",
+          "path": "registry/roc/button.css",
           "type": "registry:file",
-          "target": "~/components/roc/surface.css"
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
         },
         {
           "path": "registry/roc/tokens.css",
@@ -9333,6 +9399,21 @@
           "target": "~/components/roc/responsive.css"
         },
         {
+          "path": "registry/roc/presentation-spring.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/presentation-spring.ts"
+        },
+        {
+          "path": "registry/roc/card-preview.css",
+          "type": "registry:file",
+          "target": "~/components/roc/card-preview.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
+        },
+        {
           "path": "registry/roc/use-controllable-state.ts",
           "type": "registry:file",
           "target": "~/components/roc/use-controllable-state.ts"
@@ -9346,6 +9427,11 @@
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
         }
       ]
     },
@@ -9465,7 +9551,10 @@
       "title": "Image Viewport",
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
-        "react@^19.0.0"
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
       ],
       "files": [
         {
@@ -9474,14 +9563,24 @@
           "target": "~/components/roc/image-viewport.tsx"
         },
         {
-          "path": "registry/roc/image-viewport.css",
+          "path": "registry/roc/button.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/image-viewport.css"
+          "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/surface.css",
+          "path": "registry/roc/utils.ts",
           "type": "registry:file",
-          "target": "~/components/roc/surface.css"
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
         },
         {
           "path": "registry/roc/tokens.css",
@@ -9502,6 +9601,16 @@
           "path": "registry/roc/responsive.css",
           "type": "registry:file",
           "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/image-viewport.css",
+          "type": "registry:file",
+          "target": "~/components/roc/image-viewport.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
         },
         {
           "path": "registry/roc/image-geometry.ts",
@@ -9522,6 +9631,11 @@
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
         }
       ]
     },
@@ -9532,7 +9646,10 @@
       "title": "Voice Player",
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
-        "react@^19.0.0"
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
       ],
       "files": [
         {
@@ -9541,14 +9658,24 @@
           "target": "~/components/roc/voice-player.tsx"
         },
         {
-          "path": "registry/roc/voice-player.css",
+          "path": "registry/roc/button.tsx",
           "type": "registry:file",
-          "target": "~/components/roc/voice-player.css"
+          "target": "~/components/roc/button.tsx"
         },
         {
-          "path": "registry/roc/surface.css",
+          "path": "registry/roc/utils.ts",
           "type": "registry:file",
-          "target": "~/components/roc/surface.css"
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
         },
         {
           "path": "registry/roc/tokens.css",
@@ -9571,9 +9698,39 @@
           "target": "~/components/roc/responsive.css"
         },
         {
+          "path": "registry/roc/slider.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/slider.tsx"
+        },
+        {
+          "path": "registry/roc/primitive-slider.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/primitive-slider.tsx"
+        },
+        {
+          "path": "registry/roc/slider.css",
+          "type": "registry:file",
+          "target": "~/components/roc/slider.css"
+        },
+        {
+          "path": "registry/roc/voice-player.css",
+          "type": "registry:file",
+          "target": "~/components/roc/voice-player.css"
+        },
+        {
+          "path": "registry/roc/surface.css",
+          "type": "registry:file",
+          "target": "~/components/roc/surface.css"
+        },
+        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
         }
       ]
     },
@@ -9584,13 +9741,56 @@
       "title": "Selection Toolbar",
       "description": "ROC: retained identity and coherent layout changes.",
       "dependencies": [
-        "react@^19.0.0"
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
       ],
       "files": [
         {
           "path": "registry/roc/selection-toolbar.tsx",
           "type": "registry:file",
           "target": "~/components/roc/selection-toolbar.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
         },
         {
           "path": "registry/roc/position-motion.ts",
@@ -9613,6 +9813,56 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "page-book",
+      "type": "registry:component",
+      "title": "Page Book",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/page-book.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/page-book.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
           "path": "registry/roc/tokens.css",
           "type": "registry:file",
           "target": "~/components/roc/tokens.css"
@@ -9631,28 +9881,6 @@
           "path": "registry/roc/responsive.css",
           "type": "registry:file",
           "target": "~/components/roc/responsive.css"
-        },
-        {
-          "path": "registry/roc/SOURCE-LICENSE.txt",
-          "type": "registry:file",
-          "target": "~/components/roc/SOURCE-LICENSE.txt"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "name": "page-book",
-      "type": "registry:component",
-      "title": "Page Book",
-      "description": "ROC: retained identity and coherent layout changes.",
-      "dependencies": [
-        "react@^19.0.0"
-      ],
-      "files": [
-        {
-          "path": "registry/roc/page-book.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/page-book.tsx"
         },
         {
           "path": "registry/roc/spring-frames.ts",
@@ -9675,6 +9903,56 @@
           "target": "~/components/roc/surface.css"
         },
         {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "source-tray",
+      "type": "registry:component",
+      "title": "Source Tray",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0",
+        "class-variance-authority@^0.7.1",
+        "@animate-ui/react@^2.0.0",
+        "clsx@^2.1.1"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/source-tray.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/source-tray.tsx"
+        },
+        {
+          "path": "registry/roc/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/button.tsx"
+        },
+        {
+          "path": "registry/roc/utils.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/utils.ts"
+        },
+        {
+          "path": "registry/roc/button.css",
+          "type": "registry:file",
+          "target": "~/components/roc/button.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
           "path": "registry/roc/tokens.css",
           "type": "registry:file",
           "target": "~/components/roc/tokens.css"
@@ -9693,28 +9971,6 @@
           "path": "registry/roc/responsive.css",
           "type": "registry:file",
           "target": "~/components/roc/responsive.css"
-        },
-        {
-          "path": "registry/roc/SOURCE-LICENSE.txt",
-          "type": "registry:file",
-          "target": "~/components/roc/SOURCE-LICENSE.txt"
-        }
-      ]
-    },
-    {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "name": "source-tray",
-      "type": "registry:component",
-      "title": "Source Tray",
-      "description": "ROC: retained identity and coherent layout changes.",
-      "dependencies": [
-        "react@^19.0.0"
-      ],
-      "files": [
-        {
-          "path": "registry/roc/source-tray.tsx",
-          "type": "registry:file",
-          "target": "~/components/roc/source-tray.tsx"
         },
         {
           "path": "registry/roc/fan-layout.ts",
@@ -9747,29 +10003,14 @@
           "target": "~/components/roc/surface.css"
         },
         {
-          "path": "registry/roc/tokens.css",
-          "type": "registry:file",
-          "target": "~/components/roc/tokens.css"
-        },
-        {
-          "path": "registry/roc/animation.css",
-          "type": "registry:file",
-          "target": "~/components/roc/animation.css"
-        },
-        {
-          "path": "registry/roc/corners.css",
-          "type": "registry:file",
-          "target": "~/components/roc/corners.css"
-        },
-        {
-          "path": "registry/roc/responsive.css",
-          "type": "registry:file",
-          "target": "~/components/roc/responsive.css"
-        },
-        {
           "path": "registry/roc/SOURCE-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/SHADCN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SHADCN-LICENSE.txt"
         }
       ]
     },
@@ -9892,6 +10133,874 @@
           "path": "registry/roc/SHADCN-LICENSE.txt",
           "type": "registry:file",
           "target": "~/components/roc/SHADCN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "board-document",
+      "type": "registry:component",
+      "title": "Board Document",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/board-document.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/board-document.tsx"
+        },
+        {
+          "path": "registry/roc/board-objects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/board-objects.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-engine.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-engine.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-index.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-index.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-types.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-types.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-document.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-document.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-store.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-store.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-schema.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-schema.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-containers.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-containers.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-geometry.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-geometry.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-image-view.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-image-view.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-presentation.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-position.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-position.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-spring.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-spring.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-camera.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-camera.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Board.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Board.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-context.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Containers.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Containers.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ActionButton.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ActionButton.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-controller.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-controller.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-presentation.ts"
+        },
+        {
+          "path": "registry/roc/folder-motion.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/folder-motion.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-presentation.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-EditableText.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-EditableText.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Cards.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Cards.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ImageViewport.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ImageViewport.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-media-images.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-media-images.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ImageImport.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ImageImport.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ObjectControls.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ObjectControls.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-CameraControls.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-CameraControls.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-engine.css",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-engine.css"
+        },
+        {
+          "path": "registry/roc/board-objects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/board-objects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/board-document.css",
+          "type": "registry:file",
+          "target": "~/components/roc/board-document.css"
+        },
+        {
+          "path": "registry/roc/franklin-board-preset.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-board-preset.ts"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/FRANKLIN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/FRANKLIN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "board-note",
+      "type": "registry:component",
+      "title": "Board Note",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/board-note.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/board-note.tsx"
+        },
+        {
+          "path": "registry/roc/board-objects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/board-objects.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-engine.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-engine.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-index.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-index.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-types.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-types.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-document.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-document.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-store.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-store.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-schema.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-schema.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-containers.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-containers.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-geometry.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-geometry.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-image-view.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-image-view.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-presentation.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-position.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-position.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-spring.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-spring.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-camera.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-camera.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Board.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Board.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-context.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Containers.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Containers.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ActionButton.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ActionButton.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-controller.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-controller.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-presentation.ts"
+        },
+        {
+          "path": "registry/roc/folder-motion.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/folder-motion.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-presentation.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-EditableText.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-EditableText.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Cards.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Cards.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ImageViewport.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ImageViewport.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-media-images.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-media-images.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ImageImport.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ImageImport.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ObjectControls.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ObjectControls.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-CameraControls.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-CameraControls.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-engine.css",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-engine.css"
+        },
+        {
+          "path": "registry/roc/board-objects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/board-objects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/board-note.css",
+          "type": "registry:file",
+          "target": "~/components/roc/board-note.css"
+        },
+        {
+          "path": "registry/roc/franklin-board-preset.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-board-preset.ts"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/FRANKLIN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/FRANKLIN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "board-folder",
+      "type": "registry:component",
+      "title": "Board Folder",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/board-folder.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/board-folder.tsx"
+        },
+        {
+          "path": "registry/roc/board-objects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/board-objects.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-engine.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-engine.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-index.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-index.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-types.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-types.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-document.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-document.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-store.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-store.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-schema.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-schema.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-containers.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-containers.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-geometry.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-geometry.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-image-view.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-image-view.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-presentation.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-position.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-position.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-spring.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-spring.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-camera.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-camera.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Board.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Board.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-context.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Containers.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Containers.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ActionButton.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ActionButton.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-controller.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-controller.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-presentation.ts"
+        },
+        {
+          "path": "registry/roc/folder-motion.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/folder-motion.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-presentation.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-EditableText.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-EditableText.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Cards.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Cards.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ImageViewport.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ImageViewport.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-media-images.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-media-images.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ImageImport.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ImageImport.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ObjectControls.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ObjectControls.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-CameraControls.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-CameraControls.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-engine.css",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-engine.css"
+        },
+        {
+          "path": "registry/roc/board-objects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/board-objects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/board-folder.css",
+          "type": "registry:file",
+          "target": "~/components/roc/board-folder.css"
+        },
+        {
+          "path": "registry/roc/franklin-board-preset.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-board-preset.ts"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/FRANKLIN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/FRANKLIN-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "board-image-stack",
+      "type": "registry:component",
+      "title": "Board Image Stack",
+      "description": "ROC: retained identity and coherent layout changes.",
+      "dependencies": [
+        "react@^19.0.0"
+      ],
+      "files": [
+        {
+          "path": "registry/roc/board-image-stack.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/board-image-stack.tsx"
+        },
+        {
+          "path": "registry/roc/board-objects.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/board-objects.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-engine.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-engine.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-index.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-index.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-types.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-types.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-document.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-document.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-store.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-store.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-schema.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-schema.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-containers.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-containers.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-geometry.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-geometry.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-image-view.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-image-view.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-presentation.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-position.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-position.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-spring.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-spring.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-core-camera.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-core-camera.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Board.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Board.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-context.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-context.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Containers.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Containers.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ActionButton.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ActionButton.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-controller.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-controller.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-presentation.ts"
+        },
+        {
+          "path": "registry/roc/folder-motion.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/folder-motion.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-motion-presentation.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-motion-presentation.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-EditableText.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-EditableText.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-Cards.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-Cards.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ImageViewport.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ImageViewport.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-media-images.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-media-images.ts"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ImageImport.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ImageImport.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-ObjectControls.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-ObjectControls.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-react-CameraControls.tsx",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-react-CameraControls.tsx"
+        },
+        {
+          "path": "registry/roc/franklin-react-engine.css",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-react-engine.css"
+        },
+        {
+          "path": "registry/roc/board-objects.css",
+          "type": "registry:file",
+          "target": "~/components/roc/board-objects.css"
+        },
+        {
+          "path": "registry/roc/ui-base.css",
+          "type": "registry:file",
+          "target": "~/components/roc/ui-base.css"
+        },
+        {
+          "path": "registry/roc/tokens.css",
+          "type": "registry:file",
+          "target": "~/components/roc/tokens.css"
+        },
+        {
+          "path": "registry/roc/animation.css",
+          "type": "registry:file",
+          "target": "~/components/roc/animation.css"
+        },
+        {
+          "path": "registry/roc/corners.css",
+          "type": "registry:file",
+          "target": "~/components/roc/corners.css"
+        },
+        {
+          "path": "registry/roc/responsive.css",
+          "type": "registry:file",
+          "target": "~/components/roc/responsive.css"
+        },
+        {
+          "path": "registry/roc/board-image-stack.css",
+          "type": "registry:file",
+          "target": "~/components/roc/board-image-stack.css"
+        },
+        {
+          "path": "registry/roc/franklin-board-preset.ts",
+          "type": "registry:file",
+          "target": "~/components/roc/franklin-board-preset.ts"
+        },
+        {
+          "path": "registry/roc/SOURCE-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/SOURCE-LICENSE.txt"
+        },
+        {
+          "path": "registry/roc/FRANKLIN-LICENSE.txt",
+          "type": "registry:file",
+          "target": "~/components/roc/FRANKLIN-LICENSE.txt"
         }
       ]
     }

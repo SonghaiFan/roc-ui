@@ -6,7 +6,7 @@
   height: 300px;
   overflow: hidden;
   border-radius: var(--roc-radius, 10px);
-  background: #e8ebe6;
+  background: var(--roc-marker);
   touch-action: pan-y;
 }
 .roc-image-viewport > img {

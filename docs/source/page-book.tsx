@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "./button";
 // Extracted leaf mechanics from Syuze MemoirBook: independent paper/board
 // profiles, shared angle shading, cover-centering and release velocity.
 import {
@@ -314,25 +315,25 @@ export function PageBook({
         </div>
       </div>
       <div className="roc-book-controls">
-        <button
+        <Button variant="ghost" size="sm"
           type="button"
           aria-label="Previous page"
           disabled={moving || turned === 0}
           onClick={() => step(-1)}
         >
           ←
-        </button>
+        </Button>
         <span role="status">
           {turned === 0 ? "Cover" : `${turned} / ${last + 1}`}
         </span>
-        <button
+        <Button variant="ghost" size="sm"
           type="button"
           aria-label="Next page"
           disabled={moving || turned > last}
           onClick={() => step(1)}
         >
           →
-        </button>
+        </Button>
       </div>
     </div>
   );

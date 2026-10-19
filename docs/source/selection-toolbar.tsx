@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "./button";
 import {
   useLayoutEffect,
   useRef,
@@ -132,7 +133,7 @@ export function SelectionToolbar({
       }}
     >
       {actions.map((action) => (
-        <button
+        <Button variant="ghost" size="sm"
           type="button"
           key={action.id}
           data-command={action.id}
@@ -144,7 +145,7 @@ export function SelectionToolbar({
           onClick={() => apply(action.id)}
         >
           {action.content}
-        </button>
+        </Button>
       ))}
     </div>
   );

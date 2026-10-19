@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "./button";
 import {
   useId,
   useLayoutEffect,
@@ -146,7 +147,7 @@ export function SourceTray({
           </div>
         ))}
       </div>
-      <button
+      <Button variant="ghost" size="sm"
         ref={button}
         className="roc-tray-toggle"
         type="button"
@@ -155,7 +156,7 @@ export function SourceTray({
         onClick={() => setOpen(!open)}
       >
         {open ? closeLabel : label} <span>{items.length}</span>
-      </button>
+      </Button>
     </div>
   );
 }

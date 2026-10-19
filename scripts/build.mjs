@@ -20,6 +20,7 @@ const names = [
   "page-book",
   "source-tray",
   "edge-panel",
+  "board-document", "board-note", "board-folder", "board-image-stack",
 ];
 const packageInfo = JSON.parse(await readFile("package.json", "utf8"));
 const root = {
@@ -74,6 +75,7 @@ for (const name of names) {
   }
   await collect(`${name}.tsx`);
   await collect("SOURCE-LICENSE.txt");
+  if (name.startsWith("board-") || name === "folder-fan") await collect("FRANKLIN-LICENSE.txt");
   if (foundationNames.includes(name)) await collect("SHADCN-LICENSE.txt");
   // Anything that bundles shadcn-derived source ships the shadcn licence, however it was reached.
   for (const file of [...files])

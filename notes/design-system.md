@@ -6,7 +6,7 @@ The [constitution](../CONSTITUTION.md) defines ROC as a practice-case collection
 
 `registry/roc/tokens.css` declares shared semantic tokens: ink, muted text, surface, line, accent/foreground, focus, body/heading/control/mono fonts, type size, control weight, radius, spacing and control height. Both `ui-base.css` and `surface.css` import it, so primitives and source-informed interface cases can use the same visual foundation without importing gallery code. Existing component-specific tokens remain override points.
 
-`src/DesignSystem.tsx` presents those tokens as a live style board. Its colours, typography, radius, inputs and buttons show the current shared settings. The Appearance sheet and the board update the same settings. The gallery host forwards them to its persistent preview frame and applies them to the frame document for portal content too.
+`src/DesignSystem.tsx` presents those tokens as a live style board. Its colours, typography, radius, inputs and buttons show the current shared settings. The specimen cards themselves are the controls: click the heading, spacing or surface card to change its setting; choose a colour or radius directly, and switch corner style within the corners card. There are no appearance dropdowns. There is no separate Appearance panel. The gallery host forwards them to its persistent preview frame and applies them to the frame document for portal content too.
 
 ## Primitives
 

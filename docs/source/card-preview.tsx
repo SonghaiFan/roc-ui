@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "./button";
 import {
   useLayoutEffect,
   useRef,
@@ -101,7 +102,7 @@ export function CardPreview({
         y: r.y,
         scale: r.width / compositionWidth,
         height: previewHeight,
-        radius: 8,
+        radius: parseFloat(getComputedStyle(paper).getPropertyValue("--roc-radius-object")) || 8,
         reveal: 0,
         scroll: 0,
       };
@@ -307,7 +308,7 @@ export function CardPreview({
               </div>
             </div>
           </article>
-          <button
+          <Button variant="ghost" size="sm"
             ref={closeButton}
             hidden={!reading}
             type="button"
@@ -315,7 +316,7 @@ export function CardPreview({
             onClick={() => setDesired(false)}
           >
             {closeLabel}
-          </button>
+          </Button>
         </dialog>
       </div>
       <button
@@ -323,9 +324,11 @@ export function CardPreview({
         type="button"
         className="roc-text-button roc-preview-trigger"
         aria-expanded={reading}
+        aria-label={`${openLabel.replace(/[↗↙]/g, "").trim()}: ${label}`}
+        hidden={reading}
         onClick={() => setDesired(!desired)}
       >
-        {openLabel}
+        <span className="roc-ui-sr-only">{openLabel}</span>
       </button>
     </div>
   );
