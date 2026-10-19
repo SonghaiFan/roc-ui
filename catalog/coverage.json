@@ -1,0 +1,445 @@
+{
+  "reference": "https://animate-ui.com/docs/primitives",
+  "reviewed": "2026-10-19",
+  "policy": "Independent implementations; no Animate UI source or runtime dependency. Semantic coverage does not imply identical APIs or visual parity.",
+  "entries": [
+    {
+      "reference": "accordion",
+      "referenceGroup": "Components",
+      "rocId": "accordion",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "alert-dialog",
+      "referenceGroup": "Components",
+      "rocId": "alert-dialog",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "checkbox",
+      "referenceGroup": "Components",
+      "rocId": "checkbox",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "collapsible",
+      "referenceGroup": "Components",
+      "rocId": "collapsible",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "combobox",
+      "referenceGroup": "Components",
+      "rocId": "combobox",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "context-menu",
+      "referenceGroup": "Components",
+      "rocId": "context-menu",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "dialog",
+      "referenceGroup": "Components",
+      "rocId": "dialog",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "drawer",
+      "referenceGroup": "Components",
+      "rocId": "drawer",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "dropdown-menu",
+      "referenceGroup": "Components",
+      "rocId": "dropdown-menu",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "hover-card",
+      "referenceGroup": "Components",
+      "rocId": "hover-card",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "input-otp",
+      "referenceGroup": "Components",
+      "rocId": "input-otp",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "menubar",
+      "referenceGroup": "Components",
+      "rocId": "menubar",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "navigation-menu",
+      "referenceGroup": "Components",
+      "rocId": "navigation-menu",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "pagination",
+      "referenceGroup": "Components",
+      "rocId": "pagination",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "popover",
+      "referenceGroup": "Components",
+      "rocId": "popover",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "preview-link-card",
+      "referenceGroup": "Components",
+      "rocId": "preview-link-card",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "progress",
+      "referenceGroup": "Components",
+      "rocId": "progress",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "questionnaire",
+      "referenceGroup": "Components",
+      "rocId": "questionnaire",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "radio-group",
+      "referenceGroup": "Components",
+      "rocId": "radio-group",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "select",
+      "referenceGroup": "Components",
+      "rocId": "select",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "sheet",
+      "referenceGroup": "Components",
+      "rocId": "sheet",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "sidebar",
+      "referenceGroup": "Components",
+      "rocId": "sidebar",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "slider",
+      "referenceGroup": "Components",
+      "rocId": "slider",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "switch",
+      "referenceGroup": "Components",
+      "rocId": "switch",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "tabs",
+      "referenceGroup": "Components",
+      "rocId": "tabs",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "toast",
+      "referenceGroup": "Components",
+      "rocId": "toast",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "toggle",
+      "referenceGroup": "Components",
+      "rocId": "toggle",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "toggle-group",
+      "referenceGroup": "Components",
+      "rocId": "toggle-group",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "tooltip",
+      "referenceGroup": "Components",
+      "rocId": "tooltip",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "avatar-group",
+      "referenceGroup": "Animate UI",
+      "rocId": "avatar-group",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "code-block",
+      "referenceGroup": "Animate UI",
+      "rocId": "code-block",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "cursor",
+      "referenceGroup": "Animate UI",
+      "rocId": "cursor",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "github-stars",
+      "referenceGroup": "Animate UI",
+      "rocId": "github-stars",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "motion-grid",
+      "referenceGroup": "Animate UI",
+      "rocId": "motion-grid",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "pinned-list",
+      "referenceGroup": "Animate UI",
+      "rocId": "pinned-list",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "scroll-progress",
+      "referenceGroup": "Animate UI",
+      "rocId": "scroll-progress",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "spring",
+      "referenceGroup": "Animate UI",
+      "rocId": "spring",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "button",
+      "referenceGroup": "Buttons",
+      "rocId": "button",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "copy-button",
+      "referenceGroup": "Buttons",
+      "rocId": "copy-button",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "flip-button",
+      "referenceGroup": "Buttons",
+      "rocId": "flip-button",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "github-stars-button",
+      "referenceGroup": "Buttons",
+      "rocId": "github-stars-button",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "icon-button",
+      "referenceGroup": "Buttons",
+      "rocId": "icon-button",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "liquid-button",
+      "referenceGroup": "Buttons",
+      "rocId": "liquid-button",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "ripple-button",
+      "referenceGroup": "Buttons",
+      "rocId": "ripple-button",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "theme-toggler-button",
+      "referenceGroup": "Buttons",
+      "rocId": "theme-toggler-button",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "gradient-text",
+      "referenceGroup": "Texts",
+      "rocId": "gradient-text",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "highlight-text",
+      "referenceGroup": "Texts",
+      "rocId": "highlight-text",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "morphing-text",
+      "referenceGroup": "Texts",
+      "rocId": "morphing-text",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "rolling-text",
+      "referenceGroup": "Texts",
+      "rocId": "rolling-text",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "rotating-text",
+      "referenceGroup": "Texts",
+      "rocId": "rotating-text",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "shimmering-text",
+      "referenceGroup": "Texts",
+      "rocId": "shimmering-text",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "sliding-text",
+      "referenceGroup": "Texts",
+      "rocId": "sliding-text",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "splitting-text",
+      "referenceGroup": "Texts",
+      "rocId": "splitting-text",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "swapping-text",
+      "referenceGroup": "Texts",
+      "rocId": "swapping-text",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "typing-text",
+      "referenceGroup": "Texts",
+      "rocId": "typing-text",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "counting-number",
+      "referenceGroup": "Numbers",
+      "rocId": "counting-number",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "scrolling-number",
+      "referenceGroup": "Numbers",
+      "rocId": "scrolling-number",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "sliding-number",
+      "referenceGroup": "Numbers",
+      "rocId": "sliding-number",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "auto-height",
+      "referenceGroup": "Effects",
+      "rocId": "auto-height",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "blur",
+      "referenceGroup": "Effects",
+      "rocId": "blur",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "click",
+      "referenceGroup": "Effects",
+      "rocId": "click",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "effect",
+      "referenceGroup": "Effects",
+      "rocId": "effect",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "fade",
+      "referenceGroup": "Effects",
+      "rocId": "fade",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "highlight",
+      "referenceGroup": "Effects",
+      "rocId": "highlight",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "image-zoom",
+      "referenceGroup": "Effects",
+      "rocId": "image-zoom",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "magnetic",
+      "referenceGroup": "Effects",
+      "rocId": "magnetic",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "particles",
+      "referenceGroup": "Effects",
+      "rocId": "particles",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "scroll-fade",
+      "referenceGroup": "Effects",
+      "rocId": "scroll-fade",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "shine",
+      "referenceGroup": "Effects",
+      "rocId": "shine",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "slide",
+      "referenceGroup": "Effects",
+      "rocId": "slide",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "theme-toggler",
+      "referenceGroup": "Effects",
+      "rocId": "theme-toggler",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "tilt",
+      "referenceGroup": "Effects",
+      "rocId": "tilt",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    },
+    {
+      "reference": "zoom",
+      "referenceGroup": "Effects",
+      "rocId": "zoom",
+      "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+    }
+  ]
+}

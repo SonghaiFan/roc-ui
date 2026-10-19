@@ -1,3 +1,4 @@
+import { MotionConsumer } from "./motion-consumer";
 import { CatalogConsumer } from "./catalog-consumer";
 import { MoreFoundationConsumer } from "./more-foundations";
 import { FoundationConsumer } from "./foundations";
@@ -30,6 +31,7 @@ export function Consumer() {
       <FoundationConsumer />
       <MoreFoundationConsumer />
       <CatalogConsumer />
+      <MotionConsumer />
       <button id="external-toggle" onClick={() => setOpen((v) => !v)}>
         External state
       </button>

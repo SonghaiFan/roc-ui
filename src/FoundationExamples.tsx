@@ -1,3 +1,6 @@
+import { MotionExample } from "./MotionExamples";
+import { motionIds } from "./motion-catalog";
+import { PencilLine, Info } from "lucide-react";
 import { MoreFoundationExample } from "./MoreFoundationExamples";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../registry/roc/button";
@@ -76,6 +79,7 @@ export function FoundationExample({ id }: { id: string }) {
     },
     [],
   );
+  if (motionIds.includes(id)) return <MotionExample id={id} />;
   if (id === "button")
     return (
       <div className="foundation-demo">
@@ -231,8 +235,8 @@ export function FoundationExample({ id }: { id: string }) {
     return (
       <Tabs defaultValue="write">
         <TabsList aria-label="Document views">
-          <TabsTrigger value="write">Write</TabsTrigger>
-          <TabsTrigger value="details">Details</TabsTrigger>
+          <TabsTrigger value="write" icon={<PencilLine />} title="Write">Write</TabsTrigger>
+          <TabsTrigger value="details" icon={<Info />} title="Details">Details</TabsTrigger>
         </TabsList>
         <TabsContent value="write">
           <Label className="foundation-field">

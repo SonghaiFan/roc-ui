@@ -24,7 +24,7 @@
   margin-right: 10px;
   font: inherit;
 }
-@media (pointer: coarse) {
+@media (max-width: 640px), (pointer: coarse) {
   .roc-ui[data-slot="input"] {
     font-size: 16px;
     min-height: 44px;

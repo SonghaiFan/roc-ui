@@ -89,3 +89,10 @@
     padding: 22px;
   }
 }
+
+@media (max-width: 640px) {
+  .roc-ui[data-slot="dialog-footer"] { flex-direction: column; align-items: stretch; }
+  .roc-ui[data-slot="dialog-footer"] > .roc-ui-button { width: 100%; min-height: 44px; }
+  .roc-ui-dialog-dismiss { width: 44px; height: 44px; top: 8px; right: 8px; }
+  .roc-ui[data-slot="dialog-header"] { padding-right: 32px; }
+}

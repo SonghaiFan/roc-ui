@@ -1,4 +1,4 @@
 import { createRoot } from "react-dom/client";
-import { AnimateUIProvider } from "@animate-ui/react/provider";
+import { RocMotionProvider } from "../registry/roc/motion-config";
 import { App } from "./App";
-createRoot(document.getElementById("root")!).render(<AnimateUIProvider reducedMotion="user"><App /></AnimateUIProvider>);
+createRoot(document.getElementById("root")!).render(<RocMotionProvider><App /></RocMotionProvider>);

@@ -111,8 +111,7 @@ export function createContent(parts: Parts, prefix: string, openValue = "open") 
         style={{ zIndex: stacking }}
       >
         <parts.Popup
-          data-roc-motion="animate-ui"
-          {...props}
+            {...props}
           ref={composeRefs(ref, popup)}
           render={(popupProps: Record<string, any>, state: { open: boolean }) => (
             <div

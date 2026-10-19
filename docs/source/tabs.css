@@ -82,3 +82,18 @@
     transition: none !important;
   }
 }
+
+@media (max-width: 640px) {
+  .roc-ui[data-slot="tabs-list"][data-orientation="horizontal"] { align-self: stretch; }
+  .roc-ui[data-slot="tabs-trigger"] { min-height: 44px; }
+}
+
+.roc-tabs-icon { display: inline-flex; flex: none; }
+.roc-tabs-icon svg { width: 18px; height: 18px; }
+@media (max-width: 640px) {
+  .roc-ui[data-slot="tabs-trigger"][data-has-icon] { min-width: 44px; }
+  .roc-ui[data-slot="tabs-trigger"][data-has-icon] > .roc-tabs-label {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+  }
+}

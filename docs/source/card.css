@@ -40,3 +40,9 @@
   gap: 10px;
   flex-wrap: wrap;
 }
+
+@media (max-width: 640px) {
+  .roc-ui[data-slot="card"] { gap: 16px; padding: 16px; }
+  .roc-ui[data-slot="card-footer"] { flex-direction: column; align-items: stretch; }
+  .roc-ui[data-slot="card-footer"] > .roc-ui-button { width: 100%; min-height: 44px; }
+}

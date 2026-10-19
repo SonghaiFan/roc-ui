@@ -1,7 +1,7 @@
 "use client";
 // ROC primitive: an anchored popup. Behaviour from Base UI, shaped for ROC.
 import * as React from "react";
-import { Popover as Base } from "@animate-ui/react/primitives/base-ui/popover";
+import { Popover as Base } from "@base-ui/react/popover";
 import {
   createContent,
   isNativeButton,

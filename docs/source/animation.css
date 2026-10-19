@@ -1,8 +1,4 @@
-/* Animate UI owns presence. CSS keyframes must not compete with Motion's
-   transforms/opacity or keep an exiting portal alive a second time. */
-[data-roc-motion="animate-ui"][data-slot] {
-  animation: none !important;
-}
+/* ROC owns motion; Base UI owns interaction and portal presence. */
 /* These parts use spring positions, so a CSS transition would lag the pointer. */
 .roc-ui[data-slot="slider-thumb"],
 .roc-ui[data-slot="slider-range"] {

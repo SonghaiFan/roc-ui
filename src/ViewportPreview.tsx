@@ -25,6 +25,17 @@ const breakpoints = [
   { label: "xl", width: 1280 },
   { label: "2xl", width: 1536 },
 ];
+const responsiveBehavior: Record<string, [string, string]> = {
+  sidebar: ["Navigation sits beside the editor.", "Navigation becomes a grouped icon bar above the editor. Your draft and selection stay in place."],
+  card: ["Actions share a row below the content.", "Actions stack and fill the card width; the draft stays mounted."],
+  tabs: ["Tabs take only the space their labels need.", "Tabs become a segmented icon group with 44px targets. Switch views without losing the draft."],
+  dialog: ["Open the dialog to see a centered panel with actions in a row.", "Open the dialog to see a bottom-aligned panel with stacked, full-width actions."],
+  input: ["Compact fields for pointer and keyboard input.", "Fields use 16px text and 44px targets for easier touch input."],
+  textarea: ["An editable surface that grows with its container.", "The same editor uses 16px text. Resize back to check that your draft is retained."],
+  select: ["A compact trigger opens the options.", "The trigger and options have taller touch targets. Open the menu to compare."],
+  "data-table": ["Sortable columns with pagination in one row.", "Pagination becomes two wide controls below the count. Columns remain a scrollable table so no data is hidden."],
+  pagination: ["Previous and next include text labels.", "Previous and next use labeled arrow controls to leave room for page numbers."],
+};
 const deviceIcons = {
   fit: MaximizeIcon,
   desktop: MonitorIcon,
@@ -38,11 +49,13 @@ export function ViewportPreview({
   frame,
   onLoad,
   detail,
+  componentId,
   onBack,
 }: {
   frame: RefObject<HTMLIFrameElement | null>;
   onLoad: () => void;
   detail?: string;
+  componentId?: string;
   onBack: () => void;
 }) {
   const stage = useRef<HTMLDivElement>(null),
@@ -158,6 +171,14 @@ export function ViewportPreview({
             </div>
           </div>
         </div>
+      )}
+      {detail && (
+        <p className="responsive-behavior" role="status">
+          <strong>{measured <= 640 ? "Narrow layout" : "Wide layout"}</strong>
+          {responsiveBehavior[componentId ?? ""]?.[measured <= 640 ? 1 : 0] ??
+            "Compare wrapping, scrolling and open controls at each width. This preview has no additional breakpoint-specific guide."}
+          <small>Width presets resize the live preview; they do not emulate touch hardware. The markers are width references, not guaranteed layout changes.</small>
+        </p>
       )}
       <div className="viewport-stage" ref={stage} data-dragging={dragging}>
         <div

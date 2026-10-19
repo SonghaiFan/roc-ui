@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 ("use client");
 import * as React from "react";
-import { Toast as ToastPrimitive } from "@animate-ui/react/primitives/base-ui/toast";
+import { Toast as ToastPrimitive } from "@base-ui/react/toast";
 import { cn } from "./utils";
 import { Button } from "./button";
 const toast = ToastPrimitive.createToastManager();
@@ -38,7 +38,6 @@ function ToastViewport({ className, ...props }: ToastPrimitive.Viewport.Props) {
 function Toast({ className, ...props }: ToastPrimitive.Root.Props) {
   return (
     <ToastPrimitive.Root
-        data-roc-motion="animate-ui"
       data-slot="toast"
       className={cn(
         "roc-shadcn",

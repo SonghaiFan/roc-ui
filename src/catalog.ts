@@ -1,6 +1,8 @@
+import { motionCatalog } from "./motion-catalog";
 import { foundations } from "./foundations";
 export const catalog = [
   ...foundations,
+  ...motionCatalog,
   {
     id: "expandable-card",
     actions: ["Expand", "Press"],

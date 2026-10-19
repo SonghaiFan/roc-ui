@@ -487,3 +487,8 @@
 [data-slot="select-content"]:focus-visible {
   outline: none;
 }
+
+@media (max-width: 640px) {
+  .roc-shadcn[data-slot="select-trigger"] { min-height: 44px; font-size: 16px; }
+  .roc-shadcn[data-slot="select-item"] { min-height: 44px; }
+}

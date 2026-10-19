@@ -19,7 +19,7 @@
   border-color: #bd4545;
   animation: roc-ui-shake 240ms var(--roc-motion-ease);
 }
-@media (pointer: coarse) {
+@media (max-width: 640px), (pointer: coarse) {
   .roc-ui[data-slot="textarea"] {
     font-size: 16px;
   }

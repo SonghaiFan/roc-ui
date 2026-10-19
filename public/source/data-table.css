@@ -25,3 +25,10 @@
   margin-inline-end: auto;
   color: #777;
 }
+
+@media (max-width: 640px) {
+  .roc-table-pagination { display: grid; grid-template-columns: 1fr 1fr; }
+  .roc-table-pagination > span { grid-column: 1 / -1; }
+  .roc-table-pagination > button { min-height: 44px; }
+  .roc-table-sort { min-height: 44px; }
+}

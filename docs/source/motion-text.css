@@ -1,0 +1,23 @@
+@import "./ui-base.css";
+.roc-motion-text, .roc-typing-text { position: relative; font-size: inherit; line-height: 1.4; }
+.roc-text-visual { display: inline-block; position: relative; perspective: 400px; }
+.roc-text-visual > span, .roc-text-letter { display: inline-block; }
+.roc-motion-text[data-text-effect="gradient"] .roc-text-visual { background: linear-gradient(110deg, var(--roc-ink, #222), var(--roc-accent, #777), #aaa); background-clip: text; color: transparent; }
+.roc-motion-text[data-text-effect="highlight"] .roc-text-visual { transition: background-size 350ms ease-out; background: linear-gradient(var(--roc-marker, #e5e5e5), var(--roc-marker, #e5e5e5)) 0 100% / 100% 40% no-repeat; }
+.roc-motion-text[data-text-effect="shimmering"][data-active="true"] .roc-text-visual { background: linear-gradient(100deg, currentColor 35%, #aaa 50%, currentColor 65%); background-size: 250% 100%; background-clip: text; -webkit-text-fill-color: transparent; animation: roc-text-shimmer 1.2s ease-out both; }
+@keyframes roc-text-shimmer { from { background-position: 120% 0; } to { background-position: -20% 0; } }
+.roc-typing-text { display: inline-grid; }
+.roc-typing-reserve, .roc-typing-visible { grid-area: 1 / 1; }
+.roc-typing-reserve { visibility: hidden; }
+.roc-typing-visible::after { content: ""; display: inline-block; width: 1px; height: 0.9em; margin-left: 3px; background: currentColor; }
+.roc-motion-number { font-size: inherit; font-variant-numeric: tabular-nums; display: inline-block; line-height: 1.2; }
+.roc-number-digits { display: inline-flex; }
+.roc-number-window { height: 1.2em; width: 1ch; overflow: hidden; display: inline-block; }
+.roc-number-window > span { display: flex; flex-direction: column; }
+.roc-number-window > span > span { height: 1.2em; }
+.roc-number-slide { overflow: hidden; vertical-align: bottom; }
+.roc-number-slide > span[aria-hidden] { display: inline-block; position: relative; }
+.roc-number-slide > span[aria-hidden] > span { display: inline-block; }
+@media (prefers-reduced-motion: reduce) { .roc-text-visual { animation: none !important; } .roc-typing-visible::after { display: none; } }
+
+.roc-motion-text[data-text-effect="highlight"][data-active="false"] .roc-text-visual { background-size: 0% 40%; }

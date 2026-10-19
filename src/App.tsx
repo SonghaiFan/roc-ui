@@ -7,12 +7,18 @@ import {
 } from "react";
 import {
   CodeXmlIcon,
-  DownloadIcon,
-  ExternalLinkIcon,
   Maximize2Icon,
   Minimize2Icon,
   SearchIcon,
-  SlidersHorizontalIcon,
+  LayoutGridIcon,
+  MousePointer2Icon,
+  TextCursorInputIcon,
+  PanelTopIcon,
+  CompassIcon,
+  LayersIcon,
+  TypeIcon,
+  SparklesIcon,
+  Columns2Icon,
 } from "lucide-react";
 import { Badge } from "../registry/roc/badge";
 import { Button } from "../registry/roc/button";
@@ -48,9 +54,7 @@ import {
   CodeBlockTitle,
 } from "../registry/roc/code-block";
 import { Kbd } from "../registry/roc/kbd";
-import { Label } from "../registry/roc/label";
 import { Picker } from "./Picker";
-import { Toggle } from "../registry/roc/toggle";
 import {
   Sheet,
   SheetClose,
@@ -59,22 +63,19 @@ import {
   SheetHeader,
   SheetTitle,
 } from "../registry/roc/sheet";
+import { motionIds } from "./motion-catalog";
+import { collections, collectionFor } from "./collections";
+import { ToggleGroup, ToggleGroupItem } from "../registry/roc/toggle-group";
 import { foundationIds } from "./foundations";
 import { catalog } from "./catalog";
 import { FoundationExample } from "./FoundationExamples";
-import {
-  EdgePanel,
-  EdgePanelContent,
-  EdgePanelTrigger,
-  useEdgePanel,
-} from "../registry/roc/edge-panel";
 import { ViewportPreview } from "./ViewportPreview";
-import { palette, accentForeground, radiusPresets, type AccentName } from "./settings";
+import { palette, accentForeground, galleryPresets, type GalleryPreset } from "./settings";
+import { PreviewControlsTarget } from "./PreviewControls";
 import "./site.css";
 const repo = "https://github.com/SonghaiFan/roc-ui";
 const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
-const registry =
-  "https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/";
+const registry = new URL("./r/", location.href).href;
 type Item = (typeof catalog)[number];
 function SourcePanel({ item, close }: { item: Item; close: () => void }) {
   const [files, setFiles] = useState<{ path: string; content: string }[]>([]),
@@ -200,38 +201,85 @@ function SourcePanel({ item, close }: { item: Item; close: () => void }) {
     </Sheet>
   );
 }
-/** Interacting with the live preview dismisses an unpinned settings panel. */
-function DismissOnPreview() {
-  const { hide, compact } = useEdgePanel();
-  useEffect(() => {
-    const dismiss = () => { if (!compact) hide(); };
-    window.addEventListener("roc-preview-interact", dismiss);
-    return () => window.removeEventListener("roc-preview-interact", dismiss);
-  }, [hide, compact]);
-  return null;
+function ComponentDisplayCard({ item, focused, hidden, onFocus, onSource }: {
+  item: Item; focused: boolean; hidden: boolean; onFocus: () => void; onSource: () => void;
+}) {
+  const [controls, setControls] = useState<HTMLDivElement | null>(null);
+  return <PreviewControlsTarget value={controls}>
+    <Card
+      id={item.id}
+      className={`component-card component-${item.id}`}
+      hidden={hidden}
+      role="article"
+    >
+      <CardHeader className="component-heading">
+        <CardTitle role="heading" aria-level={2}>
+          <span className="component-family">{collectionFor(item)}</span>
+          {item.name}
+        </CardTitle>
+        <CardAction>
+          <div className="preview-header-controls" ref={setControls} />
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            className="focus-preview"
+            aria-label={`Focus ${item.name} preview`}
+            aria-pressed={focused}
+            onClick={onFocus}
+          >
+            {focused ? (
+              <Minimize2Icon aria-hidden="true" />
+            ) : (
+              <Maximize2Icon aria-hidden="true" />
+            )}
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            aria-label={`${item.name} source and install`}
+            title="Source & install"
+            onClick={onSource}
+          >
+            <CodeXmlIcon aria-hidden="true" />
+          </Button>
+        </CardAction>
+      </CardHeader>
+      <div className="component-preview" data-component={item.id}>
+        <FoundationExample id={item.id} />
+      </div>
+      <CardFooter className="component-footer">
+        <span>{item.description}</span>
+      </CardFooter>
+    </Card>
+  </PreviewControlsTarget>;
 }
-const components = foundationIds.map(
+const galleryIds = [...foundationIds, ...motionIds];
+const components = galleryIds.map(
   (id) => catalog.find((item) => item.id === id)!,
 );
 export function App() {
   const embedded = new URLSearchParams(location.search).get("preview") === "1";
   const frame = useRef<HTMLIFrameElement>(null);
   const [focused, setFocused] = useState("");
+  const [collection, setCollection] = useState("All");
+  const [preset, setPreset] = useState<GalleryPreset>("default");
   const [selected, setSelected] = useState(
     () => components.find((c) => c.id === location.hash.slice(1))?.id ?? "",
   );
-  const [query, setQuery] = useState(""),
-    [filter, setFilter] = useState("All"),
-    [color, setColor] = useState<AccentName>("black"),
-    [radius, setRadius] = useState(12),
-    [corners, setCorners] = useState("Smooth"),
-    [surface, setSurface] = useState("White"),
-    [density, setDensity] = useState("Comfortable");
-  const [font, setFont] = useState("System");
+  const [query, setQuery] = useState(""), [filter, setFilter] = useState("All");
+  const { color, radius, corners, surface, density, font } = galleryPresets.find(item => item.value === preset)!.config;
+  const collectionBar = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    collectionBar.current?.querySelector<HTMLElement>('[data-state="on"]')?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [collection]);
+  useEffect(() => {
+    if (embedded) window.scrollTo({ top: 0, behavior: "instant" });
+  }, [embedded, query, filter, collection]);
   const visible = components.filter(
     (c) =>
+      (collection === "All" || collectionFor(c) === collection) &&
       (filter === "All" || c.actions.includes(filter)) &&
-      `${c.name} ${c.description}`.toLowerCase().includes(query.toLowerCase()),
+      `${c.name} ${c.description} ${c.rule} ${collectionFor(c)}`.toLowerCase().includes(query.toLowerCase()),
   );
   const open = (id: string) => {
     if (embedded) {
@@ -276,7 +324,7 @@ export function App() {
     window.addEventListener("keydown", search);
     return () => window.removeEventListener("keydown", search);
   }, [selected]);
-  const config = { query, filter, color, radius, corners, surface, density, font };
+  const config = { collection, query, filter, preset };
   const latestConfig = useRef(config);
   latestConfig.current = config;
   const syncFrame = () =>
@@ -286,24 +334,20 @@ export function App() {
     );
   useEffect(() => {
     if (!embedded) syncFrame();
-  }, [query, filter, color, radius, corners, surface, density, font]);
+  }, [collection, query, filter, preset]);
   useEffect(() => {
     const receive = (event: MessageEvent) => {
       if (event.origin !== location.origin) return;
       if (embedded && event.source === parent) {
         if (event.data?.type === "roc-config") {
           const c = event.data.config;
+          setCollection(c.collection ?? "All");
           setQuery(c.query);
           setFilter(c.filter);
-          setColor(c.color);
-          setRadius(c.radius);
-          setCorners(c.corners);
-          setSurface(c.surface);
-          setDensity(c.density);
-          setFont(c.font);
+          if (galleryPresets.some(item => item.value === c.preset)) setPreset(c.preset);
         }
         if (event.data?.type === "roc-focus") {
-          if (event.data.id === "" || foundationIds.includes(event.data.id))
+          if (event.data.id === "" || galleryIds.includes(event.data.id))
             setFocused(event.data.id);
           window.scrollTo({ top: 0, behavior: "instant" });
         }
@@ -312,14 +356,8 @@ export function App() {
         event.source === frame.current?.contentWindow &&
         event.data?.type === "roc-focused"
       ) {
-        if (event.data.id === "" || foundationIds.includes(event.data.id))
+        if (event.data.id === "" || galleryIds.includes(event.data.id))
           setFocused(event.data.id);
-      } else if (
-        !embedded &&
-        event.source === frame.current?.contentWindow &&
-        event.data?.type === "roc-preview-interact"
-      ) {
-        window.dispatchEvent(new Event("roc-preview-interact"));
       } else if (
         !embedded &&
         event.source === frame.current?.contentWindow &&
@@ -342,17 +380,6 @@ export function App() {
     };
     window.addEventListener("message", receive);
     return () => window.removeEventListener("message", receive);
-  }, [embedded]);
-  useEffect(() => {
-    if (!embedded) return;
-    const interact = () =>
-      parent.postMessage({ type: "roc-preview-interact" }, location.origin);
-    document.addEventListener("pointerdown", interact, true);
-    document.addEventListener("focusin", interact);
-    return () => {
-      document.removeEventListener("pointerdown", interact, true);
-      document.removeEventListener("focusin", interact);
-    };
   }, [embedded]);
   useEffect(() => {
     if (embedded)
@@ -381,7 +408,7 @@ export function App() {
     if (!embedded) return;
     for (const [name, value] of Object.entries(style))
       document.documentElement.style.setProperty(name, String(value));
-  }, [embedded, color, radius, corners, surface, font]);
+  }, [embedded, preset]);
   if (embedded)
     return (
       <div className="design-space embedded-preview" style={style}>
@@ -391,62 +418,10 @@ export function App() {
           data-focused={!!focused}
         >
           <div className="masonry" aria-label="Component previews">
-            {components.map((item) => (
-              <Card
-                id={item.id}
-                key={item.id}
-                className={`component-card component-${item.id}`}
-                hidden={focused ? item.id !== focused : !visible.includes(item)}
-                role="article"
-              >
-                <CardHeader className="component-heading">
-                  <CardTitle role="heading" aria-level={2}>
-                    {item.name}
-                  </CardTitle>
-                  <CardAction>
-                    <Button
-                      variant="ghost"
-                      size="icon-sm"
-                      className="focus-preview"
-                      aria-label={`Focus ${item.name} preview`}
-                      aria-pressed={focused === item.id}
-                      onClick={() => {
-                        setFocused(focused === item.id ? "" : item.id);
-                        window.scrollTo({ top: 0, behavior: "instant" });
-                      }}
-                    >
-                      {focused === item.id ? (
-                        <Minimize2Icon aria-hidden="true" />
-                      ) : (
-                        <Maximize2Icon aria-hidden="true" />
-                      )}
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon-sm"
-                      aria-label={`View ${item.name} source`}
-                      onClick={() => open(item.id)}
-                    >
-                      <CodeXmlIcon aria-hidden="true" />
-                    </Button>
-                  </CardAction>
-                </CardHeader>
-                <div className="component-preview" data-component={item.id}>
-                  <FoundationExample id={item.id} />
-                </div>
-                <CardFooter className="component-footer">
-                  <span>{item.description}</span>
-                  <Button
-                    variant="ghost"
-                    size="icon-xs"
-                    onClick={() => open(item.id)}
-                    aria-label={`Install ${item.name}`}
-                  >
-                    <DownloadIcon aria-hidden="true" />
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
+            {components.map(item => <ComponentDisplayCard key={item.id} item={item} focused={focused === item.id}
+              hidden={focused ? item.id !== focused : !visible.includes(item)}
+              onFocus={() => { setFocused(focused === item.id ? "" : item.id); window.scrollTo({ top: 0, behavior: "instant" }); }}
+              onSource={() => open(item.id)} />)}
           </div>
           {!focused && !visible.length && (
             <Empty className="empty">
@@ -460,6 +435,7 @@ export function App() {
                   onClick={() => {
                     setQuery("");
                     setFilter("All");
+                    setCollection("All");
                   }}
                 >
                   Clear search
@@ -482,134 +458,9 @@ export function App() {
             {visible.length}
           </Badge>
         </span>
-        <EdgePanel id="design-settings">
-          <DismissOnPreview />
-          <EdgePanelTrigger asChild>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="style-trigger"
-              aria-label="Design settings"
-            >
-              <SlidersHorizontalIcon aria-hidden="true" />
-              <span>Style</span>
-            </Button>
-          </EdgePanelTrigger>
-          <EdgePanelContent
-            title="Appearance"
-            className="design-controls"
-            aria-label="Design settings panel"
-            pinLabel="Keep settings open"
-            closeLabel="Close settings"
-          >
-            <div className="rail-section">
-              <Label className="rail-control">
-                <span>Surface</span>
-                <Picker
-                  dark
-                  label="Surface"
-                  value={surface}
-                  onValueChange={setSurface}
-                  options={[{ value: "Paper" }, { value: "White" }]}
-                />
-              </Label>
-              <div className="rail-control">
-                <span>Accent</span>
-                <div className="swatches">
-                  {Object.entries(palette).map(([key, value]) => (
-                    <Toggle
-                      key={key}
-                      aria-label={`${key} accent`}
-                      pressed={color === key}
-                      onPressedChange={() => setColor(key as AccentName)}
-                      style={{ background: value }}
-                    />
-                  ))}
-                </div>
-              </div>
-              <Label className="rail-control">
-                <span>Type</span>
-                <Picker
-                  dark
-                  label="Typeface"
-                  value={font}
-                  onValueChange={setFont}
-                  options={[{ value: "System" }, { value: "Serif" }]}
-                />
-              </Label>
-              <Label className="rail-control">
-                <span>Corners</span>
-                <Picker
-                  dark
-                  label="Corner style"
-                  value={corners}
-                  onValueChange={setCorners}
-                  options={[
-                    { value: "Smooth" },
-                    { value: "Rounded" },
-                  ]}
-                />
-              </Label>
-              <Label className="rail-control">
-                <span>Radius</span>
-                <Picker
-                  dark
-                  label="Corner radius"
-                  value={String(radius)}
-                  onValueChange={(value) => setRadius(Number(value))}
-                  options={radiusPresets}
-                />
-              </Label>
-              <Label className="rail-control">
-                <span>Spacing</span>
-                <Picker
-                  dark
-                  label="Spacing"
-                  value={density}
-                  onValueChange={setDensity}
-                  options={[{ value: "Comfortable" }, { value: "Compact" }]}
-                />
-              </Label>
-            </div>
-            <div className="rail-section component-index">
-              <span className="rail-caption">
-                COMPONENTS{" "}
-                <b>{components.length.toString().padStart(2, "0")}</b>
-              </span>
-              {components.map((item, i) => (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  key={item.id}
-                  onClick={() => {
-                    setQuery("");
-                    setFilter("All");
-                    frame.current?.contentWindow?.postMessage(
-                      { type: "roc-focus", id: item.id },
-                      location.origin,
-                    );
-                    window.dispatchEvent(new Event("roc-preview-interact"));
-                  }}
-                >
-                  <span>{String(i + 1).padStart(2, "0")}</span>
-                  {item.name}
-                  <ExternalLinkIcon aria-hidden="true" />
-                </Button>
-              ))}
-            </div>
-            <div className="rail-bottom">
-              <Button variant="link" size="sm" asChild>
-                <a
-                  href={`${repo}/blob/main/notes/react-design-system.md`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Composition guide ↗
-                </a>
-              </Button>
-            </div>
-          </EdgePanelContent>
-        </EdgePanel>
+        <ToggleGroup type="single" value={preset} onValueChange={value => { if (value) setPreset(value as GalleryPreset); }} className="preset-switch" aria-label="Appearance preset">
+          {galleryPresets.map(item => <ToggleGroupItem value={item.value} key={item.value} title={item.description}>{item.label}</ToggleGroupItem>)}
+        </ToggleGroup>
         <InputGroup className="search">
           <InputGroupAddon>
             <SearchIcon aria-hidden="true" />
@@ -655,9 +506,20 @@ export function App() {
       </header>
       <div className="workspace">
         <main className="canvas" data-density={density.toLowerCase()}>
+          {!focused && <section className="catalog-browser" aria-label="Browse the ROC catalog">
+            <div className="catalog-intro"><div><span className="catalog-eyebrow">THE ROC LIBRARY</span><h1>Objects, in continuity.</h1><p>Find a building block. Try its behavior. Make it yours.</p></div><span className="catalog-total">{components.length}<small>components</small></span></div>
+            <ToggleGroup type="single" value={collection} onValueChange={value => setCollection(value || "All")} ref={collectionBar} className="collection-switch" aria-label="Component collections">
+              {collections.map((group, i) => {
+                const Icon = [LayoutGridIcon, MousePointer2Icon, TextCursorInputIcon, CompassIcon, PanelTopIcon, LayersIcon, TypeIcon, SparklesIcon, Columns2Icon][i];
+                return <ToggleGroupItem key={group.name} value={group.name} aria-label={group.name} title={group.name}><Icon aria-hidden="true" /><span>{group.name}</span></ToggleGroupItem>;
+              })}
+            </ToggleGroup>
+            <div className="catalog-results"><p><strong>{collection === "All" ? "All components" : collection}</strong><span>{collections.find(c => c.name === collection)?.description}</span></p><output aria-live="polite">{visible.length} results</output></div>
+          </section>}
           <ViewportPreview
             frame={frame}
             onLoad={syncFrame}
+            componentId={focused}
             detail={components.find((c) => c.id === focused)?.name}
             onBack={leaveDetails}
           />

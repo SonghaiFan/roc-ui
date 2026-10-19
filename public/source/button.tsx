@@ -2,7 +2,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
-import { Button as AnimatedButton } from "@animate-ui/react/primitives/buttons/button";
+import { Pressable } from "./primitive-pressable";
 
 const buttonVariants = cva("roc-ui roc-ui-button", {
   variants: {
@@ -48,7 +48,7 @@ function Button({
     pendingLabel?: React.ReactNode;
     asChild?: boolean;
   }) {
-  const Comp: React.ElementType = AnimatedButton;
+  const Comp: React.ElementType = Pressable;
 
   return (
     <Comp

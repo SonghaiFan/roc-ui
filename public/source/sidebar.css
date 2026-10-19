@@ -92,3 +92,25 @@
     --roc-sidebar-inset: max(8px, calc(var(--roc-sidebar-radius) * 0.5 + 4px));
   }
 }
+
+/* Preserve the same navigation and editor; only their arrangement changes. */
+@media (max-width: 640px) {
+  .roc-sidebar-host { flex-direction: column; }
+  .roc-sidebar-host > .roc-sidebar { width: 100%; max-width: none; border-bottom: 1px solid var(--roc-line, #e5e5e5); }
+  .roc-sidebar-inner { width: 100%; }
+  .roc-sidebar-content { padding-block: 8px; }
+  .roc-sidebar-menu {
+    display: flex; overflow-x: auto; gap: 4px; padding: 4px;
+    background: var(--roc-marker, #ececec); border-radius: var(--roc-radius-control, 8px);
+  }
+  .roc-sidebar-menu > li { flex: 1 0 44px; }
+  .roc-sidebar-link { min-height: 44px; white-space: nowrap; justify-content: center; position: relative; }
+  .roc-sidebar-link[aria-current="page"] { background: var(--roc-paper, #fff); box-shadow: 0 1px 3px #00000012; }
+  .roc-sidebar-link[data-has-icon] > .roc-sidebar-link-label {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+  }
+  .roc-sidebar-host[data-state="collapsed"] > .roc-sidebar { display: none; }
+}
+
+.roc-sidebar-icon { display: inline-flex; flex: none; }

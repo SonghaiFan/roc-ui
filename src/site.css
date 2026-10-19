@@ -88,159 +88,11 @@ summary {
   margin-left: auto;
 }
 .workspace {
-  padding: 0 20px 16px;
-}
-.style-trigger {
-  gap: 7px;
-  min-height: 32px;
-  font-size: 11px;
-  color: #737373;
-}
-.style-trigger[aria-expanded="true"] {
-  color: #242424;
-}
-.design-controls {
-  /* The panel is dark; ROC components inside it read these tokens. */
-  --roc-ink: #ededed;
-  --roc-paper: #262626;
-  --roc-line: #ffffff24;
-  --roc-muted: #a6a6a6;
-  --roc-marker: #ffffff14;
-  --roc-focus: #d4d4d4;
-  --roc-edge-panel-top: 116px;
-}
-.design-controls .roc-shadcn,
-.picker-dark.roc-shadcn,
-.picker-dark .roc-shadcn {
-  --roc-sh-color-input: #ffffff24;
-  --roc-sh-color-muted-foreground: #a6a6a6;
-  --roc-sh-color-ring: #d4d4d4;
-  color: #f1f1f1;
-}
-.design-controls [data-slot="edge-panel-header"] {
-  border-bottom-color: #ffffff16;
-}
-.design-controls [data-slot="edge-panel-header"] .roc-ui-toggle {
-  min-height: 28px;
-  padding: 4px 8px;
-  font-size: 10px;
-}
-.rail-section {
-  padding: 18px 12px;
-  border-bottom: 1px solid #ffffff14;
-}
-.rail-caption {
-  font:
-    9px/1.2 ui-monospace,
-    monospace;
-  letter-spacing: 0.1em;
-  color: #a6a6a6;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 4px 12px;
-}
-.rail-caption b {
-  font-weight: 400;
-}
-.rail-control {
-  align-items: stretch;
-  border: 1px solid #ffffff1b;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  margin: 8px 0 0;
-  border-radius: 8px;
-  padding: 10px 11px;
-}
-.rail-control > span {
-  font-size: 10px;
-  color: #b4b4b4;
-  display: flex;
-  justify-content: space-between;
-}
-.rail-control output {
-  color: #eeeeee;
-  font-variant-numeric: tabular-nums;
-}
-.rail-control [data-slot="select-trigger"] {
-  width: 100%;
-  height: auto;
-  min-height: 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  box-shadow: none;
-  font-size: 12px;
-}
-.picker-dark.roc-shadcn,
-.picker-dark .roc-shadcn {
-  --roc-sh-color-popover: #2c2c2c;
-  --roc-sh-color-popover-foreground: #ededed;
-  --roc-sh-color-border: #ffffff24;
-  --roc-sh-color-accent: #ffffff14;
-  --roc-sh-color-accent-foreground: #fff;
-}
-.swatches {
-  display: flex;
-  gap: 10px;
-  padding: 1px 0;
-}
-.swatches .roc-ui-toggle {
-  corner-shape: round;
-  width: 23px;
-  height: 23px;
-  min-width: 23px;
-  min-height: 23px;
-  padding: 0;
-  border: 3px solid #2a2a2a;
-  outline: 1px solid transparent;
-  border-radius: 50%;
-}
-.swatches .roc-ui-toggle[data-state="on"] {
-  outline-color: #dcdcdc;
-}
-.component-index {
-  padding-top: 18px;
-  padding-bottom: 14px;
-}
-.component-index .roc-ui-button {
-  width: 100%;
-  justify-content: flex-start;
-  gap: 10px;
-  min-height: 0;
-  padding: 9px 4px;
-  font-size: 10px;
-  font-weight: 400;
-  color: #cbcbcb;
-}
-.component-index .roc-ui-button span:first-child {
-  font:
-    9px ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    monospace;
-  color: #858585;
-}
-.component-index .roc-ui-button svg {
-  width: 12px;
-  height: 12px;
-  margin-left: auto;
-  color: #858585;
-}
-.rail-bottom {
-  padding: 15px 16px 18px;
-}
-.rail-bottom p {
-  font-size: 10px;
-  line-height: 1.8;
-  color: #a0a0a0;
-  margin: 0 0 12px;
-}
-.rail-bottom .roc-ui-button {
-  min-height: 0;
-  padding: 0;
-  font-size: 10px;
-  color: #e5e5e5;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  padding: 16px 20px;
+  align-items: start;
 }
 .canvas {
   min-width: 0;
@@ -684,29 +536,10 @@ summary {
   .topbar nav {
     display: none;
   }
-  .style-trigger {
-    grid-column: 3;
-    grid-row: 1;
-    min-height: 44px;
-    padding-inline: 12px;
-  }
-  .style-trigger span {
-    display: inline;
-  }
   .filter {
     grid-column: 3;
     grid-row: 2;
     min-height: 44px;
-  }
-  .swatches {
-    gap: 6px;
-  }
-  .swatches .roc-ui-toggle {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
-    flex-shrink: 0;
   }
   .masonry {
     columns: 1;
@@ -934,7 +767,79 @@ summary {
   font-size: 13px;
   line-height: 1.6;
 }
-.picker-dark[data-slot="select-content"] {
-  border-color: #ffffff24;
-  box-shadow: 0 10px 28px #00000040;
+
+@media (max-width: 640px) {
+  .workspace { grid-template-columns: minmax(0, 1fr); }
+}
+
+.responsive-behavior { margin: 0; padding: 12px 0 16px; font-size: 12px; line-height: 1.6; color: #666; }
+.responsive-behavior strong { display: block; color: #333; font-weight: 500; }
+.responsive-behavior small { display: block; margin-top: 4px; color: #888; font-size: 10px; }
+/* Keep catalog chrome independent from the installed Card's mobile actions. */
+.component-card > .component-footer[data-slot="card-footer"] { flex-direction: row; }
+.component-card > .component-footer > .roc-ui-button { width: auto; }
+
+/* Settings panels retain their controls while switching the active group. */
+@media (max-width: 640px) {
+  .workspace { gap: 12px; padding: 12px; }
+}
+
+.catalog-browser { padding: 20px 0 6px; }
+.catalog-intro { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; padding-bottom: 24px; }
+.catalog-eyebrow { font: 9px/1.4 ui-monospace, monospace; letter-spacing: .14em; color: #999; }
+.catalog-intro h1 { margin: 10px 0 8px; font-size: clamp(22px, 2.6vw, 34px); font-weight: 500; letter-spacing: -.045em; line-height: 1.2; }
+.catalog-intro p { margin: 0; color: #888; font-size: 12px; line-height: 1.6; }
+.catalog-total { display: grid; justify-items: end; font-size: 28px; line-height: 1.2; font-weight: 400; color: #777; font-variant-numeric: tabular-nums; }
+.catalog-total small { font: 9px/1.8 ui-monospace, monospace; color: #aaa; }
+.collection-switch.roc-ui[data-slot="toggle-group"] { display: flex; flex-wrap: nowrap; width: 100%; overflow-x: auto; gap: 3px; padding: 4px; background: #f5f5f5; border-radius: 10px; scrollbar-width: thin; }
+.collection-switch.roc-ui[data-slot="toggle-group"] > .roc-ui-toggle { flex: 0 0 auto; min-height: 36px; padding: 8px 10px; border-radius: 7px; font-size: 11px; font-weight: 400; color: #888; }
+.collection-switch.roc-ui[data-slot="toggle-group"] > .roc-ui-toggle[data-state="on"] { background: #fff; box-shadow: 0 1px 4px #0000000b; color: #333; }
+.collection-switch .roc-ui-toggle svg { width: 14px; height: 14px; }
+.catalog-results { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 12px 2px 0; }
+.catalog-results p { font-size: 11px; color: #999; margin: 0; line-height: 1.6; }
+.catalog-results output { flex: none; font: 10px ui-monospace, monospace; color: #aaa; }
+.component-family { display: block; margin-bottom: 5px; font: 8px/1.2 ui-monospace, monospace; color: #aaa; text-transform: uppercase; letter-spacing: .07em; }
+.motion-example { display: grid; gap: 12px; min-width: 0; }
+.motion-example > .roc-ui-button { justify-self: start; font-size: 10px; color: #888; }
+.motion-example-stage { min-width: 0; }
+.motion-sample-object { display: grid; align-content: center; justify-items: center; gap: 8px; min-height: 128px; padding: 20px; background: var(--roc-marker, #f5f5f5); border: 1px solid var(--roc-line, #eee); border-radius: var(--roc-radius, 12px); text-align: center; }
+.motion-sample-object strong { font-size: 13px; font-weight: 500; }
+.motion-sample-object > span:not(.motion-sample-mark) { font-size: 10px; color: var(--roc-muted, #999); }
+.motion-sample-mark { font-size: 20px; color: var(--roc-muted, #888); }
+.motion-text-stage { display: flex; align-items: center; min-height: 100px; font-size: 22px; line-height: 1.5; letter-spacing: -.025em; }
+.motion-number-stage { padding: 16px 0; font-size: 44px; letter-spacing: -.045em; min-height: 90px; }
+.motion-height-content { padding: 12px; display: grid; gap: 20px; }
+.motion-height-content strong { line-height: 24px; }
+.motion-example-row { display: flex; align-items: center; gap: 12px; font-size: 12px; }
+.motion-grid-tile { display: grid; place-items: center; min-height: 64px; border-radius: var(--roc-radius, 10px); border: 1px solid var(--roc-line, #ddd); background: var(--roc-marker, #f5f5f5); font-size: 12px; }
+.motion-reading-surface { height: 160px; overflow: auto; overscroll-behavior: contain; padding: 12px; }
+.motion-reading-surface article { min-height: 180px; padding-block: 10px; }
+.motion-reading-surface h3 { font-size: 13px; font-weight: 500; }
+.motion-reading-surface p { font-size: 12px; line-height: 1.7; color: #888; }
+.motion-spring-stage { display: grid; place-items: center; padding: 28px; }
+@media (max-width: 640px) {
+  .catalog-browser { padding-top: 10px; }
+  .catalog-intro { padding-bottom: 18px; gap: 16px; }
+  .catalog-intro h1 { font-size: 24px; }
+  .catalog-total { font-size: 22px; }
+  .collection-switch.roc-ui[data-slot="toggle-group"] > .roc-ui-toggle { min-width: 44px; min-height: 44px; padding: 10px; }
+  .collection-switch .roc-ui-toggle > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .catalog-results { flex-wrap: wrap; gap: 5px; }
+  .motion-example-row .roc-ui-button { min-height: 44px; }
+}
+
+.catalog-results p strong { color: #555; font-weight: 500; margin-right: 10px; }
+@media (max-width: 640px) { .catalog-results p span { display: block; margin-top: 3px; } }
+.collection-switch.roc-ui[data-slot="toggle-group"] > .roc-ui-toggle { position: relative; }
+
+.preset-switch.roc-ui[data-slot="toggle-group"] { flex-wrap: nowrap; flex-shrink: 0; gap: 2px; padding: 3px; border-radius: 8px; background: #f5f5f5; }
+.preset-switch.roc-ui[data-slot="toggle-group"] > .roc-ui-toggle { min-height: 30px; padding: 6px 10px; border-radius: 5px; font-size: 11px; font-weight: 400; color: #888; }
+.preset-switch.roc-ui[data-slot="toggle-group"] > .roc-ui-toggle[data-state="on"] { color: #333; background: #fff; box-shadow: 0 1px 3px #0000000b; }
+.preview-header-controls { display: contents; }
+.preview-header-controls .motion-control-label { display: none; }
+.component-heading [data-slot="card-title"] { min-width: 0; }
+@media (max-width: 640px) {
+  .preset-switch.roc-ui[data-slot="toggle-group"] { grid-column: 2 / -1; grid-row: 1; justify-self: end; }
+  .preset-switch.roc-ui[data-slot="toggle-group"] > .roc-ui-toggle { min-height: 44px; padding-inline: 10px; }
+  .component-heading .roc-ui-button { width: 44px; min-width: 44px; height: 44px; min-height: 44px; }
 }

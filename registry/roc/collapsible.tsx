@@ -1,7 +1,7 @@
 // Adapted from shadcn/ui (MIT). Retained content is a ROC extension.
 "use client";
 import * as React from "react";
-import { AutoHeight } from "@animate-ui/react/primitives/effects/auto-height";
+import { AutoHeight } from "./auto-height";
 import { Collapsible as Primitive } from "./primitive-collapsible";
 import { cn } from "./utils";
 import "./collapsible.css";

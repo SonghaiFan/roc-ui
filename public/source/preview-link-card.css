@@ -1,0 +1,4 @@
+@import "./ui-base.css";
+.roc-preview-link-card { display: grid; gap: 12px; }
+.roc-preview-link-card p { margin: 0; font-size: 12px; line-height: 1.6; color: var(--roc-muted, #777); }
+.roc-preview-link-card a { color: var(--roc-ink, #333); text-decoration: underline; }

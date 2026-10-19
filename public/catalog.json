@@ -1,0 +1,917 @@
+{
+  "collections": [
+    "Actions",
+    "Effects",
+    "Layout",
+    "Text & numbers"
+  ],
+  "motion": [
+    {
+      "id": "copy-button",
+      "name": "Copy Button",
+      "export": "CopyButton",
+      "source": "motion-buttons",
+      "family": "Actions",
+      "description": "Copy with visible success or failure feedback.",
+      "usage": "<CopyButton text=\"Text to copy\">Copy</CopyButton>",
+      "notes": "Keyboard and touch activation use the same action. Any external data is supplied by the host; there are no automatic network requests.",
+      "props": "text: string · children?: ReactNode · standard Button props"
+    },
+    {
+      "id": "flip-button",
+      "name": "Flip Button",
+      "export": "FlipButton",
+      "source": "motion-buttons",
+      "family": "Actions",
+      "description": "Turn between two labels in one footprint.",
+      "usage": "<FlipButton back=\"Saved\">Keep note</FlipButton>",
+      "notes": "Keyboard and touch activation use the same action. Any external data is supplied by the host; there are no automatic network requests.",
+      "props": "back: ReactNode · children: ReactNode · standard Button props"
+    },
+    {
+      "id": "github-stars-button",
+      "name": "GitHub Stars Button",
+      "export": "GithubStarsButton",
+      "source": "motion-buttons",
+      "family": "Actions",
+      "description": "A repository link with a supplied star count.",
+      "usage": "<GithubStarsButton count={128} href=\"https://github.com/your/repo\" />",
+      "notes": "Keyboard and touch activation use the same action. Any external data is supplied by the host; there are no automatic network requests.",
+      "props": "count: number · href: string · children?: ReactNode"
+    },
+    {
+      "id": "icon-button",
+      "name": "Icon Button",
+      "export": "IconButton",
+      "source": "motion-buttons",
+      "family": "Actions",
+      "description": "A compact action with an accessible name.",
+      "usage": "<IconButton label=\"Add note\" icon={<Plus />} />",
+      "notes": "Keyboard and touch activation use the same action. Any external data is supplied by the host; there are no automatic network requests.",
+      "props": "icon: ReactNode · label: string · standard Button props"
+    },
+    {
+      "id": "liquid-button",
+      "name": "Liquid Button",
+      "export": "LiquidButton",
+      "source": "motion-buttons",
+      "family": "Actions",
+      "description": "A soft shape that responds to hover.",
+      "usage": "<LiquidButton>Open collection</LiquidButton>",
+      "notes": "Keyboard and touch activation use the same action. Any external data is supplied by the host; there are no automatic network requests.",
+      "props": "See the typed source for composition and controlled props."
+    },
+    {
+      "id": "ripple-button",
+      "name": "Ripple Button",
+      "export": "RippleButton",
+      "source": "motion-buttons",
+      "family": "Actions",
+      "description": "A single ripple for every activation.",
+      "usage": "<RippleButton>Send ripple</RippleButton>",
+      "notes": "Keyboard and touch activation use the same action. Any external data is supplied by the host; there are no automatic network requests.",
+      "props": "See the typed source for composition and controlled props."
+    },
+    {
+      "id": "theme-toggler-button",
+      "name": "Theme Toggler Button",
+      "export": "ThemeTogglerButton",
+      "source": "motion-buttons",
+      "family": "Actions",
+      "description": "Control an appearance choice explicitly.",
+      "usage": "<ThemeTogglerButton dark={dark} onDarkChange={setDark} />",
+      "notes": "Keyboard and touch activation use the same action. Any external data is supplied by the host; there are no automatic network requests.",
+      "props": "dark: boolean · onDarkChange: (dark) => void"
+    },
+    {
+      "id": "blur",
+      "name": "Blur",
+      "export": "Blur",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Bring a thought into focus.",
+      "usage": "<Blur active={active}><div>Your content</div></Blur>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "click",
+      "name": "Click",
+      "export": "Click",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Give a press a small physical response.",
+      "usage": "<Click active={active}><div>Your content</div></Click>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "effect",
+      "name": "Effect",
+      "export": "Effect",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Compose a retained content transition.",
+      "usage": "<Effect active={active}><div>Your content</div></Effect>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "fade",
+      "name": "Fade",
+      "export": "Fade",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Quietly change emphasis.",
+      "usage": "<Fade active={active}><div>Your content</div></Fade>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "highlight",
+      "name": "Highlight",
+      "export": "Highlight",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Emphasize the content that matters.",
+      "usage": "<Highlight active={active}><div>Your content</div></Highlight>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "image-zoom",
+      "name": "Image Zoom",
+      "export": "ImageZoom",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Inspect the image in its own place.",
+      "usage": "<ImageZoom src=\"/image.jpg\" alt=\"A landscape\" />",
+      "notes": "Click or tap toggles a contained crop; the image stays mounted. This is not a full-screen lightbox.",
+      "props": "src: string · alt: string · className?: string"
+    },
+    {
+      "id": "magnetic",
+      "name": "Magnetic",
+      "export": "Magnetic",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Let an object lean toward the pointer.",
+      "usage": "<Magnetic active={active}><div>Your content</div></Magnetic>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "particles",
+      "name": "Particles",
+      "export": "Particles",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "A small burst of feedback.",
+      "usage": "<Particles active={active}><div>Your content</div></Particles>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "scroll-fade",
+      "name": "Scroll Fade",
+      "export": "ScrollFade",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Reveal context as it reaches the viewport.",
+      "usage": "<ScrollFade><p>Content worth noticing.</p></ScrollFade>",
+      "notes": "Tracks the document viewport. Reduced motion keeps content opaque.",
+      "props": "children: ReactNode · className?: string"
+    },
+    {
+      "id": "shine",
+      "name": "Shine",
+      "export": "Shine",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Sweep light over a surface once.",
+      "usage": "<Shine active={active}><div>Your content</div></Shine>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "slide",
+      "name": "Slide",
+      "export": "Slide",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Move the same content into place.",
+      "usage": "<Slide active={active}><div>Your content</div></Slide>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "theme-toggler",
+      "name": "Theme Toggler",
+      "export": "ThemeToggler",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Change a local surface appearance.",
+      "usage": "<ThemeToggler dark={dark}><p>Your content</p></ThemeToggler>",
+      "notes": "Controlled local surface colors; the caller owns application theme and persistence.",
+      "props": "dark: boolean · children: ReactNode"
+    },
+    {
+      "id": "tilt",
+      "name": "Tilt",
+      "export": "Tilt",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Let a surface follow the pointer.",
+      "usage": "<Tilt active={active}><div>Your content</div></Tilt>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "export": "Zoom",
+      "source": "motion-effects",
+      "family": "Effects",
+      "description": "Change scale around retained content.",
+      "usage": "<Zoom active={active}><div>Your content</div></Zoom>",
+      "notes": "Controlled by active; retains children. Pointer effects require a fine pointer and fall back to a stable surface on touch. Reduced motion removes displacement.",
+      "props": "active?: boolean · distance?: number · children: ReactNode"
+    },
+    {
+      "id": "auto-height",
+      "name": "Auto Height",
+      "export": "AutoHeight",
+      "source": "auto-height",
+      "family": "Layout",
+      "description": "Make room without replacing content.",
+      "usage": "<AutoHeight animate={{ height: open ? \"auto\" : 0 }}><div>Retained content</div></AutoHeight>",
+      "notes": "Animates measured content height. Make collapsed interactive content inert in the host.",
+      "props": "animate?: Motion target (height: number | auto) · children: ReactNode"
+    },
+    {
+      "id": "avatar-group",
+      "name": "Avatar Group",
+      "export": "AvatarGroup",
+      "source": "motion-layouts",
+      "family": "Layout",
+      "description": "Keep the people in a collection together.",
+      "usage": "<AvatarGroup people={[{ id: \"a\", name: \"Alex Morgan\" }]} />",
+      "notes": "Stable identities belong to the host. Pointer-specific decoration stays still on touch. Scroll Progress tracks its supplied scroll container or the document.",
+      "props": "people: { id, name, src? }[]"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "export": "Cursor",
+      "source": "motion-layouts",
+      "family": "Layout",
+      "description": "A local pointer accent, without replacing the cursor.",
+      "usage": "<Cursor><div>Pointer area</div></Cursor>",
+      "notes": "Stable identities belong to the host. Pointer-specific decoration stays still on touch. Scroll Progress tracks its supplied scroll container or the document.",
+      "props": "See the typed source for composition and controlled props."
+    },
+    {
+      "id": "github-stars",
+      "name": "GitHub Stars",
+      "export": "GithubStars",
+      "source": "motion-buttons",
+      "family": "Layout",
+      "description": "An animated repository count supplied by the host.",
+      "usage": "<GithubStars count={128} />",
+      "notes": "Stable identities belong to the host. Pointer-specific decoration stays still on touch. Scroll Progress tracks its supplied scroll container or the document.",
+      "props": "count: number · label?: string"
+    },
+    {
+      "id": "motion-grid",
+      "name": "Motion Grid",
+      "export": "MotionGrid",
+      "source": "motion-layouts",
+      "family": "Layout",
+      "description": "Rearrange stable objects in a responsive grid.",
+      "usage": "<MotionGrid>{items.map(item => <div key={item.id}>{item.title}</div>)}</MotionGrid>",
+      "notes": "Stable identities belong to the host. Pointer-specific decoration stays still on touch. Scroll Progress tracks its supplied scroll container or the document.",
+      "props": "children: keyed ReactNode[] · className?: string"
+    },
+    {
+      "id": "pinned-list",
+      "name": "Pinned List",
+      "export": "PinnedList",
+      "source": "motion-layouts",
+      "family": "Layout",
+      "description": "Expand the focused item while retaining its neighbors.",
+      "usage": "<PinnedList items={[{ id: \"a\", label: \"Notes\", detail: \"Keep the context.\" }]} />",
+      "notes": "Stable identities belong to the host. Pointer-specific decoration stays still on touch. Scroll Progress tracks its supplied scroll container or the document.",
+      "props": "items: { id, label, detail? }[] · value?: string · onValueChange?: (id) => void"
+    },
+    {
+      "id": "scroll-progress",
+      "name": "Scroll Progress",
+      "export": "ScrollProgress",
+      "source": "motion-layouts",
+      "family": "Layout",
+      "description": "Show actual progress through a reading surface.",
+      "usage": "<ScrollProgress container={scrollRef} />",
+      "notes": "Stable identities belong to the host. Pointer-specific decoration stays still on touch. Scroll Progress tracks its supplied scroll container or the document.",
+      "props": "container?: RefObject<HTMLElement> · label?: string"
+    },
+    {
+      "id": "spring",
+      "name": "Spring",
+      "export": "Spring",
+      "source": "motion-layouts",
+      "family": "Layout",
+      "description": "Drag an object and let it settle back.",
+      "usage": "<Spring>Drag</Spring>",
+      "notes": "Stable identities belong to the host. Pointer-specific decoration stays still on touch. Scroll Progress tracks its supplied scroll container or the document.",
+      "props": "See the typed source for composition and controlled props."
+    },
+    {
+      "id": "counting-number",
+      "name": "Counting Number",
+      "export": "CountingNumber",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Count smoothly toward the latest total.",
+      "usage": "<CountingNumber value={total} />",
+      "notes": "Animate numeric changes; first render is settled. Supports 0–6 decimal places. Reduced motion displays the final value immediately.",
+      "props": "value: number · decimals?: number · duration?: number"
+    },
+    {
+      "id": "gradient-text",
+      "name": "Gradient Text",
+      "export": "GradientText",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Blend token colors across a line of text.",
+      "usage": "<GradientText active={active}>A thought worth keeping.</GradientText>",
+      "notes": "Full text remains available to assistive technology. Text effects are finite and controlled, with no default loop. Typing reserves its final footprint.",
+      "props": "children: string · active?: boolean"
+    },
+    {
+      "id": "highlight-text",
+      "name": "Highlight Text",
+      "export": "HighlightText",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Mark a phrase without interrupting reading.",
+      "usage": "<HighlightText active={active}>A thought worth keeping.</HighlightText>",
+      "notes": "Full text remains available to assistive technology. Text effects are finite and controlled, with no default loop. Typing reserves its final footprint.",
+      "props": "children: string · active?: boolean"
+    },
+    {
+      "id": "morphing-text",
+      "name": "Morphing Text",
+      "export": "MorphingText",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Soften the handoff between changing phrases.",
+      "usage": "<MorphingText active={active}>A thought worth keeping.</MorphingText>",
+      "notes": "Full text remains available to assistive technology. Text effects are finite and controlled, with no default loop. Typing reserves its final footprint.",
+      "props": "children: string · active?: boolean"
+    },
+    {
+      "id": "rolling-text",
+      "name": "Rolling Text",
+      "export": "RollingText",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Roll letters into their resting position.",
+      "usage": "<RollingText active={active}>A thought worth keeping.</RollingText>",
+      "notes": "Full text remains available to assistive technology. Text effects are finite and controlled, with no default loop. Typing reserves its final footprint.",
+      "props": "children: string · active?: boolean"
+    },
+    {
+      "id": "rotating-text",
+      "name": "Rotating Text",
+      "export": "RotatingText",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Turn a changing phrase around its baseline.",
+      "usage": "<RotatingText active={active}>A thought worth keeping.</RotatingText>",
+      "notes": "Full text remains available to assistive technology. Text effects are finite and controlled, with no default loop. Typing reserves its final footprint.",
+      "props": "children: string · active?: boolean"
+    },
+    {
+      "id": "scrolling-number",
+      "name": "Scrolling Number",
+      "export": "ScrollingNumber",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Roll each digit to its next value.",
+      "usage": "<ScrollingNumber value={total} />",
+      "notes": "Animate numeric changes; first render is settled. Supports 0–6 decimal places. Reduced motion displays the final value immediately.",
+      "props": "value: number · decimals?: number · duration?: number"
+    },
+    {
+      "id": "shimmering-text",
+      "name": "Shimmering Text",
+      "export": "ShimmeringText",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Pass a single highlight through a line of text.",
+      "usage": "<ShimmeringText active={active}>A thought worth keeping.</ShimmeringText>",
+      "notes": "Full text remains available to assistive technology. Text effects are finite and controlled, with no default loop. Typing reserves its final footprint.",
+      "props": "children: string · active?: boolean"
+    },
+    {
+      "id": "sliding-number",
+      "name": "Sliding Number",
+      "export": "SlidingNumber",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Slide one value out as the next arrives.",
+      "usage": "<SlidingNumber value={total} />",
+      "notes": "Animate numeric changes; first render is settled. Supports 0–6 decimal places. Reduced motion displays the final value immediately.",
+      "props": "value: number · decimals?: number · duration?: number"
+    },
+    {
+      "id": "sliding-text",
+      "name": "Sliding Text",
+      "export": "SlidingText",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Bring a changing line into view.",
+      "usage": "<SlidingText active={active}>A thought worth keeping.</SlidingText>",
+      "notes": "Full text remains available to assistive technology. Text effects are finite and controlled, with no default loop. Typing reserves its final footprint.",
+      "props": "children: string · active?: boolean"
+    },
+    {
+      "id": "splitting-text",
+      "name": "Splitting Text",
+      "export": "SplittingText",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Reveal a phrase one character at a time.",
+      "usage": "<SplittingText active={active}>A thought worth keeping.</SplittingText>",
+      "notes": "Full text remains available to assistive technology. Text effects are finite and controlled, with no default loop. Typing reserves its final footprint.",
+      "props": "children: string · active?: boolean"
+    },
+    {
+      "id": "swapping-text",
+      "name": "Swapping Text",
+      "export": "SwappingText",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Exchange a phrase without moving its context.",
+      "usage": "<SwappingText active={active}>A thought worth keeping.</SwappingText>",
+      "notes": "Full text remains available to assistive technology. Text effects are finite and controlled, with no default loop. Typing reserves its final footprint.",
+      "props": "children: string · active?: boolean"
+    },
+    {
+      "id": "typing-text",
+      "name": "Typing Text",
+      "export": "TypingText",
+      "source": "motion-text",
+      "family": "Text & numbers",
+      "description": "Write out a phrase at a readable pace.",
+      "usage": "<TypingText active={active}>A thought worth keeping.</TypingText>",
+      "notes": "Full text remains available to assistive technology. Text effects are finite and controlled, with no default loop. Typing reserves its final footprint.",
+      "props": "children: string · active?: boolean · speed?: number (milliseconds)"
+    }
+  ],
+  "coverage": {
+    "reference": "https://animate-ui.com/docs/primitives",
+    "reviewed": "2026-10-19",
+    "policy": "Independent implementations; no Animate UI source or runtime dependency. Semantic coverage does not imply identical APIs or visual parity.",
+    "entries": [
+      {
+        "reference": "accordion",
+        "referenceGroup": "Components",
+        "rocId": "accordion",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "alert-dialog",
+        "referenceGroup": "Components",
+        "rocId": "alert-dialog",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "checkbox",
+        "referenceGroup": "Components",
+        "rocId": "checkbox",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "collapsible",
+        "referenceGroup": "Components",
+        "rocId": "collapsible",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "combobox",
+        "referenceGroup": "Components",
+        "rocId": "combobox",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "context-menu",
+        "referenceGroup": "Components",
+        "rocId": "context-menu",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "dialog",
+        "referenceGroup": "Components",
+        "rocId": "dialog",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "drawer",
+        "referenceGroup": "Components",
+        "rocId": "drawer",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "dropdown-menu",
+        "referenceGroup": "Components",
+        "rocId": "dropdown-menu",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "hover-card",
+        "referenceGroup": "Components",
+        "rocId": "hover-card",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "input-otp",
+        "referenceGroup": "Components",
+        "rocId": "input-otp",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "menubar",
+        "referenceGroup": "Components",
+        "rocId": "menubar",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "navigation-menu",
+        "referenceGroup": "Components",
+        "rocId": "navigation-menu",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "pagination",
+        "referenceGroup": "Components",
+        "rocId": "pagination",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "popover",
+        "referenceGroup": "Components",
+        "rocId": "popover",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "preview-link-card",
+        "referenceGroup": "Components",
+        "rocId": "preview-link-card",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "progress",
+        "referenceGroup": "Components",
+        "rocId": "progress",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "questionnaire",
+        "referenceGroup": "Components",
+        "rocId": "questionnaire",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "radio-group",
+        "referenceGroup": "Components",
+        "rocId": "radio-group",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "select",
+        "referenceGroup": "Components",
+        "rocId": "select",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "sheet",
+        "referenceGroup": "Components",
+        "rocId": "sheet",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "sidebar",
+        "referenceGroup": "Components",
+        "rocId": "sidebar",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "slider",
+        "referenceGroup": "Components",
+        "rocId": "slider",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "switch",
+        "referenceGroup": "Components",
+        "rocId": "switch",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "tabs",
+        "referenceGroup": "Components",
+        "rocId": "tabs",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "toast",
+        "referenceGroup": "Components",
+        "rocId": "toast",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "toggle",
+        "referenceGroup": "Components",
+        "rocId": "toggle",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "toggle-group",
+        "referenceGroup": "Components",
+        "rocId": "toggle-group",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "tooltip",
+        "referenceGroup": "Components",
+        "rocId": "tooltip",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "avatar-group",
+        "referenceGroup": "Animate UI",
+        "rocId": "avatar-group",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "code-block",
+        "referenceGroup": "Animate UI",
+        "rocId": "code-block",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "cursor",
+        "referenceGroup": "Animate UI",
+        "rocId": "cursor",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "github-stars",
+        "referenceGroup": "Animate UI",
+        "rocId": "github-stars",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "motion-grid",
+        "referenceGroup": "Animate UI",
+        "rocId": "motion-grid",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "pinned-list",
+        "referenceGroup": "Animate UI",
+        "rocId": "pinned-list",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "scroll-progress",
+        "referenceGroup": "Animate UI",
+        "rocId": "scroll-progress",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "spring",
+        "referenceGroup": "Animate UI",
+        "rocId": "spring",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "button",
+        "referenceGroup": "Buttons",
+        "rocId": "button",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "copy-button",
+        "referenceGroup": "Buttons",
+        "rocId": "copy-button",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "flip-button",
+        "referenceGroup": "Buttons",
+        "rocId": "flip-button",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "github-stars-button",
+        "referenceGroup": "Buttons",
+        "rocId": "github-stars-button",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "icon-button",
+        "referenceGroup": "Buttons",
+        "rocId": "icon-button",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "liquid-button",
+        "referenceGroup": "Buttons",
+        "rocId": "liquid-button",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "ripple-button",
+        "referenceGroup": "Buttons",
+        "rocId": "ripple-button",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "theme-toggler-button",
+        "referenceGroup": "Buttons",
+        "rocId": "theme-toggler-button",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "gradient-text",
+        "referenceGroup": "Texts",
+        "rocId": "gradient-text",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "highlight-text",
+        "referenceGroup": "Texts",
+        "rocId": "highlight-text",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "morphing-text",
+        "referenceGroup": "Texts",
+        "rocId": "morphing-text",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "rolling-text",
+        "referenceGroup": "Texts",
+        "rocId": "rolling-text",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "rotating-text",
+        "referenceGroup": "Texts",
+        "rocId": "rotating-text",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "shimmering-text",
+        "referenceGroup": "Texts",
+        "rocId": "shimmering-text",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "sliding-text",
+        "referenceGroup": "Texts",
+        "rocId": "sliding-text",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "splitting-text",
+        "referenceGroup": "Texts",
+        "rocId": "splitting-text",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "swapping-text",
+        "referenceGroup": "Texts",
+        "rocId": "swapping-text",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "typing-text",
+        "referenceGroup": "Texts",
+        "rocId": "typing-text",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "counting-number",
+        "referenceGroup": "Numbers",
+        "rocId": "counting-number",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "scrolling-number",
+        "referenceGroup": "Numbers",
+        "rocId": "scrolling-number",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "sliding-number",
+        "referenceGroup": "Numbers",
+        "rocId": "sliding-number",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "auto-height",
+        "referenceGroup": "Effects",
+        "rocId": "auto-height",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "blur",
+        "referenceGroup": "Effects",
+        "rocId": "blur",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "click",
+        "referenceGroup": "Effects",
+        "rocId": "click",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "effect",
+        "referenceGroup": "Effects",
+        "rocId": "effect",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "fade",
+        "referenceGroup": "Effects",
+        "rocId": "fade",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "highlight",
+        "referenceGroup": "Effects",
+        "rocId": "highlight",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "image-zoom",
+        "referenceGroup": "Effects",
+        "rocId": "image-zoom",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "magnetic",
+        "referenceGroup": "Effects",
+        "rocId": "magnetic",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "particles",
+        "referenceGroup": "Effects",
+        "rocId": "particles",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "scroll-fade",
+        "referenceGroup": "Effects",
+        "rocId": "scroll-fade",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "shine",
+        "referenceGroup": "Effects",
+        "rocId": "shine",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "slide",
+        "referenceGroup": "Effects",
+        "rocId": "slide",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "theme-toggler",
+        "referenceGroup": "Effects",
+        "rocId": "theme-toggler",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "tilt",
+        "referenceGroup": "Effects",
+        "rocId": "tilt",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      },
+      {
+        "reference": "zoom",
+        "referenceGroup": "Effects",
+        "rocId": "zoom",
+        "implementation": "ROC source; direct Base UI, Motion or native browser behavior as appropriate"
+      }
+    ]
+  }
+}

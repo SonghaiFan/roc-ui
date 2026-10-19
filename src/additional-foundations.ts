@@ -270,23 +270,6 @@ export const additionalFoundations = [
       "Independent React source and namespaced CSS. Host applications own business data, network requests and persistence.",
   },
   {
-    id: "edge-panel",
-    name: "Edge Panel",
-    description: "Settings that wait at the edge of the window.",
-    rule: "Move the pointer to the edge and the panel slides in; leave and it slides away, unless pinned. Hiding inerts it and never remounts what sits behind it.",
-    usage:
-      '<EdgePanel><EdgePanelTrigger asChild><Button variant="ghost">Style</Button></EdgePanelTrigger><EdgePanelContent title="Appearance">…controls…</EdgePanelContent></EdgePanel>',
-    actions: ["Hover", "Expand"],
-    category: "shadcn foundations",
-    tag: "ROC",
-    number: "67",
-    source: "registry/roc/edge-panel.tsx",
-    props:
-      "EdgePanel: open? · defaultOpen? · pinned? · side? ('left' | 'right') · contained? · hideDelay? — EdgePanelTrigger · EdgePanelContent (title?) · useEdgePanel()",
-    limit:
-      "Pointer reveal is mouse-only; touch and keyboard use the trigger. Menus opened from inside the panel keep it open. Add a window-level pointer listener of your own if an iframe sits behind it.",
-  },
-  {
     id: "drawer",
     name: "Drawer",
     description: "A surface you can put away.",

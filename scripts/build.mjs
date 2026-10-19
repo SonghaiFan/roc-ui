@@ -4,7 +4,10 @@ const foundationNames =
   "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip alert avatar progress skeleton toggle toggle-group radio-group scroll-area breadcrumb pagination alert-dialog aspect-ratio attachment bubble button-group calendar carousel chart code-block collapsible combobox command context-menu data-table date-picker direction drawer empty field hover-card input-group input-otp item kbd label marker menubar message message-scroller native-select navigation-menu questionnaire resizable select sheet sidebar spinner table toast trace typography".split(
     " ",
   );
+const motionItems = JSON.parse(await readFile("catalog/motion.json", "utf8"));
 const names = [
+  ...motionItems.map(item => item.id),
+  "preview-link-card",
   ...foundationNames,
   "expandable-card",
   "folder-fan",
@@ -16,7 +19,6 @@ const names = [
   "selection-toolbar",
   "page-book",
   "source-tray",
-  "edge-panel",
 ];
 const packageInfo = JSON.parse(await readFile("package.json", "utf8"));
 const root = {
@@ -80,11 +82,11 @@ for (const name of names) {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
     name,
     type: "registry:component",
-    title: name
+    title: motionItems.find(item => item.id === name)?.name ?? name
       .split("-")
       .map((x) => x[0].toUpperCase() + x.slice(1))
       .join(" "),
-    description: "ROC: retained identity and coherent layout changes.",
+    description: motionItems.find(item => item.id === name)?.description ?? "ROC: retained identity and coherent layout changes.",
     dependencies: [...dependencies].map((dep) =>
       packageInfo.dependencies[dep]
         ? `${dep}@${packageInfo.dependencies[dep]}`
@@ -112,6 +114,7 @@ for (const name of names) {
     files: item.files.map(({ content, ...file }) => file),
   });
 }
+await writeFile("public/catalog.json", JSON.stringify({ collections: [...new Set(motionItems.map(item => item.family))], motion: motionItems, coverage: JSON.parse(await readFile("catalog/coverage.json", "utf8")) }, null, 2) + "\n");
 await writeFile("registry.json", JSON.stringify(root, null, 2) + "\n");
 await rm("dist", { recursive: true, force: true });
 await mkdir("dist", { recursive: true });

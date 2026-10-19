@@ -72,3 +72,19 @@ for (const entry of registry.items)
         );
     }
   });
+
+test("ROC covers the referenced primitive catalog with independently distributed items", async () => {
+  const coverage = JSON.parse(await readFile("catalog/coverage.json", "utf8"));
+  assert.equal(coverage.entries.length, 73);
+  assert.equal(new Set(coverage.entries.map(item => item.reference)).size, 73);
+  const names = new Set(registry.items.map(item => item.name));
+  for (const item of coverage.entries) assert.ok(names.has(item.rocId), `Missing ROC equivalent: ${item.reference}`);
+});
+
+test("installed ROC payloads have no Animate UI runtime or source dependency", async () => {
+  for (const entry of registry.items) {
+    const payload = JSON.parse(await readFile(`public/r/${entry.name}.json`, "utf8"));
+    assert.ok(!payload.dependencies.some(name => name.startsWith("@animate-ui/")), entry.name);
+    for (const file of payload.files) assert.ok(!file.content.includes("@animate-ui/"), file.path);
+  }
+});

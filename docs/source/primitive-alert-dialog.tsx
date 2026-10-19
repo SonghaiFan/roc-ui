@@ -2,7 +2,7 @@
 // ROC primitive: a modal that interrupts for a decision. Behaviour from Base UI.
 // Outside clicks do not dismiss it, and focus starts on Cancel.
 import * as React from "react";
-import { AlertDialog as Base } from "@animate-ui/react/primitives/base-ui/alert-dialog";
+import { AlertDialog as Base } from "@base-ui/react/alert-dialog";
 import { createDialog } from "./primitive-dialog-core";
 import { composeRefs } from "./primitive-utils";
 

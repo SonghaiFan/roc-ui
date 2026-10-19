@@ -1,7 +1,7 @@
 "use client";
 // ROC primitive: a two-state button.
 import * as React from "react";
-import { Button as AnimatedButton } from "@animate-ui/react/primitives/buttons/button";
+import { Pressable } from "./primitive-pressable";
 import { composeEventHandlers } from "./primitive-utils";
 import { useControllableState } from "./use-controllable-state";
 
@@ -26,7 +26,7 @@ function Root({
     defaultPressed,
     onPressedChange,
   );
-  const Comp: React.ElementType = AnimatedButton;
+  const Comp: React.ElementType = Pressable;
   return (
     <Comp
       asChild={asChild}

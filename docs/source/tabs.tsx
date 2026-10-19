@@ -98,14 +98,20 @@ function TabsList({
 }
 function TabsTrigger({
   className,
+  icon,
+  children,
   ...props
-}: React.ComponentProps<typeof Primitive.Trigger>) {
+}: React.ComponentProps<typeof Primitive.Trigger> & { icon?: React.ReactNode }) {
   return (
     <Primitive.Trigger
       {...props}
       data-slot="tabs-trigger"
+      data-has-icon={icon ? "" : undefined}
       className={cn("roc-ui", className)}
-    />
+    >
+      {icon && <span className="roc-tabs-icon" aria-hidden="true">{icon}</span>}
+      <span className="roc-tabs-label">{children}</span>
+    </Primitive.Trigger>
   );
 }
 function TabsContent({

@@ -36,6 +36,10 @@ await writeFile(
     "./components/roc/",
   ),
 );
+await writeFile(".checks/PreviewControls.tsx", await readFile("src/PreviewControls.tsx", "utf8"));
+const motionIds = [...JSON.parse(await readFile("catalog/motion.json", "utf8")).map(item => item.id), "preview-link-card"];
+await writeFile(".checks/motion-examples.tsx", (await readFile("src/MotionExamples.tsx", "utf8")).replaceAll("../registry/roc/", "./components/roc/"));
+await writeFile(".checks/motion-consumer.tsx", `import {MotionExample} from "./motion-examples"; export function MotionConsumer(){return <>{${JSON.stringify(motionIds)}.map(id=><section key={id} data-component={id}><h2>{id}</h2><MotionExample id={id}/></section>)}</>}`);
 await writeFile(
   ".checks/catalog-consumer.tsx",
   `import {CatalogExample,additionalIds} from "./catalog-examples"; export function CatalogConsumer(){return <>{additionalIds.map(id=><section key={id} data-component={id} style={{padding:20,borderBottom:"1px solid #ddd"}}><h2>{id}</h2><CatalogExample id={id}/></section>)}</>}`,
@@ -71,3 +75,13 @@ await writeFile(
 console.log(
   "All downloaded registry components compile and server-render without gallery files. Browser fixture: /consumer-check/index.html",
 );
+await writeFile(".checks/motion-preference.tsx", await readFile("tests/fixtures/motion-preference.tsx", "utf8"));
+await build({ entryPoints: [".checks/motion-preference.tsx"], bundle: true, format: "esm", outfile: "dist/consumer-check/motion-preference.js", jsx: "automatic", define: { "process.env.NODE_ENV": '"production"' } });
+await writeFile("dist/consumer-check/motion-preference.html", `<!doctype html><title>ROC motion preference check</title><meta name="viewport" content="width=device-width"><script>
+const originalMatchMedia = window.matchMedia.bind(window);
+const preference = new EventTarget();
+preference.matches = false;
+preference.media = '(prefers-reduced-motion: reduce)';
+window.matchMedia = query => query === preference.media ? preference : originalMatchMedia(query);
+window.setTestReducedMotion = value => { preference.matches = value; preference.dispatchEvent(new Event('change')); };
+</script><div id="root"></div><script type="module" src="./motion-preference.js"></script>`);

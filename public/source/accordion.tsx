@@ -1,7 +1,7 @@
 "use client";
 // Adapted from shadcn/ui (MIT). Retain panels and make reversal interruptible.
 import * as React from "react";
-import { AutoHeight } from "@animate-ui/react/primitives/effects/auto-height";
+import { AutoHeight } from "./auto-height";
 import { Accordion as Primitive } from "./primitive-accordion";
 import { ChevronDownIcon } from "lucide-react";
 import { cn } from "./utils";

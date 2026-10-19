@@ -1,7 +1,7 @@
 // Adapted from shadcn/ui (MIT). See SHADCN-LICENSE.txt. Scoped CSS is precompiled.
 "use client";
 import * as React from "react";
-import { Combobox as ComboboxPrimitive } from "@animate-ui/react/primitives/base-ui/combobox";
+import { Combobox as ComboboxPrimitive } from "@base-ui/react/combobox";
 import { cn } from "./utils";
 import { CheckIcon, ChevronDownIcon, XIcon } from "lucide-react";
 import { Button } from "./button";
@@ -115,7 +115,6 @@ function ComboboxContent({
         className={cn("roc-shadcn", "roc-u-isolate roc-u-z-50")}
       >
         <ComboboxPrimitive.Popup
-        data-roc-motion="animate-ui"
           data-slot="combobox-content"
           data-chips={!!anchor}
           className={cn(

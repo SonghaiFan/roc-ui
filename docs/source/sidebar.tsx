@@ -131,17 +131,25 @@ export function SidebarMenuItem(props: React.ComponentProps<"li">) {
 export function SidebarMenuButton({
   asChild = false,
   isActive = false,
+  icon,
+  children,
   className,
   ...props
-}: React.ComponentProps<"button"> & { asChild?: boolean; isActive?: boolean }) {
+}: React.ComponentProps<"button"> & { asChild?: boolean; isActive?: boolean; icon?: React.ReactNode }) {
   const Comp = asChild ? Slot.Root : "button";
   return (
     <Comp
       type={asChild ? undefined : "button"}
       aria-current={isActive ? "page" : undefined}
       className={cn("roc-sidebar-link", className)}
+      data-has-icon={icon && !asChild ? "" : undefined}
       {...props}
-    />
+    >
+      {asChild ? children : <>
+        {icon && <span className="roc-sidebar-icon" aria-hidden="true">{icon}</span>}
+        <span className="roc-sidebar-link-label">{children}</span>
+      </>}
+    </Comp>
   );
 }
 export const SidebarInput = Input;

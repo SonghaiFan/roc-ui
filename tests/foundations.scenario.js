@@ -14,8 +14,8 @@ async (page) => {
   ).contentFrame();
   await view.locator("#tabs").waitFor();
   assert(
-    (await view.locator(".component-card").count()) === 67,
-    "All 67 customized shadcn components are mounted",
+    (await view.locator(".component-card").count()) === 109,
+    "All 109 catalog components are mounted",
   );
   const focus = async (name) => {
     const back = page.getByRole("button", {

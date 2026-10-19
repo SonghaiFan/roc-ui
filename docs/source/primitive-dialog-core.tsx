@@ -76,7 +76,6 @@ export function createDialog(Base: any) {
   function Overlay(props: Props<"div">) {
     return (
       <Base.Backdrop
-        data-roc-motion="animate-ui"
         {...props}
         render={(p: Record<string, any>, state: { open: boolean }) => (
           <div {...p} data-state={state.open ? "open" : "closed"} />
@@ -92,7 +91,6 @@ export function createDialog(Base: any) {
   }: Props<"div"> & { initialFocus?: React.RefObject<HTMLElement | null> }) {
     return (
       <Base.Popup
-        data-roc-motion="animate-ui"
         {...props}
         initialFocus={initialFocus}
         render={(p: Record<string, any>, state: { open: boolean }) => (
