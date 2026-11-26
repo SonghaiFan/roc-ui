@@ -1,8 +1,20 @@
-# ROC — Responsive Object Continuity
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/brand/lockup-dark.svg" />
+    <img src=".github/brand/lockup-light.svg" width="360" alt="ROC" />
+  </picture>
+</h1>
 
-One method and a hands-on design space for interfaces that keep objects recognizable, reachable and usable as layouts change.
+<p align="center"><b>The same object, through every change.</b></p>
 
-[Open the design space](https://songhaifan.github.io/roc-ui/) · [Get the skill](https://songhaifan.github.io/roc-ui/skill.html) · [Read the principles](skills/responsive-object-continuity/SKILL.md) · [Project constitution](CONSTITUTION.md)
+<p align="center"><a href="https://songhaifan.github.io/roc-ui/">Design space</a> · <a href="https://songhaifan.github.io/roc-ui/skill.html">Install the skill</a> · <a href="skills/responsive-object-continuity/SKILL.md">Principles</a> · <a href="CONSTITUTION.md">Project contract</a> · <a href="README.zh-CN.md">中文</a></p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/brand/overview-dark.svg" />
+  <img src=".github/brand/overview-light.svg" width="1200" alt="ROC workflow illustration; not an application screenshot." />
+</picture>
+
+ROC brings an agent skill and an interactive design space into one project. Explore interfaces that retain the object, its state and its context through changes in layout, focus and viewport.
 
 ## Method and practice
 
@@ -81,10 +93,27 @@ npm run test:consumer
 
 For a skill-only change, `npm run check:skill` validates case IDs, the case index and bundled references. `npm run package:skill` rebuilds its standalone files without installing UI dependencies. Run the relevant gallery and browser checks when a case's implementation changes.
 
-## 中文
-
-ROC 将方法和实践放在同一个项目里：skill 为 agent 提供跨框架的原则与案例，交互设计空间让这些原则可操作、可观察，registry 与组件源码用于复用案例。修改方法时维护同一份案例索引；修改实践时记录机制、验证证据和边界。Skill 可以独立安装，Gallery 的技术栈不限制这些原则的适用范围。
-
 ## License
 
 [MIT](LICENSE) for ROC source. The standalone skill includes its own license file. Referenced projects and bundled third-party implementations retain their applicable licenses and source notices. Animate UI is an external dependency under its [MIT + Commons Clause license](https://github.com/imskyleen/animate-ui/blob/main/packages/react/LICENSE.md); registry payloads include ROC adapters and dependency declarations rather than copied Animate UI sources.
+
+<br />
+
+<p align="center">
+  <a href="https://github.com/SonghaiFan/leftopen"><img src=".github/brand/series/leftopen.svg" width="32" height="32" alt="LeftOpen" title="LeftOpen" /></a>&nbsp;
+  <a href="https://github.com/SonghaiFan/openclaw-visualiser"><img src=".github/brand/series/her-os.svg" width="32" height="32" alt="her-os" title="her-os" /></a>&nbsp;
+  <a href="https://github.com/SonghaiFan/roc-ui"><img src=".github/brand/series/roc.svg" width="32" height="32" alt="ROC" title="ROC" /></a>&nbsp;
+  <a href="https://github.com/SonghaiFan/token-flow"><img src=".github/brand/series/token-flow.svg" width="32" height="32" alt="Token Flow" title="Token Flow" /></a>&nbsp;
+  <a href="https://github.com/SonghaiFan/franklin-board"><img src=".github/brand/series/aboard.svg" width="32" height="32" alt="Aboard" title="Aboard" /></a>&nbsp;
+  <img src=".github/brand/series/structured-text.svg" width="32" height="32" alt="Structured Text" title="Structured Text · local package" />&nbsp;
+  <a href="https://github.com/SonghaiFan/tasty-text"><img src=".github/brand/series/tasty-text.svg" width="32" height="32" alt="Tasty Text" title="Tasty Text" /></a>
+</p>
+
+<p align="center"><sub>ROC is part of the Franklin tools series.</sub></p>
+
+<p align="right">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/brand/frank-signature-dark.svg" />
+    <img src=".github/brand/frank-signature-light.svg" width="72" alt="Frank" />
+  </picture>
+</p>
