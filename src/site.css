@@ -71,9 +71,21 @@ summary {
   background: #fff;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -1px;
+}
+.brand-mark {
+  display: block;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+}
+.dark .brand-mark {
+  filter: brightness(0) invert(1);
 }
 .top-title {
   display: flex;
@@ -616,9 +628,6 @@ summary {
   .topbar {
     gap: 12px;
     padding-inline: 16px;
-  }
-  .topbar nav .roc-ui-button:first-child {
-    display: none;
   }
   .top-title {
     display: none;

@@ -75,7 +75,7 @@ import { ViewportPreview } from "./ViewportPreview";
 import { palette, accentForeground, radiusPresets, fontFamilies, type AccentName } from "./settings";
 import "./site.css";
 const repo = "https://github.com/SonghaiFan/roc-ui";
-const skill = "https://github.com/SonghaiFan/responsive-object-continuity";
+const skill = "./skill.html";
 const registry =
   "https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/";
 type Item = (typeof catalog)[number];
@@ -559,7 +559,8 @@ export function App() {
     <div className="design-space">
       <header className="topbar">
         <a className="brand" href={location.pathname} aria-label="ROC home">
-          roc
+          <img className="brand-mark" src="./brand/symbol-ink.svg" width="24" height="24" alt="" />
+          <span>roc</span>
         </a>
         <nav className="level-navigation" aria-label="Gallery levels">
           {[["design-system", "Design System"], ["primitives", "Primitives"], ["interfaces", "Interfaces"]].map(([id, label], i) => <Button key={id} variant="ghost" size="sm" onClick={() => {
@@ -615,12 +616,10 @@ export function App() {
             ...new Set(components.flatMap((item) => item.actions)),
           ].map((value) => ({ value }))}
         />
+        <Button variant="link" size="sm" asChild>
+          <a className="skill-entry" href={skill}>Skill</a>
+        </Button>
         <nav className="external-navigation">
-          <Button variant="link" size="sm" asChild>
-            <a href={skill} target="_blank" rel="noreferrer">
-              Principles ↗
-            </a>
-          </Button>
           <Button variant="link" size="sm" asChild>
             <a href={repo} target="_blank" rel="noreferrer">
               GitHub ↗

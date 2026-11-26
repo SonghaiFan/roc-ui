@@ -4,7 +4,9 @@
 
 ## 一、ROC 是实践案例合集
 
-ROC 不是以建设独立组件库为目标的项目，而是 [Responsive Object Continuity skill](https://github.com/SonghaiFan/responsive-object-continuity) 的实践案例合集与交互设计空间。
+ROC 在同一个项目中维护 [Responsive Object Continuity skill](skills/responsive-object-continuity/SKILL.md) 与其实践案例合集、交互设计空间。
+
+`skills/responsive-object-continuity/` 是方法、案例与参考的唯一源码；Gallery 负责让这些原则可操作、可观察和可复用。Skill 保持跨框架，能独立安装；站点构建从同一源码生成 skill 下载包。案例编号与链接在合并后的项目中统一维护。
 
 组件、源码、registry 和安装方式都是展示、验证与复用案例的手段，不是产品定位，也不意味着必须拥有底层实现、覆盖所有组件或维护独立的基础设施。
 

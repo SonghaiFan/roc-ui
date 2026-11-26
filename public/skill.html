@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ROC Skill — Responsive Object Continuity</title>
+  <meta name="description" content="The method behind ROC: retain the object, its state and its context through layout changes.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#fafbf8;color:#252525;font:16px/1.65 system-ui,sans-serif}a{color:inherit;text-underline-offset:4px}header,main,footer{max-width:1040px;margin:auto;padding:28px}header{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #dedfd9}.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:22px;font-weight:650}.brand img{width:30px;height:30px}nav{display:flex;gap:24px;font-size:14px}.eyebrow{font-size:12px;letter-spacing:.12em;color:#687263;text-transform:uppercase}h1{font-size:clamp(34px,6vw,62px);line-height:1.1;letter-spacing:-.04em;margin:20px 0}p{max-width:720px}.intro{font-size:20px;color:#545c50}.actions{display:flex;gap:22px;flex-wrap:wrap;align-items:center;margin:32px 0}.primary{display:inline-flex;background:#252525;color:white;border-radius:8px;padding:11px 18px;text-decoration:none}section{border-top:1px solid #dedfd9;padding-top:24px;margin-top:40px}h2{font-size:24px;letter-spacing:-.02em}pre{overflow:auto;max-width:100%;background:#eef0e9;border-radius:10px;padding:18px;font:13px/1.7 ui-monospace,monospace}li{margin:10px 0}.muted,footer{color:#687263;font-size:14px}:focus-visible{outline:2px solid currentColor;outline-offset:4px}@media(max-width:600px){header,main,footer{padding:20px}header{flex-wrap:wrap}nav{gap:18px}.intro{font-size:18px}}
+  </style>
+</head>
+<body>
+  <header><a class="brand" href="./"><img src="./brand/symbol-ink.svg" alt="">roc</a><nav aria-label="ROC navigation"><a href="./">Design space</a><a href="https://github.com/SonghaiFan/roc-ui">GitHub ↗</a></nav></header>
+  <main>
+    <p class="eyebrow">Responsive Object Continuity / Skill</p>
+    <h1>The same object.<br>Through every change.</h1>
+    <p class="intro">Keep identity, state and context as cards expand, folders unfold, views change and layouts respond. This is the method behind ROC's interactive practice cases.</p>
+    <div class="actions"><a class="primary" href="./skills/responsive-object-continuity.zip" download>Download skill</a><a href="./skills/responsive-object-continuity/SKILL.md">Read the principles</a><a href="./">Try the cases →</a></div>
+    <section><h2>Install for your agent</h2><p>Download and extract the ZIP. Place its <code>responsive-object-continuity</code> folder in your agent's skill directory. It contains the instructions, cases, references and license; the gallery and its dependencies are separate.</p><p>For a local ROC checkout, link the canonical source:</p><pre>npm run skill:link
+# Or choose your agent's destination:
+npm run skill:link -- /path/to/agent/skills/responsive-object-continuity</pre><p class="muted">The link command keeps an existing unrelated destination untouched. Skill installation does not require installing the gallery's npm dependencies.</p></section>
+    <section><h2>Start with a real interaction</h2><pre>Use $responsive-object-continuity to make this card expand into
+its reader while preserving the editor, selection and return position.
+Verify opening, closing after scrolling, and interruption on desktop and mobile.</pre><p>使用 responsive-object-continuity 检查这个界面的对象连续性：保留同一个对象、内部排版和操作状态，检查展开、收起、滚动后返回及中途反转。</p></section>
+    <section><h2>Method and practice, together</h2><p>The skill explains the principles and records source-backed lessons. The design space lets you try the implementations. Both live in one ROC project, with one set of evidence and one place to improve the behavior.</p></section>
+  </main>
+  <footer>ROC · Objects, in continuity.</footer>
+</body>
+</html>

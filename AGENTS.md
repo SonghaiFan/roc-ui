@@ -4,6 +4,8 @@ Read [CONSTITUTION.md](CONSTITUTION.md) before changing the project. It is the a
 
 ROC is a collection of Responsive Object Continuity skill practice cases, not a project whose purpose is to build an independent component library. Existing libraries are welcome. ROC is responsible for a coherent UI and UX across the cases.
 
+The canonical skill lives in `skills/responsive-object-continuity/`. For continuity work, read its `SKILL.md` and the relevant cases. Update principles and their real implementations together when appropriate; keep case IDs unique and the case index complete. Published skill files under `public/skills/` and `docs/skills/` are build output.
+
 Base UI for interaction, Animate UI for motion, and ROC for visuals/defaults/composition is a useful division of responsibilities, not a mandatory or exclusive dependency policy. Do not rewrite working implementations merely to remove dependencies or claim ownership of primitives.
 
 Preserve unrelated working-tree changes. Validate the behavior affected by a change and distinguish local checks from deployment evidence.

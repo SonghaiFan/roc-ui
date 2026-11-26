@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
-    "check": "tsc --noEmit",
+    "check": "npm run check:skill && tsc --noEmit",
     "test": "node --test tests/registry.test.mjs tests/folder-motion.test.mjs",
-    "test:consumer": "node scripts/check-consumer.mjs"
+    "test:consumer": "node scripts/check-consumer.mjs",
+    "check:skill": "node scripts/check-skill.mjs",
+    "package:skill": "node scripts/package-skill.mjs",
+    "skill:link": "node scripts/link-skill.mjs"
   },
   "dependencies": {
     "@animate-ui/react": "^2.0.0",
@@ -39,5 +42,6 @@
     "radix-ui": "^1.8.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.0"
-  }
+  },
+  "description": "Responsive Object Continuity: an agent skill and interactive design practice space."
 }

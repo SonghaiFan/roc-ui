@@ -1,5 +1,6 @@
 import { build } from "esbuild";
 import { mkdir, readFile, writeFile, cp, rm } from "node:fs/promises";
+import { packageSkill } from "./package-skill.mjs";
 const foundationNames =
   "button badge card input textarea checkbox switch slider separator tabs accordion dialog popover dropdown-menu tooltip alert avatar progress skeleton toggle toggle-group radio-group scroll-area breadcrumb pagination alert-dialog aspect-ratio attachment bubble button-group calendar carousel chart code-block collapsible combobox command context-menu data-table date-picker direction drawer empty field hover-card input-group input-otp item kbd label marker menubar message message-scroller native-select navigation-menu questionnaire resizable select sheet sidebar spinner table toast trace typography".split(
     " ",
@@ -118,6 +119,7 @@ for (const name of names) {
   });
 }
 await writeFile("registry.json", JSON.stringify(root, null, 2) + "\n");
+await packageSkill();
 await rm("dist", { recursive: true, force: true });
 await mkdir("dist", { recursive: true });
 await cp("public", "dist", { recursive: true });
@@ -140,7 +142,7 @@ await writeFile(
 );
 await writeFile(
   "dist/index.html",
-  `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ROC — a design space for reusable interfaces that preserve object identity. Interactive React components, source code, and continuity contracts."><meta name="theme-color" content="#fafbf8"><title>ROC — Objects, in continuity</title><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./assets/main.css"></head><body><div id="root"></div><script type="module" src="./assets/main.js"></script></body></html>`,
+  `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ROC — a design space for reusable interfaces that preserve object identity. Interactive React components, source code, and continuity contracts."><meta name="theme-color" content="#fafbf8"><title>ROC — Objects, in continuity</title><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="icon" href="./favicon.ico" sizes="16x16 32x32 48x48"><link rel="apple-touch-icon" href="./apple-touch-icon.png"><link rel="stylesheet" href="./assets/main.css"></head><body><div id="root"></div><script type="module" src="./assets/main.js"></script></body></html>`,
 );
 console.log(`Built gallery + ${names.length} registry items.`);
 

@@ -1,70 +1,52 @@
-# ROC UI
+# ROC — Responsive Object Continuity
 
-A collection of Responsive Object Continuity skill practice cases, with a shared UI and UX standard.
+One method and a hands-on design space for interfaces that keep objects recognizable, reachable and usable as layouts change.
 
-[Project constitution](CONSTITUTION.md) · [Open the design space](https://songhaifan.github.io/roc-ui/) · [Component contracts](notes/react-design-system.md) · [ROC design skill](https://github.com/SonghaiFan/responsive-object-continuity)
+[Open the design space](https://songhaifan.github.io/roc-ui/) · [Get the skill](https://songhaifan.github.io/roc-ui/skill.html) · [Read the principles](skills/responsive-object-continuity/SKILL.md) · [Project constitution](CONSTITUTION.md)
 
-ROC is a place to try, inspect and reuse interactive cases that apply the [ROC skill](https://github.com/SonghaiFan/responsive-object-continuity). It is not defined by building an independent component library. Existing libraries are welcome; ROC provides the common visual language, defaults, composition and interaction quality. Downloadable components and the registry are ways to reuse these cases.
+## Method and practice
 
-Base UI for interaction and Animate UI for motion is a useful implementation pattern, not an exclusive stack. See the [project constitution](CONSTITUTION.md) for the governing principles.
+| Part | Purpose | Source |
+| --- | --- | --- |
+| ROC Skill | Cross-framework principles, diagnostic workflow and source-backed cases for agents | [skills/responsive-object-continuity/](skills/responsive-object-continuity/) |
+| Design space | Operable cases with shared visual and interaction standards | [src/](src/) |
+| Reusable source | Components and registry payloads for bringing cases into another project | [registry/roc/](registry/roc/) |
 
-## Three levels, one gallery
+The same repo owns the principles and their implementations. A case can evolve alongside the behavior it describes. The skill remains independently installable; reading it does not require React or the gallery's npm dependencies.
 
-The gallery progresses from top to bottom: **Design System → Primitives → Interfaces**. Header links jump to these sections in the same retained preview.
+ROC uses existing libraries where they serve the experience. Base UI for interaction, Animate UI for motion, and ROC for visuals, defaults and composition is a useful division of responsibilities. The [constitution](CONSTITUTION.md) records the product and architecture choices.
 
-- **Design System:** a live style board for shared colour, typography, corners, spacing and controls. The token source is [`registry/roc/tokens.css`](registry/roc/tokens.css).
-- **Primitives:** foundation and motion cases grouped into Actions, Inputs, Navigation, Overlays, Collections, Text & numbers, Effects and Layout.
-- **Interfaces:** ten earlier source-informed interactions, composed with real content and retained drafts. These include reading surfaces, collections, image inspection, audio notes, contextual editing and source trays.
+## Install the skill
 
-See [design tokens and layer boundaries](notes/design-system.md).
+Download the standalone ZIP from the [skill page](https://songhaifan.github.io/roc-ui/skill.html), extract it and place the `responsive-object-continuity` folder in your agent's supported skill directory.
 
-## shadcn foundations
-
-All **66 entries** in the official shadcn/ui component catalog are available in the gallery, plus ROC's own **Edge Panel** (67 cards). The original 25 foundations are joined by calendars, date pickers, tables, charts, command menus, comboboxes, drawers, sheets, resizable panels, sidebars, fields, input groups, OTP inputs, messages, questionnaires, traces, and more. The complete list and implementation boundaries are recorded in [the catalog coverage](notes/catalog-coverage.md).
-
-Source snapshots, recipe documentation, hashes and applicable licenses are preserved. Current cases combine Base UI, Animate UI and specialist libraries with ROC visuals and composition. Local `primitive-*` adapters preserve useful APIs and styling boundaries; they are not an ownership or dependency restriction. See [implementation boundaries](notes/primitives.md).
-
-[Adaptation contracts and limits](notes/shadcn-foundations.md) · [Original source snapshots](upstream/shadcn/)
+For a local checkout, link directly to the canonical source:
 
 ```sh
-npx shadcn@latest add https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/tabs.json
+npm run skill:link
+# Default destination: ~/.agents/skills/responsive-object-continuity
+
+# Or choose a destination supported by your agent:
+npm run skill:link -- /path/to/agent/skills/responsive-object-continuity
 ```
 
-The CLI installs the selected component, its local source/CSS and its declared packages. No Tailwind setup is required. Use the familiar compound API:
+The command uses Node's built-in modules and leaves an existing unrelated destination untouched. A linked skill always reads the source in this checkout. Other hosts can copy `skills/responsive-object-continuity/` directly.
 
-```tsx
-<Tabs defaultValue="write">
-  <TabsList>
-    <TabsTrigger value="write">Write</TabsTrigger>
-    <TabsTrigger value="read">Read</TabsTrigger>
-  </TabsList>
-  <TabsContent value="write"><Textarea aria-label="Draft" /></TabsContent>
-  <TabsContent value="read">Reading view</TabsContent>
-</Tabs>
-```
+Ask your agent:
 
-Install `textarea` separately for this composition. Tabs and Accordion retain inactive editors; transient overlays retain caller-owned data but unmount their contents after dismissal.
+> Use $responsive-object-continuity to make this card expand into its reader while preserving the editor, selection and return position. Verify opening, closing after scrolling, and interruption on desktop and mobile.
 
-## Earlier source-informed components
+Start at [SKILL.md](skills/responsive-object-continuity/SKILL.md), then read the relevant cases. The skill covers retained objects and state, safe areas, composition, navigation, drag, linked projections, material behavior and return handoffs. Source review, historical tests and current visual acceptance remain distinct evidence.
 
-These ten source-informed practice cases form the Interfaces level. They are displayed in the gallery with real content and remain available as reusable source.
+## Explore the design space
 
-| Component | Behaviour |
-| --- | --- |
-| Expandable card | Retained reading composition, modal preview and return to its measured slot |
-| Folder fan | Keyed cards unfold from a collection |
-| Source stack | Pile, spread and inspect the same content |
-| Focus lanes | Expand one lane while retaining context and shared coordinates |
-| Continuous tabs | One marker follows a controlled selection |
-| Image viewport | Pointer-anchored zoom, constrained pan and spring Fit |
-| Voice player | Composable React audio controls, seeking, rate and optional playback groups |
-| Selection toolbar | Caller-defined actions over a retained selection Range |
-| Page book | Custom cover, paper turns, drag release and shading |
-| Source tray | Renderer-neutral children with source shelf geometry and reversible springs |
+The gallery is one continuous progression: **Design System → Primitives → Interfaces**. Appearance controls update the live cases. Component detail supports focused inspection at desktop, tablet, phone and intermediate widths. Returning to the overview retains the previews and their state.
 
-The components are informed by Syuze and Franklin Board. Their application stores, business models, routing, attachment services and DOM widget factories are excluded. The gallery imports exactly the files distributed by the registry. Sample content and appearance controls live separately in `src/`.
+The cases include foundation controls, reading surfaces, collections, image inspection, audio, contextual editing and source trays. The gallery imports the same files it distributes; example data and gallery controls stay separate from reusable source.
 
-## Install
+[Design tokens and boundaries](notes/design-system.md) · [React contracts](notes/react-design-system.md) · [Catalog coverage](notes/catalog-coverage.md) · [Implementation boundaries](notes/primitives.md)
+
+## Reuse a case
 
 In a React project configured for shadcn:
 
@@ -72,7 +54,7 @@ In a React project configured for shadcn:
 npx shadcn@latest add https://raw.githubusercontent.com/SonghaiFan/roc-ui/main/public/r/voice-player.json
 ```
 
-Replace `voice-player` with any component's kebab-case name. Files install into `components/roc`. React 19+ and CSS import support are required; each payload declares version-compatible dependencies. Complex components install their own upstream dependencies, such as Embla, Vaul, Recharts, or TanStack Table v8. Each item includes its own stylesheet, small shared surface rules, necessary TypeScript helpers and the MIT notice. It does not install the gallery or unrelated component styles.
+Replace `voice-player` with the component's kebab-case name. React 19+ and CSS import support are required; each payload declares its own dependencies and includes the relevant source, styles and licenses.
 
 ```tsx
 import { VoicePlayer } from "./components/roc/voice-player";
@@ -80,40 +62,7 @@ import { VoicePlayer } from "./components/roc/voice-player";
 <VoicePlayer src={recordingUrl} label="Recording" />
 ```
 
-Or compose controls yourself:
-
-```tsx
-import {
-  VoicePlayerRoot, VoicePlayButton, VoiceTime,
-} from "./components/roc/voice-player";
-
-<VoicePlayerRoot src={recordingUrl}>
-  <VoiceTime />
-  <VoicePlayButton />
-</VoicePlayerRoot>
-```
-
-For manual installation, copy every file listed in the selected `public/r/*.json` payload into one directory. Components import their own CSS. Customize root `className`/`style`, inherited `--roc-*` tokens or the source itself. Preserve local customizations when the CLI asks about replacing shared files.
-
-See [React component contracts](notes/react-design-system.md) for controlled state, custom editor actions, tray composition, SSR and known limits.
-
-## Design space
-
-The gallery is one continuous page: Design System, Primitives, then Interfaces. The first layer contains all shared appearance controls; colour, typography, corners, surface and density update the live previews below. Header links scroll to each layer. The neutral masonry canvas contains 110 primitive examples and 10 interface cases. Open a component with its focus control to inspect it at different widths. Responsive controls appear only in this detail view. The viewport toolbar switches between Fit, Desktop (1024 × 768), Tablet (768 × 1024) and Phone (390 × 844). Drag the right edge or use the width slider for intermediate widths. Click the slider markers to test sm (640), md (768), lg (1024), xl (1280) and 2xl (1536 px); the readout reports the active width interval. These are standard media-width reference points, not a claim that every component changes layout at every marker. Returning to All components hides the controls and restores the full-width masonry gallery without remounting the components. One retained iframe provides real CSS media queries and viewport-bound dialogs; switching sizes does not reload the previews. Filtering hides components without unmounting them. Source inspection leaves the live preview in place. Source links use component hashes; theme controls are local to the session.
-
-The layout follows the preview-first approach of [shadcn create](https://ui.shadcn.com/create?item=preview). No reference-site source or assets are bundled.
-
-## Motion
-
-ROC uses [Animate UI 2](https://animate-ui.com/docs/installation) and Motion. Buttons and toggles use its press spring; accordion and collapsible panels use Auto Height while retaining their content. Base UI adapters use Animate UI for dialogs, alert dialogs, sheets, popovers, hover cards, tooltips, menus, selects, comboboxes, sliders and toasts. Switch thumbs share Animate UI's motion tokens. Existing ROC components keep their continuous layout and state animations. Static text and structural elements stay still; interactive surfaces transition their colors and borders.
-
-Published registry entries declare their required animation packages automatically. No gallery provider is required: Animate UI primitives respect reduced motion by default. To adjust timing throughout an application, wrap it in `AnimateUIProvider` from `@animate-ui/react/provider`, for example `<AnimateUIProvider tempo={0.8} reducedMotion="user">…</AnimateUIProvider>`. The gallery uses `reducedMotion="user"`. CSS entry/exit keyframes are disabled only on parts animated by Animate UI, avoiding competing transforms.
-
-On phones and touch devices, Style opens a scrollable modal sheet with a close button, focus containment and a backdrop. Desktop retains the edge reveal and pin interaction. Radius has four size presets (Square, Small, Medium, Large), with Rounded and Smooth corner shapes.
-
-## 中文
-
-ROC 设计空间只展示 66 个基于 shadcn/ui 重做的组件。早期 10 个来自 Syuze / Franklin 交互经验的组件保留下载源码，不再出现在画廊。响应式设备切换、宽度滑块和媒体断点标记仅在组件详情中显示。基础组件保留组合 API 和 Radix / Base UI 可访问性语义，再加入 ROC 的保留节点、响应式布局和连续反馈。ROC 是 ROC skill 的实践案例合集，以统一的 UI 与 UX 标准把关，允许引入任何适合的现有 library；可下载的 React 组件是案例复用的一种形式，设计空间采用 masonry 布局，直接铺开所有可操作的组件。组件不依赖 Syuze、Franklin Board 或画廊运行时；示例数据、业务行为和展示页面与可下载代码分开。可组合音频控件、自定义选区操作，或把自己的 React 内容放进托盘。来源项目的物理参数和对象连续性原则被保留为可复用行为，而不是打包整个应用。
+For manual installation, copy every file listed in the selected `public/r/*.json` payload. Customize `className`, `style`, inherited `--roc-*` tokens or the source. Preserve local changes when replacing shared files.
 
 ## Develop and verify
 
@@ -128,16 +77,14 @@ npm test
 npm run test:consumer
 ```
 
-The dev server builds once on startup; rebuild after edits. `npm run build` generates registry payloads in `public/r`, downloadable source in `public/source`, and the GitHub Pages snapshot in `docs`. Pages serves `main:/docs`.
+`build` produces the gallery, registry payloads, downloadable source and the standalone skill package. The `docs/` snapshot is the deployable site. `public/skills/` and `docs/skills/` are generated from the canonical skill source; edit the source under `skills/`. Run a final build after consumer checks to remove their temporary browser fixture before publishing.
 
-`test:consumer` compiles and server-renders only the downloaded registry files, then creates an independent StrictMode browser fixture. Browser scenarios in `tests/masonry-startup.scenario.js`, `tests/design-space.scenario.js`, `tests/consumer.scenario.js`, `tests/responsive-preview.scenario.js`, `tests/neutral-shell.scenario.js`, `tests/foundations.scenario.js`, `tests/foundations-consumer.scenario.js`, `tests/more-foundations.scenario.js` and `tests/more-foundations-consumer.scenario.js` run through Playwright CLI `run-code --filename …`. They currently target port 4190; adjust the origin for your server. Run the final build after consumer tests to remove the temporary fixture before deployment.
+For a skill-only change, `npm run check:skill` validates case IDs, the case index and bundled references. `npm run package:skill` rebuilds its standalone files without installing UI dependencies. Run the relevant gallery and browser checks when a case's implementation changes.
 
-## Provenance and scope
+## 中文
 
-[Source extraction map](notes/component-source-map.md) · [Original mechanism notes](notes/extracted-components.md) · [Reading presentation comparison](notes/syuze-card-presentation.md)
-
-The library does not claim full motion parity with Syuze. Folder fan is a compact collection, not drag-to-file. Focus lanes use discrete rows. Continuous tabs is a selection group, not a tabpanel framework. Page book accepts pre-paginated reading content; application pagination is separate. Chromium validation does not certify every browser or device.
+ROC 将方法和实践放在同一个项目里：skill 为 agent 提供跨框架的原则与案例，交互设计空间让这些原则可操作、可观察，registry 与组件源码用于复用案例。修改方法时维护同一份案例索引；修改实践时记录机制、验证证据和边界。Skill 可以独立安装，Gallery 的技术栈不限制这些原则的适用范围。
 
 ## License
 
-[MIT](LICENSE) for ROC source. Dependencies retain their own licenses. Animate UI is an external dependency under its [MIT + Commons Clause license](https://github.com/imskyleen/animate-ui/blob/main/packages/react/LICENSE.md); ROC registry payloads contain ROC adapters and dependency declarations, rather than copied Animate UI sources. No proprietary fonts or third-party project assets are bundled.
+[MIT](LICENSE) for ROC source. The standalone skill includes its own license file. Referenced projects and bundled third-party implementations retain their applicable licenses and source notices. Animate UI is an external dependency under its [MIT + Commons Clause license](https://github.com/imskyleen/animate-ui/blob/main/packages/react/LICENSE.md); registry payloads include ROC adapters and dependency declarations rather than copied Animate UI sources.
